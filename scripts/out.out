@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "download_CDS.py", line 17, in <module>
+    cds_xarray = xdata.to_xarray(backend_kwargs={'errors': 'ignore','filter_by_keys':{'edition': 1, 'typeOfLevel':'surface'}})
+  File "/home/kimpson/miniconda3/envs/ML2/lib/python3.8/site-packages/climetlab/sources/file.py", line 81, in to_xarray
+    return self._reader.to_xarray(**kwargs)
+  File "/home/kimpson/miniconda3/envs/ML2/lib/python3.8/site-packages/climetlab/readers/grib.py", line 433, in to_xarray
+    return type(self).to_xarray_multi([self.path], **kwargs)
+  File "/home/kimpson/miniconda3/envs/ML2/lib/python3.8/site-packages/climetlab/readers/grib.py", line 502, in to_xarray_multi
+    return xr.open_mfdataset(
+  File "/home/kimpson/miniconda3/envs/ML2/lib/python3.8/site-packages/xarray/backends/api.py", line 913, in open_mfdataset
+    datasets = [open_(p, **open_kwargs) for p in paths]
+  File "/home/kimpson/miniconda3/envs/ML2/lib/python3.8/site-packages/xarray/backends/api.py", line 913, in <listcomp>
+    datasets = [open_(p, **open_kwargs) for p in paths]
+  File "/home/kimpson/miniconda3/envs/ML2/lib/python3.8/site-packages/xarray/backends/api.py", line 497, in open_dataset
+    backend_ds = backend.open_dataset(
+  File "/home/kimpson/miniconda3/envs/ML2/lib/python3.8/site-packages/cfgrib/xarray_plugin.py", line 100, in open_dataset
+    store = CfGribDataStore(
+  File "/home/kimpson/miniconda3/envs/ML2/lib/python3.8/site-packages/cfgrib/xarray_plugin.py", line 40, in __init__
+    self.ds = dataset.open_file(filename, **backend_kwargs)
+  File "/home/kimpson/miniconda3/envs/ML2/lib/python3.8/site-packages/cfgrib/dataset.py", line 719, in open_file
+    *build_dataset_components(
+  File "/home/kimpson/miniconda3/envs/ML2/lib/python3.8/site-packages/cfgrib/dataset.py", line 675, in build_dataset_components
+    attributes = build_dataset_attributes(index, filter_by_keys, encoding)
+  File "/home/kimpson/miniconda3/envs/ML2/lib/python3.8/site-packages/cfgrib/dataset.py", line 599, in build_dataset_attributes
+    attributes = enforce_unique_attributes(index, GLOBAL_ATTRIBUTES_KEYS, filter_by_keys)
+  File "/home/kimpson/miniconda3/envs/ML2/lib/python3.8/site-packages/cfgrib/dataset.py", line 273, in enforce_unique_attributes
+    raise DatasetBuildError("multiple values for key %r" % key, key, fbks)
+cfgrib.dataset.DatasetBuildError: multiple values for key 'edition'
