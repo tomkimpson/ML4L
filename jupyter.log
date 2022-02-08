@@ -1,0 +1,185 @@
+[I 2022-02-07 13:54:36.732 ServerApp] jupyterlab | extension was successfully linked.
+[I 2022-02-07 13:54:37.133 ServerApp] nbclassic | extension was successfully linked.
+[I 2022-02-07 13:54:37.194 ServerApp] nbclassic | extension was successfully loaded.
+[I 2022-02-07 13:54:37.195 LabApp] JupyterLab extension loaded from /home/kimpson/miniconda3/envs/ML/lib/python3.8/site-packages/jupyterlab
+[I 2022-02-07 13:54:37.195 LabApp] JupyterLab application directory is /home/kimpson/miniconda3/envs/ML/share/jupyter/lab
+[I 2022-02-07 13:54:37.198 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2022-02-07 13:54:37.199 ServerApp] Serving notebooks from local directory: /network/aopp/chaos/pred/kimpson/ML4L
+[I 2022-02-07 13:54:37.199 ServerApp] Jupyter Server 1.11.2 is running at:
+[I 2022-02-07 13:54:37.199 ServerApp] http://localhost:9168/lab
+[I 2022-02-07 13:54:37.199 ServerApp]  or http://127.0.0.1:9168/lab
+[I 2022-02-07 13:54:37.199 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 2022-02-07 13:56:01.013 ServerApp] 302 GET / (127.0.0.1) 0.47ms
+[W 2022-02-07 13:56:03.728 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-02-07 13:56:03.846 ServerApp] 404 GET /api/contents/Sequential_NN.ipynb?content=0&1644242163830 (127.0.0.1): No such file or directory: Sequential_NN.ipynb
+[W 2022-02-07 13:56:03.846 ServerApp] No such file or directory: Sequential_NN.ipynb
+[W 2022-02-07 13:56:03.846 ServerApp] 404 GET /api/contents/Sequential_NN.ipynb?content=0&1644242163830 (127.0.0.1) 1.13ms referer=http://localhost:8883/lab?
+[W 2022-02-07 13:56:03.852 ServerApp] 404 GET /api/contents/Untitled.ipynb?content=0&1644242163831 (127.0.0.1): No such file or directory: Untitled.ipynb
+[W 2022-02-07 13:56:03.852 ServerApp] No such file or directory: Untitled.ipynb
+[W 2022-02-07 13:56:03.853 ServerApp] 404 GET /api/contents/Untitled.ipynb?content=0&1644242163831 (127.0.0.1) 1.27ms referer=http://localhost:8883/lab?
+[W 2022-02-07 13:56:03.862 ServerApp] 404 GET /api/contents/Sequential_NN-Copy1.ipynb?content=0&1644242163831 (127.0.0.1): No such file or directory: Sequential_NN-Copy1.ipynb
+[W 2022-02-07 13:56:03.862 ServerApp] No such file or directory: Sequential_NN-Copy1.ipynb
+[W 2022-02-07 13:56:03.862 ServerApp] 404 GET /api/contents/Sequential_NN-Copy1.ipynb?content=0&1644242163831 (127.0.0.1) 1.02ms referer=http://localhost:8883/lab?
+[W 2022-02-07 13:56:15.702 ServerApp] Notebook jupyter_notebooks/Sequential_NN.ipynb is not trusted
+[I 2022-02-07 13:56:17.011 ServerApp] Kernel started: a0d0b694-6711-477c-9710-d829f7c8b59f
+2022-02-07 13:57:07.104817: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcusolver.so.11'; dlerror: libcusolver.so.11: cannot open shared object file: No such file or directory
+2022-02-07 13:57:07.106194: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1850] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2022-02-07 13:57:07.106696: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[I 2022-02-07 13:58:16.390 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 13:58:16.391 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:00:16.739 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:00:16.740 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:05:13.032 ServerApp] Kernel interrupted: a0d0b694-6711-477c-9710-d829f7c8b59f
+[I 2022-02-07 14:06:18.354 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:06:18.354 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:08:18.553 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:08:18.553 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[W 2022-02-07 14:10:03.677 ServerApp] Notebook jupyter_notebooks/08.Updated_Pipeline.ipynb is not trusted
+[I 2022-02-07 14:10:05.398 ServerApp] Kernel started: b4aeb54a-5c75-4d79-af17-899d6e9959d4
+[I 2022-02-07 14:10:07.283 ServerApp] Starting buffering for b4aeb54a-5c75-4d79-af17-899d6e9959d4:565df654-34cb-4ace-879c-c72df42c2c25
+[W 2022-02-07 14:10:15.097 ServerApp] Notebook jupyter_notebooks/09. Construct_ML_mapping.ipynb is not trusted
+[I 2022-02-07 14:10:15.708 ServerApp] Kernel started: 039e251d-6446-4570-90ab-abe604944c2a
+[I 2022-02-07 14:10:18.749 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:10:18.749 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:12:18.941 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:12:18.941 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:13:22.240 ServerApp] Creating new notebook in /jupyter_notebooks
+[I 2022-02-07 14:13:22.661 ServerApp] Kernel started: 0e5e80ca-6ede-4190-83a2-b4fb1cdc4efe
+[I 2022-02-07 14:14:19.169 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:14:19.170 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:15:22.520 ServerApp] Saving file at /jupyter_notebooks/Untitled.ipynb
+[I 2022-02-07 14:16:19.366 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:16:19.366 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:17:22.642 ServerApp] Saving file at /jupyter_notebooks/Untitled.ipynb
+[I 2022-02-07 14:18:15.497 ServerApp] Kernel interrupted: a0d0b694-6711-477c-9710-d829f7c8b59f
+[I 2022-02-07 14:18:19.562 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:18:19.563 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:19:22.774 ServerApp] Saving file at /jupyter_notebooks/Untitled.ipynb
+[I 2022-02-07 14:20:19.775 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:20:19.775 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:21:22.967 ServerApp] Saving file at /jupyter_notebooks/Untitled.ipynb
+[I 2022-02-07 14:22:19.993 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:22:19.993 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:24:20.183 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:24:20.183 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:25:23.124 ServerApp] Saving file at /jupyter_notebooks/Untitled.ipynb
+[I 2022-02-07 14:26:20.427 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:26:20.427 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:26:41.038 ServerApp] Kernel interrupted: 0e5e80ca-6ede-4190-83a2-b4fb1cdc4efe
+[I 2022-02-07 14:27:23.295 ServerApp] Saving file at /jupyter_notebooks/Untitled.ipynb
+[I 2022-02-07 14:28:20.658 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:28:20.658 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:29:24.001 ServerApp] Saving file at /jupyter_notebooks/Untitled.ipynb
+[I 2022-02-07 14:30:20.926 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:30:20.926 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:32:21.119 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:32:21.119 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:34:21.320 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:34:21.320 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:36:21.553 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:36:21.554 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:38:21.742 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:38:21.743 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:40:21.940 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:40:21.941 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:42:22.141 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:42:22.141 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:44:22.334 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:44:22.335 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:46:16.639 ServerApp] Kernel interrupted: a0d0b694-6711-477c-9710-d829f7c8b59f
+[I 2022-02-07 14:46:22.564 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:46:22.565 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:48:22.777 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:48:22.777 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:50:22.939 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:50:22.939 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:52:23.157 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:52:23.157 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:54:23.365 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:54:23.366 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:55:35.428 ServerApp] Kernel interrupted: a0d0b694-6711-477c-9710-d829f7c8b59f
+[I 2022-02-07 14:55:36.677 ServerApp] Kernel interrupted: a0d0b694-6711-477c-9710-d829f7c8b59f
+[I 2022-02-07 14:56:23.590 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:56:23.590 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 14:57:24.759 ServerApp] Saving file at /jupyter_notebooks/Untitled.ipynb
+[I 2022-02-07 14:58:23.798 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 14:58:23.798 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 15:02:24.638 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 15:02:24.639 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 15:04:25.558 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 15:04:25.559 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 15:06:26.640 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 15:06:26.640 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 15:08:27.554 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 15:08:27.554 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 15:10:28.695 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 15:10:28.695 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 15:12:29.633 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 15:12:29.634 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 15:14:30.614 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 15:14:30.615 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 15:15:26.843 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 15:15:26.843 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 15:17:27.756 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 15:17:27.756 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 15:30:55.724 ServerApp] Kernel interrupted: a0d0b694-6711-477c-9710-d829f7c8b59f
+[I 2022-02-07 15:31:28.795 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 15:31:28.796 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 15:33:29.909 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 15:33:29.909 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 15:45:12.341 ServerApp] Kernel interrupted: a0d0b694-6711-477c-9710-d829f7c8b59f
+[I 2022-02-07 15:45:13.221 ServerApp] Kernel interrupted: a0d0b694-6711-477c-9710-d829f7c8b59f
+[I 2022-02-07 15:45:30.967 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 15:45:30.967 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 15:47:32.384 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 15:47:32.385 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 15:53:33.828 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 15:53:33.828 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 15:55:34.815 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 15:55:34.815 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 15:57:36.410 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 15:57:36.410 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 16:37:22.636 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 16:37:22.637 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 17:58:24.063 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 17:58:24.063 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-07 18:38:31.570 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-07 18:38:31.570 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-08 05:20:49.474 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-08 05:20:49.475 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-08 05:22:51.210 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-08 05:22:51.211 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-08 05:24:55.004 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-08 05:24:55.005 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-08 05:26:57.564 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-08 05:26:57.564 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-08 05:30:44.752 ServerApp] Copying jupyter_notebooks/11.Sequential_NN.ipynb to /jupyter_notebooks
+[W 2022-02-08 05:30:44.848 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[W 2022-02-08 05:30:44.905 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN-Copy1.ipynb is not trusted
+[W 2022-02-08 05:30:47.907 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN-Copy1.ipynb is not trusted
+[I 2022-02-08 05:30:49.926 ServerApp] Kernel started: 117835f5-aaed-4a80-9ad9-d34707869259
+[I 2022-02-08 05:30:55.279 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
+[W 2022-02-08 05:30:55.280 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
+[I 2022-02-08 05:32:02.202 ServerApp] Kernel shutdown: 0e5e80ca-6ede-4190-83a2-b4fb1cdc4efe
+[W 2022-02-08 05:32:03.041 ServerApp] delete /jupyter_notebooks/Untitled.ipynb
+[W 2022-02-08 05:32:03.041 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/Untitled.ipynb, on different device to home directory
+[I 2022-02-08 05:32:50.528 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN-scratchspace.ipynb
+[W 2022-02-08 05:32:50.528 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN-scratchspace.ipynb is not trusted
+2022-02-08 05:33:25.581667: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcusolver.so.11'; dlerror: libcusolver.so.11: cannot open shared object file: No such file or directory
+2022-02-08 05:33:25.582295: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1850] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2022-02-08 05:33:25.582966: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[I 2022-02-08 05:34:52.403 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN-scratchspace.ipynb
+[W 2022-02-08 05:34:52.403 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN-scratchspace.ipynb is not trusted
+[I 2022-02-08 05:36:54.120 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN-scratchspace.ipynb
+[W 2022-02-08 05:36:54.121 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN-scratchspace.ipynb is not trusted
+[W 2022-02-08 07:23:16.283 ServerApp] WebSocket ping timeout after 114142 ms.
+[W 2022-02-08 07:23:18.203 ServerApp] WebSocket ping timeout after 116062 ms.
+[W 2022-02-08 07:23:18.203 ServerApp] WebSocket ping timeout after 116061 ms.
+[I 2022-02-08 07:23:21.285 ServerApp] Starting buffering for 039e251d-6446-4570-90ab-abe604944c2a:3046a6d3-9251-42ae-9a63-d57f180a139b
+[W 2022-02-08 07:23:22.686 ServerApp] WebSocket ping timeout after 119747 ms.
+[I 2022-02-08 07:23:23.203 ServerApp] Starting buffering for a0d0b694-6711-477c-9710-d829f7c8b59f:03e53cc1-c211-45cc-a7ae-c48b0ed47900
+[I 2022-02-08 07:23:27.688 ServerApp] Starting buffering for 117835f5-aaed-4a80-9ad9-d34707869259:dd4d3b0c-fc91-4ccd-bf5f-519fc198ebfb
