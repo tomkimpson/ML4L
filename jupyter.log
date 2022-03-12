@@ -1,185 +1,475 @@
-[I 2022-02-07 13:54:36.732 ServerApp] jupyterlab | extension was successfully linked.
-[I 2022-02-07 13:54:37.133 ServerApp] nbclassic | extension was successfully linked.
-[I 2022-02-07 13:54:37.194 ServerApp] nbclassic | extension was successfully loaded.
-[I 2022-02-07 13:54:37.195 LabApp] JupyterLab extension loaded from /home/kimpson/miniconda3/envs/ML/lib/python3.8/site-packages/jupyterlab
-[I 2022-02-07 13:54:37.195 LabApp] JupyterLab application directory is /home/kimpson/miniconda3/envs/ML/share/jupyter/lab
-[I 2022-02-07 13:54:37.198 ServerApp] jupyterlab | extension was successfully loaded.
-[I 2022-02-07 13:54:37.199 ServerApp] Serving notebooks from local directory: /network/aopp/chaos/pred/kimpson/ML4L
-[I 2022-02-07 13:54:37.199 ServerApp] Jupyter Server 1.11.2 is running at:
-[I 2022-02-07 13:54:37.199 ServerApp] http://localhost:9168/lab
-[I 2022-02-07 13:54:37.199 ServerApp]  or http://127.0.0.1:9168/lab
-[I 2022-02-07 13:54:37.199 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
-[I 2022-02-07 13:56:01.013 ServerApp] 302 GET / (127.0.0.1) 0.47ms
-[W 2022-02-07 13:56:03.728 LabApp] Could not determine jupyterlab build status without nodejs
-[W 2022-02-07 13:56:03.846 ServerApp] 404 GET /api/contents/Sequential_NN.ipynb?content=0&1644242163830 (127.0.0.1): No such file or directory: Sequential_NN.ipynb
-[W 2022-02-07 13:56:03.846 ServerApp] No such file or directory: Sequential_NN.ipynb
-[W 2022-02-07 13:56:03.846 ServerApp] 404 GET /api/contents/Sequential_NN.ipynb?content=0&1644242163830 (127.0.0.1) 1.13ms referer=http://localhost:8883/lab?
-[W 2022-02-07 13:56:03.852 ServerApp] 404 GET /api/contents/Untitled.ipynb?content=0&1644242163831 (127.0.0.1): No such file or directory: Untitled.ipynb
-[W 2022-02-07 13:56:03.852 ServerApp] No such file or directory: Untitled.ipynb
-[W 2022-02-07 13:56:03.853 ServerApp] 404 GET /api/contents/Untitled.ipynb?content=0&1644242163831 (127.0.0.1) 1.27ms referer=http://localhost:8883/lab?
-[W 2022-02-07 13:56:03.862 ServerApp] 404 GET /api/contents/Sequential_NN-Copy1.ipynb?content=0&1644242163831 (127.0.0.1): No such file or directory: Sequential_NN-Copy1.ipynb
-[W 2022-02-07 13:56:03.862 ServerApp] No such file or directory: Sequential_NN-Copy1.ipynb
-[W 2022-02-07 13:56:03.862 ServerApp] 404 GET /api/contents/Sequential_NN-Copy1.ipynb?content=0&1644242163831 (127.0.0.1) 1.02ms referer=http://localhost:8883/lab?
-[W 2022-02-07 13:56:15.702 ServerApp] Notebook jupyter_notebooks/Sequential_NN.ipynb is not trusted
-[I 2022-02-07 13:56:17.011 ServerApp] Kernel started: a0d0b694-6711-477c-9710-d829f7c8b59f
-2022-02-07 13:57:07.104817: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcusolver.so.11'; dlerror: libcusolver.so.11: cannot open shared object file: No such file or directory
-2022-02-07 13:57:07.106194: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1850] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
-Skipping registering GPU devices...
-2022-02-07 13:57:07.106696: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
-To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-[I 2022-02-07 13:58:16.390 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 13:58:16.391 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:00:16.739 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:00:16.740 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:05:13.032 ServerApp] Kernel interrupted: a0d0b694-6711-477c-9710-d829f7c8b59f
-[I 2022-02-07 14:06:18.354 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:06:18.354 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:08:18.553 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:08:18.553 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[W 2022-02-07 14:10:03.677 ServerApp] Notebook jupyter_notebooks/08.Updated_Pipeline.ipynb is not trusted
-[I 2022-02-07 14:10:05.398 ServerApp] Kernel started: b4aeb54a-5c75-4d79-af17-899d6e9959d4
-[I 2022-02-07 14:10:07.283 ServerApp] Starting buffering for b4aeb54a-5c75-4d79-af17-899d6e9959d4:565df654-34cb-4ace-879c-c72df42c2c25
-[W 2022-02-07 14:10:15.097 ServerApp] Notebook jupyter_notebooks/09. Construct_ML_mapping.ipynb is not trusted
-[I 2022-02-07 14:10:15.708 ServerApp] Kernel started: 039e251d-6446-4570-90ab-abe604944c2a
-[I 2022-02-07 14:10:18.749 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:10:18.749 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:12:18.941 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:12:18.941 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:13:22.240 ServerApp] Creating new notebook in /jupyter_notebooks
-[I 2022-02-07 14:13:22.661 ServerApp] Kernel started: 0e5e80ca-6ede-4190-83a2-b4fb1cdc4efe
-[I 2022-02-07 14:14:19.169 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:14:19.170 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:15:22.520 ServerApp] Saving file at /jupyter_notebooks/Untitled.ipynb
-[I 2022-02-07 14:16:19.366 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:16:19.366 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:17:22.642 ServerApp] Saving file at /jupyter_notebooks/Untitled.ipynb
-[I 2022-02-07 14:18:15.497 ServerApp] Kernel interrupted: a0d0b694-6711-477c-9710-d829f7c8b59f
-[I 2022-02-07 14:18:19.562 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:18:19.563 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:19:22.774 ServerApp] Saving file at /jupyter_notebooks/Untitled.ipynb
-[I 2022-02-07 14:20:19.775 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:20:19.775 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:21:22.967 ServerApp] Saving file at /jupyter_notebooks/Untitled.ipynb
-[I 2022-02-07 14:22:19.993 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:22:19.993 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:24:20.183 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:24:20.183 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:25:23.124 ServerApp] Saving file at /jupyter_notebooks/Untitled.ipynb
-[I 2022-02-07 14:26:20.427 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:26:20.427 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:26:41.038 ServerApp] Kernel interrupted: 0e5e80ca-6ede-4190-83a2-b4fb1cdc4efe
-[I 2022-02-07 14:27:23.295 ServerApp] Saving file at /jupyter_notebooks/Untitled.ipynb
-[I 2022-02-07 14:28:20.658 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:28:20.658 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:29:24.001 ServerApp] Saving file at /jupyter_notebooks/Untitled.ipynb
-[I 2022-02-07 14:30:20.926 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:30:20.926 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:32:21.119 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:32:21.119 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:34:21.320 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:34:21.320 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:36:21.553 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:36:21.554 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:38:21.742 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:38:21.743 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:40:21.940 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:40:21.941 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:42:22.141 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:42:22.141 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:44:22.334 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:44:22.335 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:46:16.639 ServerApp] Kernel interrupted: a0d0b694-6711-477c-9710-d829f7c8b59f
-[I 2022-02-07 14:46:22.564 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:46:22.565 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:48:22.777 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:48:22.777 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:50:22.939 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:50:22.939 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:52:23.157 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:52:23.157 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:54:23.365 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:54:23.366 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:55:35.428 ServerApp] Kernel interrupted: a0d0b694-6711-477c-9710-d829f7c8b59f
-[I 2022-02-07 14:55:36.677 ServerApp] Kernel interrupted: a0d0b694-6711-477c-9710-d829f7c8b59f
-[I 2022-02-07 14:56:23.590 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:56:23.590 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 14:57:24.759 ServerApp] Saving file at /jupyter_notebooks/Untitled.ipynb
-[I 2022-02-07 14:58:23.798 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 14:58:23.798 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 15:02:24.638 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 15:02:24.639 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 15:04:25.558 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 15:04:25.559 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 15:06:26.640 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 15:06:26.640 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 15:08:27.554 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 15:08:27.554 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 15:10:28.695 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 15:10:28.695 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 15:12:29.633 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 15:12:29.634 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 15:14:30.614 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 15:14:30.615 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 15:15:26.843 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 15:15:26.843 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 15:17:27.756 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 15:17:27.756 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 15:30:55.724 ServerApp] Kernel interrupted: a0d0b694-6711-477c-9710-d829f7c8b59f
-[I 2022-02-07 15:31:28.795 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 15:31:28.796 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 15:33:29.909 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 15:33:29.909 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 15:45:12.341 ServerApp] Kernel interrupted: a0d0b694-6711-477c-9710-d829f7c8b59f
-[I 2022-02-07 15:45:13.221 ServerApp] Kernel interrupted: a0d0b694-6711-477c-9710-d829f7c8b59f
-[I 2022-02-07 15:45:30.967 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 15:45:30.967 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 15:47:32.384 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 15:47:32.385 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 15:53:33.828 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 15:53:33.828 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 15:55:34.815 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 15:55:34.815 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 15:57:36.410 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 15:57:36.410 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 16:37:22.636 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 16:37:22.637 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 17:58:24.063 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 17:58:24.063 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-07 18:38:31.570 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-07 18:38:31.570 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-08 05:20:49.474 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-08 05:20:49.475 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-08 05:22:51.210 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-08 05:22:51.211 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-08 05:24:55.004 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-08 05:24:55.005 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-08 05:26:57.564 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-08 05:26:57.564 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-08 05:30:44.752 ServerApp] Copying jupyter_notebooks/11.Sequential_NN.ipynb to /jupyter_notebooks
-[W 2022-02-08 05:30:44.848 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[W 2022-02-08 05:30:44.905 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN-Copy1.ipynb is not trusted
-[W 2022-02-08 05:30:47.907 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN-Copy1.ipynb is not trusted
-[I 2022-02-08 05:30:49.926 ServerApp] Kernel started: 117835f5-aaed-4a80-9ad9-d34707869259
-[I 2022-02-08 05:30:55.279 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN.ipynb
-[W 2022-02-08 05:30:55.280 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN.ipynb is not trusted
-[I 2022-02-08 05:32:02.202 ServerApp] Kernel shutdown: 0e5e80ca-6ede-4190-83a2-b4fb1cdc4efe
-[W 2022-02-08 05:32:03.041 ServerApp] delete /jupyter_notebooks/Untitled.ipynb
-[W 2022-02-08 05:32:03.041 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/Untitled.ipynb, on different device to home directory
-[I 2022-02-08 05:32:50.528 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN-scratchspace.ipynb
-[W 2022-02-08 05:32:50.528 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN-scratchspace.ipynb is not trusted
-2022-02-08 05:33:25.581667: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcusolver.so.11'; dlerror: libcusolver.so.11: cannot open shared object file: No such file or directory
-2022-02-08 05:33:25.582295: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1850] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
-Skipping registering GPU devices...
-2022-02-08 05:33:25.582966: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
-To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-[I 2022-02-08 05:34:52.403 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN-scratchspace.ipynb
-[W 2022-02-08 05:34:52.403 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN-scratchspace.ipynb is not trusted
-[I 2022-02-08 05:36:54.120 ServerApp] Saving file at /jupyter_notebooks/11.Sequential_NN-scratchspace.ipynb
-[W 2022-02-08 05:36:54.121 ServerApp] Notebook jupyter_notebooks/11.Sequential_NN-scratchspace.ipynb is not trusted
-[W 2022-02-08 07:23:16.283 ServerApp] WebSocket ping timeout after 114142 ms.
-[W 2022-02-08 07:23:18.203 ServerApp] WebSocket ping timeout after 116062 ms.
-[W 2022-02-08 07:23:18.203 ServerApp] WebSocket ping timeout after 116061 ms.
-[I 2022-02-08 07:23:21.285 ServerApp] Starting buffering for 039e251d-6446-4570-90ab-abe604944c2a:3046a6d3-9251-42ae-9a63-d57f180a139b
-[W 2022-02-08 07:23:22.686 ServerApp] WebSocket ping timeout after 119747 ms.
-[I 2022-02-08 07:23:23.203 ServerApp] Starting buffering for a0d0b694-6711-477c-9710-d829f7c8b59f:03e53cc1-c211-45cc-a7ae-c48b0ed47900
-[I 2022-02-08 07:23:27.688 ServerApp] Starting buffering for 117835f5-aaed-4a80-9ad9-d34707869259:dd4d3b0c-fc91-4ccd-bf5f-519fc198ebfb
+[I 2022-03-10 17:19:00.850 ServerApp] jupyterlab | extension was successfully linked.
+[I 2022-03-10 17:19:00.860 ServerApp] nbclassic | extension was successfully linked.
+[I 2022-03-10 17:19:01.317 ServerApp] notebook_shim | extension was successfully linked.
+[I 2022-03-10 17:19:01.774 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2022-03-10 17:19:01.775 LabApp] JupyterLab extension loaded from /home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyterlab
+[I 2022-03-10 17:19:01.775 LabApp] JupyterLab application directory is /home/k/kimpson/bin/conda/envs/GPU/share/jupyter/lab
+[I 2022-03-10 17:19:01.779 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2022-03-10 17:19:01.902 ServerApp] nbclassic | extension was successfully loaded.
+[I 2022-03-10 17:19:01.902 ServerApp] Serving notebooks from local directory: /network/aopp/chaos/pred/kimpson/ML4L
+[I 2022-03-10 17:19:01.902 ServerApp] Jupyter Server 1.13.5 is running at:
+[I 2022-03-10 17:19:01.902 ServerApp] http://localhost:9168/lab
+[I 2022-03-10 17:19:01.902 ServerApp]  or http://127.0.0.1:9168/lab
+[I 2022-03-10 17:19:01.902 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 2022-03-10 17:25:26.042 ServerApp] 302 GET / (127.0.0.1) 0.40ms
+[W 2022-03-10 17:25:29.084 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-03-10 17:25:30.837 ServerApp] Notebook jupyter_notebooks/15.Sequential_NN_more_features.ipynb is not trusted
+[I 2022-03-10 17:26:15.348 ServerApp] Kernel started: 46cb05db-8d2b-490d-8917-564fe9c58c04
+[I 2022-03-10 17:26:15.349 ServerApp] Kernel started: 1d63ad6d-1216-4763-95f2-84760c006563
+[I 2022-03-10 17:26:15.358 ServerApp] Kernel started: bb1ba89f-ff29-4e33-83fb-b97279ec9e0c
+[W 2022-03-10 17:26:23.034 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-10 17:26:24.901 ServerApp] Kernel started: 36432d26-3c9c-48ed-ac35-bdcc28c1663d
+[I 2022-03-10 17:28:23.816 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-10 17:28:23.817 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-10 17:30:24.131 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-10 17:30:24.131 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-10 17:32:24.348 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-10 17:32:24.348 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-10 17:34:24.591 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-10 17:34:24.591 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-10 17:36:24.816 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-10 17:36:24.817 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-10 17:38:25.166 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-10 17:38:25.166 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-10 17:40:16.494 ServerApp] Creating new notebook in /jupyter_notebooks
+[I 2022-03-10 17:40:17.003 ServerApp] Kernel started: 39c1020d-4446-44c8-862f-ddd58fe736d5
+[I 2022-03-10 17:40:25.473 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-10 17:40:25.473 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[W 2022-03-10 17:42:16.734 ServerApp] 404 GET /api/contents/jupyter_notebooks/Untitled2.ipynb?content=0&1646934136709 (127.0.0.1): No such file or directory: jupyter_notebooks/Untitled2.ipynb
+[W 2022-03-10 17:42:16.734 ServerApp] No such file or directory: jupyter_notebooks/Untitled2.ipynb
+[W 2022-03-10 17:42:16.734 ServerApp] 404 GET /api/contents/jupyter_notebooks/Untitled2.ipynb?content=0&1646934136709 (127.0.0.1) 1.49ms referer=http://localhost:8884/lab/tree/jupyter_notebooks/Untitled2.ipynb
+[I 2022-03-10 17:42:16.754 ServerApp] Uploading file to /jupyter_notebooks/Untitled2.ipynb
+[I 2022-03-10 17:44:45.297 ServerApp] Kernel restarted: 39c1020d-4446-44c8-862f-ddd58fe736d5
+[I 2022-03-10 17:44:45.303 ServerApp] Starting buffering for 39c1020d-4446-44c8-862f-ddd58fe736d5:4737bb9d-9130-44e8-b1e7-f1fa4e5214e4
+[I 2022-03-10 17:44:45.315 ServerApp] Restoring connection for 39c1020d-4446-44c8-862f-ddd58fe736d5:4737bb9d-9130-44e8-b1e7-f1fa4e5214e4
+[W 2022-03-10 17:45:08.339 ServerApp] Notebook jupyter_notebooks/legacy/01. Toy_Example.ipynb is not trusted
+[I 2022-03-10 17:45:09.806 ServerApp] Kernel started: 1b022a84-2576-44d8-b7fa-1053e06ad888
+[I 2022-03-10 17:46:16.792 ServerApp] Saving file at /jupyter_notebooks/Untitled2.ipynb
+[I 2022-03-10 17:48:16.829 ServerApp] Saving file at /jupyter_notebooks/Untitled2.ipynb
+[I 2022-03-10 17:50:17.106 ServerApp] Saving file at /jupyter_notebooks/Untitled2.ipynb
+[I 2022-03-10 17:52:17.176 ServerApp] Saving file at /jupyter_notebooks/Untitled2.ipynb
+[I 2022-03-10 17:54:17.249 ServerApp] Saving file at /jupyter_notebooks/Untitled2.ipynb
+[I 2022-03-10 17:56:17.312 ServerApp] Saving file at /jupyter_notebooks/Untitled2.ipynb
+[I 2022-03-10 17:58:17.402 ServerApp] Saving file at /jupyter_notebooks/Untitled2.ipynb
+[I 2022-03-10 18:00:25.765 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-10 18:00:25.766 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-10 18:02:17.476 ServerApp] Saving file at /jupyter_notebooks/Untitled2.ipynb
+[I 2022-03-10 18:02:26.076 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-10 18:02:26.077 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-10 18:04:26.341 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-10 18:04:26.342 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-10 18:04:46.327 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-10 18:04:46.328 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-10 18:06:46.691 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-10 18:06:46.692 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-10 18:08:47.091 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-10 18:08:47.091 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-10 18:10:47.372 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-10 18:10:47.372 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-10 18:11:59.275 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-10 18:11:59.275 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-10 18:13:59.572 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-10 18:13:59.572 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-10 18:16:17.723 ServerApp] Saving file at /jupyter_notebooks/Untitled2.ipynb
+[W 2022-03-10 18:21:40.369 ServerApp] WebSocket ping timeout after 119997 ms.
+[W 2022-03-10 18:21:45.316 ServerApp] WebSocket ping timeout after 119998 ms.
+[I 2022-03-10 18:21:45.370 ServerApp] Starting buffering for 1b022a84-2576-44d8-b7fa-1053e06ad888:769f7a89-09ad-4e86-b1e0-07c83addb887
+[W 2022-03-10 18:21:46.333 ServerApp] WebSocket ping timeout after 119999 ms.
+[W 2022-03-10 18:21:46.333 ServerApp] WebSocket ping timeout after 119998 ms.
+[W 2022-03-10 18:21:46.363 ServerApp] WebSocket ping timeout after 119998 ms.
+[W 2022-03-10 18:21:46.432 ServerApp] WebSocket ping timeout after 119986 ms.
+[I 2022-03-10 18:21:50.319 ServerApp] Starting buffering for 39c1020d-4446-44c8-862f-ddd58fe736d5:4737bb9d-9130-44e8-b1e7-f1fa4e5214e4
+[I 2022-03-10 18:21:51.334 ServerApp] Starting buffering for bb1ba89f-ff29-4e33-83fb-b97279ec9e0c:77114bc8-4fea-49e6-b481-0993fa400033
+[I 2022-03-10 18:21:51.363 ServerApp] Starting buffering for 46cb05db-8d2b-490d-8917-564fe9c58c04:a422636a-244f-48ba-8194-846afc89acd3
+[I 2022-03-10 18:21:51.432 ServerApp] Starting buffering for 1d63ad6d-1216-4763-95f2-84760c006563:68ee9380-9676-4646-b167-ebbcfa0f1a35
+[W 2022-03-10 18:21:55.421 ServerApp] WebSocket ping timeout after 119996 ms.
+[I 2022-03-10 18:21:55.422 ServerApp] Starting buffering for 36432d26-3c9c-48ed-ac35-bdcc28c1663d:718d9872-75bc-4cca-bb71-06b08d131ed3
+[I 2022-03-11 16:33:15.806 ServerApp] 302 GET / (127.0.0.1) 0.53ms
+[W 2022-03-11 16:33:17.967 ServerApp] 404 GET /apple-touch-icon-precomposed.png (127.0.0.1) 328.95ms referer=None
+[W 2022-03-11 16:33:17.984 ServerApp] 404 GET /apple-touch-icon.png (127.0.0.1) 0.65ms referer=None
+[W 2022-03-11 16:33:23.158 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-03-11 16:34:31.657 ServerApp] Notebook jupyter_notebooks/15.Sequential_NN_more_features.ipynb is not trusted
+[W 2022-03-11 16:34:31.863 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[W 2022-03-11 16:34:32.189 ServerApp] Notebook jupyter_notebooks/legacy/01. Toy_Example.ipynb is not trusted
+[I 2022-03-11 16:34:41.529 ServerApp] Starting buffering for 1d63ad6d-1216-4763-95f2-84760c006563:178aeec4-3b1b-49b6-9b85-d017a2f3257d
+[I 2022-03-11 16:34:42.348 ServerApp] Starting buffering for 46cb05db-8d2b-490d-8917-564fe9c58c04:809d18e7-b446-49d0-8eda-b128a09c3c30
+[I 2022-03-11 16:34:43.053 ServerApp] Starting buffering for 36432d26-3c9c-48ed-ac35-bdcc28c1663d:2154be69-7713-4903-83ac-00a2e5325afa
+[I 2022-03-11 16:34:43.917 ServerApp] Starting buffering for bb1ba89f-ff29-4e33-83fb-b97279ec9e0c:e1317121-6f39-4b75-b258-67a26397f041
+[I 2022-03-11 16:34:44.337 ServerApp] Starting buffering for 39c1020d-4446-44c8-862f-ddd58fe736d5:82fec791-50fd-483f-8bfb-073c21efdc30
+[I 2022-03-11 16:34:48.469 ServerApp] Starting buffering for 1b022a84-2576-44d8-b7fa-1053e06ad888:1d2cfcab-1197-4d51-a9c7-142863397898
+[W 2022-03-11 16:34:54.054 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 16:35:06.056 ServerApp] Kernel started: dbce332e-e7da-4a4a-bd0d-8186cd1113d1
+[I 2022-03-11 16:37:11.571 ServerApp] Saving file at /jupyter_notebooks/Explore_ERA_data.ipynb
+[I 2022-03-11 16:37:20.054 ServerApp] Saving file at /jupyter_notebooks/Untitled2.ipynb
+[I 2022-03-11 16:39:54.800 ServerApp] Kernel interrupted: 39c1020d-4446-44c8-862f-ddd58fe736d5
+[I 2022-03-11 16:46:01.291 ServerApp] Copying jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb to /jupyter_notebooks
+[W 2022-03-11 16:46:01.343 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[W 2022-03-11 16:46:01.378 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[W 2022-03-11 16:46:02.781 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-11 16:46:05.012 ServerApp] Kernel started: cc77a089-4975-41a9-b941-909627e9f545
+[I 2022-03-11 16:47:20.610 ServerApp] Saving file at /jupyter_notebooks/Untitled2.ipynb
+[I 2022-03-11 16:48:04.829 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-11 16:48:04.830 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-11 16:54:06.250 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-11 16:54:06.251 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-11 16:54:24.200 ServerApp] Starting buffering for cc77a089-4975-41a9-b941-909627e9f545:72af07e0-4287-41f7-aa97-b2c6553edecc
+[I 2022-03-11 16:55:40.981 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 16:55:40.981 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 16:57:42.422 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 16:57:42.423 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 16:59:43.831 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 16:59:43.832 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[W 2022-03-11 16:59:44.822 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-11 17:01:45.325 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:01:45.326 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:03:46.748 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:03:46.749 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:09:49.747 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:09:49.748 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:11:51.483 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:11:51.484 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:13:53.126 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:13:53.127 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:15:56.318 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:15:56.319 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:17:57.923 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:17:57.923 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:19:59.651 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:19:59.652 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:20:13.533 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:20:13.534 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:22:15.023 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:22:15.023 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:24:16.533 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:24:16.534 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:26:18.010 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:26:18.010 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:28:19.802 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:28:19.803 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:30:20.833 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:30:20.834 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:32:21.851 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:32:21.851 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:34:23.487 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:34:23.487 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:36:24.535 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:36:24.536 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:38:26.302 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:38:26.303 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:40:27.718 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:40:27.718 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:42:29.036 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:42:29.036 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:44:30.490 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:44:30.490 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:46:32.079 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:46:32.080 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:48:33.731 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:48:33.732 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:52:35.564 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:52:35.565 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:54:37.423 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:54:37.423 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:56:38.510 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:56:38.510 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:58:39.260 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:58:39.260 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 17:59:56.942 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 17:59:56.943 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 18:03:57.744 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 18:03:57.744 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 18:05:58.774 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 18:05:58.775 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 18:07:59.589 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 18:07:59.590 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 18:10:00.636 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 18:10:00.637 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 18:12:01.391 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 18:12:01.392 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 18:14:02.499 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 18:14:02.500 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 18:16:03.751 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 18:16:03.751 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 18:20:04.541 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 18:20:04.541 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 18:22:05.476 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 18:22:05.477 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 18:24:06.138 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 18:24:06.139 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 18:26:07.069 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 18:26:07.069 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 18:30:07.874 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 18:30:07.874 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 18:32:08.949 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 18:32:08.949 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 18:42:09.747 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 18:42:09.747 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 18:44:10.782 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 18:44:10.782 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 18:46:12.126 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 18:46:12.126 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 18:50:13.305 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 18:50:13.306 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-11 18:52:14.596 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-11 18:52:14.597 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[W 2022-03-11 18:53:47.840 ServerApp] WebSocket ping timeout after 119882 ms.
+[W 2022-03-11 18:53:50.393 ServerApp] WebSocket ping timeout after 119985 ms.
+[I 2022-03-11 18:53:52.844 ServerApp] Starting buffering for cc77a089-4975-41a9-b941-909627e9f545:3949a548-51d7-4ba4-bc36-f685196c1c99
+[I 2022-03-11 18:53:55.394 ServerApp] Starting buffering for 39c1020d-4446-44c8-862f-ddd58fe736d5:6be01e40-2ce0-498d-9034-abed9e667bf0
+[W 2022-03-11 18:53:56.020 ServerApp] WebSocket ping timeout after 119870 ms.
+[I 2022-03-11 18:54:01.021 ServerApp] Starting buffering for 36432d26-3c9c-48ed-ac35-bdcc28c1663d:c984bca6-d9c2-4c32-a664-b1555336975d
+[W 2022-03-11 18:54:09.010 ServerApp] WebSocket ping timeout after 119853 ms.
+[W 2022-03-11 18:54:12.739 ServerApp] WebSocket ping timeout after 119899 ms.
+[W 2022-03-11 18:54:12.740 ServerApp] WebSocket ping timeout after 119885 ms.
+[I 2022-03-11 18:54:14.011 ServerApp] Starting buffering for bb1ba89f-ff29-4e33-83fb-b97279ec9e0c:d3c35f7b-9fd7-46c1-89bc-0121e7d2bc57
+[I 2022-03-11 18:54:17.742 ServerApp] Starting buffering for dbce332e-e7da-4a4a-bd0d-8186cd1113d1:1c54cb80-b249-467c-a041-19183e212814
+[I 2022-03-11 22:20:08.193 ServerApp] Restoring connection for bb1ba89f-ff29-4e33-83fb-b97279ec9e0c:d3c35f7b-9fd7-46c1-89bc-0121e7d2bc57
+[I 2022-03-11 22:20:12.929 ServerApp] Restoring connection for cc77a089-4975-41a9-b941-909627e9f545:3949a548-51d7-4ba4-bc36-f685196c1c99
+[I 2022-03-11 22:20:14.427 ServerApp] Restoring connection for 36432d26-3c9c-48ed-ac35-bdcc28c1663d:c984bca6-d9c2-4c32-a664-b1555336975d
+[I 2022-03-11 22:20:17.718 ServerApp] Restoring connection for 39c1020d-4446-44c8-862f-ddd58fe736d5:6be01e40-2ce0-498d-9034-abed9e667bf0
+[I 2022-03-11 22:20:51.045 ServerApp] Starting buffering for 36432d26-3c9c-48ed-ac35-bdcc28c1663d:c984bca6-d9c2-4c32-a664-b1555336975d
+[I 2022-03-11 22:20:51.045 ServerApp] Starting buffering for bb1ba89f-ff29-4e33-83fb-b97279ec9e0c:d3c35f7b-9fd7-46c1-89bc-0121e7d2bc57
+[I 2022-03-11 22:20:51.046 ServerApp] Starting buffering for 39c1020d-4446-44c8-862f-ddd58fe736d5:6be01e40-2ce0-498d-9034-abed9e667bf0
+[I 2022-03-11 22:20:51.046 ServerApp] Starting buffering for dbce332e-e7da-4a4a-bd0d-8186cd1113d1:1c54cb80-b249-467c-a041-19183e212814
+[I 2022-03-11 22:20:51.046 ServerApp] Starting buffering for cc77a089-4975-41a9-b941-909627e9f545:3949a548-51d7-4ba4-bc36-f685196c1c99
+[W 2022-03-11 22:20:59.605 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-03-11 22:21:00.191 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[W 2022-03-11 22:21:00.393 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[W 2022-03-12 00:09:02.802 ServerApp] WebSocket ping timeout after 119933 ms.
+[W 2022-03-12 00:09:02.802 ServerApp] WebSocket ping timeout after 119934 ms.
+[W 2022-03-12 00:09:02.803 ServerApp] WebSocket ping timeout after 119920 ms.
+[I 2022-03-12 00:09:02.803 ServerApp] Starting buffering for bb1ba89f-ff29-4e33-83fb-b97279ec9e0c:0363060f-5772-4afe-95ee-9e68962ebd4f
+[I 2022-03-12 00:09:02.804 ServerApp] Starting buffering for cc77a089-4975-41a9-b941-909627e9f545:8dfba6d5-294e-4146-b6d1-d92a56fa6b8e
+[I 2022-03-12 00:09:02.804 ServerApp] Starting buffering for dbce332e-e7da-4a4a-bd0d-8186cd1113d1:33c1796d-de0d-45ee-bca8-2926428bdd16
+[I 2022-03-12 00:09:02.804 ServerApp] Starting buffering for 36432d26-3c9c-48ed-ac35-bdcc28c1663d:febc64f6-847a-44c7-b07a-027745a7d625
+[I 2022-03-12 00:09:02.804 ServerApp] Starting buffering for 39c1020d-4446-44c8-862f-ddd58fe736d5:50cdd60d-add2-4417-b8b6-a2b4a17e85ef
+[W 2022-03-12 12:28:50.392 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-03-12 12:28:51.269 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[W 2022-03-12 12:28:51.445 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 12:29:52.110 ServerApp] Starting buffering for cc77a089-4975-41a9-b941-909627e9f545:bdaa1c4c-0c00-4d9f-9bd6-b0c1e2c85288
+[I 2022-03-12 12:29:56.406 ServerApp] Kernel shutdown: cc77a089-4975-41a9-b941-909627e9f545
+[W 2022-03-12 12:29:57.158 ServerApp] delete /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 12:29:57.158 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb, on different device to home directory
+[I 2022-03-12 12:30:01.446 ServerApp] Starting buffering for bb1ba89f-ff29-4e33-83fb-b97279ec9e0c:37b2ea3d-f9b1-4207-994c-1475d1efaab9
+[I 2022-03-12 12:30:02.050 ServerApp] Starting buffering for dbce332e-e7da-4a4a-bd0d-8186cd1113d1:738976b7-34ca-4346-9970-3c8f04ccb95a
+[I 2022-03-12 12:30:02.436 ServerApp] Starting buffering for 39c1020d-4446-44c8-862f-ddd58fe736d5:adfd9139-916c-4ea1-bdb3-240d03e5856c
+[I 2022-03-12 12:30:53.176 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-12 12:30:53.177 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-12 12:32:54.461 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-12 12:32:54.461 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-12 12:34:55.821 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-12 12:34:55.821 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-12 12:36:56.966 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-12 12:36:56.966 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-12 12:38:58.287 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-12 12:38:58.288 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-12 12:41:04.500 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-12 12:41:04.500 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-12 12:43:05.258 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-12 12:43:05.258 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-12 12:45:07.516 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-12 12:45:07.516 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-12 12:45:15.214 ServerApp] Saving file at /scripts/join_MODIS_with_ERA.py
+[I 2022-03-12 12:47:15.319 ServerApp] Saving file at /scripts/join_MODIS_with_ERA.py
+[I 2022-03-12 12:48:30.713 ServerApp] Saving file at /scripts/join_MODIS_with_ERA.py
+[I 2022-03-12 12:48:30.907 ServerApp] Saving file at /scripts/join_MODIS_with_ERA.py
+[I 2022-03-12 12:49:08.783 ServerApp] Saving file at /scripts/join_MODIS_with_ERA.py
+[I 2022-03-12 12:49:08.962 ServerApp] Saving file at /scripts/join_MODIS_with_ERA.py
+[I 2022-03-12 12:50:19.853 ServerApp] Saving file at /scripts/join_MODIS_with_ERA.py
+[I 2022-03-12 12:50:20.011 ServerApp] Saving file at /scripts/join_MODIS_with_ERA.py
+[I 2022-03-12 12:50:54.530 ServerApp] Saving file at /scripts/join_MODIS_with_ERA.py
+[I 2022-03-12 12:50:54.845 ServerApp] Saving file at /scripts/join_MODIS_with_ERA.py
+[I 2022-03-12 12:51:09.805 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb
+[W 2022-03-12 12:51:09.806 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[I 2022-03-12 12:51:36.523 ServerApp] Saving file at /scripts/join_MODIS_with_ERA.py
+[I 2022-03-12 12:53:18.414 ServerApp] Saving file at /scripts/join_MODIS_with_ERA.py
+[I 2022-03-12 12:53:18.614 ServerApp] Saving file at /scripts/join_MODIS_with_ERA.py
+[I 2022-03-12 12:54:28.765 ServerApp] Saving file at /scripts/join_MODIS_with_ERA.py
+[I 2022-03-12 12:55:53.195 ServerApp] Copying jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb to /jupyter_notebooks
+[W 2022-03-12 12:55:53.240 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[W 2022-03-12 12:55:53.273 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[W 2022-03-12 12:55:55.408 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 12:55:58.289 ServerApp] Kernel started: 50be731a-9f33-4f48-991b-8ac89f849395
+[I 2022-03-12 12:58:35.261 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 12:58:35.262 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:00:37.555 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:00:37.556 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:01:11.275 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:01:11.276 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:01:13.176 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:01:13.176 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:01:14.935 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:01:14.936 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:01:16.580 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:01:16.581 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:03:18.898 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:03:18.898 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:05:21.187 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:05:21.187 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:07:23.458 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:07:23.458 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:09:25.611 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:09:25.611 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:11:26.884 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:11:26.885 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:13:29.231 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:13:29.232 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:15:31.593 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:15:31.594 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:17:33.447 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:17:33.448 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:19:35.803 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:19:35.803 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:21:38.194 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:21:38.195 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:23:40.537 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:23:40.538 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:25:42.902 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:25:42.903 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:27:45.266 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:27:45.266 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:29:47.381 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:29:47.382 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:31:48.946 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:31:48.947 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:33:52.070 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:33:52.070 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:35:54.691 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:35:54.692 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:37:57.529 ServerApp] Saving file at /jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb
+[W 2022-03-12 13:37:57.529 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF-Copy1.ipynb is not trusted
+[I 2022-03-12 13:40:00.379 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb
+[W 2022-03-12 13:40:00.380 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb is not trusted
+[I 2022-03-12 13:42:03.245 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb
+[W 2022-03-12 13:42:03.246 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb is not trusted
+[I 2022-03-12 13:44:06.153 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb
+[W 2022-03-12 13:44:06.153 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb is not trusted
+[I 2022-03-12 13:46:08.268 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb
+[W 2022-03-12 13:46:08.268 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb is not trusted
+[I 2022-03-12 13:48:10.124 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb
+[W 2022-03-12 13:48:10.124 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb is not trusted
+[I 2022-03-12 13:50:11.976 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb
+[W 2022-03-12 13:50:11.977 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb is not trusted
+[I 2022-03-12 13:56:00.234 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb
+[W 2022-03-12 13:56:00.234 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb is not trusted
+[I 2022-03-12 13:58:01.284 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb
+[W 2022-03-12 13:58:01.284 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb is not trusted
+[I 2022-03-12 15:00:19.650 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb
+[W 2022-03-12 15:00:19.650 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb is not trusted
+[W 2022-03-12 15:06:28.037 ServerApp] Notebook jupyter_notebooks/Untitled.ipynb is not trusted
+[I 2022-03-12 15:06:28.613 ServerApp] Kernel started: 00c03f1d-a0e6-4f13-a7ef-d6f6856073ec
+[I 2022-03-12 15:06:55.375 ServerApp] Copying jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb to /jupyter_notebooks
+[W 2022-03-12 15:06:55.417 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb is not trusted
+[W 2022-03-12 15:06:55.449 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[W 2022-03-12 15:06:56.843 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:07:00.059 ServerApp] Kernel started: 24404a57-01e5-4fd9-8d0f-c181e4a72205
+[I 2022-03-12 15:08:31.488 ServerApp] Saving file at /jupyter_notebooks/Untitled.ipynb
+[I 2022-03-12 15:09:02.305 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:09:02.306 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:11:03.321 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:11:03.321 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:13:09.042 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:13:09.043 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:15:10.127 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:15:10.128 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:17:11.269 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:17:11.270 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:19:12.330 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:19:12.331 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:23:13.376 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:23:13.377 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:25:14.408 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:25:14.409 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:27:15.436 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:27:15.437 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:29:16.491 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:29:16.491 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:31:17.627 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:31:17.627 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:33:18.757 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:33:18.758 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:35:19.823 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:35:19.824 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:37:20.958 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:37:20.958 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:41:21.994 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:41:21.995 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:43:23.079 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:43:23.079 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:45:24.306 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:45:24.306 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:47:25.550 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:47:25.550 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:49:26.711 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:49:26.711 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:51:27.945 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:51:27.945 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:53:29.184 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:53:29.185 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:55:30.429 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:55:30.429 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:57:31.669 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:57:31.670 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 15:59:32.940 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 15:59:32.941 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 16:01:34.106 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 16:01:34.107 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 16:03:35.276 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 16:03:35.277 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 16:05:36.468 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 16:05:36.468 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 16:07:37.642 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 16:07:37.643 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 16:09:38.934 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 16:09:38.935 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 16:11:40.187 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 16:11:40.188 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 16:23:41.429 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 16:23:41.430 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 16:25:42.657 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 16:25:42.657 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 16:27:43.883 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 16:27:43.883 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 16:31:45.123 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 16:31:45.124 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 16:33:46.377 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 16:33:46.377 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 16:35:47.625 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 16:35:47.626 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 16:37:48.815 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 16:37:48.816 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 16:39:49.997 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 16:39:49.998 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 16:41:51.248 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 16:41:51.249 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 19:23:44.438 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 19:23:44.439 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 19:23:45.613 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 19:23:45.614 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 19:25:46.783 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 19:25:46.784 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 19:27:47.975 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 19:27:47.976 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 19:29:49.206 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 19:29:49.206 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 19:31:50.484 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 19:31:50.484 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 19:33:51.675 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 19:33:51.676 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 19:35:52.742 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 19:35:52.743 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 19:37:53.027 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[W 2022-03-12 19:37:53.027 ServerApp] Notebook jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb is not trusted
+[I 2022-03-12 19:39:53.417 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[I 2022-03-12 19:41:53.533 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[I 2022-03-12 19:43:54.073 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method-Copy1.ipynb
+[I 2022-03-12 19:44:02.875 ServerApp] Kernel shutdown: 50be731a-9f33-4f48-991b-8ac89f849395
+[W 2022-03-12 19:44:05.667 ServerApp] delete /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb
+[W 2022-03-12 19:44:05.667 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb, on different device to home directory
+[I 2022-03-12 19:45:54.680 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb
+[I 2022-03-12 19:47:55.282 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb
+[I 2022-03-12 19:49:55.901 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb
+[I 2022-03-12 19:51:56.499 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_Alternate_method.ipynb
+[I 2022-03-12 19:55:26.197 ServerApp] Saving file at /scripts/join_MODIS_with_ERA.py
+[I 2022-03-12 19:55:26.682 ServerApp] Saving file at /scripts/join_MODIS_with_ERA.py
+[I 2022-03-12 19:57:03.360 ServerApp] Saving file at /scripts/join_MODIS_with_ERA.py
