@@ -2,7 +2,7 @@ import xarray as xr
 import rioxarray
 import pandas as pd
 import numpy as np
-
+import faiss
 from scipy.interpolate import griddata
 from sklearn.neighbors import NearestNeighbors
 from datetime import timedelta, date
@@ -250,6 +250,64 @@ def faiss_knn(database,query):
     return df_grouped
 
 
+
+    
+def faiss_knn_swp(database,query):
+    
+    """
+    Use faiss library (https://github.com/facebookresearch/faiss) for fass k-nearest neighbours on GPU
+    
+    Note that the nearness is an L2 (squared) norm on the lat/long coordinates, rather than a haversine metric
+    """
+    
+    #Database
+    xb = database[["latitude", "longitude"]].to_numpy().astype('float32')
+    xb = xb.copy(order='C') #C-contigious
+    
+    #Query
+    xq = query[["latitude", "longitude"]].to_numpy().astype('float32') 
+    xq = xq.copy(order='C')
+    
+    #Create index
+    d = 2                            # dimension
+    res = faiss.StandardGpuResources()
+    index_flat = faiss.IndexFlatL2(d) #index
+    gpu_index_flat = faiss.index_cpu_to_gpu(res, 0, index_flat) # make it into a gpu index
+    gpu_index_flat.add(xb)  
+    
+    #Search
+    k = 1                          # we want to see 1 nearest neighbors
+    distances, indices = gpu_index_flat.search(xq, k)
+    
+
+    #Combine into a single df with all data
+    df = query.reset_index().join(database.iloc[indices.flatten()].reset_index(), lsuffix='_ERA',rsuffix='_MODIS')
+    df['L2_distance'] = distances
+    df['MODIS_idx'] = indices
+    df['H_distance'] = haver(df['latitude_MODIS'],df['longitude_MODIS'],df['latitude_ERA'],df['longitude_ERA']) #Haversine distance
+    
+    
+    #Filter out any large distances
+    tolerance = 50 #km
+    df_filtered = df.query('H_distance < %.9f' % tolerance)
+
+
+  
+
+    
+    return df_filtered
+
+
+
+
+
+
+
+
+
+
+
+
 def haver(lat1_deg,lon1_deg,lat2_deg,lon2_deg):
     
     """
@@ -305,6 +363,9 @@ def pipeline(date,utc_hour,satellite,latitude_bound,ERA_fields,tolerance,method)
     
     ERA_df_land = filter_out_sea(ERA) #just the land values
     
+    if ERA_df_land.empty:
+        return pd.DataFrame()
+    
 
     #Explicitly deallocate everything
     MODIS.close()
@@ -318,9 +379,10 @@ def pipeline(date,utc_hour,satellite,latitude_bound,ERA_fields,tolerance,method)
     #Combine
     if method == 'sklearn':
         df_sk = find_closest_match_sklearn(MODIS_df,ERA_df_land,tolerance)
-    if method == 'faiss'
+    if method == 'faiss':
         df_sk = faiss_knn(ERA_df_land,MODIS_df.dropna())
-    
+    if method == 'faiss_swp':
+        df_sk = faiss_knn_swp(MODIS_df.dropna(),ERA_df_land)
     
     return df_sk       
         
@@ -330,20 +392,22 @@ def pipeline(date,utc_hour,satellite,latitude_bound,ERA_fields,tolerance,method)
 
 
 #Parameters
-start_date = date(2018, 1, 2)
+#start_date = date(2018, 1, 2)
+start_date = date(2020, 8, 20)
 end_date   = date(2020, 12, 30)
 dates = daterange(start_date,end_date)
-
 hours = np.arange(0,24)
+
 
 
 satellite='aquaDay'
 latitude_bound=70
 ERA_fields = None 
 tolerance = 50 #km
+method = 'faiss_swp'
 
 #Path for where to ouput saved files
-IO_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/joined_ML_data_faiss/'
+IO_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/joined_ML_data_faiss_swp/'
 
 print ("-------------------------")
 print ('Starting MODIS-ERA joining with the following parameters')
@@ -357,5 +421,5 @@ for dt in dates:
     for h in hours:
         fname = satellite + '_'+str(d)+'_'+str(h)+'H_'+str(latitude_bound)+'L_'+str(tolerance)+'T.pkl'
         print(fname)
-        df = pipeline(d,h,satellite,latitude_bound,ERA_fields,tolerance)
+        df = pipeline(d,h,satellite,latitude_bound,ERA_fields,tolerance,method)
         df.to_pickle(IO_path+fname)
