@@ -37,3 +37,17 @@
 [I 2022-03-18 10:32:30.016 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss.ipynb
 [I 2022-03-18 10:34:30.706 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss.ipynb
 [I 2022-03-18 10:36:35.939 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss.ipynb
+[I 2022-03-18 10:47:00.326 ServerApp] Saving file at /jupyter_notebooks/00. Summary.ipynb
+[I 2022-03-18 10:49:01.385 ServerApp] Saving file at /jupyter_notebooks/00. Summary.ipynb
+[I 2022-03-18 10:49:02.875 ServerApp] Saving file at /jupyter_notebooks/05. Plot_Model.ipynb
+[W 2022-03-18 10:49:02.875 ServerApp] Notebook jupyter_notebooks/05. Plot_Model.ipynb is not trusted
+[I 2022-03-18 10:51:03.223 ServerApp] Saving file at /jupyter_notebooks/05. Plot_Model.ipynb
+[I 2022-03-18 10:51:16.287 ServerApp] Kernel started: f190b70a-2531-44f3-889f-82ca62e293db
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 52e5db5c-1af2-49bf-aaf3-1c593aea7a62
+[I 2022-03-18 10:51:27.017 ServerApp] Kernel started: 0e7062bf-d5c0-413e-b55e-1f04946f62a9
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: e3ef85d8-e568-424f-9389-b332bab0d604
+[I 2022-03-18 10:53:08.648 ServerApp] Saving file at /jupyter_notebooks/05. Plot_Model.ipynb
+[I 2022-03-18 10:55:12.022 ServerApp] Saving file at /jupyter_notebooks/05. Plot_Model.ipynb
+[I 2022-03-18 10:57:15.952 ServerApp] Saving file at /jupyter_notebooks/05. Plot_Model.ipynb
