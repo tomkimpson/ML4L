@@ -1,5 +1,0 @@
-input_file: /network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/MODIS_ERA_joined_data_averaged.pkl
-train_condition: 2019-01-01 00:00:00
-test_condition: 2020-01-01 00:00:00
-epochs: 100
-batch_size: 100000

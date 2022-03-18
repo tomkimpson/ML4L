@@ -51,3 +51,119 @@
 [I 2022-03-18 10:53:08.648 ServerApp] Saving file at /jupyter_notebooks/05. Plot_Model.ipynb
 [I 2022-03-18 10:55:12.022 ServerApp] Saving file at /jupyter_notebooks/05. Plot_Model.ipynb
 [I 2022-03-18 10:57:15.952 ServerApp] Saving file at /jupyter_notebooks/05. Plot_Model.ipynb
+[W 2022-03-18 11:03:44.650 ServerApp] Notebook jupyter_notebooks/legacy/01. Toy_Example.ipynb is not trusted
+[I 2022-03-18 11:03:46.902 ServerApp] Kernel started: b78cf2e4-6931-454a-8195-a855d4a5b7f2
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 06402412-a37c-45a1-8836-46c9866926a5
+[I 2022-03-18 11:10:51.172 ServerApp] Creating new notebook in /jupyter_notebooks
+[I 2022-03-18 11:10:51.770 ServerApp] Kernel started: 053fb08d-e2af-4ae0-900c-dda30897a71a
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: b3247071-71b3-42e5-9533-49891e9705d0
+[I 2022-03-18 11:12:51.522 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 11:14:51.590 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 11:18:55.058 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 11:20:55.175 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 11:22:55.284 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 11:26:58.597 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 11:28:58.714 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 11:30:58.806 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 11:32:58.895 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 11:34:59.020 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 11:45:09.114 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 11:47:09.224 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 11:51:09.347 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 11:58:10.081 ServerApp] 302 GET / (127.0.0.1) 0.57ms
+[W 2022-03-18 15:23:52.850 ServerApp] WebSocket ping timeout after 119912 ms.
+[W 2022-03-18 15:23:57.584 ServerApp] WebSocket ping timeout after 119984 ms.
+[I 2022-03-18 15:23:57.851 ServerApp] Starting buffering for 053fb08d-e2af-4ae0-900c-dda30897a71a:7b861ce4-cb47-4ccf-8201-8e96ff849b54
+[I 2022-03-18 15:24:02.587 ServerApp] Starting buffering for 0e7062bf-d5c0-413e-b55e-1f04946f62a9:d20f4c75-9be2-4e4d-bb54-9a649e66dbc2
+[W 2022-03-18 15:24:02.601 ServerApp] WebSocket ping timeout after 119937 ms.
+[W 2022-03-18 15:24:02.619 ServerApp] WebSocket ping timeout after 119939 ms.
+[W 2022-03-18 15:24:02.640 ServerApp] WebSocket ping timeout after 119961 ms.
+[W 2022-03-18 15:24:02.646 ServerApp] WebSocket ping timeout after 119967 ms.
+[W 2022-03-18 15:24:02.666 ServerApp] WebSocket ping timeout after 119969 ms.
+[W 2022-03-18 15:24:02.666 ServerApp] WebSocket ping timeout after 119968 ms.
+[W 2022-03-18 15:24:02.671 ServerApp] WebSocket ping timeout after 119975 ms.
+[I 2022-03-18 15:24:07.602 ServerApp] Starting buffering for 716e57c7-2ad9-4930-bbf5-79e39e59f34f:319bce77-65fc-40e8-9069-ee5f4472f465
+[I 2022-03-18 15:24:07.620 ServerApp] Starting buffering for fb864fda-416b-4fd7-b423-e93ea92ed48e:f7019a42-0c18-41fe-8364-0355cb275aa0
+[I 2022-03-18 15:24:07.641 ServerApp] Starting buffering for 1d630d3e-97ff-45bb-a35e-10dfd90df65f:e6557c46-9503-4940-9f50-1cff3adf75b5
+[I 2022-03-18 15:24:07.647 ServerApp] Starting buffering for 073208cf-1060-4193-9f46-4ccd83223cc8:c0311dca-0c36-4e0a-9880-a1a1d2e0e31c
+[I 2022-03-18 15:24:07.667 ServerApp] Starting buffering for 0629017e-7a08-47f6-acd9-ccdd20d13bc2:7c39ed22-a2d2-4732-abb7-de5574175dbf
+[I 2022-03-18 15:24:07.672 ServerApp] Starting buffering for b63acc61-aa56-46f3-88f0-e09afb95cc3c:72259522-a37d-4e97-a2d4-9ff21eff5bd5
+[W 2022-03-18 15:24:17.251 ServerApp] WebSocket ping timeout after 119943 ms.
+[I 2022-03-18 15:24:17.253 ServerApp] Starting buffering for b78cf2e4-6931-454a-8195-a855d4a5b7f2:f96e27b6-f434-4fac-8655-2ba4c080b7cc
+[I 2022-03-18 15:24:17.253 ServerApp] Starting buffering for f190b70a-2531-44f3-889f-82ca62e293db:fe70a661-0c1f-4702-821c-21877af75c5e
+[I 2022-03-18 17:21:11.491 ServerApp] Restoring connection for b63acc61-aa56-46f3-88f0-e09afb95cc3c:72259522-a37d-4e97-a2d4-9ff21eff5bd5
+[I 2022-03-18 17:21:12.447 ServerApp] Restoring connection for b78cf2e4-6931-454a-8195-a855d4a5b7f2:f96e27b6-f434-4fac-8655-2ba4c080b7cc
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 3751776b-cd5c-4ff7-a415-4eac5ad6b4f1
+[I 2022-03-18 17:21:12.772 ServerApp] Restoring connection for 053fb08d-e2af-4ae0-900c-dda30897a71a:7b861ce4-cb47-4ccf-8201-8e96ff849b54
+[I 2022-03-18 17:21:12.796 ServerApp] Starting buffering for b63acc61-aa56-46f3-88f0-e09afb95cc3c:72259522-a37d-4e97-a2d4-9ff21eff5bd5
+[I 2022-03-18 17:21:12.796 ServerApp] Starting buffering for 053fb08d-e2af-4ae0-900c-dda30897a71a:7b861ce4-cb47-4ccf-8201-8e96ff849b54
+[I 2022-03-18 17:21:12.797 ServerApp] Starting buffering for b78cf2e4-6931-454a-8195-a855d4a5b7f2:f96e27b6-f434-4fac-8655-2ba4c080b7cc
+[W 2022-03-18 17:21:15.150 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-03-18 17:21:16.387 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[W 2022-03-18 17:21:17.748 ServerApp] Notebook jupyter_notebooks/legacy/01. Toy_Example.ipynb is not trusted
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 79e9be05-ed40-4d09-a830-c94e7cb85625
+[IPKernelApp] WARNING | No such comm: ed73fff3-9b4f-441b-ab2b-cae8f2a0da34
+[IPKernelApp] WARNING | No such comm: 87c9363a-fe38-4750-bbc0-f1331389ceb1
+[IPKernelApp] WARNING | No such comm: 087fb8db-3572-4e72-9c13-93adb1fc46b4
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: e4fbd665-0543-42a3-bc4f-be80d64b99c8
+[IPKernelApp] WARNING | No such comm: e0ca3808-ee4f-4e8c-bfc3-3b4e3ddfb52a
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 228fb401-6ae4-455d-8db2-a9ff6574f1b6
+[IPKernelApp] WARNING | No such comm: b9f54b94-1122-43c6-bb66-51b142c7351c
+[IPKernelApp] WARNING | No such comm: ac99c322-5fb2-4dee-95ee-5b3d15c3e533
+[I 2022-03-18 17:21:39.721 ServerApp] Starting buffering for fb864fda-416b-4fd7-b423-e93ea92ed48e:05d9a1fa-7323-47f1-a84d-b1b1b2b0f34c
+[I 2022-03-18 17:21:42.048 ServerApp] Starting buffering for 1d630d3e-97ff-45bb-a35e-10dfd90df65f:3518293e-a7fc-46ca-9bf9-53c24525f62f
+[I 2022-03-18 17:21:43.187 ServerApp] Starting buffering for b78cf2e4-6931-454a-8195-a855d4a5b7f2:4d877ddd-9a01-4ee5-95a8-6467ae90c8c8
+[I 2022-03-18 17:21:43.681 ServerApp] Starting buffering for 053fb08d-e2af-4ae0-900c-dda30897a71a:790fe639-23ff-495f-ae59-86424761c2e2
+[I 2022-03-18 17:21:44.761 ServerApp] Starting buffering for f190b70a-2531-44f3-889f-82ca62e293db:d76a4012-e7f4-4e3e-95a0-48b520342f72
+[I 2022-03-18 17:21:45.539 ServerApp] Starting buffering for 0e7062bf-d5c0-413e-b55e-1f04946f62a9:102ea92c-df69-40f2-abb7-d4839035f266
+[I 2022-03-18 17:21:45.919 ServerApp] Starting buffering for 0629017e-7a08-47f6-acd9-ccdd20d13bc2:0b63e59b-bfe0-4427-91f8-40e2c11252ed
+[W 2022-03-18 17:22:01.311 ServerApp] delete /scripts/faiss.out
+[W 2022-03-18 17:22:01.311 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/scripts/faiss.out, on different device to home directory
+[W 2022-03-18 17:22:01.363 ServerApp] delete /scripts/join_modis_era.out
+[W 2022-03-18 17:22:01.363 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/scripts/join_modis_era.out, on different device to home directory
+[W 2022-03-18 17:22:01.364 ServerApp] delete /scripts/meta.txt
+[W 2022-03-18 17:22:01.364 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/scripts/meta.txt, on different device to home directory
+[W 2022-03-18 17:22:28.946 ServerApp] delete /scripts/test.py
+[W 2022-03-18 17:22:28.946 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/scripts/test.py, on different device to home directory
+[I 2022-03-18 17:22:31.242 ServerApp] Kernel started: 22abe118-49e5-4d59-9dda-f86745f2951f
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 1623bdbe-fc35-4eb2-b30b-9ed121460cde
+[I 2022-03-18 17:22:39.360 ServerApp] Kernel shutdown: 22abe118-49e5-4d59-9dda-f86745f2951f
+[W 2022-03-18 17:22:39.735 ServerApp] delete /scripts/Untitled.ipynb
+[W 2022-03-18 17:22:39.735 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/scripts/Untitled.ipynb, on different device to home directory
+[W 2022-03-18 17:24:05.487 ServerApp] Notebook jupyter_notebooks/15.Sequential_NN_more_features.ipynb is not trusted
+[I 2022-03-18 17:24:08.432 ServerApp] Kernel started: 2a4dbf0d-9731-4582-91c8-3b727de47daf
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 266e7035-85d9-4043-9d10-abb88e1bb32e
+[W 2022-03-18 17:24:36.943 ServerApp] delete /jupyter_notebooks/example_model
+[W 2022-03-18 17:24:36.943 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/example_model, on different device to home directory
+[W 2022-03-18 17:24:36.944 ServerApp] 400 DELETE /api/contents/jupyter_notebooks/example_model?1647624276925 (127.0.0.1): Directory /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/example_model not empty
+[W 2022-03-18 17:24:36.944 ServerApp] Directory /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/example_model not empty
+[W 2022-03-18 17:24:36.944 ServerApp] 400 DELETE /api/contents/jupyter_notebooks/example_model?1647624276925 (127.0.0.1) 1.07ms referer=http://localhost:8884/lab/tree/jupyter_notebooks/legacy/15.Sequential_NN_more_features.ipynb
+[W 2022-03-18 17:24:36.945 ServerApp] delete /jupyter_notebooks/example_model_avg
+[W 2022-03-18 17:24:36.945 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/example_model_avg, on different device to home directory
+[W 2022-03-18 17:24:36.945 ServerApp] 400 DELETE /api/contents/jupyter_notebooks/example_model_avg?1647624276925 (127.0.0.1): Directory /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/example_model_avg not empty
+[W 2022-03-18 17:24:36.945 ServerApp] Directory /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/example_model_avg not empty
+[W 2022-03-18 17:24:36.945 ServerApp] 400 DELETE /api/contents/jupyter_notebooks/example_model_avg?1647624276925 (127.0.0.1) 0.89ms referer=http://localhost:8884/lab/tree/jupyter_notebooks/legacy/15.Sequential_NN_more_features.ipynb
+[W 2022-03-18 17:24:36.955 ServerApp] delete /jupyter_notebooks/example_model_single
+[W 2022-03-18 17:24:36.956 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/example_model_single, on different device to home directory
+[W 2022-03-18 17:24:36.956 ServerApp] 400 DELETE /api/contents/jupyter_notebooks/example_model_single?1647624276937 (127.0.0.1): Directory /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/example_model_single not empty
+[W 2022-03-18 17:24:36.956 ServerApp] Directory /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/example_model_single not empty
+[W 2022-03-18 17:24:36.956 ServerApp] 400 DELETE /api/contents/jupyter_notebooks/example_model_single?1647624276937 (127.0.0.1) 0.87ms referer=http://localhost:8884/lab/tree/jupyter_notebooks/legacy/15.Sequential_NN_more_features.ipynb
+[W 2022-03-18 17:24:36.963 ServerApp] delete /jupyter_notebooks/model_epochs100_batch128
+[W 2022-03-18 17:24:36.963 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/model_epochs100_batch128, on different device to home directory
+[W 2022-03-18 17:24:36.964 ServerApp] 400 DELETE /api/contents/jupyter_notebooks/model_epochs100_batch128?1647624276947 (127.0.0.1): Directory /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/model_epochs100_batch128 not empty
+[W 2022-03-18 17:24:36.964 ServerApp] Directory /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/model_epochs100_batch128 not empty
+[W 2022-03-18 17:24:36.964 ServerApp] 400 DELETE /api/contents/jupyter_notebooks/model_epochs100_batch128?1647624276947 (127.0.0.1) 0.90ms referer=http://localhost:8884/lab/tree/jupyter_notebooks/legacy/15.Sequential_NN_more_features.ipynb
