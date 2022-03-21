@@ -167,3 +167,222 @@
 [W 2022-03-18 17:24:36.964 ServerApp] 400 DELETE /api/contents/jupyter_notebooks/model_epochs100_batch128?1647624276947 (127.0.0.1): Directory /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/model_epochs100_batch128 not empty
 [W 2022-03-18 17:24:36.964 ServerApp] Directory /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/model_epochs100_batch128 not empty
 [W 2022-03-18 17:24:36.964 ServerApp] 400 DELETE /api/contents/jupyter_notebooks/model_epochs100_batch128?1647624276947 (127.0.0.1) 0.90ms referer=http://localhost:8884/lab/tree/jupyter_notebooks/legacy/15.Sequential_NN_more_features.ipynb
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 86d38f1f-526c-467f-b547-be9f6e8af538
+[I 2022-03-18 17:26:35.265 ServerApp] Kernel started: 37b2daa1-fef2-47e2-876a-f423d2a0e407
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: a0116f4a-701d-4da5-9725-529bbf6174ce
+[I 2022-03-18 17:26:39.069 ServerApp] Starting buffering for 37b2daa1-fef2-47e2-876a-f423d2a0e407:17382d07-9b12-4204-b0fc-2be527c4f8f7
+[I 2022-03-18 17:26:44.035 ServerApp] Starting buffering for 2a4dbf0d-9731-4582-91c8-3b727de47daf:b99957e4-5e88-4327-a486-5f62c48e9e95
+[I 2022-03-18 17:32:41.643 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: b9d3ba2d-d593-46a1-8a48-250babb69030
+[W 2022-03-18 17:37:20.237 ServerApp] Notebook jupyter_notebooks/02.Join_MODIS_with_ERA_NetCDF.ipynb is not trusted
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: c51b3c17-d95d-45ab-b2ef-8e1c999f2d93
+[I 2022-03-18 17:37:32.052 ServerApp] Starting buffering for fb864fda-416b-4fd7-b423-e93ea92ed48e:280b75af-d99d-4f09-abf8-9f905b9c0cad
+[I 2022-03-18 17:40:41.768 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 17:44:41.894 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 17:46:42.034 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 17:48:42.132 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 17:50:42.238 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[W 2022-03-18 17:51:20.717 ServerApp] Notebook jupyter_notebooks/legacy/01. Toy_Example.ipynb is not trusted
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 9992f385-11a8-4eef-a293-8d4297b0a1a7
+[W 2022-03-18 17:51:39.475 ServerApp] Notebook jupyter_notebooks/legacy/02. Example_ERA_MODIS.ipynb is not trusted
+[I 2022-03-18 17:51:43.439 ServerApp] Starting buffering for b78cf2e4-6931-454a-8195-a855d4a5b7f2:326d038e-54c4-477b-8e12-a798f3395345
+[I 2022-03-18 17:51:43.484 ServerApp] Kernel started: 0254fc2a-789f-44c6-a923-0cc81389126e
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: ba8b26eb-d040-42d9-a022-e6b8aba4c9ce
+[I 2022-03-18 17:52:42.350 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 17:53:46.485 ServerApp] Saving file at /jupyter_notebooks/legacy/02. Example_ERA_MODIS.ipynb
+[W 2022-03-18 17:53:46.486 ServerApp] Notebook jupyter_notebooks/legacy/02. Example_ERA_MODIS.ipynb is not trusted
+[I 2022-03-18 17:54:42.467 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 17:56:42.590 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 17:58:42.699 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 18:00:42.807 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 18:02:42.928 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 18:04:43.104 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 18:06:43.268 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 18:08:43.416 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 18:10:43.545 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 18:12:43.672 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 18:14:43.793 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 18:16:43.935 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 18:18:44.344 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 18:20:44.630 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 18:22:45.647 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-18 18:24:46.041 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[W 2022-03-18 18:31:02.182 ServerApp] Notebook jupyter_notebooks/legacy/MODIS_explorer_Tom.ipynb is not trusted
+[I 2022-03-18 18:31:03.660 ServerApp] Kernel started: ea8ece1a-caf4-4f57-b03d-8ff1c190f577
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: fe62c358-52df-4b26-839f-f7135d9ff72a
+[I 2022-03-18 18:34:07.034 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss.ipynb
+[I 2022-03-18 18:36:07.645 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss.ipynb
+[W 2022-03-18 21:37:03.816 ServerApp] WebSocket ping timeout after 119983 ms.
+[W 2022-03-18 21:37:03.834 ServerApp] WebSocket ping timeout after 119983 ms.
+[W 2022-03-18 21:37:04.711 ServerApp] WebSocket ping timeout after 119926 ms.
+[I 2022-03-18 21:37:08.818 ServerApp] Starting buffering for 1d630d3e-97ff-45bb-a35e-10dfd90df65f:8e8f0714-4f35-4c68-a0a9-f6353ea660ce
+[I 2022-03-18 21:37:08.835 ServerApp] Starting buffering for 053fb08d-e2af-4ae0-900c-dda30897a71a:23bd0233-d966-462e-afae-271082957c18
+[I 2022-03-18 21:37:09.711 ServerApp] Starting buffering for ea8ece1a-caf4-4f57-b03d-8ff1c190f577:a73fb409-755d-46ea-90d1-cfcdf5da3fd2
+[W 2022-03-18 21:37:14.614 ServerApp] WebSocket ping timeout after 119899 ms.
+[I 2022-03-18 21:37:19.615 ServerApp] Starting buffering for 0254fc2a-789f-44c6-a923-0cc81389126e:32e8c52b-821a-49d0-854a-0d027ee95bb0
+[W 2022-03-18 21:37:20.698 ServerApp] WebSocket ping timeout after 119943 ms.
+[I 2022-03-18 21:37:20.699 ServerApp] Starting buffering for b63acc61-aa56-46f3-88f0-e09afb95cc3c:f2e9804f-eab2-4177-9a16-a989e9a4b681
+[I 2022-03-18 21:37:20.699 ServerApp] Starting buffering for 073208cf-1060-4193-9f46-4ccd83223cc8:01cd1963-0da6-4b37-9e73-718e4960922a
+[I 2022-03-18 21:37:20.699 ServerApp] Starting buffering for 716e57c7-2ad9-4930-bbf5-79e39e59f34f:6cd0ae06-d307-4589-8dfa-96784960f4bc
+[W 2022-03-21 10:01:59.791 ServerApp] 404 GET /apple-touch-icon-precomposed.png (127.0.0.1) 228.11ms referer=None
+[W 2022-03-21 10:01:59.906 ServerApp] 404 GET /apple-touch-icon.png (127.0.0.1) 0.66ms referer=None
+[W 2022-03-21 10:02:02.119 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-03-21 10:02:05.072 LabApp] Could not determine jupyterlab build status without nodejs
+[I 2022-03-21 10:02:10.032 ServerApp] 302 GET / (127.0.0.1) 0.24ms
+[W 2022-03-21 10:02:12.397 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-03-21 10:02:14.020 ServerApp] Notebook jupyter_notebooks/legacy/02. Example_ERA_MODIS.ipynb is not trusted
+[W 2022-03-21 10:02:14.183 ServerApp] Notebook jupyter_notebooks/legacy/MODIS_explorer_Tom.ipynb is not trusted
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: be16b1d4-f361-4325-bdc3-c43daf7c421e
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 9317ac59-3694-484d-8c2b-41554179cdc1
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 9f3453c0-9e2e-437a-a47e-bd43922799a3
+[IPKernelApp] WARNING | No such comm: 7ebb3022-bc47-4650-83d7-d8cd54879d6a
+[IPKernelApp] WARNING | No such comm: bbd1fb34-f9a1-4dcc-93d4-1f55d2665ea9
+[IPKernelApp] WARNING | No such comm: b5ccae2c-64f9-40d0-9bf4-dd5086ed91c8
+[I 2022-03-21 10:03:55.641 ServerApp] Starting buffering for 716e57c7-2ad9-4930-bbf5-79e39e59f34f:8a965db7-d552-4837-851f-a478cd730f7b
+[I 2022-03-21 10:03:57.928 ServerApp] Starting buffering for 053fb08d-e2af-4ae0-900c-dda30897a71a:6dd28efc-f8bf-443a-8f19-e73aa87d2dbe
+[I 2022-03-21 10:03:58.431 ServerApp] Starting buffering for ea8ece1a-caf4-4f57-b03d-8ff1c190f577:7c23cbbb-964f-4aeb-a751-49ab29f39a55
+[I 2022-03-21 10:03:58.475 ServerApp] Starting buffering for 0254fc2a-789f-44c6-a923-0cc81389126e:2525cec8-54a1-4d6c-9b89-6a24069d4eba
+[I 2022-03-21 10:03:58.808 ServerApp] Starting buffering for 1d630d3e-97ff-45bb-a35e-10dfd90df65f:d26b1694-eacb-4eac-b20b-36b365ef0ffa
+[I 2022-03-21 10:04:13.844 ServerApp] Saving file at /jupyter_notebooks/00. Summary.ipynb
+[I 2022-03-21 10:06:20.650 ServerApp] Saving file at /jupyter_notebooks/05. Plot_Model.ipynb
+[I 2022-03-21 10:08:25.414 ServerApp] Saving file at /jupyter_notebooks/05. Plot_Model.ipynb
+[I 2022-03-21 10:10:29.462 ServerApp] Saving file at /jupyter_notebooks/05. Plot_Model.ipynb
+[I 2022-03-21 10:12:33.514 ServerApp] Saving file at /jupyter_notebooks/05. Plot_Model.ipynb
+[I 2022-03-21 10:14:37.826 ServerApp] Saving file at /jupyter_notebooks/05. Plot_Model.ipynb
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: c58248f4-b253-4f5e-8386-4b8f205938ae
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: b6c9d454-931f-42dc-bd73-e82306c70433
+[I 2022-03-21 13:15:52.680 ServerApp] Copying jupyter_notebooks/03.Join_MODIS_with_ERA_faiss.ipynb to /jupyter_notebooks
+[I 2022-03-21 13:15:59.898 ServerApp] Kernel started: 5737d0a2-fb6a-420c-9323-37d4ad01e725
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 80b394be-17ad-4df9-b975-ca1804ce831f
+[I 2022-03-21 13:17:58.789 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss-Copy1.ipynb
+[I 2022-03-21 13:19:58.925 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss-Copy1.ipynb
+[I 2022-03-21 13:21:59.738 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss-Copy1.ipynb
+[I 2022-03-21 13:24:00.561 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss-Copy1.ipynb
+[I 2022-03-21 13:26:00.784 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss-Copy1.ipynb
+[I 2022-03-21 13:28:00.898 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss-Copy1.ipynb
+[I 2022-03-21 13:30:01.676 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss-Copy1.ipynb
+[I 2022-03-21 13:31:14.763 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss.ipynb
+[I 2022-03-21 13:32:44.454 ServerApp] Starting buffering for 1d630d3e-97ff-45bb-a35e-10dfd90df65f:e5f8cef4-4e22-4009-8132-a78a2745155e
+[I 2022-03-21 13:33:02.819 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss.ipynb
+[I 2022-03-21 13:33:06.726 ServerApp] Starting buffering for 1d630d3e-97ff-45bb-a35e-10dfd90df65f:b6c93b8f-dc58-44ac-8203-3471b2dd2be9
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 4802bcf0-4b00-468a-ad4e-96da959e7510
+[I 2022-03-21 13:34:02.478 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss-Copy1.ipynb
+[I 2022-03-21 13:34:43.443 ServerApp] Starting buffering for 716e57c7-2ad9-4930-bbf5-79e39e59f34f:8168c120-19f1-4f7d-b64b-3ea51f6b45c3
+[I 2022-03-21 13:34:55.273 ServerApp] Discarding 25 buffered messages for 1d630d3e-97ff-45bb-a35e-10dfd90df65f:b6c93b8f-dc58-44ac-8203-3471b2dd2be9
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: a086365e-93e3-40f7-9e93-fbf16ce7e65f
+[I 2022-03-21 13:38:03.277 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss-Copy1.ipynb
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: a530d408-6865-4a1d-8bc6-8e346ff32b6c
+[I 2022-03-21 13:40:04.211 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss-Copy1.ipynb
+[I 2022-03-21 13:42:05.016 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss-Copy1.ipynb
+[I 2022-03-21 13:50:05.812 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss-Copy1.ipynb
+[I 2022-03-21 14:16:17.789 ServerApp] Saving file at /jupyter_notebooks/03.Join_MODIS_with_ERA_faiss-Copy1.ipynb
+[I 2022-03-21 14:25:58.573 ServerApp] Saving file at /jupyter_notebooks/05. Plot_Model.ipynb
+[W 2022-03-21 15:02:17.889 ServerApp] WebSocket ping timeout after 119983 ms.
+[W 2022-03-21 15:02:17.890 ServerApp] WebSocket ping timeout after 119955 ms.
+[I 2022-03-21 15:02:22.891 ServerApp] Starting buffering for 073208cf-1060-4193-9f46-4ccd83223cc8:e2ed541e-8f2e-4bbc-aa61-e7cb638d0191
+[I 2022-03-21 15:02:22.891 ServerApp] Starting buffering for b63acc61-aa56-46f3-88f0-e09afb95cc3c:debb0ddf-1b60-41fb-9097-2084ecb701c1
+[W 2022-03-21 15:02:25.274 ServerApp] WebSocket ping timeout after 119985 ms.
+[I 2022-03-21 15:02:30.276 ServerApp] Starting buffering for 1d630d3e-97ff-45bb-a35e-10dfd90df65f:f326ff75-8805-4ea3-880c-99ae45985d20
+[W 2022-03-21 15:02:35.207 ServerApp] WebSocket ping timeout after 119985 ms.
+[W 2022-03-21 15:02:35.207 ServerApp] WebSocket ping timeout after 119972 ms.
+[W 2022-03-21 15:02:38.600 ServerApp] WebSocket ping timeout after 119976 ms.
+[I 2022-03-21 15:02:38.602 ServerApp] Starting buffering for 5737d0a2-fb6a-420c-9323-37d4ad01e725:5d573bb8-c8ac-41a7-bdf5-90915f74de61
+[I 2022-03-21 15:02:38.603 ServerApp] Starting buffering for f190b70a-2531-44f3-889f-82ca62e293db:a476be62-7a97-4cc1-b744-3c733a310346
+[I 2022-03-21 15:07:53.145 ServerApp] Starting buffering for 5737d0a2-fb6a-420c-9323-37d4ad01e725:1f25399f-6863-4ba3-b979-35e8a65a7b83
+[W 2022-03-21 15:07:57.222 LabApp] Could not determine jupyterlab build status without nodejs
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 121ec917-7023-4e05-91f5-36d5590342e9
+[IPKernelApp] WARNING | No such comm: d0734433-6779-4dc9-af99-3bd51ba34632
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 5a3f3958-6527-44fa-a899-fb3f2c281629
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: cfc1ef5a-1f1e-4c18-82dd-8a4f5a3f867f
+[I 2022-03-21 15:12:25.360 ServerApp] Saving file at /jupyter_notebooks/05. Plot_Model.ipynb
+[I 2022-03-21 15:14:29.487 ServerApp] Saving file at /jupyter_notebooks/05. Plot_Model.ipynb
+[I 2022-03-21 15:16:33.488 ServerApp] Saving file at /jupyter_notebooks/05. Plot_Model.ipynb
+[W 2022-03-21 16:23:51.711 ServerApp] delete /jupyter_notebooks/blob.png
+[W 2022-03-21 16:23:51.711 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/blob.png, on different device to home directory
+[W 2022-03-21 16:23:51.727 ServerApp] delete /jupyter_notebooks/example_image.png
+[W 2022-03-21 16:23:51.727 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/example_image.png, on different device to home directory
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: ce81d791-6e2a-4301-a57b-b28959de3e4b
+[I 2022-03-21 16:28:10.653 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[I 2022-03-21 16:28:52.787 ServerApp] Copying jupyter_notebooks/Explore_raw_MODIS_data.ipynb to /jupyter_notebooks
+[I 2022-03-21 16:28:56.398 ServerApp] Kernel started: 0926356e-6364-4506-8925-fab90889f87a
+[I 2022-03-21 16:28:58.490 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data.ipynb
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 19b320c8-2e06-4efa-89cd-08e9425608b3
+[I 2022-03-21 16:30:55.405 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data-Copy1.ipynb
+[I 2022-03-21 16:32:55.793 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data-Copy1.ipynb
+[I 2022-03-21 16:34:56.177 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data-Copy1.ipynb
+[I 2022-03-21 16:36:56.572 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data-Copy1.ipynb
+[I 2022-03-21 16:38:56.953 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data-Copy1.ipynb
+[I 2022-03-21 16:40:57.356 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data-Copy1.ipynb
+[I 2022-03-21 16:42:58.036 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data-Copy1.ipynb
+[I 2022-03-21 16:48:58.719 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data-Copy1.ipynb
+[I 2022-03-21 16:50:59.555 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data-Copy1.ipynb
+[I 2022-03-21 16:53:00.249 ServerApp] Saving file at /jupyter_notebooks/Explore_raw_MODIS_data-Copy1.ipynb
+[I 2022-03-21 16:53:00.339 ServerApp] Creating new notebook in /jupyter_notebooks
+[I 2022-03-21 16:53:00.957 ServerApp] Kernel started: 2cb2977e-78de-4469-acbc-cf3f042b8691
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 1f4f80bd-f64f-4334-a721-1b0ed3404b58
+[I 2022-03-21 16:55:00.681 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 16:55:51.641 ServerApp] Starting buffering for b63acc61-aa56-46f3-88f0-e09afb95cc3c:8eb7d2fd-0225-473d-9e95-a29318f02998
+[W 2022-03-21 16:56:57.378 ServerApp] Notebook jupyter_notebooks/legacy/MODIS_explorer_Tom.ipynb is not trusted
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: d8688685-5cf9-4a60-9dd8-a54f7a1ee5c5
+[I 2022-03-21 16:57:00.742 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 17:01:00.803 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 17:01:58.543 ServerApp] Starting buffering for 5737d0a2-fb6a-420c-9323-37d4ad01e725:d808fc79-931c-4e9e-917d-49b9e9d1fb9b
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 1da06c75-5b47-495b-9f65-8cb18b2a2d41
+[I 2022-03-21 17:03:00.865 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 17:05:00.926 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 17:07:00.988 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 17:09:01.051 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 17:11:01.152 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 17:13:01.259 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 17:15:01.458 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 17:17:01.593 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 17:19:01.717 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 17:21:01.845 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 17:23:01.959 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 17:25:02.072 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 17:27:02.195 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 17:29:02.320 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 17:31:02.824 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 17:35:03.313 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 18:32:55.970 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 18:34:56.744 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 18:36:57.357 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 18:38:57.939 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 18:40:59.209 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 18:43:00.193 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 18:45:01.046 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 18:47:02.479 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 18:48:15.247 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 18:50:16.210 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 18:52:17.143 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 18:52:18.600 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 18:54:19.516 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
+[I 2022-03-21 18:56:20.701 ServerApp] Saving file at /jupyter_notebooks/06._Check_MODIS_ERA_time_join.ipynb
