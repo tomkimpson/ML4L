@@ -112,12 +112,14 @@ def get_era_data(date : str,
     month = '_'.join(date.split('-')[:-1])
     
     if source == 'ERA_skin':
-        name = '_skin_'
+        fpath = f'{era_folder}/{source}/NetCDF/'
     if source == 'ERA_sfc':
-        name = '_'
+        fpath = f'{era_folder}/{source}/NetCDF/'
+    if source == 'ERA_skt':
+        fpath = f'{era_folder}/ERA_skt_netcdf/' #different type of path for SKT
         
     utc_0hour = f'{utc_hour:02}'
-    fname = f'{era_folder}/{source}/NetCDF/{date}T{utc_0hour}:00:00.000000000.nc'
+    fname = f'{fpath}{date}T{utc_0hour}:00:00.000000000.nc'
     ds_era = xr.open_dataset(fname)
     
         
@@ -357,9 +359,12 @@ def pipeline(date,utc_hour,satellite,latitude_bound,ERA_fields,tolerance,method)
           "longitude_max":MODIS.longitude.data.max()+delta
           }
     
-    ERA_sfc = get_era_data(date, utc_hour, field=ERA_fields,bounds=bounds,source='ERA_sfc')
+    ERA_sfc = get_era_data(date,  utc_hour, field=ERA_fields,bounds=bounds,source='ERA_sfc')
     ERA_skin = get_era_data(date, utc_hour, field=ERA_fields,bounds=bounds,source='ERA_skin')
-    ERA = xr.merge([ERA_sfc, ERA_skin])
+    ERA_skt = get_era_data(date,  utc_hour, field=ERA_fields,bounds=bounds,source='ERA_skt')
+
+
+    ERA = xr.merge([ERA_sfc, ERA_skin,ERA_skt])
     
     ERA_df_land = filter_out_sea(ERA) #just the land values
     
@@ -372,8 +377,10 @@ def pipeline(date,utc_hour,satellite,latitude_bound,ERA_fields,tolerance,method)
     MODIS = None
     ERA_sfc.close()
     ERA_skin.close()
+    ERA_skt.close()
     ERA_sfc = None
     ERA_skin = None
+    ERA_skt = None
     
     
     #Combine
@@ -392,7 +399,13 @@ def pipeline(date,utc_hour,satellite,latitude_bound,ERA_fields,tolerance,method)
 
 
 #Parameters
-start_date = date(2018, 1, 2)
+#start_date = date(2018, 1, 2)
+#start_date = date(2018, 5, 1)
+#start_date = date(2018,10,29)
+#start_date = date(2019,4,26)
+#start_date = date(2019,10,18)
+#start_date = date(2020,4,16)
+start_date = date(2020,10,23)
 end_date   = date(2020, 12, 30)
 dates = daterange(start_date,end_date)
 hours = np.arange(0,24)
@@ -403,10 +416,10 @@ satellite='aquaDay'
 latitude_bound=70
 ERA_fields = None 
 tolerance = 50 #km
-method = 'faiss_swp'
+method = 'faiss'
 
 #Path for where to ouput saved files
-IO_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/joined_ML_data_faiss_swp/'
+IO_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/joined_ML_data_w_skt/'
 
 print ("-------------------------")
 print ('Starting MODIS-ERA joining with the following parameters')

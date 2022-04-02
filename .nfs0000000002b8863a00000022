@@ -1,0 +1,420 @@
+[I 2022-03-30 16:09:17.809 ServerApp] jupyterlab | extension was successfully linked.
+[I 2022-03-30 16:09:17.827 ServerApp] nbclassic | extension was successfully linked.
+[I 2022-03-30 16:09:18.601 ServerApp] notebook_shim | extension was successfully linked.
+[I 2022-03-30 16:09:18.660 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2022-03-30 16:09:18.662 LabApp] JupyterLab extension loaded from /home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyterlab
+[I 2022-03-30 16:09:18.662 LabApp] JupyterLab application directory is /home/k/kimpson/bin/conda/envs/GPU/share/jupyter/lab
+[I 2022-03-30 16:09:18.674 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2022-03-30 16:09:18.690 ServerApp] nbclassic | extension was successfully loaded.
+[I 2022-03-30 16:09:18.691 ServerApp] Serving notebooks from local directory: /network/aopp/chaos/pred/kimpson/ML4L
+[I 2022-03-30 16:09:18.691 ServerApp] Jupyter Server 1.13.5 is running at:
+[I 2022-03-30 16:09:18.691 ServerApp] http://localhost:9168/lab
+[I 2022-03-30 16:09:18.691 ServerApp]  or http://127.0.0.1:9168/lab
+[I 2022-03-30 16:09:18.691 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 2022-03-30 16:14:41.244 ServerApp] 302 GET / (::1) 1.28ms
+[W 2022-03-30 16:14:45.260 LabApp] Could not determine jupyterlab build status without nodejs
+[I 2022-03-30 16:14:54.761 ServerApp] Kernel started: 2925ea86-b60d-4c07-9a79-9bc1b8cc3550
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: f1bff561-45a9-46c8-aac8-c758bdb9174e
+[W 2022-03-30 16:14:57.912 ServerApp] Got events for closed stream <zmq.eventloop.zmqstream.ZMQStream object at 0x7f4bea6c8fd0>
+[I 2022-03-30 16:16:53.886 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 16:18:54.764 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 16:20:54.900 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 16:22:55.017 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 16:24:55.136 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 16:25:17.204 ServerApp] Kernel interrupted: 2925ea86-b60d-4c07-9a79-9bc1b8cc3550
+[I 2022-03-30 16:25:17.747 ServerApp] Kernel interrupted: 2925ea86-b60d-4c07-9a79-9bc1b8cc3550
+[I 2022-03-30 16:25:18.025 ServerApp] Kernel interrupted: 2925ea86-b60d-4c07-9a79-9bc1b8cc3550
+[I 2022-03-30 16:25:18.465 ServerApp] Kernel interrupted: 2925ea86-b60d-4c07-9a79-9bc1b8cc3550
+[I 2022-03-30 16:26:55.255 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 16:27:01.574 ServerApp] Kernel interrupted: 2925ea86-b60d-4c07-9a79-9bc1b8cc3550
+[I 2022-03-30 16:28:55.535 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 16:30:04.482 ServerApp] Kernel interrupted: 2925ea86-b60d-4c07-9a79-9bc1b8cc3550
+[I 2022-03-30 16:30:33.310 ServerApp] Kernel interrupted: 2925ea86-b60d-4c07-9a79-9bc1b8cc3550
+[I 2022-03-30 16:30:55.659 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 16:33:24.521 ServerApp] Kernel interrupted: 2925ea86-b60d-4c07-9a79-9bc1b8cc3550
+[I 2022-03-30 16:34:55.817 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 16:36:55.981 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 16:38:56.110 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 16:40:56.242 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 16:42:56.379 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 16:44:56.509 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 16:46:56.677 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 16:48:56.809 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 16:50:56.948 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 16:56:18.658 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 16:58:19.787 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:00:20.096 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:20:08.847 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:22:09.257 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:22:22.897 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:24:23.106 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:24:37.155 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:26:37.486 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:28:37.987 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:30:38.439 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:32:38.605 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:34:38.770 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:36:38.919 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:37:35.434 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:37:35.679 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:39:35.804 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:42:35.820 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:45:16.371 ServerApp] Kernel interrupted: 2925ea86-b60d-4c07-9a79-9bc1b8cc3550
+[I 2022-03-30 17:45:22.049 ServerApp] Kernel restarted: 2925ea86-b60d-4c07-9a79-9bc1b8cc3550
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 701f1cfa-9e78-4391-92b0-b0cf000f842b
+[I 2022-03-30 17:46:22.392 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:48:22.519 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:50:22.650 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:51:34.359 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:52:39.179 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:53:05.085 ServerApp] Kernel started: d0ce7064-b31e-4a5c-bc41-4abbc5ca7e20
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: e6aecf2b-2686-4e03-949d-72efcdcd2be2
+[I 2022-03-30 17:54:28.293 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:54:28.491 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:55:25.762 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:55:25.925 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-03-30 17:55:30.200 ServerApp] Creating new file in /scripts
+[I 2022-03-30 17:56:02.582 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:56:02.791 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:56:09.915 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:56:10.148 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:56:11.045 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:56:36.127 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:56:47.191 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:56:47.327 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:57:05.668 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:57:14.739 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:57:14.939 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:57:15.097 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:57:15.273 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:57:15.640 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:59:06.641 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:59:06.821 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:59:34.254 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:59:34.534 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:59:35.155 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:59:37.223 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-30 17:59:37.373 ServerApp] Saving file at /scripts/variability.py
+[W 2022-03-30 18:01:52.071 ServerApp] WebSocket ping timeout after 119996 ms.
+[W 2022-03-30 18:01:57.416 ServerApp] WebSocket ping timeout after 119995 ms.
+[I 2022-03-30 18:02:02.418 ServerApp] Starting buffering for 2925ea86-b60d-4c07-9a79-9bc1b8cc3550:6ebf80ef-84ac-4462-9e85-28757a08c1e3
+[W 2022-03-30 18:02:07.427 ServerApp] WebSocket ping timeout after 119997 ms.
+[I 2022-03-30 18:02:07.431 ServerApp] Starting buffering for d0ce7064-b31e-4a5c-bc41-4abbc5ca7e20:16cb7dc2-1761-44d7-8f05-42de46b875c9
+[I 2022-03-31 12:11:34.049 ServerApp] 302 GET / (::1) 2.47ms
+[W 2022-03-31 12:11:44.519 LabApp] Could not determine jupyterlab build status without nodejs
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 4945aafc-6124-4213-841d-a23de7b54ab0
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: fd327688-96c6-42bb-8c15-7197e784fa87
+[I 2022-03-31 12:12:18.590 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-31 12:12:43.646 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-31 12:12:43.834 ServerApp] Saving file at /scripts/variability.py
+[W 2022-03-31 12:30:47.978 ServerApp] WebSocket ping timeout after 119978 ms.
+[W 2022-03-31 12:30:48.067 ServerApp] WebSocket ping timeout after 119984 ms.
+[I 2022-03-31 12:30:52.982 ServerApp] Starting buffering for 2925ea86-b60d-4c07-9a79-9bc1b8cc3550:c75c7518-1e78-48da-b34e-56848821e9ac
+[I 2022-03-31 12:30:53.069 ServerApp] Starting buffering for d0ce7064-b31e-4a5c-bc41-4abbc5ca7e20:3218096a-93ce-496f-b9fe-58eba6b2036f
+[I 2022-03-31 12:54:39.119 ServerApp] Restoring connection for d0ce7064-b31e-4a5c-bc41-4abbc5ca7e20:3218096a-93ce-496f-b9fe-58eba6b2036f
+[I 2022-03-31 12:54:39.121 ServerApp] Restoring connection for 2925ea86-b60d-4c07-9a79-9bc1b8cc3550:c75c7518-1e78-48da-b34e-56848821e9ac
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: ae6e49d0-ec1e-42ff-a1dc-40ddc0073149
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: ceca85bb-2ac1-4c26-9a9a-5ea35014eff7
+[I 2022-03-31 12:54:46.042 ServerApp] Starting buffering for d0ce7064-b31e-4a5c-bc41-4abbc5ca7e20:3218096a-93ce-496f-b9fe-58eba6b2036f
+[I 2022-03-31 12:54:46.043 ServerApp] Starting buffering for 2925ea86-b60d-4c07-9a79-9bc1b8cc3550:c75c7518-1e78-48da-b34e-56848821e9ac
+[W 2022-03-31 12:54:48.896 LabApp] Could not determine jupyterlab build status without nodejs
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 1cfa7fa2-d93b-46ef-949b-40f7ce806782
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 0332060e-702d-4abf-8335-414b43e2e4fb
+[I 2022-03-31 12:56:51.496 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-31 12:57:11.781 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-31 12:57:15.768 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-31 12:57:50.811 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-31 12:58:40.378 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-31 12:58:51.248 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-31 12:58:56.834 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-31 12:58:57.023 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-31 13:05:30.800 ServerApp] Saving file at /scripts/variability.py
+[I 2022-03-31 13:05:31.069 ServerApp] Saving file at /scripts/variability.py
+[W 2022-03-31 13:41:22.745 ServerApp] WebSocket ping timeout after 119922 ms.
+[W 2022-03-31 13:41:22.747 ServerApp] WebSocket ping timeout after 119911 ms.
+[I 2022-03-31 13:41:22.749 ServerApp] Starting buffering for d0ce7064-b31e-4a5c-bc41-4abbc5ca7e20:459316cd-4974-4a5b-a48a-a705bd92910b
+[I 2022-03-31 13:41:22.751 ServerApp] Starting buffering for 2925ea86-b60d-4c07-9a79-9bc1b8cc3550:6610e810-6cfc-4ce8-a68b-327b564a1703
+[W 2022-04-01 09:12:24.255 LabApp] Could not determine jupyterlab build status without nodejs
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 14a0f8f3-a870-495d-ab23-e4038866f4ee
+[IPKernelApp] WARNING | No such comm: ae9c4a36-fff2-4ff5-b08a-ec2338b666f8
+[I 2022-04-01 09:14:27.305 ServerApp] Saving file at /jupyter_notebooks/03.Merge_hourly_files.ipynb
+[W 2022-04-01 11:00:56.475 ServerApp] WebSocket ping timeout after 119931 ms.
+[I 2022-04-01 11:00:56.479 ServerApp] Starting buffering for d0ce7064-b31e-4a5c-bc41-4abbc5ca7e20:f62f7329-faaf-4c94-b253-1360416d97d0
+[I 2022-04-01 11:00:56.480 ServerApp] Starting buffering for 2925ea86-b60d-4c07-9a79-9bc1b8cc3550:e223ba5e-5e29-4f16-9cba-56daccaf3422
+[W 2022-04-01 11:27:15.802 LabApp] Could not determine jupyterlab build status without nodejs
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 6be22d07-daa0-48b6-a6a7-e365aa843375
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 2946a4a5-fcdf-4326-a689-5531db92dafc
+[I 2022-04-01 11:28:49.798 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 11:30:15.499 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 11:30:15.839 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 11:30:19.668 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 11:30:31.334 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 11:30:31.656 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 11:30:32.047 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 11:30:35.610 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 11:30:35.907 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 11:30:36.736 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 11:30:44.994 ServerApp] Creating new directory in /scripts
+[I 2022-04-01 11:30:59.170 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 11:30:59.539 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 11:31:19.370 ServerApp] Saving file at /jupyter_notebooks/03.Merge_hourly_files.ipynb
+[I 2022-04-01 11:50:41.105 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 11:50:41.441 ServerApp] Saving file at /scripts/variability.py
+[W 2022-04-01 12:21:49.035 ServerApp] WebSocket ping timeout after 119885 ms.
+[W 2022-04-01 12:21:49.479 ServerApp] WebSocket ping timeout after 119916 ms.
+[I 2022-04-01 12:21:49.526 ServerApp] Starting buffering for d0ce7064-b31e-4a5c-bc41-4abbc5ca7e20:eb000361-21a5-4931-8c2b-f33cec69e29d
+[I 2022-04-01 12:21:49.550 ServerApp] Starting buffering for 2925ea86-b60d-4c07-9a79-9bc1b8cc3550:7edde822-1290-42c2-a0d1-cf78c73436b4
+[W 2022-04-01 14:39:46.962 LabApp] Could not determine jupyterlab build status without nodejs
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 2a253817-4ea4-4a6f-b8a8-d3263edfd438
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: d37e080b-82ac-4116-a8e9-9d220461f453
+[I 2022-04-01 14:40:14.792 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 14:40:15.039 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 14:40:15.294 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 14:40:15.577 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 14:40:15.876 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 14:40:16.121 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 15:50:13.087 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 15:50:19.525 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 15:50:19.865 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 15:50:20.106 ServerApp] Saving file at /scripts/variability.py
+[I 2022-04-01 16:40:24.928 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 16:42:25.234 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 16:44:25.511 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 16:44:50.904 ServerApp] Kernel started: 118849c2-f5bb-4bd3-9258-d76fe4692ed1
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 20e1f700-ccab-4e60-84c0-e3451aa9c2b8
+[I 2022-04-01 16:46:26.182 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 16:48:26.900 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 16:50:27.273 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 16:52:27.732 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 16:54:28.185 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 16:56:28.729 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 16:58:29.266 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 17:00:29.737 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 17:02:30.264 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 17:04:30.837 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 17:06:31.423 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 17:08:31.931 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 17:10:32.657 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 17:12:33.242 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 17:14:33.749 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 17:15:23.764 ServerApp] Copying scripts/train_and_predict_GPU.py to /scripts
+[I 2022-04-01 17:16:10.326 ServerApp] Saving file at /scripts/train_and_predict_GPU-Copy1.py
+[I 2022-04-01 17:16:12.776 ServerApp] Saving file at /scripts/train_and_predict_GPU-Copy1.py
+[I 2022-04-01 17:16:28.348 ServerApp] Saving file at /scripts/train_and_predict_GPU-Copy1.py
+[I 2022-04-01 17:16:28.596 ServerApp] Saving file at /scripts/train_and_predict_GPU-Copy1.py
+[I 2022-04-01 17:16:34.310 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 17:16:36.084 ServerApp] Saving file at /scripts/train_and_predict_GPU-Copy1.py
+[I 2022-04-01 17:16:36.433 ServerApp] Saving file at /scripts/train_and_predict_GPU-Copy1.py
+[I 2022-04-01 17:16:36.644 ServerApp] Saving file at /scripts/train_and_predict_GPU-Copy1.py
+[I 2022-04-01 17:56:47.751 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 17:58:48.302 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:00:48.860 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:02:50.066 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:04:51.254 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:06:52.439 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:08:53.637 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:10:54.913 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:12:56.341 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:14:57.680 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:16:58.860 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:19:00.119 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:27:01.317 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:31:02.522 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:33:03.760 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:35:05.086 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:37:06.423 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:39:07.860 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:41:09.521 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:43:10.805 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:45:12.297 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:47:13.700 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:49:15.137 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:51:16.455 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:53:17.837 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 18:55:19.198 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 19:01:20.544 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-01 19:07:22.201 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[W 2022-04-01 19:17:34.511 ServerApp] WebSocket ping timeout after 119984 ms.
+[W 2022-04-01 19:17:34.513 ServerApp] WebSocket ping timeout after 119974 ms.
+[I 2022-04-01 19:17:39.515 ServerApp] Starting buffering for 118849c2-f5bb-4bd3-9258-d76fe4692ed1:28e427bc-d96b-450d-8c03-ea9d4e5c4fab
+[W 2022-04-01 19:17:48.883 ServerApp] WebSocket ping timeout after 119985 ms.
+[W 2022-04-01 19:17:48.896 ServerApp] WebSocket ping timeout after 119984 ms.
+[I 2022-04-01 19:17:53.885 ServerApp] Starting buffering for 2925ea86-b60d-4c07-9a79-9bc1b8cc3550:76584b6f-9dc0-4656-a5a6-3cdd9bd81178
+[I 2022-04-01 19:17:53.899 ServerApp] Starting buffering for d0ce7064-b31e-4a5c-bc41-4abbc5ca7e20:714199cd-3577-4a2e-9e45-1eb0d9a5d7fc
+[W 2022-04-02 09:51:44.940 LabApp] Could not determine jupyterlab build status without nodejs
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 636b1823-4bd3-4a46-a07d-8061466b531c
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: c9187cf4-c7c2-47b6-bf05-4065ce32ebb6
+[I 2022-04-02 09:53:49.264 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 09:55:50.810 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 09:57:53.121 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 09:59:54.646 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:01:56.120 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:03:57.640 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:05:59.316 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:07:52.009 ServerApp] Copying scripts/variability.py to /scripts
+[I 2022-04-02 10:10:10.737 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:12:12.206 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:13:44.574 ServerApp] Kernel interrupted: 2925ea86-b60d-4c07-9a79-9bc1b8cc3550
+[I 2022-04-02 10:14:39.396 ServerApp] Kernel interrupted: 2925ea86-b60d-4c07-9a79-9bc1b8cc3550
+[I 2022-04-02 10:14:39.797 ServerApp] Kernel interrupted: 2925ea86-b60d-4c07-9a79-9bc1b8cc3550
+[I 2022-04-02 10:14:39.955 ServerApp] Kernel interrupted: 2925ea86-b60d-4c07-9a79-9bc1b8cc3550
+[I 2022-04-02 10:14:41.978 ServerApp] Kernel interrupted: 2925ea86-b60d-4c07-9a79-9bc1b8cc3550
+[I 2022-04-02 10:16:14.754 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:18:16.450 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:20:17.905 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:24:19.594 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:26:20.905 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:28:22.591 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:30:24.429 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:32:26.750 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:34:28.508 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:36:30.312 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:40:32.049 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:42:33.778 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:44:35.681 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:54:37.487 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:56:11.338 ServerApp] Saving file at /scripts/variability-boolean.py
+[I 2022-04-02 10:56:15.558 ServerApp] Saving file at /scripts/variability-boolean.py
+[I 2022-04-02 10:56:19.719 ServerApp] Saving file at /scripts/variability-boolean.py
+[I 2022-04-02 10:56:39.381 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 10:58:11.034 ServerApp] Saving file at /scripts/variability-boolean.py
+[I 2022-04-02 10:58:23.106 ServerApp] Saving file at /scripts/variability-boolean.py
+[I 2022-04-02 11:00:41.086 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 11:01:38.421 ServerApp] Kernel interrupted: 2925ea86-b60d-4c07-9a79-9bc1b8cc3550
+[I 2022-04-02 11:01:43.194 ServerApp] Saving file at /scripts/variability-boolean.py
+[I 2022-04-02 11:01:43.392 ServerApp] Saving file at /scripts/variability-boolean.py
+[I 2022-04-02 11:02:31.663 ServerApp] Saving file at /scripts/variability-boolean.py
+[I 2022-04-02 11:02:42.823 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 11:02:44.324 ServerApp] Saving file at /scripts/variability-boolean.py
+[I 2022-04-02 11:11:10.029 ServerApp] Saving file at /scripts/variability-boolean.py
+[I 2022-04-02 11:19:07.090 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 11:31:09.339 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 11:33:11.280 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[W 2022-04-02 15:08:50.724 ServerApp] WebSocket ping timeout after 119972 ms.
+[W 2022-04-02 15:08:50.727 ServerApp] WebSocket ping timeout after 119962 ms.
+[W 2022-04-02 15:08:51.010 ServerApp] WebSocket ping timeout after 119836 ms.
+[I 2022-04-02 15:08:55.727 ServerApp] Starting buffering for 2925ea86-b60d-4c07-9a79-9bc1b8cc3550:85707959-3aa0-4153-b34f-64ee7959ee2b
+[I 2022-04-02 15:08:55.728 ServerApp] Starting buffering for d0ce7064-b31e-4a5c-bc41-4abbc5ca7e20:93ccb81d-3c7c-41e0-b9ea-a234168e59ca
+[I 2022-04-02 15:08:56.012 ServerApp] Starting buffering for 118849c2-f5bb-4bd3-9258-d76fe4692ed1:1e09eefb-f8fa-4d74-9137-5024f29da4ce
+[I 2022-04-02 17:33:00.034 ServerApp] Restoring connection for 118849c2-f5bb-4bd3-9258-d76fe4692ed1:1e09eefb-f8fa-4d74-9137-5024f29da4ce
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 7a767edf-3446-4217-a322-bcd993883686
+[I 2022-04-02 17:33:01.453 ServerApp] Restoring connection for 2925ea86-b60d-4c07-9a79-9bc1b8cc3550:85707959-3aa0-4153-b34f-64ee7959ee2b
+[I 2022-04-02 17:33:04.338 ServerApp] Restoring connection for d0ce7064-b31e-4a5c-bc41-4abbc5ca7e20:93ccb81d-3c7c-41e0-b9ea-a234168e59ca
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 2ca1c9da-733a-4475-90fd-0645b73df773
+[I 2022-04-02 17:33:18.737 ServerApp] Starting buffering for 2925ea86-b60d-4c07-9a79-9bc1b8cc3550:85707959-3aa0-4153-b34f-64ee7959ee2b
+[I 2022-04-02 17:33:18.739 ServerApp] Starting buffering for 118849c2-f5bb-4bd3-9258-d76fe4692ed1:1e09eefb-f8fa-4d74-9137-5024f29da4ce
+[I 2022-04-02 17:33:18.740 ServerApp] Starting buffering for d0ce7064-b31e-4a5c-bc41-4abbc5ca7e20:93ccb81d-3c7c-41e0-b9ea-a234168e59ca
+[W 2022-04-02 17:33:25.206 LabApp] Could not determine jupyterlab build status without nodejs
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: dfb116e5-222a-4ce9-b810-d0fa0633d308
+[IPKernelApp] WARNING | No such comm: 9b43dc8e-937c-4a63-b8dd-95be97199fdb
+[I 2022-04-02 17:37:29.649 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 17:39:31.950 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 17:41:34.130 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[I 2022-04-02 17:43:36.298 ServerApp] Saving file at /jupyter_notebooks/ERA_Time_Variability.ipynb
+[W 2022-04-02 17:44:40.479 ServerApp] delete /scripts/get_real_names.ipynb
+[W 2022-04-02 17:44:40.480 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/scripts/get_real_names.ipynb, on different device to home directory
+[I 2022-04-02 17:45:06.075 ServerApp] Kernel started: 210c84f9-481d-4aa0-a6ce-e819dc79e873
+[I 2022-04-02 17:45:25.166 ServerApp] Kernel shutdown: 210c84f9-481d-4aa0-a6ce-e819dc79e873
+Traceback (most recent call last):
+  File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/ipykernel_launcher.py", line 15, in <module>
+    from ipykernel import kernelapp as app
+  File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/ipykernel/kernelapp.py", line 42, in <module>
+    from .ipkernel import IPythonKernel
+  File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/ipykernel/ipkernel.py", line 46, in <module>
+    class IPythonKernel(KernelBase):
+  File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/ipykernel/ipkernel.py", line 59, in IPythonKernel
+    @observe_compat
+  File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/traitlets/traitlets.py", line 863, in observe_compat
+    def observe_compat(func):
+KeyboardInterrupt
+[W 2022-04-02 17:45:25.483 ServerApp] delete /jupyter_notebooks/02.Join_MODIS_with_ERA_faiss-Copy1.ipynb
+[W 2022-04-02 17:45:25.483 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/02.Join_MODIS_with_ERA_faiss-Copy1.ipynb, on different device to home directory
+[I 2022-04-02 17:45:33.730 ServerApp] Kernel started: 1b4c519d-bb4a-47d1-87a3-c2daf9beefa3
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: d05f33c4-1aef-4214-a537-6c777969515c
+[I 2022-04-02 17:45:36.995 ServerApp] Starting buffering for 118849c2-f5bb-4bd3-9258-d76fe4692ed1:0dbd30be-10c1-4f2a-ad5a-e9f509fabde9
+[I 2022-04-02 17:45:37.727 ServerApp] Starting buffering for d0ce7064-b31e-4a5c-bc41-4abbc5ca7e20:2534be04-ccdb-419e-900b-62a956ee27ce
+[I 2022-04-02 17:45:39.165 ServerApp] Starting buffering for 2925ea86-b60d-4c07-9a79-9bc1b8cc3550:aaf2a283-75be-4882-9b35-fd7bbb6a81ee
+[I 2022-04-02 17:46:04.224 ServerApp] Kernel started: 23408e69-d00b-4f97-a80e-84e97bd6d51b
+[W 2022-04-02 17:46:06.168 ServerApp] Timeout waiting for kernel_info reply from 210c84f9-481d-4aa0-a6ce-e819dc79e873
+[W 2022-04-02 17:46:06.170 ServerApp] 404 GET /api/kernels/210c84f9-481d-4aa0-a6ce-e819dc79e873/channels?session_id=28e3b1cb-3a0e-492d-9135-0e76475978ec (::1): Kernel does not exist: 210c84f9-481d-4aa0-a6ce-e819dc79e873
+[W 2022-04-02 17:46:06.172 ServerApp] 404 GET /api/kernels/210c84f9-481d-4aa0-a6ce-e819dc79e873/channels?session_id=f0619c2d-de5d-48c0-a038-ead975b72fae (::1): Kernel does not exist: 210c84f9-481d-4aa0-a6ce-e819dc79e873
+[W 2022-04-02 17:46:06.173 ServerApp] 404 GET /api/kernels/210c84f9-481d-4aa0-a6ce-e819dc79e873/channels?session_id=38dedc5c-9919-4977-aaa5-a6415b9f8928 (::1): Kernel does not exist: 210c84f9-481d-4aa0-a6ce-e819dc79e873
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: cf8c07ec-15de-4ab7-a8a4-45177e1b51c4
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 367017d5-7232-483f-8bf5-0168ea9b1b68
+[I 2022-04-02 17:46:51.118 ServerApp] Starting buffering for 23408e69-d00b-4f97-a80e-84e97bd6d51b:83122755-21e6-4fad-8d31-d074a3fd106a
+[I 2022-04-02 17:46:56.530 ServerApp] Kernel shutdown: 23408e69-d00b-4f97-a80e-84e97bd6d51b
+[W 2022-04-02 17:46:57.027 ServerApp] delete /jupyter_notebooks/04.AnalysisV2.ipynb
+[W 2022-04-02 17:46:57.027 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/04.AnalysisV2.ipynb, on different device to home directory
+[I 2022-04-02 17:47:15.794 ServerApp] Kernel started: 2166759b-6081-4152-9207-a8632ae2640c
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: c7eb95c0-199f-40cd-a06b-8a2bf4d1ee54
+[I 2022-04-02 17:47:31.974 ServerApp] Kernel started: df50f1bb-b104-4da3-83b4-9f1f10260db9
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: f076f3d9-6c43-4e77-8daa-7e30750f9fe1
+[I 2022-04-02 17:48:29.020 ServerApp] Creating new file in /jupyter_notebooks/legacy
+[W 2022-04-02 17:49:13.298 ServerApp] delete /jupyter_notebooks/legacy/README.txt
+[W 2022-04-02 17:49:13.298 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/jupyter_notebooks/legacy/README.txt, on different device to home directory
+[I 2022-04-02 17:49:23.794 ServerApp] Kernel started: 94afe96a-7e69-45e9-98a6-8c922d9404df
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 46775413-8b33-42cf-b949-181966022f39
+[I 2022-04-02 17:50:04.539 ServerApp] Kernel started: 5f2839cc-8f2a-4867-9d23-cfcf056da9ce
+[I 2022-04-02 17:50:04.715 ServerApp] Starting buffering for 1b4c519d-bb4a-47d1-87a3-c2daf9beefa3:c4717552-c491-486b-9a4e-327b652e5e0f
+[I 2022-04-02 17:50:06.852 ServerApp] Starting buffering for 118849c2-f5bb-4bd3-9258-d76fe4692ed1:fa0fd449-9b94-42e0-b8aa-71eb6aaca665
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 65d4db2c-7b06-47c7-a95d-7f4771bbc995
+[I 2022-04-02 17:50:08.149 ServerApp] Starting buffering for 2166759b-6081-4152-9207-a8632ae2640c:c81e9a37-b297-47ed-a3bf-3cf784a7414b
+[I 2022-04-02 17:50:09.336 ServerApp] Starting buffering for df50f1bb-b104-4da3-83b4-9f1f10260db9:3fd18f5b-e636-4dfb-9058-8d69b2d950eb
+[I 2022-04-02 17:50:10.439 ServerApp] Starting buffering for 94afe96a-7e69-45e9-98a6-8c922d9404df:ea1c0be4-746b-48c9-bedc-c2b78f373d47
+[I 2022-04-02 17:52:06.975 ServerApp] Saving file at /jupyter_notebooks/05.Reverse_learning.ipynb
+[I 2022-04-02 17:54:09.422 ServerApp] Saving file at /jupyter_notebooks/05.Reverse_learning.ipynb
+[I 2022-04-02 17:56:11.790 ServerApp] Saving file at /jupyter_notebooks/05.Reverse_learning.ipynb
+[I 2022-04-02 17:58:13.963 ServerApp] Saving file at /jupyter_notebooks/05.Reverse_learning.ipynb
+[I 2022-04-02 18:00:15.751 ServerApp] Saving file at /jupyter_notebooks/05.Reverse_learning.ipynb
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: f928b0ad-132a-46da-87d3-f1791f7ad42c
+[I 2022-04-02 18:00:43.292 ServerApp] Starting buffering for 118849c2-f5bb-4bd3-9258-d76fe4692ed1:81bf8229-34ab-492f-8db4-d21774269943
+[I 2022-04-02 18:02:17.619 ServerApp] Saving file at /jupyter_notebooks/05.Reverse_learning.ipynb
+[I 2022-04-02 18:04:03.561 ServerApp] Saving file at /jupyter_notebooks/05.Reverse_learning.ipynb
+[I 2022-04-02 18:05:50.082 ServerApp] Saving file at /jupyter_notebooks/05.Reverse_learning.ipynb
+[I 2022-04-02 18:07:11.184 ServerApp] Saving file at /scripts/train_and_predict_GPU_inverse.py
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 7d215248-f5b6-4cfc-b223-cb967b369d42
+[I 2022-04-02 18:09:19.821 ServerApp] Saving file at /jupyter_notebooks/04.Analysis_vs_skt.ipynb
+[I 2022-04-02 18:11:25.325 ServerApp] Saving file at /jupyter_notebooks/04.Analysis_vs_skt.ipynb
+[I 2022-04-02 19:59:00.138 ServerApp] Kernel started: 33869f8a-8625-4e9f-83ae-a56dd5e2c31b
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 4ec4580d-88c3-44c6-b774-6af1ea2f8b62
+[I 2022-04-02 20:02:31.003 ServerApp] Kernel started: 8fe9a51a-cec3-40b2-8fff-27a6cea62d86
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 705b123e-014f-49f1-ab5f-a1e77ab7b08a
+[I 2022-04-02 20:04:30.724 ServerApp] Saving file at /jupyter_notebooks/00. Summary.ipynb
+[I 2022-04-02 20:06:30.825 ServerApp] Saving file at /jupyter_notebooks/00. Summary.ipynb

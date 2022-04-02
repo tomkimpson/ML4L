@@ -32,11 +32,15 @@ if gpus:
     
 
     
-input_file = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/MODIS_ERA_joined_data_single.pkl'
+#input_file = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/MODIS_ERA_joined_data_single.pkl'
+input_file = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/ML_data_ERA_MODIS_joined.pkl'
+
+
+
 train_condition = pd.to_datetime("2019-01-01 00:00:00")
 test_condition  = pd.to_datetime("2020-01-01 00:00:00")
 epochs = 100
-batch_size = 100000
+batch_size = 10000
 output_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/'
 
      
@@ -51,14 +55,14 @@ def load_and_process_data(input_file,train_condition,test_condition):
     
     
     # Create a "results_df" copy that will be used later for clean IO
-    results_df = df[['latitude_ERA', 'longitude_ERA','time','t2m','MODIS_LST']].copy()
+    results_df = df[['latitude_ERA', 'longitude_ERA','time','skt','t2m','MODIS_LST','lsm']].copy()
     
 
     # Split into features/targets 
     feature_names = [ 'sp', 'msl', 'u10', 'v10','t2m',
                          'aluvp', 'aluvd', 'alnip', 'alnid', 'cl',
                          'cvl', 'cvh', 'slt', 'sdfor', 'z', 'sd', 'sdor', 'isor', 'anor', 'slor',
-                         'd2m', 'lsm', 'fal'] 
+                         'd2m', 'lsm', 'fal','skt'] 
 
 
     features = df[feature_names]
