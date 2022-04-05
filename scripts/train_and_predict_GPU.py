@@ -59,9 +59,21 @@ def load_and_process_data(input_file,train_condition,test_condition):
     
 
     # Split into features/targets 
-    feature_names = [ 'sp', 'msl', 'u10', 'v10','t2m',
+    # feature_names = [ 'sp', 'msl', 'u10', 'v10','t2m',
+    #                      'aluvp', 'aluvd', 'alnip', 'alnid', 'cl',
+    #                      'cvl', 'cvh', 'slt', 'sdfor', 'z', 'sd', 'sdor', 'isor', 'anor', 'slor',
+    #                      'd2m', 'lsm', 'fal','skt'] 
+    
+    #no t2m
+    feature_names = [ 'sp', 'msl', 'u10', 'v10',
                          'aluvp', 'aluvd', 'alnip', 'alnid', 'cl',
                          'cvl', 'cvh', 'slt', 'sdfor', 'z', 'sd', 'sdor', 'isor', 'anor', 'slor',
+                         'd2m', 'lsm', 'fal','skt'] 
+    
+    #noskt, sdor,slt
+    feature_names = [ 'sp', 'msl', 'u10', 'v10',
+                         'aluvp', 'aluvd', 'alnip', 'alnid', 'cl',
+                         'cvl', 'cvh', 'sdfor', 'z', 'sd', 'isor', 'anor', 'slor',
                          'd2m', 'lsm', 'fal','skt'] 
 
 
