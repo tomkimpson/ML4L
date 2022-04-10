@@ -32,7 +32,6 @@ if gpus:
     
 
     
-#input_file = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/MODIS_ERA_joined_data_single.pkl'
 input_file = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/ML_data_ERA_MODIS_joined.pkl'
 
 
@@ -44,13 +43,12 @@ batch_size = 10000
 output_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/'
 
         
-#all_features = [ 'sp', 'msl', 'u10', 'v10','t2m',
- #                        'aluvp', 'aluvd', 'alnip', 'alnid', 'cl',
-  #                       'cvl', 'cvh', 'slt', 'sdfor', 'z', 'sd', 'sdor', 'isor', 'anor', 'slor',
-   #                      'd2m', 'lsm', 'fal','skt'] 
+all_features = [ 'sp', 'msl', 'u10', 'v10','t2m',
+                        'aluvp', 'aluvd', 'alnip', 'alnid', 'cl',
+                        'cvl', 'cvh', 'slt', 'sdfor', 'z', 'sd', 'sdor', 'isor', 'anor', 'slor',
+                        'd2m', 'lsm', 'fal','skt'] 
     
 
-all_features = [ 'isor', 'anor', 'slor','d2m', 'lsm', 'fal','skt'] 
 
 parameters_dict = {'input_file':     input_file,
                   'train_condition': train_condition,
@@ -64,8 +62,7 @@ def train_test_split(df,train_condition,test_condition,normalised_features,norma
     
    
     
-    # Create a "results_df" copy that will be used later for clean IO
-    results_df = df[['latitude_ERA', 'longitude_ERA','time','skt','MODIS_LST']].copy()
+  
       
     
     #Separate into train/test based on time
@@ -77,10 +74,14 @@ def train_test_split(df,train_condition,test_condition,normalised_features,norma
 
     x_test = normalised_features[idx_test]
     y_test = normalised_targets[idx_test]
+    
+    
+    # Create a "results_df" copy that will be used later for smaller IO. Won't output all features
+    results_df = df[['latitude_ERA', 'longitude_ERA','time','skt','MODIS_LST']].copy()
     results_df = results_df[idx_test] #For IO we will just output predictions
     
     
-    return x_train,y_train,x_test,y_test,target.mean(),target.std(),results_df
+    return x_train,y_train,x_test,y_test,results_df
     
     
     
@@ -149,7 +150,7 @@ def write_outputs(output_path,model,history,df,parameters_dict,identifier):
 def pipeline(df,train_condition,test_condition,selected_normalised_features,target_normed,popped_feature):
     
     print('Splitting data')
-    x_train,y_train,x_test,y_test,T_normalize_mean,T_normalize_std,results_df = train_test_split(df,train_condition,test_condition,selected_normalised_features,target_normed)
+    x_train,y_train,x_test,y_test,results_df = train_test_split(df,train_condition,test_condition,selected_normalised_features,target_normed)
     
     #Train model
     print ('Training model')
@@ -162,7 +163,7 @@ def pipeline(df,train_condition,test_condition,selected_normalised_features,targ
     #Make some predictions
     print('Predict')
     predictions_normalized = model.predict(x_test)
-    predictions = (predictions_normalized * T_normalize_std ) + T_normalize_mean
+    predictions = (predictions_normalized * T_normalize_std ) + T_normalize_mean #unnormalize
     
     
     #Bring together the test data and predictions into a single pandas df
@@ -176,22 +177,7 @@ def pipeline(df,train_condition,test_condition,selected_normalised_features,targ
 
 
     
-    
-  
 
-    #Evaluate
-    #print('Evaluating model')
-    #score = model.evaluate(x_test, y_test,batch_size)
-
-    #Make as a pandas df
-    # d= {'feature': [popped_feature], 'score': [score]}
-    # dftmp = pd.DataFrame(data=d)
-    
-   # return dftmp 
-    
-    
-
-    
 print('Loading the data')
 #Load the raw
 df = pd.read_pickle(input_file)
@@ -204,13 +190,17 @@ target = df['MODIS_LST']
 target_normed = (target-target.mean())/target.std()
 features_normed = (features-features.mean())/features.std()
 
+#Declare these as global parameters - used when un-normalising predictions
+T_normalize_mean= target.mean()
+T_normalize_std=target.std()
+
 
 #Null hypothesis, using all features
-#pipeline(df,train_condition,test_condition,features_normed,target_normed,'H0')
+pipeline(df,train_condition,test_condition,features_normed,target_normed,'H0')
     
 
 #Iterate
-#dfs = []
+
 for i in all_features:
     print('Pop feature:', i)
     
@@ -221,21 +211,6 @@ for i in all_features:
     pipeline(df,train_condition,test_condition,features_normed,target_normed,i)
     
     
-    #dfs.append(dftmp)   
-
-
-    
-    
-#Add the unpermuted score
-# dfs.append(df_null)
-# print('IO')
-# #Bring together and save to disk
-# df = pd.concat(dfs).reset_index()
-# df.to_pickle('small_data/training_feature_importance.pkl')
-
-
-
-
 
 
 
