@@ -308,3 +308,573 @@
 [I 2022-04-11 16:24:33.858 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
 [I 2022-04-11 16:24:50.707 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
 [I 2022-04-11 16:24:58.865 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-11 16:27:12.958 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-11 16:27:12.960 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-11 16:28:20.056 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-11 16:28:24.408 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-11 16:28:24.575 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-11 16:49:14.886 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-11 16:49:14.887 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-11 16:49:39.992 ServerApp] Kernel started: eaf0c102-03a5-4090-bcdd-8b16161028c1
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 4abb04cf-743f-437d-ab95-0e7212844003
+[I 2022-04-11 16:50:53.420 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-11 16:50:53.422 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-11 16:52:55.342 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-11 16:52:55.343 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 131998a6-ae53-4816-bc6c-6c6ba3b97496
+[I 2022-04-11 16:54:57.675 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-11 16:54:57.676 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-11 16:57:00.753 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-11 16:57:00.755 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-11 16:59:02.875 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-11 16:59:02.876 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-11 17:00:15.064 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-11 17:00:15.067 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-11 17:06:17.020 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-11 17:06:17.022 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-11 17:08:11.309 ServerApp] Kernel started: 82321305-8cf5-417e-b01c-1d5d9f6265c0
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 43953106-f5c0-4346-8872-c1331c85cd19
+[I 2022-04-11 17:10:17.449 ServerApp] Saving file at /jupyter_notebooks/05b.Analysis_vs_skt-Copy1.ipynb
+[I 2022-04-11 17:12:22.041 ServerApp] Saving file at /jupyter_notebooks/05b.Analysis_vs_skt-Copy1.ipynb
+[I 2022-04-11 17:13:13.023 ServerApp] Saving file at /jupyter_notebooks/05b.Analysis_vs_skt-Copy1.ipynb
+[I 2022-04-11 17:15:19.768 ServerApp] Saving file at /jupyter_notebooks/05b.Analysis_vs_skt-Copy1.ipynb
+[I 2022-04-11 17:17:25.428 ServerApp] Saving file at /jupyter_notebooks/05b.Analysis_vs_skt-Copy1.ipynb
+[I 2022-04-11 17:18:22.603 ServerApp] Saving file at /jupyter_notebooks/05b.Analysis_vs_skt-Copy1.ipynb
+[I 2022-04-11 17:20:30.105 ServerApp] Saving file at /jupyter_notebooks/05b.Analysis_vs_skt-Copy1.ipynb
+[I 2022-04-11 17:28:36.578 ServerApp] Saving file at /jupyter_notebooks/05b.Analysis_vs_skt-Copy1.ipynb
+[I 2022-04-11 17:30:43.013 ServerApp] Saving file at /jupyter_notebooks/05b.Analysis_vs_skt-Copy1.ipynb
+[E 2022-04-11 22:05:54.733 ServerApp] Uncaught exception GET /lab/tree/jupyter_notebooks/05b.Analysis_vs_skt-Copy1.ipynb (::1)
+    HTTPServerRequest(protocol='http', host='localhost:8884', method='GET', uri='/lab/tree/jupyter_notebooks/05b.Analysis_vs_skt-Copy1.ipynb', version='HTTP/1.1', remote_ip='::1')
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyter_server/extension/handler.py", line 15, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/environment.py", line 997, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/environment.py", line 958, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/loaders.py", line 125, in load
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/loaders.py", line 214, in get_source
+    jinja2.exceptions.TemplateNotFound: index.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/tornado/web.py", line 1702, in _execute
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/tornado/web.py", line 3173, in wrapper
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/tornado/web.py", line 1878, in wrapper
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyterlab_server/handlers.py", line 152, in get
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 520, in render_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyter_server/extension/handler.py", line 17, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 516, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/environment.py", line 997, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/environment.py", line 958, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/loaders.py", line 125, in load
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/loaders.py", line 214, in get_source
+    jinja2.exceptions.TemplateNotFound: index.html
+[E 2022-04-11 22:05:54.777 ServerApp] Uncaught exception in write_error
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyter_server/extension/handler.py", line 15, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/environment.py", line 997, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/environment.py", line 958, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/loaders.py", line 125, in load
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/loaders.py", line 214, in get_source
+    jinja2.exceptions.TemplateNotFound: index.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/tornado/web.py", line 1702, in _execute
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/tornado/web.py", line 3173, in wrapper
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/tornado/web.py", line 1878, in wrapper
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyterlab_server/handlers.py", line 152, in get
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 520, in render_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyter_server/extension/handler.py", line 17, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 516, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/environment.py", line 997, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/environment.py", line 958, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/loaders.py", line 125, in load
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/loaders.py", line 214, in get_source
+    jinja2.exceptions.TemplateNotFound: index.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyter_server/extension/handler.py", line 15, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/environment.py", line 997, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/environment.py", line 958, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/loaders.py", line 125, in load
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/loaders.py", line 214, in get_source
+    jinja2.exceptions.TemplateNotFound: 500.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 590, in write_error
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 520, in render_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyter_server/extension/handler.py", line 17, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 516, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/environment.py", line 997, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/environment.py", line 958, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/loaders.py", line 125, in load
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/loaders.py", line 214, in get_source
+    jinja2.exceptions.TemplateNotFound: 500.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyter_server/extension/handler.py", line 15, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/environment.py", line 997, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/environment.py", line 958, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/loaders.py", line 125, in load
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/loaders.py", line 214, in get_source
+    jinja2.exceptions.TemplateNotFound: error.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/tornado/web.py", line 1217, in send_error
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 592, in write_error
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 520, in render_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyter_server/extension/handler.py", line 17, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 516, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/environment.py", line 997, in get_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/environment.py", line 958, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/loaders.py", line 125, in load
+      File "/home/k/kimpson/bin/conda/envs/GPU/lib/python3.7/site-packages/jinja2/loaders.py", line 214, in get_source
+    jinja2.exceptions.TemplateNotFound: error.html
+[E 2022-04-11 22:05:54.872 LabApp] {
+      "Host": "localhost:8884",
+      "Connection": "keep-alive",
+      "Cache-Control": "max-age=0",
+      "Upgrade-Insecure-Requests": "1",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.79 Safari/537.36",
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+      "Sec-Gpc": "1",
+      "Sec-Fetch-Site": "same-origin",
+      "Sec-Fetch-Mode": "navigate",
+      "Sec-Fetch-User": "?1",
+      "Sec-Fetch-Dest": "document",
+      "Accept-Encoding": "gzip, deflate, br",
+      "Accept-Language": "en-GB,en-US;q=0.9,en;q=0.8",
+      "Cookie": "_xsrf=2|cc34ad04|0d1e9f8bafbbebd28461895365a201fd|1649423625; username-localhost-8884=\"2|1:0|10:1649423630|23:username-localhost-8884|44:MjcyMjMwMDY1MDMxNDYyYjk1NTNjZDgyYTBlYzFiZmE=|50caee0d893f989a6e6d06a740ce67242a1fa2250a4a51d455c0222543f4d99f\""
+    }
+[E 2022-04-11 22:05:54.873 LabApp] 500 GET /lab/tree/jupyter_notebooks/05b.Analysis_vs_skt-Copy1.ipynb (::1) 185.71ms referer=None
+[I 2022-04-11 22:05:54.911 ServerApp] Starting buffering for 1de825a9-8d73-4391-a698-19b265a101c5:80021847-8aa4-4b82-9df9-f337bb9fb29f
+[I 2022-04-11 22:05:54.914 ServerApp] Starting buffering for eaf0c102-03a5-4090-bcdd-8b16161028c1:b826fa42-fee7-4856-8be8-f4e6891e1885
+[I 2022-04-11 22:05:54.915 ServerApp] Starting buffering for 9617b1d4-7307-438e-abd6-243304c22ab9:483c139b-38a2-40ae-b3f7-ca36511ad380
+[I 2022-04-11 22:05:54.916 ServerApp] Starting buffering for 82321305-8cf5-417e-b01c-1d5d9f6265c0:dd46067a-0002-4f73-923d-783626c0c148
+[I 2022-04-11 22:06:58.522 ServerApp] 302 GET / (::1) 1.11ms
+[W 2022-04-11 22:07:04.349 LabApp] Could not determine jupyterlab build status without nodejs
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 8b7e1eed-549e-4e6d-8cba-beb646173b69
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: e127d855-c3ee-48c2-ae92-8fec13da4673
+[W 2022-04-11 22:07:16.559 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-11 22:07:18.024 ServerApp] Starting buffering for 1de825a9-8d73-4391-a698-19b265a101c5:d3c8bd19-5c01-4cee-8072-0425461836ca
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 1aee7b7c-e3fc-4cec-be72-d98eec1b3ddc
+[I 2022-04-11 22:07:20.194 ServerApp] Starting buffering for eaf0c102-03a5-4090-bcdd-8b16161028c1:2bc23cbc-1461-473c-bea7-c6ba01236ece
+[I 2022-04-11 22:09:19.651 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-11 22:09:19.654 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-11 22:10:41.052 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-11 22:10:46.560 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-11 22:10:46.562 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-11 22:14:38.862 ServerApp] Starting buffering for 9617b1d4-7307-438e-abd6-243304c22ab9:6f04ba87-a0ba-48cd-a740-f43e6f4e6996
+[I 2022-04-11 22:14:39.455 ServerApp] Restoring connection for 9617b1d4-7307-438e-abd6-243304c22ab9:6f04ba87-a0ba-48cd-a740-f43e6f4e6996
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: b9aa2b32-6423-415d-888b-96d418053f65
+[W 2022-04-11 22:16:09.456 ServerApp] WebSocket ping timeout after 90001 ms.
+[I 2022-04-11 22:16:14.459 ServerApp] Starting buffering for 9617b1d4-7307-438e-abd6-243304c22ab9:6f04ba87-a0ba-48cd-a740-f43e6f4e6996
+[W 2022-04-12 10:21:55.322 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-04-12 10:21:56.114 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 7eba11ef-6ff4-407a-b20e-45edec575426
+[I 2022-04-12 10:22:27.543 ServerApp] Copying reproducible_workflow/scripts/join_MODIS_with_ERA.py to /reproducible_workflow/scripts
+[I 2022-04-12 10:23:58.566 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 10:23:58.568 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 10:26:00.502 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 10:26:00.504 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 10:28:02.340 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 10:28:02.341 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 10:30:04.264 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 10:30:04.265 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 10:32:06.351 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 10:32:06.353 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 10:33:49.366 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 10:33:49.368 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 10:33:51.848 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 10:33:51.849 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 10:35:53.790 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 10:35:53.792 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 10:39:56.985 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 10:39:56.987 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 10:41:58.855 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 10:41:58.857 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 10:44:00.819 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 10:44:00.821 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 10:46:02.795 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 10:46:02.797 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 10:48:04.657 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 10:48:04.660 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 10:50:06.705 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 10:50:06.707 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 10:52:08.666 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 10:52:08.668 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 10:54:10.593 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 10:54:10.595 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 10:56:12.583 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 10:56:12.585 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 10:58:14.479 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 10:58:14.481 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 10:58:43.614 ServerApp] Kernel started: 6433e062-49fd-4a5c-826e-7d3794a75d7e
+[I 2022-04-12 10:59:10.816 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:00:16.542 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 11:00:16.545 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 11:01:10.906 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:01:37.563 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:03:37.645 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:04:32.761 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:04:46.556 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:06:07.390 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:06:26.637 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:11:41.882 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:17:18.161 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:18:31.445 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:18:35.758 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:19:50.319 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:21:02.084 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:21:50.519 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:25:50.607 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:26:48.082 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:26:54.463 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:27:15.918 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:27:16.561 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:28:00.907 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:28:01.229 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:28:01.943 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:28:18.232 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:31:04.785 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:32:52.379 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:33:08.573 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:33:08.861 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:33:15.722 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:35:40.209 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:35:40.415 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:36:11.395 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:36:11.725 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:36:46.813 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:37:07.687 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:37:07.991 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:39:08.060 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:39:45.283 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:40:46.299 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:42:46.472 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:43:25.221 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:44:04.795 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:44:08.186 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:44:08.303 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:45:16.674 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:45:16.907 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:45:17.018 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:45:20.155 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:45:32.928 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:45:33.152 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:45:38.149 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:45:50.789 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:45:50.991 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:46:02.191 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:46:02.430 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:47:15.382 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:47:38.625 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:47:56.316 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:48:52.834 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:49:02.749 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:51:02.921 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:51:45.407 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:51:45.762 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:52:48.513 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:53:00.727 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:53:14.353 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:53:33.794 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:53:34.017 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:54:14.671 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:54:15.045 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:54:20.112 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:54:20.328 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:54:28.305 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:54:28.495 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:55:11.489 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:55:42.455 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:55:57.745 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:57:14.102 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:57:18.452 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:57:45.033 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:57:47.758 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:57:47.957 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:57:53.730 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 11:57:53.883 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 12:08:22.115 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 12:08:22.117 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 12:09:53.984 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 12:10:24.091 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 12:10:24.093 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 12:11:54.064 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 12:12:21.813 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 12:12:25.991 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 12:12:25.993 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 12:12:49.458 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 12:14:28.001 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 12:14:28.003 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 12:14:49.520 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 12:16:29.957 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 12:16:29.959 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 12:16:30.495 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 12:16:30.503 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 12:16:31.379 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 12:20:31.934 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 12:20:31.936 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 12:22:33.912 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 12:22:33.914 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 12:24:35.918 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 12:24:35.920 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 12:26:39.158 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 12:26:39.159 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 12:28:41.105 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 12:28:41.107 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 12:31:22.283 ServerApp] Copying reproducible_workflow/scripts/join_MODIS_with_ERA-lite.py to /reproducible_workflow/scripts
+[I 2022-04-12 12:33:26.502 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[I 2022-04-12 12:34:38.290 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[I 2022-04-12 12:34:40.914 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[I 2022-04-12 12:34:43.255 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 12:34:43.257 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 12:34:43.836 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[I 2022-04-12 12:35:49.548 ServerApp] Kernel started: d80dea91-fea0-45a2-98ff-536801cb7a5f
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: a54520ab-08e3-4392-868b-141f95808bf6
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: b5805093-5637-44ad-abe1-dd2de302bfcb
+[I 2022-04-12 12:35:55.470 ServerApp] Starting buffering for d80dea91-fea0-45a2-98ff-536801cb7a5f:86cb0506-bc3d-41ba-8c1d-2d81b767f1ff
+[I 2022-04-12 12:36:44.020 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[I 2022-04-12 12:36:45.335 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 12:36:45.337 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 12:36:54.457 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 12:36:54.459 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 12:37:39.507 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[I 2022-04-12 12:37:52.708 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[I 2022-04-12 12:38:07.803 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[I 2022-04-12 12:38:38.638 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[I 2022-04-12 12:38:56.537 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 12:38:56.539 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 12:39:25.511 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[I 2022-04-12 12:40:59.322 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[I 2022-04-12 12:41:12.507 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[I 2022-04-12 12:41:32.054 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[I 2022-04-12 12:41:32.333 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: bc0cabff-ec30-402c-b53a-dab74b418902
+[I 2022-04-12 12:46:21.955 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[I 2022-04-12 12:47:09.517 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[I 2022-04-12 12:49:05.338 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[I 2022-04-12 12:49:05.611 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[I 2022-04-12 12:50:13.638 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA-lite-Copy1.py
+[I 2022-04-12 12:52:58.662 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 12:52:58.664 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 12:55:00.521 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 12:55:00.522 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 13:15:02.459 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 13:15:02.472 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 13:26:43.736 ServerApp] Creating new directory in /reproducible_workflow/scripts
+[I 2022-04-12 13:29:04.368 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 13:29:04.370 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 13:29:18.543 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 13:29:18.544 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 13:31:20.489 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 13:31:20.491 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 13:33:26.718 ServerApp] Kernel interrupted: 9617b1d4-7307-438e-abd6-243304c22ab9
+[I 2022-04-12 13:33:26.890 ServerApp] Kernel interrupted: 9617b1d4-7307-438e-abd6-243304c22ab9
+[I 2022-04-12 13:33:27.052 ServerApp] Kernel interrupted: 9617b1d4-7307-438e-abd6-243304c22ab9
+[I 2022-04-12 13:33:27.151 ServerApp] Kernel interrupted: 9617b1d4-7307-438e-abd6-243304c22ab9
+[I 2022-04-12 13:33:27.383 ServerApp] Kernel interrupted: 9617b1d4-7307-438e-abd6-243304c22ab9
+[I 2022-04-12 13:33:27.552 ServerApp] Kernel interrupted: 9617b1d4-7307-438e-abd6-243304c22ab9
+[I 2022-04-12 13:33:27.700 ServerApp] Kernel interrupted: 9617b1d4-7307-438e-abd6-243304c22ab9
+[I 2022-04-12 13:33:35.050 ServerApp] Kernel interrupted: 9617b1d4-7307-438e-abd6-243304c22ab9
+[I 2022-04-12 13:35:22.419 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 13:35:22.420 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 13:44:44.966 ServerApp] Starting buffering for 99216688-ed7b-471a-8f9f-1e1c8302d098:a3c1aee0-e389-43bf-963b-648a950ce3bf
+[I 2022-04-12 13:45:24.336 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 13:45:24.338 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 13:46:17.980 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-12 13:47:12.759 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-12 13:47:16.783 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-12 13:50:58.065 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-12 13:50:58.237 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-12 13:53:26.878 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 13:53:26.880 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 13:54:44.096 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-12 13:56:44.169 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-12 13:57:11.302 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-12 14:03:11.378 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-12 14:05:28.831 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 14:05:28.834 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 14:07:09.853 ServerApp] Kernel interrupted: 9617b1d4-7307-438e-abd6-243304c22ab9
+[I 2022-04-12 14:07:10.288 ServerApp] Kernel interrupted: 9617b1d4-7307-438e-abd6-243304c22ab9
+[I 2022-04-12 14:07:10.469 ServerApp] Kernel interrupted: 9617b1d4-7307-438e-abd6-243304c22ab9
+[I 2022-04-12 14:07:10.888 ServerApp] Kernel interrupted: 9617b1d4-7307-438e-abd6-243304c22ab9
+[I 2022-04-12 14:07:30.729 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 14:07:30.732 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 14:08:47.968 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 14:08:47.970 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 14:09:42.738 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 14:09:42.739 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 14:10:25.711 ServerApp] Kernel interrupted: 9617b1d4-7307-438e-abd6-243304c22ab9
+[I 2022-04-12 14:10:25.973 ServerApp] Kernel interrupted: 9617b1d4-7307-438e-abd6-243304c22ab9
+[I 2022-04-12 14:10:26.130 ServerApp] Kernel interrupted: 9617b1d4-7307-438e-abd6-243304c22ab9
+[I 2022-04-12 14:11:44.604 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 14:11:44.606 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 14:12:12.539 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 14:12:12.541 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 14:14:14.403 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 14:14:14.404 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 14:16:16.275 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 14:16:16.279 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 14:18:18.236 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 14:18:18.238 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 14:20:20.080 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 14:20:20.082 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 14:22:21.942 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 14:22:21.944 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 14:24:23.940 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 14:24:23.943 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 14:30:25.866 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 14:30:25.868 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 14:34:12.443 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:34:19.588 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:34:19.829 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:34:27.787 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 14:34:27.788 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 14:35:43.093 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:36:14.162 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:36:17.176 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:36:29.263 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:36:33.252 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:36:33.518 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:39:33.134 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:39:41.716 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:41:45.369 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:42:23.167 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:42:27.752 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:44:07.577 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:44:24.850 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:46:25.015 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:47:23.677 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:47:55.351 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:48:08.780 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:48:39.276 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:49:49.517 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:51:47.785 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 14:55:25.070 ServerApp] Saving file at /reproducible_workflow/scripts/dev/join_MODIS_with_ERA-lite.py
+[I 2022-04-12 15:02:30.257 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 15:02:30.259 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 15:04:32.149 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 15:04:32.150 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 15:06:34.071 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 15:06:34.073 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 15:10:35.827 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 15:10:35.828 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 15:20:37.697 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 15:20:37.699 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 15:22:39.543 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 15:22:39.545 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 15:24:41.386 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 15:24:41.388 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 15:25:16.258 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 15:25:25.788 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 15:26:43.262 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 15:26:43.263 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 15:28:45.176 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 15:28:45.177 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 15:30:46.986 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 15:30:46.988 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 15:32:48.818 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 15:32:48.820 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 15:39:54.881 ServerApp] AsyncIOLoopKernelRestarter: restarting kernel (1/5), keep random ports
+[W 2022-04-12 15:39:54.890 ServerApp] kernel 9617b1d4-7307-438e-abd6-243304c22ab9 restarted
+[I 2022-04-12 15:39:55.107 ServerApp] Starting buffering for 9617b1d4-7307-438e-abd6-243304c22ab9:03e9f817-5945-48eb-be10-c4ecaf4d50e8
+[I 2022-04-12 15:39:55.609 ServerApp] Restoring connection for 9617b1d4-7307-438e-abd6-243304c22ab9:03e9f817-5945-48eb-be10-c4ecaf4d50e8
+[I 2022-04-12 15:40:00.677 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 15:40:00.686 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 233ea834-a1f8-4d31-8ccd-86da714b5ecb
+[I 2022-04-12 15:42:02.507 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-12 15:42:02.508 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-12 15:45:12.189 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-12 21:36:29.210 ServerApp] Starting buffering for 9617b1d4-7307-438e-abd6-243304c22ab9:03e9f817-5945-48eb-be10-c4ecaf4d50e8
+[I 2022-04-12 21:36:29.213 ServerApp] Starting buffering for 6433e062-49fd-4a5c-826e-7d3794a75d7e:40635e63-dd28-493c-8516-dc9c633da1a9
+[I 2022-04-12 21:36:29.253 ServerApp] Restoring connection for 9617b1d4-7307-438e-abd6-243304c22ab9:03e9f817-5945-48eb-be10-c4ecaf4d50e8
+[I 2022-04-12 21:36:29.334 ServerApp] Restoring connection for 6433e062-49fd-4a5c-826e-7d3794a75d7e:40635e63-dd28-493c-8516-dc9c633da1a9
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: bce8bfd0-b58a-4f24-ab73-45f9aaf28904
+[W 2022-04-12 21:36:33.858 ServerApp] Nudge: attempt 10 on kernel 6433e062-49fd-4a5c-826e-7d3794a75d7e
+[W 2022-04-12 21:37:59.254 ServerApp] WebSocket ping timeout after 90000 ms.
+[W 2022-04-12 21:37:59.335 ServerApp] WebSocket ping timeout after 90000 ms.
+[I 2022-04-12 21:38:04.256 ServerApp] Starting buffering for 9617b1d4-7307-438e-abd6-243304c22ab9:03e9f817-5945-48eb-be10-c4ecaf4d50e8
+[I 2022-04-12 21:38:04.336 ServerApp] Starting buffering for 6433e062-49fd-4a5c-826e-7d3794a75d7e:40635e63-dd28-493c-8516-dc9c633da1a9
+[I 2022-04-12 22:55:43.691 ServerApp] Restoring connection for 6433e062-49fd-4a5c-826e-7d3794a75d7e:40635e63-dd28-493c-8516-dc9c633da1a9
+[I 2022-04-12 22:55:48.466 ServerApp] Restoring connection for 9617b1d4-7307-438e-abd6-243304c22ab9:03e9f817-5945-48eb-be10-c4ecaf4d50e8
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 6c65d9bc-dc62-47be-add1-6b0bc99d0532
+[I 2022-04-12 22:55:49.784 ServerApp] Starting buffering for 9617b1d4-7307-438e-abd6-243304c22ab9:03e9f817-5945-48eb-be10-c4ecaf4d50e8
+[I 2022-04-12 22:55:49.785 ServerApp] Starting buffering for 6433e062-49fd-4a5c-826e-7d3794a75d7e:40635e63-dd28-493c-8516-dc9c633da1a9
+[W 2022-04-12 22:55:58.659 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-04-12 22:55:59.036 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 80efc8cd-0995-48ab-8a67-ccd778f2018d
+[I 2022-04-12 22:56:55.161 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 22:57:34.268 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 22:57:34.875 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-12 23:01:26.513 ServerApp] Starting buffering for 9617b1d4-7307-438e-abd6-243304c22ab9:79b0df8e-6b84-44c8-b2ac-bafaef56a79c
+[I 2022-04-12 23:01:27.110 ServerApp] Restoring connection for 9617b1d4-7307-438e-abd6-243304c22ab9:79b0df8e-6b84-44c8-b2ac-bafaef56a79c
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: f4567ab2-5825-4959-b294-2d2667caba1c
+[W 2022-04-12 23:02:57.111 ServerApp] WebSocket ping timeout after 90001 ms.
+[I 2022-04-12 23:03:02.112 ServerApp] Starting buffering for 9617b1d4-7307-438e-abd6-243304c22ab9:79b0df8e-6b84-44c8-b2ac-bafaef56a79c
+[I 2022-04-13 11:47:35.885 ServerApp] 302 GET / (::1) 13.70ms
+[W 2022-04-13 11:47:41.436 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-04-13 11:47:46.329 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 5fe942f0-1603-4a39-b27d-5b508372131a
+[I 2022-04-13 11:51:47.667 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-13 11:51:47.669 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-13 11:53:48.230 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-13 11:53:48.232 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-13 11:55:50.403 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-13 11:55:50.405 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-13 11:57:51.760 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-13 11:57:51.761 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-13 11:59:52.355 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-13 11:59:52.357 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-13 12:01:53.692 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-13 12:01:53.694 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-13 12:03:54.670 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-13 12:03:54.672 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-13 12:08:01.846 LabApp] 302 GET /lab/tree/jupyter_notebooks (::1) 1.87ms
+[I 2022-04-13 12:09:56.728 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-13 12:09:56.729 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-13 12:33:07.038 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-13 12:33:07.040 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-13 13:56:07.936 ServerApp] Starting buffering for 9617b1d4-7307-438e-abd6-243304c22ab9:c1fb9439-970e-4052-9c89-a10aaa27deb9
+[I 2022-04-14 10:54:29.155 ServerApp] 302 GET / (::1) 2.44ms
+[I 2022-04-14 10:54:29.159 LabApp] 302 GET /lab (::1) 1.97ms
+[C 2022-04-14 10:54:34.177 ServerApp] received signal 15, stopping
+[I 2022-04-14 10:54:34.198 ServerApp] Shutting down 3 extensions
+[I 2022-04-14 10:54:34.199 ServerApp] Shutting down 9 kernels
+[I 2022-04-14 10:54:34.296 ServerApp] Kernel shutdown: 1de825a9-8d73-4391-a698-19b265a101c5
+[I 2022-04-14 10:54:34.337 ServerApp] Kernel shutdown: d80dea91-fea0-45a2-98ff-536801cb7a5f
+[I 2022-04-14 10:54:34.404 ServerApp] Kernel shutdown: 8ce29462-0a24-4732-a9c5-7ac0f8482028
+[I 2022-04-14 10:54:34.406 ServerApp] Kernel shutdown: 99216688-ed7b-471a-8f9f-1e1c8302d098
+[I 2022-04-14 10:54:34.408 ServerApp] Kernel shutdown: 6433e062-49fd-4a5c-826e-7d3794a75d7e
+[I 2022-04-14 10:54:34.409 ServerApp] Kernel shutdown: eaf0c102-03a5-4090-bcdd-8b16161028c1
+[I 2022-04-14 10:54:34.410 ServerApp] Kernel shutdown: 01019a1d-a736-472a-9ab0-b651c6ee0307
+[I 2022-04-14 10:54:34.412 ServerApp] Kernel shutdown: 9617b1d4-7307-438e-abd6-243304c22ab9
+[I 2022-04-14 10:54:34.413 ServerApp] Kernel shutdown: 82321305-8cf5-417e-b01c-1d5d9f6265c0
+[I 2022-04-14 10:54:37.913 ServerApp] Shutting down 0 terminals

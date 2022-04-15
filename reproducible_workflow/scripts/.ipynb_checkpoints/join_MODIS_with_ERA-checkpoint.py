@@ -30,15 +30,14 @@ root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/
 ERA_folder = root+'processed_data/ERA_timevariable/'
 ERA_files = natural_sort(glob.glob(ERA_folder+'*'))
 
-#Time constant ERA data. We only need the lsm to apply a land filter to the ERA data
-#The lsm is different for v15 and v20 data, so we load both and have 2 land filters
+#Time constant ERA data. This is different for v15 and v20 data.
 versions = ["v15", "v20"]
-land_filters = {}
+ERA_constant_dict = {}
 for v in versions:
     f = root +f'processed_data/ERA_timeconstant/ERA_constants_{v}.nc'
     ds = xr.open_dataset(f) #NetCDF file of features which are constant for each gridpoint
     
-    land_filters[v] = ds.lsm
+    ERA_constant_dict[v] = ds
     ds.close()
 
 
@@ -73,30 +72,27 @@ IO_path = f'/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/
 
 
 
-def get_ERA_hour(ERA_month,lsm,t):
+def get_ERA_hour(ERA_month,ERA_constant,t):
     
     """
     Extract an hour of ERA data
     """
     
-    print ('Filtering hour of ERA data')
     #Filter month of ERA data to an hour
     time_filter = (ERA_month.time == t)
     ERA_hour = ERA_month.where(time_filter,drop=True)
 
     #Join on the constant data, first setting the time coordinate
-    #ERA_constants = ERA_constants.assign_coords({"time": (((ERA_hour.time)))}) #ERA constants is a global variable
-    ERA_hour = xr.merge([ERA_hour,lsm]).load() #Explicitly load 
+    ERA_constant = ERA_constant.assign_coords({"time": (((ERA_hour.time)))}) #Update the time for the merge.
+    ERA_hour = xr.merge([ERA_hour,ERA_constant]).load() #Explicitly load 
 
     #Now filter to get land values only 
     land_filter = (ERA_hour.lsm > 0.5)
-    print('apply land filter')
     ERA_hour = ERA_hour.where(land_filter,drop=True)
 
     #And covert longitude to long1
     ERA_hour = ERA_hour.assign_coords({"longitude": (((ERA_hour.longitude + 180) % 360) - 180)})
 
-    print ('return ERA hour')
     return ERA_hour
 
 
@@ -207,7 +203,6 @@ def faiss_knn(database,query):
     #Combine into a single df with all data
     df = query.reset_index().join(database.iloc[indices.flatten()].reset_index(), lsuffix='_MODIS',rsuffix='_ERA')
     df['L2_distance'] = distances
-    df['MODIS_idx'] = indices
     df['H_distance'] = haver(df['latitude_MODIS'],df['longitude_MODIS'],df['latitude_ERA'],df['longitude_ERA']) #Haversine distance
     
     #Filter out any large distances
@@ -226,7 +221,7 @@ def faiss_knn(database,query):
 
 
 
-selection_index = 0 #Use if you dont want to run for all the ERA files e.g. script gets killed after X months
+selection_index = 9 #Use if you dont want to run for all the ERA files e.g. script gets killed after X months
 selected_ERA_files = ERA_files[selection_index:] 
 counter = selection_index  
 
@@ -261,17 +256,16 @@ for f in selected_ERA_files:
         MODIS_df = MODIS_hour.to_dataframe(name='MODIS_LST').reset_index().dropna() #Make everything a pandas df to pass into faiss_knn. Unnecessary step?
 
     
-        for v in land_filters: #For every ERA land filter, i.e. v15, v20
-            print ('land filter = ', v)
-            lsm = land_filters[v]
+        for v in ERA_constant_dict: #For every version of the ERA constant data ERA land filter, i.e. v15, v20
+            ERA_constant = ERA_constant_dict[v]
             #Get an hour of ERA data
-            ERA_hour = get_ERA_hour(ERA_month,lsm,t)
+            ERA_hour = get_ERA_hour(ERA_month,ERA_constant,t)
             ERA_df = ERA_hour.to_dataframe().reset_index().dropna()
     
-            print('Find matches')
             #Find matches in space
             df_matched = faiss_knn(ERA_df,MODIS_df)
-            df_matched['time'] = t
+            df_matched['time'] = t            
+            df_matched = df_matched.drop(['index_MODIS', 'band','spatial_ref','index_ERA','values','number','surface','depthBelowLandLayer'], axis=1) #get rid of all these columns that we dont need
             dfs[v].append(df_matched)
     
             #Explicitly deallocate
@@ -281,7 +275,7 @@ for f in selected_ERA_files:
         MODIS_hour.close()
         
     #At the end of every month, do some IO
-    #Pkl is likely suboptimial here. Need to update to e.g. parquet
+    #Pkl is likely suboptimial here. Need to update to e.g. parquet, HDF, etc.
     for v in dfs:
         df = pd.concat(dfs[v])
         fname = f'matched_{counter}.pkl'

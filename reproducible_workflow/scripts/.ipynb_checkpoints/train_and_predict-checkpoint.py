@@ -5,6 +5,9 @@ import json
 import pandas as pd
 from tensorflow.keras.callbacks import EarlyStopping
 import xarray as xr
+import uuid
+
+
 
 """
 Script to train a sequential NN.
@@ -67,9 +70,9 @@ def train_test_split(df,
 def train_NN(x,y,x_val, y_val,epochs,batch_size,use_validation_data,optimizer):    
     """Train a sequential NN"""
 
-    print('Training model')
+    
     nfeatures = x.shape[-1]
-
+    print('Training model',nfeatures)
 
     #Create a basic NN model
     model = tf.keras.Sequential([
@@ -110,15 +113,14 @@ def train_NN(x,y,x_val, y_val,epochs,batch_size,use_validation_data,optimizer):
     return history,model
     
 
+def save_model(output_path,model,history,df,parameters_dict):
 
+    """Save model to disk after training """
 
-def write_outputs(fout,model,history,df,parameters_dict):
-    """Write all outputs to disk"""
-    
+    file_ID = str(uuid.uuid4().hex)
+    fout = output_path+f'ML_{file_ID}/'
     
     #Create a directory
-    #id = int(time.time())
-    #fout = output_path+f'ML_{str(id)}/'
     os.makedirs(fout)
     print ('Writing data to:', fout)
 
@@ -127,10 +129,7 @@ def write_outputs(fout,model,history,df,parameters_dict):
     model.save(fout+'trained_model') 
     history_dict = history.history
     json.dump(history_dict, open(fout+'history.json', 'w'))
-    
-    #Save the prediction results
-    df.to_pickle(fout+'predictions.pkl')
-    
+  
     
     #Save meta data as a txt file
     with open(fout+'meta.txt', 'w') as f:
@@ -138,7 +137,7 @@ def write_outputs(fout,model,history,df,parameters_dict):
             row = k + ": " + str(v) + "\n"
             f.write(row)
 
-
+    return fout
 
             
             
@@ -149,33 +148,46 @@ def write_outputs(fout,model,history,df,parameters_dict):
 #----------Parameters------------#
 #--------------------------------#
 root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/'
-#input_file = root + 'processed_data/joined_data/all_months.pkl'
 
 #Inputs
-input_file = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/v15/matched_0.pkl'
-version = 'v15' #v20
+version = 'v20' #v20
+input_file = f'{root}processed_data/joined_data/{version}/all_months.h5'
+
 
 #Outputs
 output_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/'
 output_cols = ['latitude_ERA', 'longitude_ERA','time','skt','MODIS_LST'] #we don't output all columns in our results
 
-#Train/Test split
+#Train/Test split. Everything not in these two groups is validation data.
 train_condition = pd.to_datetime("2019-01-01 00:00:00") #Everything less than this is used for training data
-test_condition  = pd.to_datetime("2020-01-01 00:00:00") #Everything greater than this is used for test data. Everything not in these two groups is validation data by design
+test_condition  = pd.to_datetime("2020-01-01 00:00:00") #Everything greater than this is used for test data. 
 feature_names = ['sp', 'msl', 'u10', 'v10', 't2m',
             'aluvp', 'aluvd', 'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m','fal', 
             'skt', 
             'lsm',  'slt', 'sdfor','lsrh', 'cvh',  'z', 'isor', 'sdor', 'cvl','cl','anor', 'slor', 'sr', 'tvh', 'tvl']
 
-target = ['MODIS_LST'] 
+# feature_names = [ 'sp', 'msl', 'u10', 'v10','t2m',
+#                          'aluvp', 'aluvd', 'alnip', 'alnid', 'cl',
+#                          'cvl', 'cvh', 'slt', 'sdfor', 'z', 'sd', 'sdor', 'isor', 'anor', 'slor',
+#                          'd2m', 'lsm', 'fal','skt'] 
+
+
+
+
+target_var = ['MODIS_LST'] 
 
 
 #Model parameters
-epochs = 100
-batch_size = 10000
-use_validation_data = True #Do you want to use validation data for early stopping? Stopping conditions are defined in train_NN
+epochs = 200
+batch_size = 1024
+use_validation_data = False #Do you want to use validation data for early stopping? Stopping conditions are defined in train_NN()
 optimizer = 'adam'
 
+parameters_dict = {'input_file':     input_file,
+                  'train_condition': train_condition,
+                  'test_condition':  test_condition,
+                  'epochs':          epochs,
+                  'batch_size':      batch_size}
                  
             
 
@@ -183,67 +195,48 @@ optimizer = 'adam'
 #--------------MAIN--------------#
 #--------------------------------#
 
-#Get the matched time variable data
-df_variable = pd.read_pickle(input_file)
-
-
-#Now get the constant data and join it on
-constants_file= root +f'processed_data/ERA_timeconstant/ERA_constants_{version}.nc'
-ERA_constants = xr.open_dataset(constants_file) 
-df_constant = ERA_constants.to_dataframe().reset_index()
-df_constant['longitude'] = (((df_constant.longitude + 180) % 360) - 180) #correct longitude
-
-#This is the 'canonical' df we will be using 
-df = pd.merge(df_variable, df_constant,  how='left', left_on=['latitude_ERA','longitude_ERA'], right_on = ['latitude','longitude'],suffixes=('', '_constant'))
-
+#Get the matched data
+print ('Reading data')
+df= pd.read_hdf(input_file)
     
 #Normalise everything
+print('Normalizing')
 features = df[feature_names]
-target = df[target]
+target = df[target_var]
     
 features_normed = (features-features.mean())/features.std()
 target_normed = (target-target.mean())/target.std()
 
 
+T_normalize_mean = target.mean().values[0] #Save these as np.float32, rather than pd.Series. We will use them later to "un-normalize"
+T_normalize_std = target.std().values[0]
+
 #Split data into training and testing set
+print('Split data')
 split_data,results_df = train_test_split(df,train_condition,test_condition,
                                                             features_normed,target_normed,
                                                             output_cols)
-print (len(split_data['x_train'].columns))
-print (split_data['y_train'])
-print (split_data['y_valid'])
+
+
 #Train model
+print('Train')
 history,model = train_NN(split_data['x_train'],split_data['y_train'],
                          split_data['x_valid'],split_data['y_valid'],
                          epochs,batch_size,use_validation_data,optimizer)
 
 
 
+print ('Save the trained model')
+fout = save_model(output_path,model,history,parameters_dict)
 
 
 #Make some predictions
-predictions_normalized = model.predict(split_data['x_test'])
-predictions = (predictions_normalized * target.std() ) + target.mean() #un-normalsie to get 'physical' value
+print('Predict')
+predictions_normalized = model.predict(split_data['x_test'])                 #Prediction 
+predictions = (predictions_normalized * T_normalize_std ) + T_normalize_mean #un-normalsie to get 'physical' value
+results_df['predictions'] = predictions                                      # Bring together the test data and predictions into a single pandas df
+results_df.to_pickle(fout+'predictions.pkl')
 
-
-#Bring together the test data and predictions into a single pandas df
-results_df['predictions'] = predictions
-
-
-
-#Save everything to disk
-parameters_dict = {'input_file':     input_file,
-                  'train_condition': train_condition,
-                  'test_condition':  test_condition,
-                  'epochs':          epochs,
-                  'batch_size':      batch_size}
-                                   
-
-ID = f'NNModel_nfeatures{str(len(feature_names))}_nepochs{str(epochs)}_bs{str(batch_size)}_{str(int(time.time()))}/'
-print(ID)
-write_outputs(output_path+ID,model,history,results_df,parameters_dict)
-
-    
 
 
 print ("All completed OK")

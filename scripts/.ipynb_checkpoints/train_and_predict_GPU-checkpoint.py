@@ -195,12 +195,26 @@ feature_names = [ 'sp', 'msl', 'u10', 'v10','t2m',
 #Get data
 x_train,y_train,x_valid, y_valid, x_test,y_test,T_normalize_mean,T_normalize_std,results_df = load_and_process_data(input_file,train_condition,test_condition)
 
+print ('x train')
+print(x_train)
+
 #Train model
 history,model = train_NN(x_train,y_train,x_valid,y_valid,epochs,batch_size,use_validation_data=False)
 
 #Make some predictions
 print('Predict')
+
 predictions_normalized = model.predict(x_test)
+
+print('Predictions normalized')
+print(type(predictions_normalized))
+print(type(T_normalize_std))
+print(type(T_normalize_mean))
+
+print(predictions_normalized)
+print(T_normalize_std)
+print(T_normalize_mean)
+
 predictions = (predictions_normalized * T_normalize_std ) + T_normalize_mean
 
 #Bring together the test data and predictions into a single pandas df
