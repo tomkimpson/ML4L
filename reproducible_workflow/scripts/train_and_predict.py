@@ -45,9 +45,7 @@ def train_test_split(df,
     idx_train = df.time < train_condition 
     idx_valid = (train_condition <= df.time) & (df.time <= test_condition) 
     idx_test = df.time > test_condition 
-    
-    print ('idx valid = ', idx_valid.sum())
-    
+        
     split_data = {'x_train': normalised_features[idx_train],
                   'y_train': normalised_targets[idx_train],
                   'x_valid': normalised_features[idx_valid], 
@@ -55,6 +53,8 @@ def train_test_split(df,
                   'x_test' : normalised_features[idx_test],
                   'y_test' : normalised_targets[idx_test]
                  }
+    
+    
     
     # Create a "results_df" copy that will be used later for smaller IO. Won't output all features
     results_df = df[output_columns].copy()
@@ -73,6 +73,7 @@ def train_NN(x,y,x_val, y_val,epochs,batch_size,use_validation_data,optimizer):
     
     nfeatures = x.shape[-1]
     print('Training model',nfeatures)
+    
 
     #Create a basic NN model
     model = tf.keras.Sequential([
@@ -113,7 +114,7 @@ def train_NN(x,y,x_val, y_val,epochs,batch_size,use_validation_data,optimizer):
     return history,model
     
 
-def save_model(output_path,model,history,df,parameters_dict):
+def save_model(output_path,model,history,parameters_dict):
 
     """Save model to disk after training """
 
@@ -150,7 +151,7 @@ def save_model(output_path,model,history,df,parameters_dict):
 root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/'
 
 #Inputs
-version = 'v20' #v20
+version = 'v20' #v15, v20
 input_file = f'{root}processed_data/joined_data/{version}/all_months.h5'
 
 
@@ -161,10 +162,45 @@ output_cols = ['latitude_ERA', 'longitude_ERA','time','skt','MODIS_LST'] #we don
 #Train/Test split. Everything not in these two groups is validation data.
 train_condition = pd.to_datetime("2019-01-01 00:00:00") #Everything less than this is used for training data
 test_condition  = pd.to_datetime("2020-01-01 00:00:00") #Everything greater than this is used for test data. 
-feature_names = ['sp', 'msl', 'u10', 'v10', 't2m',
-            'aluvp', 'aluvd', 'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m','fal', 
-            'skt', 
-            'lsm',  'slt', 'sdfor','lsrh', 'cvh',  'z', 'isor', 'sdor', 'cvl','cl','anor', 'slor', 'sr', 'tvh', 'tvl']
+
+
+
+
+# feature_names = ['sp', 'msl', 'u10', 'v10', 't2m',
+#             'aluvp', 'aluvd', 'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m','fal', 
+#             'skt', 
+#             'lsm',  'slt', 'sdfor','lsrh', 'cvh',  'z', 'isor', 'sdor', 'cvl','cl','anor', 'slor', 'sr', 'tvh', 'tvl']
+
+
+
+feature_names = ['sp', 'msl', 'u10', 'v10', 't2m',                                        # ERA_sfc, Time Variable
+                 'aluvp', 'aluvd', 'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m','fal', # ERA_skin, Time Variable
+                 'skt',                                                                   # ERA skt, Time Variable
+                 'lsm',  'slt', 'sdfor','lsrh', 'cvh',  'z', 'isor', 'sdor', 'cvl','cl','anor', 'slor', 'sr', 'tvh', 'tvl', #climatev15,v20 constant
+                 ]
+
+
+
+    
+
+
+
+
+
+# feature_names = ['sp', 'msl', 'u10', 'v10', 't2m',                                        # ERA_sfc, Time Variable
+#                  'aluvp', 'aluvd', 'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m','fal', # ERA_skin, Time Variable
+#                  'skt',                                                                   # ERA skt, Time Variable
+#                  'lsm',  'slt', 'sdfor','lsrh', 'cvh',  'z', 'isor', 'sdor', 'cvl','cl','anor', 'slor', 'sr', 'tvh', 'tvl', #climatev15,v20 constant
+#                  'vegdiff',                                                               #Bonus data
+#                  'COPERNICUS/', 
+#                  'CAMA/',
+#                  'ORCHIDEE/', 
+#                #  'monthlyWetlandAndSeasonalWater_minusRiceAllCorrected_waterConsistent/',
+#                  'CL_ECMWFAndJRChistory/'
+#                  ]
+
+
+
 
 # feature_names = [ 'sp', 'msl', 'u10', 'v10','t2m',
 #                          'aluvp', 'aluvd', 'alnip', 'alnid', 'cl',
@@ -174,13 +210,13 @@ feature_names = ['sp', 'msl', 'u10', 'v10', 't2m',
 
 
 
-target_var = ['MODIS_LST'] 
+target_var = ['MODIS_LST'] #The variable you are trying to learn/predict
 
 
 #Model parameters
-epochs = 200
+epochs = 50
 batch_size = 1024
-use_validation_data = False #Do you want to use validation data for early stopping? Stopping conditions are defined in train_NN()
+use_validation_data = True #Do you want to use validation data for early stopping? Stopping conditions are defined in train_NN()
 optimizer = 'adam'
 
 parameters_dict = {'input_file':     input_file,
@@ -199,6 +235,8 @@ parameters_dict = {'input_file':     input_file,
 print ('Reading data')
 df= pd.read_hdf(input_file)
     
+print(df.isna().any())
+
 #Normalise everything
 print('Normalizing')
 features = df[feature_names]
@@ -206,6 +244,8 @@ target = df[target_var]
     
 features_normed = (features-features.mean())/features.std()
 target_normed = (target-target.mean())/target.std()
+
+
 
 
 T_normalize_mean = target.mean().values[0] #Save these as np.float32, rather than pd.Series. We will use them later to "un-normalize"

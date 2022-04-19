@@ -7,6 +7,12 @@ import numpy as np
 from contextlib import suppress
 import faiss
 
+
+"""
+Script to join the ERA data with the MODIS data. 
+See Workflow/ 2. Joining Data
+"""
+
 #Deal with filename sorting. Stolen from: https://stackoverflow.com/questions/4836710/is-there-a-built-in-function-for-string-natural-sort
 def natural_sort(l): 
     convert = lambda text: int(text) if text.isdigit() else text.lower()
@@ -25,22 +31,7 @@ def natural_sort(l):
 root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/'
 
 
-
-#Time variable ERA data
-ERA_folder = root+'processed_data/ERA_timevariable/'
-ERA_files = natural_sort(glob.glob(ERA_folder+'*'))
-
-#Time constant ERA data. This is different for v15 and v20 data.
-versions = ["v15", "v20"]
-ERA_constant_dict = {}
-for v in versions:
-    f = root +f'processed_data/ERA_timeconstant/ERA_constants_{v}.nc'
-    ds = xr.open_dataset(f) #NetCDF file of features which are constant for each gridpoint
     
-    ERA_constant_dict[v] = ds
-    ds.close()
-
-
 #These dictionaries describe the local hour of the satellite
 local_times = {"aquaDay":"13:30",
                "terraDay":"10:30",
@@ -65,6 +56,55 @@ latitude_bound = 70
 
 IO_path = f'/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/'
 
+
+
+
+
+#-------------------------------------------------#
+#---------Load any data and declare paths---------#
+#-------------------------------------------------#
+print ('Pre loading data')
+
+#Time variable ERA data
+ERA_folder = root+'processed_data/ERA_timevariable/'
+ERA_files = natural_sort(glob.glob(ERA_folder+'*'))
+
+#Time constant ERA data. This is different for v15 and v20 data.
+versions = ["v15", "v20"]
+ERA_constant_dict = {}
+for v in versions:
+    f = root +f'processed_data/ERA_timeconstant/ERA_constants_{v}.nc'
+    ds = xr.open_dataset(f) #NetCDF file of features which are constant for each gridpoint
+    
+    ERA_constant_dict[v] = ds
+    ds.close()
+
+        
+#'Bonus' ERA data. This is wetlands and lakes
+bonus_root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/BonusClimate/'
+wetlands_and_lakes = {'COPERNICUS/':'wetlandf',
+                      'CAMA/':      'wetlandf',
+                      'ORCHIDEE/':  'wetlandf',
+                      'monthlyWetlandAndSeasonalWater_minusRiceAllCorrected_waterConsistent/':'wetlandf',
+                      'CL_ECMWFAndJRChistory/':'clake'} #Monthly varying data `cldiff`. Directory:Filename
+
+wetlands_ds = xr.Dataset() #Empty ds
+for w in wetlands_and_lakes:
+    fname = bonus_root+w+wetlands_and_lakes[w]    
+    #Load
+    ds_wetland= xr.open_dataset(fname,engine='cfgrib',decode_times=False,backend_kwargs={'indexpath': ''}) 
+    
+    #Rename the parameter so everything is not cldiff
+    ds_wetland = ds_wetland.cldiff.rename(f'cldiff_{w}') #This is now a dataarray
+
+    #Fix the time to be an integer
+    ds_wetland['time'] = np.arange(1,12+1) #i.e. what month it it?
+    
+    #Output
+    wetlands_ds[w] = ds_wetland    
+    
+
+    
 #------------------------#
 #------Functions---------#
 #------------------------#
@@ -72,7 +112,7 @@ IO_path = f'/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/
 
 
 
-def get_ERA_hour(ERA_month,ERA_constant,t):
+def get_ERA_hour(ERA_month,ERA_constant,wetlands_month,t):
     
     """
     Extract an hour of ERA data
@@ -82,10 +122,11 @@ def get_ERA_hour(ERA_month,ERA_constant,t):
     time_filter = (ERA_month.time == t)
     ERA_hour = ERA_month.where(time_filter,drop=True)
 
-    #Join on the constant data, first setting the time coordinate
+    #Join on the constant data, and the wetlands data, first setting the time coordinate
     ERA_constant = ERA_constant.assign_coords({"time": (((ERA_hour.time)))}) #Update the time for the merge.
-    ERA_hour = xr.merge([ERA_hour,ERA_constant]).load() #Explicitly load 
-
+    wetlands_month = wetlands_month.assign_coords({"time": (((ERA_hour.time)))})
+    ERA_hour = xr.merge([ERA_hour,ERA_constant,wetlands_month]).load() #Explicitly load 
+    
     #Now filter to get land values only 
     land_filter = (ERA_hour.lsm > 0.5)
     ERA_hour = ERA_hour.where(land_filter,drop=True)
@@ -225,13 +266,22 @@ selection_index = 35 #Use if you dont want to run for all the ERA files e.g. scr
 selected_ERA_files = ERA_files[selection_index:] 
 counter = selection_index  
 
+print ('Iterating over all months:')
 for f in selected_ERA_files:
     
     #Load a month of ERA data
+    print ('Loading ERA month:', f)
     ERA_month = xr.open_dataset(f,engine='cfgrib',backend_kwargs={'indexpath': ''})
     
     #Get all times in that month of data, hourly grain
     timestamps = pd.to_datetime(ERA_month.time) 
+    
+    
+    #Load the wetland bonus data for that month
+    month = np.unique(timestamps.month)[0] #There should only be one value, an integer in range 1-12
+    wetlands_time_filter = (wetlands_ds.time == month)
+    wetlands_month = wetlands_ds.where(wetlands_time_filter,drop=True) #This is a field at a single time.
+    
         
     #Empty dict. We will append the resulting dfs here
     dfs = {"v15":[],
@@ -259,7 +309,7 @@ for f in selected_ERA_files:
         for v in ERA_constant_dict: #For every version of the ERA constant data ERA land filter, i.e. v15, v20
             ERA_constant = ERA_constant_dict[v]
             #Get an hour of ERA data
-            ERA_hour = get_ERA_hour(ERA_month,ERA_constant,t)
+            ERA_hour = get_ERA_hour(ERA_month,ERA_constant,wetlands_month,t)
             ERA_df = ERA_hour.to_dataframe().reset_index().dropna()
     
             #Find matches in space
