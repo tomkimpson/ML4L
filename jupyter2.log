@@ -816,3 +816,46 @@ ERROR 1: PROJ: proj_create_from_database: Open of /home/k/kimpson/bin/conda/envs
 [W 2022-04-19 11:45:30.150 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
 [I 2022-04-19 11:47:36.947 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
 [W 2022-04-19 11:47:36.949 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 11:53:43.885 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 11:53:43.887 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 11:55:50.820 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 11:55:50.822 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 11:55:58.248 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 11:55:58.250 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 11:58:05.139 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 11:58:05.140 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 12:00:12.014 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:00:12.016 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 12:02:04.422 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-19 12:02:19.051 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:02:19.053 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 12:03:09.035 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-19 12:03:09.331 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-19 12:03:39.039 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-19 12:04:26.087 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:04:26.089 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 12:04:41.347 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-19 12:04:42.400 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-19 12:04:42.927 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:04:42.930 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 12:05:19.354 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-19 12:06:49.874 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:06:49.876 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 12:10:56.764 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:10:56.766 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 12:12:17.608 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:12:17.610 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 12:14:24.424 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:14:24.426 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 12:16:31.406 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:16:31.409 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 12:18:22.210 ServerApp] Starting buffering for beacefc6-db2f-4e9d-a1c8-a5fdb60d26bd:d1898434-5a3d-4ad1-bad4-e162c569502b
+[I 2022-04-19 12:20:38.255 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:20:38.257 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[W 2022-04-19 12:22:59.719 ServerApp] Notebook jupyter_notebooks/legacy/06. Speed_testing.ipynb is not trusted
+[I 2022-04-19 12:23:00.438 ServerApp] Kernel started: 6775a272-ca2e-47e1-a15f-1e19806b3480
+[W 2022-04-19 12:23:05.436 ServerApp] Got events for closed stream <zmq.eventloop.zmqstream.ZMQStream object at 0x7fa5dc1023d0>
+[I 2022-04-19 12:28:45.355 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:28:45.357 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 12:30:52.187 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:30:52.189 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted

@@ -173,19 +173,41 @@ test_condition  = pd.to_datetime("2020-01-01 00:00:00") #Everything greater than
 
 
 
-feature_names = ['sp', 'msl', 'u10', 'v10', 't2m',                                        # ERA_sfc, Time Variable
-                 'aluvp', 'aluvd', 'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m','fal', # ERA_skin, Time Variable
-                 'skt',                                                                   # ERA skt, Time Variable
-                 'lsm',  'slt', 'sdfor','lsrh', 'cvh',  'z', 'isor', 'sdor', 'cvl','cl','anor', 'slor', 'sr', 'tvh', 'tvl', #climatev15,v20 constant
-                 ]
+
+
+
+
+
+
+#Climate v15 vs v20
+
+# feature_names = ['sp', 'msl', 'u10', 'v10', 't2m',                                        # ERA_sfc, Time Variable
+#                  'aluvp', 'aluvd', 'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m','fal', # ERA_skin, Time Variable
+#                  'skt',                                                                   # ERA skt, Time Variable
+#                  'lsm',  'slt', 'sdfor','lsrh', 'cvh',  'z', 'isor', 'sdor', 'cvl','cl','anor', 'slor', 'sr', 'tvh', 'tvl', #climatev15,v20 constant
+#                  ]
 
 
 
     
+feature_names = ['sp', 'msl', 'u10', 'v10', 't2m',                                        # ERA_sfc, Time Variable
+                 'aluvp', 'aluvd', 'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m','fal', # ERA_skin, Time Variable
+                 'skt',                                                                   # ERA skt, Time Variable
+                 'lsm',  'slt', 'sdfor','lsrh', 'cvh',  'z', 'isor', 'sdor', 'cvl','cl','anor', 'slor', 'sr', 'tvh', 'tvl', #climatev15,v20 constant
+                 'COPERNICUS/']                 
 
 
 
 
+
+    
+    
+    
+    
+    
+    
+    
+#ALL FEATURES
 
 # feature_names = ['sp', 'msl', 'u10', 'v10', 't2m',                                        # ERA_sfc, Time Variable
 #                  'aluvp', 'aluvd', 'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m','fal', # ERA_skin, Time Variable
@@ -201,11 +223,6 @@ feature_names = ['sp', 'msl', 'u10', 'v10', 't2m',                              
 
 
 
-
-# feature_names = [ 'sp', 'msl', 'u10', 'v10','t2m',
-#                          'aluvp', 'aluvd', 'alnip', 'alnid', 'cl',
-#                          'cvl', 'cvh', 'slt', 'sdfor', 'z', 'sd', 'sdor', 'isor', 'anor', 'slor',
-#                          'd2m', 'lsm', 'fal','skt'] 
 
 
 
