@@ -1563,3 +1563,30 @@ ERROR 1: PROJ: proj_create_from_database: Open of /home/k/kimpson/bin/conda/envs
 [I 2022-04-21 14:30:21.167 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
 [I 2022-04-21 14:32:05.041 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
 [I 2022-04-21 14:32:17.513 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 15:05:19.286 ServerApp] Starting buffering for 62eb779d-85ff-444c-865f-9db181eee4a6:03a0039a-88a0-405a-9b02-52d78bd8db34
+[I 2022-04-21 15:05:22.159 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 15:07:28.110 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 15:08:48.697 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 15:08:48.968 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 15:08:52.846 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 15:08:53.881 ServerApp] Starting buffering for de9dffc7-208c-4e15-a805-f1c00c1e9a21:1b976500-e90e-4f3e-8a2b-53bafd4caabf
+[I 2022-04-21 15:09:08.750 ServerApp] Creating new file in /reproducible_workflow/experiments
+[I 2022-04-21 15:10:25.545 ServerApp] Saving file at /reproducible_workflow/experiments/README.md
+[I 2022-04-21 15:10:28.818 ServerApp] Starting buffering for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:e6693814-ccc9-4a81-8aa5-1deef7fb317c
+[I 2022-04-21 15:10:29.284 ServerApp] Starting buffering for 6f5f6a0f-ebca-4d7e-a60c-48be061e2f48:70300580-23f6-498a-810d-0f4c31a6f704
+[I 2022-04-21 15:14:14.922 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-21 15:14:14.924 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-21 15:16:22.678 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-21 15:16:22.680 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-21 15:18:30.405 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-21 15:18:30.407 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-21 15:20:10.041 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-21 15:20:10.043 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-21 15:22:17.665 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-21 15:22:17.667 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-21 15:24:21.263 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-21 15:24:21.264 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-21 15:26:24.641 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-21 15:26:24.643 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-21 15:27:16.430 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-21 15:27:16.432 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
