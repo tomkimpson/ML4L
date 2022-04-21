@@ -1505,3 +1505,61 @@ ERROR 1: PROJ: proj_create_from_database: Open of /home/k/kimpson/bin/conda/envs
 [I 2022-04-21 11:49:05.230 ServerApp] Kernel interrupted: de9dffc7-208c-4e15-a805-f1c00c1e9a21
 [I 2022-04-21 11:49:16.296 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
 [I 2022-04-21 11:51:16.511 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 11:53:16.975 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 11:55:17.713 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 11:57:18.933 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 11:59:19.260 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 12:01:19.597 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 12:03:19.757 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 12:05:19.935 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 12:07:20.122 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 12:09:20.905 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 12:11:21.142 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 12:13:21.675 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 12:14:28.594 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 12:16:32.193 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 12:18:36.966 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 12:20:40.694 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 12:22:44.372 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 12:24:48.094 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 12:26:52.015 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 12:32:57.379 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 12:35:01.167 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 12:37:04.923 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 12:39:08.657 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 12:41:12.317 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 12:43:16.012 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 12:45:19.695 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 12:47:23.518 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 13:25:27.394 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 13:27:31.688 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 13:29:35.639 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 13:33:24.059 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 13:35:24.897 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 13:36:06.363 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-21 13:36:06.369 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-21 13:39:40.068 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 13:41:44.001 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 13:43:47.892 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 13:45:52.005 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 13:47:55.929 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 13:49:59.805 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 13:52:03.613 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 13:53:25.599 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 13:55:29.466 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 13:57:33.338 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 13:59:35.225 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 14:01:38.530 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 14:03:41.425 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 14:05:45.354 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 14:07:49.251 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 14:09:51.092 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 14:11:54.845 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 14:13:58.934 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 14:16:03.061 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 14:18:07.700 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 14:20:11.667 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 14:22:15.425 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 14:30:21.167 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 14:32:05.041 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 14:32:17.513 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
