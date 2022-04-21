@@ -6,7 +6,7 @@ import sys
 import numpy as np
 from contextlib import suppress
 import faiss
-
+import time 
 
 """
 Script to join the ERA data with the MODIS data. 
@@ -76,10 +76,16 @@ for v in versions:
     f = root +f'processed_data/ERA_timeconstant/ERA_constants_{v}.nc'
     ds = xr.open_dataset(f) #NetCDF file of features which are constant for each gridpoint
     
+    #Rename
+    name_dict={x:x+f'_{v}' for x in list(ds.keys())}
+    ds = ds.rename(name_dict)
+    
     ERA_constant_dict[v] = ds
     ds.close()
 
-        
+       
+
+            
 #'Bonus' ERA data. This is wetlands and lakes
 bonus_root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/BonusClimate/'
 wetlands_and_lakes = {'COPERNICUS/':'wetlandf',
@@ -110,9 +116,7 @@ for w in wetlands_and_lakes:
 #------------------------#
 
 
-
-
-def get_ERA_hour(ERA_month,ERA_constant,wetlands_month,t):
+def get_ERA_hour(ERA_month,t,v15,v20,WetlandsAndLakesMonth,bounds):
     
     """
     Extract an hour of ERA data
@@ -121,21 +125,30 @@ def get_ERA_hour(ERA_month,ERA_constant,wetlands_month,t):
     #Filter month of ERA data to an hour
     time_filter = (ERA_month.time == t)
     ERA_hour = ERA_month.where(time_filter,drop=True)
-
-    #Join on the constant data, and the wetlands data, first setting the time coordinate
-    ERA_constant = ERA_constant.assign_coords({"time": (((ERA_hour.time)))}) #Update the time for the merge.
-    wetlands_month = wetlands_month.assign_coords({"time": (((ERA_hour.time)))})
-    ERA_hour = xr.merge([ERA_hour,ERA_constant,wetlands_month]).load() #Explicitly load 
     
-    #Now filter to get land values only 
-    land_filter = (ERA_hour.lsm > 0.5)
-    ERA_hour = ERA_hour.where(land_filter,drop=True)
-
+    
+    #Join on the constant data V15 and v20, and the wetlands data, first setting the time coordinate
+    v15 = v15.assign_coords({"time": (((ERA_hour.time)))}) 
+    v20 = v20.assign_coords({"time": (((ERA_hour.time)))}) 
+    WetlandsAndLakesMonth = WetlandsAndLakesMonth.assign_coords({"time": (((ERA_hour.time)))})
+    
+    ERA_hour = xr.merge([ERA_hour,v15,v20, WetlandsAndLakesMonth]).load() #Explicitly load 
+    
+    
     #And covert longitude to long1
     ERA_hour = ERA_hour.assign_coords({"longitude": (((ERA_hour.longitude + 180) % 360) - 180)})
+    
+    
+        
+    # Also filter by latitude/longtiude
+    longitude_filter = (ERA_hour.longitude > bounds['longitude_min']) & (ERA_hour.longitude < bounds['longitude_max'])
+    latitude_filter =  (ERA_hour.latitude > bounds['latitude_min']) & (ERA_hour.latitude < bounds['latitude_max'])
+    return ERA_hour.where(longitude_filter & latitude_filter,drop=True)
+  
+    
+    
 
-    return ERA_hour
-
+    #return ERA_hour
 
 
 
@@ -213,6 +226,7 @@ def haver(lat1_deg,lon1_deg,lat2_deg,lon2_deg):
     return H
 
 
+
 def faiss_knn(database,query):
     
     """
@@ -239,9 +253,8 @@ def faiss_knn(database,query):
     #Search
     k = 1                          # we want to see 1 nearest neighbors
     distances, indices = gpu_index_flat.search(xq, k)
-    
-
-    #Combine into a single df with all data
+        
+   
     df = query.reset_index().join(database.iloc[indices.flatten()].reset_index(), lsuffix='_MODIS',rsuffix='_ERA')
     df['L2_distance'] = distances
     df['H_distance'] = haver(df['latitude_MODIS'],df['longitude_MODIS'],df['latitude_ERA'],df['longitude_ERA']) #Haversine distance
@@ -256,14 +269,14 @@ def faiss_knn(database,query):
 
     
     return df_grouped
+    
 
 
 
 
-
-
-selection_index = 35 #Use if you dont want to run for all the ERA files e.g. script gets killed after X months
+selection_index = 7 #Use if you dont want to run for all the ERA files e.g. script gets killed after X months
 selected_ERA_files = ERA_files[selection_index:] 
+print(selected_ERA_files)
 counter = selection_index  
 
 print ('Iterating over all months:')
@@ -283,9 +296,8 @@ for f in selected_ERA_files:
     wetlands_month = wetlands_ds.where(wetlands_time_filter,drop=True) #This is a field at a single time.
     
         
-    #Empty dict. We will append the resulting dfs here
-    dfs = {"v15":[],
-           "v20":[]}
+    #Empty. We will append the resulting dfs here
+    dfs = []
     for t in timestamps:
         
         print(t)
@@ -306,31 +318,41 @@ for f in selected_ERA_files:
         MODIS_df = MODIS_hour.to_dataframe(name='MODIS_LST').reset_index().dropna() #Make everything a pandas df to pass into faiss_knn. Unnecessary step?
 
     
-        for v in ERA_constant_dict: #For every version of the ERA constant data ERA land filter, i.e. v15, v20
-            ERA_constant = ERA_constant_dict[v]
-            #Get an hour of ERA data
-            ERA_hour = get_ERA_hour(ERA_month,ERA_constant,wetlands_month,t)
-            ERA_df = ERA_hour.to_dataframe().reset_index().dropna()
+        #Spatial bounds
+        #Get the limits of the MODIS box. We will use this to filter the ERA data for faster matching
+        #i.e. when looking for matches, dont need to look over the whole Earth, just a strip
+        delta = 1.0 # Enveloping box
+        bounds = {"latitude_min" :MODIS_df.latitude.min()-delta,
+                  "latitude_max" :MODIS_df.latitude.max()+delta,
+                  "longitude_min":MODIS_df.longitude.min()-delta,
+                  "longitude_max":MODIS_df.longitude.max()+delta
+          }
     
-            #Find matches in space
-            df_matched = faiss_knn(ERA_df,MODIS_df)
-            df_matched['time'] = t            
-            df_matched = df_matched.drop(['index_MODIS', 'band','spatial_ref','index_ERA','values','number','surface','depthBelowLandLayer'], axis=1) #get rid of all these columns that we dont need
-            dfs[v].append(df_matched)
     
-            #Explicitly deallocate
-            ERA_hour.close()
+    
+        #Get an hour of ERA data
+        ERA_hour = get_ERA_hour(ERA_month,t, ERA_constant_dict['v15'], ERA_constant_dict['v20'],wetlands_month,bounds) #Get an hour of ERA data
+        ERA_df = ERA_hour.to_dataframe().reset_index() #Make it a df
+
+        #Find matches in space
+        df_matched = faiss_knn(ERA_df,MODIS_df) #Match reduced gaussian grid to MODIS
+        df_matched['time'] = t            
+        df_matched = df_matched.drop(['index_MODIS', 'band','spatial_ref','index_ERA','values','number','surface','depthBelowLandLayer'], axis=1) #get rid of all these columns that we dont need
+        dfs.append(df_matched)
         
-        #Deallocate
+      
+    
+        #Explicitly deallocate
+        ERA_hour.close()
         MODIS_hour.close()
         
     #At the end of every month, do some IO
     #Pkl is likely suboptimial here. Need to update to e.g. parquet, HDF, etc.
-    for v in dfs:
-        df = pd.concat(dfs[v])
-        fname = f'matched_{counter}.pkl'
-        print ("Writing to disk:", IO_path+v+'/'+fname)
-        df.to_pickle(IO_path+v+'/'+fname)
+
+    df = pd.concat(dfs)
+    fname = f'TESTmatched_{counter}.pkl'
+    print ("Writing to disk:", IO_path+fname)
+    df.to_pickle(IO_path+fname)
         
         
     counter += 1

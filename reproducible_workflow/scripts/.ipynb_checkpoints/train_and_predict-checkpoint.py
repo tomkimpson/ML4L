@@ -6,6 +6,14 @@ import pandas as pd
 from tensorflow.keras.callbacks import EarlyStopping
 import xarray as xr
 import uuid
+import sys
+
+
+
+#TEmporary region
+
+method_type = sys.argv[1]
+
 
 
 
@@ -72,7 +80,10 @@ def train_NN(x,y,x_val, y_val,epochs,batch_size,use_validation_data,optimizer):
 
     
     nfeatures = x.shape[-1]
-    print('Training model',nfeatures)
+    print('Training model:')
+    print('Number of features:',nfeatures)
+    print('Number of samples:',x.shape[0])
+    print ('Using validation data?', use_validation_data)
     
 
     #Create a basic NN model
@@ -151,9 +162,9 @@ def save_model(output_path,model,history,parameters_dict):
 root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/'
 
 #Inputs
-version = 'v20' #v15, v20
-input_file = f'{root}processed_data/joined_data/{version}/all_months.h5'
-
+#version = 'v20' #v15, v20
+#input_file = f'{root}processed_data/joined_data/{version}/all_months.h5'
+input_file = f'{root}processed_data/joined_data/all_months.h5'
 
 #Outputs
 output_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/'
@@ -166,81 +177,18 @@ test_condition  = pd.to_datetime("2020-01-01 00:00:00") #Everything greater than
 
 
 
-# feature_names = ['sp', 'msl', 'u10', 'v10', 't2m',
-#             'aluvp', 'aluvd', 'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m','fal', 
-#             'skt', 
-#             'lsm',  'slt', 'sdfor','lsrh', 'cvh',  'z', 'isor', 'sdor', 'cvl','cl','anor', 'slor', 'sr', 'tvh', 'tvl']
-
-
-
-
-
-
-
-
-
-#Climate v15 vs v20
-
-# feature_names = ['sp', 'msl', 'u10', 'v10', 't2m',                                        # ERA_sfc, Time Variable
-#                  'aluvp', 'aluvd', 'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m','fal', # ERA_skin, Time Variable
-#                  'skt',                                                                   # ERA skt, Time Variable
-#                  'lsm',  'slt', 'sdfor','lsrh', 'cvh',  'z', 'isor', 'sdor', 'cvl','cl','anor', 'slor', 'sr', 'tvh', 'tvl', #climatev15,v20 constant
-#                  ]
-
-
-
-    
-feature_names = ['sp', 'msl', 'u10', 'v10', 't2m',                                        # ERA_sfc, Time Variable
-                 'aluvp', 'aluvd', 'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m','fal', # ERA_skin, Time Variable
-                 'skt',                                                                   # ERA skt, Time Variable
-                 'lsm',  'slt', 'sdfor','lsrh', 'cvh',  'z', 'isor', 'sdor', 'cvl','cl','anor', 'slor', 'sr', 'tvh', 'tvl', #climatev15,v20 constant
-                 'COPERNICUS/']                 
-
-
-
-
-
-    
-    
-    
-    
-    
-    
-    
-#ALL FEATURES
-
-# feature_names = ['sp', 'msl', 'u10', 'v10', 't2m',                                        # ERA_sfc, Time Variable
-#                  'aluvp', 'aluvd', 'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m','fal', # ERA_skin, Time Variable
-#                  'skt',                                                                   # ERA skt, Time Variable
-#                  'lsm',  'slt', 'sdfor','lsrh', 'cvh',  'z', 'isor', 'sdor', 'cvl','cl','anor', 'slor', 'sr', 'tvh', 'tvl', #climatev15,v20 constant
-#                  'vegdiff',                                                               #Bonus data
-#                  'COPERNICUS/', 
-#                  'CAMA/',
-#                  'ORCHIDEE/', 
-#                #  'monthlyWetlandAndSeasonalWater_minusRiceAllCorrected_waterConsistent/',
-#                  'CL_ECMWFAndJRChistory/'
-#                  ]
-
-
-
-
-
 
 
 target_var = ['MODIS_LST'] #The variable you are trying to learn/predict
 
 
 #Model parameters
-epochs = 50
-batch_size = 1024
+epochs = 100
+batch_size = 10000
 use_validation_data = True #Do you want to use validation data for early stopping? Stopping conditions are defined in train_NN()
 optimizer = 'adam'
+#optimizer = 'sgd'
 
-parameters_dict = {'input_file':     input_file,
-                  'train_condition': train_condition,
-                  'test_condition':  test_condition,
-                  'epochs':          epochs,
-                  'batch_size':      batch_size}
                  
             
 
@@ -251,6 +199,35 @@ parameters_dict = {'input_file':     input_file,
 #Get the matched data
 print ('Reading data')
 df= pd.read_hdf(input_file)
+
+#TEMP REGION
+
+if method_type == 'Y':
+
+    #Calculate some extra features
+    df['cl_delta'] = df['cl_v20'] - df['cl_v15']
+
+
+
+    #Select features you want to go into model
+    feature_names = ['sp', 'msl', 'u10', 'v10', 't2m', 
+                      'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
+                      'skt',
+                      'cl_v15','cl_delta']
+
+else:
+ 
+    #Select features you want to go into model
+    feature_names = ['sp', 'msl', 'u10', 'v10', 't2m', 
+                      'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
+                      'skt',
+                      'cl_v15']
+
+
+
+#END TEMP REGION
+
+
     
 print(df.isna().any())
 
@@ -284,6 +261,14 @@ history,model = train_NN(split_data['x_train'],split_data['y_train'],
 
 
 print ('Save the trained model')
+
+parameters_dict = {'input_file':     input_file,
+                  'train_condition': train_condition,
+                  'test_condition':  test_condition,
+                  'epochs':          epochs,
+                  'batch_size':      batch_size,
+                  'features':        feature_names,
+                  'optimizer':       optimizer}
 fout = save_model(output_path,model,history,parameters_dict)
 
 
@@ -297,3 +282,57 @@ results_df.to_pickle(fout+'predictions.pkl')
 
 
 print ("All completed OK")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###---APPENDIX---###
+
+
+
+
+### List of all features
+
+# feature_names = ['sp', 'msl', 'u10', 'v10', 't2m',                                        # ERA_sfc, Time Variable
+#                  'aluvp', 'aluvd', 'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m','fal', # ERA_skin, Time Variable
+#                  'skt',                                                                   # ERA skt, Time Variable
+#                  'lsm',  'slt', 'sdfor','lsrh', 'cvh',  'z', 'isor', 'sdor', 'cvl','cl','anor', 'slor', 'sr', 'tvh', 'tvl', #climatev15,v20 constant
+#                  'vegdiff',                                                               #Bonus data
+#                  'COPERNICUS/', 
+#                  'CAMA/',
+#                  'ORCHIDEE/', 
+#                #  'monthlyWetlandAndSeasonalWater_minusRiceAllCorrected_waterConsistent/',
+#                  'CL_ECMWFAndJRChistory/'
+#                  ]
+
+
+### List of all NEW renamed features
+
+
+# feature_names = ['sp', 'msl', 'u10', 'v10', 't2m', 
+#                  'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
+#                  'skt',
+#                  'slt_v15', 'sdfor_v15', 'vegdiff_v15', 'lsrh_v15', 'cvh_v15', 'lsm_v15','z_v15', 'isor_v15', 'sdor_v15', 'cvl_v15', 'cl_v15', 'anor_v15','slor_v15', 'sr_v15', 'tvh_v15', 'tvl_v15', 
+#                  'slt_v20', 'sdfor_v20','vegdiff_v20', 'lsrh_v20', 'cvh_v20', 'lsm_v20', 'z_v20', 'isor_v20','sdor_v20', 'cvl_v20', 'cl_v20', 'anor_v20', 'slor_v20', 'sr_v20','tvh_v20', 'tvl_v20', 
+#                  'COPERNICUS/', 'CAMA/', 'ORCHIDEE/',
+#                  #'monthlyWetlandAndSeasonalWater_minusRiceAllCorrected_waterConsistent/',
+#                  'CL_ECMWFAndJRChistory/']
+
+
+
+
+

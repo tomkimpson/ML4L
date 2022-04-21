@@ -859,3 +859,649 @@ ERROR 1: PROJ: proj_create_from_database: Open of /home/k/kimpson/bin/conda/envs
 [W 2022-04-19 12:28:45.357 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
 [I 2022-04-19 12:30:52.187 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
 [W 2022-04-19 12:30:52.189 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 12:34:57.244 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:34:57.246 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 12:37:03.924 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:37:03.926 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 12:39:10.862 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:39:10.865 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 12:41:15.346 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:41:15.350 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 12:43:21.899 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:43:21.902 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 12:51:29.018 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:51:29.020 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 12:53:35.778 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 12:53:35.779 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 13:39:53.395 ServerApp] Creating new notebook in /reproducible_workflow
+[I 2022-04-19 13:39:54.156 ServerApp] Kernel started: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-19 13:41:53.969 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 13:43:55.094 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[W 2022-04-19 13:44:33.003 ServerApp] Notebook jupyter_notebooks/legacy/01. Toy_Example.ipynb is not trusted
+[I 2022-04-19 13:45:55.754 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 13:47:57.899 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 13:50:01.422 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 13:52:03.286 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 13:56:04.206 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 13:58:04.653 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 13:59:14.798 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 14:01:15.839 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 14:03:16.586 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 14:03:20.033 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 14:05:10.317 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 14:07:11.265 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 14:09:12.357 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 14:11:14.076 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 14:13:16.088 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 14:15:17.901 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 14:16:47.472 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 14:16:51.010 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 14:19:00.701 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 14:27:10.128 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 14:29:19.784 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 14:58:32.149 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 14:58:32.152 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 15:00:39.070 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 15:00:39.071 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 15:03:46.395 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[I 2022-04-19 15:03:46.686 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[I 2022-04-19 15:03:46.824 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[I 2022-04-19 15:03:47.060 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[I 2022-04-19 15:03:49.386 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[I 2022-04-19 15:04:46.140 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 15:04:46.142 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 15:05:08.291 ServerApp] Starting buffering for 6f5f6a0f-ebca-4d7e-a60c-48be061e2f48:3402751f-5cd4-4168-a5c0-d85ca7340fca
+[I 2022-04-19 15:05:22.618 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-19 15:05:44.060 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-19 15:06:52.867 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 15:06:52.869 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 15:11:00.766 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 15:11:00.769 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 15:13:07.716 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 15:13:07.718 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 15:13:30.861 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-19 15:15:15.536 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 15:15:15.538 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 15:17:22.369 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 15:17:22.371 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 15:24:20.218 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 15:24:51.332 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 15:24:54.955 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 15:27:44.693 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 15:27:44.929 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 15:30:45.751 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 15:31:06.025 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 15:31:17.930 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 15:31:23.859 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 15:31:23.969 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 15:31:31.900 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 15:31:33.282 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 15:37:33.369 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 15:38:05.828 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 15:38:27.477 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 15:38:27.676 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 15:38:28.040 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 16:45:30.696 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 16:45:30.699 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 16:46:28.585 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 16:48:28.668 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 16:50:28.742 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 16:52:28.815 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 16:53:09.185 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 16:53:11.232 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 16:53:11.486 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 16:55:11.839 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 16:56:39.222 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[I 2022-04-19 16:56:39.435 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[I 2022-04-19 16:56:39.614 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[I 2022-04-19 16:56:39.888 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[I 2022-04-19 16:56:39.984 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[I 2022-04-19 16:57:11.953 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 16:57:16.973 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 16:57:37.724 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 16:57:37.727 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 16:59:17.227 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:00:08.039 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:00:08.734 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:00:17.356 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:00:17.525 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:00:53.671 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:01:15.684 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:01:16.080 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:02:44.848 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:02:45.038 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:02:50.447 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:06:51.249 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:06:53.724 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:06:53.948 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:07:16.438 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:07:46.301 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:07:46.508 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:07:54.544 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:08:29.367 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:08:29.842 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:08:30.800 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:09:11.708 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:09:21.585 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:09:41.581 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:12:58.621 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:13:21.256 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:14:59.827 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:15:49.228 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:15:53.789 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:15:54.354 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:16:29.328 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:16:29.530 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:16:30.036 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:17:06.700 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:17:11.442 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:17:11.702 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:17:12.336 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:17:19.358 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:18:18.399 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:18:18.574 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:19:17.773 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:19:17.952 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:20:07.544 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:20:07.754 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:20:08.122 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:20:15.457 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:21:11.415 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:21:18.376 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:21:20.474 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:21:28.847 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:21:34.074 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:21:34.212 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:22:19.210 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:22:19.388 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:22:20.217 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:22:33.859 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:22:33.991 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:22:58.009 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:23:00.824 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:23:06.378 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:23:06.554 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:23:06.778 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:23:06.898 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:23:54.066 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:23:54.117 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:23:54.597 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:24:16.335 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:24:23.304 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:25:34.650 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:25:34.978 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:25:38.408 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:29:32.685 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:56:23.278 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:56:23.472 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:56:24.047 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:56:24.962 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:56:42.873 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:56:43.165 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:56:43.274 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:56:43.838 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:57:57.252 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:57:57.739 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:58:00.907 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:58:06.677 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:58:10.903 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:58:11.111 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 17:58:11.287 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 18:13:04.506 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 18:13:04.775 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 18:13:05.477 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 18:13:14.354 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 18:13:14.752 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 18:13:14.799 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 18:13:28.778 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 18:13:29.036 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 18:29:12.468 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[I 2022-04-19 18:29:12.471 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[I 2022-04-19 18:29:44.890 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 18:29:44.893 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 18:31:51.966 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 18:31:51.968 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 18:34:01.626 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 18:34:01.628 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 18:36:10.248 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 18:36:10.252 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 18:52:19.182 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-19 18:52:19.185 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-19 20:19:43.000 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 20:19:43.371 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 20:20:44.223 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-19 23:05:49.132 ServerApp] Starting buffering for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:9413fcb4-303d-4079-a6b9-1f70b042aac7
+[I 2022-04-19 23:05:49.134 ServerApp] Starting buffering for 6775a272-ca2e-47e1-a15f-1e19806b3480:c24fd5f9-7c07-4526-9d6e-6bc193287d7f
+[I 2022-04-19 23:05:49.135 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:82b32b48-af81-4c6d-8294-21e987ba14ea
+[I 2022-04-19 23:05:49.160 ServerApp] Restoring connection for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:9413fcb4-303d-4079-a6b9-1f70b042aac7
+[I 2022-04-19 23:05:49.264 ServerApp] Restoring connection for 6775a272-ca2e-47e1-a15f-1e19806b3480:c24fd5f9-7c07-4526-9d6e-6bc193287d7f
+[I 2022-04-19 23:05:49.385 ServerApp] Restoring connection for 708c119a-4481-4a1f-8f92-88a63671ede2:82b32b48-af81-4c6d-8294-21e987ba14ea
+[W 2022-04-19 23:07:19.161 ServerApp] WebSocket ping timeout after 90001 ms.
+[W 2022-04-19 23:07:19.266 ServerApp] WebSocket ping timeout after 90002 ms.
+[W 2022-04-19 23:07:19.387 ServerApp] WebSocket ping timeout after 90002 ms.
+[I 2022-04-19 23:07:24.164 ServerApp] Starting buffering for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:9413fcb4-303d-4079-a6b9-1f70b042aac7
+[I 2022-04-19 23:07:24.269 ServerApp] Starting buffering for 6775a272-ca2e-47e1-a15f-1e19806b3480:c24fd5f9-7c07-4526-9d6e-6bc193287d7f
+[I 2022-04-19 23:07:24.390 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:82b32b48-af81-4c6d-8294-21e987ba14ea
+[W 2022-04-20 10:34:05.527 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-04-20 10:34:34.267 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 10:36:50.802 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 10:36:50.807 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 10:39:00.463 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 10:39:00.465 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 11:09:09.165 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 11:09:09.169 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 11:10:13.014 ServerApp] Saving file at /reproducible_workflow/scripts/unify_monthly_matches.py
+[I 2022-04-20 11:10:52.818 ServerApp] Saving file at /reproducible_workflow/scripts/unify_monthly_matches.py
+[I 2022-04-20 11:11:58.084 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 11:11:58.086 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 11:14:05.461 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 11:14:05.463 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 11:18:12.463 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 11:18:12.465 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 11:19:00.560 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 11:19:35.506 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 11:22:20.198 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 11:22:20.203 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 11:24:28.419 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 11:24:28.423 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 11:26:20.414 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 11:26:44.574 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 11:28:00.787 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 11:28:35.286 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 11:28:35.608 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 11:28:45.883 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 11:28:45.971 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 12:22:24.005 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 12:22:51.086 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 12:22:51.088 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 12:23:00.425 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 12:23:00.441 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 12:24:58.488 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 12:24:58.492 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 12:27:06.177 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 12:27:06.179 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 12:29:13.819 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 12:29:13.821 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 12:37:20.653 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 12:37:20.655 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 12:39:28.136 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 12:39:28.140 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 12:43:34.222 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 12:43:34.224 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 12:45:42.597 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 12:45:42.599 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 13:18:25.238 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 13:18:54.107 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 13:18:54.109 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 13:22:59.062 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 13:22:59.065 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 13:25:04.183 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 13:25:04.185 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 13:27:09.239 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 13:27:09.241 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 13:29:13.810 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 13:29:13.812 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 13:31:17.375 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 13:31:17.377 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 13:33:22.235 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 13:33:22.237 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 13:37:27.296 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 13:37:27.298 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 13:38:03.194 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 13:38:03.197 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 13:40:06.483 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 13:40:06.485 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 13:40:10.667 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 13:40:10.671 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 13:42:15.437 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 13:42:15.439 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 13:43:55.127 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 13:43:55.130 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 13:46:50.525 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 13:48:02.357 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 13:48:02.359 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 13:50:09.925 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 13:50:09.927 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 14:08:41.557 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 14:08:41.809 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 14:08:42.704 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 14:15:32.199 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 14:15:32.469 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 14:15:42.430 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 14:15:51.233 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 14:16:11.450 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 14:16:11.825 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 14:16:19.114 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 14:16:19.365 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 14:20:19.909 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 14:20:19.910 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 14:22:25.704 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 14:22:25.706 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 14:24:32.992 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 14:24:32.994 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 14:28:47.689 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 14:30:39.945 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 14:30:39.947 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 14:32:47.393 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-20 14:32:47.395 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 15:47:01.868 ServerApp] Starting buffering for beacefc6-db2f-4e9d-a1c8-a5fdb60d26bd:3d4092fb-392e-49de-84dd-2901791252fc
+[I 2022-04-20 15:47:01.870 ServerApp] Starting buffering for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:73a1d949-458d-4819-9b67-7a757182887c
+[I 2022-04-20 15:47:01.871 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:4f341464-26dc-4598-86e0-2cf9b5bf8ce1
+[W 2022-04-20 15:47:08.320 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-04-20 15:47:13.921 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-20 16:15:18.860 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-20 16:17:25.429 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-20 16:19:31.954 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[I 2022-04-20 16:21:38.989 ServerApp] Saving file at /reproducible_workflow/ExploreVxData.ipynb
+[W 2022-04-20 16:23:59.287 ServerApp] Notebook jupyter_notebooks/legacy/01. Toy_Example.ipynb is not trusted
+[I 2022-04-20 16:25:44.314 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:25:48.526 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:27:56.417 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:29:37.210 ServerApp] Starting buffering for 6f5f6a0f-ebca-4d7e-a60c-48be061e2f48:3dbfef27-2de2-45a9-953b-5285301f90dc
+[I 2022-04-20 16:32:03.060 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:33:35.032 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:35:41.604 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:37:09.833 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:37:10.134 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:37:10.260 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:37:12.380 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:37:48.198 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:38:55.740 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:38:59.821 ServerApp] Kernel restarted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:38:59.843 ServerApp] Starting buffering for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:c6156172-5f81-49e0-ac5a-4314404919b8
+[I 2022-04-20 16:38:59.893 ServerApp] Restoring connection for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:c6156172-5f81-49e0-ac5a-4314404919b8
+[W 2022-04-20 16:39:04.411 ServerApp] Nudge: attempt 10 on kernel 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:39:27.308 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:39:32.865 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:41:39.621 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:42:48.138 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:43:21.865 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:43:35.491 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:43:36.081 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:43:36.250 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:43:36.397 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:43:36.532 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:43:36.644 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:43:40.769 ServerApp] Kernel restarted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:43:40.834 ServerApp] Starting buffering for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:c6156172-5f81-49e0-ac5a-4314404919b8
+[I 2022-04-20 16:43:40.868 ServerApp] Restoring connection for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:c6156172-5f81-49e0-ac5a-4314404919b8
+[I 2022-04-20 16:44:09.461 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:44:40.771 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:44:41.029 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:44:41.196 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:44:41.356 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:44:41.490 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:44:41.602 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:44:41.727 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:44:41.895 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:44:41.939 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:44:42.087 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:44:42.264 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:44:42.490 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 16:46:18.153 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:46:21.607 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:47:24.031 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:47:39.564 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:49:46.721 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:55:53.404 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 16:58:02.679 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:00:11.610 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:01:53.659 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[W 2022-04-20 17:01:54.420 ServerApp] Notebook jupyter_notebooks/legacy/01. Toy_Example.ipynb is not trusted
+[I 2022-04-20 17:04:02.059 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:04:21.996 ServerApp] Kernel started: b9781203-5b5f-4b39-ba63-859e89592779
+[I 2022-04-20 17:05:52.779 ServerApp] Starting buffering for 0efabdb2-0fc4-408c-88c4-e800db62f861:a9c7762f-90de-4b0d-8d12-fce38ad61ecf
+[I 2022-04-20 17:06:11.709 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:08:22.611 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:09:32.776 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:10:19.818 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 17:10:20.155 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 17:10:20.379 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 17:10:20.571 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 17:10:20.740 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 17:10:28.683 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 17:10:28.897 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 17:10:29.018 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 17:10:29.130 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 17:10:29.256 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 17:10:29.368 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 17:10:29.515 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 17:11:43.109 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:13:47.320 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:13:56.008 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:16:15.864 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:18:27.018 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:20:36.275 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:22:46.134 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:24:56.178 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:27:07.698 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:29:21.253 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:31:12.463 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 17:31:51.414 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:33:08.863 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 17:33:09.195 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 17:33:09.422 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 17:33:17.320 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 17:33:17.644 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 17:33:17.930 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 17:33:31.221 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 17:33:32.589 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 17:35:54.595 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 17:35:54.919 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 17:36:40.070 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 17:36:40.853 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 17:38:06.942 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 17:38:07.198 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 17:39:17.243 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:41:25.523 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:43:37.524 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:45:53.704 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:48:12.906 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 17:48:13.133 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 17:48:13.186 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-20 17:48:38.277 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:50:53.473 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:53:41.221 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:56:16.225 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:56:59.717 ServerApp] Saving file at /reproducible_workflow/A1.V20_vs_V15.ipynb
+[I 2022-04-20 17:57:39.058 ServerApp] Creating new directory in /reproducible_workflow
+[I 2022-04-20 17:57:47.373 ServerApp] Creating new notebook in /reproducible_workflow/experiments
+[I 2022-04-20 17:57:49.105 ServerApp] Kernel started: 62eb779d-85ff-444c-865f-9db181eee4a6
+[I 2022-04-20 17:59:48.914 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 18:01:05.477 ServerApp] Creating new notebook in /reproducible_workflow/experiments
+[I 2022-04-20 18:01:07.360 ServerApp] Kernel started: c41a8d55-3b2d-4ef7-802c-d0131b522ebf
+[I 2022-04-20 18:01:21.155 ServerApp] Kernel shutdown: c41a8d55-3b2d-4ef7-802c-d0131b522ebf
+[W 2022-04-20 18:01:21.520 ServerApp] delete /reproducible_workflow/experiments/0. .ipynb
+[W 2022-04-20 18:01:21.521 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/experiments/0. .ipynb, on different device to home directory
+[I 2022-04-20 18:01:49.005 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 19:42:52.236 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 19:43:05.728 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 19:43:05.963 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 19:43:06.326 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 19:43:07.037 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 20:50:52.512 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 20:52:52.624 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 20:53:59.651 ServerApp] Kernel interrupted: 62eb779d-85ff-444c-865f-9db181eee4a6
+[I 2022-04-20 20:54:01.897 ServerApp] Kernel interrupted: 62eb779d-85ff-444c-865f-9db181eee4a6
+[I 2022-04-20 20:54:07.727 ServerApp] Kernel restarted: 62eb779d-85ff-444c-865f-9db181eee4a6
+[I 2022-04-20 20:54:07.801 ServerApp] Starting buffering for 62eb779d-85ff-444c-865f-9db181eee4a6:ad9f2ab2-59ec-4730-b427-38f78681a362
+[I 2022-04-20 20:54:07.835 ServerApp] Restoring connection for 62eb779d-85ff-444c-865f-9db181eee4a6:ad9f2ab2-59ec-4730-b427-38f78681a362
+[W 2022-04-20 20:54:12.353 ServerApp] Nudge: attempt 10 on kernel 62eb779d-85ff-444c-865f-9db181eee4a6
+[I 2022-04-20 20:54:52.712 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 20:56:53.587 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 20:58:51.745 ServerApp] Creating new file in /reproducible_workflow/scripts
+[I 2022-04-20 20:58:55.692 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 20:59:34.194 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-20 20:59:34.719 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-20 20:59:35.183 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-20 20:59:45.315 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-20 21:01:07.640 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 21:01:20.499 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 21:02:24.055 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 21:02:28.518 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 21:02:28.958 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 21:02:37.419 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 21:02:49.734 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 21:03:22.435 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 21:03:26.990 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 21:03:27.710 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 21:03:37.560 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 21:03:37.839 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 21:03:38.077 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-20 21:03:56.135 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-20 21:04:47.609 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-20 21:04:47.956 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-20 21:04:48.184 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-20 21:04:48.369 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-20 21:04:48.557 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-20 21:04:53.323 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-20 21:05:24.570 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-20 21:05:24.871 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-20 21:05:25.085 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-20 22:06:59.252 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 22:09:01.829 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 22:11:02.541 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 22:13:05.158 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 22:15:07.822 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 22:17:10.789 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 22:19:13.735 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 22:21:16.721 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 22:23:20.114 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 22:25:23.231 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 22:27:26.748 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 22:29:30.339 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 22:31:34.210 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 22:33:38.106 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 22:35:42.491 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 22:37:46.676 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-20 22:39:21.610 ServerApp] Starting buffering for 62eb779d-85ff-444c-865f-9db181eee4a6:ad9f2ab2-59ec-4730-b427-38f78681a362
+[I 2022-04-20 22:39:21.613 ServerApp] Starting buffering for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:c6156172-5f81-49e0-ac5a-4314404919b8
+[I 2022-04-20 22:39:21.613 ServerApp] Starting buffering for beacefc6-db2f-4e9d-a1c8-a5fdb60d26bd:1a990c93-2f38-4993-8054-55819a9332ba
+[I 2022-04-20 22:39:21.614 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:7e77f053-6d1a-4414-bfec-86d08f956ffc
+[I 2022-04-20 22:39:21.614 ServerApp] Starting buffering for 6f5f6a0f-ebca-4d7e-a60c-48be061e2f48:cbc59919-0fef-45d8-a5b3-1d0765fb8970
+[I 2022-04-20 22:39:21.615 ServerApp] Starting buffering for b9781203-5b5f-4b39-ba63-859e89592779:57f295e8-9034-4537-9878-2249b28da0b5
+[I 2022-04-20 22:39:21.660 ServerApp] Restoring connection for 62eb779d-85ff-444c-865f-9db181eee4a6:ad9f2ab2-59ec-4730-b427-38f78681a362
+[I 2022-04-20 22:39:21.725 ServerApp] Restoring connection for 6f5f6a0f-ebca-4d7e-a60c-48be061e2f48:cbc59919-0fef-45d8-a5b3-1d0765fb8970
+[I 2022-04-20 22:39:21.790 ServerApp] Restoring connection for b9781203-5b5f-4b39-ba63-859e89592779:57f295e8-9034-4537-9878-2249b28da0b5
+[I 2022-04-20 22:39:21.855 ServerApp] Restoring connection for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:c6156172-5f81-49e0-ac5a-4314404919b8
+[I 2022-04-20 22:39:21.933 ServerApp] Restoring connection for 708c119a-4481-4a1f-8f92-88a63671ede2:7e77f053-6d1a-4414-bfec-86d08f956ffc
+[I 2022-04-20 22:39:21.959 ServerApp] Restoring connection for beacefc6-db2f-4e9d-a1c8-a5fdb60d26bd:1a990c93-2f38-4993-8054-55819a9332ba
+[W 2022-04-20 22:40:51.661 ServerApp] WebSocket ping timeout after 90000 ms.
+[W 2022-04-20 22:40:51.726 ServerApp] WebSocket ping timeout after 90000 ms.
+[W 2022-04-20 22:40:51.791 ServerApp] WebSocket ping timeout after 90000 ms.
+[W 2022-04-20 22:40:51.856 ServerApp] WebSocket ping timeout after 90001 ms.
+[W 2022-04-20 22:40:51.934 ServerApp] WebSocket ping timeout after 90000 ms.
+[W 2022-04-20 22:40:51.960 ServerApp] WebSocket ping timeout after 90000 ms.
+[I 2022-04-20 22:40:56.664 ServerApp] Starting buffering for 62eb779d-85ff-444c-865f-9db181eee4a6:ad9f2ab2-59ec-4730-b427-38f78681a362
+[I 2022-04-20 22:40:56.727 ServerApp] Starting buffering for 6f5f6a0f-ebca-4d7e-a60c-48be061e2f48:cbc59919-0fef-45d8-a5b3-1d0765fb8970
+[I 2022-04-20 22:40:56.793 ServerApp] Starting buffering for b9781203-5b5f-4b39-ba63-859e89592779:57f295e8-9034-4537-9878-2249b28da0b5
+[I 2022-04-20 22:40:56.858 ServerApp] Starting buffering for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:c6156172-5f81-49e0-ac5a-4314404919b8
+[I 2022-04-20 22:40:56.936 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:7e77f053-6d1a-4414-bfec-86d08f956ffc
+[I 2022-04-20 22:40:56.961 ServerApp] Starting buffering for beacefc6-db2f-4e9d-a1c8-a5fdb60d26bd:1a990c93-2f38-4993-8054-55819a9332ba
+[I 2022-04-21 08:55:35.619 ServerApp] Restoring connection for 708c119a-4481-4a1f-8f92-88a63671ede2:7e77f053-6d1a-4414-bfec-86d08f956ffc
+[I 2022-04-21 08:55:39.141 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:7e77f053-6d1a-4414-bfec-86d08f956ffc
+[W 2022-04-21 08:55:45.660 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-04-21 08:55:47.715 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[W 2022-04-21 08:55:47.969 ServerApp] Notebook jupyter_notebooks/legacy/01. Toy_Example.ipynb is not trusted
+[I 2022-04-21 08:56:46.575 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-21 08:56:46.775 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-21 08:56:47.244 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-21 08:57:23.992 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-21 08:57:24.172 ServerApp] Saving file at /reproducible_workflow/scripts/batch.sh
+[I 2022-04-21 09:37:58.050 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 09:40:02.266 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 09:42:06.473 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 09:44:10.938 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 09:46:15.629 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 09:46:54.266 ServerApp] Kernel restarted: 62eb779d-85ff-444c-865f-9db181eee4a6
+[I 2022-04-21 09:46:54.291 ServerApp] Starting buffering for 62eb779d-85ff-444c-865f-9db181eee4a6:03a0039a-88a0-405a-9b02-52d78bd8db34
+[I 2022-04-21 09:46:54.338 ServerApp] Restoring connection for 62eb779d-85ff-444c-865f-9db181eee4a6:03a0039a-88a0-405a-9b02-52d78bd8db34
+[W 2022-04-21 09:46:58.855 ServerApp] Nudge: attempt 10 on kernel 62eb779d-85ff-444c-865f-9db181eee4a6
+[W 2022-04-21 09:47:03.873 ServerApp] Nudge: attempt 20 on kernel 62eb779d-85ff-444c-865f-9db181eee4a6
+[I 2022-04-21 09:48:22.659 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 09:50:27.807 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 09:52:32.348 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 09:54:36.910 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 09:56:41.410 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 09:57:27.625 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 09:59:32.284 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:01:37.814 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:03:42.391 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:04:18.939 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:06:24.044 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:08:28.743 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:10:34.756 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:10:54.185 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:12:58.882 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:15:03.558 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:15:13.916 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:16:36.097 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:17:37.052 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:18:21.115 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:20:25.753 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:22:30.356 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:24:34.969 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:26:39.553 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:28:44.490 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:30:50.276 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:32:55.710 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:35:02.672 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:37:08.916 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:39:15.175 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:41:19.927 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:42:38.451 ServerApp] Creating new directory in /reproducible_workflow/experiments
+[W 2022-04-21 10:43:00.987 ServerApp] delete /reproducible_workflow/experiments/A2. Does MODIS have data in the Caspian?
+[W 2022-04-21 10:43:00.988 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/experiments/A2. Does MODIS have data in the Caspian?, on different device to home directory
+[I 2022-04-21 10:43:03.356 ServerApp] Creating new file in /reproducible_workflow/experiments
+[W 2022-04-21 10:43:09.965 ServerApp] delete /reproducible_workflow/experiments/untitled.txt
+[W 2022-04-21 10:43:09.966 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/experiments/untitled.txt, on different device to home directory
+[I 2022-04-21 10:43:12.043 ServerApp] Creating new notebook in /reproducible_workflow/experiments
+[I 2022-04-21 10:43:14.171 ServerApp] Kernel started: de9dffc7-208c-4e15-a805-f1c00c1e9a21
+[I 2022-04-21 10:43:26.114 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:44:43.598 ServerApp] Starting buffering for b9781203-5b5f-4b39-ba63-859e89592779:31ecbd30-19cf-4c17-bd22-0ebbbe6718d5
+[I 2022-04-21 10:44:45.008 ServerApp] Starting buffering for beacefc6-db2f-4e9d-a1c8-a5fdb60d26bd:c2174fa3-dac8-4f83-b08a-d1f64bfc05f7
+[I 2022-04-21 10:44:45.696 ServerApp] Starting buffering for 6f5f6a0f-ebca-4d7e-a60c-48be061e2f48:bff145f7-627a-4d6c-a531-e65f76016c74
+[I 2022-04-21 10:45:14.006 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 10:47:14.088 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 10:47:47.877 ServerApp] Kernel restarted: de9dffc7-208c-4e15-a805-f1c00c1e9a21
+[I 2022-04-21 10:47:47.943 ServerApp] Starting buffering for de9dffc7-208c-4e15-a805-f1c00c1e9a21:1b976500-e90e-4f3e-8a2b-53bafd4caabf
+[I 2022-04-21 10:47:47.978 ServerApp] Restoring connection for de9dffc7-208c-4e15-a805-f1c00c1e9a21:1b976500-e90e-4f3e-8a2b-53bafd4caabf
+[I 2022-04-21 10:49:14.165 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 10:53:33.994 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:55:40.799 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:57:47.626 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 10:59:54.518 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:02:01.717 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:04:08.901 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:06:15.979 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:08:19.380 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:10:23.125 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:12:26.223 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:14:29.318 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:16:32.442 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:18:35.632 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:20:38.786 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:22:41.922 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:24:45.092 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:25:15.520 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 11:26:48.234 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:28:51.394 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:30:54.512 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:34:57.709 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:37:00.804 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:39:04.514 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:41:08.104 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:42:36.502 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 11:42:43.492 ServerApp] Kernel restarted: de9dffc7-208c-4e15-a805-f1c00c1e9a21
+[I 2022-04-21 11:42:43.527 ServerApp] Starting buffering for de9dffc7-208c-4e15-a805-f1c00c1e9a21:1b976500-e90e-4f3e-8a2b-53bafd4caabf
+[I 2022-04-21 11:42:43.547 ServerApp] Restoring connection for de9dffc7-208c-4e15-a805-f1c00c1e9a21:1b976500-e90e-4f3e-8a2b-53bafd4caabf
+[I 2022-04-21 11:43:15.976 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 11:45:16.072 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 11:47:16.174 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[W 2022-04-21 11:48:21.113 ServerApp] Notebook jupyter_notebooks/legacy/01. Toy_Example.ipynb is not trusted
+[I 2022-04-21 11:49:04.736 ServerApp] Kernel interrupted: de9dffc7-208c-4e15-a805-f1c00c1e9a21
+[I 2022-04-21 11:49:04.906 ServerApp] Kernel interrupted: de9dffc7-208c-4e15-a805-f1c00c1e9a21
+[I 2022-04-21 11:49:05.065 ServerApp] Kernel interrupted: de9dffc7-208c-4e15-a805-f1c00c1e9a21
+[I 2022-04-21 11:49:05.230 ServerApp] Kernel interrupted: de9dffc7-208c-4e15-a805-f1c00c1e9a21
+[I 2022-04-21 11:49:16.296 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb
+[I 2022-04-21 11:51:16.511 ServerApp] Saving file at /reproducible_workflow/experiments/A2.Does MODIS have data in the Caspian?.ipynb

@@ -20,22 +20,52 @@ def natural_sort(l):
     return sorted(l, key=alphanum_key)
 
 
-for v in ['v15', 'v20']:
-    data_files= natural_sort(glob.glob(f'/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/{v}/matched_*.pkl'))
-    print('v:', v)
-    dfs = []
-    for f in data_files:
-        print(f)
-        df= pd.read_pickle(f)
-        dfs.append(df)
-    
-    print('Concat')
-    df = pd.concat(dfs)
+data_files= natural_sort(glob.glob(f'/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/TESTmatched_*.pkl'))
 
-    print('Writing HDF')
-    fout = f'/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/{v}/all_months.h5'
-    df.to_hdf(fout, key='df', mode='w') 
-    print('Done')
+dfs = []
+for f in data_files:
+    print(f)
+    df= pd.read_pickle(f)
+    dfs.append(df)
+
+print('Concat')
+df = pd.concat(dfs)
+
+print('Writing HDF')
+fout = f'/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/all_months.h5'
+df.to_hdf(fout, key='df', mode='w') 
+print('Done')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# for v in ['v15', 'v20']:
+#     data_files= natural_sort(glob.glob(f'/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/{v}/matched_*.pkl'))
+#     print('v:', v)
+#     dfs = []
+#     for f in data_files:
+#         print(f)
+#         df= pd.read_pickle(f)
+#         dfs.append(df)
+    
+#     print('Concat')
+#     df = pd.concat(dfs)
+
+#     print('Writing HDF')
+#     fout = f'/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/{v}/all_months.h5'
+#     df.to_hdf(fout, key='df', mode='w') 
+#     print('Done')
 
 
 
