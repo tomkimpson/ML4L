@@ -20,7 +20,7 @@ def natural_sort(l):
     return sorted(l, key=alphanum_key)
 
 
-data_files= natural_sort(glob.glob(f'/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/TESTmatched_*.pkl'))
+data_files= natural_sort(glob.glob(f'/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/V2matched_*.pkl'))
 
 dfs = []
 for f in data_files:
@@ -32,7 +32,7 @@ print('Concat')
 df = pd.concat(dfs)
 
 print('Writing HDF')
-fout = f'/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/all_months.h5'
+fout = f'/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/all_months_V2.h5'
 df.to_hdf(fout, key='df', mode='w') 
 print('Done')
 

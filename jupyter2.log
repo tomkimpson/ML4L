@@ -1590,3 +1590,237 @@ ERROR 1: PROJ: proj_create_from_database: Open of /home/k/kimpson/bin/conda/envs
 [W 2022-04-21 15:26:24.643 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
 [I 2022-04-21 15:27:16.430 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
 [W 2022-04-21 15:27:16.432 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-21 15:31:19.660 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-21 15:31:19.661 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-21 15:37:04.531 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 15:39:07.932 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 15:41:11.364 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 15:41:51.503 ServerApp] Creating new notebook in /reproducible_workflow/experiments
+[I 2022-04-21 15:41:52.306 ServerApp] Kernel started: 8214cb00-2367-4ada-9930-cfd7dbe4db9a
+[I 2022-04-21 15:42:56.705 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-21 15:43:52.177 ServerApp] Saving file at /reproducible_workflow/experiments/A3.MaracaiboLake.ipynb
+[I 2022-04-21 15:45:52.746 ServerApp] Saving file at /reproducible_workflow/experiments/A3.MaracaiboLake.ipynb
+[I 2022-04-21 15:47:52.981 ServerApp] Saving file at /reproducible_workflow/experiments/A3.MaracaiboLake.ipynb
+[I 2022-04-21 15:49:53.134 ServerApp] Saving file at /reproducible_workflow/experiments/A3.MaracaiboLake.ipynb
+[I 2022-04-21 15:51:53.389 ServerApp] Saving file at /reproducible_workflow/experiments/A3.MaracaiboLake.ipynb
+[I 2022-04-21 15:53:53.547 ServerApp] Saving file at /reproducible_workflow/experiments/A3.MaracaiboLake.ipynb
+[I 2022-04-21 15:55:53.767 ServerApp] Saving file at /reproducible_workflow/experiments/A3.MaracaiboLake.ipynb
+[I 2022-04-21 16:58:58.162 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-21 17:01:06.065 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-21 17:03:15.375 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-21 17:05:25.076 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-21 17:44:32.191 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-21 17:44:42.137 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-21 17:44:42.371 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-21 17:44:43.033 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[W 2022-04-21 17:49:25.829 ServerApp] delete /reproducible_workflow/scripts/test.mp4
+[W 2022-04-21 17:49:25.830 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/test.mp4, on different device to home directory
+[I 2022-04-21 18:21:29.770 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-21 18:21:29.772 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-21 18:23:33.027 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-21 18:23:33.028 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-21 18:29:38.267 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-21 18:29:39.434 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-21 18:29:39.435 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-21 18:31:04.687 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-21 18:31:04.925 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-21 18:31:05.381 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-21 18:31:42.661 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-21 18:31:42.663 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-21 20:57:08.308 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-21 20:57:08.527 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-21 22:09:16.233 ServerApp] Starting buffering for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:d3c6b13d-c4f0-468f-8f43-321a4065d730
+[I 2022-04-21 22:09:16.234 ServerApp] Starting buffering for 8214cb00-2367-4ada-9930-cfd7dbe4db9a:608add28-8fc6-47a4-9e9a-ea94a8d40901
+[I 2022-04-21 22:09:16.235 ServerApp] Starting buffering for 62eb779d-85ff-444c-865f-9db181eee4a6:497382f0-c046-4497-be1f-d7c5ce21c1ce
+[I 2022-04-21 22:09:16.236 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:059e98c9-37af-495b-ae6e-e9413d34122e
+[I 2022-04-21 22:09:16.284 ServerApp] Restoring connection for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:d3c6b13d-c4f0-468f-8f43-321a4065d730
+[I 2022-04-21 22:09:16.358 ServerApp] Restoring connection for 8214cb00-2367-4ada-9930-cfd7dbe4db9a:608add28-8fc6-47a4-9e9a-ea94a8d40901
+[I 2022-04-21 22:09:16.428 ServerApp] Restoring connection for 62eb779d-85ff-444c-865f-9db181eee4a6:497382f0-c046-4497-be1f-d7c5ce21c1ce
+[I 2022-04-21 22:09:16.500 ServerApp] Restoring connection for 708c119a-4481-4a1f-8f92-88a63671ede2:059e98c9-37af-495b-ae6e-e9413d34122e
+[W 2022-04-21 22:10:46.286 ServerApp] WebSocket ping timeout after 90001 ms.
+[W 2022-04-21 22:10:46.358 ServerApp] WebSocket ping timeout after 90000 ms.
+[W 2022-04-21 22:10:46.429 ServerApp] WebSocket ping timeout after 90000 ms.
+[W 2022-04-21 22:10:46.501 ServerApp] WebSocket ping timeout after 90000 ms.
+[I 2022-04-21 22:10:51.288 ServerApp] Starting buffering for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:d3c6b13d-c4f0-468f-8f43-321a4065d730
+[I 2022-04-21 22:10:51.361 ServerApp] Starting buffering for 8214cb00-2367-4ada-9930-cfd7dbe4db9a:608add28-8fc6-47a4-9e9a-ea94a8d40901
+[I 2022-04-21 22:10:51.431 ServerApp] Starting buffering for 62eb779d-85ff-444c-865f-9db181eee4a6:497382f0-c046-4497-be1f-d7c5ce21c1ce
+[I 2022-04-21 22:10:51.504 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:059e98c9-37af-495b-ae6e-e9413d34122e
+[I 2022-04-22 07:15:05.641 ServerApp] Restoring connection for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:d3c6b13d-c4f0-468f-8f43-321a4065d730
+[I 2022-04-22 07:15:06.414 ServerApp] Starting buffering for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:d3c6b13d-c4f0-468f-8f43-321a4065d730
+[W 2022-04-22 07:15:13.594 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-04-22 07:15:15.140 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-22 07:16:36.067 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-22 07:16:36.497 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-22 09:50:43.932 ServerApp] Saving file at /reproducible_workflow/scripts/run.sh
+[I 2022-04-22 09:50:58.979 ServerApp] Saving file at /reproducible_workflow/scripts/unify_monthly_matches.py
+[I 2022-04-22 09:50:59.159 ServerApp] Saving file at /reproducible_workflow/scripts/unify_monthly_matches.py
+[I 2022-04-22 09:51:03.399 ServerApp] Saving file at /reproducible_workflow/scripts/unify_monthly_matches.py
+[I 2022-04-22 09:51:03.743 ServerApp] Saving file at /reproducible_workflow/scripts/unify_monthly_matches.py
+[I 2022-04-22 09:51:06.443 ServerApp] Saving file at /reproducible_workflow/scripts/run.sh
+[I 2022-04-22 09:51:06.637 ServerApp] Saving file at /reproducible_workflow/scripts/run.sh
+[I 2022-04-22 10:07:56.148 ServerApp] Starting buffering for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:e8089b75-71da-4ea0-a772-91218d25e889
+[I 2022-04-22 10:07:57.270 ServerApp] Starting buffering for 62eb779d-85ff-444c-865f-9db181eee4a6:735f5fe6-74f1-43f7-b434-5cc5bb605ceb
+[I 2022-04-22 10:07:57.562 ServerApp] Starting buffering for 8214cb00-2367-4ada-9930-cfd7dbe4db9a:a1fc81e3-6270-42e5-89af-7232bb2818cd
+[I 2022-04-22 10:09:02.260 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-22 10:09:28.468 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-22 10:10:39.535 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-22 10:12:39.603 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-22 10:13:51.796 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-22 10:13:52.060 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-22 10:13:52.434 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-22 10:13:53.608 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-22 10:25:53.697 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-22 10:27:19.864 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-22 10:27:19.865 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-22 10:29:23.013 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-22 10:29:23.015 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-22 10:29:53.821 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-22 10:31:26.145 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-22 10:31:26.146 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-22 10:33:29.423 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-22 10:33:29.425 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-22 10:35:32.580 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-22 10:35:32.581 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-22 10:36:02.926 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-22 10:36:02.927 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-22 10:36:44.167 ServerApp] Copying reproducible_workflow/experiments/1. Lakes.ipynb to /reproducible_workflow/experiments
+[I 2022-04-22 10:37:14.303 ServerApp] Kernel started: 408fe649-524e-42f4-ac5a-138d35303d42
+[I 2022-04-22 10:37:14.404 ServerApp] Starting buffering for 62eb779d-85ff-444c-865f-9db181eee4a6:00a84190-4f8e-40b0-a0f5-02192c3598b0
+[I 2022-04-22 10:38:02.345 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-22 10:38:02.454 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-22 10:38:06.119 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-22 10:38:06.121 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-22 10:39:17.899 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 10:41:22.419 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 11:03:27.551 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 11:05:33.056 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 11:07:34.062 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 11:09:36.787 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 11:11:39.870 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 11:13:45.184 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 11:13:52.715 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-22 11:15:08.499 ServerApp] Copying reproducible_workflow/experiments/1. Lakes.ipynb to /reproducible_workflow/experiments
+[I 2022-04-22 11:15:13.794 ServerApp] Kernel started: 111ef638-05a7-46f6-abe1-b34448c68831
+[I 2022-04-22 11:17:17.095 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 11:17:44.095 ServerApp] Starting buffering for 62eb779d-85ff-444c-865f-9db181eee4a6:b7bec164-3466-482b-a5f6-cec2e3c5eb6e
+[I 2022-04-22 11:17:44.557 ServerApp] Starting buffering for 111ef638-05a7-46f6-abe1-b34448c68831:b01fe254-30e1-4e60-8862-2a9144e13424
+[I 2022-04-22 11:17:47.146 ServerApp] Starting buffering for 8214cb00-2367-4ada-9930-cfd7dbe4db9a:33b2cde6-2c43-44d3-a184-8e217eef16e9
+[I 2022-04-22 11:17:47.147 ServerApp] Starting buffering for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:14e0fd4e-e34a-48d2-a0eb-ce7ad0c84394
+[I 2022-04-22 11:17:47.150 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:cd996aae-b754-4c01-9c6c-94179149b3fd
+[I 2022-04-22 11:17:47.152 ServerApp] Starting buffering for 408fe649-524e-42f4-ac5a-138d35303d42:a4144d61-8af7-4c89-a563-495d41bccf40
+[I 2022-04-22 11:17:52.752 ServerApp] 302 GET / (::1) 1.20ms
+[W 2022-04-22 11:17:58.044 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-04-22 11:17:58.772 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-22 11:18:02.438 ServerApp] Starting buffering for 408fe649-524e-42f4-ac5a-138d35303d42:0f9be25d-611b-413f-a453-ef56563656f6
+[I 2022-04-22 11:18:04.577 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:380a18c5-26b2-4800-8ca1-97bf0a0dd08c
+[I 2022-04-22 11:20:17.497 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 11:20:20.140 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-22 11:22:23.182 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 11:22:25.112 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-22 11:24:30.677 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-22 11:26:36.290 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-22 11:28:28.781 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 11:30:34.718 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 11:30:42.403 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 11:30:47.393 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 11:32:50.195 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 11:32:55.360 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 11:34:39.673 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-22 11:35:01.194 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 11:36:45.189 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-22 11:37:06.996 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 11:39:12.692 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 11:45:18.393 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 11:47:24.343 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 11:47:48.211 ServerApp] Creating new directory in /reproducible_workflow/experiments
+[W 2022-04-22 11:48:01.721 ServerApp] delete /reproducible_workflow/experiments/NB1_df_delta_masked.pkl
+[W 2022-04-22 11:48:01.722 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/experiments/NB1_df_delta_masked.pkl, on different device to home directory
+[I 2022-04-22 11:48:51.056 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-22 11:51:13.135 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-22 11:51:13.437 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-22 11:57:05.248 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 11:57:23.647 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 11:59:29.599 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 12:02:56.938 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-22 12:05:05.982 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-22 12:07:25.614 ServerApp] Starting buffering for 408fe649-524e-42f4-ac5a-138d35303d42:1ba05935-63e4-449f-859e-5ec28f62f58b
+[I 2022-04-22 12:07:42.074 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 12:07:43.622 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes-Copy1.ipynb
+[I 2022-04-22 12:07:53.833 ServerApp] Kernel shutdown: 408fe649-524e-42f4-ac5a-138d35303d42
+[W 2022-04-22 12:07:54.975 ServerApp] delete /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-04-22 12:07:54.976 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb, on different device to home directory
+[I 2022-04-22 12:13:14.101 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[I 2022-04-22 12:15:51.278 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 12:17:58.574 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 12:19:20.152 ServerApp] Saving file at /reproducible_workflow/experiments/1. Lakes.ipynb
+[W 2022-04-22 12:19:41.853 ServerApp] delete /reproducible_workflow/scripts/logfiles/joinERA_MODIS.out
+[W 2022-04-22 12:19:41.853 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/logfiles/joinERA_MODIS.out, on different device to home directory
+[W 2022-04-22 12:19:41.906 ServerApp] delete /reproducible_workflow/scripts/logfiles/joinV2_a.out
+[W 2022-04-22 12:19:41.906 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/logfiles/joinV2_a.out, on different device to home directory
+[W 2022-04-22 12:19:41.909 ServerApp] delete /reproducible_workflow/scripts/logfiles/joinV2.out
+[W 2022-04-22 12:19:41.909 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/logfiles/joinV2.out, on different device to home directory
+[W 2022-04-22 12:19:41.910 ServerApp] delete /reproducible_workflow/scripts/logfiles/log1.out
+[W 2022-04-22 12:19:41.911 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/logfiles/log1.out, on different device to home directory
+[W 2022-04-22 12:19:41.940 ServerApp] delete /reproducible_workflow/scripts/logfiles/log2.out
+[W 2022-04-22 12:19:41.940 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/logfiles/log2.out, on different device to home directory
+[W 2022-04-22 12:19:42.006 ServerApp] delete /reproducible_workflow/scripts/logfiles/log3.out
+[W 2022-04-22 12:19:42.007 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/logfiles/log3.out, on different device to home directory
+[W 2022-04-22 12:19:42.017 ServerApp] delete /reproducible_workflow/scripts/logfiles/log4.out
+[W 2022-04-22 12:19:42.017 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/logfiles/log4.out, on different device to home directory
+[W 2022-04-22 12:19:42.056 ServerApp] delete /reproducible_workflow/scripts/logfiles/log6.out
+[W 2022-04-22 12:19:42.056 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/logfiles/log6.out, on different device to home directory
+[W 2022-04-22 12:19:42.087 ServerApp] delete /reproducible_workflow/scripts/logfiles/log5.out
+[W 2022-04-22 12:19:42.087 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/logfiles/log5.out, on different device to home directory
+[W 2022-04-22 12:19:42.091 ServerApp] delete /reproducible_workflow/scripts/logfiles/log7.out
+[W 2022-04-22 12:19:42.091 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/logfiles/log7.out, on different device to home directory
+[W 2022-04-22 12:19:42.119 ServerApp] delete /reproducible_workflow/scripts/logfiles/log8.out
+[W 2022-04-22 12:19:42.119 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/logfiles/log8.out, on different device to home directory
+[W 2022-04-22 12:19:42.129 ServerApp] delete /reproducible_workflow/scripts/logfiles/NN.out
+[W 2022-04-22 12:19:42.129 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/logfiles/NN.out, on different device to home directory
+[W 2022-04-22 12:19:42.236 ServerApp] delete /reproducible_workflow/scripts/logfiles/unify.out
+[W 2022-04-22 12:19:42.236 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/logfiles/unify.out, on different device to home directory
+[W 2022-04-22 12:19:42.276 ServerApp] delete /reproducible_workflow/scripts/logfiles/unify2.out
+[W 2022-04-22 12:19:42.277 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/logfiles/unify2.out, on different device to home directory
+[I 2022-04-22 12:22:01.956 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 12:22:19.416 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-22 12:22:19.647 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-22 12:23:39.723 ServerApp] Copying reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb to /reproducible_workflow/experiments
+[I 2022-04-22 12:23:44.188 ServerApp] Kernel started: ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f
+[I 2022-04-22 12:24:07.801 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 12:25:46.406 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-22 12:27:51.937 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-22 12:28:13.649 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 12:30:20.450 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 12:37:56.299 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-22 12:38:28.251 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 12:40:02.064 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-22 12:40:34.247 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 12:46:36.715 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 12:46:42.821 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 12:47:11.659 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 12:47:43.876 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-04-22 12:49:14.711 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-22 12:49:50.761 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 12:51:57.796 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 12:54:04.950 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 12:56:11.950 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 12:58:18.915 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:00:26.049 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:02:33.287 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:04:40.308 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:06:47.541 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:08:55.104 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:11:02.954 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:13:10.937 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:17:18.910 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:19:26.870 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:20:36.583 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:22:44.984 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:24:51.607 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:27:04.853 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:29:24.973 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:31:36.233 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:33:44.883 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:35:55.484 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:38:05.825 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 13:39:59.392 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb

@@ -10,10 +10,10 @@ import sys
 
 
 
-#TEmporary region
-
+#Temporary region
 method_type = sys.argv[1]
 
+#calculate_delta_fields = sys.argv[1]
 
 
 
@@ -103,7 +103,7 @@ def train_NN(x,y,x_val, y_val,epochs,batch_size,use_validation_data,optimizer):
     #Early stop
     early_stopping = EarlyStopping(monitor='val_loss',
                                    min_delta=0,
-                                   patience=10,
+                                   patience=20, #was 10, now 20
                                    verbose=1,
                                    mode='auto',
                                    baseline=None,
@@ -164,7 +164,7 @@ root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/
 #Inputs
 #version = 'v20' #v15, v20
 #input_file = f'{root}processed_data/joined_data/{version}/all_months.h5'
-input_file = f'{root}processed_data/joined_data/all_months.h5'
+input_file = f'{root}processed_data/joined_data/all_months_V2.h5'
 
 #Outputs
 output_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/'
@@ -183,8 +183,8 @@ target_var = ['MODIS_LST'] #The variable you are trying to learn/predict
 
 
 #Model parameters
-epochs = 100
-batch_size = 10000
+epochs = 200
+batch_size = 1024
 use_validation_data = True #Do you want to use validation data for early stopping? Stopping conditions are defined in train_NN()
 optimizer = 'adam'
 #optimizer = 'sgd'
@@ -205,7 +205,11 @@ df= pd.read_hdf(input_file)
 if method_type == 'Y':
 
     #Calculate some extra features
-    df['cl_delta'] = df['cl_v20'] - df['cl_v15']
+    df['cl_delta']  = df['cl_v20']  - df['cl_v15']
+    df['lsm_delta'] = df['lsm_v20'] - df['lsm_v15']
+    df['dl_delta']  = df['dl_v20']  - df['dl_v15']
+    df['cvh_delta'] = df['cvh_v20'] - df['cvh_v15']
+    df['cvl_delta'] = df['cvl_v20'] - df['cvl_v15']
 
 
 
@@ -213,7 +217,9 @@ if method_type == 'Y':
     feature_names = ['sp', 'msl', 'u10', 'v10', 't2m', 
                       'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
                       'skt',
-                      'cl_v15','cl_delta']
+                      'cl_v15','lsm_v15','dl_v15','cvl_v15','cvh_v15',
+                      'cl_delta','lsm_delta','dl_delta','cvh_delta','cvl_delta'
+                    ]
 
 else:
  
@@ -221,12 +227,12 @@ else:
     feature_names = ['sp', 'msl', 'u10', 'v10', 't2m', 
                       'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
                       'skt',
-                      'cl_v15']
+                      'cl_v15','lsm_v15','dl_v15','cvl_v15','cvh_v15']
 
 
 
 #END TEMP REGION
-
+ 
 
     
 print(df.isna().any())
@@ -326,8 +332,8 @@ print ("All completed OK")
 # feature_names = ['sp', 'msl', 'u10', 'v10', 't2m', 
 #                  'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
 #                  'skt',
-#                  'slt_v15', 'sdfor_v15', 'vegdiff_v15', 'lsrh_v15', 'cvh_v15', 'lsm_v15','z_v15', 'isor_v15', 'sdor_v15', 'cvl_v15', 'cl_v15', 'anor_v15','slor_v15', 'sr_v15', 'tvh_v15', 'tvl_v15', 
-#                  'slt_v20', 'sdfor_v20','vegdiff_v20', 'lsrh_v20', 'cvh_v20', 'lsm_v20', 'z_v20', 'isor_v20','sdor_v20', 'cvl_v20', 'cl_v20', 'anor_v20', 'slor_v20', 'sr_v20','tvh_v20', 'tvl_v20', 
+#                  'slt_v15', 'sdfor_v15', 'vegdiff_v15', 'lsrh_v15', 'cvh_v15', 'lsm_v15','z_v15', 'isor_v15', 'sdor_v15', 'cvl_v15', 'cl_v15', 'anor_v15','slor_v15', 'sr_v15', 'tvh_v15', 'tvl_v15','dl_v15' 
+#                  'slt_v20', 'sdfor_v20','vegdiff_v20', 'lsrh_v20', 'cvh_v20', 'lsm_v20', 'z_v20', 'isor_v20','sdor_v20', 'cvl_v20', 'cl_v20', 'anor_v20', 'slor_v20', 'sr_v20','tvh_v20', 'tvl_v20', 'dl_v20'
 #                  'COPERNICUS/', 'CAMA/', 'ORCHIDEE/',
 #                  #'monthlyWetlandAndSeasonalWater_minusRiceAllCorrected_waterConsistent/',
 #                  'CL_ECMWFAndJRChistory/']

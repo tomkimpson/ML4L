@@ -274,7 +274,7 @@ def faiss_knn(database,query):
 
 
 
-selection_index = 19 #Use if you dont want to run for all the ERA files e.g. script gets killed after X months
+selection_index = 28 #Use if you dont want to run for all the ERA files e.g. script gets killed after X months
 selected_ERA_files = ERA_files[selection_index:] 
 print(selected_ERA_files)
 counter = selection_index  
@@ -350,7 +350,7 @@ for f in selected_ERA_files:
     #Pkl is likely suboptimial here. Need to update to e.g. parquet, HDF, etc.
 
     df = pd.concat(dfs)
-    fname = f'TESTmatched_{counter}.pkl'
+    fname = f'V2matched_{counter}.pkl'
     print ("Writing to disk:", IO_path+fname)
     df.to_pickle(IO_path+fname)
         
