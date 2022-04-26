@@ -62,7 +62,7 @@ climateV = {root+'climate.v015/climate.v015/639l_2/':root + 'processed_data/ERA_
 for v in climateV:
     input_path = v
     output_path = climateV[v]
-    version_files = glob.glob(input_path+'*')              # Get all the grib files in that directory
+    version_files = set(glob.glob(input_path+'*')) -set(glob.glob(input_path+'cv*'))              # Get all the grib files in that directory, excluding cvh and cvl
     splitfile = tmpdir+'/splitfile_[shortName].grib'
     
     for f in version_files: #Split each file into sub-files by feature

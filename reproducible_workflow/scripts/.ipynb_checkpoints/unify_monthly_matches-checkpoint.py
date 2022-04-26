@@ -32,7 +32,7 @@ print('Concat')
 df = pd.concat(dfs)
 
 print('Writing HDF')
-fout = f'/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/all_months_V2.h5'
+fout = f'/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/all_months_V3.h5'
 df.to_hdf(fout, key='df', mode='w') 
 print('Done')
 

@@ -84,7 +84,6 @@ for v in versions:
     ds.close()
 
        
-
             
 #'Bonus' ERA data. This is wetlands and lakes
 bonus_root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/BonusClimate/'
@@ -274,7 +273,7 @@ def faiss_knn(database,query):
 
 
 
-selection_index = 28 #Use if you dont want to run for all the ERA files e.g. script gets killed after X months
+selection_index = 15 #Use if you dont want to run for all the ERA files e.g. script gets killed after X months
 selected_ERA_files = ERA_files[selection_index:] 
 print(selected_ERA_files)
 counter = selection_index  

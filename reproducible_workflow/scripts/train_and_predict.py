@@ -11,7 +11,7 @@ import sys
 
 
 #Temporary region
-method_type = sys.argv[1]
+#method_type = sys.argv[1]
 
 #calculate_delta_fields = sys.argv[1]
 
@@ -89,12 +89,13 @@ def train_NN(x,y,x_val, y_val,epochs,batch_size,use_validation_data,optimizer):
     #Create a basic NN model
     model = tf.keras.Sequential([
         tf.keras.layers.Dense(int(nfeatures/2), activation='relu',input_shape=(nfeatures,),name='layer1'),
+        tf.keras.layers.Dense(int(nfeatures/2), activation='relu',input_shape=(nfeatures,),name='layer2'),
         tf.keras.layers.Dense(1, name='output')
       ])
 
     #Compile it
-    
-    model.compile(optimizer=optimizer,
+    opt = tf.keras.optimizers.Adam(learning_rate=3e-4) 
+    model.compile(optimizer=opt,
                   loss='mse',
                   metrics=['accuracy'])
     
@@ -153,7 +154,19 @@ def save_model(output_path,model,history,parameters_dict):
 
             
             
-            
+def calculate_delta_fields_func(fields,df):
+    
+    """Function to determine V20 - V15 for different time constant fields"""
+      
+    new_column_names = []
+    for i in fields:
+        feature = i.split('_')[0] #cl_v15 --> cl
+        column_name = f'{feature}_delta'
+        new_column_names.append(column_name)
+        v20_name = feature+'_v20'
+        df[column_name] = df[v20_name] - df[i]
+                
+    return new_column_names,df            
 
 
 #--------------------------------#
@@ -164,7 +177,7 @@ root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/
 #Inputs
 #version = 'v20' #v15, v20
 #input_file = f'{root}processed_data/joined_data/{version}/all_months.h5'
-input_file = f'{root}processed_data/joined_data/all_months_V2.h5'
+input_file = f'{root}processed_data/joined_data/all_months_V3.h5'
 
 #Outputs
 output_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/'
@@ -183,7 +196,8 @@ target_var = ['MODIS_LST'] #The variable you are trying to learn/predict
 
 
 #Model parameters
-epochs = 200
+calculate_delta_fields = False
+epochs = 100
 batch_size = 1024
 use_validation_data = True #Do you want to use validation data for early stopping? Stopping conditions are defined in train_NN()
 optimizer = 'adam'
@@ -200,34 +214,55 @@ optimizer = 'adam'
 print ('Reading data')
 df= pd.read_hdf(input_file)
 
+
+#Define the features used in this model
+core_features = ['sp', 'msl', 'u10', 'v10', 't2m', 
+                 'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
+                 'skt'] #these are the time variable fields
+surface_features = ['cl_v15','lsm_v15','dl_v15','cvl_v15','cvh_v15','anor_v15','isor_v15','slor_v15','sr_v15','lsrh_v15'] #these are the constant fields, V15
+
+
+
+
+if calculate_delta_fields:
+    delta_fields,df = calculate_delta_fields_func(surface_features,df) #calculate delta fields for all surface features
+else:
+    delta_fields = []
+    
+feature_names = core_features+surface_features + delta_fields
+
+
+print('Feature names:')
+print(feature_names)
+
 #TEMP REGION
 
-if method_type == 'Y':
+# if method_type == 'Y':
 
-    #Calculate some extra features
-    df['cl_delta']  = df['cl_v20']  - df['cl_v15']
-    df['lsm_delta'] = df['lsm_v20'] - df['lsm_v15']
-    df['dl_delta']  = df['dl_v20']  - df['dl_v15']
-    df['cvh_delta'] = df['cvh_v20'] - df['cvh_v15']
-    df['cvl_delta'] = df['cvl_v20'] - df['cvl_v15']
+#     #Calculate some extra features
+#     df['cl_delta']  = df['cl_v20']  - df['cl_v15']
+#     df['lsm_delta'] = df['lsm_v20'] - df['lsm_v15']
+#     df['dl_delta']  = df['dl_v20']  - df['dl_v15']
+#     df['cvh_delta'] = df['cvh_v20'] - df['cvh_v15']
+#     df['cvl_delta'] = df['cvl_v20'] - df['cvl_v15']
 
 
 
-    #Select features you want to go into model
-    feature_names = ['sp', 'msl', 'u10', 'v10', 't2m', 
-                      'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
-                      'skt',
-                      'cl_v15','lsm_v15','dl_v15','cvl_v15','cvh_v15',
-                      'cl_delta','lsm_delta','dl_delta','cvh_delta','cvl_delta'
-                    ]
+#     #Select features you want to go into model
+#     feature_names = ['sp', 'msl', 'u10', 'v10', 't2m', 
+#                       'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
+#                       'skt',
+#                       'cl_v15','lsm_v15','dl_v15','cvl_v15','cvh_v15',
+#                       'cl_delta','lsm_delta','dl_delta','cvh_delta','cvl_delta'
+#                     ]
 
-else:
+# else:
  
-    #Select features you want to go into model
-    feature_names = ['sp', 'msl', 'u10', 'v10', 't2m', 
-                      'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
-                      'skt',
-                      'cl_v15','lsm_v15','dl_v15','cvl_v15','cvh_v15']
+#     #Select features you want to go into model
+#     feature_names = ['sp', 'msl', 'u10', 'v10', 't2m', 
+#                       'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
+#                       'skt',
+#                       'cl_v15','lsm_v15','dl_v15','cvl_v15','cvh_v15']
 
 
 
@@ -332,8 +367,8 @@ print ("All completed OK")
 # feature_names = ['sp', 'msl', 'u10', 'v10', 't2m', 
 #                  'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
 #                  'skt',
-#                  'slt_v15', 'sdfor_v15', 'vegdiff_v15', 'lsrh_v15', 'cvh_v15', 'lsm_v15','z_v15', 'isor_v15', 'sdor_v15', 'cvl_v15', 'cl_v15', 'anor_v15','slor_v15', 'sr_v15', 'tvh_v15', 'tvl_v15','dl_v15' 
-#                  'slt_v20', 'sdfor_v20','vegdiff_v20', 'lsrh_v20', 'cvh_v20', 'lsm_v20', 'z_v20', 'isor_v20','sdor_v20', 'cvl_v20', 'cl_v20', 'anor_v20', 'slor_v20', 'sr_v20','tvh_v20', 'tvl_v20', 'dl_v20'
+#                  'slt_v15', 'sdfor_v15', 'vegdiff_v15', 'lsrh_v15', 'cvh_v15', 'lsm_v15','z_v15', 'isor_v15', 'sdor_v15', 'cvl_v15', 'cl_v15', 'anor_v15','slor_v15', 'sr_v15', 'tvh_v15', 'tvl_v15','dl_v15','si10_v15' 
+#                  'slt_v20', 'sdfor_v20','vegdiff_v20', 'lsrh_v20', 'cvh_v20', 'lsm_v20', 'z_v20', 'isor_v20','sdor_v20', 'cvl_v20', 'cl_v20', 'anor_v20', 'slor_v20', 'sr_v20','tvh_v20', 'tvl_v20', 'dl_v20','si10_v20'
 #                  'COPERNICUS/', 'CAMA/', 'ORCHIDEE/',
 #                  #'monthlyWetlandAndSeasonalWater_minusRiceAllCorrected_waterConsistent/',
 #                  'CL_ECMWFAndJRChistory/']
@@ -342,3 +377,12 @@ print ("All completed OK")
 
 
 
+# #Calculate some extra features
+#     df['cl_delta']  = df['cl_v20']  - df['cl_v15']
+#     df['lsm_delta'] = df['lsm_v20'] - df['lsm_v15']
+#     df['dl_delta']  = df['dl_v20']  - df['dl_v15']
+#     df['cvh_delta'] = df['cvh_v20'] - df['cvh_v15']
+#     df['cvl_delta'] = df['cvl_v20'] - df['cvl_v15']
+
+
+#     df['anor_delta'] = df['anor_v20'] - df['anor_v15']

@@ -1824,3 +1824,606 @@ ERROR 1: PROJ: proj_create_from_database: Open of /home/k/kimpson/bin/conda/envs
 [I 2022-04-22 13:35:55.484 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
 [I 2022-04-22 13:38:05.825 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
 [I 2022-04-22 13:39:59.392 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-22 14:12:07.144 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:422a7bab-5687-4c90-b6bb-5ce106dceda4
+[I 2022-04-22 14:12:07.148 ServerApp] Starting buffering for 111ef638-05a7-46f6-abe1-b34448c68831:d67c5ed3-a905-43df-8b94-924b6305db63
+[I 2022-04-22 14:12:07.148 ServerApp] Starting buffering for 62eb779d-85ff-444c-865f-9db181eee4a6:9bbfaf36-0d56-4759-999b-c2661871452d
+[I 2022-04-22 14:12:07.150 ServerApp] Starting buffering for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:6a10af08-cfe0-434a-a4aa-6bb9817b3faf
+[I 2022-04-22 14:12:07.150 ServerApp] Starting buffering for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:a2330077-bfd6-49bf-b27e-1ece872d8076
+[I 2022-04-22 14:12:07.198 ServerApp] Restoring connection for 708c119a-4481-4a1f-8f92-88a63671ede2:422a7bab-5687-4c90-b6bb-5ce106dceda4
+[I 2022-04-22 14:12:07.254 ServerApp] Restoring connection for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:a2330077-bfd6-49bf-b27e-1ece872d8076
+[I 2022-04-22 14:12:07.333 ServerApp] Restoring connection for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:6a10af08-cfe0-434a-a4aa-6bb9817b3faf
+[I 2022-04-22 14:12:07.392 ServerApp] Restoring connection for 111ef638-05a7-46f6-abe1-b34448c68831:d67c5ed3-a905-43df-8b94-924b6305db63
+[I 2022-04-22 14:12:07.467 ServerApp] Restoring connection for 62eb779d-85ff-444c-865f-9db181eee4a6:9bbfaf36-0d56-4759-999b-c2661871452d
+[W 2022-04-22 14:13:37.200 ServerApp] WebSocket ping timeout after 90001 ms.
+[W 2022-04-22 14:13:37.255 ServerApp] WebSocket ping timeout after 90000 ms.
+[W 2022-04-22 14:13:37.334 ServerApp] WebSocket ping timeout after 90000 ms.
+[W 2022-04-22 14:13:37.393 ServerApp] WebSocket ping timeout after 90000 ms.
+[W 2022-04-22 14:13:37.467 ServerApp] WebSocket ping timeout after 90000 ms.
+[I 2022-04-22 14:13:42.203 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:422a7bab-5687-4c90-b6bb-5ce106dceda4
+[I 2022-04-22 14:13:42.257 ServerApp] Starting buffering for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:a2330077-bfd6-49bf-b27e-1ece872d8076
+[I 2022-04-22 14:13:42.335 ServerApp] Starting buffering for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:6a10af08-cfe0-434a-a4aa-6bb9817b3faf
+[I 2022-04-22 14:13:42.394 ServerApp] Starting buffering for 111ef638-05a7-46f6-abe1-b34448c68831:d67c5ed3-a905-43df-8b94-924b6305db63
+[I 2022-04-22 14:13:42.469 ServerApp] Starting buffering for 62eb779d-85ff-444c-865f-9db181eee4a6:9bbfaf36-0d56-4759-999b-c2661871452d
+[I 2022-04-24 12:45:08.070 ServerApp] Restoring connection for 111ef638-05a7-46f6-abe1-b34448c68831:d67c5ed3-a905-43df-8b94-924b6305db63
+[I 2022-04-24 12:45:08.716 ServerApp] Restoring connection for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:a2330077-bfd6-49bf-b27e-1ece872d8076
+[I 2022-04-24 12:45:09.887 ServerApp] Starting buffering for 111ef638-05a7-46f6-abe1-b34448c68831:d67c5ed3-a905-43df-8b94-924b6305db63
+[I 2022-04-24 12:45:09.888 ServerApp] Starting buffering for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:a2330077-bfd6-49bf-b27e-1ece872d8076
+[W 2022-04-24 12:45:16.525 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-04-24 12:45:18.989 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-24 12:49:27.464 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-24 12:49:27.467 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-24 12:51:30.628 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-24 12:51:30.630 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-24 12:56:14.816 ServerApp] Starting buffering for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:2240098e-a35c-406f-bb38-66d4dc7f3902
+[I 2022-04-24 12:56:15.391 ServerApp] Starting buffering for 111ef638-05a7-46f6-abe1-b34448c68831:eb3b0835-367a-474d-9cd0-21f57e12c7a4
+[I 2022-04-24 12:56:21.976 ServerApp] Starting buffering for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:5624bc64-b9af-48c2-9d9a-59dcabedc33f
+[I 2022-04-24 12:56:23.755 ServerApp] Starting buffering for 62eb779d-85ff-444c-865f-9db181eee4a6:2e6273e1-b7f6-47e8-9949-98c3dd6a86c4
+[I 2022-04-24 12:57:35.044 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-24 12:57:35.046 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-24 12:59:33.108 ServerApp] Saving file at /reproducible_workflow/scripts/process_time_constant_data.py
+[I 2022-04-24 12:59:33.452 ServerApp] Saving file at /reproducible_workflow/scripts/process_time_constant_data.py
+[I 2022-04-24 12:59:38.147 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-24 12:59:38.149 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-24 12:59:41.657 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-24 12:59:41.658 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-24 13:01:03.995 ServerApp] Saving file at /reproducible_workflow/scripts/process_time_constant_data.py
+[I 2022-04-24 13:01:04.142 ServerApp] Saving file at /reproducible_workflow/scripts/process_time_constant_data.py
+[I 2022-04-24 13:05:17.240 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-24 13:05:17.596 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-24 13:06:31.203 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-24 13:09:25.311 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-24 13:09:45.010 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-24 13:09:45.011 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-24 13:11:35.030 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-24 13:11:35.509 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-24 13:11:36.604 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-24 13:11:38.679 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-24 13:11:39.168 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-24 16:17:57.823 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:61d50329-4aef-415c-b756-787a2b784fee
+[I 2022-04-24 16:17:57.896 ServerApp] Restoring connection for 708c119a-4481-4a1f-8f92-88a63671ede2:61d50329-4aef-415c-b756-787a2b784fee
+[W 2022-04-24 16:21:27.896 ServerApp] WebSocket ping timeout after 119900 ms.
+[I 2022-04-24 16:21:27.902 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:61d50329-4aef-415c-b756-787a2b784fee
+[I 2022-04-24 17:28:05.599 ServerApp] Restoring connection for 708c119a-4481-4a1f-8f92-88a63671ede2:61d50329-4aef-415c-b756-787a2b784fee
+[I 2022-04-24 17:28:16.694 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:61d50329-4aef-415c-b756-787a2b784fee
+[W 2022-04-24 17:28:19.537 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-04-24 17:28:20.666 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-24 17:29:05.911 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-24 17:29:35.284 ServerApp] Saving file at /reproducible_workflow/scripts/join_MODIS_with_ERA.py
+[I 2022-04-24 22:01:56.805 ServerApp] Saving file at /reproducible_workflow/scripts/unify_monthly_matches.py
+[I 2022-04-24 22:01:56.978 ServerApp] Saving file at /reproducible_workflow/scripts/unify_monthly_matches.py
+[I 2022-04-24 23:06:28.653 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:8ff78012-c9f8-4aaa-bd86-4c6486d6be74
+[I 2022-04-24 23:06:28.694 ServerApp] Restoring connection for 708c119a-4481-4a1f-8f92-88a63671ede2:8ff78012-c9f8-4aaa-bd86-4c6486d6be74
+[E 2022-04-24 23:06:28.767 ServerApp] Uncaught exception in write_error
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1704, in _execute
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2576, in get
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 872, in validate_absolute_path
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2778, in validate_absolute_path
+    tornado.web.HTTPError: HTTP 404: Not Found
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 595, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: 404.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1217, in send_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 597, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: error.html
+[W 2022-04-24 23:06:28.817 ServerApp] 404 GET /static/favicons/favicon-busy-1.ico (::1) 64.98ms referer=http://localhost:8885/lab/tree/reproducible_workflow/scripts/unify_monthly_matches.py
+[E 2022-04-24 23:06:28.830 ServerApp] Uncaught exception in write_error
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1704, in _execute
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2576, in get
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 872, in validate_absolute_path
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2778, in validate_absolute_path
+    tornado.web.HTTPError: HTTP 404: Not Found
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 595, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: 404.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1217, in send_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 597, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: error.html
+[W 2022-04-24 23:06:28.881 ServerApp] 404 GET /static/favicons/favicon.ico (::1) 61.52ms referer=http://localhost:8885/lab/tree/reproducible_workflow/scripts/unify_monthly_matches.py
+[E 2022-04-24 23:06:28.894 ServerApp] Uncaught exception in write_error
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1704, in _execute
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2576, in get
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 872, in validate_absolute_path
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2778, in validate_absolute_path
+    tornado.web.HTTPError: HTTP 404: Not Found
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 595, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: 404.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1217, in send_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 597, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: error.html
+[W 2022-04-24 23:06:28.945 ServerApp] 404 GET /static/favicons/favicon-busy-1.ico (::1) 63.12ms referer=http://localhost:8885/lab/tree/reproducible_workflow/scripts/unify_monthly_matches.py
+[E 2022-04-24 23:06:28.959 ServerApp] Uncaught exception in write_error
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1704, in _execute
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2576, in get
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 872, in validate_absolute_path
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2778, in validate_absolute_path
+    tornado.web.HTTPError: HTTP 404: Not Found
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 595, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: 404.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1217, in send_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 597, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: error.html
+[W 2022-04-24 23:06:29.010 ServerApp] 404 GET /static/favicons/favicon.ico (::1) 63.56ms referer=http://localhost:8885/lab/tree/reproducible_workflow/scripts/unify_monthly_matches.py
+[W 2022-04-24 23:07:58.695 ServerApp] WebSocket ping timeout after 90001 ms.
+[I 2022-04-24 23:08:03.697 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:8ff78012-c9f8-4aaa-bd86-4c6486d6be74
+[W 2022-04-25 09:54:38.579 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-04-25 09:54:45.256 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-25 09:55:33.233 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 09:56:49.382 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-25 09:56:49.384 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-25 09:59:12.550 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 09:59:58.407 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:01:58.569 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:03:58.740 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:04:45.615 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:05:02.594 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:05:05.022 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:05:05.333 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:05:14.783 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:05:16.896 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:05:23.597 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:06:24.333 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:06:24.570 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:06:50.549 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:06:50.733 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:07:04.079 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:07:04.366 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:08:09.304 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:08:09.597 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:08:37.232 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:08:37.458 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:22:10.927 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:22:16.721 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:22:17.024 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:29:06.817 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:29:12.213 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:29:12.454 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:29:12.800 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:29:18.521 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:29:18.688 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:29:18.876 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:29:19.075 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:29:19.266 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:29:19.465 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:29:19.639 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:29:19.841 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:29:20.005 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:29:36.611 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:29:36.767 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:30:12.398 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:30:12.561 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:30:12.741 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:30:12.893 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:30:13.082 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:30:23.811 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:30:23.966 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:36:54.323 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:43:40.963 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:44:06.538 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:44:06.843 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:44:18.489 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 10:44:18.706 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 11:11:43.248 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 11:11:46.003 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 11:11:46.288 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 11:11:51.884 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 11:11:52.033 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 11:13:15.303 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 11:15:52.848 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 11:15:56.902 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 11:16:20.440 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 11:16:20.689 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 11:16:20.892 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 11:16:21.150 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 11:16:23.645 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 11:16:35.613 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 11:16:35.805 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 11:41:27.898 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 11:42:55.231 ServerApp] Starting buffering for 111ef638-05a7-46f6-abe1-b34448c68831:2a0fb731-9238-4691-89c7-c5811ae64ed0
+[I 2022-04-25 11:43:33.578 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 11:45:39.244 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 11:47:12.915 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 11:49:18.493 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 11:50:24.902 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 11:50:25.090 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 11:50:25.312 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 11:51:23.753 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 12:07:47.581 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 12:23:20.105 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 12:23:56.553 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 12:24:08.981 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 12:26:31.050 ServerApp] Starting buffering for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:aac586cf-fa86-44a6-b972-e7c875e790e9
+[I 2022-04-25 12:26:31.057 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:24db75b2-b266-4259-b9db-2008c4d61bd1
+[I 2022-04-25 12:26:31.096 ServerApp] Restoring connection for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:aac586cf-fa86-44a6-b972-e7c875e790e9
+[I 2022-04-25 12:26:31.151 ServerApp] Restoring connection for 708c119a-4481-4a1f-8f92-88a63671ede2:24db75b2-b266-4259-b9db-2008c4d61bd1
+[W 2022-04-25 12:28:01.096 ServerApp] WebSocket ping timeout after 90000 ms.
+[W 2022-04-25 12:28:01.152 ServerApp] WebSocket ping timeout after 90000 ms.
+[I 2022-04-25 12:28:06.097 ServerApp] Starting buffering for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:aac586cf-fa86-44a6-b972-e7c875e790e9
+[I 2022-04-25 12:28:06.153 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:24db75b2-b266-4259-b9db-2008c4d61bd1
+[I 2022-04-25 12:36:42.987 ServerApp] Restoring connection for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:aac586cf-fa86-44a6-b972-e7c875e790e9
+[I 2022-04-25 12:36:43.101 ServerApp] Restoring connection for 708c119a-4481-4a1f-8f92-88a63671ede2:24db75b2-b266-4259-b9db-2008c4d61bd1
+[I 2022-04-25 12:36:45.204 ServerApp] Starting buffering for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:aac586cf-fa86-44a6-b972-e7c875e790e9
+[I 2022-04-25 12:36:45.205 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:24db75b2-b266-4259-b9db-2008c4d61bd1
+[W 2022-04-25 12:36:48.261 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-04-25 12:36:49.146 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-25 13:40:02.061 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 13:42:07.349 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 13:44:12.922 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 13:45:25.002 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 13:45:25.234 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 13:45:25.995 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 13:46:21.475 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 13:47:35.900 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 13:47:51.738 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 13:47:53.867 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 13:50:01.379 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 15:14:50.254 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 15:16:57.750 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 15:19:05.247 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 15:21:12.694 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 15:23:20.469 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 15:25:28.021 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 15:27:33.265 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 15:28:41.077 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-25 15:30:45.222 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-04-25 15:31:37.590 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 15:33:41.656 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 15:35:16.562 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 15:35:18.463 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 15:35:18.698 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 15:35:20.503 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 15:35:20.714 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 15:35:20.895 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 15:35:31.713 ServerApp] Starting buffering for 111ef638-05a7-46f6-abe1-b34448c68831:623016fa-f63f-40cc-ab9c-be8e86793922
+[I 2022-04-25 15:36:33.816 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 15:36:34.070 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 15:37:45.743 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 15:53:50.104 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 15:55:54.116 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 16:01:58.081 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 16:02:45.040 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 16:02:45.655 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 16:04:03.744 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 16:06:49.349 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-25 16:06:49.351 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-25 16:10:08.323 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 16:14:10.588 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 16:16:15.075 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 16:18:20.574 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 16:29:57.193 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 16:29:57.482 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 16:30:44.314 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 16:32:49.632 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 16:41:26.806 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 16:41:27.119 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 16:41:42.864 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 16:41:43.032 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 16:41:44.001 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 16:41:55.751 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 16:41:55.878 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 16:41:56.111 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 16:41:57.348 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 16:42:59.570 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 16:42:59.753 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 16:52:43.584 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-25 16:52:43.587 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-25 16:54:47.278 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-25 16:54:47.279 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-25 17:02:46.563 ServerApp] Starting buffering for 62eb779d-85ff-444c-865f-9db181eee4a6:d15a4ef7-e976-4d9a-b5b7-c1cb769e8661
+[I 2022-04-25 17:02:54.555 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 17:04:59.096 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 17:07:04.149 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 17:29:06.358 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 17:31:11.489 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 19:41:44.696 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 19:44:24.808 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 19:44:25.083 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 19:44:26.510 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-25 19:45:49.186 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 19:47:53.561 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 19:49:57.918 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 23:06:34.578 ServerApp] Starting buffering for 62eb779d-85ff-444c-865f-9db181eee4a6:77cfb79c-3053-470e-b311-d881cd162fec
+[I 2022-04-25 23:06:34.579 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:705c1dba-244a-4ae4-8a1c-bf9b4ed322ba
+[I 2022-04-25 23:06:34.580 ServerApp] Starting buffering for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:befb91ad-30a8-4f87-bfd8-5a64243d0d17
+[I 2022-04-25 23:06:34.626 ServerApp] Restoring connection for 62eb779d-85ff-444c-865f-9db181eee4a6:77cfb79c-3053-470e-b311-d881cd162fec
+[I 2022-04-25 23:06:34.690 ServerApp] Restoring connection for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:befb91ad-30a8-4f87-bfd8-5a64243d0d17
+[E 2022-04-25 23:06:34.716 ServerApp] Uncaught exception in write_error
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1704, in _execute
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2576, in get
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 872, in validate_absolute_path
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2778, in validate_absolute_path
+    tornado.web.HTTPError: HTTP 404: Not Found
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 595, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: 404.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1217, in send_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 597, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: error.html
+[W 2022-04-25 23:06:34.769 ServerApp] 404 GET /static/favicons/favicon-busy-1.ico (::1) 68.88ms referer=http://localhost:8885/lab/tree/reproducible_workflow/experiments/2.%20Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-25 23:06:34.787 ServerApp] Restoring connection for 708c119a-4481-4a1f-8f92-88a63671ede2:705c1dba-244a-4ae4-8a1c-bf9b4ed322ba
+[E 2022-04-25 23:06:34.806 ServerApp] Uncaught exception in write_error
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1704, in _execute
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2576, in get
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 872, in validate_absolute_path
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2778, in validate_absolute_path
+    tornado.web.HTTPError: HTTP 404: Not Found
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 595, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: 404.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1217, in send_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 597, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: error.html
+[W 2022-04-25 23:06:34.858 ServerApp] 404 GET /static/favicons/favicon-busy-1.ico (::1) 66.94ms referer=http://localhost:8885/lab/tree/reproducible_workflow/experiments/2.%20Lakes_with_extra_fields-Copy1.ipynb
+[E 2022-04-25 23:06:34.891 ServerApp] Uncaught exception in write_error
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1704, in _execute
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2576, in get
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 872, in validate_absolute_path
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2778, in validate_absolute_path
+    tornado.web.HTTPError: HTTP 404: Not Found
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 595, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: 404.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1217, in send_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 597, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: error.html
+[W 2022-04-25 23:06:34.943 ServerApp] 404 GET /static/favicons/favicon-busy-1.ico (::1) 63.66ms referer=http://localhost:8885/lab/tree/reproducible_workflow/experiments/2.%20Lakes_with_extra_fields-Copy1.ipynb
+[E 2022-04-25 23:06:34.971 ServerApp] Uncaught exception in write_error
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1704, in _execute
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2576, in get
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 872, in validate_absolute_path
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2778, in validate_absolute_path
+    tornado.web.HTTPError: HTTP 404: Not Found
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 595, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: 404.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1217, in send_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 597, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: error.html
+[W 2022-04-25 23:06:35.022 ServerApp] 404 GET /static/favicons/favicon-busy-1.ico (::1) 63.63ms referer=http://localhost:8885/lab/tree/reproducible_workflow/experiments/2.%20Lakes_with_extra_fields-Copy1.ipynb
+[E 2022-04-25 23:06:35.052 ServerApp] Uncaught exception in write_error
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1704, in _execute
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2576, in get
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 872, in validate_absolute_path
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2778, in validate_absolute_path
+    tornado.web.HTTPError: HTTP 404: Not Found
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 595, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: 404.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1217, in send_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 597, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: error.html
+[W 2022-04-25 23:06:35.104 ServerApp] 404 GET /static/favicons/favicon-busy-1.ico (::1) 64.44ms referer=http://localhost:8885/lab/tree/reproducible_workflow/experiments/2.%20Lakes_with_extra_fields-Copy1.ipynb
+[E 2022-04-25 23:06:35.132 ServerApp] Uncaught exception in write_error
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1704, in _execute
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2576, in get
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 872, in validate_absolute_path
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2778, in validate_absolute_path
+    tornado.web.HTTPError: HTTP 404: Not Found
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 595, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: 404.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1217, in send_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 597, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: error.html
+[W 2022-04-25 23:06:35.184 ServerApp] 404 GET /static/favicons/favicon-busy-1.ico (::1) 64.10ms referer=http://localhost:8885/lab/tree/reproducible_workflow/experiments/2.%20Lakes_with_extra_fields-Copy1.ipynb
+[W 2022-04-25 23:08:04.627 ServerApp] WebSocket ping timeout after 90001 ms.
+[W 2022-04-25 23:08:04.690 ServerApp] WebSocket ping timeout after 90000 ms.
+[W 2022-04-25 23:08:04.788 ServerApp] WebSocket ping timeout after 90001 ms.
+[I 2022-04-25 23:08:09.630 ServerApp] Starting buffering for 62eb779d-85ff-444c-865f-9db181eee4a6:77cfb79c-3053-470e-b311-d881cd162fec
+[I 2022-04-25 23:08:09.692 ServerApp] Starting buffering for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:befb91ad-30a8-4f87-bfd8-5a64243d0d17
+[I 2022-04-25 23:08:09.790 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:705c1dba-244a-4ae4-8a1c-bf9b4ed322ba
+[I 2022-04-26 07:05:50.126 ServerApp] Restoring connection for 62eb779d-85ff-444c-865f-9db181eee4a6:77cfb79c-3053-470e-b311-d881cd162fec
+[I 2022-04-26 07:05:50.293 ServerApp] Restoring connection for 708c119a-4481-4a1f-8f92-88a63671ede2:705c1dba-244a-4ae4-8a1c-bf9b4ed322ba
+[I 2022-04-26 07:06:03.032 ServerApp] Starting buffering for 62eb779d-85ff-444c-865f-9db181eee4a6:77cfb79c-3053-470e-b311-d881cd162fec
+[I 2022-04-26 07:06:03.033 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:705c1dba-244a-4ae4-8a1c-bf9b4ed322ba
+[W 2022-04-26 07:06:11.133 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-04-26 07:06:12.288 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-26 10:02:19.748 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 10:04:23.865 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 10:05:04.536 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 10:07:08.469 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 10:09:12.038 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 10:11:15.903 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 10:13:19.791 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 10:15:23.609 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
