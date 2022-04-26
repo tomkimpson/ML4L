@@ -2427,3 +2427,121 @@ ERROR 1: PROJ: proj_create_from_database: Open of /home/k/kimpson/bin/conda/envs
 [I 2022-04-26 10:11:15.903 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
 [I 2022-04-26 10:13:19.791 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
 [I 2022-04-26 10:15:23.609 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 10:27:28.929 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 10:29:33.609 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 10:32:10.205 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 10:34:13.641 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 10:36:17.017 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 10:38:22.530 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 10:40:16.514 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 10:40:33.469 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 10:41:37.364 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 10:41:37.577 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 10:41:37.786 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 10:41:38.777 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 10:41:45.993 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 10:41:46.199 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 10:41:47.831 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 10:43:51.095 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 10:46:01.409 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 10:48:12.644 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 10:50:23.598 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 10:50:52.075 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 10:51:25.036 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 10:53:35.530 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 10:54:21.141 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 10:56:27.550 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 10:56:46.022 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 10:56:46.361 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 10:58:38.188 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 11:00:48.942 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 11:02:20.464 ServerApp] Kernel interrupted: 9d8301ab-6b0c-456b-aba3-45c7ce47924d
+[I 2022-04-26 11:02:58.602 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 11:05:08.261 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 11:07:17.235 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 11:09:21.307 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 11:09:35.679 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 11:09:36.935 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 11:12:46.695 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 11:14:55.243 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 11:17:08.437 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 11:19:37.939 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 11:22:09.542 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 11:24:42.816 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 11:25:48.244 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 11:28:43.592 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 11:31:51.894 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 11:35:38.050 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 11:57:01.199 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 12:04:20.247 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 12:08:17.257 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 12:13:35.402 ServerApp] Saving file at /reproducible_workflow/experiments/A1.V20_vs_V15.ipynb
+[I 2022-04-26 12:13:38.069 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:14:59.470 ServerApp] Kernel restarted: ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f
+[I 2022-04-26 12:14:59.498 ServerApp] Starting buffering for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:15bd68cd-577b-44ec-9ffa-1966fd819c3b
+[I 2022-04-26 12:14:59.519 ServerApp] Restoring connection for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:15bd68cd-577b-44ec-9ffa-1966fd819c3b
+[W 2022-04-26 12:15:04.058 ServerApp] Nudge: attempt 10 on kernel ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f
+[W 2022-04-26 12:15:09.076 ServerApp] Nudge: attempt 20 on kernel ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f
+[I 2022-04-26 12:17:56.450 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:20:29.035 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:23:04.579 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:25:37.273 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:26:15.976 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:28:52.808 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:31:28.628 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:34:00.812 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:34:19.264 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:36:25.910 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:38:34.837 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:38:48.094 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:38:49.105 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:38:51.682 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:38:54.575 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:40:08.381 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:42:15.022 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:44:22.308 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:46:28.832 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:48:32.330 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 12:50:35.338 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 13:00:38.316 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 14:00:06.623 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 14:00:12.718 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 14:02:15.836 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 14:06:18.637 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 14:08:21.871 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 14:11:39.985 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 14:11:47.134 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 14:11:47.385 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 14:11:49.291 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 14:11:49.434 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 14:12:24.826 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 14:12:29.284 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 14:12:29.510 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 14:12:30.150 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 14:22:29.669 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 14:24:32.552 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 16:48:14.822 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[I 2022-04-26 16:50:17.678 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields-Copy1.ipynb
+[W 2022-04-26 19:01:46.936 ServerApp] 500 PUT /lab/api/workspaces/default?1650996106642 (::1): [Errno 127] Key has expired: '/home/k/kimpson/.jupyter/lab/workspaces'
+[W 2022-04-26 19:01:46.937 LabApp] [Errno 127] Key has expired: '/home/k/kimpson/.jupyter/lab/workspaces'
+[E 2022-04-26 19:01:46.937 LabApp] {
+      "Host": "localhost:8885",
+      "Accept": "*/*",
+      "Referer": "http://localhost:8885/lab/tree/reproducible_workflow/scripts/train_and_predict.py",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.79 Safari/537.36"
+    }
+[E 2022-04-26 19:01:46.938 LabApp] 500 PUT /lab/api/workspaces/default?1650996106642 (::1) 9.39ms referer=http://localhost:8885/lab/tree/reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:04:16.592 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:10:16.668 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:10:58.843 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:10:59.053 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:10:59.919 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:11:08.941 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:11:09.098 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:12:09.212 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:12:09.440 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:12:09.984 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:12:12.433 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:12:12.706 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:12:12.887 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:12:13.086 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py

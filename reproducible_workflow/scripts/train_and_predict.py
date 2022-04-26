@@ -3,7 +3,7 @@ import os
 import time
 import json
 import pandas as pd
-from tensorflow.keras.callbacks import EarlyStopping
+from tensorflow.keras.callbacks import EarlyStopping,ModelCheckpoint
 import xarray as xr
 import uuid
 import sys
@@ -94,7 +94,7 @@ def train_NN(x,y,x_val, y_val,epochs,batch_size,use_validation_data,optimizer):
       ])
 
     #Compile it
-    opt = tf.keras.optimizers.Adam(learning_rate=3e-4) 
+    opt = tf.keras.optimizers.Adam()#(learning_rate=3e-4) 
     model.compile(optimizer=opt,
                   loss='mse',
                   metrics=['accuracy'])
@@ -104,11 +104,21 @@ def train_NN(x,y,x_val, y_val,epochs,batch_size,use_validation_data,optimizer):
     #Early stop
     early_stopping = EarlyStopping(monitor='val_loss',
                                    min_delta=0,
-                                   patience=20, #was 10, now 20
+                                   patience=50, #was 10, now 20
                                    verbose=1,
                                    mode='auto',
                                    baseline=None,
                                    restore_best_weights=True)
+    
+    #Checkpoints
+    model_checkpoint = ModelCheckpoint(filepath = f'checkpoint.{epoch:02d}-{val_loss:.2f}', 
+                                       monitor='val_loss', 
+                                       save_best_only=True, 
+                                       mode='min',
+                                       save_freq=50)
+    
+    
+    
     
     #Train it
     
@@ -117,7 +127,7 @@ def train_NN(x,y,x_val, y_val,epochs,batch_size,use_validation_data,optimizer):
                             epochs=epochs, batch_size=batch_size,
                             verbose=1,
                             validation_data=(x_val, y_val),
-                            callbacks=[early_stopping]) 
+                            callbacks=[early_stopping,model_checkpoint]) 
     else:
         history = model.fit(x, y, 
                             epochs=epochs, batch_size=batch_size,
@@ -196,8 +206,8 @@ target_var = ['MODIS_LST'] #The variable you are trying to learn/predict
 
 
 #Model parameters
-calculate_delta_fields = False
-epochs = 100
+calculate_delta_fields = True
+epochs = 1000
 batch_size = 1024
 use_validation_data = True #Do you want to use validation data for early stopping? Stopping conditions are defined in train_NN()
 optimizer = 'adam'
@@ -219,7 +229,10 @@ df= pd.read_hdf(input_file)
 core_features = ['sp', 'msl', 'u10', 'v10', 't2m', 
                  'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
                  'skt'] #these are the time variable fields
-surface_features = ['cl_v15','lsm_v15','dl_v15','cvl_v15','cvh_v15','anor_v15','isor_v15','slor_v15','sr_v15','lsrh_v15'] #these are the constant fields, V15
+surface_features = ['lsm_v15','cl_v15','dl_v15','cvh_v15','cvl_v15',
+                    'anor_v15','isor_v15','slor_v15','sdor_v15','sr_v15','lsrh_v15',
+                    'si10_v15'] #these are the constant fields, V15
+
 
 
 
@@ -235,41 +248,8 @@ feature_names = core_features+surface_features + delta_fields
 print('Feature names:')
 print(feature_names)
 
-#TEMP REGION
 
-# if method_type == 'Y':
-
-#     #Calculate some extra features
-#     df['cl_delta']  = df['cl_v20']  - df['cl_v15']
-#     df['lsm_delta'] = df['lsm_v20'] - df['lsm_v15']
-#     df['dl_delta']  = df['dl_v20']  - df['dl_v15']
-#     df['cvh_delta'] = df['cvh_v20'] - df['cvh_v15']
-#     df['cvl_delta'] = df['cvl_v20'] - df['cvl_v15']
-
-
-
-#     #Select features you want to go into model
-#     feature_names = ['sp', 'msl', 'u10', 'v10', 't2m', 
-#                       'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
-#                       'skt',
-#                       'cl_v15','lsm_v15','dl_v15','cvl_v15','cvh_v15',
-#                       'cl_delta','lsm_delta','dl_delta','cvh_delta','cvl_delta'
-#                     ]
-
-# else:
- 
-#     #Select features you want to go into model
-#     feature_names = ['sp', 'msl', 'u10', 'v10', 't2m', 
-#                       'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
-#                       'skt',
-#                       'cl_v15','lsm_v15','dl_v15','cvl_v15','cvh_v15']
-
-
-
-#END TEMP REGION
- 
-
-    
+     
 print(df.isna().any())
 
 #Normalise everything
