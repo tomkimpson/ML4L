@@ -111,11 +111,12 @@ def train_NN(x,y,x_val, y_val,epochs,batch_size,use_validation_data,optimizer):
                                    restore_best_weights=True)
     
     #Checkpoints
-    model_checkpoint = ModelCheckpoint(filepath = f'checkpoint.{epoch:02d}-{val_loss:.2f}', 
+    model_checkpoint = ModelCheckpoint(filepath = 'checkpoint', 
                                        monitor='val_loss', 
                                        save_best_only=True, 
                                        mode='min',
-                                       save_freq=50)
+                                       save_freq='epoch',
+                                       period=50)
     
     
     
@@ -250,7 +251,7 @@ print(feature_names)
 
 
      
-print(df.isna().any())
+#print(df.isna().any())
 
 #Normalise everything
 print('Normalizing')

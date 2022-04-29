@@ -2545,3 +2545,693 @@ ERROR 1: PROJ: proj_create_from_database: Open of /home/k/kimpson/bin/conda/envs
 [I 2022-04-26 19:12:12.706 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
 [I 2022-04-26 19:12:12.887 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
 [I 2022-04-26 19:12:13.086 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:13:06.607 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:13:06.805 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:29:50.963 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:29:55.772 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 19:29:55.970 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[W 2022-04-26 19:36:40.158 ServerApp] 500 PUT /lab/api/workspaces/default?1650998199955 (::1): [Errno 127] Key has expired: '/home/k/kimpson/.jupyter/lab/workspaces'
+[W 2022-04-26 19:36:40.159 LabApp] [Errno 127] Key has expired: '/home/k/kimpson/.jupyter/lab/workspaces'
+[E 2022-04-26 19:36:40.160 LabApp] {
+      "Host": "localhost:8885",
+      "Accept": "*/*",
+      "Referer": "http://localhost:8885/lab/tree/reproducible_workflow/00.%20Workflow.ipynb",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.79 Safari/537.36"
+    }
+[E 2022-04-26 19:36:40.160 LabApp] 500 PUT /lab/api/workspaces/default?1650998199955 (::1) 6.45ms referer=http://localhost:8885/lab/tree/reproducible_workflow/00.%20Workflow.ipynb
+[E 2022-04-26 19:37:27.771 ServerApp] Uncaught exception in write_error
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1704, in _execute
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2576, in get
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 872, in validate_absolute_path
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 2778, in validate_absolute_path
+    tornado.web.HTTPError: HTTP 404: Not Found
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 595, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: 404.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1217, in send_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 597, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: error.html
+[W 2022-04-26 19:37:27.962 ServerApp] 404 GET /static/favicons/favicon-busy-1.ico (::1) 235.39ms referer=http://localhost:8885/lab/tree/reproducible_workflow/00.%20Workflow.ipynb
+[I 2022-04-26 19:38:20.015 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-26 19:38:20.019 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[IPKernelApp] ERROR | Exception in message handler:
+Traceback (most recent call last):
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 3524, in run_code
+  File "/tmp/ipykernel_24194/1421435821.py", line 1, in <module>
+    example_grouped.msl()
+TypeError: 'Series' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 2088, in showtraceback
+AttributeError: 'TypeError' object has no attribute '_render_traceback_'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 3444, in run_ast_nodes
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 3541, in run_code
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 2091, in showtraceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1368, in structured_traceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1268, in structured_traceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1125, in structured_traceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1082, in format_exception_as_a_whole
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 382, in find_recursion
+TypeError: object of type 'NoneType' has no len()
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 2088, in showtraceback
+AttributeError: 'TypeError' object has no attribute '_render_traceback_'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 3003, in _run_cell
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/async_helpers.py", line 78, in _pseudo_sync_runner
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 3229, in run_cell_async
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 3463, in run_ast_nodes
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 2091, in showtraceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1368, in structured_traceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1268, in structured_traceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1143, in structured_traceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1082, in format_exception_as_a_whole
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 382, in find_recursion
+TypeError: object of type 'NoneType' has no len()
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 2088, in showtraceback
+AttributeError: 'TypeError' object has no attribute '_render_traceback_'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/ipykernel/kernelbase.py", line 400, in dispatch_shell
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/ipykernel/kernelbase.py", line 724, in execute_request
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/ipykernel/ipkernel.py", line 390, in do_execute
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/ipykernel/zmqshell.py", line 528, in run_cell
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 2958, in run_cell
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 3008, in _run_cell
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 2091, in showtraceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1368, in structured_traceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1268, in structured_traceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1143, in structured_traceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1082, in format_exception_as_a_whole
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 382, in find_recursion
+TypeError: object of type 'NoneType' has no len()
+[IPKernelApp] ERROR | Exception in message handler:
+Traceback (most recent call last):
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 3524, in run_code
+  File "/tmp/ipykernel_24194/4206043603.py", line 1, in <module>
+    plot_map(example_grouped,'msl',vmin=0,vmax=1000,cmap=plt.cm.viridis,logscale=False,title='Model error',limits=None)
+TypeError: plot_map() got an unexpected keyword argument 'vmin'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 2088, in showtraceback
+AttributeError: 'TypeError' object has no attribute '_render_traceback_'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 3444, in run_ast_nodes
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 3541, in run_code
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 2091, in showtraceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1368, in structured_traceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1268, in structured_traceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1125, in structured_traceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1082, in format_exception_as_a_whole
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 382, in find_recursion
+TypeError: object of type 'NoneType' has no len()
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 2088, in showtraceback
+AttributeError: 'TypeError' object has no attribute '_render_traceback_'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 3003, in _run_cell
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/async_helpers.py", line 78, in _pseudo_sync_runner
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 3229, in run_cell_async
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 3463, in run_ast_nodes
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 2091, in showtraceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1368, in structured_traceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1268, in structured_traceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1143, in structured_traceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1082, in format_exception_as_a_whole
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 382, in find_recursion
+TypeError: object of type 'NoneType' has no len()
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 2088, in showtraceback
+AttributeError: 'TypeError' object has no attribute '_render_traceback_'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/ipykernel/kernelbase.py", line 400, in dispatch_shell
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/ipykernel/kernelbase.py", line 724, in execute_request
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/ipykernel/ipkernel.py", line 390, in do_execute
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/ipykernel/zmqshell.py", line 528, in run_cell
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 2958, in run_cell
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 3008, in _run_cell
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 2091, in showtraceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1368, in structured_traceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1268, in structured_traceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1143, in structured_traceback
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 1082, in format_exception_as_a_whole
+  File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/IPython/core/ultratb.py", line 382, in find_recursion
+TypeError: object of type 'NoneType' has no len()
+[E 2022-04-26 19:39:49.396 ServerApp] Uncaught exception GET /lab/tree/reproducible_workflow/00.%20Workflow.ipynb (::1)
+    HTTPServerRequest(protocol='http', host='localhost:8885', method='GET', uri='/lab/tree/reproducible_workflow/00.%20Workflow.ipynb', version='HTTP/1.1', remote_ip='::1')
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/extension/handler.py", line 15, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: index.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1702, in _execute
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 3173, in wrapper
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1878, in wrapper
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyterlab_server/handlers.py", line 152, in get
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/extension/handler.py", line 17, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: index.html
+[E 2022-04-26 19:39:49.596 ServerApp] Uncaught exception in write_error
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/extension/handler.py", line 15, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: index.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1702, in _execute
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 3173, in wrapper
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1878, in wrapper
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyterlab_server/handlers.py", line 152, in get
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/extension/handler.py", line 17, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: index.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/extension/handler.py", line 15, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: 500.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 595, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/extension/handler.py", line 17, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: 500.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/extension/handler.py", line 15, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: error.html
+    
+    During handling of the above exception, another exception occurred:
+    
+    Traceback (most recent call last):
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/tornado/web.py", line 1217, in send_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 597, in write_error
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 525, in render_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/extension/handler.py", line 17, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jupyter_server/base/handlers.py", line 521, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 1000, in get_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/environment.py", line 959, in _load_template
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 126, in load
+      File "/home/k/kimpson/bin/conda/envs/ML4L/lib/python3.7/site-packages/jinja2/loaders.py", line 218, in get_source
+    jinja2.exceptions.TemplateNotFound: error.html
+[E 2022-04-26 19:39:50.034 LabApp] {
+      "Host": "localhost:8885",
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.79 Safari/537.36"
+    }
+[E 2022-04-26 19:39:50.035 LabApp] 500 GET /lab/tree/reproducible_workflow/00.%20Workflow.ipynb (::1) 747.15ms referer=None
+[I 2022-04-26 19:39:50.857 ServerApp] Starting buffering for 9d8301ab-6b0c-456b-aba3-45c7ce47924d:c9332227-8c0f-4885-8259-569f9b9dc4ec
+[I 2022-04-26 19:39:50.858 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:a02bcf19-8acd-47ad-9327-109c6a48587f
+[I 2022-04-26 19:39:50.859 ServerApp] Starting buffering for 62eb779d-85ff-444c-865f-9db181eee4a6:996e1115-f6b5-49ee-85f5-7d791d980c14
+[I 2022-04-26 19:39:50.860 ServerApp] Starting buffering for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:15bd68cd-577b-44ec-9ffa-1966fd819c3b
+[I 2022-04-26 19:40:46.843 ServerApp] 302 GET / (::1) 1.10ms
+[W 2022-04-26 19:40:53.650 ServerApp] 404 GET /api/contents/jupyter_notebooks/Fig1_temperature_timeseries.ipynb?content=0&1650998453556 (::1): No such file or directory: jupyter_notebooks/Fig1_temperature_timeseries.ipynb
+[W 2022-04-26 19:40:53.650 ServerApp] No such file or directory: jupyter_notebooks/Fig1_temperature_timeseries.ipynb
+[W 2022-04-26 19:40:53.651 ServerApp] 404 GET /api/contents/jupyter_notebooks/Fig1_temperature_timeseries.ipynb?content=0&1650998453556 (::1) 3.57ms referer=http://localhost:8885/lab?
+[W 2022-04-26 19:40:53.655 ServerApp] 404 GET /api/contents/jupyter_notebooks/100year.ipynb?content=0&1650998453557 (::1): No such file or directory: jupyter_notebooks/100year.ipynb
+[W 2022-04-26 19:40:53.655 ServerApp] No such file or directory: jupyter_notebooks/100year.ipynb
+[W 2022-04-26 19:40:53.656 ServerApp] 404 GET /api/contents/jupyter_notebooks/100year.ipynb?content=0&1650998453557 (::1) 3.29ms referer=http://localhost:8885/lab?
+[W 2022-04-26 19:40:53.656 ServerApp] 404 GET /api/contents/jupyter_notebooks/1.Timeseries_100years_m6.ipynb?content=0&1650998453558 (::1): No such file or directory: jupyter_notebooks/1.Timeseries_100years_m6.ipynb
+[W 2022-04-26 19:40:53.656 ServerApp] No such file or directory: jupyter_notebooks/1.Timeseries_100years_m6.ipynb
+[W 2022-04-26 19:40:53.657 ServerApp] 404 GET /api/contents/jupyter_notebooks/1.Timeseries_100years_m6.ipynb?content=0&1650998453558 (::1) 3.07ms referer=http://localhost:8885/lab?
+[W 2022-04-26 19:40:53.667 ServerApp] 404 GET /api/contents/jupyter_notebooks/scripts.py?content=0&1650998453558 (::1): No such file or directory: jupyter_notebooks/scripts.py
+[W 2022-04-26 19:40:53.668 ServerApp] No such file or directory: jupyter_notebooks/scripts.py
+[W 2022-04-26 19:40:53.668 ServerApp] 404 GET /api/contents/jupyter_notebooks/scripts.py?content=0&1650998453558 (::1) 2.69ms referer=http://localhost:8885/lab?
+[W 2022-04-26 19:40:54.258 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-04-26 19:41:03.215 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-26 19:43:08.138 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-26 19:43:08.140 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-26 19:45:13.026 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-26 19:45:13.028 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-26 19:47:17.598 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-26 19:47:17.600 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-26 19:49:22.192 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-26 19:49:22.194 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-26 19:51:26.265 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-26 19:51:26.267 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-26 19:53:31.031 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-26 19:53:31.033 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-26 19:54:49.468 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 20:38:12.270 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 20:38:13.147 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 20:39:06.305 ServerApp] Kernel started: 70a923cf-b51c-4b53-96ff-db5d6ff976a0
+[I 2022-04-26 20:39:36.986 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 20:39:42.781 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 21:20:14.791 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-26 21:30:13.769 ServerApp] Starting buffering for 70a923cf-b51c-4b53-96ff-db5d6ff976a0:cac19a2c-69b8-4c68-bdcf-d675c77b51c3
+[I 2022-04-26 21:30:13.771 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:e12d986a-9619-42cf-83ed-a3777178dd01
+[I 2022-04-26 21:30:13.837 ServerApp] Restoring connection for 70a923cf-b51c-4b53-96ff-db5d6ff976a0:cac19a2c-69b8-4c68-bdcf-d675c77b51c3
+[I 2022-04-26 21:30:13.892 ServerApp] Restoring connection for 708c119a-4481-4a1f-8f92-88a63671ede2:e12d986a-9619-42cf-83ed-a3777178dd01
+[W 2022-04-26 21:33:13.839 ServerApp] WebSocket ping timeout after 119955 ms.
+[I 2022-04-26 21:33:13.844 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:e12d986a-9619-42cf-83ed-a3777178dd01
+[I 2022-04-26 21:33:13.845 ServerApp] Starting buffering for 70a923cf-b51c-4b53-96ff-db5d6ff976a0:cac19a2c-69b8-4c68-bdcf-d675c77b51c3
+[I 2022-04-27 10:42:25.181 ServerApp] 302 GET / (::1) 9.26ms
+[I 2022-04-27 10:42:25.202 LabApp] 302 GET /lab? (::1) 2.82ms
+[I 2022-04-27 10:42:28.240 ServerApp] 302 POST /login?next=%2Flab%3F (::1) 2.61ms
+[W 2022-04-27 10:42:34.136 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-04-27 10:47:18.748 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 10:53:20.780 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 10:53:20.782 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[W 2022-04-27 11:30:50.070 ServerApp] WebSocket ping timeout after 119997 ms.
+[I 2022-04-27 11:30:50.076 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:779cc007-deb2-42d6-8806-df1751b881d0
+[I 2022-04-27 15:23:02.625 ServerApp] Restoring connection for 708c119a-4481-4a1f-8f92-88a63671ede2:779cc007-deb2-42d6-8806-df1751b881d0
+[I 2022-04-27 15:23:03.481 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:779cc007-deb2-42d6-8806-df1751b881d0
+[W 2022-04-27 15:23:10.529 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-04-27 15:23:11.714 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 15:25:13.999 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 15:25:14.002 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[W 2022-04-27 15:25:19.293 ServerApp] IOPub data rate exceeded.
+    The Jupyter server will temporarily stop sending output
+    to the client in order to avoid crashing it.
+    To change this limit, set the config variable
+    `--ServerApp.iopub_data_rate_limit`.
+    
+    Current values:
+    ServerApp.iopub_data_rate_limit=1000000.0 (bytes/sec)
+    ServerApp.rate_limit_window=3.0 (secs)
+    
+[I 2022-04-27 15:25:34.248 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[I 2022-04-27 15:25:34.539 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[I 2022-04-27 15:25:34.739 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[I 2022-04-27 15:25:34.934 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[I 2022-04-27 15:25:35.195 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[W 2022-04-27 15:25:35.562 ServerApp] iopub messages resumed
+[I 2022-04-27 15:25:35.716 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[I 2022-04-27 15:25:35.957 ServerApp] Kernel interrupted: 708c119a-4481-4a1f-8f92-88a63671ede2
+[I 2022-04-27 15:26:54.190 ServerApp] Saving file at /reproducible_workflow/scripts/testing_tensorflow_io.py
+[I 2022-04-27 15:27:15.698 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 15:27:15.701 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 15:28:00.338 ServerApp] Saving file at /reproducible_workflow/scripts/testing_tensorflow_io.py
+[I 2022-04-27 15:29:16.564 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 15:29:16.567 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 15:30:00.373 ServerApp] Saving file at /reproducible_workflow/scripts/testing_tensorflow_io.py
+[I 2022-04-27 15:30:06.377 ServerApp] Saving file at /reproducible_workflow/scripts/testing_tensorflow_io.py
+[I 2022-04-27 15:30:32.628 ServerApp] Saving file at /reproducible_workflow/scripts/testing_tensorflow_io.py
+[I 2022-04-27 15:31:18.013 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 15:31:18.014 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 15:32:17.303 ServerApp] Saving file at /reproducible_workflow/scripts/testing_tensorflow_io.py
+[I 2022-04-27 15:34:57.910 ServerApp] Saving file at /reproducible_workflow/scripts/testing_tensorflow_io.py
+[I 2022-04-27 15:37:59.483 ServerApp] Saving file at /reproducible_workflow/scripts/testing_tensorflow_io.py
+[I 2022-04-27 15:39:07.447 ServerApp] Saving file at /reproducible_workflow/scripts/testing_tensorflow_io.py
+[I 2022-04-27 15:41:21.901 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 15:41:21.903 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 15:43:23.153 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 15:43:23.156 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 15:45:24.143 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 15:45:24.145 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 15:47:25.203 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 15:47:25.206 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 15:49:26.107 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 15:49:26.109 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 15:51:27.264 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 15:51:27.266 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 15:51:55.517 ServerApp] Saving file at /reproducible_workflow/scripts/testing_tensorflow_io.py
+[I 2022-04-27 15:52:26.079 ServerApp] Saving file at /reproducible_workflow/scripts/testing_tensorflow_io.py
+[I 2022-04-27 15:52:28.889 ServerApp] Saving file at /reproducible_workflow/scripts/testing_tensorflow_io.py
+[I 2022-04-27 15:52:29.086 ServerApp] Saving file at /reproducible_workflow/scripts/testing_tensorflow_io.py
+[I 2022-04-27 15:52:29.454 ServerApp] Saving file at /reproducible_workflow/scripts/testing_tensorflow_io.py
+[I 2022-04-27 15:54:09.981 ServerApp] Saving file at /reproducible_workflow/scripts/testing_tensorflow_io.py
+[I 2022-04-27 15:54:10.228 ServerApp] Saving file at /reproducible_workflow/scripts/testing_tensorflow_io.py
+[I 2022-04-27 15:56:04.352 ServerApp] Saving file at /reproducible_workflow/scripts/testing_tensorflow_io.py
+[I 2022-04-27 15:56:04.676 ServerApp] Saving file at /reproducible_workflow/scripts/testing_tensorflow_io.py
+[I 2022-04-27 16:04:10.951 ServerApp] Copying reproducible_workflow/scripts/unify_monthly_matches.py to /reproducible_workflow/scripts
+[I 2022-04-27 16:06:18.836 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:06:25.414 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:06:54.291 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:07:06.529 ServerApp] Copying reproducible_workflow/scripts/train_and_predict.py to /reproducible_workflow/scripts
+[I 2022-04-27 16:08:55.702 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:10:55.765 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:11:25.930 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:11:26.265 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:12:36.071 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict-lightweight.py
+[I 2022-04-27 16:12:46.044 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict-lightweight.py
+[I 2022-04-27 16:13:25.762 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict-lightweight.py
+[I 2022-04-27 16:15:26.538 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict-lightweight.py
+[I 2022-04-27 16:17:04.162 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict-lightweight.py
+[I 2022-04-27 16:17:04.514 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict-lightweight.py
+[I 2022-04-27 16:19:04.550 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict-lightweight.py
+[I 2022-04-27 16:33:19.425 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:35:16.079 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:38:53.239 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:39:25.134 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:39:25.453 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:40:15.871 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:40:29.575 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:40:38.608 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:40:57.838 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:41:18.623 ServerApp] Copying reproducible_workflow/scripts/train_valid_test_split.py to /reproducible_workflow/scripts
+[I 2022-04-27 16:43:52.903 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:44:10.159 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:44:31.690 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:44:32.025 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:46:32.263 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:54:02.703 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:54:12.398 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:54:59.784 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:56:13.684 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:56:57.433 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 16:58:57.468 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 17:00:58.540 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 17:02:04.319 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 17:04:05.518 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 17:25:31.726 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 17:25:36.645 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 17:26:19.904 ServerApp] Creating new file in /reproducible_workflow/scripts
+[I 2022-04-27 17:27:11.610 ServerApp] Saving file at /reproducible_workflow/scripts/train_test_split_v2.py
+[I 2022-04-27 17:27:36.686 ServerApp] Saving file at /reproducible_workflow/scripts/train_valid_test_split.py
+[I 2022-04-27 17:28:11.279 ServerApp] Saving file at /reproducible_workflow/scripts/train_test_split_v2.py
+[I 2022-04-27 17:28:11.601 ServerApp] Saving file at /reproducible_workflow/scripts/train_test_split_v2.py
+[I 2022-04-27 17:28:24.415 ServerApp] Saving file at /reproducible_workflow/scripts/train_test_split_v2.py
+[I 2022-04-27 17:28:24.745 ServerApp] Saving file at /reproducible_workflow/scripts/train_test_split_v2.py
+[I 2022-04-27 17:31:32.262 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 17:31:32.264 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 17:31:33.027 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict-lightweight.py
+[I 2022-04-27 17:31:45.021 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 17:31:45.023 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 17:33:46.591 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 17:33:46.593 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 17:35:47.517 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 17:35:47.519 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 17:37:48.447 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 17:37:48.449 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 17:57:33.411 ServerApp] Saving file at /reproducible_workflow/scripts/dev/read_TFRecord.py
+[I 2022-04-27 18:16:46.169 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 18:16:46.172 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 18:17:48.305 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 18:17:48.307 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 18:18:44.688 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 18:18:44.690 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 18:18:45.136 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 18:18:45.138 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 18:18:45.601 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 18:18:45.603 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 18:18:46.294 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 18:18:46.296 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 18:18:46.755 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 18:18:46.757 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 18:18:47.211 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 18:18:47.213 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 18:18:47.837 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 18:18:47.839 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 18:18:48.826 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 18:18:48.828 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 18:20:51.086 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 18:20:51.088 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 18:22:52.780 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 18:22:52.782 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 18:24:53.621 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 18:24:53.623 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 18:26:54.600 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 18:26:54.602 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 18:27:55.658 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 18:29:25.016 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 18:29:29.359 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 18:30:06.908 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 18:30:55.464 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 18:30:55.467 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 18:32:07.055 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 18:32:56.540 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 18:32:56.542 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 18:34:33.034 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 18:34:57.545 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 18:34:57.547 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 18:35:07.175 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 18:35:15.784 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 18:35:17.975 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 18:35:20.029 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 18:35:24.399 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 18:35:40.177 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 18:36:18.772 ServerApp] Kernel started: 542adf3d-3b52-4825-81dd-c3c78cbe0a11
+[I 2022-04-27 18:37:34.930 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 18:37:55.838 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 18:38:30.578 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 18:38:32.318 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 18:40:59.056 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 18:40:59.059 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 19:04:20.668 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 19:04:21.819 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 19:04:30.962 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[I 2022-04-27 19:04:36.116 ServerApp] Saving file at /reproducible_workflow/scripts/dev/train_and_predict-lightweight.py
+[W 2022-04-27 19:08:43.129 ServerApp] WebSocket ping timeout after 119997 ms.
+[I 2022-04-27 19:08:48.131 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:be8ba504-1d7d-4bc3-81ea-e36507a4b781
+[W 2022-04-27 19:08:59.072 ServerApp] WebSocket ping timeout after 119996 ms.
+[W 2022-04-27 19:08:59.095 ServerApp] WebSocket ping timeout after 119997 ms.
+[I 2022-04-27 19:09:04.096 ServerApp] Starting buffering for 542adf3d-3b52-4825-81dd-c3c78cbe0a11:24e5590f-78da-4bb1-9faa-151b73cac168
+[I 2022-04-27 20:27:06.692 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:e12d986a-9619-42cf-83ed-a3777178dd01
+[W 2022-04-27 20:27:11.615 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-04-27 20:27:12.645 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 20:28:27.596 ServerApp] Kernel shutdown: 111ef638-05a7-46f6-abe1-b34448c68831
+[W 2022-04-27 20:28:29.700 ServerApp] delete /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-04-27 20:28:29.700 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb, on different device to home directory
+[I 2022-04-27 20:30:13.022 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-04-27 20:42:57.877 ServerApp] 500 PUT /lab/api/workspaces/default?1651088577798 (::1): [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[W 2022-04-27 20:42:57.878 LabApp] [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[E 2022-04-27 20:42:57.878 LabApp] {
+      "Host": "localhost:8885",
+      "Accept": "*/*",
+      "Referer": "http://localhost:8885/lab/tree/reproducible_workflow/scripts/train_and_predict.py",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.79 Safari/537.36"
+    }
+[E 2022-04-27 20:42:57.879 LabApp] 500 PUT /lab/api/workspaces/default?1651088577798 (::1) 5.54ms referer=http://localhost:8885/lab/tree/reproducible_workflow/scripts/train_and_predict.py
+[W 2022-04-27 20:42:59.856 ServerApp] 500 PUT /lab/api/workspaces/default?1651088579774 (::1): [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[W 2022-04-27 20:42:59.857 LabApp] [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[E 2022-04-27 20:42:59.857 LabApp] {
+      "Host": "localhost:8885",
+      "Accept": "*/*",
+      "Referer": "http://localhost:8885/lab/tree/reproducible_workflow/scripts/dev/read_TFRecord.py",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.79 Safari/537.36"
+    }
+[E 2022-04-27 20:42:59.857 LabApp] 500 PUT /lab/api/workspaces/default?1651088579774 (::1) 4.20ms referer=http://localhost:8885/lab/tree/reproducible_workflow/scripts/dev/read_TFRecord.py
+[W 2022-04-27 20:52:08.373 ServerApp] 500 PUT /lab/api/workspaces/default?1651089128286 (::1): [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[W 2022-04-27 20:52:08.374 LabApp] [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[E 2022-04-27 20:52:08.375 LabApp] {
+      "Host": "localhost:8885",
+      "Accept": "*/*",
+      "Referer": "http://localhost:8885/lab/tree/reproducible_workflow/scripts/train_and_predict.py",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.79 Safari/537.36"
+    }
+[E 2022-04-27 20:52:08.375 LabApp] 500 PUT /lab/api/workspaces/default?1651089128286 (::1) 5.41ms referer=http://localhost:8885/lab/tree/reproducible_workflow/scripts/train_and_predict.py
+[W 2022-04-27 20:52:25.928 ServerApp] 500 PUT /lab/api/workspaces/default?1651089145840 (::1): [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[W 2022-04-27 20:52:25.929 LabApp] [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[E 2022-04-27 20:52:25.929 LabApp] {
+      "Host": "localhost:8885",
+      "Accept": "*/*",
+      "Referer": "http://localhost:8885/lab/tree/reproducible_workflow/scripts/train_and_predict.py",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.79 Safari/537.36"
+    }
+[E 2022-04-27 20:52:25.929 LabApp] 500 PUT /lab/api/workspaces/default?1651089145840 (::1) 4.08ms referer=http://localhost:8885/lab/tree/reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-27 20:52:29.688 ServerApp] Copying reproducible_workflow/scripts/train_and_predict.py to /reproducible_workflow/scripts
+[W 2022-04-27 20:52:39.181 ServerApp] 500 PUT /lab/api/workspaces/default?1651089159101 (::1): [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[W 2022-04-27 20:52:39.182 LabApp] [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[E 2022-04-27 20:52:39.183 LabApp] {
+      "Host": "localhost:8885",
+      "Accept": "*/*",
+      "Referer": "http://localhost:8885/lab/tree/reproducible_workflow/scripts/train_and_predict_v2.py",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.79 Safari/537.36"
+    }
+[E 2022-04-27 20:52:39.184 LabApp] 500 PUT /lab/api/workspaces/default?1651089159101 (::1) 3.94ms referer=http://localhost:8885/lab/tree/reproducible_workflow/scripts/train_and_predict_v2.py
+[W 2022-04-27 20:52:43.133 ServerApp] 500 PUT /lab/api/workspaces/default?1651089163045 (::1): [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[W 2022-04-27 20:52:43.133 LabApp] [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[E 2022-04-27 20:52:43.134 LabApp] {
+      "Host": "localhost:8885",
+      "Accept": "*/*",
+      "Referer": "http://localhost:8885/lab/tree/reproducible_workflow/scripts/train_and_predict_v2.py",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.79 Safari/537.36"
+    }
+[E 2022-04-27 20:52:43.134 LabApp] 500 PUT /lab/api/workspaces/default?1651089163045 (::1) 4.34ms referer=http://localhost:8885/lab/tree/reproducible_workflow/scripts/train_and_predict_v2.py
+[I 2022-04-27 20:52:54.626 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict_v2.py
+[W 2022-04-27 20:52:58.719 ServerApp] 500 PUT /lab/api/workspaces/default?1651089178631 (::1): [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[W 2022-04-27 20:52:58.720 LabApp] [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[E 2022-04-27 20:52:58.720 LabApp] {
+      "Host": "localhost:8885",
+      "Accept": "*/*",
+      "Referer": "http://localhost:8885/lab/tree/reproducible_workflow/00.%20Workflow.ipynb",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.79 Safari/537.36"
+    }
+[E 2022-04-27 20:52:58.720 LabApp] 500 PUT /lab/api/workspaces/default?1651089178631 (::1) 4.10ms referer=http://localhost:8885/lab/tree/reproducible_workflow/00.%20Workflow.ipynb
+[I 2022-04-27 20:55:00.742 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 20:55:00.745 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 20:57:05.558 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 20:57:05.560 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-27 20:59:11.496 ServerApp] Saving file at /reproducible_workflow/00. Workflow.ipynb
+[W 2022-04-27 20:59:11.499 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[W 2022-04-27 20:59:59.588 ServerApp] 500 PUT /lab/api/workspaces/default?1651089599534 (::1): [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[W 2022-04-27 20:59:59.589 LabApp] [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[E 2022-04-27 20:59:59.589 LabApp] {
+      "Host": "localhost:8885",
+      "Accept": "*/*",
+      "Referer": "http://localhost:8885/lab/tree/reproducible_workflow/scripts/train_and_predict.py",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.79 Safari/537.36"
+    }
+[E 2022-04-27 20:59:59.590 LabApp] 500 PUT /lab/api/workspaces/default?1651089599534 (::1) 4.64ms referer=http://localhost:8885/lab/tree/reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-27 21:05:14.096 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[I 2022-04-27 21:05:14.895 ServerApp] Saving file at /reproducible_workflow/scripts/train_and_predict.py
+[W 2022-04-27 21:21:30.504 ServerApp] 500 PUT /lab/api/workspaces/default?1651090890449 (::1): [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[W 2022-04-27 21:21:30.505 LabApp] [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[E 2022-04-27 21:21:30.506 LabApp] {
+      "Host": "localhost:8885",
+      "Accept": "*/*",
+      "Referer": "http://localhost:8885/lab/tree/reproducible_workflow/scripts/train_and_predict_v2.py",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.79 Safari/537.36"
+    }
+[E 2022-04-27 21:21:30.506 LabApp] 500 PUT /lab/api/workspaces/default?1651090890449 (::1) 4.70ms referer=http://localhost:8885/lab/tree/reproducible_workflow/scripts/train_and_predict_v2.py
+[I 2022-04-27 21:22:01.001 ServerApp] Creating new file in /reproducible_workflow/scripts
+[W 2022-04-27 21:22:17.883 ServerApp] 500 PUT /lab/api/workspaces/default?1651090937835 (::1): [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[W 2022-04-27 21:22:17.884 LabApp] [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[E 2022-04-27 21:22:17.884 LabApp] {
+      "Host": "localhost:8885",
+      "Accept": "*/*",
+      "Referer": "http://localhost:8885/lab/tree/reproducible_workflow/scripts/preprocess_ML_data.py",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.79 Safari/537.36"
+    }
+[E 2022-04-27 21:22:17.885 LabApp] 500 PUT /lab/api/workspaces/default?1651090937835 (::1) 4.30ms referer=http://localhost:8885/lab/tree/reproducible_workflow/scripts/preprocess_ML_data.py
+[W 2022-04-27 21:22:20.364 ServerApp] 500 PUT /lab/api/workspaces/default?1651090940307 (::1): [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[W 2022-04-27 21:22:20.365 LabApp] [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[E 2022-04-27 21:22:20.365 LabApp] {
+      "Host": "localhost:8885",
+      "Accept": "*/*",
+      "Referer": "http://localhost:8885/lab/tree/reproducible_workflow/00.%20Workflow.ipynb",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.79 Safari/537.36"
+    }
+[E 2022-04-27 21:22:20.365 LabApp] 500 PUT /lab/api/workspaces/default?1651090940307 (::1) 4.22ms referer=http://localhost:8885/lab/tree/reproducible_workflow/00.%20Workflow.ipynb
+[W 2022-04-27 21:22:29.481 ServerApp] 500 PUT /lab/api/workspaces/default?1651090949426 (::1): [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[W 2022-04-27 21:22:29.481 LabApp] [Errno 13] Permission denied: '/home/k/kimpson/.jupyter/lab/workspaces'
+[E 2022-04-27 21:22:29.482 LabApp] {
+      "Host": "localhost:8885",
+      "Accept": "*/*",
+      "Referer": "http://localhost:8885/lab/tree/reproducible_workflow/scripts/preprocess_ML_data.py",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.79 Safari/537.36"
+    }
+[E 2022-04-27 21:22:29.482 LabApp] 500 PUT /lab/api/workspaces/default?1651090949426 (::1) 4.26ms referer=http://localhost:8885/lab/tree/reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-27 21:24:17.709 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-27 21:25:01.713 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-27 21:25:04.075 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-27 21:25:04.468 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-27 21:26:46.351 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-27 21:27:05.372 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-27 22:40:26.781 ServerApp] Starting buffering for 542adf3d-3b52-4825-81dd-c3c78cbe0a11:457b8352-4111-4fb2-96d4-d8dc397ca8da
+[I 2022-04-27 22:40:26.782 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:98656060-7b30-486b-8ccf-b3fd40eff50a
+[I 2022-04-27 22:40:26.783 ServerApp] Starting buffering for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:c2c52010-fc44-4c58-95e8-b96f0dd2fbe6
+[I 2022-04-27 22:40:26.828 ServerApp] Restoring connection for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:c2c52010-fc44-4c58-95e8-b96f0dd2fbe6
+[I 2022-04-27 22:40:26.873 ServerApp] Restoring connection for 708c119a-4481-4a1f-8f92-88a63671ede2:98656060-7b30-486b-8ccf-b3fd40eff50a
+[I 2022-04-27 22:40:26.927 ServerApp] Restoring connection for 542adf3d-3b52-4825-81dd-c3c78cbe0a11:457b8352-4111-4fb2-96d4-d8dc397ca8da
+[W 2022-04-27 22:41:56.828 ServerApp] WebSocket ping timeout after 90000 ms.
+[W 2022-04-27 22:41:56.874 ServerApp] WebSocket ping timeout after 90000 ms.
+[W 2022-04-27 22:41:56.928 ServerApp] WebSocket ping timeout after 90001 ms.
+[I 2022-04-27 22:42:01.831 ServerApp] Starting buffering for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:c2c52010-fc44-4c58-95e8-b96f0dd2fbe6
+[I 2022-04-27 22:42:01.876 ServerApp] Starting buffering for 708c119a-4481-4a1f-8f92-88a63671ede2:98656060-7b30-486b-8ccf-b3fd40eff50a
+[I 2022-04-27 22:42:01.930 ServerApp] Starting buffering for 542adf3d-3b52-4825-81dd-c3c78cbe0a11:457b8352-4111-4fb2-96d4-d8dc397ca8da
+[W 2022-04-29 10:45:27.861 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-04-29 10:46:49.085 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
+[I 2022-04-29 10:47:08.168 ServerApp] Starting buffering for ca6a6b32-1731-4e55-9dd0-c7ffbe370c0f:f1ea9c0c-b042-4ee9-844c-00503ceb454c
+[I 2022-04-29 10:47:08.901 ServerApp] Starting buffering for 542adf3d-3b52-4825-81dd-c3c78cbe0a11:bfc5c9e5-b639-44eb-825d-c2e813cb27bc
+[I 2022-04-29 10:52:09.887 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-29 10:52:15.962 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-29 10:52:28.702 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-29 10:52:28.906 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-29 10:53:18.837 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-29 10:53:28.334 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-29 10:53:41.505 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-29 10:53:41.859 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-29 10:54:08.655 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-29 10:54:08.985 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-29 10:56:09.040 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-29 10:56:23.553 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-29 10:56:23.692 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-29 10:56:24.465 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-29 10:56:34.067 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
+[I 2022-04-29 10:56:34.208 ServerApp] Saving file at /reproducible_workflow/scripts/preprocess_ML_data.py
