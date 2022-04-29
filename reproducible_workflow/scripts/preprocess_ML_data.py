@@ -1,5 +1,7 @@
+from re import A
 import sys
 import glob
+from turtle import fd
 
 import pandas as pd
 
@@ -28,6 +30,10 @@ time_constant_features = ['lsm_v15','cl_v15','dl_v15','cvh_v15','cvl_v15',
                           'anor_v15','isor_v15','slor_v15','sdor_v15','sr_v15','lsrh_v15',
                           'si10_v15'] #these are the constant fields, V15.
 
+
+output_directory = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/'
+
+
 def calculate_delta_fields(df,fields):
     
     """Function to determine V20 - V15 for different time constant fields"""
@@ -47,7 +53,7 @@ def calculate_delta_fields(df,fields):
 
 def process_directory(d,n1,n2):
     print ('Loading directory:', d)
-    data_files = glob.glob(root+d+'*')
+    data_files = glob.glob(root+d+'/*')
 
     dfs = []
     for f in data_files:
@@ -77,47 +83,36 @@ def process_directory(d,n1,n2):
 
     
     if n1 is None:
-
-        print ('Calculating Normalisation parameters')
+        print ('Calculating normalisation parameters')
         #If we dont have any normalisation parameters already 
-        
         normalisation_mean =  df_features.mean()
         normalisation_std =  df_features.std()
 
-        #Normalise it 
-        df_features = (df_features-normalisation_mean)/normalisation_std
-
-        #Create new df composed of the unnormalsied meta information and the normalised features 
-        df = pd.concat([df_meta,df_features])
-
-        return df, normalisation_mean, normalisation_std
-
     else:
-        print ('We already have normalisation parameters, lets use them')
-
-        #Normalise it using the pre calculated terms
-        df_features = (df_features-n1)/n2
-
-        #Create new df composed of the unnormalsied meta information and the normalised features 
-        df = pd.concat([df_meta,df_features])
-
-        return df, normalisation_mean, normalisation_std
+        normalisation_mean = n1
+        normalisation_std = n2 
 
 
+    #Normalise it using the pre calculated terms
+    df_features = (df_features-normalisation_mean)/normalisation_std
+
+    #Create new df composed of the unnormalsied meta information and the normalised features 
+    df = pd.concat([df_meta,df_features])
+
+    #Write to disk 
+    print('Writing HDF')
+    df.to_hdf(output_directory + d +'.h5', key='df', mode='w') 
 
 
-training_df, normalisation_mean, normalisation_std = process_directory('training_data/',None,None)
-validation_df, tmp1, tmp2 = process_directory('validation_data/',normalisation_mean,normalisation_std)
-test_df, tmp1, tmp2 = process_directory('test_data/',normalisation_mean,normalisation_std)
+    return normalisation_mean, normalisation_std
 
 
-print('Writing HDF')
-fout = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/'
 
-training_df.to_hdf(fout + 'training_data.h5', key='df', mode='w') 
-validation_df.to_hdf(fout + 'validation_data.h5', key='df', mode='w') 
-test_df.to_hdf(fout + 'test_data.h5', key='df', mode='w') 
 
+
+normalisation_mean, normalisation_std = process_directory('training_data',None,None)
+process_directory('validation_data',normalisation_mean,normalisation_std)
+process_directory('test_data',normalisation_mean,normalisation_std)
 
 
 
