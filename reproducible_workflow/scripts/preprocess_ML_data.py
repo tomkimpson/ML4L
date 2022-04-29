@@ -46,11 +46,12 @@ def calculate_delta_fields(df,fields):
 
 
 def process_directory(d,n1,n2):
-
+    print ('Loading directory:', d)
     data_files = glob.glob(root+d+'*')
 
     dfs = []
     for f in data_files:
+        print (f)
 
         #Load the monthly file
         df= pd.read_pickle(f)
@@ -64,13 +65,20 @@ def process_directory(d,n1,n2):
 
         dfs.append(selected_df)
 
-    print('Concat')
+    print('All files processed. Now concat')
     df = pd.concat(dfs)
 
+    print ('Split into data which willl be normalsi')
     df_meta = df[meta_information]
-    df_features = df[~meta_information] 
+    df_features = df.drop(columns=meta_information, axis=1)
 
+    print(df_meta.columns)
+    print(df_features.columns)
+
+    
     if n1 is None:
+
+        print ('Calculating Normalisation parameters')
         #If we dont have any normalisation parameters already 
         
         normalisation_mean =  df_features.mean()
@@ -85,6 +93,7 @@ def process_directory(d,n1,n2):
         return df, normalisation_mean, normalisation_std
 
     else:
+        print ('We already have normalisation parameters, lets use them')
 
         #Normalise it using the pre calculated terms
         df_features = (df_features-n1)/n2
