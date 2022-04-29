@@ -5,65 +5,129 @@ import pandas as pd
 
 root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/'
 
-directories = ['training_data/','validation_data/','test_data/']
+#directories = ['training_data/','validation_data/','test_data/']
 
 
 
-#Grab the training data, normalise it all
-d = 'training_data/'
-selected_files = glob.glob(root+d+'*')
 
-#
-list_of_all_features = []
-list_of_all_meta_information = []
-list_of_all_features_to_drop
+#Manually select which columns are "meta" information (e.g. lat/long)
+#which are the features we want to pass into our model
+#everthing else will be dropped
 
-for f in selected_files:
-    df= pd.read_pickle(f)
-    print(df)
-    print(df.columns)
-    sys.exit()
-    print(i)
+meta_information = ['latitude_ERA', 'longitude_ERA', 'MODIS_LST','time'] #won't be normalised
 
-# for d in directories:
-#     selected_files = glob.glob(root+d+'*')
-#     for i in selected_files:
-#         print(i)
+#will be normalised:
+time_variable_features = ['sp', 'msl', 'u10', 'v10', 't2m', 
+                          'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
+                          'skt']
+# time_constant_features = [ 
+#                          'slt_v15', 'sdfor_v15', 'vegdiff_v15', 'lsrh_v15', 'cvh_v15','isor_v15', 'dl_v15', 'lsm_v15', 'z_v15', 'si10_v15', 'sdor_v15','cvl_v15', 'anor_v15', 'slor_v15', 'sr_v15', 'tvh_v15', 'tvl_v15','cl_v15', 
+#                          'slt_v20', 'sdfor_v20', 'vegdiff_v20', 'lsrh_v20', 'cvh_v20','isor_v20', 'dl_v20', 'lsm_v20', 'z_v20', 'si10_v20', 'sdor_v20','cvl_v20', 'anor_v20', 'slor_v20', 'sr_v20', 'tvh_v20', 'tvl_v20','cl_v20']  
 
-# filenames = 'V2matched_[0-9].pkl'
-# training_files = glob.glob(filenames)
+time_constant_features = ['lsm_v15','cl_v15','dl_v15','cvh_v15','cvl_v15',
+                          'anor_v15','isor_v15','slor_v15','sdor_v15','sr_v15','lsrh_v15',
+                          'si10_v15'] #these are the constant fields, V15.
 
-
-
-# core_features = ['sp', 'msl', 'u10', 'v10', 't2m', 
-#                  'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
-#                  'skt'] #these are the time variable fields
-# surface_features = ['lsm_v15','cl_v15','dl_v15','cvh_v15','cvl_v15',
-#                     'anor_v15','isor_v15','slor_v15','sdor_v15','sr_v15','lsrh_v15',
-#                     'si10_v15'] #these are the constant fields, V15
-
-
+def calculate_delta_fields(df,fields):
     
-# feature_names = core_features+surface_features
-# target_variable = ['MODIS_LST'] #The variable you are trying to learn/predict
-# selected_columns = feature_names+target_variable
+    """Function to determine V20 - V15 for different time constant fields"""
+      
+    new_column_names = []
+    for i in fields:
+        feature = i.split('_')[0] #cl_v15 --> cl
+        column_name = f'{feature}_delta'
+        new_column_names.append(column_name)
+        v20_name = feature+'_v20'
+        df[column_name] = df[v20_name] - df[i]
+                
+    return new_column_names,df      
 
 
 
 
+def process_directory(d,n1,n2):
 
+    data_files = glob.glob(root+d+'*')
 
+    dfs = []
+    for f in data_files:
 
-# dfs = []
-# for f in training_files:
-#     print(f)
-#     df= pd.read_pickle(f)
-#     df_selected = df[selected_columns]
-#     dfs.append(df_selected)
+        #Load the monthly file
+        df= pd.read_pickle(f)
+
+        #Calculate extra "delta" columns V20 - V15
+        delta_fields,df = calculate_delta_fields(df,time_constant_features)
+
+        #Don't select all the columns
+        selected_columns = meta_information + time_variable_features + time_constant_features + delta_fields
+        selected_df = df[selected_columns] 
+
+        dfs.append(selected_df)
+
+    print('Concat')
+    df = pd.concat(dfs)
+
+    df_meta = df[meta_information]
+    df_features = df[~meta_information] 
+
+    if n1 is None:
+        #If we dont have any normalisation parameters already 
         
-        
-#     print('Concat')
-#     df = pd.concat(dfs)
+        normalisation_mean =  df_features.mean()
+        normalisation_std =  df_features.std()
+
+        #Normalise it 
+        df_features = (df_features-normalisation_mean)/normalisation_std
+
+        #Create new df composed of the unnormalsied meta information and the normalised features 
+        df = pd.concat(df_meta,df_features)
+
+        return df, normalisation_mean, normalisation_std
+
+    else:
+
+        #Normalise it using the pre calculated terms
+        df_features = (df_features-n1)/n2
+
+        #Create new df composed of the unnormalsied meta information and the normalised features 
+        df = pd.concat(df_meta,df_features)
+
+        return df, normalisation_mean, normalisation_std
+
+
+
+
+training_df, normalisation_mean, normalisation_std = process_directory('training_data/',None,None)
+validation_df, tmp1, tmp2 = process_directory('validation_data/',normalisation_mean,normalisation_std)
+test_df, tmp1, tmp2 = process_directory('test_data/',normalisation_mean,normalisation_std)
+
+
+print('Writing HDF')
+fout = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/'
+
+training_df.to_hdf(fout + 'training_data.h5', key='df', mode='w') 
+validation_df.to_hdf(fout + 'validation_data.h5', key='df', mode='w') 
+test_df.to_hdf(fout + 'test_data.h5', key='df', mode='w') 
+
+
+
+
+print('Done')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     
     
