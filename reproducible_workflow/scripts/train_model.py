@@ -174,11 +174,17 @@ print ('Reading validation data')
 df_valid = pd.read_hdf(validation_data)
 
 
+
+print ('Columns:')
+print(df_train.columns)
+print(df_valid.columns)
+
+
 if do_not_use_delta_fields:
     print('Getting rid of delta fields')
-     df_train = df_train.columns[~df_train.columns.str.contains(pat = '_delta')]
-     df_valid = df_valid.columns[~df_valid.columns.str.contains(pat = '_delta')]
-
+    drop_columns = df_train.columns[df_train.columns.str.contains(pat = '_delta')]
+    df_train = df_train.drop(drop_columns,axis=1)
+    df_valid = df_valid.drop(drop_columns,axis=1)
 
 print ('Total number of training samples:', len(df_train))
 print ('Total number of validation samples:', len(df_valid))
