@@ -136,11 +136,8 @@ training_data = root + 'joined_data/training_data.h5'
 validation_data = root+ 'joined_data/validation_data.h5'
 
 
-
-
 #Model parameters
-non_training_features = ['latitude_ERA', 'longitude_ERA', 'MODIS_LST','time'] #don't train  on these columns, do train on everything else
-target_variable = ['MODIS_LST'] #The variable you are trying to learn/predict
+target_variable = ['MODIS_LST'] #The variable you are trying to learn/predict. Everything else is a model feature
 do_not_use_delta_fields = False
 epochs = 1000
 batch_size = 1024
@@ -178,17 +175,18 @@ df_valid = pd.read_hdf(validation_data)
 
 
 if do_not_use_delta_fields:
-    
-    
-     df.columns[~df.columns.str.contains(pat = '_delta')]
+    print('Getting rid of delta fields')
+     df_train = df_train.columns[~df_train.columns.str.contains(pat = '_delta')]
+     df_valid = df_valid.columns[~df_valid.columns.str.contains(pat = '_delta')]
+
 
 print ('Total number of training samples:', len(df_train))
 print ('Total number of validation samples:', len(df_valid))
 
 # #Train model
 print('Train the model')
-history,model = train_NN(df_train.drop(non_training_features,axis=1),df_train[target_variable],
-                         df_valid.drop(non_training_features,axis=1),df_valid[target_variable],
+history,model = train_NN(df_train.drop(target_variable,axis=1),df_train[target_variable],
+                         df_valid.drop(target_variable,axis=1),df_valid[target_variable],
                          epochs,batch_size,use_validation_data,optimizer)
 
 
