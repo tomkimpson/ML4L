@@ -142,27 +142,22 @@ def calculate_delta_fields_func(fields,df):
 #--------------------------------#
 #----------Parameters------------#
 #--------------------------------#
-root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/'
+root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/'
+
 
 #Inputs
-#version = 'v20' #v15, v20
-#input_file = f'{root}processed_data/joined_data/{version}/all_months.h5'
-#input_file = f'{root}processed_data/joined_data/all_months_V3.h5'
+training_data = root + 'joined_data/training_data.h5'
+validation_data = root+ 'joined_data/validation_data.h5'
+
+non_training_features = ['latitude_ERA', 'longitude_ERA', 'MODIS_LST','time'] #don't train  on tehse columns, do train on everything else
+target_variable = ['MODIS_LST'] #The variable you are trying to learn/predict
+
 
 #Outputs
 output_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/'
 output_cols = ['latitude_ERA', 'longitude_ERA','time','skt','MODIS_LST'] #we don't output all columns in our results
 
-#Train/Test split. Everything not in these two groups is validation data.
-#train_condition = pd.to_datetime("2019-01-01 00:00:00") #Everything less than this is used for training data
-#test_condition  = pd.to_datetime("2020-01-01 00:00:00") #Everything greater than this is used for test data. 
 
-
-
-
-
-
-target_var = ['MODIS_LST'] #The variable you are trying to learn/predict
 
 
 #Model parameters
@@ -171,7 +166,7 @@ epochs = 1000
 batch_size = 1024
 use_validation_data = True #Do you want to use validation data for early stopping? Stopping conditions are defined in train_NN()
 optimizer = 'adam'
-#optimizer = 'sgd'
+
 
                  
             
@@ -182,12 +177,28 @@ optimizer = 'adam'
 
 #Get the matched data
 print ('Reading training data')
-input_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/'
-training_data = 'training_data.h5'
-df= pd.read_hdf(input_path+training_data)
+df_train = pd.read_hdf(training_data)
 
-print(df.columns)
-print(df)
+print(df_train.columns)
+print(df_train)
+
+
+print ('Reading validation data')
+df_valid = pd.read_hdf(validation_data)
+
+print(df_valid.columns)
+print(df_valid)
+
+
+
+# #Train model
+print('Train the model')
+history,model = train_NN(df_train.pop(non_training_features),df_train[target_variable],
+                         df_valid.pop(non_training_features),df_valid[target_variable],
+                         epochs,batch_size,use_validation_data,optimizer)
+
+
+
 
 
 # #Define the features used in this model
