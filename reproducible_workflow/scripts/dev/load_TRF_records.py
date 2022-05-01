@@ -10,7 +10,7 @@ print (fl)
 files_ds = tf.data.Dataset.list_files(fl)
 print('files_ds:', files_ds)
 
-ds = tf.data.TFRecordDataset(files_ds,num_parallel_reads=AUTOTUNE)
+ds = tf.data.TFRecordDataset(files_ds,compression_type='GZIP',num_parallel_reads=AUTOTUNE)
 print('ds:', ds)
 
 

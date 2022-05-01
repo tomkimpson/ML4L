@@ -97,7 +97,7 @@ def process_directory(d,n1,n2):
     df_features = (df_features-normalisation_mean)/normalisation_std
 
     #Create new df composed of the unnormalsied meta information and the normalised features 
-    df = pd.concat([df_meta,df_features])
+    df = pd.concat([df_meta,df_features],axis=1)
 
     #Write to disk 
     print('Writing HDF')
