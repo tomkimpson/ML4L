@@ -9,14 +9,6 @@ import uuid
 import sys
 
 
-
-#Temporary region
-#method_type = sys.argv[1]
-
-#calculate_delta_fields = sys.argv[1]
-
-
-
 """
 Script to train a sequential NN.
 NN trains on training data, all results output to disk.
@@ -155,15 +147,15 @@ root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/
 #Inputs
 #version = 'v20' #v15, v20
 #input_file = f'{root}processed_data/joined_data/{version}/all_months.h5'
-input_file = f'{root}processed_data/joined_data/all_months_V3.h5'
+#input_file = f'{root}processed_data/joined_data/all_months_V3.h5'
 
 #Outputs
 output_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/'
 output_cols = ['latitude_ERA', 'longitude_ERA','time','skt','MODIS_LST'] #we don't output all columns in our results
 
 #Train/Test split. Everything not in these two groups is validation data.
-train_condition = pd.to_datetime("2019-01-01 00:00:00") #Everything less than this is used for training data
-test_condition  = pd.to_datetime("2020-01-01 00:00:00") #Everything greater than this is used for test data. 
+#train_condition = pd.to_datetime("2019-01-01 00:00:00") #Everything less than this is used for training data
+#test_condition  = pd.to_datetime("2020-01-01 00:00:00") #Everything greater than this is used for test data. 
 
 
 
@@ -189,88 +181,93 @@ optimizer = 'adam'
 #--------------------------------#
 
 #Get the matched data
-print ('Reading data')
-df= pd.read_hdf(input_file)
+print ('Reading training data')
+input_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/'
+training_data = 'training_data.h5'
+df= pd.read_hdf(input_path+training_data)
+
+print(df.columns)
+print(df)
 
 
-#Define the features used in this model
-core_features = ['sp', 'msl', 'u10', 'v10', 't2m', 
-                 'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
-                 'skt'] #these are the time variable fields
-surface_features = ['lsm_v15','cl_v15','dl_v15','cvh_v15','cvl_v15',
-                    'anor_v15','isor_v15','slor_v15','sdor_v15','sr_v15','lsrh_v15',
-                    'si10_v15'] #these are the constant fields, V15
+# #Define the features used in this model
+# core_features = ['sp', 'msl', 'u10', 'v10', 't2m', 
+#                  'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
+#                  'skt'] #these are the time variable fields
+# surface_features = ['lsm_v15','cl_v15','dl_v15','cvh_v15','cvl_v15',
+#                     'anor_v15','isor_v15','slor_v15','sdor_v15','sr_v15','lsrh_v15',
+#                     'si10_v15'] #these are the constant fields, V15
 
 
 
 
 
-if calculate_delta_fields:
-    delta_fields,df = calculate_delta_fields_func(surface_features,df) #calculate delta fields for all surface features
-else:
-    delta_fields = []
+# if calculate_delta_fields:
+#     delta_fields,df = calculate_delta_fields_func(surface_features,df) #calculate delta fields for all surface features
+# else:
+#     delta_fields = []
     
-feature_names = core_features+surface_features + delta_fields
+# feature_names = core_features+surface_features + delta_fields
 
 
-print('Feature names:')
-print(feature_names)
+# print('Feature names:')
+# print(feature_names)
 
 
      
-#print(df.isna().any())
+# #print(df.isna().any())
 
-#Normalise everything
-print('Normalizing')
-features = df[feature_names]
-target = df[target_var]
+# #Normalise everything
+# print('Normalizing')
+# features = df[feature_names]
+# target = df[target_var]
     
-features_normed = (features-features.mean())/features.std()
-target_normed = (target-target.mean())/target.std()
+# features_normed = (features-features.mean())/features.std()
+# target_normed = (target-target.mean())/target.std()
 
 
 
 
-T_normalize_mean = target.mean().values[0] #Save these as np.float32, rather than pd.Series. We will use them later to "un-normalize"
-T_normalize_std = target.std().values[0]
+# T_normalize_mean = target.mean().values[0] #Save these as np.float32, rather than pd.Series. We will use them later to "un-normalize"
+# T_normalize_std = target.std().values[0]
 
-#Split data into training and testing set
-print('Split data')
-split_data,results_df = train_test_split(df,train_condition,test_condition,
-                                                            features_normed,target_normed,
-                                                            output_cols)
-
-
-#Train model
-print('Train')
-history,model = train_NN(split_data['x_train'],split_data['y_train'],
-                         split_data['x_valid'],split_data['y_valid'],
-                         epochs,batch_size,use_validation_data,optimizer)
+# #Split data into training and testing set
+# print('Split data')
+# split_data,results_df = train_test_split(df,train_condition,test_condition,
+#                                                             features_normed,target_normed,
+#                                                             output_cols)
 
 
-
-print ('Save the trained model')
-
-parameters_dict = {'input_file':     input_file,
-                  'train_condition': train_condition,
-                  'test_condition':  test_condition,
-                  'epochs':          epochs,
-                  'batch_size':      batch_size,
-                  'features':        feature_names,
-                  'optimizer':       optimizer}
-fout = save_model(output_path,model,history,parameters_dict)
-
-
-#Make some predictions
-print('Predict')
-predictions_normalized = model.predict(split_data['x_test'])                 #Prediction 
-predictions = (predictions_normalized * T_normalize_std ) + T_normalize_mean #un-normalsie to get 'physical' value
-results_df['predictions'] = predictions                                      # Bring together the test data and predictions into a single pandas df
-results_df.to_pickle(fout+'predictions.pkl')
+# #Train model
+# print('Train')
+# history,model = train_NN(split_data['x_train'],split_data['y_train'],
+#                          split_data['x_valid'],split_data['y_valid'],
+#                          epochs,batch_size,use_validation_data,optimizer)
 
 
 
-print ("All completed OK")
+# print ('Save the trained model')
+
+# parameters_dict = {'input_file':     input_file,
+#                   'train_condition': train_condition,
+#                   'test_condition':  test_condition,
+#                   'epochs':          epochs,
+#                   'batch_size':      batch_size,
+#                   'features':        feature_names,
+#                   'optimizer':       optimizer}
+# fout = save_model(output_path,model,history,parameters_dict)
+
+
+# #Make some predictions
+# print('Predict')
+# predictions_normalized = model.predict(split_data['x_test'])                 #Prediction 
+# predictions = (predictions_normalized * T_normalize_std ) + T_normalize_mean #un-normalsie to get 'physical' value
+# results_df['predictions'] = predictions                                      # Bring together the test data and predictions into a single pandas df
+# results_df.to_pickle(fout+'predictions.pkl')
+
+
+
+# print ("All completed OK")
 
 
 
