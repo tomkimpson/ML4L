@@ -124,20 +124,6 @@ def save_model(output_path,model,history,parameters_dict):
 
             
             
-def calculate_delta_fields_func(fields,df):
-    
-    """Function to determine V20 - V15 for different time constant fields"""
-      
-    new_column_names = []
-    for i in fields:
-        feature = i.split('_')[0] #cl_v15 --> cl
-        column_name = f'{feature}_delta'
-        new_column_names.append(column_name)
-        v20_name = feature+'_v20'
-        df[column_name] = df[v20_name] - df[i]
-                
-    return new_column_names,df            
-
 
 #--------------------------------#
 #----------Parameters------------#
@@ -149,23 +135,30 @@ root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/
 training_data = root + 'joined_data/training_data.h5'
 validation_data = root+ 'joined_data/validation_data.h5'
 
-non_training_features = ['latitude_ERA', 'longitude_ERA', 'MODIS_LST','time'] #don't train  on tehse columns, do train on everything else
-target_variable = ['MODIS_LST'] #The variable you are trying to learn/predict
-
-
-#Outputs
-output_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/'
-output_cols = ['latitude_ERA', 'longitude_ERA','time','skt','MODIS_LST'] #we don't output all columns in our results
-
 
 
 
 #Model parameters
-calculate_delta_fields = True
+non_training_features = ['latitude_ERA', 'longitude_ERA', 'MODIS_LST','time'] #don't train  on these columns, do train on everything else
+target_variable = ['MODIS_LST'] #The variable you are trying to learn/predict
+do_not_use_delta_fields = False
 epochs = 1000
 batch_size = 1024
 use_validation_data = True #Do you want to use validation data for early stopping? Stopping conditions are defined in train_NN()
 optimizer = 'adam'
+
+
+
+
+
+
+
+#Outputs
+output_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/'
+
+
+
+
 
 
                  
@@ -179,17 +172,18 @@ optimizer = 'adam'
 print ('Reading training data')
 df_train = pd.read_hdf(training_data)
 
-print(df_train.columns)
-print(df_train)
-
 
 print ('Reading validation data')
 df_valid = pd.read_hdf(validation_data)
 
-print(df_valid.columns)
-print(df_valid)
 
+if do_not_use_delta_fields:
+    
+    
+     df.columns[~df.columns.str.contains(pat = '_delta')]
 
+print ('Total number of training samples:', len(df_train))
+print ('Total number of validation samples:', len(df_valid))
 
 # #Train model
 print('Train the model')
@@ -199,86 +193,19 @@ history,model = train_NN(df_train.drop(non_training_features,axis=1),df_train[ta
 
 
 
+print ('Model has completed training, now saving')
+
+parameters_dict = {'training_data': training_data,
+                   'validation_data': training_data,                  
+                   'epochs':          epochs,
+                   'batch_size':      batch_size,
+                   'features':        list(df_train.drop(non_training_features,axis=1).columns),
+                   'optimizer':       optimizer}
+
+fout = save_model(output_path,model,history,parameters_dict)
 
 
-# #Define the features used in this model
-# core_features = ['sp', 'msl', 'u10', 'v10', 't2m', 
-#                  'aluvp', 'aluvd','alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 
-#                  'skt'] #these are the time variable fields
-# surface_features = ['lsm_v15','cl_v15','dl_v15','cvh_v15','cvl_v15',
-#                     'anor_v15','isor_v15','slor_v15','sdor_v15','sr_v15','lsrh_v15',
-#                     'si10_v15'] #these are the constant fields, V15
-
-
-
-
-
-# if calculate_delta_fields:
-#     delta_fields,df = calculate_delta_fields_func(surface_features,df) #calculate delta fields for all surface features
-# else:
-#     delta_fields = []
-    
-# feature_names = core_features+surface_features + delta_fields
-
-
-# print('Feature names:')
-# print(feature_names)
-
-
-     
-# #print(df.isna().any())
-
-# #Normalise everything
-# print('Normalizing')
-# features = df[feature_names]
-# target = df[target_var]
-    
-# features_normed = (features-features.mean())/features.std()
-# target_normed = (target-target.mean())/target.std()
-
-
-
-
-# T_normalize_mean = target.mean().values[0] #Save these as np.float32, rather than pd.Series. We will use them later to "un-normalize"
-# T_normalize_std = target.std().values[0]
-
-# #Split data into training and testing set
-# print('Split data')
-# split_data,results_df = train_test_split(df,train_condition,test_condition,
-#                                                             features_normed,target_normed,
-#                                                             output_cols)
-
-
-# #Train model
-# print('Train')
-# history,model = train_NN(split_data['x_train'],split_data['y_train'],
-#                          split_data['x_valid'],split_data['y_valid'],
-#                          epochs,batch_size,use_validation_data,optimizer)
-
-
-
-# print ('Save the trained model')
-
-# parameters_dict = {'input_file':     input_file,
-#                   'train_condition': train_condition,
-#                   'test_condition':  test_condition,
-#                   'epochs':          epochs,
-#                   'batch_size':      batch_size,
-#                   'features':        feature_names,
-#                   'optimizer':       optimizer}
-# fout = save_model(output_path,model,history,parameters_dict)
-
-
-# #Make some predictions
-# print('Predict')
-# predictions_normalized = model.predict(split_data['x_test'])                 #Prediction 
-# predictions = (predictions_normalized * T_normalize_std ) + T_normalize_mean #un-normalsie to get 'physical' value
-# results_df['predictions'] = predictions                                      # Bring together the test data and predictions into a single pandas df
-# results_df.to_pickle(fout+'predictions.pkl')
-
-
-
-# print ("All completed OK")
+print ("All completed OK")
 
 
 
