@@ -199,11 +199,11 @@ history,model = train_NN(df_train.drop(target_variable,axis=1),df_train[target_v
 
 print ('Model has completed training, now saving')
 
-parameters_dict = {'training_data': training_data,
-                   'validation_data': training_data,                  
+parameters_dict = {'training_data':   training_data,
+                   'validation_data': validation_data,                  
                    'epochs':          epochs,
                    'batch_size':      batch_size,
-                   'features':        list(df_train.drop(non_training_features,axis=1).columns),
+                   'features':        list(df_train.drop(target_variable,axis=1).columns),
                    'optimizer':       optimizer}
 
 fout = save_model(output_path,model,history,parameters_dict)
