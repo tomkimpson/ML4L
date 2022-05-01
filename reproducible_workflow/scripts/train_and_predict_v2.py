@@ -193,8 +193,8 @@ print(df_valid)
 
 # #Train model
 print('Train the model')
-history,model = train_NN(df_train.pop(non_training_features),df_train[target_variable],
-                         df_valid.pop(non_training_features),df_valid[target_variable],
+history,model = train_NN(df_train.drop(non_training_features,axis=1),df_train[target_variable],
+                         df_valid.drop(non_training_features,axis=1),df_valid[target_variable],
                          epochs,batch_size,use_validation_data,optimizer)
 
 
