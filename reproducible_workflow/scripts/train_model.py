@@ -43,8 +43,8 @@ def train_NN(x,y,x_val, y_val,epochs,batch_size,use_validation_data,pretrained_m
     print('Number of features:',nfeatures)
     print('Number of samples:',x.shape[0])
     print('Using validation data?', use_validation_data)
-    print('Number of epochs:' epochs)
-    print('Batch size:' batch_size)
+    print('Number of epochs:', epochs)
+    print('Batch size:', batch_size)
 
     if pretrained_model is None:
 
