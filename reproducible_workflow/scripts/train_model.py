@@ -42,8 +42,9 @@ def train_NN(x,y,x_val, y_val,epochs,batch_size,use_validation_data,pretrained_m
     print('Training model:')
     print('Number of features:',nfeatures)
     print('Number of samples:',x.shape[0])
-    print ('Using validation data?', use_validation_data)
-    
+    print('Using validation data?', use_validation_data)
+    print('Number of epochs:' epochs)
+    print('Batch size:' batch_size)
 
     if pretrained_model is None:
 
@@ -142,8 +143,8 @@ validation_data = root+ 'joined_data/validation_data.h5'
 #Model parameters
 target_variable = ['MODIS_LST'] #The variable you are trying to learn/predict. Everything else is a model feature
 do_not_use_delta_fields = False
-epochs = 50
-batch_size = 10000
+epochs = 100
+batch_size = 1024
 use_validation_data = True #Do you want to use validation data for early stopping? Stopping conditions are defined in train_NN()
 optimizer = 'adam'
 
@@ -156,8 +157,8 @@ optimizer = 'adam'
 #Outputs
 output_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/'
 
-
-
+#Use a pretrained model
+pretrained_model = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/ML_945670aff1f84364bf5d75634f4419c7/trained_model'
 
 
 
@@ -196,7 +197,7 @@ print ('Total number of validation samples:', len(df_valid))
 print('Train the model')
 history,model = train_NN(df_train.drop(target_variable,axis=1),df_train[target_variable],
                          df_valid.drop(target_variable,axis=1),df_valid[target_variable],
-                         epochs,batch_size,use_validation_data,pretrained_model=None)
+                         epochs,batch_size,use_validation_data,pretrained_model=pretrained_model)
 
 
 
