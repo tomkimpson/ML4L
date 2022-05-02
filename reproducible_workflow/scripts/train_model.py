@@ -139,7 +139,7 @@ validation_data = root+ 'joined_data/validation_data.h5'
 #Model parameters
 target_variable = ['MODIS_LST'] #The variable you are trying to learn/predict. Everything else is a model feature
 do_not_use_delta_fields = False
-epochs = 1000
+epochs = 200
 batch_size = 1024
 use_validation_data = True #Do you want to use validation data for early stopping? Stopping conditions are defined in train_NN()
 optimizer = 'adam'
