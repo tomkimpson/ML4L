@@ -14,3 +14,5 @@ print (buddy.species)
 print(buddy.batch_size)
 
 #print(buddy)
+
+#https://theaisummer.com/best-practices-deep-learning-code/
