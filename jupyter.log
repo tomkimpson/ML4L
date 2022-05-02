@@ -126,3 +126,39 @@
 [W 2022-05-02 10:49:43.293 ServerApp] Notebook reproducible_workflow/00. Workflow.ipynb is not trusted
 [IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
 [IPKernelApp] WARNING | No such comm: ea257bca-8d02-43a5-9712-6705e065e256
+[I 2022-05-02 10:54:24.157 ServerApp] Kernel started: 6d253c3f-9799-44cb-b0d6-a40f2ee95676
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 9c58202f-c77c-468f-829f-ccc9eed5446f
+[W 2022-05-02 10:54:34.984 ServerApp] Got events for closed stream <zmq.eventloop.zmqstream.ZMQStream object at 0x7f9c8de12b10>
+[I 2022-05-02 10:54:51.617 ServerApp] Saving file at /reproducible_workflow/scripts/train_model.py
+[I 2022-05-02 10:54:51.898 ServerApp] Saving file at /reproducible_workflow/scripts/train_model.py
+[I 2022-05-02 10:54:52.163 ServerApp] Saving file at /reproducible_workflow/scripts/train_model.py
+[I 2022-05-02 10:54:54.690 ServerApp] Saving file at /reproducible_workflow/scripts/train_model.py
+[I 2022-05-02 10:54:54.846 ServerApp] Saving file at /reproducible_workflow/scripts/train_model.py
+[W 2022-05-02 11:00:35.906 ServerApp] delete /reproducible_workflow/scripts/dev/tfrecords/part-00000-f92132f3-f4a1-452a-ae66-818e45fe1971.tfrecords.gz
+[W 2022-05-02 11:00:35.906 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/dev/tfrecords/part-00000-f92132f3-f4a1-452a-ae66-818e45fe1971.tfrecords.gz, on different device to home directory
+[I 2022-05-02 11:00:38.938 ServerApp] Saving file at /reproducible_workflow/scripts/dev/create_TRF_records.py
+[I 2022-05-02 11:00:39.202 ServerApp] Saving file at /reproducible_workflow/scripts/dev/create_TRF_records.py
+[W 2022-05-02 11:01:06.230 ServerApp] delete /reproducible_workflow/scripts/dev/tfrecords
+[W 2022-05-02 11:01:06.230 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/dev/tfrecords, on different device to home directory
+[W 2022-05-02 11:01:06.232 ServerApp] 400 DELETE /api/contents/reproducible_workflow/scripts/dev/tfrecords?1651485666231 (::1): Directory /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/dev/tfrecords not empty
+[W 2022-05-02 11:01:06.232 ServerApp] Directory /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/dev/tfrecords not empty
+[W 2022-05-02 11:01:06.233 ServerApp] 400 DELETE /api/contents/reproducible_workflow/scripts/dev/tfrecords?1651485666231 (::1) 4.48ms referer=http://localhost:8881/lab/tree/reproducible_workflow/scripts/dev/create_TRF_records.py
+[W 2022-05-02 11:01:14.836 ServerApp] delete /reproducible_workflow/scripts/dev/tfrecords/part-00000-3fe32d8d-d378-4efa-b54d-807fc352a4a0.tfrecords
+[W 2022-05-02 11:01:14.836 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/dev/tfrecords/part-00000-3fe32d8d-d378-4efa-b54d-807fc352a4a0.tfrecords, on different device to home directory
+[W 2022-05-02 11:01:19.401 ServerApp] delete /reproducible_workflow/scripts/dev/tfrecords
+[W 2022-05-02 11:01:19.402 ServerApp] Skipping trash for /network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/dev/tfrecords, on different device to home directory
+[I 2022-05-02 11:01:26.578 ServerApp] Saving file at /reproducible_workflow/scripts/dev/create_TRF_records.py
+[I 2022-05-02 11:02:27.241 ServerApp] Saving file at /reproducible_workflow/scripts/dev/load_TRF_records.py
+[I 2022-05-02 11:43:47.839 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-05-02 12:03:01.914 ServerApp] Saving file at /reproducible_workflow/scripts/dev/read_TFRecord.py
+[I 2022-05-02 12:05:01.972 ServerApp] Saving file at /reproducible_workflow/scripts/dev/read_TFRecord.py
+[I 2022-05-02 12:07:02.043 ServerApp] Saving file at /reproducible_workflow/scripts/dev/read_TFRecord.py
+[I 2022-05-02 12:13:02.210 ServerApp] Saving file at /reproducible_workflow/scripts/dev/read_TFRecord.py
+[I 2022-05-02 12:14:38.686 ServerApp] Saving file at /reproducible_workflow/scripts/dev/read_TFRecord.py
+[I 2022-05-02 12:16:38.750 ServerApp] Saving file at /reproducible_workflow/scripts/dev/read_TFRecord.py
+[I 2022-05-02 12:16:41.489 ServerApp] Saving file at /reproducible_workflow/scripts/dev/read_TFRecord.py
+[I 2022-05-02 12:18:41.552 ServerApp] Saving file at /reproducible_workflow/scripts/dev/read_TFRecord.py
+[I 2022-05-02 12:21:58.032 ServerApp] Saving file at /reproducible_workflow/scripts/dev/read_TFRecord.py
+[I 2022-05-02 12:23:58.094 ServerApp] Saving file at /reproducible_workflow/scripts/dev/read_TFRecord.py
+[I 2022-05-02 12:24:39.520 ServerApp] Saving file at /reproducible_workflow/scripts/dev/read_TFRecord.py
