@@ -76,7 +76,9 @@ features_dataset = tf.data.Dataset.from_tensor_slices((feature0, feature1, featu
 
 #print
 for f0,f1,f2 in features_dataset.take(1): #use `take(1)` to pull a single example from the dataset
-    
+    print(f0)
+    print(f1)
+    print(f2)
 #apply function to each element in the dataset
 serialized_features_dataset = features_dataset.map(tf_serialize_example)
 
@@ -103,6 +105,19 @@ raw_dataset = tf.data.TFRecordDataset(filenames)
 for raw_record in raw_dataset.take(10):
     print(repr(raw_record))
 
+# Create a description of the features.
+feature_description = {
+    'feature0': tf.io.FixedLenFeature([], tf.int32, default_value=0),
+    'feature1': tf.io.FixedLenFeature([], tf.int32, default_value=0),
+    'feature2': tf.io.FixedLenFeature([], tf.float32, default_value=0.0),
+}
+
+def _parse_function(example_proto):
+  # Parse the input `tf.train.Example` proto using the dictionary above.
+  return tf.io.parse_single_example(example_proto, feature_description)
+
+
+parsed_dataset = raw_dataset.map(_parse_function)
 
 
 
@@ -110,20 +125,14 @@ for raw_record in raw_dataset.take(10):
 
 
 
+for parsed_record in parsed_dataset.take(10):
+  print(repr(parsed_record))
 
 
 
-
-#----------------------------------------------------------------------------------
-# # Write TFrecord file
-# file_path = 
-# with tf.io.TFRecordWriter(file_path) as writer:
-#     for array in arrays:
-#         print(array)
-#         serialized_array = serialize_array(array)
-#         feature = {'b_feature': _bytes_feature(serialized_array)}
-#         example_message = tf.train.Example(features=tf.train.Features(feature=feature))
-#         writer.write(example_message.SerializeToString())
+   score = tf.to_float(features[F_SCORE])
+    votes = features[F_VOTES]
+    helpfulness = features[F_HELPFULNESS]
 
 
 
@@ -131,13 +140,26 @@ for raw_record in raw_dataset.take(10):
 
 
 
+def get_batched_dataset(filenames):
+  option_no_order = tf.data.Options()
+  option_no_order.experimental_deterministic = False
+
+  dataset = tf.data.Dataset.list_files(filenames)
+  dataset = dataset.with_options(option_no_order)
+  dataset = dataset.interleave(tf.data.TFRecordDataset, cycle_length=16, num_parallel_calls=AUTO)
+  dataset = dataset.map(read_tfrecord, num_parallel_calls=AUTO)
+
+  dataset = dataset.cache() # This dataset fits in RAM
+  dataset = dataset.repeat()
+  dataset = dataset.shuffle(2048)
+  dataset = dataset.batch(BATCH_SIZE, drop_remainder=True) 
+  dataset = dataset.prefetch(AUTO) #
+  
+  return dataset
 
 
-        
-        
-        
-#feature = _float_feature(np.exp(1))
-#feature.SerializeToString()
+
+
 
 
 

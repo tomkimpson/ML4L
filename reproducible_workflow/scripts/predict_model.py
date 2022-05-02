@@ -63,7 +63,7 @@ features = parse_meta_file(model_dir + 'meta.txt')
 output_cols = ['latitude_ERA', 'longitude_ERA','time','skt','MODIS_LST'] #we don't output all columns in our results
 
 print('features =', features)      
-print('output cols =  output_cols')
+print('output cols = ',output_cols)
 
 #--------------------------------#
 #--------------MAIN--------------#
