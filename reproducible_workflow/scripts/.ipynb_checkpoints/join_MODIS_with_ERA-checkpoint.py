@@ -84,30 +84,33 @@ for v in versions:
     ds.close()
 
        
-            
-#'Bonus' ERA data. This is wetlands and lakes
+        
+        
+        
+        
+#'Bonus' ERA data. This is monthly-varying clake fields
 bonus_root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/BonusClimate/'
-wetlands_and_lakes = {'COPERNICUS/':'wetlandf',
-                      'CAMA/':      'wetlandf',
-                      'ORCHIDEE/':  'wetlandf',
-                      'monthlyWetlandAndSeasonalWater_minusRiceAllCorrected_waterConsistent/':'wetlandf',
-                      'CL_ECMWFAndJRChistory/':'clake'} #Monthly varying data `cldiff`. Directory:Filename
-
-wetlands_ds = xr.Dataset() #Empty ds
-for w in wetlands_and_lakes:
-    fname = bonus_root+w+wetlands_and_lakes[w]    
-    #Load
-    ds_wetland= xr.open_dataset(fname,engine='cfgrib',decode_times=False,backend_kwargs={'indexpath': ''}) 
+monthly_clake_files = sorted(glob.glob(bonus_root+'clake*'))
+month_counter = 1
+monthly_clake_ds = xr.Dataset() #Empty ds
+for m in monthly_clake_files:
+    print(m)
+    ds_clake= xr.open_dataset(m,engine='cfgrib',backend_kwargs={'indexpath': ''}) 
     
     #Rename the parameter so everything is not cldiff
-    ds_wetland = ds_wetland.cldiff.rename(f'cldiff_{w}') #This is now a dataarray
-
+    ds_clake = ds_clake.cl.rename(f'clake_monthly_value') #This is now a dataarray
+    
     #Fix the time to be an integer
-    ds_wetland['time'] = np.arange(1,12+1) #i.e. what month it it?
+    ds_clake['time'] = month_counter #i.e. what month it it? An integer between 1 and 12
     
-    #Output
-    wetlands_ds[w] = ds_wetland    
     
+    #Append this to dataframe
+    monthly_clake_ds[f"month_{month_counter}"] = ds_clake 
+    month_counter += 1
+#monthly_clake_ds is a dataset where each variable is month_1, month_2 etc. representing a global field for that time
+#Later on we will select just the correspondig month
+        
+        
 
     
 #------------------------#
@@ -115,7 +118,7 @@ for w in wetlands_and_lakes:
 #------------------------#
 
 
-def get_ERA_hour(ERA_month,t,v15,v20,WetlandsAndLakesMonth,bounds):
+def get_ERA_hour(ERA_month,t,v15,v20,clake_month,bounds):
     
     """
     Extract an hour of ERA data
@@ -129,10 +132,14 @@ def get_ERA_hour(ERA_month,t,v15,v20,WetlandsAndLakesMonth,bounds):
     #Join on the constant data V15 and v20, and the wetlands data, first setting the time coordinate
     v15 = v15.assign_coords({"time": (((ERA_hour.time)))}) 
     v20 = v20.assign_coords({"time": (((ERA_hour.time)))}) 
-    WetlandsAndLakesMonth = WetlandsAndLakesMonth.assign_coords({"time": (((ERA_hour.time)))})
+    clake_month = clake_month.assign_coords({"time": (((ERA_hour.time)))})
     
-    ERA_hour = xr.merge([ERA_hour,v15,v20, WetlandsAndLakesMonth]).load() #Explicitly load 
+    ERA_hour = xr.merge([ERA_hour,v15,v20, clake_month]).load() #Explicitly load 
     
+    print(ERA_hour)
+    
+    
+    sys.exit()
     
     #And covert longitude to long1
     ERA_hour = ERA_hour.assign_coords({"longitude": (((ERA_hour.longitude + 180) % 360) - 180)})
@@ -273,8 +280,8 @@ def faiss_knn(database,query):
 
 
 
-selection_index = 15 #Use if you dont want to run for all the ERA files e.g. script gets killed after X months
-selected_ERA_files = ERA_files[selection_index:] 
+selection_index = 0 #Use if you dont want to run for all the ERA files e.g. script gets killed after X months
+selected_ERA_files = ERA_files[selection_index:1] 
 print(selected_ERA_files)
 counter = selection_index  
 
@@ -289,11 +296,16 @@ for f in selected_ERA_files:
     timestamps = pd.to_datetime(ERA_month.time) 
     
     
-    #Load the wetland bonus data for that month
+    #Load the clake bonus data for that month. Clumsy method. Needs cleaning up
     month = np.unique(timestamps.month)[0] #There should only be one value, an integer in range 1-12
-    wetlands_time_filter = (wetlands_ds.time == month)
-    wetlands_month = wetlands_ds.where(wetlands_time_filter,drop=True) #This is a field at a single time.
-    
+    print('month = ',month)
+    print('var = ',f"month_{month}")
+    clake_month = monthly_clake_ds[f"month_{month}"] #Get a month of data
+    clake_month = clake_month.to_dataset()#make it a dataset
+    clake_month['clake_monthly_value'] = clake_month[f"month_{month}"]#Rename data variable
+    clake_month = clake_month.drop([f"month_{month}"])#Rename data variable
+
+   
         
     #Empty. We will append the resulting dfs here
     dfs = []
@@ -330,7 +342,7 @@ for f in selected_ERA_files:
     
     
         #Get an hour of ERA data
-        ERA_hour = get_ERA_hour(ERA_month,t, ERA_constant_dict['v15'], ERA_constant_dict['v20'],wetlands_month,bounds) #Get an hour of ERA data
+        ERA_hour = get_ERA_hour(ERA_month,t, ERA_constant_dict['v15'], ERA_constant_dict['v20'],clake_month,bounds) #Get an hour of ERA data
         ERA_df = ERA_hour.to_dataframe().reset_index() #Make it a df
 
         #Find matches in space
@@ -349,7 +361,7 @@ for f in selected_ERA_files:
     #Pkl is likely suboptimial here. Need to update to e.g. parquet, HDF, etc.
 
     df = pd.concat(dfs)
-    fname = f'V2matched_{counter}.pkl'
+    fname = f'MAYmatched_{counter}.pkl'
     print ("Writing to disk:", IO_path+fname)
     df.to_pickle(IO_path+fname)
         

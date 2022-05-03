@@ -142,7 +142,7 @@ validation_data = root+ 'joined_data/validation_data.h5'
 
 #Model parameters
 target_variable = ['MODIS_LST'] #The variable you are trying to learn/predict. Everything else is a model feature
-do_not_use_delta_fields = False
+do_not_use_delta_fields = True
 epochs = 100
 batch_size = 1024
 use_validation_data = True #Do you want to use validation data for early stopping? Stopping conditions are defined in train_NN()
@@ -158,8 +158,8 @@ optimizer = 'adam'
 output_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/'
 
 #Use a pretrained model
-pretrained_model = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/ML_945670aff1f84364bf5d75634f4419c7/trained_model'
-
+#pretrained_model = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/ML_945670aff1f84364bf5d75634f4419c7/trained_model'
+pretrained_model = None
 
 
                  
