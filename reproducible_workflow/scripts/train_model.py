@@ -52,6 +52,7 @@ def train_NN(x,y,x_val, y_val,epochs,batch_size,use_validation_data,pretrained_m
         model = tf.keras.Sequential([
             tf.keras.layers.Dense(int(nfeatures/2), activation='relu',input_shape=(nfeatures,),name='layer1'),
             tf.keras.layers.Dense(int(nfeatures/2), activation='relu',input_shape=(nfeatures,),name='layer2'),
+            tf.keras.layers.Dense(int(nfeatures/2), activation='relu',input_shape=(nfeatures,),name='layer3'),
             tf.keras.layers.Dense(1, name='output')
         ])
 
@@ -69,7 +70,7 @@ def train_NN(x,y,x_val, y_val,epochs,batch_size,use_validation_data,pretrained_m
     #Early stop
     early_stopping = EarlyStopping(monitor='val_loss',
                                    min_delta=0,
-                                   patience=10,
+                                   patience=50,
                                    verbose=1,
                                    mode='auto',
                                    baseline=None,
@@ -81,7 +82,7 @@ def train_NN(x,y,x_val, y_val,epochs,batch_size,use_validation_data,pretrained_m
                                        save_best_only=True, 
                                        mode='min',
                                        save_freq='epoch',
-                                       period=50)
+                                       period=10)
 
 
     #Train it
@@ -142,7 +143,7 @@ validation_data = root+ 'joined_data/validation_data.h5'
 
 #Model parameters
 target_variable = ['MODIS_LST'] #The variable you are trying to learn/predict. Everything else is a model feature
-do_not_use_delta_fields = True
+do_not_use_delta_fields = False
 epochs = 100
 batch_size = 1024
 use_validation_data = True #Do you want to use validation data for early stopping? Stopping conditions are defined in train_NN()
@@ -159,10 +160,8 @@ output_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed
 
 #Use a pretrained model
 #pretrained_model = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/ML_945670aff1f84364bf5d75634f4419c7/trained_model'
-pretrained_model = None
-
-
-                 
+#pretrained_model = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/ML_a5ec9738e4db4796a0240941c2a19298/trained_model'
+pretrained_model='/network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/checkpoint'                 
             
 
 #--------------------------------#

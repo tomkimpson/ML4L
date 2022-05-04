@@ -136,10 +136,6 @@ def get_ERA_hour(ERA_month,t,v15,v20,clake_month,bounds):
     
     ERA_hour = xr.merge([ERA_hour,v15,v20, clake_month]).load() #Explicitly load 
     
-    print(ERA_hour)
-    
-    
-    sys.exit()
     
     #And covert longitude to long1
     ERA_hour = ERA_hour.assign_coords({"longitude": (((ERA_hour.longitude + 180) % 360) - 180)})
@@ -298,8 +294,6 @@ for f in selected_ERA_files:
     
     #Load the clake bonus data for that month. Clumsy method. Needs cleaning up
     month = np.unique(timestamps.month)[0] #There should only be one value, an integer in range 1-12
-    print('month = ',month)
-    print('var = ',f"month_{month}")
     clake_month = monthly_clake_ds[f"month_{month}"] #Get a month of data
     clake_month = clake_month.to_dataset()#make it a dataset
     clake_month['clake_monthly_value'] = clake_month[f"month_{month}"]#Rename data variable

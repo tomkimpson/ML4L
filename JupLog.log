@@ -1,0 +1,106 @@
+[I 2022-05-03 20:12:39.365 ServerApp] jupyterlab | extension was successfully linked.
+[I 2022-05-03 20:12:39.382 ServerApp] nbclassic | extension was successfully linked.
+[I 2022-05-03 20:12:40.233 ServerApp] notebook_shim | extension was successfully linked.
+[I 2022-05-03 20:12:40.234 ServerApp] panel.io.jupyter_server_extension | extension was successfully linked.
+[I 2022-05-03 20:12:40.293 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2022-05-03 20:12:40.296 LabApp] JupyterLab extension loaded from /home/k/kimpson/bin/conda/envs/workhorse/lib/python3.7/site-packages/jupyterlab
+[I 2022-05-03 20:12:40.297 LabApp] JupyterLab application directory is /home/k/kimpson/bin/conda/envs/workhorse/share/jupyter/lab
+[I 2022-05-03 20:12:40.310 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2022-05-03 20:12:40.324 ServerApp] nbclassic | extension was successfully loaded.
+[I 2022-05-03 20:12:40.329 ServerApp] panel.io.jupyter_server_extension | extension was successfully loaded.
+[I 2022-05-03 20:12:40.331 ServerApp] Serving notebooks from local directory: /network/aopp/chaos/pred/kimpson/ML4L
+[I 2022-05-03 20:12:40.331 ServerApp] Jupyter Server 1.15.6 is running at:
+[I 2022-05-03 20:12:40.331 ServerApp] http://localhost:9174/lab
+[I 2022-05-03 20:12:40.331 ServerApp]  or http://127.0.0.1:9174/lab
+[I 2022-05-03 20:12:40.331 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 2022-05-03 20:14:30.114 ServerApp] 302 GET / (::1) 1.59ms
+[I 2022-05-03 20:14:30.133 LabApp] 302 GET /lab? (::1) 2.42ms
+[I 2022-05-03 20:14:35.113 ServerApp] 302 POST /login?next=%2Flab%3F (::1) 3.35ms
+[I 2022-05-03 20:14:39.843 LabApp] Build is up to date
+[W 2022-05-03 20:14:41.521 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-03 20:14:47.654 ServerApp] Kernel started: 60c1089e-cd1b-42a8-87bc-e494cb402f01
+[I 2022-05-03 20:16:54.735 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-03 20:16:54.738 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-03 20:29:08.666 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-03 20:29:08.669 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-03 20:31:31.990 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-03 20:31:31.992 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-03 20:33:43.062 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-03 20:33:43.065 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-03 21:47:55.308 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-03 21:47:55.312 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-03 21:50:06.432 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-03 21:50:06.435 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-03 21:52:17.596 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-03 21:52:17.599 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-03 21:53:26.588 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-03 21:53:26.593 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-03 22:59:38.500 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-03 22:59:38.503 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-03 23:03:23.962 ServerApp] Starting buffering for 60c1089e-cd1b-42a8-87bc-e494cb402f01:4824d49f-db10-4bf1-991d-16c21127d98c
+[I 2022-05-03 23:03:24.155 ServerApp] Restoring connection for 60c1089e-cd1b-42a8-87bc-e494cb402f01:4824d49f-db10-4bf1-991d-16c21127d98c
+[W 2022-05-03 23:04:54.157 ServerApp] WebSocket ping timeout after 90001 ms.
+[W 2022-05-03 23:04:54.335 ServerApp] WebSocket ping timeout after 90000 ms.
+[I 2022-05-03 23:04:59.338 ServerApp] Starting buffering for 60c1089e-cd1b-42a8-87bc-e494cb402f01:5e2867d7-eb2f-4e47-bf5e-685e45b852e8
+[I 2022-05-04 09:50:37.490 LabApp] Build is up to date
+[W 2022-05-04 09:50:38.095 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:02:56.487 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:02:56.490 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:05:08.973 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:05:08.976 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:07:28.161 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:07:28.164 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:09:41.399 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:09:41.402 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:12:02.146 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:12:02.149 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:15:32.869 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:15:32.872 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:17:46.884 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:17:46.887 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:20:01.476 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:20:01.485 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:22:05.432 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:22:05.433 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:24:08.721 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:24:08.722 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:26:11.800 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:26:11.801 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:28:14.954 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:28:14.955 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:30:18.293 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:30:18.294 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:32:21.801 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:32:21.802 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:34:25.349 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:34:25.350 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:36:28.683 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:36:28.683 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:38:32.492 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:38:32.493 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:40:35.646 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:40:35.647 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:42:39.356 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:42:39.358 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:44:42.875 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:44:42.876 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:46:46.234 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:46:46.234 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:48:49.674 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:48:49.675 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:50:52.764 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:50:52.765 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 10:52:55.723 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 10:52:55.724 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 11:05:01.769 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 11:05:01.770 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 11:07:04.699 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 11:07:04.700 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 11:09:09.048 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[W 2022-05-04 11:09:09.049 ServerApp] Notebook reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb is not trusted
+[I 2022-05-04 11:13:12.594 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-05-04 11:15:16.148 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-05-04 11:17:19.575 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-05-04 11:19:22.990 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-05-04 11:20:38.710 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
+[I 2022-05-04 11:20:40.932 ServerApp] Saving file at /reproducible_workflow/experiments/2. Lakes_with_extra_fields.ipynb
