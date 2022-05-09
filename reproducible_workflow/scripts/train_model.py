@@ -52,7 +52,6 @@ def train_NN(x,y,x_val, y_val,epochs,batch_size,use_validation_data,pretrained_m
         model = tf.keras.Sequential([
             tf.keras.layers.Dense(int(nfeatures/2), activation='relu',input_shape=(nfeatures,),name='layer1'),
             tf.keras.layers.Dense(int(nfeatures/2), activation='relu',input_shape=(nfeatures,),name='layer2'),
-            tf.keras.layers.Dense(int(nfeatures/2), activation='relu',input_shape=(nfeatures,),name='layer3'),
             tf.keras.layers.Dense(1, name='output')
         ])
 
@@ -140,10 +139,15 @@ root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/
 training_data = root + 'joined_data/training_data.h5'
 validation_data = root+ 'joined_data/validation_data.h5'
 
+training_data = root + 'joined_data/training_data_with_monthly_lakes_w_lakes.h5'
+validation_data = root+ 'joined_data/validation_data_with_monthly_lakes_w_lakes.h5'
+
+
 
 #Model parameters
 target_variable = ['MODIS_LST'] #The variable you are trying to learn/predict. Everything else is a model feature
-do_not_use_delta_fields = False
+do_not_use_delta_fields = False #Don't use the V20 corrections
+do_not_use_monthly_clakes = False #Dont use the monthly clake corrections
 epochs = 100
 batch_size = 1024
 use_validation_data = True #Do you want to use validation data for early stopping? Stopping conditions are defined in train_NN()
@@ -159,10 +163,9 @@ optimizer = 'adam'
 output_path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/'
 
 #Use a pretrained model
-#pretrained_model = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/ML_945670aff1f84364bf5d75634f4419c7/trained_model'
-#pretrained_model = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/ML_a5ec9738e4db4796a0240941c2a19298/trained_model'
-pretrained_model='/network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/checkpoint'                 
-            
+#pretrained_model='/network/aopp/chaos/pred/kimpson/ML4L/reproducible_workflow/scripts/checkpoint'
+pretrained_model = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/ML_5f2df91ccee94e63bef0ba4b5fc52cc3/trained_model'
+#pretrained_model = None            
 
 #--------------------------------#
 #--------------MAIN--------------#
@@ -186,6 +189,12 @@ print(df_valid.columns)
 if do_not_use_delta_fields:
     print('Getting rid of delta fields')
     drop_columns = df_train.columns[df_train.columns.str.contains(pat = '_delta')]
+    df_train = df_train.drop(drop_columns,axis=1)
+    df_valid = df_valid.drop(drop_columns,axis=1)
+    
+if do_not_use_monthly_clakes:
+    print('Getting rid of monthly clake fields')
+    drop_columns = ['clake_monthly_value_delta']
     df_train = df_train.drop(drop_columns,axis=1)
     df_valid = df_valid.drop(drop_columns,axis=1)
 

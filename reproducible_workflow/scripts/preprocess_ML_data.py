@@ -38,6 +38,7 @@ time_constant_features = ['lsm_v15','cl_v15','dl_v15','cvh_v15','cvl_v15',
                           'anor_v15','isor_v15','slor_v15','sdor_v15','sr_v15','lsrh_v15',
                           'si10_v15'] #these are the constant fields, V15. Will also calculate delta corrections of these fields.
 
+
 #Target, will not be normalised
 target_variable = ['MODIS_LST']
 
@@ -72,9 +73,12 @@ def process_directory(d,n1,n2,unnormalised_features):
 
         #Calculate extra "delta" columns V20 - V15
         delta_fields,df = calculate_delta_fields(df,time_constant_features)
+        
+        #Extra calculations
+        df['clake_monthly_value_delta'] = df['clake_monthly_value'] - df['cl_v20']
 
         #Don't select all the columns
-        selected_columns = unnormalised_features + time_variable_features + time_constant_features + delta_fields
+        selected_columns = unnormalised_features + time_variable_features + time_constant_features + delta_fields + ['clake_monthly_value_delta']
         selected_df = df[selected_columns] 
 
         dfs.append(selected_df)
@@ -109,7 +113,7 @@ def process_directory(d,n1,n2,unnormalised_features):
 
     #Write to disk 
     print('Writing HDF')
-    df.to_hdf(output_directory + d +'.h5', key='df', mode='w') 
+    df.to_hdf(output_directory + d +'_w_lakes.h5', key='df', mode='w') 
 
 
     return normalisation_mean, normalisation_std
@@ -118,10 +122,15 @@ def process_directory(d,n1,n2,unnormalised_features):
 
 
 
-normalisation_mean, normalisation_std = process_directory('training_data',None,None,target_variable)
-process_directory('validation_data',normalisation_mean,normalisation_std,target_variable)
-process_directory('test_data',normalisation_mean,normalisation_std,target_variable+global_information)
+# normalisation_mean, normalisation_std = process_directory('training_data',None,None,target_variable)
+# process_directory('validation_data',normalisation_mean,normalisation_std,target_variable)
+# process_directory('test_data',normalisation_mean,normalisation_std,target_variable+global_information)
 
+
+
+normalisation_mean, normalisation_std = process_directory('training_data_with_monthly_lakes',None,None,target_variable)
+process_directory('validation_data_with_monthly_lakes',normalisation_mean,normalisation_std,target_variable)
+process_directory('test_data_with_monthly_lakes',normalisation_mean,normalisation_std,target_variable+global_information)
 
 
 print('Done')

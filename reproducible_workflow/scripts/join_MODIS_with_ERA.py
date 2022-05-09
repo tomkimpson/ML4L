@@ -277,7 +277,7 @@ def faiss_knn(database,query):
 
 
 selection_index = 0 #Use if you dont want to run for all the ERA files e.g. script gets killed after X months
-selected_ERA_files = ERA_files[selection_index:1] 
+selected_ERA_files = ERA_files[selection_index:] 
 print(selected_ERA_files)
 counter = selection_index  
 
