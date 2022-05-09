@@ -51,15 +51,17 @@ def parse_meta_file(f):
 root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/'
 
 
+root1 = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/'
 
 
 
 
 #Inputs
-test_data =  root+'ECMWF_files/raw/processed_data/joined_data/test_data.h5'
-#model_dir = root + 'processed_data/trained_models/ML_31c7f833c6f94de5a95d16bd9793b575/'
-#model_dir = root + 'processed_data/trained_models/ML_bb1359c84c8845e5ac22185fc3686b96/'
-model_dir = root + 'processed_data/trained_models/ML_5454e45e659043d6b295aac93aede77e/'
+#test_data =  root+'ECMWF_files/raw/processed_data/joined_data/test_data.h5'
+test_data = root1 + 'joined_data/test_data_with_monthly_lakes_w_lakes.h5'
+
+model_dir = root + 'processed_data/trained_models/ML_d39bc467980a44978e25ecb04ebd8956/'
+
 
 
 model = tf.keras.models.load_model(model_dir+'trained_model')

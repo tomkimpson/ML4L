@@ -34,7 +34,10 @@ if gpus:
     
     
 
-def train_NN(x,y,x_val, y_val,epochs,batch_size,use_validation_data,pretrained_model):    
+def train_NN(x,y,
+             x_val, y_val,
+             epochs,batch_size,
+             use_validation_data,pretrained_model):    
     """Train a sequential NN"""
 
     
@@ -145,13 +148,13 @@ validation_data = root+ 'joined_data/validation_data_with_monthly_lakes_w_lakes.
 
 
 #Model parameters
-target_variable = ['MODIS_LST'] #The variable you are trying to learn/predict. Everything else is a model feature
-do_not_use_delta_fields = False #Don't use the V20 corrections
-do_not_use_monthly_clakes = False #Dont use the monthly clake corrections
-epochs = 100
-batch_size = 1024
-use_validation_data = True #Do you want to use validation data for early stopping? Stopping conditions are defined in train_NN()
-optimizer = 'adam'
+target_variable = ['MODIS_LST']   # The variable you are trying to learn/predict. Everything else is a model feature
+do_not_use_delta_fields = False   # Don't use the V20 corrections
+do_not_use_monthly_clakes = False # Don't use the monthly clake corrections
+epochs = 100                      # Number of epochs for training
+batch_size = 1024                 # Batch size for training
+use_validation_data = True        # Do you want to use validation data for early stopping? Stopping conditions are defined in train_NN()
+optimizer = 'adam'                #What optimiser to use
 
 
 
