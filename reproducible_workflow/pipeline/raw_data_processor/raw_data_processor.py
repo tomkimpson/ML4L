@@ -350,7 +350,7 @@ class JoinERAWithMODIS():
 
 
                 if date_string != self.previous_datestring:
-                # We need to open a new file. 
-                with suppress(NameError):MODIS_data.close() #First close the old one explicitly. Exception handles case where MODIS_data not yet defined
-                MODIS_data,time_UTC = self._load_MODIS_file(date_string)
-                self.previous_datestring = date_string
+                    # We need to open a new file. 
+                    with suppress(NameError):MODIS_data.close() #First close the old one explicitly. Exception handles case where MODIS_data not yet defined
+                    MODIS_data,time_UTC = self._load_MODIS_file(date_string)
+                    self.previous_datestring = date_string
