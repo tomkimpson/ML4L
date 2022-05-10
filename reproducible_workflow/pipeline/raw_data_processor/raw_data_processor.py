@@ -370,7 +370,7 @@ class JoinERAWithMODIS():
         return H
     
 
-    def _faiss_knn(database,query):
+    def _faiss_knn(self,database,query):
         
         """
         Use faiss library (https://github.com/facebookresearch/faiss) for fass k-nearest neighbours on GPU
@@ -400,7 +400,7 @@ class JoinERAWithMODIS():
     
         df = query.reset_index().join(database.iloc[indices.flatten()].reset_index(), lsuffix='_MODIS',rsuffix='_ERA')
         df['L2_distance'] = distances
-        df['H_distance'] = _haver(df['latitude_MODIS'],df['longitude_MODIS'],df['latitude_ERA'],df['longitude_ERA']) #Haversine distance
+        df['H_distance'] = self._haver(df['latitude_MODIS'],df['longitude_MODIS'],df['latitude_ERA'],df['longitude_ERA']) #Haversine distance
         
         #Filter out any large distances
         tolerance = 50 #km
@@ -482,7 +482,7 @@ class JoinERAWithMODIS():
 
 
                 #Find matches in space
-                df_matched = _faiss_knn(ERA_df,MODIS_df) #Match reduced gaussian grid to MODIS
+                df_matched = self._faiss_knn(ERA_df,MODIS_df) #Match reduced gaussian grid to MODIS
                 df_matched['time'] = t            
                 df_matched = df_matched.drop(['index_MODIS', 'band','spatial_ref','index_ERA','values','number','surface','depthBelowLandLayer'], axis=1) #get rid of all these columns that we dont need
                 dfs.append(df_matched)
