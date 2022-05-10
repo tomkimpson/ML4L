@@ -325,8 +325,8 @@ class JoinERAWithMODIS():
         ERA_hour = ERA_month.where(time_filter,drop=True)
         
         #Grab the constant fields and make a local copy
-        v15 = self.ERA_constant_dict['v15'], 
-        v20 = self.ERA_constant_dict['v20']
+        v15 = self.ERA_constants_dict['v15']
+        v20 = self.ERA_constants_dict['v20']
 
 
         #Join on the constant data V15 and v20, and the wetlands data, first setting the time coordinate
