@@ -13,7 +13,7 @@ CFG = {
         "path_to_raw_V15_climate_fields": f'{root}climate.v015/climate.v015/639l_2/',
         "path_to_raw_V20_climate_fields": f'{root}climate.v020/climate.v020/639l_2/',
         "path_to_monthly_clake_files": '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/BonusClimate/',
-        "path_to_MODIS_data": '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/MODIS'
+        "path_to_MODIS_data": '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/MODIS',
 
 
          #Edge cases to handle in ERA_skin
@@ -48,7 +48,7 @@ CFG = {
         "aquaNight_local_solar_time":"01:30",
               
         "satellite":'aquaDay',
-        "latitude_bound": 70
+        "latitude_bound": 70,
 
         "training_data": '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/test_data.tfrecords',
         "validation_data": '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/test_data.tfrecords'
