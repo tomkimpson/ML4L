@@ -348,7 +348,7 @@ class JoinERAWithMODIS():
         return ERA_hour.where(longitude_filter & latitude_filter,drop=True)
     
 
-    def _haver(lat1_deg,lon1_deg,lat2_deg,lon2_deg):
+    def _haver(self,lat1_deg,lon1_deg,lat2_deg,lon2_deg):
         
         """
         Given coordinates of two points IN DEGREES calculate the haversine distance
