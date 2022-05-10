@@ -10,7 +10,7 @@ import pandas as pd
 from contextlib import suppress
 import faiss
 
-
+import sys
 
 class JoinERAWithMODIS():
 
@@ -269,6 +269,9 @@ class JoinERAWithMODIS():
     
             #Load the clake bonus data for that month. This is a clumsy method that needs cleaning up
             assert len(np.unique(timestamps.month)) == 1            # There should only be one value, an integer in range 1-12
+
+            sys.exit('Artifical exit')
+
             month = np.unique(timestamps.month)[0]                  # Select that one value        
             clake_month = self.monthly_clake_ds[f"month_{month}"]   # Get a month of data
             clake_month = clake_month.to_dataset()                  # Make it a dataset
