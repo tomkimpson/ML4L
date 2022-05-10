@@ -11,6 +11,8 @@ import numpy as np
 import tempfile
 
 
+import sys
+
 class ProcessERAData():
     """
     Class to process the raw ERA data which is mixed in different files into a cleaner form.
@@ -157,13 +159,21 @@ class ProcessERAData():
 
         
         
-        for i in range(len(ERA_sfc_files)):
+        #for i in range(len(ERA_sfc_files)):
+        for i in np.arange(1,2):
             sfc,skin,skt = ERA_sfc_files[i], ERA_skin_files[i], ERA_skt_files[i]
+
+            print ('sfc:', sfc)
+            print('skin:', skin)
+            print('skt', skt)
             y = skin.split('_')[-2] #read the year from the filename
             m = skin.split('_')[-1] #and the month.grib
             outfile  = f'{self.variable_output_path}ERA_{y}_{m}'
             
             print(outfile)
+
+           sys.exit()
+
             with tempfile.NamedTemporaryFile() as tmp1, tempfile.NamedTemporaryFile() as tmp2: #Create two tmp files to write to
         
                 tmpfile1,tmpfile2 = tmp1.name,tmp2.name
