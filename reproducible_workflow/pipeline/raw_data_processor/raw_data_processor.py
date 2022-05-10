@@ -11,7 +11,7 @@ import numpy as np
 import tempfile
 import pandas as pd
 from contextlib import suppress
-
+import faiss
 
 
 class ProcessERAData():
@@ -314,6 +314,104 @@ class JoinERAWithMODIS():
         return MODIS_data,time_UTC
 
 
+    def _get_ERA_hour(self,ERA_month,t,clake_month,bounds):
+        
+        """
+        Extract an hour of ERA data
+        """
+        
+        #Filter month of ERA data to an hour
+        time_filter = (ERA_month.time == t)
+        ERA_hour = ERA_month.where(time_filter,drop=True)
+        
+        #Grab the constant fields and make a local copy
+        v15 = self.ERA_constant_dict['v15'], 
+        v20 = self.ERA_constant_dict['v20']
+
+
+        #Join on the constant data V15 and v20, and the wetlands data, first setting the time coordinate
+        v15 = v15.assign_coords({"time": (((ERA_hour.time)))}) 
+        v20 = v20.assign_coords({"time": (((ERA_hour.time)))}) 
+        clake_month = clake_month.assign_coords({"time": (((ERA_hour.time)))})
+        
+        ERA_hour = xr.merge([ERA_hour,v15,v20, clake_month]).load() #Explicitly load 
+        
+        
+        #And covert longitude to long1
+        ERA_hour = ERA_hour.assign_coords({"longitude": (((ERA_hour.longitude + 180) % 360) - 180)})
+        
+        
+            
+        # Also filter by latitude/longtiude
+        longitude_filter = (ERA_hour.longitude > bounds['longitude_min']) & (ERA_hour.longitude < bounds['longitude_max'])
+        latitude_filter =  (ERA_hour.latitude > bounds['latitude_min']) & (ERA_hour.latitude < bounds['latitude_max'])
+        return ERA_hour.where(longitude_filter & latitude_filter,drop=True)
+    
+
+    def _haver(lat1_deg,lon1_deg,lat2_deg,lon2_deg):
+        
+        """
+        Given coordinates of two points IN DEGREES calculate the haversine distance
+        """
+        
+        #Convert degrees to radians
+        lat1 = np.deg2rad(lat1_deg)
+        lon1 = np.deg2rad(lon1_deg)
+        lat2 = np.deg2rad(lat2_deg)
+        lon2 = np.deg2rad(lon2_deg)
+
+
+        #...and the calculation
+        delta_lat = lat1 -lat2
+        delta_lon = lon1 -lon2
+        Re = 6371 #km
+        Z = np.sin(delta_lat/2)**2 + np.cos(lat1)*np.cos(lat2)*np.sin(delta_lon/2)**2
+        H = 2*Re*np.arcsin(np.sqrt(Z)) #Haversine distance in km
+        return H
+    
+
+    def _faiss_knn(database,query):
+        
+        """
+        Use faiss library (https://github.com/facebookresearch/faiss) for fass k-nearest neighbours on GPU
+        
+        Note that the nearness is an L2 (squared) norm on the lat/long coordinates, rather than a haversine metric
+        """
+        
+        #Database
+        xb = database[["latitude", "longitude"]].to_numpy().astype('float32')
+        xb = xb.copy(order='C') #C-contigious
+        
+        #Query
+        xq = query[["latitude", "longitude"]].to_numpy().astype('float32') 
+        xq = xq.copy(order='C')
+        
+        #Create index
+        d = 2                            # dimension
+        res = faiss.StandardGpuResources()
+        index_flat = faiss.IndexFlatL2(d) #index
+        gpu_index_flat = faiss.index_cpu_to_gpu(res, 0, index_flat) # make it into a gpu index
+        gpu_index_flat.add(xb)  
+        
+        #Search
+        k = 1                          # we want to see 1 nearest neighbors
+        distances, indices = gpu_index_flat.search(xq, k)
+            
+    
+        df = query.reset_index().join(database.iloc[indices.flatten()].reset_index(), lsuffix='_MODIS',rsuffix='_ERA')
+        df['L2_distance'] = distances
+        df['H_distance'] = _haver(df['latitude_MODIS'],df['longitude_MODIS'],df['latitude_ERA'],df['longitude_ERA']) #Haversine distance
+        
+        #Filter out any large distances
+        tolerance = 50 #km
+        df_filtered = df.query('H_distance < %.9f' % tolerance)
+
+        #Group it. Each ERA point has a bunch of MODIS points. Group and average
+        df_grouped = df_filtered.groupby(['latitude_ERA','longitude_ERA'],as_index=False).mean()
+
+        
+        return df_grouped
+
 
 
     def join(self):
@@ -344,7 +442,7 @@ class JoinERAWithMODIS():
             clake_month = clake_month.drop([f"month_{month}"])                 # ...and dropping the old one
             
 
-
+            dfs = []
             for t in timestamps: #iterate over every time (hour)
 
                 print(t)
@@ -358,3 +456,33 @@ class JoinERAWithMODIS():
                     with suppress(NameError):MODIS_data.close() #First close the old one explicitly. Exception handles case where MODIS_data not yet defined
                     MODIS_data,time_UTC = self._load_MODIS_file(date_string)
                     self.previous_datestring = date_string
+
+
+                # Filter to only select the hour of data we want
+                time_filter = np.expand_dims(time_UTC == t,axis=(0,1))
+                mask = np.logical_and(np.isfinite(MODIS_data),time_filter)
+                MODIS_hour = MODIS_data.where(mask,drop=True).load() 
+                MODIS_df = MODIS_hour.to_dataframe(name='MODIS_LST').reset_index().dropna() #Make everything a pandas df to pass into faiss_knn. Unnecessary step?
+
+                #Spatial bounds
+                #Get the limits of the MODIS box. We will use this to filter the ERA data for faster matching
+                #i.e. when looking for matches, dont need to look over the whole Earth, just a strip
+                delta = 1.0 # Enveloping box
+                bounds = {"latitude_min" : MODIS_df.latitude.min()-delta,
+                        "latitude_max" :   MODIS_df.latitude.max()+delta,
+                        "longitude_min":   MODIS_df.longitude.min()-delta,
+                        "longitude_max":   MODIS_df.longitude.max()+delta
+                }
+
+
+
+                # Get an hour of ERA data
+                ERA_hour = self._get_ERA_hour(ERA_month,t,clake_month,bounds) # Get an hour of all ERA data
+                ERA_df = ERA_hour.to_dataframe().reset_index()                # Make it a df
+
+
+                #Find matches in space
+                df_matched = _faiss_knn(ERA_df,MODIS_df) #Match reduced gaussian grid to MODIS
+                df_matched['time'] = t            
+                df_matched = df_matched.drop(['index_MODIS', 'band','spatial_ref','index_ERA','values','number','surface','depthBelowLandLayer'], axis=1) #get rid of all these columns that we dont need
+                dfs.append(df_matched)
