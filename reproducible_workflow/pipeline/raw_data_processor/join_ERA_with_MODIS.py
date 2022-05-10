@@ -258,7 +258,7 @@ class JoinERAWithMODIS():
 
 
         
-        for f in self.ERA_files[0:1]: #Iterate over all months
+        for f in self.ERA_files: #Iterate over all months
             #Load a month of ERA data
             print ('Loading ERA month:', f)
             ERA_month = xr.open_dataset(f,engine='cfgrib',backend_kwargs={'indexpath': ''})
@@ -278,7 +278,7 @@ class JoinERAWithMODIS():
             
 
             dfs = []
-            for t in timestamps[0:10]: #iterate over every time (hour)
+            for t in timestamps: #iterate over every time (hour)
 
                 print(t)
                 date_string = self._select_correct_MODIS_file(t) #For this datetime, which MODIS file should be opened? 
