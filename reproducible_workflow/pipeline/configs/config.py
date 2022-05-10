@@ -24,6 +24,7 @@ CFG = {
         "path_to_processed_V15_climate_fields": f'{root}processed_data/ERA_timeconstant/ERA2_constants_v15.nc',
         "path_to_processed_V20_climate_fields": f'{root}processed_data/ERA_timeconstant/ERA2_constants_v20.nc',
         "path_to_processed_variable_fields": f'{root}processed_data/ERA_timevariable/',
+        "path_to_joined_ERA_MODIS_files": f'{root}/joined_data/'
 
         #Parameters for processing raw data
         "tmpdir": f'{root}tmpdir',

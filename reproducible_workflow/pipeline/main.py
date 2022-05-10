@@ -1,6 +1,8 @@
 from configs.config import CFG
 from model.neural_net import NeuralNet
-from raw_data_processor.raw_data_processor import ProcessERAData,JoinERAWithMODIS
+from raw_data_processor.raw_data_processor import ProcessERAData
+from raw_data_processor.join_ERA_with_MODIS import JoinERAWithMODIS
+
 
 
 def process_raw_data():
@@ -12,7 +14,7 @@ def process_raw_data():
 
     joining_method =  JoinERAWithMODIS(CFG)
     joining_method.join()
-    
+
 def run():
     """Builds model, loads data, trains and evaluates"""
     model = NeuralNet(CFG) #Create a NN using CFG configuration
@@ -28,6 +30,3 @@ if __name__ == '__main__':
     process_raw_data()
 
 
-#print(buddy)
-
-#https://theaisummer.com/best-practices-deep-learning-code/
