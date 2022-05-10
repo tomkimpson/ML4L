@@ -19,7 +19,6 @@ class ProcessERAData():
     * process_time_variable_data() : Creates N monthly files for the variable-in-time fields
     
     """
-    print("Processing the raw ERA data into a more consistent and manageable form.")
 
     def __init__(self,cfg):         
         self.config = Config.from_json(cfg)                         # Configuration file
@@ -212,7 +211,7 @@ class JoinERAWithMODIS():
         name_dict={x:x+f'_{v}' for x in list(ds.keys())}
         ds = ds.rename(name_dict)
     
-        self.ERA_constant_dict[v] = ds
+        self.ERA_constants_dict[v] = ds
         ds.close()
         
 
