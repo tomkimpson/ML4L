@@ -266,7 +266,8 @@ class JoinERAWithMODIS():
             #Get all times in that month of data. These are on an hourly grain
             timestamps = pd.to_datetime(ERA_month.time) 
         
-    
+            print (timestamps.month)
+            print (np.unique(timestamps.month))
             #Load the clake bonus data for that month. This is a clumsy method that needs cleaning up
             assert len(np.unique(timestamps.month)) == 1            # There should only be one value, an integer in range 1-12
 
