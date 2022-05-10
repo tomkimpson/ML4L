@@ -10,6 +10,10 @@ import shutil
 import numpy as np
 import tempfile
 import pandas as pd
+from contextlib import suppress
+
+
+
 class ProcessERAData():
     """
     Class to process the raw ERA data which is mixed in different files into a cleaner form.
