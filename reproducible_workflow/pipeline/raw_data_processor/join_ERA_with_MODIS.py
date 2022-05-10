@@ -256,6 +256,8 @@ class JoinERAWithMODIS():
         #Load the monthly clake files
         self._load_monthly_clake_data()
 
+
+        print('IO PATH =',self.IO_path)
         for f in self.ERA_files[0:1]: #Iterate over all months
             #Load a month of ERA data
             print ('Loading ERA month:', f)
