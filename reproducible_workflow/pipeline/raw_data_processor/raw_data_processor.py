@@ -9,7 +9,7 @@ import os
 import shutil
 import numpy as np
 import tempfile
-
+import pandas as pd
 class ProcessERAData():
     """
     Class to process the raw ERA data which is mixed in different files into a cleaner form.
@@ -204,6 +204,29 @@ class JoinERAWithMODIS():
         self.monthly_clake_ds = xr.Dataset() #Empty ds
         self.ERA_files = sorted(glob.glob(self.config.data.path_to_processed_variable_fields+'*'))
 
+
+        self.min_hours = {"aquaDay":    self.config.data.aquaDay_min_hour,
+                          "terraDay":   self.config.data.terraDay_min_hour,
+                          "aquaNight":  self.config.data.aquaNight_min_hour,
+                          "terraNight": self.config.data.terraNight_min_hour }
+
+        self.max_hours = {"aquaDay":    self.config.data.aquaDay_max_hour,
+                          "terraDay":   self.config.data.terraDay_max_hour,
+                          "aquaNight":  self.config.data.aquaNight_max_hour,
+                          "terraNight": self.config.data.terraNight_max_hour}
+
+
+        self.local_times = {"aquaDay":   self.config.data.aquaDay_local_solar_time,
+                            "terraDay":   self.config.data.terraDay_local_solar_time,
+                            "aquaNight":  self.config.data.aquaNight_local_solar_time,
+                            "terraNight": self.config.data.terraNight_local_solar_time}
+
+        self.satellite = self.config.data.satellite
+        self.satellite_folder = self.config.data.path_to_MODIS_data
+        self.previous_datestring = None
+
+        self.latitude_bound = self.config.data.latitude_bound
+
     def _load_constant_ERA_data(self,f,v):
 
         ds = xr.open_dataset(f) #NetCDF file of features which are constant for each gridpoint
@@ -238,8 +261,57 @@ class JoinERAWithMODIS():
            # Later on we will select just the correspondig month
     
     
+    def _select_correct_MODIS_file(self,t):
+
+        """We have to be careful with the dateline. This function
+            figures out which MODIS file to load."""
+
+        #Get the hour
+        utc_hour = t.hour
+        
+        
+        #Due to crossing of the datetime, some times will be saved different date
+        if utc_hour < self.min_hours[self.satellite]:
+            file_date = t  - np.timedelta64(1,'D')
+        elif utc_hour > self.max_hours[self.satellite]:
+            file_date = t  + np.timedelta64(1,'D')
+        else:
+            file_date = t
+            
+        #Create a string which will be used to open file
+        y = pd.to_datetime(file_date).year
+        m = pd.to_datetime(file_date).month
+        d = pd.to_datetime(file_date).day
+        date_string = f'{y}-{m:02}-{d:02}'
+        
+        return date_string
     
-    
+    def _load_MODIS_file(self,date_string):
+        
+        """
+        Load a day of MODIS data, apply some filters and corrections
+        """
+        
+        #Open that file
+        MODIS_data = xr.open_dataarray(f'{self.satellite_folder}/{self.satellite}_errorGTE03K_04km_{date_string}.tif',engine="rasterio")
+
+        #Make some edits to file
+        MODIS_data = MODIS_data.rename({'x':'longitude','y':'latitude'})
+
+        #Filter by latitude bound
+        space_filter = np.expand_dims(np.abs(MODIS_data.latitude) < self.latitude_bound,axis=(0,-1))
+        mask = np.logical_and(np.isfinite(MODIS_data),space_filter) #make it a 2d mask
+        MODIS_data = MODIS_data.where(mask,drop=True)
+
+        #Convert local satellite time to UTC and round to nearest hour
+        time_delta = pd.to_timedelta(MODIS_data.longitude.data/15,unit='H') 
+        time_UTC = (pd.to_datetime([date_string + " " + self.local_times[self.satellite]]*time_delta.shape[0]) - time_delta).round('H')
+
+        return MODIS_data,time_UTC
+
+
+
+
     def join(self):
 
         #Load the constant ERA fields and append to dictionary self.ERA_constants_dict
@@ -249,5 +321,36 @@ class JoinERAWithMODIS():
         #Load the monthly clake files
         self._load_monthly_clake_data()
 
-        for f in self.ERA_files: #Iterate over all months
-            print(f)
+        for f in self.ERA_files[0:1]: #Iterate over all months
+            #Load a month of ERA data
+            print ('Loading ERA month:', f)
+            ERA_month = xr.open_dataset(f,engine='cfgrib',backend_kwargs={'indexpath': ''})
+    
+            #Get all times in that month of data. These are on an hourly grain
+            timestamps = pd.to_datetime(ERA_month.time) 
+        
+    
+            #Load the clake bonus data for that month. This is a clumsy method that needs cleaning up
+            assert len(np.unique(timestamps.month)) == 1            # There should only be one value, an integer in range 1-12
+            month = np.unique(timestamps.month)[0]                  # Select that one value        
+            clake_month = self.monthly_clake_ds[f"month_{month}"]   # Get a month of data
+            clake_month = clake_month.to_dataset()                  # Make it a dataset
+
+            clake_month['clake_monthly_value'] = clake_month[f"month_{month}"] # Rename data variable by declaring a new entry... 
+            clake_month = clake_month.drop([f"month_{month}"])                 # ...and dropping the old one
+            
+
+
+            for t in timestamps: #iterate over every time (hour)
+
+                print(t)
+                date_string = self._select_correct_MODIS_file(t) #For this datetime, which MODIS file should be opened? 
+                if date_string == '2017-12-31': continue #skip since we don't have this day. Would be better to replace this with self.min_year
+
+
+
+                if date_string != self.previous_datestring:
+                # We need to open a new file. 
+                with suppress(NameError):MODIS_data.close() #First close the old one explicitly. Exception handles case where MODIS_data not yet defined
+                MODIS_data,time_UTC = self._load_MODIS_file(date_string)
+                self.previous_datestring = date_string
