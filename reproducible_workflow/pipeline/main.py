@@ -5,7 +5,7 @@ from raw_data_processor.join_ERA_with_MODIS import JoinERAWithMODIS
 import argparse
  
 
-def process_raw_data():
+def process_raw_data(process_data, join_data):
 
     """
     Get all data together and prepared to pass into model.
@@ -13,13 +13,18 @@ def process_raw_data():
     Re-run when new data is introduced.
     """
 
+    if process_data:
+        print ('process data')
+
     #raw_data_pipeline = ProcessERAData(CFG)
     
     #raw_data_pipeline.process_time_constant_data()
     #raw_data_pipeline.process_time_variable_data()
 
-    joining_method =  JoinERAWithMODIS(CFG)
-    joining_method.join()
+    if join_data:
+        print('join data')
+        joining_method =  JoinERAWithMODIS(CFG)
+        joining_method.join()
 
 def run():
     """Builds model, loads data, trains and evaluates"""
@@ -46,6 +51,6 @@ if __name__ == '__main__':
 
 
 
-    process_raw_data()
+    process_raw_data(args.process_data,args.join_data)
 
 
