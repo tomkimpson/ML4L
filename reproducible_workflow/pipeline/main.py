@@ -35,12 +35,14 @@ def run():
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='Process data and train a model')
+    parser.add_argument('--process_data', dest='process_data', action='store_true',
+                        help="Process raw ERA data")
     parser.add_argument('--join_data', dest='join_data', action='store_true',
-                        help="Include CRPS/rank evaluation on small images")
+                        help="Join MODIS and ERA data")
     
 
     args = parser.parse_args()
-    print(args)
+    print(args.process_data)
 
 
 
