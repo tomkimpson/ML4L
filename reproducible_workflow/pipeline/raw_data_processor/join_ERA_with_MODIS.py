@@ -257,7 +257,7 @@ class JoinERAWithMODIS():
         self._load_monthly_clake_data()
 
 
-        print('IO PATH =',self.IO_path)
+        
         for f in self.ERA_files[0:1]: #Iterate over all months
             #Load a month of ERA data
             print ('Loading ERA month:', f)
@@ -331,8 +331,10 @@ class JoinERAWithMODIS():
         # At the end of every month, do some IO
         # Pkl is likely suboptimial here. Need to update to e.g. parquet, HDF, etc.
         df = pd.concat(dfs)
-        year_month = f.split('.')[0]
+        year_month = f.split['/'][-1].split('.')[0]
         fname = f'MODIS_{year_month}.pkl'
+        print('IO PATH =',self.IO_path)
+        print(year_month)
         print ("Writing to disk:", self.IO_path+fname)
         df.to_pickle(self.IO_path+fname)
         

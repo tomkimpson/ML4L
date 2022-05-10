@@ -34,15 +34,13 @@ def run():
 
 if __name__ == '__main__':
 
-    parser = argparse.ArgumentParser(description='Process some integers.')
-    parser.add_argument('integers', metavar='N', type=int, nargs='+',
-                        help='an integer for the accumulator')
-    parser.add_argument('--sum', dest='accumulate', action='store_const',
-                        const=sum, default=max,
-                        help='sum the integers (default: find the max)')
+    parser = argparse.ArgumentParser(description='Process data and train a model')
+    parser.add_argument('--join_data', dest='join_data', action='store_true',
+                        help="Include CRPS/rank evaluation on small images")
+    
 
     args = parser.parse_args()
-    print(args.accumulate(args.integers))
+    print(args)
 
 
 
