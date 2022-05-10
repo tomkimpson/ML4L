@@ -14,15 +14,13 @@ def process_raw_data(process_data, join_data):
     """
 
     if process_data:
-        print ('process data')
-
-    #raw_data_pipeline = ProcessERAData(CFG)
-    
-    #raw_data_pipeline.process_time_constant_data()
-    #raw_data_pipeline.process_time_variable_data()
+        #Process the raw ERA data
+        raw_data_pipeline = ProcessERAData(CFG)
+        raw_data_pipeline.process_time_constant_data()
+        raw_data_pipeline.process_time_variable_data()
 
     if join_data:
-        print('join data')
+        #Join the ERA and MODIS data together
         joining_method =  JoinERAWithMODIS(CFG)
         joining_method.join()
 
@@ -37,19 +35,22 @@ def run():
     #model.evaluate()
 
 
-if __name__ == '__main__':
 
+def parse_arguments():
+    """Parse command line arguments"""
     parser = argparse.ArgumentParser(description='Process data and train a model')
     parser.add_argument('--process_data', dest='process_data', action='store_true',
                         help="Process raw ERA data")
     parser.add_argument('--join_data', dest='join_data', action='store_true',
                         help="Join MODIS and ERA data")
+
+    return parser.parse_args()
+
+if __name__ == '__main__':
+
     
 
-    args = parser.parse_args()
-    print(args.process_data)
-
-
+    args = parse_arguments()
 
     process_raw_data(args.process_data,args.join_data)
 
