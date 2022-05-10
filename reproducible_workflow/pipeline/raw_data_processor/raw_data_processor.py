@@ -172,6 +172,14 @@ class ProcessERAData():
             
             print(outfile)
 
+            ERA_month_sfc = xr.open_dataset(sfc,engine='cfgrib',backend_kwargs={'indexpath': ''})
+            ERA_month_skin = xr.open_dataset(skin,engine='cfgrib',backend_kwargs={'indexpath': ''})
+            ERA_month_skt = xr.open_dataset(skt,engine='cfgrib',backend_kwargs={'indexpath': ''})
+
+            print(ERA_month_sfc)
+            print(ERA_month_skin)
+            print(ERA_month_skt)
+
             sys.exit()
 
             with tempfile.NamedTemporaryFile() as tmp1, tempfile.NamedTemporaryFile() as tmp2: #Create two tmp files to write to
