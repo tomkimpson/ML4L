@@ -172,7 +172,7 @@ class ProcessERAData():
             
             print(outfile)
 
-           sys.exit()
+            sys.exit()
 
             with tempfile.NamedTemporaryFile() as tmp1, tempfile.NamedTemporaryFile() as tmp2: #Create two tmp files to write to
         
