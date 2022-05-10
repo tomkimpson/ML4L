@@ -331,6 +331,9 @@ class JoinERAWithMODIS():
         # At the end of every month, do some IO
         # Pkl is likely suboptimial here. Need to update to e.g. parquet, HDF, etc.
         df = pd.concat(dfs)
+        print(f.split['/'])
+        print(f.split['/'][-1])
+        print(f.split['/'][-1].split('.'))
         year_month = f.split['/'][-1].split('.')[0]
         fname = f'MODIS_{year_month}.pkl'
         print('IO PATH =',self.IO_path)
