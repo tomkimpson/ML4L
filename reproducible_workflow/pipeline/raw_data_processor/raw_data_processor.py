@@ -11,8 +11,6 @@ import numpy as np
 import tempfile
 
 class ProcessERAData():
-    
-    
     """
     Class to process the raw ERA data which is mixed in different files into a cleaner form.
     Two functions which can be called:
@@ -183,3 +181,74 @@ class ProcessERAData():
                 #Merge ERA_sfc, our processed ERA_skin tmpfile and ERA_skt into a single file
                 query_merge = f'grib_copy {sfc} {tmpfile2} {skt} {outfile}'
                 os.system(query_merge)
+
+
+
+class JoinERAWithMODIS():
+
+    """
+   
+    
+    """
+    print("Joining ERA data with MODIS data")
+
+    def __init__(self,cfg):         
+        self.config = Config.from_json(cfg)                         # Configuration file
+        
+
+        self.ERA_constants_dict = {}
+        self.V15_output_path = self.config.data.path_to_processed_V15_climate_fields
+        self.V20_output_path = self.config.data.path_to_processed_V20_climate_fields
+        self.monthly_clake_files_path = self.config.data.path_to_monthly_clake_files
+
+
+        self.monthly_clake_ds = xr.Dataset() #Empty ds
+        self.ERA_files = sorted(glob.glob(self.config.data.path_to_processed_variable_fields+'*'))
+
+    def _load_constant_ERA_data(self,f,v):
+
+        ds = xr.open_dataset(f) #NetCDF file of features which are constant for each gridpoint
+        
+        name_dict={x:x+f'_{v}' for x in list(ds.keys())}
+        ds = ds.rename(name_dict)
+    
+        self.ERA_constant_dict[v] = ds
+        ds.close()
+        
+
+    def _load_monthly_clake_data(self):
+
+        monthly_clake_files = sorted(glob.glob(self.monthly_clake_files_path+'clake*'))
+        month_counter = 1
+        
+        for m in monthly_clake_files:
+            print(m)
+            ds_clake= xr.open_dataset(m,engine='cfgrib',backend_kwargs={'indexpath': ''}) 
+            
+            #Rename the parameter so everything is not cldiff
+            ds_clake = ds_clake.cl.rename(f'clake_monthly_value') #This is now a dataarray
+            
+            #Fix the time to be an integer
+            ds_clake['time'] = month_counter #i.e. what month it it? An integer between 1 and 12
+            
+            
+            #Append this to dataframe
+            self.monthly_clake_ds[f"month_{month_counter}"] = ds_clake 
+            month_counter += 1
+           # monthly_clake_ds is a dataset where each variable is month_1, month_2 etc. representing a global field for that time
+           # Later on we will select just the correspondig month
+    
+    
+    
+    
+    def join(self):
+
+        #Load the constant ERA fields and append to dictionary self.ERA_constants_dict
+        self._load_constant_ERA_data(self.V15_output_path,"v15")
+        self._load_constant_ERA_data(self.V20_output_path,"v20")
+
+        #Load the monthly clake files
+        self._load_monthly_clake_data()
+
+        for f in self.ERA_files: #Iterate over all months
+            print(f)

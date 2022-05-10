@@ -12,6 +12,7 @@ CFG = {
         "path_to_raw_ERA_skt": '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/ERA_skt/',
         "path_to_raw_V15_climate_fields": f'{root}climate.v015/climate.v015/639l_2/',
         "path_to_raw_V20_climate_fields": f'{root}climate.v020/climate.v020/639l_2/',
+        "path_to_monthly_clake_files": '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/BonusClimate/'
         
          #Edge cases to handle in ERA_skin
         "ERA_skin_constant_features": ['slt','sdfor'],                                   # These are the features in ERA_skin that are constant, but are not in the V* climate files
