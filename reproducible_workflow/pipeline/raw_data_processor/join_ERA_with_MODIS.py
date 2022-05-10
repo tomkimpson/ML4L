@@ -16,8 +16,6 @@ class JoinERAWithMODIS():
 
     """
     Class which takes all the MODIS data and all the ERA data and matches in time and space.
-    
-    
     """
 
     def __init__(self,cfg):         
@@ -60,6 +58,10 @@ class JoinERAWithMODIS():
 
     def _load_constant_ERA_data(self,f,v):
 
+        """
+        Load a version of the constant V15/V20 ERA data and append it to a global dictionary
+        """
+
         ds = xr.open_dataset(f) #NetCDF file of features which are constant for each gridpoint
         
         name_dict={x:x+f'_{v}' for x in list(ds.keys())}
@@ -70,6 +72,10 @@ class JoinERAWithMODIS():
         
 
     def _load_monthly_clake_data(self):
+
+        """
+        Load a version of the constant V15/V20 ERA data and append it to a global dictionary
+        """
 
         monthly_clake_files = sorted(glob.glob(self.monthly_clake_files_path+'clake*'))
         month_counter = 1
@@ -270,7 +276,7 @@ class JoinERAWithMODIS():
             
 
             dfs = []
-            for t in timestamps: #iterate over every time (hour)
+            for t in timestamps[0:10]: #iterate over every time (hour)
 
                 print(t)
                 date_string = self._select_correct_MODIS_file(t) #For this datetime, which MODIS file should be opened? 
