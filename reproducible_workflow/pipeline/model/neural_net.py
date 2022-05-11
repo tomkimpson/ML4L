@@ -76,7 +76,7 @@ class NeuralNet(BaseModel):
 
 
     #----------------DEV AREA
-    def load_data_alternative(self):
+    def load_data(self):
         self.training_data, self.validation_data = DataLoader().load_data(self.config.data)
         #self.training_data = self.training_data.map(self._parse_function)
         #self.training_data = self.validation_data.map(self._parse_function)
