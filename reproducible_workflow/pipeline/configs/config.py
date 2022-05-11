@@ -28,8 +28,8 @@ CFG = {
 
         #Parameters for processing raw data
         "tmpdir": f'{root}tmpdir',
-        "min_year":2018,
-        "max_year":2020,
+        "min_year":2016,
+        "max_year":2019,
          
         #Parameters for joining ERA/MODIS
         "aquaDay_min_hour":2,
