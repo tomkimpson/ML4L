@@ -38,6 +38,7 @@ def process_raw_data(process_data, join_data):
 
 def run():
     """Builds model, loads data, trains and evaluates"""
+    print('run')
     model = NeuralNet(CFG) #Create a NN using CFG configuration
     model.load_data_alternative()
     
@@ -63,6 +64,8 @@ if __name__ == '__main__':
     
 
     args = parse_arguments()
+    options = vars(args)
+    print(options)
 
     #process_raw_data(args.process_data,args.join_data)
     run()
