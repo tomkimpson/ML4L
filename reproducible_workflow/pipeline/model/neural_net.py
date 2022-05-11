@@ -73,9 +73,6 @@ class NeuralNet(BaseModel):
     #----------------DEV AREA
     def load_data_alternative(self):
         self.training_data, self.validation_data = DataLoader().load_data(self.config.data)
-        print (self.training_data.columns)
-        print (self.training_data)
-
         #self.training_data = self.training_data.map(self._parse_function)
         #self.training_data = self.validation_data.map(self._parse_function)
         #self._preprocess_data()
@@ -115,9 +112,25 @@ class NeuralNet(BaseModel):
                       metrics=self.metrics)
 
 
-    # def train_network(self):
-    #     history = model.fit(self.training_data, y, 
-    #                         epochs=epochs, batch_size=batch_size,
-    #                         verbose=1,
-    #                         validation_data=(x_val, y_val),
-    #                         callbacks=[early_stopping,model_checkpoint]) 
+    def train_network(self):
+
+        print('Training network with:')
+        self.model_status()
+
+        history = self.model.fit(self.training_data[self.training_features], 
+                                 self.training_data[self.target_variable], 
+                                 epochs=self.epochs, batch_size=self.batch_size,
+                                 verbose=1,
+                                 validation_data=(self.validation_data[self.training_features], self.validation_data[self.target_variable]),
+                                 ) 
+        return history
+
+
+
+    def _model_status(self):
+
+        print ('Epochs:', self.epochs)
+        print('Batch size:', self.batch_size)
+        print('Number of features:',len(self.training_features))
+        print ('Number of training samples:',len(self.training_data))
+        print(self.model.summary()))
