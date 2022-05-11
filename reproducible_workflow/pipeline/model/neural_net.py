@@ -86,7 +86,7 @@ class NeuralNet(BaseModel):
         nfeatures = len(self.training_features)
         print(self.training_features)
 
-        assert nfeatures == len(nodes_per_layer)
+        assert nfeatures == len(self.nodes_per_layer)
 
 
         if self.nodes_per_layer[0] is None:
