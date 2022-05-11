@@ -85,8 +85,8 @@ class NeuralNet(BaseModel):
         self.model = tf.keras.Sequential()
         nfeatures = len(self.training_features)
         print(self.training_features)
-
-        assert nfeatures == len(self.nodes_per_layer)
+        print(self.number_of_hidden_layers,self.nodes_per_layer)
+        assert self.number_of_hidden_layers == len(self.nodes_per_layer)
 
 
         if self.nodes_per_layer[0] is None:
