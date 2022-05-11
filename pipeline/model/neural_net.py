@@ -138,7 +138,7 @@ class NeuralNet():
                                             restore_best_weights=True)
     
         #Checkpoints
-        self.model_checkpoint = ModelCheckpoint(filepath = 'checkpoint', 
+        self.model_checkpoint = ModelCheckpoint(filepath = self.path_to_trained_models+'tmp_checkpoint', 
                                                 monitor='val_loss', 
                                                 save_best_only=True, 
                                                 mode='min',

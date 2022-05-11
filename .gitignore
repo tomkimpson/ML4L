@@ -1,3 +1,4 @@
 *.hdf
 *.out
 *.log
+*.pyc
