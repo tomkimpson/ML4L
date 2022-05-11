@@ -29,6 +29,8 @@ class NeuralNet(BaseModel):
         self.metrics = self.config.train.metrics
         self.loss = self.config.train.loss
         self.model = None
+        self.target_variable = self.config.train.target_variable
+        self.training_features = self.config.train.training_features
 
 
     def load_data(self):
@@ -79,9 +81,17 @@ class NeuralNet(BaseModel):
     def construct_network(self):
 
         self.model = tf.keras.Sequential()
+
+
+        nfeatures = len(self.training_features)
         print(self.training_features)
-        for n in range(self.number_of_hidden_layers):
-            self.model.add(tf.keras.layers.Dense(2,input_shape=(5,1),activation="relu",name=f"layer_{n}"))
+        print (self.nodes_per_layer)
+        print (self.nodes_per_layer)
+
+        #Create first hiddden layer with input shape
+        self.model.add(tf.keras.layers.Dense(int(nfeatures)/2,input_shape=(nfeatures,),activation="relu",name=f"layer_{n}"))
+        for n in range(self.number_of_hidden_layers-1):
+            self.model.add(tf.keras.layers.Dense(int(nfeatures)/2,activation="relu",name=f"layer_{n}"))
 
         self.model.add(tf.keras.layers.Dense(1, name='output'))
 

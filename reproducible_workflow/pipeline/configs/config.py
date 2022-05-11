@@ -59,9 +59,10 @@ CFG = {
         "buffer_size": 1000,
         "epochs": 20,
         "number_of_hidden_layers":2,
-        "nodes_per_layer": [5,5],
+        "nodes_per_layer": [None,None],
         "val_subsplits": 5,
-        "training_features": ["abc", "def"],
+        "training_features": ['sp', 'msl', 'u10', 'v10'],
+        "target_variable": 'MODIS_LST',
         "learning_rate": 3e-4,
         "loss": 'mse',
         "optimizer": {
