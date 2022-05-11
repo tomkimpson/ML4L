@@ -80,6 +80,8 @@ class NeuralNet(BaseModel):
 
     def construct_network(self):
 
+
+        print ('CONSTRUCT NETWROK')
         self.model = tf.keras.Sequential()
 
 
