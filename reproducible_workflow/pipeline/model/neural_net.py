@@ -22,7 +22,7 @@ class NeuralNet():
         
 
         self.config = Config.from_json(cfg)
-        self.cfg_json = cfg   
+        self.train_json = cfg.train   
 
         self.batch_size = self.config.train.batch_size
         self.epochs = self.config.train.epochs
@@ -164,9 +164,9 @@ class NeuralNet():
         
         print('configs')
         print(self.config)
-        print(self.cfg_json)
+        print(self.train_json)
         
         
-        #json.dump(self.config, open(save_dir+'cfg.json', 'w'))
+        json.dump(self.train_json, open(save_dir+'train.json', 'w'))
 
 
