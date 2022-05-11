@@ -133,4 +133,4 @@ class NeuralNet(BaseModel):
         print('Batch size:', self.batch_size)
         print('Number of features:',len(self.training_features))
         print ('Number of training samples:',len(self.training_data))
-        print(self.model.summary()))
+        print(self.model.summary())
