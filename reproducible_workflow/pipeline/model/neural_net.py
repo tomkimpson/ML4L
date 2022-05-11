@@ -54,15 +54,12 @@ class NeuralNet(BaseModel):
 
         return image,label    
     
-    # #instance method: functions defined inside a class that can only be called from an instance of that class
-    # def description(self):
-    #     return f"{self.name} is {self.age} years old"
 
-    # def speak(self):
-    #     return f"{self.name} says {sound}"
 
-    # def __str__(self):
-    #     return f"{self.name} is a very good boy who is {self.age} years old"
 
-    # def __repr__(self):
-    #     return f"{self.name} is a very good boy in the repr who is {self.age} years old"
+    #----------------DEV AREA
+    def load_data_alternative(self):
+        self.training_data, self.validation_data = DataLoader().load_data(self.config.data)
+        #self.training_data = self.training_data.map(self._parse_function)
+        #self.training_data = self.validation_data.map(self._parse_function)
+        #self._preprocess_data()

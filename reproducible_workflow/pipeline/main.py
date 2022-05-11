@@ -24,12 +24,24 @@ def process_raw_data(process_data, join_data):
         joining_method =  JoinERAWithMODIS(CFG)
         joining_method.join()
 
+
+    #if allocate train/valid/test
+    #COPY, dont move, raw data into working train/valid/test directories
+
+
+    #create large files
+    #how long do these pre processing steps take?
+    #Are they necessary?
+
+
+    #create small files
+
 def run():
     """Builds model, loads data, trains and evaluates"""
     model = NeuralNet(CFG) #Create a NN using CFG configuration
-    model.load_data()
+    model.load_data_alternative()
     
-    print(model.training_data)
+    #print(model.training_data)
     #model.build()
     #model.train()
     #model.evaluate()
@@ -52,6 +64,6 @@ if __name__ == '__main__':
 
     args = parse_arguments()
 
-    process_raw_data(args.process_data,args.join_data)
-
+    #process_raw_data(args.process_data,args.join_data)
+    run()
 

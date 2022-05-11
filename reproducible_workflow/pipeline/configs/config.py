@@ -51,9 +51,8 @@ CFG = {
         "satellite":'aquaDay',
         "latitude_bound": 70,
 
-        "training_data": '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/test_data.tfrecords',
-        "validation_data": '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/processed_data/joined_data/test_data.tfrecords'
-
+        "training_data": f'{root}joined_data/training_data_with_monthly_lakes_w_lakes.h5',
+        "validation_data": f'{root}joined_data/validation_data_with_monthly_lakes_w_lakes.h5'
     },
     "train": {
         "batch_size": 64,
