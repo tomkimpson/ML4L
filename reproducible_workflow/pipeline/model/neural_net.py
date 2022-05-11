@@ -153,6 +153,11 @@ class NeuralNet(BaseModel):
         self.model.save(save_dir+'trained_model') 
         history_dict = self.history.history
         json.dump(history_dict, open(save_dir+'history.json', 'w'))
-        json.dump(self.config, open(save_dir+'cfg.json', 'w'))
+        
+        
+        print(self.config)
+        print(json.dumps(self.config))
+        
+        #json.dump(self.config, open(save_dir+'cfg.json', 'w'))
 
 
