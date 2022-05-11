@@ -40,8 +40,8 @@ def run():
     """Builds model, loads data, trains and evaluates"""
     print('run')
     model = NeuralNet(CFG) #Create a NN using CFG configuration
-    model.load_data_alternative()
-    
+    #model.load_data_alternative()
+    model.construct_network()
     #print(model.training_data)
     #model.build()
     #model.train()

@@ -18,6 +18,9 @@ class NeuralNet(BaseModel):
         super().__init__(config) #call the constructor, aka the init of the parent class
         
         self.batch_size = self.config.train.batch_size
+        self.epochs = self.config.train.epochs
+        self.number_of_hidden_layers = self.config.train.number_of_hidden_layers
+        self.nodes_per_layer = self.config.train.nodes_per_layer
         self.training_data = None
         self.validation_data = None   
         
@@ -63,3 +66,17 @@ class NeuralNet(BaseModel):
         #self.training_data = self.training_data.map(self._parse_function)
         #self.training_data = self.validation_data.map(self._parse_function)
         #self._preprocess_data()
+
+
+    def construct_network(self):
+
+        model = tf.keras.Sequential()
+
+        for n in range(self.number_of_hidden_layers):
+            model.add(tf.keras.layers.Dense.Dense(2, activation="relu"),name=f'layer_{n}')
+
+        model.add(tf.keras.layers.Dense(1, name='output'))
+
+
+        print ('created a model')
+        print('model.summary()')

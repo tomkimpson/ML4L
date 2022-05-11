@@ -14,10 +14,12 @@ class DataLoader:
     def load_data(data_config):
         """Loads dataset from path"""
 
-        s1 = os.path.getsize(data_config.training_data)
-        s2 = os.path.getsize(data_config.validation_data)
+        training_data_size = os.path.getsize(data_config.training_data)
+        validation_data_size = os.path.getsize(data_config.validation_data)
 
-        print ('size s1:', s1)
+        print ('Size of training data:', training_data_size/1e9 , ' G')
+        print ('Size of validation data:', validation_data_size/1e9 , ' G')
+
 
         #return tf.data.TFRecordDataset(data_config.training_data),tf.data.TFRecordDataset(data_config.validation_data)
         return pd.read_hdf(data_config.training_data), pd.read_hdf(data_config.validation_data), 

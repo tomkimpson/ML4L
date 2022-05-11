@@ -57,7 +57,9 @@ CFG = {
     "train": {
         "batch_size": 64,
         "buffer_size": 1000,
-        "epoches": 20,
+        "epochs": 20,
+        "number_of_hidden_layers":2,
+        "nodes_per_layer": [5,5],
         "val_subsplits": 5,
         "optimizer": {
             "type": "adam"
