@@ -55,9 +55,9 @@ CFG = {
         "validation_data": f'{root}processed_data/joined_data/validation_data_with_monthly_lakes_w_lakes.h5'
     },
     "train": {
-        "batch_size": 64,
+        "batch_size": 10000,
         "buffer_size": 1000,
-        "epochs": 20,
+        "epochs": 2,
         "number_of_hidden_layers":2,
         "nodes_per_layer": [None,None],
         "val_subsplits": 5,
@@ -65,7 +65,9 @@ CFG = {
         "target_variable": 'MODIS_LST',
         "learning_rate": 3e-4,
         "loss": 'mse',
-        "metrics": ["accuracy"]
+        "metrics": ["accuracy"],
+        "path_to_trained_models": f'{root}processed_data/trained_models/',
+        "model_name": 'badger'
     },
     "model": {
         "input": [128, 128, 3],

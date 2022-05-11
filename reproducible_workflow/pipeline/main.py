@@ -43,10 +43,10 @@ def train_and_predict(train_model):
 
     if train_model:
 
-        NN.load_data_alternative()
-        NN.construct_network() #Construct and compile
-        NN.train_network()
-    
+        NN.load_data_alternative() # Load the training and validation data
+        NN.construct_network()     # Construct and compile the network
+        NN.train_network()         # Train it
+        NN.save_model()            # Save the trained model
 
 
 
