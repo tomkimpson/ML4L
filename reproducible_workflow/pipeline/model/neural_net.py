@@ -152,13 +152,16 @@ class NeuralNet():
         #Create a directory where we will save everything
         os.mkdir(save_dir)
 
-
+        print ('make dir')
         # Save the trained NN and the training history
+        print ('save model')
         self.model.save(save_dir+'trained_model') 
+
+        print('save history')
         history_dict = self.history.history
         json.dump(history_dict, open(save_dir+'history.json', 'w'))
         
-        
+        print('configs')
         print(self.config)
         print(self.cfg)
         
