@@ -25,7 +25,12 @@ class NeuralNet(BaseModel):
         self.validation_data = None   
         
         self.training_features = self.config.train.training_features
-        
+        self.LR = self.config.train.learning_rate
+        self.metrics = self.config.train.metrics
+        self.loss = self.config.train.loss
+        self.model = None
+
+
     def load_data(self):
         self.training_data, self.validation_data = DataLoader().load_data(self.config.data)
         self.training_data = self.training_data.map(self._parse_function)
@@ -63,6 +68,9 @@ class NeuralNet(BaseModel):
     #----------------DEV AREA
     def load_data_alternative(self):
         self.training_data, self.validation_data = DataLoader().load_data(self.config.data)
+        print (self.training_data.columns)
+        print (self.training_data)
+
         #self.training_data = self.training_data.map(self._parse_function)
         #self.training_data = self.validation_data.map(self._parse_function)
         #self._preprocess_data()
@@ -70,13 +78,28 @@ class NeuralNet(BaseModel):
 
     def construct_network(self):
 
-        model = tf.keras.Sequential()
+        self.model = tf.keras.Sequential()
         print(self.training_features)
         for n in range(self.number_of_hidden_layers):
-            model.add(tf.keras.layers.Dense(2,input_shape=(5,1),activation="relu",name=f"layer_{n}"))
+            self.model.add(tf.keras.layers.Dense(2,input_shape=(5,1),activation="relu",name=f"layer_{n}"))
 
-        model.add(tf.keras.layers.Dense(1, name='output'))
+        self.model.add(tf.keras.layers.Dense(1, name='output'))
 
 
         print ('created a model')
-        print(model.summary())
+        print(self.model.summary())
+
+
+        #Compile it
+        opt = tf.keras.optimizers.Adam(learning_rate=self.LR) 
+        self.model.compile(optimizer=opt,
+                      loss=self.loss,
+                      metrics=self.metrics)
+
+
+    # def train_network(self):
+    #     history = model.fit(self.training_data, y, 
+    #                         epochs=epochs, batch_size=batch_size,
+    #                         verbose=1,
+    #                         validation_data=(x_val, y_val),
+    #                         callbacks=[early_stopping,model_checkpoint]) 

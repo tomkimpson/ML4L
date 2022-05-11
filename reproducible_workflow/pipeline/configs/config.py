@@ -62,6 +62,8 @@ CFG = {
         "nodes_per_layer": [5,5],
         "val_subsplits": 5,
         "training_features": ["abc", "def"],
+        "LR": 3e-4,
+        "loss": 'mse',
         "optimizer": {
             "type": "adam"
         },
