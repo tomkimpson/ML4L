@@ -267,7 +267,7 @@ class JoinERAWithMODIS():
             timestamps = pd.to_datetime(ERA_month.time) 
 
             #------------------------
-            month = np.unique(timestamps)[0]
+            month = np.unique(timestamps.month)[0]
             clake_month = self.monthly_clake_ds[f"month_{month}"]   
             clake_month = clake_month.to_dataset()                 
             clake_month['clake_monthly_value'] = clake_month[f"month_{month}"] # Rename data variable by declaring a new entry... 
