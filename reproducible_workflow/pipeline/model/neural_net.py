@@ -1,7 +1,8 @@
 
 
 #internal
-from .base_model import BaseModel 
+#from .base_model import BaseModel 
+from utils.config import Config 
 from dataloader.dataloader import DataLoader
 
 #external
@@ -12,13 +13,16 @@ import json
 import shutil
 
 
-class NeuralNet(BaseModel):
+class NeuralNet():
 
     #species = "Canis familiaris" #this is a class attribute. True for ALL dogs
 
-    def __init__(self,config): 
-        super().__init__(config) #call the constructor, aka the init of the parent class
+    def __init__(self,cfg): 
+        #super().__init__(config) #call the constructor, aka the init of the parent class
         
+
+        self.config = Config.from_json(cfg)   
+
         self.batch_size = self.config.train.batch_size
         self.epochs = self.config.train.epochs
         self.number_of_hidden_layers = self.config.train.number_of_hidden_layers
@@ -156,7 +160,8 @@ class NeuralNet(BaseModel):
         
         
         print(self.config)
-        print(json.dumps(self.config))
+        print(self.cfg)
+        
         
         #json.dump(self.config, open(save_dir+'cfg.json', 'w'))
 
