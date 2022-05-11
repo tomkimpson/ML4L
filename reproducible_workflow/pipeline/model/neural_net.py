@@ -31,7 +31,7 @@ class NeuralNet(BaseModel):
         self.model = None
         self.target_variable = self.config.train.target_variable
         self.training_features = self.config.train.training_features
-
+        self.nfeatures = len(self.training_features)
 
         assert self.number_of_hidden_layers == len(self.nodes_per_layer)
 
@@ -80,42 +80,37 @@ class NeuralNet(BaseModel):
 
     def construct_network(self):
 
-
-        print ('CONSTRUCT NETWROK')
-        self.model = tf.keras.Sequential()
-        nfeatures = len(self.training_features)
-
-        
-
-
+        #Get the number of nodes for each layer
+        #If none, defaults to nfeatures/2 for each layer
         if self.nodes_per_layer[0] is None:
-            node = [int(nfeatures)/2]*nfeatures
+            node = [int(self.nfeatures)/2]*self.nfeatures
         else:
             node = self.nodes_per_layer
 
-        #Create first hiddden layer with input shape
-        self.model.add(tf.keras.layers.Dense(node[0],input_shape=(nfeatures,),activation="relu",name=f"layer_0"))
-        for n in range(1,self.number_of_hidden_layers):
+
+        # Define network model
+        self.model = tf.keras.Sequential()                               # Initiate sequential model
+        self.model.add(tf.keras.layers.Dense(node[0],
+                                        input_shape=(self.nfeatures,),
+                                        activation="relu",
+                                        name=f"layer_0"))                # Create first hidden layer with input shape
+        for n in range(1,self.number_of_hidden_layers):                  # Iterate over remaining hidden layers
             self.model.add(tf.keras.layers.Dense(node[n],activation="relu",name=f"layer_{n}"))
 
-        self.model.add(tf.keras.layers.Dense(1, name='output'))
-
-
-        print ('created a model')
-        print(self.model.summary())
+        self.model.add(tf.keras.layers.Dense(1, name='output'))          # And finally define an output layer 
 
 
         #Compile it
-        opt = tf.keras.optimizers.Adam(learning_rate=self.LR) 
+        opt = tf.keras.optimizers.Adam(learning_rate=self.LR) #Always use Adam
         self.model.compile(optimizer=opt,
-                      loss=self.loss,
-                      metrics=self.metrics)
+                           loss=self.loss,
+                           metrics=self.metrics)
 
 
     def train_network(self):
 
         print('Training network with:')
-        self.model_status()
+        self._model_status()
 
         history = self.model.fit(self.training_data[self.training_features], 
                                  self.training_data[self.target_variable], 

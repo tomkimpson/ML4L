@@ -65,9 +65,6 @@ CFG = {
         "target_variable": 'MODIS_LST',
         "learning_rate": 3e-4,
         "loss": 'mse',
-        "optimizer": {
-            "type": "adam"
-        },
         "metrics": ["accuracy"]
     },
     "model": {
