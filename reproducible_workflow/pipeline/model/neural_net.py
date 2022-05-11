@@ -11,6 +11,7 @@ import numpy as np
 import os
 import json
 import shutil
+from tensorflow.keras.callbacks import EarlyStopping,ModelCheckpoint
 
 
 class NeuralNet():
@@ -42,6 +43,9 @@ class NeuralNet():
         self.path_to_trained_models = self.config.train.path_to_trained_models
         self.model_name = self.config.train.model_name
         self.overwrite = self.config.train.overwrite
+        self.epoch_save_freq = self.config.train.epoch_save_freq
+        self.stopping_patience = self.config.train.early_stopping_patience
+
 
         #Checks
         if os.path.exists(self.path_to_trained_models + self.model_name):
@@ -124,6 +128,29 @@ class NeuralNet():
                            metrics=self.metrics)
 
 
+        #Define early stopping criteria
+        self.early_stopping = EarlyStopping(monitor='val_loss',
+                                            min_delta=0,
+                                            patience=self.stopping_patience,
+                                            verbose=1,
+                                            mode='auto',
+                                            baseline=None,
+                                            restore_best_weights=True)
+    
+        #Checkpoints
+        self.model_checkpoint = ModelCheckpoint(filepath = 'checkpoint', 
+                                                monitor='val_loss', 
+                                                save_best_only=True, 
+                                                mode='min',
+                                                save_freq=int(self.epoch_save_freq * len(self.training_data) / self.batch_size), #save best model every epoch_save_freq epochs
+                                                )
+
+
+
+
+
+
+
     def train_network(self):
 
         print('Training network with:')
@@ -134,6 +161,7 @@ class NeuralNet():
                                  epochs=self.epochs, batch_size=self.batch_size,
                                  verbose=1,
                                  validation_data=(self.validation_data[self.training_features], self.validation_data[self.target_variable]),
+                                 callbacks=[self.early_stopping,self.model_checkpoint]
                                  ) 
 
     def _model_status(self):
@@ -155,7 +183,7 @@ class NeuralNet():
         # Save the trained NN and the training history
         self.model.save(save_dir+'/trained_model') 
         history_dict = self.history.history
-        json.dump(history_dict, open(save_dir+'/history.json', 'w'))          # Save the training history
+        json.dump(history_dict, open(save_dir+'/training_history.json', 'w'))          # Save the training history
         json.dump(self.train_json, open(save_dir+'/configuration.json', 'w')) # Save the complete configuration used
 
 

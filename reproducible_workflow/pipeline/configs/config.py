@@ -68,7 +68,10 @@ CFG = {
         "metrics": ["accuracy"],
         "path_to_trained_models": f'{root}processed_data/trained_models/',
         "model_name": 'badger',
-        "overwrite": True
+        "overwrite": True,
+        "use_pretrained_model":False,
+        "epoch_save_freq": 10,
+        "early_stopping_patience":20
     },
     "model": {
         "input": [128, 128, 3],
