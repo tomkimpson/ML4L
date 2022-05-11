@@ -73,10 +73,11 @@ class NeuralNet(BaseModel):
         model = tf.keras.Sequential()
 
         for n in range(self.number_of_hidden_layers):
-            model.add(tf.keras.layers.Dense(2, activation="relu"),name=f'layer_{n}')
+            model.add(Dense(2,input_shape=(5,1),name="NAME"))
+            #model.add(tf.keras.layers.Dense(2, activation="relu"),name=f'layer_{n}')
 
-        model.add(tf.keras.layers.Dense(1, name='output'))
+        #model.add(tf.keras.layers.Dense(1, name='output'))
 
 
         print ('created a model')
-        print('model.summary()')
+        print(model.summary())
