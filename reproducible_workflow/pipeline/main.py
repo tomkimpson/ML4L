@@ -36,19 +36,17 @@ def process_raw_data(process_data, join_data):
 
     #create small files
 
-def run():
+def train_and_predict(train_model):
     """Builds model, loads data, trains and evaluates"""
-    print('run')
-    model = NeuralNet(CFG) #Create a NN using CFG configuration
+    NN = NeuralNet(CFG) #Create a NN using CFG configuration
     
-    model.load_data_alternative()
-    model.construct_network() #Construct and compile
+
+    if train_model:
+
+        NN.load_data_alternative()
+        NN.construct_network() #Construct and compile
+        NN.train_network()
     
-    
-    #print(model.training_data)
-    #model.build()
-    #model.train()
-    #model.evaluate()
 
 
 
@@ -59,7 +57,8 @@ def parse_arguments():
                         help="Process raw ERA data")
     parser.add_argument('--join_data', dest='join_data', action='store_true',
                         help="Join MODIS and ERA data")
-
+    parser.add_argument('--train_model', dest='train_model', action='store_true',
+                        help="Train a model")
     return parser.parse_args()
 
 if __name__ == '__main__':
@@ -73,6 +72,6 @@ if __name__ == '__main__':
         print(k, v)
     print ('------------------------------')
 
-    #process_raw_data(args.process_data,args.join_data)
-    run()
+    process_raw_data(args.process_data,args.join_data)
+    train_and_predict(args.train_model)
 
