@@ -61,6 +61,7 @@ CFG = {
         "number_of_hidden_layers":2,
         "nodes_per_layer": [5,5],
         "val_subsplits": 5,
+        "training_features": ["abc", "def"],
         "optimizer": {
             "type": "adam"
         },

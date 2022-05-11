@@ -24,7 +24,7 @@ class NeuralNet(BaseModel):
         self.training_data = None
         self.validation_data = None   
         
-        
+        self.training_features = self.config.train.training_features
         
     def load_data(self):
         self.training_data, self.validation_data = DataLoader().load_data(self.config.data)
@@ -71,7 +71,7 @@ class NeuralNet(BaseModel):
     def construct_network(self):
 
         model = tf.keras.Sequential()
-
+        print(self.training_features)
         for n in range(self.number_of_hidden_layers):
             model.add(tf.keras.layers.Dense(2,input_shape=(5,1),activation="relu",name=f"layer_{n}"))
 
