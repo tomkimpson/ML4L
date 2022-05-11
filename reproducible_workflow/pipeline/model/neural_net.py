@@ -83,17 +83,24 @@ class NeuralNet(BaseModel):
 
         print ('CONSTRUCT NETWROK')
         self.model = tf.keras.Sequential()
-
-
         nfeatures = len(self.training_features)
         print(self.training_features)
+
+        assert nfeatures == len(nodes_per_layer)
+
+
+        if self.nodes_per_layer[0] is None:
+            node = [int(nfeatures)/2]*nfeatures
+        else:
+            node = self.nodes_per_layer
+
         print (self.nodes_per_layer)
         print (self.nodes_per_layer)
 
         #Create first hiddden layer with input shape
-        self.model.add(tf.keras.layers.Dense(int(nfeatures)/2,input_shape=(nfeatures,),activation="relu",name=f"layer_{n}"))
-        for n in range(self.number_of_hidden_layers-1):
-            self.model.add(tf.keras.layers.Dense(int(nfeatures)/2,activation="relu",name=f"layer_{n}"))
+        self.model.add(tf.keras.layers.Dense(node[0],input_shape=(nfeatures,),activation="relu",name=f"layer_1"))
+        for n in range(1,self.number_of_hidden_layers):
+            self.model.add(tf.keras.layers.Dense(node[n],activation="relu",name=f"layer_{n}"))
 
         self.model.add(tf.keras.layers.Dense(1, name='output'))
 
