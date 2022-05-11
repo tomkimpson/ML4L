@@ -51,8 +51,8 @@ CFG = {
         "satellite":'aquaDay',
         "latitude_bound": 70,
 
-        "training_data": f'{root}joined_data/training_data_with_monthly_lakes_w_lakes.h5',
-        "validation_data": f'{root}joined_data/validation_data_with_monthly_lakes_w_lakes.h5'
+        "training_data": f'{root}processed_data/joined_data/training_data_with_monthly_lakes_w_lakes.h5',
+        "validation_data": f'{root}processed_data/joined_data/validation_data_with_monthly_lakes_w_lakes.h5'
     },
     "train": {
         "batch_size": 64,
