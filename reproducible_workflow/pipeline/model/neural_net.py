@@ -37,7 +37,7 @@ class NeuralNet(BaseModel):
 
 
         #Checks
-        if not os.path.exists(self.path_to_trained_models + self.model_name): raise Exception( "Save directory already exists" )
+        if os.path.exists(self.path_to_trained_models + self.model_name): raise Exception( "Save directory already exists" )
         #assert not   # Save directory does not already exist
         assert self.number_of_hidden_layers == len(self.nodes_per_layer)          # Number of layers = number of specified nodes
 
