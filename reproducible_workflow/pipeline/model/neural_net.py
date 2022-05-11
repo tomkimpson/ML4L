@@ -89,7 +89,7 @@ class NeuralNet(BaseModel):
 
 
         # Define network model
-        self.model = tf.keras.Sequential()                               # Initiate sequential model
+        self.model = tf.keras.Sequential(name='PredictLST')                               # Initiate sequential model
         self.model.add(tf.keras.layers.Dense(node[0],
                                         input_shape=(self.nfeatures,),
                                         activation="relu",

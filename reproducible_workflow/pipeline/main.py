@@ -65,12 +65,17 @@ if __name__ == '__main__':
 
     
     print ('-------------------------------')
+    print ('-------------------------------')
+    print ('-------------------------------')
+
     args = parse_arguments()
     options = vars(args)
     print('Running ML4L with arguments:')
     for k, v in options.items():
         print(k, v)
     print ('------------------------------')
+    print ('-------------------------------')
+    print ('-------------------------------')
 
     process_raw_data(args.process_data,args.join_data)
     train_and_predict(args.train_model)
