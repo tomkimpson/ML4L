@@ -266,19 +266,30 @@ class JoinERAWithMODIS():
             #Get all times in that month of data. These are on an hourly grain
             timestamps = pd.to_datetime(ERA_month.time) 
 
+            #------------------------
+            month = np.unique(timestamps)[0]
+            clake_month = self.monthly_clake_ds[f"month_{month}"]   
+            clake_month = clake_month.to_dataset()                 
+            clake_month['clake_monthly_value'] = clake_month[f"month_{month}"] # Rename data variable by declaring a new entry... 
+            clake_month = clake_month.drop([f"month_{month}"])                 # ...and dropping the old one
+           #-----------------------
+
+
+
+
             dfs = []
             for t in timestamps: #iterate over every time (hour)
 
                 print(t)
 
-                #First grab the clake bonus data for that month
-                #Note that we do this every timestamp, rather just doing it once per ERA month since ERA month sometimes
-                #contains values over two months e.g. all of February and the first day of March.
-                #There may be a more efficeint work aaround but these 4 lines are very inexpensive so can stay here for now. 
-                clake_month = self.monthly_clake_ds[f"month_{t.month}"]   
-                clake_month = clake_month.to_dataset()                 
-                clake_month['clake_monthly_value'] = clake_month[f"month_{t.month}"] # Rename data variable by declaring a new entry... 
-                clake_month = clake_month.drop([f"month_{t.month}"])                 # ...and dropping the old one
+                # #First grab the clake bonus data for that month
+                # #Note that we do this every timestamp, rather just doing it once per ERA month since ERA month sometimes
+                # #contains values over two months e.g. all of February and the first day of March.
+                # #There may be a more efficeint work aaround but these 4 lines are very inexpensive so can stay here for now. 
+                # clake_month = self.monthly_clake_ds[f"month_{t.month}"]   
+                # clake_month = clake_month.to_dataset()                 
+                # clake_month['clake_monthly_value'] = clake_month[f"month_{t.month}"] # Rename data variable by declaring a new entry... 
+                # clake_month = clake_month.drop([f"month_{t.month}"])                 # ...and dropping the old one
 
 
 
