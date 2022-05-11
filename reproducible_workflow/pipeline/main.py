@@ -62,10 +62,13 @@ def parse_arguments():
 if __name__ == '__main__':
 
     
-
+    print ('-------------------------------')
     args = parse_arguments()
     options = vars(args)
-    print(options)
+    print('Running ML4L with arguments:')
+    for k, v in options.items():
+        print(k, v)
+    print ('------------------------------')
 
     #process_raw_data(args.process_data,args.join_data)
     run()
