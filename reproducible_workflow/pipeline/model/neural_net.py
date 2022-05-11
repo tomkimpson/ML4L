@@ -21,7 +21,8 @@ class NeuralNet():
         #super().__init__(config) #call the constructor, aka the init of the parent class
         
 
-        self.config = Config.from_json(cfg)   
+        self.config = Config.from_json(cfg)
+        self.cfg_json = cfg   
 
         self.batch_size = self.config.train.batch_size
         self.epochs = self.config.train.epochs
@@ -163,7 +164,7 @@ class NeuralNet():
         
         print('configs')
         print(self.config)
-        print(self.cfg)
+        print(self.cfg_json)
         
         
         #json.dump(self.config, open(save_dir+'cfg.json', 'w'))
