@@ -17,8 +17,8 @@ class DataLoader:
         training_data_size = os.path.getsize(data_config.training_data)
         validation_data_size = os.path.getsize(data_config.validation_data)
 
-        print ('Size of training data:', training_data_size/1e9 , ' G' %.2f)
-        print ('Size of validation data:', validation_data_size/1e9 , ' G' %.2f)
+        print ('Size of training data:', round(training_data_size/1e9,2) , ' G')
+        print ('Size of validation data:', round(validation_data_size/1e9,2) , ' G')
 
 
         #return tf.data.TFRecordDataset(data_config.training_data),tf.data.TFRecordDataset(data_config.validation_data)
