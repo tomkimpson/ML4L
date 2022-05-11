@@ -9,6 +9,8 @@ import tensorflow as tf
 import numpy as np
 import os
 import json
+import shutil
+
 
 class NeuralNet(BaseModel):
 
@@ -37,7 +39,12 @@ class NeuralNet(BaseModel):
         self.overwrite = self.config.train.overwrite
 
         #Checks
-        if os.path.exists(self.path_to_trained_models + self.model_name) & self.overwrite is False: raise Exception( "Save directory already exists" )
+        if os.path.exists(self.path_to_trained_models + self.model_name):
+            if self.overwrite is False: 
+                raise Exception( "Save directory already exists" )
+            if self.overwrite is True: 
+                print ('Overwriting model directory: ', self.model_name)
+                shutil.rmtree(self.path_to_trained_models + self.model_name)
         assert self.number_of_hidden_layers == len(self.nodes_per_layer)          # Number of layers = number of specified nodes
 
 
