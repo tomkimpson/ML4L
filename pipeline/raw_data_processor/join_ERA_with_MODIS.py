@@ -31,8 +31,8 @@ class JoinERAWithMODIS():
 
 
         self.monthly_clake_ds = xr.Dataset() #Empty ds to hold monthly clake values
-        self.saline_ds = None #Empty declaration ready to hold saline lake fields
-        self.ERA_files = sorted(get_list_of_files(self.config.data.path_to_processed_variable_fields,self.config.data.min_year_to_join,self.config.data.min_year_to_join))
+        self.saline_ds = None # Empty declaration ready to hold saline lake fields
+        self.ERA_files = sorted(get_list_of_files(self.config.data.path_to_processed_variable_fields,self.config.data.min_year_to_join,self.config.data.max_year_to_join))
             
             
     
@@ -273,6 +273,8 @@ class JoinERAWithMODIS():
         #Load the monthly clake files
         self._load_monthly_clake_data()
 
+        #Load the saline lake
+        self._load_saline_lake_data
         
 
         print('complete list of ERA files to be joined:')
