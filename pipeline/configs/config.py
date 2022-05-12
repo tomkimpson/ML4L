@@ -28,7 +28,7 @@ CFG = {
         "path_to_joined_ERA_MODIS_files": f'{root}processed_data/joined_data/',
 
         #Parameters for processing raw data
-        "min_year_to_process":2019, 
+        "min_year_to_process":2016, 
         "max_year_to_process":2021,
          
         #Parameters for joining ERA/MODIS

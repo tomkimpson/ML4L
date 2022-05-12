@@ -273,7 +273,11 @@ class JoinERAWithMODIS():
         #Load the monthly clake files
         self._load_monthly_clake_data()
 
-        print('complete list of ERA files to be joined:',self.ERA_files) 
+        
+
+        print('complete list of ERA files to be joined:')
+        for i in self.ERA_files:
+            print(i) 
         
         for f in self.ERA_files[0:1]: #Iterate over all months
             #Load a month of ERA data
