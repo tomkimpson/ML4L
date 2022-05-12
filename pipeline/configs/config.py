@@ -28,9 +28,9 @@ CFG = {
         "path_to_joined_ERA_MODIS_files": f'{root}processed_data/joined_data/',
 
         #Parameters for processing raw data
-        "tmpdir": f'{root}tmpdir',
+        #"tmpdir": f'{root}tmpdir',
         "min_year_to_process":2016, #typically we want these min/maxes to be the same as min_year_to_join, but maybe an edge case exists?
-        "max_year_to_process":2019,
+        "max_year_to_process":2021,
          
         #Parameters for joining ERA/MODIS
         "aquaDay_min_hour":2,

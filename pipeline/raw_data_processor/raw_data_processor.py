@@ -51,14 +51,14 @@ class ProcessERAData():
         
         
         #tmp
-        self.tmpdir = self.config.data.tmpdir
+        #self.tmpdir = self.config.data.tmpdir
         
-    def _create_tmpdir(self):
-        """Create a temporary directory to write to.
-            Anything here is overwrite-able"""
-        if os.path.exists(self.tmpdir): #Delete any existing dir
-            shutil.rmtree(self.tmpdir)
-        os.mkdir(self.tmpdir)
+    # def _create_tmpdir(self):
+    #     """Create a temporary directory to write to.
+    #         Anything here is overwrite-able"""
+    #     if os.path.exists(self.tmpdir): #Delete any existing dir
+    #         shutil.rmtree(self.tmpdir)
+    #     os.mkdir(self.tmpdir)
       
    
     # def _get_list_of_files(self,directory):
@@ -114,32 +114,38 @@ class ProcessERAData():
         climateV = {self.V15_path:self.V15_output_path,
                     self.V20_path:self.V20_output_path,
                     }
-        self._create_tmpdir() #Create a tmp directory
-        for v in climateV: #for each version of the climate fields
-            input_path = v
-            output_path = climateV[v]
-            
-            version_files = set(glob.glob(input_path+'*'))# Get all the grib files in that directory
-            splitfile = self.tmpdir+'/splitfile_[shortName].grib'
-    
-            for f in version_files: #Split each file into sub-files by feature
-                print(f)
-                query_split = f'grib_copy {f} "{splitfile}"' 
-                os.system(query_split)
-        
+        #self._create_tmpdir() #Create a tmp directory
 
-            ds_all = []                               # Create an empty array
-            ds_all.append(selected_data)              # Add the data slice you took above
-    
-            splitfiles = glob.glob(self.tmpdir + '*.grib') # Get a list of all the splitfiles you have just created
-            for f in splitfiles: #Load each file in turn
-                ds = xr.open_dataset(f,engine='cfgrib',backend_kwargs={'indexpath': ''})
-                ds_all.append(ds)
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+
+            print ('the tmp dir is at:', tmpdir)
+
+            for v in climateV: #for each version of the climate fields
+                input_path = v
+                output_path = climateV[v]
                 
-            constant_merged_data = xr.merge(ds_all,compat='override') #need the override option to deal with keys
-            constant_merged_data.to_netcdf(output_path,mode='w') #write to disk
+                version_files = set(glob.glob(input_path+'*'))# Get all the grib files in that directory
+                splitfile = tmpdir+'/splitfile_[shortName].grib'
         
- 
+                for f in version_files: #Split each file into sub-files by feature
+                    print(f)
+                    query_split = f'grib_copy {f} "{splitfile}"' 
+                    os.system(query_split)
+            
+
+                ds_all = []                               # Create an empty array
+                ds_all.append(selected_data)              # Add the data slice you took above
+        
+                splitfiles = glob.glob(tmpdir + '*.grib') # Get a list of all the splitfiles you have just created
+                for f in splitfiles: #Load each file in turn
+                    ds = xr.open_dataset(f,engine='cfgrib',backend_kwargs={'indexpath': ''})
+                    ds_all.append(ds)
+                    
+                constant_merged_data = xr.merge(ds_all,compat='override') #need the override option to deal with keys
+                constant_merged_data.to_netcdf(output_path,mode='w') #write to disk
+            
+    
 
     def process_time_variable_data(self):
         
@@ -150,7 +156,7 @@ class ProcessERAData():
         Outputs N monthly files
         """
 
-        print("Processing the time variable ERA data.")
+        print("Processing the time variable ERA data in the range: ",self.first_year,self.last_year)
 
         
         #Get list of raw .grib monthly files in a specific time range
@@ -158,7 +164,7 @@ class ProcessERAData():
         ERA_skin_files =  get_list_of_files(self.ERA_skin_path,self.first_year,self.last_year)        
         ERA_skt_files  =  get_list_of_files(self.ERA_skt_path,self.first_year,self.last_year)        
 
-        print (ERA_sfc_files)
+        print ('listof ERA sfc files:', ERA_sfc_files)
         
         for i in range(len(ERA_sfc_files)):
             sfc,skin,skt = ERA_sfc_files[i], ERA_skin_files[i], ERA_skt_files[i]

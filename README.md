@@ -33,6 +33,20 @@ The ERA data is divided among the following files
 
 See `Workflow.ipynb` for more detail on the raw data.
 
+
+
+# Processed data
+
+To get all this disparate data into a more manageable form call `python main.py --process_data`
+
+This first creates:
+* Time Variable ERA fields
+* Time Constant ERA fields V15, V20
+* +monthly lakes, salt lakes which are unchanged
+
+
+
+
 ## Example subtitle
 
 Lorem ipsum

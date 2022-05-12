@@ -1,5 +1,6 @@
 #Internal
 from utils.config import Config 
+from utils.utils import get_list_of_files
 
 
 #External
@@ -31,7 +32,10 @@ class JoinERAWithMODIS():
 
         self.monthly_clake_ds = xr.Dataset() #Empty ds to hold monthly clake values
         self.saline_ds = None #Empty declaration ready to hold saline lake fields
-        self.ERA_files = sorted(glob.glob(self.config.data.path_to_processed_variable_fields+'*'))
+        self.ERA_files = sorted(get_list_of_files(self.config.data.path_to_processed_variable_fields,self.config.data.min_year_to_join,self.config.data.min_year_to_join))
+            
+            
+    
 
 
         self.min_hours = {"aquaDay":    self.config.data.aquaDay_min_hour,
@@ -269,7 +273,7 @@ class JoinERAWithMODIS():
         #Load the monthly clake files
         self._load_monthly_clake_data()
 
-
+        print('list of ERA files:',self.ERA_files) 
         
         for f in self.ERA_files: #Iterate over all months
             #Load a month of ERA data
