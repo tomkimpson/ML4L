@@ -347,12 +347,12 @@ class JoinERAWithMODIS():
                 MODIS_hour.close()
         
         # At the end of every month, do some IO
-        # Pkl is likely suboptimial here. Need to update to e.g. parquet, HDF, etc.
         df = pd.concat(dfs)
         year_month = f.split('/')[-1].split('.')[0]
-        fname = f'MODIS_{year_month}.pkl'
+        fname = f'MODIS_{year_month}.parquet'
         print ("Writing to disk:", self.IO_path+fname)
-        df.to_pickle(self.IO_path+fname)
+        df.to_parquet(self.IO_path+fname,compression=None)
+
         
         
    

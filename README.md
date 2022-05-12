@@ -29,6 +29,7 @@ The ERA data is divided among the following files
 
 ## MODIS data
 
+Daily files between 2016-2021, hourly grain.
 
 
 See `Workflow.ipynb` for more detail on the raw data.
