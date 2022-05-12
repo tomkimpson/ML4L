@@ -111,7 +111,7 @@ class ProcessERAData():
                 ds_all = []                               # Create an empty array
                 ds_all.append(selected_data)              # Add the data slice you took above
         
-                splitfiles = glob.glob(tmpdir + '*.grib') # Get a list of all the splitfiles you have just created
+                splitfiles = glob.glob(tmpdir + '/*.grib') # Get a list of all the splitfiles you have just created
                 print('list of all created splitfiles:', splitfiles)
                 for f in splitfiles: #Load each file in turn
                     ds = xr.open_dataset(f,engine='cfgrib',backend_kwargs={'indexpath': ''})
