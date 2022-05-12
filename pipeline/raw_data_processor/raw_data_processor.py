@@ -158,7 +158,7 @@ class ProcessERAData():
         ERA_skin_files =  get_list_of_files(self.ERA_skin_path,self.first_year,self.last_year)        
         ERA_skt_files  =  get_list_of_files(self.ERA_skt_path,self.first_year,self.last_year)        
 
-        
+        print (ERA_sfc_files)
         
         for i in range(len(ERA_sfc_files)):
             sfc,skin,skt = ERA_sfc_files[i], ERA_skin_files[i], ERA_skt_files[i]
