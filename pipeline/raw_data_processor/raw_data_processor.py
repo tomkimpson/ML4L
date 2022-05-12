@@ -1,5 +1,6 @@
 
 #Internal
+from locale import ERA
 from utils.config import Config 
 from utils.utils import get_list_of_files
 
@@ -137,6 +138,21 @@ class ProcessERAData():
         ERA_skin_files =  get_list_of_files(self.ERA_skin_path,self.first_year,self.last_year)        
         ERA_skt_files  =  get_list_of_files(self.ERA_skt_path,self.first_year,self.last_year)        
         
+        print (len(ERA_sfc_files))
+        print (len(ERA_skin_files))
+        print (len(ERA_skt_files))
+
+        for i in ERA_sfc_files:
+            print(i)
+
+        for i in ERA_skin_files:
+            print(i)
+
+        for i in ERA_skt_files:
+            print(i)
+
+        sys.exit()
+
         for i in range(len(ERA_sfc_files)):
             sfc,skin,skt = ERA_sfc_files[i], ERA_skin_files[i], ERA_skt_files[i]
             y = skin.split('_')[-2] #read the year from the filename
