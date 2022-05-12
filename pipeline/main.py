@@ -53,7 +53,7 @@ def train_and_predict(train_model):
 def parse_arguments():
     """Parse command line arguments"""
     parser = argparse.ArgumentParser(description='Process data and train a model')
-    parser.add_argument('--process_data', dest='process_data', action='store_true',
+    parser.add_argument('--process_raw_data', dest='process_data', action='store_true',
                         help="Process raw ERA data")
     parser.add_argument('--join_data', dest='join_data', action='store_true',
                         help="Join MODIS and ERA data")
