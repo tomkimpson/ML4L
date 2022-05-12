@@ -177,11 +177,7 @@ class JoinERAWithMODIS():
         saline = self.saline_ds
 
 
-        print ('V20 loooks like this:')
-        print (v20)
 
-        print ('saline looks like this:')
-        print (saline)
 
 
         #Join on the constant data V15 and v20, the monthly clake files, and the saline data, first setting the time coordinate to allow for merge
@@ -190,6 +186,13 @@ class JoinERAWithMODIS():
         clake_month = clake_month.assign_coords({"time": (((ERA_hour.time)))})
         saline = saline.assign_coords({"time": (((ERA_hour.time)))}) 
 
+        print ('V20 loooks like this:')
+        print (v20)
+
+        print ('saline looks like this:')
+        print (saline)
+
+
 
         ERA_hour = xr.merge([ERA_hour,v15,v20, clake_month]).load() #Explicitly load 
         
@@ -197,8 +200,9 @@ class JoinERAWithMODIS():
         #And covert longitude to long1
         ERA_hour = ERA_hour.assign_coords({"longitude": (((ERA_hour.longitude + 180) % 360) - 180)})
         
-        
-            
+        print ('ERA HR')
+        print (ERA_hour)
+        sys.exit()
         # Also filter by latitude/longtiude
         longitude_filter = (ERA_hour.longitude > bounds['longitude_min']) & (ERA_hour.longitude < bounds['longitude_max'])
         latitude_filter =  (ERA_hour.latitude > bounds['latitude_min']) & (ERA_hour.latitude < bounds['latitude_max'])
