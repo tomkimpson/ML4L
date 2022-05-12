@@ -274,14 +274,9 @@ class JoinERAWithMODIS():
         self._load_monthly_clake_data()
 
         #Load the saline lake
-        self._load_saline_lake_data
-        
-
-        print('complete list of ERA files to be joined:')
-        for i in self.ERA_files:
-            print(i) 
-        
-        for f in self.ERA_files[0:1]: #Iterate over all months
+        self._load_saline_lake_data()
+              
+        for f in self.ERA_files[0:5]: #Iterate over all months
             #Load a month of ERA data
             print ('Loading ERA month:', f)
             ERA_month = xr.open_dataset(f,engine='cfgrib',backend_kwargs={'indexpath': ''})
