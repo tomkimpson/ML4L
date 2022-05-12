@@ -26,9 +26,11 @@ class JoinERAWithMODIS():
         self.V15_output_path = self.config.data.path_to_processed_V15_climate_fields
         self.V20_output_path = self.config.data.path_to_processed_V20_climate_fields
         self.monthly_clake_files_path = self.config.data.path_to_monthly_clake_files
+        self.saline_clake_files_path = self.config.data.path_to_saline_clake_files
 
 
-        self.monthly_clake_ds = xr.Dataset() #Empty ds
+        self.monthly_clake_ds = xr.Dataset() #Empty ds to hold monthly clake values
+        self.saline_ds = None #Empty declaration ready to hold saline lake fields
         self.ERA_files = sorted(glob.glob(self.config.data.path_to_processed_variable_fields+'*'))
 
 
@@ -97,6 +99,14 @@ class JoinERAWithMODIS():
            # monthly_clake_ds is a dataset where each variable is month_1, month_2 etc. representing a global field for that time
            # Later on we will select just the correspondig month
     
+    def _load_saline_lake_data(self):
+
+        """
+        Load a the clake saline data
+        """
+        self.saline_ds = xr.open_dataset(self.saline_clake_files_path,engine='cfgrib',backend_kwargs={'indexpath': ''})
+        self.saline_ds = self.saline_ds.cl.rename(f'cl_saline') #This is now a data array
+
     
     def _select_correct_MODIS_file(self,t):
 
@@ -160,13 +170,16 @@ class JoinERAWithMODIS():
         #Grab the constant fields and make a local copy
         v15 = self.ERA_constants_dict['v15']
         v20 = self.ERA_constants_dict['v20']
+        saline = self.saline_ds
 
 
-        #Join on the constant data V15 and v20, and the wetlands data, first setting the time coordinate
+        #Join on the constant data V15 and v20, the monthly clake files, and the saline data, first setting the time coordinate to allow for merge
         v15 = v15.assign_coords({"time": (((ERA_hour.time)))}) 
         v20 = v20.assign_coords({"time": (((ERA_hour.time)))}) 
         clake_month = clake_month.assign_coords({"time": (((ERA_hour.time)))})
-        
+        saline = saline.assign_coords({"time": (((ERA_hour.time)))}) 
+
+
         ERA_hour = xr.merge([ERA_hour,v15,v20, clake_month]).load() #Explicitly load 
         
         
@@ -274,7 +287,7 @@ class JoinERAWithMODIS():
                 #First grab the clake bonus data for that month
                 #Note that we do this every timestamp, rather just doing it once per ERA month since ERA month sometimes
                 #contains values over two months e.g. all of February and the first day of March.
-                #There may be a more efficeint work aaround but these 4 lines are very inexpensive so can stay here for now. 
+                #There may be a more efficeint work around but these 4 lines are very inexpensive so can stay here for now. 
                 clake_month = self.monthly_clake_ds[f"month_{t.month}"]   
                 clake_month = clake_month.to_dataset()                 
                 clake_month['clake_monthly_value'] = clake_month[f"month_{t.month}"] # Rename data variable by declaring a new entry... 

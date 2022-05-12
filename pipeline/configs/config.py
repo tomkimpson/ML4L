@@ -7,13 +7,14 @@ CFG = {
     "data": {
 
         #Paths to raw data
-        "path_to_raw_ERA_skin": '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/ERA_skin/',
-        "path_to_raw_ERA_sfc": '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/ERA_sfc/',
-        "path_to_raw_ERA_skt": '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/ERA_skt/',
+        "path_to_raw_ERA_skin":           f'{root}ERA_skin/',
+        "path_to_raw_ERA_sfc":            f'{root}ERA_sfc/',
+        "path_to_raw_ERA_skt":            f'{root}ERA_skt/',
         "path_to_raw_V15_climate_fields": f'{root}climate.v015/climate.v015/639l_2/',
         "path_to_raw_V20_climate_fields": f'{root}climate.v020/climate.v020/639l_2/',
-        "path_to_monthly_clake_files": '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/BonusClimate/',
-        "path_to_MODIS_data": '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/MODIS',
+        "path_to_monthly_clake_files":    f'{root}BonusClimate/',
+        "path_to_saline_clake_files":     f'{root}saltlakes/clake_639l2_year_saline',
+        "path_to_MODIS_data":             f'{root}MODIS',
 
 
          #Edge cases to handle in ERA_skin
