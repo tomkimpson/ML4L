@@ -177,6 +177,26 @@ class JoinERAWithMODIS():
         saline = self.saline_ds
 
 
+        print ('ERA hour keys')
+        for k in ERA_hour.keys():
+            print(k)
+
+        print ('v15 keys')
+        for k in v15.keys():
+            print(k)
+
+        print ('v20 keys')
+        for k in v20.keys():
+            print(k)
+
+        
+        print('clake month')
+        for k in clake_month.keys():
+            print(k)
+
+        print('saline')
+        for k in saline.keys():
+            print(k)
 
 
 
@@ -192,10 +212,12 @@ class JoinERAWithMODIS():
         
         #And covert longitude to long1
         ERA_hour = ERA_hour.assign_coords({"longitude": (((ERA_hour.longitude + 180) % 360) - 180)})
-        
-        print ('ERA HR')
+
+        print('OUT')
         for k in ERA_hour.keys():
             print(k)
+        
+
         sys.exit()
         # Also filter by latitude/longtiude
         longitude_filter = (ERA_hour.longitude > bounds['longitude_min']) & (ERA_hour.longitude < bounds['longitude_max'])
