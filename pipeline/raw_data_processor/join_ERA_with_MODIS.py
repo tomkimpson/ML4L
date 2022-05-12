@@ -273,9 +273,9 @@ class JoinERAWithMODIS():
         #Load the monthly clake files
         self._load_monthly_clake_data()
 
-        print('list of ERA files:',self.ERA_files) 
+        print('complete list of ERA files to be joined:',self.ERA_files) 
         
-        for f in self.ERA_files: #Iterate over all months
+        for f in self.ERA_files[0:1]: #Iterate over all months
             #Load a month of ERA data
             print ('Loading ERA month:', f)
             ERA_month = xr.open_dataset(f,engine='cfgrib',backend_kwargs={'indexpath': ''})
@@ -300,8 +300,7 @@ class JoinERAWithMODIS():
 
 
                 date_string = self._select_correct_MODIS_file(t) #For this datetime, which MODIS file should be opened? 
-                if date_string == '2017-12-31': continue #skip since we don't have this day. Would be better to replace this with self.min_year
-
+                if date_string == '2015-12-31': continue # skip since we don't have data this far back
 
 
                 if date_string != self.previous_datestring:

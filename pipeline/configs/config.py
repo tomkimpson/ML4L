@@ -52,7 +52,7 @@ CFG = {
         "latitude_bound": 70,
 
         "min_year_to_join":2016, #typically we want these min/maxes to be the same as min_year_to_join, but maybe an edge case exists?
-        "max_year_to_join":2019,
+        "max_year_to_join":2021,
 
 
         "training_data": f'{root}processed_data/joined_data/training_data_with_monthly_lakes_w_lakes.h5',
