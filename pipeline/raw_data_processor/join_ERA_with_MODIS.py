@@ -179,30 +179,6 @@ class JoinERAWithMODIS():
         v20 = self.ERA_constants_dict['v20']
         saline = self.saline_ds
 
-
-        print ('----ERA hour keys---------')
-        for k in ERA_hour.keys():
-            print(k)
-
-        print ('-----------v15 keys---------')
-        for k in v15.keys():
-            print(k)
-
-        print ('---------v20 keys--------')
-        for k in v20.keys():
-            print(k)
-
-        
-        print('-----clake month--------')
-        for k in clake_month.keys():
-            print(k)
-
-        print('-------saline---------')
-        for k in saline.keys():
-            print(k)
-
-
-
         #Join on the constant data V15 and v20, the monthly clake files, and the saline data, first setting the time coordinate to allow for merge
         v15 = v15.assign_coords({"time": (((ERA_hour.time)))}) 
         v20 = v20.assign_coords({"time": (((ERA_hour.time)))}) 
@@ -216,12 +192,7 @@ class JoinERAWithMODIS():
         #And covert longitude to long1
         ERA_hour = ERA_hour.assign_coords({"longitude": (((ERA_hour.longitude + 180) % 360) - 180)})
 
-        print('--------OUT-----------')
-        for k in ERA_hour.keys():
-            print(k)
-        
 
-        sys.exit()
         # Also filter by latitude/longtiude
         longitude_filter = (ERA_hour.longitude > bounds['longitude_min']) & (ERA_hour.longitude < bounds['longitude_max'])
         latitude_filter =  (ERA_hour.latitude > bounds['latitude_min']) & (ERA_hour.latitude < bounds['latitude_max'])
@@ -306,7 +277,7 @@ class JoinERAWithMODIS():
         #Load the saline lake
         self._load_saline_lake_data()
               
-        for f in self.ERA_files[0:5]: #Iterate over all months
+        for f in self.ERA_files: #Iterate over all months
             #Load a month of ERA data
             print ('Loading ERA month:', f)
             ERA_month = xr.open_dataset(f,engine='cfgrib',backend_kwargs={'indexpath': ''})

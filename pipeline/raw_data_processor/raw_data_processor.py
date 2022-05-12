@@ -98,10 +98,8 @@ class ProcessERAData():
             for v in climateV: #for each version of the climate fields
                 input_path = v
                 output_path = climateV[v]
-                print ('In/out:', input_path, output_path)
                 version_files = set(glob.glob(input_path+'*'))# Get all the grib files in that directory
                 splitfile = tmpdir+'/splitfile_[shortName].grib'
-                print ('splitfiles:', splitfile)
                 for f in version_files: #Split each file into sub-files by feature
                     print(f)
                     query_split = f'grib_copy {f} "{splitfile}"' 
@@ -112,16 +110,12 @@ class ProcessERAData():
                 ds_all.append(selected_data)              # Add the data slice you took above
         
                 splitfiles = glob.glob(tmpdir + '/*.grib') # Get a list of all the splitfiles you have just created
-                print('list of all created splitfiles:', splitfiles)
                 for f in splitfiles: #Load each file in turn
                     ds = xr.open_dataset(f,engine='cfgrib',backend_kwargs={'indexpath': ''})
                     ds_all.append(ds)
                     
-                constant_merged_data = xr.merge(ds_all,compat='override') #need the override option to deal with keys
-                constant_merged_data.to_netcdf(output_path,mode='w') #write to disk
-            
-                ds = xr.open_dataset(output_path)
-                print(ds)
+                constant_merged_data = xr.merge(ds_all,compat='override') # need the override option to deal with keys
+                constant_merged_data.to_netcdf(output_path,mode='w')      # write to disk
     
 
     def process_time_variable_data(self):
