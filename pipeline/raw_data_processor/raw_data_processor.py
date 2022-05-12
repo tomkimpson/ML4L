@@ -49,29 +49,7 @@ class ProcessERAData():
         
         self.variable_output_path = self.config.data.path_to_processed_variable_fields
         
-        
-        #tmp
-        #self.tmpdir = self.config.data.tmpdir
-        
-    # def _create_tmpdir(self):
-    #     """Create a temporary directory to write to.
-    #         Anything here is overwrite-able"""
-    #     if os.path.exists(self.tmpdir): #Delete any existing dir
-    #         shutil.rmtree(self.tmpdir)
-    #     os.mkdir(self.tmpdir)
-      
-   
-    # def _get_list_of_files(self,directory):
-    #     """
-    #     Get a flattened list of all grib files within a directory within a certain time range
-    #     The time range is read from the .grib file name.
-    #     """
-    #     globs_exprs = [directory+f'*_{i}_*.grib'.format(i) for i in np.arange(self.first_year, self.last_year+1)]
-    #     list_of_files = [glob.glob(g) for g in globs_exprs]
-    #     return sorted([item for sublist in list_of_files for item in sublist])
-        
-        
-                
+         
     def process_time_constant_data(self):
         
         """
@@ -114,13 +92,8 @@ class ProcessERAData():
         climateV = {self.V15_path:self.V15_output_path,
                     self.V20_path:self.V20_output_path,
                     }
-        #self._create_tmpdir() #Create a tmp directory
-        print ('CHANGES')
-
+  
         with tempfile.TemporaryDirectory() as tmpdir:
-
-            print ('the tmp dir is at:', tmpdir)
-
             for v in climateV: #for each version of the climate fields
                 input_path = v
                 output_path = climateV[v]
@@ -163,8 +136,6 @@ class ProcessERAData():
         ERA_sfc_files  =  get_list_of_files(self.ERA_sfc_path,self.first_year,self.last_year)        
         ERA_skin_files =  get_list_of_files(self.ERA_skin_path,self.first_year,self.last_year)        
         ERA_skt_files  =  get_list_of_files(self.ERA_skt_path,self.first_year,self.last_year)        
-
-        print ('listof ERA sfc files:', ERA_sfc_files)
         
         for i in range(len(ERA_sfc_files)):
             sfc,skin,skt = ERA_sfc_files[i], ERA_skin_files[i], ERA_skt_files[i]
