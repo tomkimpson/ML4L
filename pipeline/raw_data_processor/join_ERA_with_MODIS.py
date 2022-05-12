@@ -73,6 +73,9 @@ class JoinERAWithMODIS():
         name_dict={x:x+f'_{v}' for x in list(ds.keys())}
         ds = ds.rename(name_dict)
     
+        print ('Loading V15/V20 data')
+        print (ds)
+
         self.ERA_constants_dict[v] = ds
         ds.close()
         
@@ -177,24 +180,24 @@ class JoinERAWithMODIS():
         saline = self.saline_ds
 
 
-        print ('ERA hour keys')
+        print ('----ERA hour keys---------')
         for k in ERA_hour.keys():
             print(k)
 
-        print ('v15 keys')
+        print ('-----------v15 keys---------')
         for k in v15.keys():
             print(k)
 
-        print ('v20 keys')
+        print ('---------v20 keys--------')
         for k in v20.keys():
             print(k)
 
         
-        print('clake month')
+        print('-----clake month--------')
         for k in clake_month.keys():
             print(k)
 
-        print('saline')
+        print('-------saline---------')
         for k in saline.keys():
             print(k)
 
@@ -213,7 +216,7 @@ class JoinERAWithMODIS():
         #And covert longitude to long1
         ERA_hour = ERA_hour.assign_coords({"longitude": (((ERA_hour.longitude + 180) % 360) - 180)})
 
-        print('OUT')
+        print('--------OUT-----------')
         for k in ERA_hour.keys():
             print(k)
         
