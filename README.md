@@ -18,7 +18,7 @@ We have two primary sets of data. The first is a selection of ERA fields. These 
 
 The ERA data is divided among the following files
 
-* `ERA_sfc`
+* `ERA_sfc` Monthly files between 2016-2021, hourly grain.
 * `ERA_skin`
 * `ERA_skt`
 * `climateV15`

@@ -29,8 +29,8 @@ CFG = {
 
         #Parameters for processing raw data
         "tmpdir": f'{root}tmpdir',
-        "min_year":2016,
-        "max_year":2019,
+        "min_year_to_process":2016, #typically we want these min/maxes to be the same as min_year_to_join, but maybe an edge case exists?
+        "max_year_to_process":2019,
          
         #Parameters for joining ERA/MODIS
         "aquaDay_min_hour":2,
@@ -51,6 +51,10 @@ CFG = {
               
         "satellite":'aquaDay',
         "latitude_bound": 70,
+
+        "min_year_to_join":2016, #typically we want these min/maxes to be the same as min_year_to_join, but maybe an edge case exists?
+        "max_year_to_join":2019,
+
 
         "training_data": f'{root}processed_data/joined_data/training_data_with_monthly_lakes_w_lakes.h5',
         "validation_data": f'{root}processed_data/joined_data/validation_data_with_monthly_lakes_w_lakes.h5'

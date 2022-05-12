@@ -1,6 +1,7 @@
 
 #Internal
 from utils.config import Config 
+from utils.utils import get_list_of_files
 
 #External
 import xarray as xr
@@ -29,8 +30,8 @@ class ProcessERAData():
         self.constant_features = self.config.data.ERA_skin_constant_features
         self.variable_features = self.config.data.ERA_skin_variable_features
         
-        self.first_year = self.config.data.min_year
-        self.last_year = self.config.data.max_year
+        self.first_year = self.config.data.min_year_to_process
+        self.last_year = self.config.data.max_year_to_process
 
         
         #Raw
@@ -60,14 +61,14 @@ class ProcessERAData():
         os.mkdir(self.tmpdir)
       
    
-    def _get_list_of_files(self,directory):
-        """
-        Get a flattened list of all grib files within a directory within a certain time range
-        The time range is read from the .grib file name.
-        """
-        globs_exprs = [directory+f'*_{i}_*.grib'.format(i) for i in np.arange(self.first_year, self.last_year+1)]
-        list_of_files = [glob.glob(g) for g in globs_exprs]
-        return sorted([item for sublist in list_of_files for item in sublist])
+    # def _get_list_of_files(self,directory):
+    #     """
+    #     Get a flattened list of all grib files within a directory within a certain time range
+    #     The time range is read from the .grib file name.
+    #     """
+    #     globs_exprs = [directory+f'*_{i}_*.grib'.format(i) for i in np.arange(self.first_year, self.last_year+1)]
+    #     list_of_files = [glob.glob(g) for g in globs_exprs]
+    #     return sorted([item for sublist in list_of_files for item in sublist])
         
         
                 
@@ -153,9 +154,9 @@ class ProcessERAData():
 
         
         #Get list of raw .grib monthly files in a specific time range
-        ERA_sfc_files =  self._get_list_of_files(self.ERA_sfc_path)        
-        ERA_skin_files =  self._get_list_of_files(self.ERA_skin_path)        
-        ERA_skt_files =  self._get_list_of_files(self.ERA_skt_path)        
+        ERA_sfc_files  =  get_list_of_files(self.ERA_sfc_path,self.first_year,self.last_year)        
+        ERA_skin_files =  get_list_of_files(self.ERA_skin_path,self.first_year,self.last_year)        
+        ERA_skt_files  =  get_list_of_files(self.ERA_skt_path,self.first_year,self.last_year)        
 
         
         
