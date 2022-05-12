@@ -97,7 +97,7 @@ class JoinERAWithMODIS():
             ds_clake['time'] = month_counter #i.e. what month it it? An integer between 1 and 12
             
             
-            #Append this to dataframe
+            #Append this to dataset
             self.monthly_clake_ds[f"month_{month_counter}"] = ds_clake 
             month_counter += 1
            # monthly_clake_ds is a dataset where each variable is month_1, month_2 etc. representing a global field for that time
@@ -110,7 +110,7 @@ class JoinERAWithMODIS():
         """
         self.saline_ds = xr.open_dataset(self.saline_clake_files_path,engine='cfgrib',backend_kwargs={'indexpath': ''})
         self.saline_ds = self.saline_ds.cl.rename(f'cl_saline') #This is now a data array
-
+        self.saline_ds = self.saline_ds.to_dataset() #This is now a dataset
     
     def _select_correct_MODIS_file(self,t):
 
@@ -175,6 +175,13 @@ class JoinERAWithMODIS():
         v15 = self.ERA_constants_dict['v15']
         v20 = self.ERA_constants_dict['v20']
         saline = self.saline_ds
+
+
+        print ('V20 loooks like this:')
+        print (v20)
+
+        print ('saline looks like this:')
+        print (saline)
 
 
         #Join on the constant data V15 and v20, the monthly clake files, and the saline data, first setting the time coordinate to allow for merge
