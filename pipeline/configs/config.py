@@ -9,7 +9,7 @@ CFG = {
         #Paths to raw data
         "path_to_raw_ERA_skin":           f'{root}ERA_skin/',
         "path_to_raw_ERA_sfc":            f'{root}ERA_sfc/',
-        "path_to_raw_ERA_skt":            f'{root}ERA_skt/',
+        "path_to_raw_ERA_skt":            f'{root}ERA_skt_tom/',
         "path_to_raw_V15_climate_fields": f'{root}climate.v015/climate.v015/639l_2/',
         "path_to_raw_V20_climate_fields": f'{root}climate.v020/climate.v020/639l_2/',
         "path_to_monthly_clake_files":    f'{root}BonusClimate/',
