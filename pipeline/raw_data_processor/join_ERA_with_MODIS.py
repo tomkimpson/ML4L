@@ -74,9 +74,6 @@ class JoinERAWithMODIS():
         name_dict={x:x+f'_{v}' for x in list(ds.keys())}
         ds = ds.rename(name_dict)
     
-        print ('Loading V15/V20 data')
-        print (ds)
-
         self.ERA_constants_dict[v] = ds
         ds.close()
         
@@ -313,7 +310,7 @@ class JoinERAWithMODIS():
 
         #Load the saline lake
         self._load_saline_lake_data()
-              
+        print('Iterating over the following months:',self.ERA_files[0:1])
         for f in self.ERA_files[0:1]: #Iterate over all months
             #Load a month of ERA data
             print ('Loading ERA month:', f)
