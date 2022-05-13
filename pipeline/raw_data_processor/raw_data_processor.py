@@ -136,7 +136,7 @@ class ProcessERAData():
         ERA_skt_files  =  get_list_of_files(self.ERA_skt_path,2018,self.last_year)        
         
         #for i in range(len(ERA_sfc_files)):
-        for i in [4]:#range(1):
+        for i in [4,5,6]:#range(1):
             sfc,skin,skt = ERA_sfc_files[i], ERA_skin_files[i], ERA_skt_files[i]
             y = skin.split('_')[-2] #read the year from the filename
             m = skin.split('_')[-1] #and the month.grib
@@ -146,7 +146,7 @@ class ProcessERAData():
             with tempfile.NamedTemporaryFile() as tmp1, tempfile.NamedTemporaryFile() as tmp2: #Create two tmp files to write to
         
                 tmpfile1,tmpfile2 = tmp1.name,tmp2.name
-            
+                print ('tmpfilenames:', tmpfile1,tmpfile2)
                 #Extract the time variable features from ERA_skin, save to tmpfile1
                 query_extract = f'grib_copy -w shortName={self.variable_features} {skin} {tmpfile1}'
                 os.system(query_extract)
@@ -162,7 +162,7 @@ class ProcessERAData():
                 os.system(query_merge)
 
 
-                print ('Loading newly created outfile')
+                print ('Can I load the newly created outfile?')
                 ds = xr.open_dataset(outfile,engine='cfgrib',backend_kwargs={'indexpath': ''})
                 print(ds)
 
