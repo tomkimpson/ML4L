@@ -18,7 +18,7 @@ def process_raw_data(process_data, join_data,greedy):
     if process_data:
         #Process the raw ERA data
         raw_data_pipeline = ProcessERAData(CFG)
-        #raw_data_pipeline.process_time_constant_data()
+        raw_data_pipeline.process_time_constant_data()
         raw_data_pipeline.process_time_variable_data()
 
     if join_data:

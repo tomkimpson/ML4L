@@ -131,22 +131,21 @@ class ProcessERAData():
 
         
         #Get list of raw .grib monthly files in a specific time range
-        ERA_sfc_files  =  get_list_of_files(self.ERA_sfc_path,2018,self.last_year)        
-        ERA_skin_files =  get_list_of_files(self.ERA_skin_path,2018,self.last_year)        
-        ERA_skt_files  =  get_list_of_files(self.ERA_skt_path,2018,self.last_year)        
+        ERA_sfc_files  =  get_list_of_files(self.ERA_sfc_path,self.first_year,self.last_year)        
+        ERA_skin_files =  get_list_of_files(self.ERA_skin_path,self.first_year,self.last_year)        
+        ERA_skt_files  =  get_list_of_files(self.ERA_skt_path,self.first_year,self.last_year)        
         
-        #for i in range(len(ERA_sfc_files)):
-        for i in [4,5,6]:#range(1):
+        print('Number of files to process = ', len(ERA_sfc_files))
+        for i in range(len(ERA_sfc_files)):
             sfc,skin,skt = ERA_sfc_files[i], ERA_skin_files[i], ERA_skt_files[i]
             y = skin.split('_')[-2] #read the year from the filename
             m = skin.split('_')[-1] #and the month.grib
-            outfile  = f'{self.variable_output_path}ERATEST_{y}_{m}'
+            outfile  = f'{self.variable_output_path}ERA_{y}_{m}'
             print(outfile)
 
             with tempfile.NamedTemporaryFile() as tmp1, tempfile.NamedTemporaryFile() as tmp2: #Create two tmp files to write to
         
                 tmpfile1,tmpfile2 = tmp1.name,tmp2.name
-                print ('tmpfilenames:', tmpfile1,tmpfile2)
                 #Extract the time variable features from ERA_skin, save to tmpfile1
                 query_extract = f'grib_copy -w shortName={self.variable_features} {skin} {tmpfile1}'
                 os.system(query_extract)
