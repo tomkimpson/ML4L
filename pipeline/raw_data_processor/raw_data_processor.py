@@ -164,5 +164,5 @@ class ProcessERAData():
                 print ('Can I load the newly created outfile?')
                 ds = xr.open_dataset(outfile,engine='cfgrib',backend_kwargs={'indexpath': ''})
                 print(ds)
-
+                ds.close()
 
