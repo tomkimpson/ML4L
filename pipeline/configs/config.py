@@ -71,7 +71,7 @@ CFG = {
                                 
                                 
         "list_of_bonus_features": ['clake_monthly_value','cl_saline'], 
-        "target_variable" : "MODIS_LST",
+        "target_variable" : ["MODIS_LST"],
 
 
     },
