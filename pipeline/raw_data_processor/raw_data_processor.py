@@ -131,11 +131,12 @@ class ProcessERAData():
 
         
         #Get list of raw .grib monthly files in a specific time range
-        ERA_sfc_files  =  get_list_of_files(self.ERA_sfc_path,self.first_year,self.last_year)        
-        ERA_skin_files =  get_list_of_files(self.ERA_skin_path,self.first_year,self.last_year)        
-        ERA_skt_files  =  get_list_of_files(self.ERA_skt_path,self.first_year,self.last_year)        
+        ERA_sfc_files  =  get_list_of_files(self.ERA_sfc_path,2018,self.last_year)        
+        ERA_skin_files =  get_list_of_files(self.ERA_skin_path,2018,self.last_year)        
+        ERA_skt_files  =  get_list_of_files(self.ERA_skt_path,2018,self.last_year)        
         
-        for i in range(len(ERA_sfc_files)):
+        #for i in range(len(ERA_sfc_files)):
+        for i in range(1):
             sfc,skin,skt = ERA_sfc_files[i], ERA_skin_files[i], ERA_skt_files[i]
             y = skin.split('_')[-2] #read the year from the filename
             m = skin.split('_')[-1] #and the month.grib
@@ -160,5 +161,9 @@ class ProcessERAData():
                 query_merge = f'grib_copy {sfc} {tmpfile2} {skt} {outfile}'
                 os.system(query_merge)
 
+
+                print ('Loading newly created outfile')
+                ds = xr.open_dataset(outfile,engine='cfgrib',backend_kwargs={'indexpath': ''})
+                print(ds)
 
 
