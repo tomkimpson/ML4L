@@ -281,7 +281,7 @@ class JoinERAWithMODIS():
             #Load a month of ERA data
             print ('Loading ERA month:', f)
             ERA_month = xr.open_dataset(f,engine='cfgrib',backend_kwargs={'indexpath': ''})
-            print ('LOADED ERA OK')
+            print ('LOADED ERA SOKE')
 
             #Get all times in that month of data. These are on an hourly grain
             timestamps = pd.to_datetime(ERA_month.time) 
