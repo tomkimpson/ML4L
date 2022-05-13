@@ -13,7 +13,7 @@ python main.py --process_data --join_data --ML_prep --train_model
 
 # 1. Raw data
 
-We have two primary sets of data. The first is a selection of ERA fields. These can be thought of as our features or inputs. The second is land surface temperature measurements from [MODIS](https://modis.gsfc.nasa.gov/about/). Both sets of data are provided by ECMWF having undergone some pre-processing and re-gridding, but are generally publically available.   
+We have two primary sets of data. The first is a selection of ERA fields. These can be thought of as our features or inputs. The second is land surface temperature measurements from [MODIS](https://modis.gsfc.nasa.gov/about/). Both sets of data are provided by ECMWF having undergone some pre-processing and re-gridding, but are generally publicly available.   
 
 
 ## ERA data
@@ -55,7 +55,7 @@ In order to use the ERA-MODIS data together to train a model, it is necessary to
 
 The general method involves taking an hour of ERA data (which covers the whole globe) and an hour of MODIS data (which covers just a strip) and then using a [GPU-accelerated k-nearest neighbours algorithm](https://github.com/facebookresearch/faiss) to find the nearest ERA grid point for every MODIS point. The 'nearness' measure is an L2 squared norm on the latitude/longitude coordinates rather than a [Haversine metric](https://en.wikipedia.org/wiki/Haversine_formula). We filter out any matches where the Haversine distance is > 50 km, and then group by the ERA coordinates to get an average temperature value. 
 
-This outputs monthly `parquet` files which hold generally `x,t,features,target`. 
+This outputs monthly `parquet` files which hold: `position,time,features,target`. 
 ![example image](reproducible_workflow/media/example_joining_strip.png "Title")
 
 ## Make data ML-ready
