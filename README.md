@@ -1,5 +1,5 @@
 # ML4L
-
+![GitHub repo size](https://img.shields.io/github/repo-size/tomkimpson/ML4L)
 Machine learning for land surface modeling.
 
 
@@ -9,7 +9,7 @@ python main.py --process_data --join_data --train_model
 
 
 
-# Raw data
+# 1. Raw data
 
 We have two primary sets of data. The first is a selection of ERA fields. These can be thought of as our features or inputs. The second is land surface temperature measurements from [MODIS](https://modis.gsfc.nasa.gov/about/). Both sets of data are provided by ECMWF having undergone some pre-processing and re-gridding, but are generally publically available.   
 
@@ -33,18 +33,26 @@ Daily files for [MODIS Aqua](https://aqua.nasa.gov/) day observations between 20
 See the [User's guide](https://lpdaac.usgs.gov/documents/715/MOD11_User_Guide_V61.pdf) and the original [data product](https://developers.google.com/earth-engine/datasets/catalog/MODIS_006_MYD11A1)
 
 
-See `Workflow.ipynb` for more detail on the raw data.
+See `Workflow.ipynb` for more details on the raw data.
 
 
 
-# Processed data
+# 2. Processing and joining raw data
 
-To get all this disparate data into a more manageable form call `python main.py --process_data`
+To get all this disparate data into a more manageable form call `python main.py --process_raw_data`
 
-This first creates:
-* Time Variable ERA fields
-* Time Constant ERA fields V15, V20
-* +monthly lakes, salt lakes which are unchanged
+This creates:
+* Time Variable ERA fields. One file per month
+* Time Constant ERA fields. One file per version (V15,V20)
+
++ monthly lakes, salt lakes which are unchanged. The MODIS files are also untouched.
+
+
+In order to use the ERA-MODIS data together to train a model, it is necessary to join the data in time and space. That is, given a collection of ERA features at time $t$ and grid point $x$ what is the corresponding real world observation provided by MODIS? This is done by the call `python main.py --join_data`.
+
+The general method involves taking an hour of ERA data (which covers the whole globe) and an hour of MODIS data (which covers just a strip) and then using a [GPU-accelerated k-nearest neighbours algorithm](https://github.com/facebookresearch/faiss) to find the nearest ERA grid point for every MODIS point. The 'nearness' measure is an L2 squared norm on the latitude/longitude coordinates rather than a [Haversine metric](https://en.wikipedia.org/wiki/Haversine_formula). We filter out any matches where the Haversine distance is > 50 km, and then group by the ERA coordinates to get an average temperature value. 
+
+The outputs monthly `parquet` files. 
 
 
 
