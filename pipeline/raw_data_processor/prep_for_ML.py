@@ -37,6 +37,8 @@ class PrepareMLData():
 
 
         assert len(self.V15_features) == len(self.V20_features)
+        assert len(self.target) == 1 
+
 
 
     def _calculate_delta_fields(self,df):
@@ -68,7 +70,7 @@ class PrepareMLData():
             print ('Loading with these cols:', self.columns_to_load)
             df = pd.read_parquet(m,columns=self.columns_to_load)
             print(df.columns)
-            df_target = df.pop(self.target)
+            df_target = df.pop(self.target[0])
             print (self.target)
             print(df_target)
             #Pass monthly clake as a v20 correction
