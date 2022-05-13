@@ -375,7 +375,8 @@ class JoinERAWithMODIS():
 
 
                 #Find matches in space
-                df_matched = self._faiss_knn(ERA_df,MODIS_df) #Match reduced gaussian grid to MODIS
+                #df_matched = self._faiss_knn(ERA_df,MODIS_df) #Match reduced gaussian grid to MODIS
+                df_matched = self._find_closest_match_sklearn(self,ERA_df,MODIS_df)
                 df_matched['time'] = t            
                 df_matched = df_matched.drop(['index_MODIS', 'band','spatial_ref','index_ERA','values','number','surface','depthBelowLandLayer'], axis=1) #get rid of all these columns that we dont need
                 dfs.append(df_matched)
