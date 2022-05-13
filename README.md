@@ -6,7 +6,7 @@ Machine learning for land surface modeling.
 
 
 ```
-python main.py --process_data --join_data --train_model
+python main.py --process_data --join_data --ML_prep --train_model
 ```
 
 
