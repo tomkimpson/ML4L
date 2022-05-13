@@ -59,7 +59,7 @@ class PrepareMLData():
 
     def _process_directory(self,directory):
 
-        monthly_files = glob.glob(directory+'/*.parquet')
+        monthly_files = sorted(glob.glob(directory+'/MODIS_ERA*.parquet'))
 
         dfs_features = [] #array to hold dfs which have features
         dfs_targets = []
