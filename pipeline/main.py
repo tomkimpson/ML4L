@@ -2,10 +2,12 @@ from configs.config import CFG
 from model.neural_net import NeuralNet
 from raw_data_processor.raw_data_processor import ProcessERAData
 from raw_data_processor.join_ERA_with_MODIS import JoinERAWithMODIS
+from raw_data_processor.prep_for_ML import PrepareMLData
+
 import argparse
  
 
-def process_raw_data(process_data, join_data):
+def process_raw_data(process_data, join_data,greedy):
 
     """
     Get all data together and prepared to pass into model.
@@ -23,6 +25,12 @@ def process_raw_data(process_data, join_data):
         #Join the ERA and MODIS data together
         joining_method =  JoinERAWithMODIS(CFG)
         joining_method.join()
+
+
+    if greedy:
+        prep = PrepareMLData(CFG) 
+        prep.greedy_preprocessing()
+
 
 
     #if allocate train/valid/test

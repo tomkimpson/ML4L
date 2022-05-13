@@ -17,7 +17,7 @@ CFG = {
         "path_to_MODIS_data":             f'{root}MODIS',
 
 
-         #Edge cases to handle in ERA_skin
+        # Edge cases to handle in ERA_skin
         "ERA_skin_constant_features": ['slt','sdfor'],                                   # These are the features in ERA_skin that are constant, but are not in the V* climate files
         "ERA_skin_variable_features": 'aluvp/aluvd/alnip/alnid/istl1/istl2/sd/2d/fal',   # These are the features in ERA_skin that are not constant
         
@@ -55,8 +55,25 @@ CFG = {
         "max_year_to_join":2021,
 
 
-        "training_data": f'{root}processed_data/joined_data/training_data_with_monthly_lakes_w_lakes.h5',
-        "validation_data": f'{root}processed_data/joined_data/validation_data_with_monthly_lakes_w_lakes.h5'
+        "path_to_training_data":   f'{root}processed_data/joined_data/dev_train/',
+        "path_to_validation_data": f'{root}processed_data/joined_data/dev_valid/',
+
+        "list_of_meta_features": ['latitude_ERA', 'longitude_ERA','time'],
+        "list_of_time_variable_features" : ['sp', 'msl', 'u10', 'v10', 't2m', 'aluvp', 'aluvd',
+                                            'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 'skt'],
+        "list_of_V15_features": ['slt_v15', 'sdfor_v15', 'sdor_v15', 'lsrh_v15', 'cvl_v15', 'sr_v15',
+                                 'lsm_v15', 'isor_v15', 'tvl_v15', 'tvh_v15', 'cvh_v15', 'si10_v15',
+                                 'anor_v15', 'cl_v15', 'dl_v15', 'z_v15', 'slor_v15'],
+
+        "list_of_V20_features": ['slt_v20','sdfor_v20', 'sdor_v20', 'lsrh_v20', 'cvl_v20', 'sr_v20', 
+                                'lsm_v20','isor_v20', 'tvl_v20', 'tvh_v20', 'cvh_v20', 'si10_v20', 
+                                'anor_v20','cl_v20', 'dl_v20', 'z_v20', 'slor_v20'], 
+                                
+                                
+        "list_of_bonus_features": ['clake_monthly_value','cl_saline'], 
+        "target_variable" : "MODIS_LST",
+
+
     },
     "train": {
         "batch_size": 10000,

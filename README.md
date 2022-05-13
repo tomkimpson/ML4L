@@ -56,8 +56,9 @@ In order to use the ERA-MODIS data together to train a model, it is necessary to
 The general method involves taking an hour of ERA data (which covers the whole globe) and an hour of MODIS data (which covers just a strip) and then using a [GPU-accelerated k-nearest neighbours algorithm](https://github.com/facebookresearch/faiss) to find the nearest ERA grid point for every MODIS point. The 'nearness' measure is an L2 squared norm on the latitude/longitude coordinates rather than a [Haversine metric](https://en.wikipedia.org/wiki/Haversine_formula). We filter out any matches where the Haversine distance is > 50 km, and then group by the ERA coordinates to get an average temperature value. 
 
 This outputs monthly `parquet` files which hold generally `x,t,features,target`. 
-
 ![example image](reproducible_workflow/media/example_joining_strip.png "Title")
+
+
 ## Make data ML-ready
 
 For the purposes of ML it is useful then modify these files via either a 'greedy' or a 'sensible' method:
