@@ -62,8 +62,10 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description='Process data and train a model')
     parser.add_argument('--process_raw_data', dest='process_data', action='store_true',
                         help="Process raw ERA data")
-    parser.add_argument('--join_data', dest='join_data', action='store_true',
+    parser.add_argument('--join_era_modis', dest='join_data', action='store_true',
                         help="Join MODIS and ERA data")
+    parser.add_argument('--ML_prep', dest='prep_ML', action='store_true',
+                        help="Prepare joined data to be fed into training model")
     parser.add_argument('--train_model', dest='train_model', action='store_true',
                         help="Train a model")
     return parser.parse_args()
@@ -84,7 +86,7 @@ if __name__ == '__main__':
     print ('-------------------------------')
     print ('-------------------------------')
 
-    process_raw_data(args.process_data,args.join_data)
+    process_raw_data(args.process_data,args.join_data,args.prep_ML)
     train_and_predict(args.train_model)
 
 
