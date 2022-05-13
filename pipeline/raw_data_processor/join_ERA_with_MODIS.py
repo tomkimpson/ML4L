@@ -293,7 +293,7 @@ class JoinERAWithMODIS():
         print('len dist = ', len(distances))
 
         df = query.reset_index().join(database.iloc[indices.flatten()].reset_index(), lsuffix='_MODIS',rsuffix='_ERA')
-        df['distance'] = distances
+        df['H_distance'] = distances
         
         #Filter out any large distances
         tolerance = 50 #km
