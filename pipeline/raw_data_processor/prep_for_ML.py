@@ -44,9 +44,10 @@ class PrepareMLData():
         """Function to determine all the delta fields: V20 - V15 
            Later on we will drop"""
         
-        for i in len(self.V15_features):
+        for i in range(len(self.V15_features)):
             v15 = self.V15_features[i]
             v20 = self.V20_features[i]
+            print(v20,v15)
 
             df[v20] = df[v20] - df[v15] #Reassign the v20 fields to all be delta fields 
                     
