@@ -66,7 +66,7 @@ class PrepareMLData():
         for m in monthly_files:
             print ('Loading file f:')
 
-            df = pd.read_parquet(m,columns=self.features)
+            df = pd.read_parquet(m,columns=self.columns_to_load)
             print(df.columns)
             df_target = df.pop(self.target)
             print (self.target)
