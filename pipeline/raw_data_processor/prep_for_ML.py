@@ -30,7 +30,7 @@ class PrepareMLData():
         self.bonus_features = self.config.data.list_of_bonus_features
         self.target = self.config.data.target_variable
 
-        self.features = self.time_variable_features + self.V15_features + self.V20_features + self.bonus_features #+ self.target
+        self.columns_to_load = self.time_variable_features + self.V15_features + self.V20_features + self.bonus_features + self.target
 
         self.normalisation_mean = None 
         self.normalisation_std = None 
@@ -68,7 +68,9 @@ class PrepareMLData():
 
             df = pd.read_parquet(m,columns=self.features)
             print(df.columns)
-
+            df_target = df.pop(self.target)
+            print (self.target)
+            print(df_target)
             #Pass monthly clake as a v20 correction
             df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20']
 
@@ -78,9 +80,10 @@ class PrepareMLData():
             dfs_features.append(df)
 
             #Also load target variable separatley
-            df_target = pd.read_parquet(m,columns=self.target)
-            print('df target is')
-            print(df_target)
+            #print('TARGET = ',self.target)
+            #df_target = pd.read_parquet(m,columns=self.target)
+            #print('df target is')
+            #print(df_target)
             dfs_targets.append(df_target)
        
         print('All files processed. Now concat')
@@ -120,7 +123,7 @@ class PrepareMLData():
         self._process_directory(self.training_dir)  
 
         
-        print ('validation data')
-        print(self.normalisation_mean)
-        self._process_directory(self.validation_dir) 
+        #print ('validation data')
+        #print(self.normalisation_mean)
+        #self._process_directory(self.validation_dir) 
     
