@@ -46,7 +46,7 @@ class PrepareMLData():
     def _calculate_delta_fields(self,df):
         
         """Function to determine all the delta fields: V20 - V15 
-           Later on we will drop"""
+           V20 fields is reassigned to a delta field."""
         
         for i in range(len(self.V15_features)):
             v15 = self.V15_features[i]
@@ -63,6 +63,12 @@ class PrepareMLData():
 
     def _process_directory(self,directory,include_xt):
 
+        """
+        Function to process a directory of monthly files and write them to a single file.
+        Also calculates normalisation over the entire training set and determines delta corrections
+        Writes a single file to directory/
+        """
+
         if include_xt: #also load and carry time and position
             loaded_cols = self.columns_to_load+self.xt
             pop_cols = self.target+self.xt
@@ -72,7 +78,6 @@ class PrepareMLData():
             pop_cols = self.target
 
         monthly_files = sorted(glob.glob(directory+'/MODIS_ERA*.parquet'))
-        print ('inc xt?', include_xt)
         dfs_features = [] #array to hold dfs which have features
         dfs_targets = []
         for m in monthly_files:
@@ -91,13 +96,13 @@ class PrepareMLData():
             dfs_features.append(df)
             dfs_targets.append(df_target)
        
-        print('All files processed. Now concat')
+        print('All dfs loaded and processed. Now concatenate')
         df_features = pd.concat(dfs_features)
         df_targets = pd.concat(dfs_targets)
 
         if (self.normalisation_mean is None) & (self.normalisation_std is None): 
 
-            print ('Calculating normalisation parameters')
+            print ('Calculating normalisation parameters for directory:', directory)
             #If we dont have any normalisation parameters already 
             self.normalisation_mean =  df_features.mean()
             self.normalisation_std =  df_features.std()
@@ -105,25 +110,35 @@ class PrepareMLData():
         #Normalise it using the pre calculated terms
         df_features = (df_features-self.normalisation_mean)/self.normalisation_std
 
-        # Concat with the target variable which is unnormalised
+        # Concat with the targets variable which is unnormalised
         df_out = pd.concat([df_features,df_targets],axis=1)
         assert len(loaded_cols) == len(df_out.columns) #check no cols lost in the process
         
-        #save it to disk
-        print ('saving to',directory+'alldata.parquet')
+        # Save it to disk
+        print ('Saving to:',directory+'alldata.parquet')
         df_out.to_parquet(directory+'/alldata.parquet',compression=None)
-   
-       # return df_out 
+
 
 
     def greedy_preprocessing(self):
 
-        print ('training data')
+        """
+        Process the ERA-MODIS data in a greedy manner, ignoring any potential future restrictions on memory
+        """
+
+        print ('Prepare training data')
         self._process_directory(self.training_dir,include_xt=False)  
 
         
-        print ('validation data')
+        print ('Prepare validation data')
         self._process_directory(self.validation_dir,include_xt=False) 
     
-        print ('test data')
+        print ('Prepare test data')
         self._process_directory(self.test_dir,include_xt=True) 
+
+
+    def sensible_preprocessing(self):
+
+        """
+        Process the ERA-MODIS data in a sensible memory-lite way, using TFRecords
+        """

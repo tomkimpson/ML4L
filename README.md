@@ -58,7 +58,6 @@ The general method involves taking an hour of ERA data (which covers the whole g
 This outputs monthly `parquet` files which hold generally `x,t,features,target`. 
 ![example image](reproducible_workflow/media/example_joining_strip.png "Title")
 
-
 ## Make data ML-ready
 
 For the purposes of ML it is useful then modify these files via either a 'greedy' or a 'sensible' method:
@@ -67,9 +66,7 @@ For the purposes of ML it is useful then modify these files via either a 'greedy
 
 * **Sensible** involves converting our `parquet` files into a [TFRecord](https://www.tensorflow.org/tutorials/load_data/tfrecord) format which can then be easily loaded batchwise into an ML pipeline.
 
-
-WE typically use greedy...
-Need to also normalize...
+For training data of ~ 1 year or less, we typically use `Greedy`. 12 months of data in `.parquet` format is around 3G, and only a subset of that is typically loaded into memory when training (i.e. don't train over all columns). In `Greedy`, as well as bringing together all the monthly files, we also normalise w.r.t parameters calculated over the training set and calculate the delta fields, reassigning `X_v20` to be `X_v20 - X_v15`. Monthly corrections to `cl` are also carried as `clake_monthly_value` - `cl_v20`. Position and time are not present in the output training/validation files but are included in the testing data - this makes it easier to later inspect the geographic or temporal distribution in the prediction error.
 
 
 ---
