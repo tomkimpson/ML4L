@@ -277,11 +277,10 @@ class JoinERAWithMODIS():
         #Load the saline lake
         self._load_saline_lake_data()
               
-        for f in self.ERA_files[0:4]: #Iterate over all months
+        for f in self.ERA_files: #Iterate over all months
             #Load a month of ERA data
             print ('Loading ERA month:', f)
             ERA_month = xr.open_dataset(f,engine='cfgrib',backend_kwargs={'indexpath': ''})
-            print ('LOADED ERA SOKE')
 
             #Get all times in that month of data. These are on an hourly grain
             timestamps = pd.to_datetime(ERA_month.time) 
@@ -350,8 +349,6 @@ class JoinERAWithMODIS():
         
             # At the end of every month, do some IO
             df = pd.concat(dfs)
-            print ('list of df columns:')
-            print (df.columns)
             year_month = f.split('/')[-1].split('.')[0]
             fname = f'MODIS_{year_month}.parquet'
             print ("Writing to disk:", self.IO_path+fname)
