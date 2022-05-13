@@ -10,6 +10,7 @@ import numpy as np
 import pandas as pd
 from contextlib import suppress
 import faiss
+from sklearn.neighbors import NearestNeighbors
 
 import sys
 
@@ -265,6 +266,44 @@ class JoinERAWithMODIS():
 
 
 
+    
+    
+    def _find_closest_match_sklearn(self,database,query):
+        
+
+        
+        #Construct NN     
+        NN = NearestNeighbors(n_neighbors=1, metric='haversine') #algorithm = balltree, kdtree or brutie force
+
+
+        NN.fit(np.deg2rad(database[['latitude', 'longitude']].values))
+
+
+        query_lats = query['latitude'].astype(np.float64)
+        query_lons = query['longitude'].astype(np.float64)
+
+
+        X = np.deg2rad(np.c_[query_lats, query_lons])
+        distances, indices = NN.kneighbors(X, return_distance=True)
+
+
+        r_km = 6371 # multiplier to convert to km (from unit distance)
+        distances = distances*r_km
+
+
+        df = query.reset_index().join(database.iloc[indices.flatten()].reset_index(), lsuffix='_MODIS',rsuffix='_ERA')
+        df['distance'] = distances
+        
+        #Filter out any large distances
+        tolerance = 50 #km
+        df_filtered = df.query('H_distance < %.9f' % tolerance)
+
+        #Group it. Each ERA point has a bunch of MODIS points. Group and average
+        df_grouped = df_filtered.groupby(['latitude_ERA','longitude_ERA'],as_index=False).mean()
+
+        return df_grouped
+
+
     def join(self):
 
         #Load the constant ERA fields and append to dictionary self.ERA_constants_dict
@@ -277,7 +316,7 @@ class JoinERAWithMODIS():
         #Load the saline lake
         self._load_saline_lake_data()
               
-        for f in self.ERA_files: #Iterate over all months
+        for f in self.ERA_files[0:1]: #Iterate over all months
             #Load a month of ERA data
             print ('Loading ERA month:', f)
             ERA_month = xr.open_dataset(f,engine='cfgrib',backend_kwargs={'indexpath': ''})
@@ -351,8 +390,8 @@ class JoinERAWithMODIS():
             df = pd.concat(dfs)
             year_month = f.split('/')[-1].split('.')[0]
             fname = f'MODIS_{year_month}.parquet'
-            print ("Writing to disk:", self.IO_path+fname)
-            df.to_parquet(self.IO_path+fname,compression=None)
+            print ("NOT Writing to disk:", self.IO_path+fname)
+            #df.to_parquet(self.IO_path+fname,compression=None)
 
             # Deallocate
             ERA_month.close()
