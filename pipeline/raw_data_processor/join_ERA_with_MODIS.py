@@ -273,7 +273,7 @@ class JoinERAWithMODIS():
 
         
         #Construct NN     
-        NN = NearestNeighbors(n_neighbors=1, algorithm='balltree', leaf_size=60,metric='haversine') #algorithm = balltree, kdtree or brutie force
+        NN = NearestNeighbors(n_neighbors=1, algorithm='ball_tree', leaf_size=60,metric='haversine') #algorithm = balltree, kdtree or brutie force
 
 
         NN.fit(np.deg2rad(database[['latitude', 'longitude']].values))
