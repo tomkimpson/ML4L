@@ -278,7 +278,7 @@ class JoinERAWithMODIS():
 
         NN.fit(np.deg2rad(database[['latitude', 'longitude']].values))
 
-
+        print('len query =', len(query))
         query_lats = query['latitude'].astype(np.float64)
         query_lons = query['longitude'].astype(np.float64)
 
@@ -290,6 +290,7 @@ class JoinERAWithMODIS():
         r_km = 6371 # multiplier to convert to km (from unit distance)
         distances = distances*r_km
 
+        print('len dist = ', len(distances))
 
         df = query.reset_index().join(database.iloc[indices.flatten()].reset_index(), lsuffix='_MODIS',rsuffix='_ERA')
         df['distance'] = distances
@@ -376,7 +377,7 @@ class JoinERAWithMODIS():
 
                 #Find matches in space
                 #df_matched = self._faiss_knn(ERA_df,MODIS_df) #Match reduced gaussian grid to MODIS
-                df_matched = self._find_closest_match_sklearn(self,ERA_df,MODIS_df)
+                df_matched = self._find_closest_match_sklearn(ERA_df,MODIS_df)
                 df_matched['time'] = t            
                 df_matched = df_matched.drop(['index_MODIS', 'band','spatial_ref','index_ERA','values','number','surface','depthBelowLandLayer'], axis=1) #get rid of all these columns that we dont need
                 dfs.append(df_matched)
