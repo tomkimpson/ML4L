@@ -136,7 +136,7 @@ class ProcessERAData():
         ERA_skt_files  =  get_list_of_files(self.ERA_skt_path,2018,self.last_year)        
         
         #for i in range(len(ERA_sfc_files)):
-        for i in range(1):
+        for i in [5]:#range(1):
             sfc,skin,skt = ERA_sfc_files[i], ERA_skin_files[i], ERA_skt_files[i]
             y = skin.split('_')[-2] #read the year from the filename
             m = skin.split('_')[-1] #and the month.grib
