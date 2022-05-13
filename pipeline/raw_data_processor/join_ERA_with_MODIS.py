@@ -278,7 +278,6 @@ class JoinERAWithMODIS():
 
         NN.fit(np.deg2rad(database[['latitude', 'longitude']].values))
 
-        print('len query =', len(query))
         query_lats = query['latitude'].astype(np.float64)
         query_lons = query['longitude'].astype(np.float64)
 
@@ -289,8 +288,6 @@ class JoinERAWithMODIS():
 
         r_km = 6371 # multiplier to convert to km (from unit distance)
         distances = distances*r_km
-
-        print('len dist = ', len(distances))
 
         df = query.reset_index().join(database.iloc[indices.flatten()].reset_index(), lsuffix='_MODIS',rsuffix='_ERA')
         df['H_distance'] = distances
