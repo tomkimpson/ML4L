@@ -348,17 +348,14 @@ class JoinERAWithMODIS():
                 ERA_hour.close()
                 MODIS_hour.close()
         
-        # At the end of every month, do some IO
-        df = pd.concat(dfs)
-        print ('list of df columns:')
-        print (df.columns)
-        year_month = f.split('/')[-1].split('.')[0]
-        fname = f'MODIS_{year_month}.parquet'
-        print ("Writing to disk:", self.IO_path+fname)
-        df.to_parquet(self.IO_path+fname,compression=None)
+            # At the end of every month, do some IO
+            df = pd.concat(dfs)
+            print ('list of df columns:')
+            print (df.columns)
+            year_month = f.split('/')[-1].split('.')[0]
+            fname = f'MODIS_{year_month}.parquet'
+            print ("Writing to disk:", self.IO_path+fname)
+            df.to_parquet(self.IO_path+fname,compression=None)
 
-        
-        
-   
-        # Deallocate
-        ERA_month.close()
+            # Deallocate
+            ERA_month.close()
