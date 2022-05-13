@@ -79,6 +79,8 @@ class PrepareMLData():
 
             #Also load target variable separatley
             df_target = pd.read_parquet(m,columns=self.target)
+            print('df target is')
+            print(df_target)
             dfs_targets.append(df_target)
        
         print('All files processed. Now concat')
@@ -97,9 +99,13 @@ class PrepareMLData():
 
         # Concat with the target variable which is unnormalised
         df_out = pd.concat([df_features,df_targets],axis=1)
+        print ('OUTPUT FILE IS:')
         print(df_out)
-        print(df_out.columns)
+        for c in df_out.columns:
+            print(c)
+        print('---------------')
 
+        
         #save it to disk
         print ('saving to',directory+'alldata.parquet')
         df_out.to_parquet(directory+'/alldata.parquet',compression=None)
