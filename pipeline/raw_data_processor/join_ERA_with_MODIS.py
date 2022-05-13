@@ -273,7 +273,7 @@ class JoinERAWithMODIS():
 
         
         #Construct NN     
-        NN = NearestNeighbors(n_neighbors=1, metric='haversine') #algorithm = balltree, kdtree or brutie force
+        NN = NearestNeighbors(n_neighbors=1, algorithm='balltree', leaf_size=60,metric='haversine') #algorithm = balltree, kdtree or brutie force
 
 
         NN.fit(np.deg2rad(database[['latitude', 'longitude']].values))
@@ -314,7 +314,7 @@ class JoinERAWithMODIS():
         #Load the saline lake
         self._load_saline_lake_data()
               
-        for f in self.ERA_files[0:1]: #Iterate over all months
+        for f in self.ERA_files[28:29]: #Iterate over all months
             #Load a month of ERA data
             print ('Loading ERA month:', f)
             ERA_month = xr.open_dataset(f,engine='cfgrib',backend_kwargs={'indexpath': ''})
