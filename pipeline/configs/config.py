@@ -57,6 +57,7 @@ CFG = {
 
         "path_to_training_data":   f'{root}processed_data/joined_data/dev_train/',
         "path_to_validation_data": f'{root}processed_data/joined_data/dev_valid/',
+        "path_to_test_data": f'{root}processed_data/joined_data/dev_test/',
 
         "list_of_meta_features": ['latitude_ERA', 'longitude_ERA','time'],
         "list_of_time_variable_features" : ['sp', 'msl', 'u10', 'v10', 't2m', 'aluvp', 'aluvd',

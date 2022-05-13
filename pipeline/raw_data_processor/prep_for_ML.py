@@ -1,5 +1,6 @@
 #Internal
 from telnetlib import VT3270REGIME
+from xml.etree.ElementInclude import include
 from utils.config import Config 
 
 #external
@@ -22,8 +23,9 @@ class PrepareMLData():
         
         self.training_dir = self.config.data.path_to_training_data
         self.validation_dir = self.config.data.path_to_validation_data
+        self.test_dir = self.config.data.path_to_test_data
 
-
+        self.xt = self.config.data.list_of_meta_features
         self.time_variable_features = self.config.data.list_of_time_variable_features
         self.V15_features = self.config.data.list_of_V15_features
         self.V20_features = self.config.data.list_of_V20_features
@@ -59,18 +61,26 @@ class PrepareMLData():
 
 
 
-    def _process_directory(self,directory):
+    def _process_directory(self,directory,include_xt):
+
+        if include_xt: #also load and carry time and position
+            loaded_cols = self.columns_to_load+self.xt
+            pop_cols = self.target+self.xt
+
+        else:
+            loaded_cols = self.columns_to_load
+            pop_cols = self.target
 
         monthly_files = sorted(glob.glob(directory+'/MODIS_ERA*.parquet'))
-
+        print ('inc xt?', include_xt)
         dfs_features = [] #array to hold dfs which have features
         dfs_targets = []
         for m in monthly_files:
             print ('Loading file f:',m)
-            df = pd.read_parquet(m,columns=self.columns_to_load)
-            #Pop of target variable
-            df_target = df.pop(self.target[0])
             
+            df = pd.read_parquet(m,columns=loaded_cols)
+            df_target = pd.concat([df.pop(x) for x in pop_cols], axis=1)
+
             #Pass monthly clake as a v20 correction
             df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20']
 
@@ -97,9 +107,7 @@ class PrepareMLData():
 
         # Concat with the target variable which is unnormalised
         df_out = pd.concat([df_features,df_targets],axis=1)
-        print ('OUTPUT FILE IS:')
-        print(df_out)
-        assert len(self.columns_to_load) == len(df_out.columns) #check no cols lost in the process
+        assert len(loaded_cols) == len(df_out.columns) #check no cols lost in the process
         
         #save it to disk
         print ('saving to',directory+'alldata.parquet')
@@ -111,11 +119,11 @@ class PrepareMLData():
     def greedy_preprocessing(self):
 
         print ('training data')
-        print(self.normalisation_mean)
-        self._process_directory(self.training_dir)  
+        self._process_directory(self.training_dir,include_xt=False)  
 
         
         print ('validation data')
-        print(self.normalisation_mean)
-        self._process_directory(self.validation_dir) 
+        self._process_directory(self.validation_dir,include_xt=False) 
     
+        print ('test data')
+        self._process_directory(self.test_dir,include_xt=True) 
