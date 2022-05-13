@@ -49,7 +49,7 @@ class PrepareMLData():
         for i in range(len(self.V15_features)):
             v15 = self.V15_features[i]
             v20 = self.V20_features[i]
-            print(v20,v15)
+            assert v20.split('_')[0] == v15.split('_')[0]
 
             df[v20] = df[v20] - df[v15] #Reassign the v20 fields to all be delta fields 
                     
@@ -67,25 +67,18 @@ class PrepareMLData():
         dfs_targets = []
         for m in monthly_files:
             print ('Loading file f:',m)
-            print ('Loading with these cols:', self.columns_to_load)
             df = pd.read_parquet(m,columns=self.columns_to_load)
-            print(df.columns)
+            #Pop of target variable
             df_target = df.pop(self.target[0])
-            print (self.target)
-            print(df_target)
+            
             #Pass monthly clake as a v20 correction
             df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20']
 
             #Calculate delta fields
             df = self._calculate_delta_fields(df)
-
+             
+            #Append 
             dfs_features.append(df)
-
-            #Also load target variable separatley
-            #print('TARGET = ',self.target)
-            #df_target = pd.read_parquet(m,columns=self.target)
-            #print('df target is')
-            #print(df_target)
             dfs_targets.append(df_target)
        
         print('All files processed. Now concat')
@@ -106,10 +99,7 @@ class PrepareMLData():
         df_out = pd.concat([df_features,df_targets],axis=1)
         print ('OUTPUT FILE IS:')
         print(df_out)
-        for c in df_out.columns:
-            print(c)
-        print('---------------')
-
+        assert len(self.columns_to_load) == len(df_out.columns) #check no cols lost in the process
         
         #save it to disk
         print ('saving to',directory+'alldata.parquet')
@@ -125,7 +115,7 @@ class PrepareMLData():
         self._process_directory(self.training_dir)  
 
         
-        #print ('validation data')
-        #print(self.normalisation_mean)
-        #self._process_directory(self.validation_dir) 
+        print ('validation data')
+        print(self.normalisation_mean)
+        self._process_directory(self.validation_dir) 
     
