@@ -51,7 +51,7 @@ CFG = {
         "satellite":'aquaDay',
         "latitude_bound": 70,
 
-        "min_year_to_join":2016, #typically we want these min/maxes to be the same as min_year_to_join, but maybe an edge case exists?
+        "min_year_to_join":2019, #typically we want these min/maxes to be the same as min_year_to_join, but maybe an edge case exists?
         "max_year_to_join":2021,
 
 

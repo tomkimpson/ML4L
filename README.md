@@ -18,7 +18,7 @@ We have two primary sets of data. The first is a selection of ERA fields. These 
 
 ## ERA data
 
-The raw ERA data is divided among the following files, all on an N640 [reduced Gaussain grid](https://confluence.ecmwf.int/display/EMOS/Reduced+Gaussian+Grids):
+The raw ERA data is divided among the following files, all on a reduced Gaussain grid:
 
 * `ERA_sfc`.  Monthly files between 2016-2021, hourly grain.
 * `ERA_skin`. Monthly files between 2016-2021, hourly grain.
