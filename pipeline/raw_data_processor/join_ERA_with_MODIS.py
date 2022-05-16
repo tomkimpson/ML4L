@@ -320,7 +320,7 @@ class JoinERAWithMODIS():
             timestamps = pd.to_datetime(ERA_month.time) 
 
             dfs = []
-            for t in timestamps[14:]: #iterate over every time (hour)
+            for t in timestamps[350:]: #iterate over every time (hour)
 
                 print(t)
 
