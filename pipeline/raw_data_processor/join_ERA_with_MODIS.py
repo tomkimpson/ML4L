@@ -190,6 +190,8 @@ class JoinERAWithMODIS():
         #And covert longitude to long1
         ERA_hour = ERA_hour.assign_coords({"longitude": (((ERA_hour.longitude + 180) % 360) - 180)})
 
+        print('ERA HOUR PRE LAND FILTER')
+        print(ERA_hour)
 
         # Also filter by latitude/longtiude
         longitude_filter = (ERA_hour.longitude > bounds['longitude_min']) & (ERA_hour.longitude < bounds['longitude_max'])
@@ -359,6 +361,10 @@ class JoinERAWithMODIS():
                 MODIS_hour = MODIS_data.where(mask,drop=True).load() 
                 MODIS_df = MODIS_hour.to_dataframe(name='MODIS_LST').reset_index().dropna() #Make everything a pandas df to pass into faiss_knn. Unnecessary step?
 
+                print('MODIS dataframe')
+                print(MODIS_df)
+
+
                 #Spatial bounds
                 #Get the limits of the MODIS box. We will use this to filter the ERA data for faster matching
                 #i.e. when looking for matches, dont need to look over the whole Earth, just a strip
@@ -369,12 +375,15 @@ class JoinERAWithMODIS():
                         "longitude_max":   MODIS_df.longitude.max()+delta
                 }
 
-
+                print('bounds')
+                print(bounds)
 
                 # Get an hour of ERA data
                 ERA_hour = self._get_ERA_hour(ERA_month,t,clake_month,bounds) # Get an hour of all ERA data
                 ERA_df = ERA_hour.to_dataframe().reset_index()                # Make it a df
 
+                print ('ERA df')
+                print ()
 
                 #Find matches in space
                 print ('Finding matches')
