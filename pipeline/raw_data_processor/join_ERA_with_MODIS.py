@@ -361,8 +361,11 @@ class JoinERAWithMODIS():
                 MODIS_hour = MODIS_data.where(mask,drop=True).load() 
                 MODIS_df = MODIS_hour.to_dataframe(name='MODIS_LST').reset_index().dropna() #Make everything a pandas df to pass into faiss_knn. Unnecessary step?
 
-                print('MODIS dataframe')
-                print(MODIS_df)
+
+                if MODIS_df.empty:
+                    print('MODIS dataframe is empty')
+                    print('skipping to next iteraton')
+                    continue
 
 
                 #Spatial bounds
@@ -395,8 +398,7 @@ class JoinERAWithMODIS():
                 df_matched = df_matched.drop(['index_MODIS', 'band','spatial_ref','index_ERA','values','number','surface','depthBelowLandLayer'], axis=1) #get rid of all these columns that we dont need
                 dfs.append(df_matched)
 
-                sys.exit('Debug exit')
-
+               
                 # Explicitly deallocate
                 ERA_hour.close()
                 MODIS_hour.close()
