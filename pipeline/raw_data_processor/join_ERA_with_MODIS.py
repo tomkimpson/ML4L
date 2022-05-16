@@ -384,7 +384,7 @@ class JoinERAWithMODIS():
                 elif self.joining_metric == 'L2':
                     df_matched = self._faiss_knn(ERA_df,MODIS_df) 
                 else:
-                    sys.exit(f'Joining metric {joining_metric} is not a valid option')
+                    sys.exit(f'Joining metric {self.joining_metric} is not a valid option')
 
 
 
