@@ -311,7 +311,7 @@ class JoinERAWithMODIS():
         #Load the saline lake
         self._load_saline_lake_data()
         print('Iterating over the following months:',self.ERA_files[0:1])
-        for f in self.ERA_files[12:]: #Iterate over all months
+        for f in self.ERA_files[17:]: #Iterate over all months
             #Load a month of ERA data
             print ('Loading ERA month:', f)
             ERA_month = xr.open_dataset(f,engine='cfgrib',backend_kwargs={'indexpath': ''})
@@ -320,7 +320,7 @@ class JoinERAWithMODIS():
             timestamps = pd.to_datetime(ERA_month.time) 
 
             dfs = []
-            for t in timestamps: #iterate over every time (hour)
+            for t in timestamps[14:]: #iterate over every time (hour)
 
                 print(t)
 
@@ -376,7 +376,7 @@ class JoinERAWithMODIS():
                 df_matched = df_matched.drop(['index_MODIS', 'band','spatial_ref','index_ERA','values','number','surface','depthBelowLandLayer'], axis=1) #get rid of all these columns that we dont need
                 dfs.append(df_matched)
 
-
+                sys.exit('Debug exit')
 
                 # Explicitly deallocate
                 ERA_hour.close()
