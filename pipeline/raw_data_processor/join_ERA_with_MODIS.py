@@ -63,6 +63,11 @@ class JoinERAWithMODIS():
         self.IO_path = self.config.data.path_to_joined_ERA_MODIS_files
 
 
+        self.joining_metric =  self.config.data.joining_metric
+
+
+
+
     def _load_constant_ERA_data(self,f,v):
 
         """
@@ -228,10 +233,6 @@ class JoinERAWithMODIS():
         
         Note that the nearness is an L2 (squared) norm on the lat/long coordinates, rather than a haversine metric
         """
-        
-        print ('Faiss inputs:')
-        print(database)
-        print(query)
 
         #Database
         xb = database[["latitude", "longitude"]].to_numpy().astype('float32')
@@ -272,12 +273,7 @@ class JoinERAWithMODIS():
     
     
     def _find_closest_match_sklearn(self,database,query):
-        
-
-        print('sklearn inputs')
-        print(database)
-        print(query)
-        
+               
         #Construct NN     
         NN = NearestNeighbors(n_neighbors=1, algorithm='ball_tree', leaf_size=60,metric='haversine') #algorithm = balltree, kdtree or brutie force
 
@@ -363,8 +359,8 @@ class JoinERAWithMODIS():
 
 
                 if MODIS_df.empty:
-                    print('MODIS dataframe is empty')
-                    print('skipping to next iteraton')
+                    print('MODIS dataframe is empty for t = ', t)
+                    print('Skipping to next timestep')
                     continue
 
 
@@ -378,22 +374,20 @@ class JoinERAWithMODIS():
                         "longitude_max":   MODIS_df.longitude.max()+delta
                 }
 
-                print('bounds')
-                print(bounds)
-
                 # Get an hour of ERA data
                 ERA_hour = self._get_ERA_hour(ERA_month,t,clake_month,bounds) # Get an hour of all ERA data
                 ERA_df = ERA_hour.to_dataframe().reset_index()                # Make it a df
 
-                print ('ERA df')
-                print ()
-
                 #Find matches in space
-                print ('Finding matches')
-                print ('faiss')
-                df_matched = self._faiss_knn(ERA_df,MODIS_df) #Match reduced gaussian grid to MODIS
-                print('sklearn')
-                df_matched = self._find_closest_match_sklearn(ERA_df,MODIS_df)
+                if joining_metric == 'haversine':
+                    df_matched = self._find_closest_match_sklearn(ERA_df,MODIS_df)
+                elif joining_metric == 'L2':
+                    df_matched = self._faiss_knn(ERA_df,MODIS_df) 
+                else:
+                    sys.exit(f'Joining metric {joining_metric} is not a valid option')
+
+
+
                 df_matched['time'] = t            
                 df_matched = df_matched.drop(['index_MODIS', 'band','spatial_ref','index_ERA','values','number','surface','depthBelowLandLayer'], axis=1) #get rid of all these columns that we dont need
                 dfs.append(df_matched)
