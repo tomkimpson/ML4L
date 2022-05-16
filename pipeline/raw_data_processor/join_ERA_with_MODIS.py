@@ -195,9 +195,6 @@ class JoinERAWithMODIS():
         #And covert longitude to long1
         ERA_hour = ERA_hour.assign_coords({"longitude": (((ERA_hour.longitude + 180) % 360) - 180)})
 
-        print('ERA HOUR PRE LAND FILTER')
-        print(ERA_hour)
-
         # Also filter by latitude/longtiude
         longitude_filter = (ERA_hour.longitude > bounds['longitude_min']) & (ERA_hour.longitude < bounds['longitude_max'])
         latitude_filter =  (ERA_hour.latitude > bounds['latitude_min']) & (ERA_hour.latitude < bounds['latitude_max'])
@@ -401,7 +398,7 @@ class JoinERAWithMODIS():
             df = pd.concat(dfs)
             year_month = f.split('/')[-1].split('.')[0]
             fname = f'Haversine_MODIS_{year_month}.parquet'
-            print ("NOT Writing to disk:", self.IO_path+fname)
+            print ("Writing to disk:", self.IO_path+fname)
             df.to_parquet(self.IO_path+fname,compression=None)
 
             # Deallocate
