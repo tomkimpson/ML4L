@@ -227,6 +227,10 @@ class JoinERAWithMODIS():
         Note that the nearness is an L2 (squared) norm on the lat/long coordinates, rather than a haversine metric
         """
         
+        print ('Faiss inputs:')
+        print(database)
+        print(query)
+
         #Database
         xb = database[["latitude", "longitude"]].to_numpy().astype('float32')
         xb = xb.copy(order='C') #C-contigious
@@ -268,6 +272,9 @@ class JoinERAWithMODIS():
     def _find_closest_match_sklearn(self,database,query):
         
 
+        print('sklearn inputs')
+        print(database)
+        print(query)
         
         #Construct NN     
         NN = NearestNeighbors(n_neighbors=1, algorithm='ball_tree', leaf_size=60,metric='haversine') #algorithm = balltree, kdtree or brutie force
