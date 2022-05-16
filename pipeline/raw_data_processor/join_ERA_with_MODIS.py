@@ -379,9 +379,9 @@ class JoinERAWithMODIS():
                 ERA_df = ERA_hour.to_dataframe().reset_index()                # Make it a df
 
                 #Find matches in space
-                if joining_metric == 'haversine':
+                if self.joining_metric == 'haversine':
                     df_matched = self._find_closest_match_sklearn(ERA_df,MODIS_df)
-                elif joining_metric == 'L2':
+                elif self.joining_metric == 'L2':
                     df_matched = self._faiss_knn(ERA_df,MODIS_df) 
                 else:
                     sys.exit(f'Joining metric {joining_metric} is not a valid option')
