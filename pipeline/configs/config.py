@@ -24,8 +24,8 @@ CFG = {
         #Paths to processed output data
         "path_to_processed_V15_climate_fields": f'{root}processed_data/ERA_timeconstant/ERA2_constants_v15.nc',
         "path_to_processed_V20_climate_fields": f'{root}processed_data/ERA_timeconstant/ERA2_constants_v20.nc',
-        "path_to_processed_variable_fields": f'{root}processed_data/ERA_timevariable/',
-        "path_to_joined_ERA_MODIS_files": f'{root}processed_data/joined_data/',
+        "path_to_processed_variable_fields":    f'{root}processed_data/ERA_timevariable/',
+        "path_to_joined_ERA_MODIS_files":       f'{root}processed_data/joined_data/',
 
         #Parameters for processing raw data
         "min_year_to_process":2016, 
