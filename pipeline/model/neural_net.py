@@ -51,7 +51,7 @@ class NeuralNet():
         #Checks
         if os.path.exists(self.path_to_trained_models + self.model_name):
             if self.overwrite is False: 
-                raise Exception( "Save directory already exists" )
+                raise Exception( f"Save directory {self.path_to_trained_models + self.model_name} already exists" )
             if self.overwrite is True: 
                 print ('Overwriting model directory: ', self.model_name)
                 shutil.rmtree(self.path_to_trained_models + self.model_name)
