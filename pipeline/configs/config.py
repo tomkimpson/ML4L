@@ -85,13 +85,24 @@ CFG = {
 
     },
     "train": {
+        "training_data": f'{root}processed_data/joined_data/2016_ML.parquet',
+        "validation_data": f'{root}processed_data/joined_data/2017_ML.parquet',
+        "training_features": ['sp', 'msl', 'u10', 'v10', 't2m', 'aluvp', 'aluvd',
+                              'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 'skt'
+                              'lsm_v15','cl_v15','dl_v15','cvh_v15','cvl_v15',
+                              'anor_v15','isor_v15','slor_v15','sdor_v15','sr_v15','lsrh_v15',
+                              'si10_v15',
+                              'lsm_v20','cl_v20','dl_v20','cvh_v20','cvl_v20',
+                              'anor_v20','isor_v20','slor_v20','sdor_v20','sr_v20','lsrh_v20',
+                              'si10_v20'
+                              ],
         "batch_size": 10000,
         "buffer_size": 1000,
         "epochs": 2,
         "number_of_hidden_layers":2,
         "nodes_per_layer": [None,None],
         "val_subsplits": 5,
-        "training_features": ['sp', 'msl', 'u10', 'v10'],
+
         "target_variable": 'MODIS_LST',
         "learning_rate": 3e-4,
         "loss": 'mse',

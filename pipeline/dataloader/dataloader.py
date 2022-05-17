@@ -10,8 +10,24 @@ class DataLoader:
 
     
 
+    # @staticmethod
+    # def load_data(data_config):
+    #     """Loads dataset from path"""
+
+    #     training_data_size = os.path.getsize(data_config.training_data)
+    #     validation_data_size = os.path.getsize(data_config.validation_data)
+
+    #     print ('Size of training data:', round(training_data_size/1e9,2) , ' G')
+    #     print ('Size of validation data:', round(validation_data_size/1e9,2) , ' G')
+
+
+    #     #return tf.data.TFRecordDataset(data_config.training_data),tf.data.TFRecordDataset(data_config.validation_data)
+    #     return pd.read_hdf(data_config.training_data), pd.read_hdf(data_config.validation_data), 
+
+    
+
     @staticmethod
-    def load_data(data_config):
+    def load_parquet_data(data_config):
         """Loads dataset from path"""
 
         training_data_size = os.path.getsize(data_config.training_data)
@@ -20,6 +36,4 @@ class DataLoader:
         print ('Size of training data:', round(training_data_size/1e9,2) , ' G')
         print ('Size of validation data:', round(validation_data_size/1e9,2) , ' G')
 
-
-        #return tf.data.TFRecordDataset(data_config.training_data),tf.data.TFRecordDataset(data_config.validation_data)
-        return pd.read_hdf(data_config.training_data), pd.read_hdf(data_config.validation_data), 
+        return pd.read_parquet(data_config.training_data,columns=data_config.training_features), pd.read_parquet(data_config.validation_data,columns=data_config.training_features) 
