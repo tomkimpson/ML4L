@@ -141,6 +141,7 @@ class NeuralNet():
 
         #Create a directory where we will save everything
         os.mkdir(save_dir)
+        print ('Saving model to:', save_dir)
         # Save the trained NN and the training history
         self.model.save(save_dir+'/trained_model') 
         history_dict = self.history.history
