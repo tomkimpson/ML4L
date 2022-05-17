@@ -61,7 +61,7 @@ class NeuralNet():
     def load_data(self):
         self.training_data, self.validation_data = DataLoader().load_parquet_data(self.config.train)
         
-        assert len(self.training_data.columns) == len(self.config.train.training_features) #Check number of columns is what we expect
+        assert len(self.training_data.columns) + 1 == len(self.config.train.training_features) #Check number of columns is what we expect
 
 
     def construct_network(self):

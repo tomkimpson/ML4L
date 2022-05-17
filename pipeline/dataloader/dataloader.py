@@ -36,4 +36,5 @@ class DataLoader:
         print ('Size of training data:', round(training_data_size/1e9,2) , ' G')
         print ('Size of validation data:', round(validation_data_size/1e9,2) , ' G')
 
-        return pd.read_parquet(data_config.training_data,columns=data_config.training_features), pd.read_parquet(data_config.validation_data,columns=data_config.training_features) 
+        #Only load the training features and the target variable
+        return pd.read_parquet(data_config.training_data,columns=data_config.training_features + [data_config.target_variable]), pd.read_parquet(data_config.validation_data,columns=data_config.training_features+ [data_config.target_variable]) 
