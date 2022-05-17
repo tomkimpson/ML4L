@@ -157,8 +157,9 @@ class NeuralNet():
 
 
     def predict(self):
-
-        loaded_model = tf.keras.models.load_model(self.save_dir) # Load the model
+        print('loading model at:', self.save_dir+'/trained_model')
+        print(self.config.train.testing_data)
+        loaded_model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
         test_data = pd.read_parquet(self.config.train.testing_data,columns=self.config.train.training_features + [self.config.train.target_variable]) #Load the test data
         print ('Got the test data and model')
 
