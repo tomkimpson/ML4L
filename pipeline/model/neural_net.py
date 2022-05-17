@@ -93,7 +93,7 @@ class NeuralNet():
 
     #----------------DEV AREA
     def load_data(self):
-        self.training_data, self.validation_data = DataLoader().load_data(self.config.train)
+        self.training_data, self.validation_data = DataLoader().load_parquet_data(self.config.train)
         #self.training_data = self.training_data.map(self._parse_function)
         #self.training_data = self.validation_data.map(self._parse_function)
         #self._preprocess_data()
