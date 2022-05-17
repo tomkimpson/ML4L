@@ -15,22 +15,27 @@ class PrepareMLData():
 
     Also calculates the "delta features" i.e. V20 - V15 for the time constant features
     
-    Greedy produce a single file for each train/validate/test.
+    'Greedy' method produce a single file for each train/validate/test.
     """
 
     def __init__(self,cfg):         
         self.config = Config.from_json(cfg)                         # Configuration file
         
-        self.training_dir = self.config.data.path_to_training_data
-        self.validation_dir = self.config.data.path_to_validation_data
-        self.test_dir = self.config.data.path_to_test_data
+        #self.training_dir = self.config.data.path_to_training_data
+        #self.validation_dir = self.config.data.path_to_validation_data
+        #self.test_dir = self.config.data.path_to_test_data
 
-        self.xt = self.config.data.list_of_meta_features
-        self.time_variable_features = self.config.data.list_of_time_variable_features
-        self.V15_features = self.config.data.list_of_V15_features
-        self.V20_features = self.config.data.list_of_V20_features
-        self.bonus_features = self.config.data.list_of_bonus_features
-        self.target = self.config.data.target_variable
+        self.training_years = self.config.prep.training_years
+        self.validation_years = self.config.prep.training_years
+        self.test_years = self.config.prep.test_years
+        self.path_to_input_data = self.config.data.path_to_joined_ERA_MODIS_files
+
+        self.xt = self.config.prep.list_of_meta_features
+        self.time_variable_features = self.config.prep.list_of_time_variable_features
+        self.V15_features = self.config.prep.list_of_V15_features
+        self.V20_features = self.config.prep.list_of_V20_features
+        self.bonus_features = self.config.prep.list_of_bonus_features
+        self.target = self.config.prep.target_variable
 
         self.columns_to_load = self.time_variable_features + self.V15_features + self.V20_features + self.bonus_features + self.target
 
@@ -61,7 +66,7 @@ class PrepareMLData():
 
 
 
-    def _process_directory(self,directory,include_xt):
+    def _process_year(self,years_to_process,include_xt):
 
         """
         Function to process a directory of monthly files and write them to a single file.
@@ -77,7 +82,15 @@ class PrepareMLData():
             loaded_cols = self.columns_to_load
             pop_cols = self.target
 
-        monthly_files = sorted(glob.glob(directory+'/MODIS_ERA*.parquet'))
+    
+
+        monthly_files = []
+        for i in years_to_process:
+            files = glob.glob(self.path_to_input_data+f'Haversine_MODIS_ERA_{i}_*.parquet')
+            monthly_files.append(files)
+    
+        monthly_files = sorted([item for sublist in monthly_files for item in sublist]) 
+
         dfs_features = [] #array to hold dfs which have features
         dfs_targets = []
         for m in monthly_files:
@@ -115,8 +128,9 @@ class PrepareMLData():
         assert len(loaded_cols) == len(df_out.columns) #check no cols lost in the process
         
         # Save it to disk
-        print ('Saving to:',directory+'alldata.parquet')
-        df_out.to_parquet(directory+'/alldata.parquet',compression=None)
+        fout = self.path_to_input_data + '-'.join(years_to_process) + '_ML.parquet' # Possible to save multiple yeats to one file, might be more sensible to just process year-by-year
+        print ('Saving to:',fout)
+        df_out.to_parquet(fout,compression=None)
 
 
 
@@ -127,14 +141,14 @@ class PrepareMLData():
         """
 
         print ('Prepare training data')
-        self._process_directory(self.training_dir,include_xt=False)  
+        self._process_year(self.training_dir,include_xt=False)  
 
         
         print ('Prepare validation data')
-        self._process_directory(self.validation_dir,include_xt=False) 
+        self._process_year(self.validation_dir,include_xt=False) 
     
-        print ('Prepare test data')
-        self._process_directory(self.test_dir,include_xt=True) 
+        # print ('Prepare test data')
+        # self._process_directory(self.test_dir,include_xt=True) 
 
 
     def sensible_preprocessing(self):

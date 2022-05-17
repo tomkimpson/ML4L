@@ -55,9 +55,19 @@ CFG = {
         "max_year_to_join":2021,
 
 
-        "path_to_training_data":   f'{root}processed_data/joined_data/dev_train/',
-        "path_to_validation_data": f'{root}processed_data/joined_data/dev_valid/',
-        "path_to_test_data": f'{root}processed_data/joined_data/dev_test/',
+       
+        "joining_metric" : 'haversine' #L2, haversine
+
+
+    },
+    "prep":{
+        "training_years": ['2016'],
+        "validation_years": ['2017'],
+        "test_years":['2019'],
+
+        #"path_to_training_data":   f'{root}processed_data/joined_data/dev_train/',
+        #"path_to_validation_data": f'{root}processed_data/joined_data/dev_valid/',
+        #"path_to_test_data": f'{root}processed_data/joined_data/dev_test/',
 
         "list_of_meta_features": ['latitude_ERA', 'longitude_ERA','time'],
         "list_of_time_variable_features" : ['sp', 'msl', 'u10', 'v10', 't2m', 'aluvp', 'aluvd',
@@ -73,9 +83,6 @@ CFG = {
                                 
         "list_of_bonus_features": ['clake_monthly_value','cl_saline'], 
         "target_variable" : ["MODIS_LST"],
-        "joining_metric" : 'haversine' #L2, haversine
-
-
     },
     "train": {
         "batch_size": 10000,
