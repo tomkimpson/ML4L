@@ -24,7 +24,7 @@ class PrepareMLData():
         #self.training_dir = self.config.data.path_to_training_data
         #self.validation_dir = self.config.data.path_to_validation_data
         #self.test_dir = self.config.data.path_to_test_data
-
+        print (self.config)
         self.training_years = self.config.prep.training_years
         self.validation_years = self.config.prep.training_years
         self.test_years = self.config.prep.test_years
