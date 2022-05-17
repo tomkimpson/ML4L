@@ -59,8 +59,7 @@ CFG = {
         "joining_metric" : 'haversine' #L2, haversine
 
 
-    },
-    "prep":{
+
         "training_years": ['2016'],
         "validation_years": ['2017'],
         "test_years":['2019'],
@@ -83,6 +82,7 @@ CFG = {
                                 
         "list_of_bonus_features": ['clake_monthly_value','cl_saline'], 
         "target_variable" : ["MODIS_LST"],
+
     },
     "train": {
         "batch_size": 10000,

@@ -24,18 +24,17 @@ class PrepareMLData():
         #self.training_dir = self.config.data.path_to_training_data
         #self.validation_dir = self.config.data.path_to_validation_data
         #self.test_dir = self.config.data.path_to_test_data
-        print (self.config.__dict__)
-        self.training_years = self.config.prep.training_years
-        self.validation_years = self.config.prep.training_years
-        self.test_years = self.config.prep.test_years
+        self.training_years = self.config.data.training_years
+        self.validation_years = self.config.data.training_years
+        self.test_years = self.config.data.test_years
         self.path_to_input_data = self.config.data.path_to_joined_ERA_MODIS_files
 
-        self.xt = self.config.prep.list_of_meta_features
-        self.time_variable_features = self.config.prep.list_of_time_variable_features
-        self.V15_features = self.config.prep.list_of_V15_features
-        self.V20_features = self.config.prep.list_of_V20_features
-        self.bonus_features = self.config.prep.list_of_bonus_features
-        self.target = self.config.prep.target_variable
+        self.xt = self.config.data.list_of_meta_features
+        self.time_variable_features = self.config.data.list_of_time_variable_features
+        self.V15_features = self.config.data.list_of_V15_features
+        self.V20_features = self.config.data.list_of_V20_features
+        self.bonus_features = self.config.data.list_of_bonus_features
+        self.target = self.config.data.target_variable
 
         self.columns_to_load = self.time_variable_features + self.V15_features + self.V20_features + self.bonus_features + self.target
 
