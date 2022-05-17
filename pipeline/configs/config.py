@@ -109,7 +109,7 @@ CFG = {
         "loss": 'mse',
         "metrics": ["accuracy"],
         "path_to_trained_models": f'{root}processed_data/trained_models/',
-        "model_name": 'throwaway',
+        "model_name": 'V15',
         "overwrite": False,
         "use_pretrained_model":False,
         "epoch_save_freq": 10,

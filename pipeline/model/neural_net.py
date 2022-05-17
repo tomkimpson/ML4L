@@ -16,8 +16,6 @@ from tensorflow.keras.callbacks import EarlyStopping,ModelCheckpoint
 
 class NeuralNet():
 
-    #species = "Canis familiaris" #this is a class attribute. True for ALL dogs
-
     def __init__(self,cfg): 
         #super().__init__(config) #call the constructor, aka the init of the parent class
         
@@ -50,11 +48,14 @@ class NeuralNet():
 
         #Checks
         if os.path.exists(self.path_to_trained_models + self.model_name):
-            if self.overwrite is False: 
-                raise Exception( f"Save directory {self.path_to_trained_models + self.model_name} already exists" )
-            if self.overwrite is True: 
-                print ('Overwriting model directory: ', self.model_name)
-                shutil.rmtree(self.path_to_trained_models + self.model_name)
+            print (self.path_to_trained_models + self.model_name, ' exists')
+            # if self.overwrite is False: 
+            #     raise Exception( f'Save directory {self.path_to_trained_models + self.model_name} already exists')
+            # if self.overwrite is True: 
+            #     print ('Overwriting model directory: ', self.model_name)
+            #     shutil.rmtree(self.path_to_trained_models + self.model_name)
+
+
         assert self.number_of_hidden_layers == len(self.nodes_per_layer)          # Number of layers = number of specified nodes
 
 
