@@ -114,7 +114,7 @@ class PrepareMLData():
 
         if (self.normalisation_mean is None) & (self.normalisation_std is None): 
 
-            print ('Calculating normalisation parameters for directory:', directory)
+            print ('Calculating normalisation parameters for years:', years_to_process)
             #If we dont have any normalisation parameters already 
             self.normalisation_mean =  df_features.mean()
             self.normalisation_std =  df_features.std()
