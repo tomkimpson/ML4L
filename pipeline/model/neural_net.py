@@ -57,46 +57,11 @@ class NeuralNet():
         assert self.number_of_hidden_layers == len(self.nodes_per_layer)          # Number of layers = number of specified nodes
 
 
-    # def load_data(self):
-    #     self.training_data, self.validation_data = DataLoader().load_data(self.config.data)
-    #     self.training_data = self.training_data.map(self._parse_function)
-    #     self.training_data = self.validation_data.map(self._parse_function)
-    #     self._preprocess_data()
-            
-    # def _preprocess_data(self):
-    #     """Reads TFRecords """
-        
-    #     self.training_data = self.training_data.shuffle(2048)
-    #     self.training_data = self.training_data.prefetch(buffer_size=AUTOTUNE)
-    #     self.training_data = self.training_data.batch(1024)
-    #     pass
-        
-        
-    # def _parse_function(self,example_proto):
-    
-    #     feature_description = {
-    #     'feature_input': tf.io.FixedLenFeature([51,], tf.float32,default_value=np.zeros(51,)),
-    #     'label' : tf.io.FixedLenFeature([1, ], tf.float32,default_value=np.zeros(1,))
-    #     }
 
-    #     example = tf.io.parse_single_example(example_proto, feature_description)
-
-    #     image = example['feature_input']
-    #     label = example['label']
-
-
-
-    #     return image,label    
-    
-
-
-
-    #----------------DEV AREA
     def load_data(self):
         self.training_data, self.validation_data = DataLoader().load_parquet_data(self.config.train)
-        #self.training_data = self.training_data.map(self._parse_function)
-        #self.training_data = self.validation_data.map(self._parse_function)
-        #self._preprocess_data()
+        
+        assert len(self.training_data.columns) == len(self.config.train.training_features) #Check number of columns is what we expect
 
 
     def construct_network(self):
@@ -147,10 +112,6 @@ class NeuralNet():
 
 
 
-
-
-
-
     def train_network(self):
 
         print('Training network with:')
@@ -187,3 +148,43 @@ class NeuralNet():
         json.dump(self.train_json, open(save_dir+'/configuration.json', 'w')) # Save the complete configuration used
 
 
+
+
+
+
+
+#---------------SCRATCH AREA---------------------#
+
+
+
+    # def load_data(self):
+    #     self.training_data, self.validation_data = DataLoader().load_data(self.config.data)
+    #     self.training_data = self.training_data.map(self._parse_function)
+    #     self.training_data = self.validation_data.map(self._parse_function)
+    #     self._preprocess_data()
+            
+    # def _preprocess_data(self):
+    #     """Reads TFRecords """
+        
+    #     self.training_data = self.training_data.shuffle(2048)
+    #     self.training_data = self.training_data.prefetch(buffer_size=AUTOTUNE)
+    #     self.training_data = self.training_data.batch(1024)
+    #     pass
+        
+        
+    # def _parse_function(self,example_proto):
+    
+    #     feature_description = {
+    #     'feature_input': tf.io.FixedLenFeature([51,], tf.float32,default_value=np.zeros(51,)),
+    #     'label' : tf.io.FixedLenFeature([1, ], tf.float32,default_value=np.zeros(1,))
+    #     }
+
+    #     example = tf.io.parse_single_example(example_proto, feature_description)
+
+    #     image = example['feature_input']
+    #     label = example['label']
+
+
+
+    #     return image,label    
+    

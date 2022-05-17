@@ -51,7 +51,7 @@ def train_and_predict(train_model):
     if train_model:
         NN = NeuralNet(CFG)        # Create a NN using CFG configuration
         NN.load_data()             # Load the training and validation data
-        print(NN.training_data)
+        print(NN.training_data.columns)
         NN.construct_network()     # Construct and compile the network
         NN.train_network()         # Train it
         NN.save_model()            # Save the trained model
