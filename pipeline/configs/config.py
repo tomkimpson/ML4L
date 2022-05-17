@@ -56,7 +56,7 @@ CFG = {
 
 
        
-        "joining_metric" : 'haversine' #L2, haversine
+        "joining_metric" : 'haversine', #L2, haversine
 
 
 
