@@ -21,9 +21,7 @@ class PrepareMLData():
     def __init__(self,cfg):         
         self.config = Config.from_json(cfg)                         # Configuration file
         
-        #self.training_dir = self.config.data.path_to_training_data
-        #self.validation_dir = self.config.data.path_to_validation_data
-        #self.test_dir = self.config.data.path_to_test_data
+
         self.training_years = self.config.data.training_years
         self.validation_years = self.config.data.validation_years
         self.test_years = self.config.data.test_years
@@ -147,7 +145,7 @@ class PrepareMLData():
         # self._process_year(self.validation_years,include_xt=False) 
     
         print ('Prepare test data')
-        self._process_directory(self.test_dir,include_xt=True) 
+        self._process_year(self.test_years,include_xt=True) 
 
 
     def sensible_preprocessing(self):
