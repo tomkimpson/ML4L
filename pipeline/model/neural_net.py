@@ -171,9 +171,11 @@ class NeuralNet():
 
         #Load just the meta info
         meta_data = pd.read_parquet(self.config.train.testing_data,columns=['latitude_ERA', 'longitude_ERA','time','skt','MODIS_LST'])
+        print ('len loaded df:', len(meta_data))
+        print('len preds', len(predictions))
         meta_data['predictions'] = predictions 
         
-        fout = self.save_dir + 'predictions.parquet'
+        fout = self.save_dir + '/predictions.parquet'
         print ('Saving to:',fout)
         meta_data.to_parquet(fout,compression=None)
 
