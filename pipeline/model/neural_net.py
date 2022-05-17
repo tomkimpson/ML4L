@@ -110,6 +110,7 @@ class NeuralNet():
                                                 save_freq=int(self.epoch_save_freq * len(self.training_data) / self.batch_size), #save best model every epoch_save_freq epochs
                                                 )
 
+#c#heckpoint= keras.callbacks.ModelCheckpoint(filepath= checkpoint_filepath, verbose=1, save_freq="epoch", mode='auto',monitor='val_loss', save_best_only=True)
 
 
     def train_network(self):
@@ -118,12 +119,16 @@ class NeuralNet():
         self._model_status()
 
         self.history = self.model.fit(self.training_data[self.training_features], 
-                                 self.training_data[self.target_variable], 
-                                 epochs=self.epochs, batch_size=self.batch_size,
-                                 verbose=1,
-                                 validation_data=(self.validation_data[self.training_features], self.validation_data[self.target_variable]),
-                                 callbacks=[self.early_stopping,self.model_checkpoint]
-                                 ) 
+                                      self.training_data[self.target_variable], 
+                                      epochs=self.epochs, batch_size=self.batch_size,
+                                      verbose=1,
+                                      validation_data=(self.validation_data[self.training_features], self.validation_data[self.target_variable]),
+                                      callbacks=[self.early_stopping,self.model_checkpoint]
+                                     ) 
+
+        for key in self.history.history:
+            print(key)
+        
 
     def _model_status(self):
 
