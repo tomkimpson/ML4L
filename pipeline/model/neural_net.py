@@ -45,6 +45,7 @@ class NeuralNet():
         self.overwrite = self.config.train.overwrite
         self.epoch_save_freq = self.config.train.epoch_save_freq
         self.stopping_patience = self.config.train.early_stopping_patience
+        self.save_dir = self.path_to_trained_models + self.model_name
 
 
         #Checks
@@ -142,7 +143,6 @@ class NeuralNet():
     def save_model(self):
 
         """Save model to disk after training """
-        save_dir = self.path_to_trained_models + self.model_name
 
         #Create a directory where we will save everything
         os.mkdir(save_dir)
@@ -152,6 +152,35 @@ class NeuralNet():
         history_dict = self.history.history
         json.dump(history_dict, open(save_dir+'/training_history.json', 'w'))          # Save the training history
         json.dump(self.train_json, open(save_dir+'/configuration.json', 'w')) # Save the complete configuration used
+
+
+
+    def predict(self):
+
+        loaded_model = tf.keras.models.load_model(self.save_dir) # Load the model
+        test_data = pd.read_parquet(self.config.train.testing_data,columns=self.config.train.training_features + [self.config.train.target_variable]) #Load the test data
+        print ('Got the test data and model')
+
+        print(f'Using trained model {self.save_dir} to make some predictions')
+        predictions = loaded_model.predict(test_data[self.training_features])                 # Prediction 
+
+        #Drop test data
+        del test_data
+
+        #Load just the meta info
+        meta_data = pd.read_parquet(self.config.train.testing_data,columns=['latitude_ERA', 'longitude_ERA','time','skt','MODIS_LST'])
+        meta_data['predictions'] = predictions 
+        
+        fout = self.save_dir + 'predictions.parquet'
+        print ('Saving to:',fout)
+        meta_data.to_parquet(fout,compression=None)
+
+
+
+#Make some predictions
+
+
+
 
 
 
