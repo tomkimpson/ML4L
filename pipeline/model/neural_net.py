@@ -157,36 +157,36 @@ class NeuralNet():
 
 
 
-        print('Training network with:')
-        self._model_status()
-        print ("----------TRAIN X--------")
-        print(self.training_data[self.training_features])
-        print ('-------------------')
+        # print('Training network with:')
+        # self._model_status()
+        # print ("----------TRAIN X--------")
+        # print(self.training_data[self.training_features])
+        # print ('-------------------')
 
-        print ("----------TRAIN Y--------")
-        print(self.training_data[self.target_variable])
-        print ('-------------------')
+        # print ("----------TRAIN Y--------")
+        # print(self.training_data[self.target_variable])
+        # print ('-------------------')
 
-        print ("ALL VALID")
-        print(self.validation_data)
-        print ("--------------------")
+        # print ("ALL VALID")
+        # print(self.validation_data)
+        # print ("--------------------")
 
-        print("TRAINING FEATURES")
-        print(self.training_features)
-        print ("--------------------")
+        # print("TRAINING FEATURES")
+        # print(self.training_features)
+        # print ("--------------------")
 
-        print ('SELECT VALIDATION COLUMNS')
-        print(self.validation_data[self.training_features])
-        print ("--------------------")
+        # print ('SELECT VALIDATION COLUMNS')
+        # print(self.validation_data[self.training_features])
+        # print ("--------------------")
 
 
-        print ("----------VALID X--------")
-        print (self.validation_data[self.training_features])
-        print ('-------------------')
+        # print ("----------VALID X--------")
+        # print (self.validation_data[self.training_features])
+        # print ('-------------------')
 
-        print ("----------VALID Y--------")
-        print(self.validation_data[self.target_variable])
-        print ('-------------------')
+        # print ("----------VALID Y--------")
+        # print(self.validation_data[self.target_variable])
+        # print ('-------------------')
 
 
         self.history = self.model.fit(self.training_data[self.training_features], 
