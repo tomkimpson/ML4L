@@ -150,7 +150,7 @@ class PrepareMLData():
         assert len(loaded_cols) == len(df_out.columns) #check no cols lost in the process
 
         print ('OUTPUT df = ')
-        print(df_out)
+        print(df_out[['sr_v15', 'sr_v20']])
         
         # Save it to disk
         fout = self.path_to_input_data + '-'.join(years_to_process) + '_ML.parquet' # Possible to save multiple yeats to one file, might be more sensible to just process year-by-year
