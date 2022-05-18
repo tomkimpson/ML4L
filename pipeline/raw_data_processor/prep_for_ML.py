@@ -139,6 +139,9 @@ class PrepareMLData():
 
 
         #Normalise it using the pre calculated terms
+        print ('Normalisation parameters')
+        print (self.normalisation_mean)
+        print(self.normalisation_std)
         df_features = (df_features-self.normalisation_mean)/self.normalisation_std
 
         #Get rid of columns with zero variance
@@ -171,8 +174,8 @@ class PrepareMLData():
         print ('Prepare validation data')
         self._process_year(self.validation_years,include_xt=False) 
     
-        #print ('Prepare test data')
-        #self._process_year(self.test_years,include_xt=True) 
+        print ('Prepare test data')
+        self._process_year(self.test_years,include_xt=True) 
 
 
     def sensible_preprocessing(self):

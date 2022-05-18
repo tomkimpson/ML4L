@@ -152,7 +152,7 @@ class NeuralNet():
                                                 save_best_only=True, 
                                                 mode='min',
                                                 save_freq='epoch',
-                                                period=2
+                                                period=2 #period argument is deprecated 
                                                 #save_freq=int(self.epoch_save_freq * len(self.training_data) / self.batch_size), #save best model every epoch_save_freq epochs
                                                 )
 
@@ -164,37 +164,9 @@ class NeuralNet():
 #                                        
 #                                        period=10)
 
-        # print('Training network with:')
-        # self._model_status()
-        # print ("----------TRAIN X--------")
-        # print(self.training_data[self.training_features])
-        # print ('-------------------')
-
-        # print ("----------TRAIN Y--------")
-        # print(self.training_data[self.target_variable])
-        # print ('-------------------')
-
-        # print ("ALL VALID")
-        # print(self.validation_data)
-        # print ("--------------------")
-
-        # print("TRAINING FEATURES")
-        # print(self.training_features)
-        # print ("--------------------")
-
-        # print ('SELECT VALIDATION COLUMNS')
-        # print(self.validation_data[self.training_features])
-        # print ("--------------------")
-
-
-        # print ("----------VALID X--------")
-        # print (self.validation_data[self.training_features])
-        # print ('-------------------')
-
-        # print ("----------VALID Y--------")
-        # print(self.validation_data[self.target_variable])
-        # print ('-------------------')
-
+        print('Training network with:')
+        self._model_status()
+  
 
         self.history = self.model.fit(self.training_data[self.training_features], 
                                       self.training_data[self.target_variable], 
