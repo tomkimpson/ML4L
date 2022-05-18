@@ -116,7 +116,12 @@ class PrepareMLData():
         #Check for useless columns and drop them
         print (df_features.nunique())
         print (df_features.nunique() == 1)
-        print(df.drop(df_features.nunique()[df_features.nunique() == 1].index.values, axis=1))
+        columns_with_zero_variance = df_features.nunique()[df_features.nunique() == 1].index.values
+        print (f'The following features have zero variance in year {years_to_process} and will be dropped')
+        print (columns_with_zero_variance)
+        df_features = df_features.drop(columns_with_zero_variance, axis=1)
+        print(df_features.columns)
+        print (df_features)
 
         #print(df_features[df_features.nunique() == 1])
 
@@ -128,7 +133,6 @@ class PrepareMLData():
             self.normalisation_mean =  df_features.mean()
             self.normalisation_std =  df_features.std()
 
-            print ('zeros')
 
 
 
@@ -138,9 +142,6 @@ class PrepareMLData():
 
         # Concat with the targets variable which is unnormalised
         df_out = pd.concat([df_features,df_targets],axis=1)
-
-        print (loaded_cols)
-        print (df_out.columns)
 
 
         assert len(loaded_cols) == len(df_out.columns) #check no cols lost in the process
