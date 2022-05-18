@@ -140,6 +140,9 @@ class PrepareMLData():
         # Concat with the targets variable which is unnormalised
         df_out = pd.concat([df_features,df_targets],axis=1)
         assert len(loaded_cols) == len(df_out.columns) #check no cols lost in the process
+
+        print ('OUTPUT df = ')
+        print(df_out)
         
         # Save it to disk
         fout = self.path_to_input_data + '-'.join(years_to_process) + '_ML.parquet' # Possible to save multiple yeats to one file, might be more sensible to just process year-by-year
