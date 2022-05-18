@@ -151,11 +151,18 @@ class NeuralNet():
                                                 monitor='val_loss', 
                                                 save_best_only=True, 
                                                 mode='min',
-                                                save_freq=int(self.epoch_save_freq * len(self.training_data) / self.batch_size), #save best model every epoch_save_freq epochs
+                                                save_freq='epoch',
+                                                period=2
+                                                #save_freq=int(self.epoch_save_freq * len(self.training_data) / self.batch_size), #save best model every epoch_save_freq epochs
                                                 )
 
 
-
+#  model_checkpoint = ModelCheckpoint(filepath = 'checkpoint', 
+#                                        monitor='val_loss', 
+#                                        save_best_only=True, 
+#                                        mode='min',
+#                                        
+#                                        period=10)
 
         # print('Training network with:')
         # self._model_status()

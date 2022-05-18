@@ -98,7 +98,7 @@ CFG = {
                               
                               ],
         "batch_size": 10000,
-        "epochs": 100,
+        "epochs": 50,
         "number_of_hidden_layers":2,
         "nodes_per_layer": [19,19],
         "target_variable": 'MODIS_LST',
@@ -107,7 +107,7 @@ CFG = {
         "metrics": ["accuracy"],
         "path_to_trained_models": f'{root}processed_data/trained_models/',
         "model_name": 'V20_2018_testing',
-        "overwrite": False,
+        "overwrite": True,
         "use_pretrained_model":False,
         "epoch_save_freq": 10,
         "early_stopping_patience":20
