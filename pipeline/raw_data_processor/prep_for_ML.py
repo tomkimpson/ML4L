@@ -83,7 +83,9 @@ class PrepareMLData():
 
         monthly_files = []
         for i in years_to_process:
-            files = glob.glob(self.path_to_input_data+f'Haversine_MODIS_ERA_{i}_*.parquet')
+            #files = glob.glob(self.path_to_input_data+f'Haversine_MODIS_ERA_{i}_*.parquet')
+            files = glob.glob(self.path_to_input_data+f'MODIS_ERA_{i}_*.parquet')
+
             monthly_files.append(files)
     
         monthly_files = sorted([item for sublist in monthly_files for item in sublist]) 
