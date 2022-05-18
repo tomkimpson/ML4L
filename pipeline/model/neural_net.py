@@ -36,6 +36,7 @@ class NeuralNet():
         self.LR                       = self.config.train.learning_rate
         self.metrics                  = self.config.train.metrics
         self.loss                     = self.config.train.loss
+        self.pretrained_model         = self.config.train.pretrained_model
         
         # IO
         self.epoch_save_freq        = self.config.train.epoch_save_freq
@@ -216,8 +217,12 @@ class NeuralNet():
 
         self._load_data()
 
-        self._construct_network()
-
+        if self.pretrained_model is None:
+            self._construct_network()
+        else:
+             print ('Loading a pretrained model from ', self.pretrained_model)
+             self.model = tf.keras.models.load_model(self.pretrained_model)
+        
         self._callbacks()
         
         self._train_network()
