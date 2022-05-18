@@ -102,7 +102,7 @@ CFG = {
         "number_of_hidden_layers":2,
         "nodes_per_layer": [19,19],
         "target_variable": 'MODIS_LST',
-        "learning_rate": 3e-4,
+        "learning_rate": 0.1,
         "loss": 'mse',
         "metrics": ["accuracy"],
         "path_to_trained_models": f'{root}processed_data/trained_models/',
