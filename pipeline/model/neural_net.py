@@ -51,6 +51,7 @@ class NeuralNet():
         self.stopping_patience = self.config.train.early_stopping_patience
         self.save_dir = self.path_to_trained_models + self.model_name
         self.node = None
+        self.history=None
 
         #Checks
         assert self.number_of_hidden_layers == len(self.nodes_per_layer)          # Number of layers = number of specified nodes
