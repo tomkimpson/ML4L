@@ -26,13 +26,16 @@ class NeuralNet():
         # Data
 
         # Model Training parameters
-
-        # IO
-
         self.batch_size = self.config.train.batch_size
         self.epochs = self.config.train.epochs
         self.number_of_hidden_layers = self.config.train.number_of_hidden_layers
         self.nodes_per_layer = self.config.train.nodes_per_layer
+        # IO
+
+
+
+
+
         self.training_data = None
         self.validation_data = None   
         
@@ -219,7 +222,7 @@ class NeuralNet():
 
         self._callbacks()
         
-        self._train_network
+        self._train_network()
         
         self._save_model()  
 
