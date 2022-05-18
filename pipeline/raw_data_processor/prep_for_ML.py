@@ -93,7 +93,7 @@ class PrepareMLData():
 
         dfs_features = [] #array to hold dfs which have features
         dfs_targets = []
-        for m in monthly_files[0:3]:
+        for m in monthly_files:
             print ('Loading file f:',m)
             
             df = pd.read_parquet(m,columns=loaded_cols)
@@ -113,9 +113,6 @@ class PrepareMLData():
         print('All dfs loaded and processed. Now concatenate together.')
         df_features = pd.concat(dfs_features)
         df_targets = pd.concat(dfs_targets)
-
-        
-        #print(df_features[df_features.nunique() == 1])
 
 
         if (self.normalisation_mean is None) & (self.normalisation_std is None): # On the first pass when dealing with the training set
@@ -139,9 +136,6 @@ class PrepareMLData():
 
 
         #Normalise it using the pre calculated terms
-        print ('Normalisation parameters')
-        print (self.normalisation_mean)
-        print(self.normalisation_std)
         df_features = (df_features-self.normalisation_mean)/self.normalisation_std
 
         #Get rid of columns with zero variance

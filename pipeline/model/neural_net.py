@@ -59,8 +59,8 @@ class NeuralNet():
 
     
         # CHECKS
-        assert sorted(self.training_data.columns) == sorted(self.training_features + [self.target_variable])
-        assert len(self.training_data.columns) - 1 == len(self.config.train.training_features) # Check number of columns is what we expect
+        assert sorted(self.training_data.columns) == sorted(self.training_features + [self.target_variable]) #Check columns in df are the ones we expect
+        assert len(self.training_data.columns) - 1 == len(self.training_features) # Check number of columns is what we expect
         assert not self.training_data.isnull().any().any()   # Check for nulls
         assert not self.validation_data.isnull().any().any() # Check for nulls
 
@@ -78,7 +78,7 @@ class NeuralNet():
         print ('Loss metric:', self.loss)
         print ('Number of hidden layers:', self.number_of_hidden_layers)
         print ('Nodes per layer:', self.node)
-        print ('Selected features:', self.config.train.training_features)
+        print ('Selected features:', self.training_features)
 
 
         print ('Early stopping criteria:')
@@ -131,10 +131,13 @@ class NeuralNet():
 
         #Get the number of nodes for each layer. If none, defaults to nfeatures/2 for each layer
         if self.nodes_per_layer[0] is None:
+            print ('OPTION A')
             self.node = [int(self.nfeatures)/2]*self.number_of_hidden_layers
         else:
+            print('OPTIONB')
             self.node = self.nodes_per_layer
 
+        print (self.node)
         assert self.number_of_hidden_layers == len(self.node)          # Number of layers = number of specified nodes
 
 
@@ -190,7 +193,7 @@ class NeuralNet():
     def _train_network(self):
 
         """Train the model"""
-   
+        print ('-------------------------------------------------------------')
         print('Training network with the following parameters:')
         self._model_status()
 
@@ -229,11 +232,12 @@ class NeuralNet():
 
 
     def _predict_status(self):
-
+        print ('-------------------------------------------------------------')
         print ('Making predictions with the following settings:')
+        print ('-------------------------------------------------------------')
         print ('Trained model:', self.save_dir)
         print ('Features:', self.training_features)
-
+        print ('-------------------------------------------------------------')
 
 
 
@@ -250,7 +254,7 @@ class NeuralNet():
         #Predict
         predictions = loaded_model.predict(test_data[self.training_features])
         print ('Predictions completed')  
-        del test_data
+        del test_data 
 
         #IO
         meta_data = pd.read_parquet(self.config.train.testing_data,columns=['latitude_ERA', 'longitude_ERA','time','MODIS_LST'])
