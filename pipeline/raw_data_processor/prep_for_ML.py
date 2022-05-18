@@ -100,12 +100,12 @@ class PrepareMLData():
             df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20']
 
             #Calculate delta fields
-            print ('Pre delta fields:')
-            print(df)
+            #print ('Pre delta fields:')
+            #print(df)
             df = self._calculate_delta_fields(df)
-            print ('Post delta fields:')
-            print (df)
-            print ('--------------------')
+            #print ('Post delta fields:')
+            #print (df)
+            #print ('--------------------')
              
             #Append 
             dfs_features.append(df)
@@ -122,12 +122,17 @@ class PrepareMLData():
             self.normalisation_mean =  df_features.mean()
             self.normalisation_std =  df_features.std()
 
-            print ('Norm mean = ')
-            self.normalisation_mean
+            print ('-------Norm mean = ')
+            print(self.normalisation_mean)
 
 
-            print ('Norm std')
+            print ('------------Norm std')
             print (self.normalisation_std)
+
+
+            print ('-------------END-------------')
+
+
 
         #Normalise it using the pre calculated terms
         df_features = (df_features-self.normalisation_mean)/self.normalisation_std
