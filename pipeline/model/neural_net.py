@@ -47,15 +47,6 @@ class NeuralNet():
         self.save_dir = self.path_to_trained_models + self.model_name
 
 
-        #Checks
-
-            # if self.overwrite is False: 
-            #     raise Exception( f'Save directory {self.path_to_trained_models + self.model_name} already exists')
-            # if self.overwrite is True: 
-            #     print ('Overwriting model directory: ', self.model_name)
-            #     shutil.rmtree(self.path_to_trained_models + self.model_name)
-
-
         assert self.number_of_hidden_layers == len(self.nodes_per_layer)          # Number of layers = number of specified nodes
 
 
@@ -69,6 +60,11 @@ class NeuralNet():
         print(self.validation_data)
 
         assert len(self.training_data.columns) - 1 == len(self.config.train.training_features) #Check number of columns is what we expect
+
+        assert not self.training_data.isnull().any().any()   # Check for nulls
+        assert not self.validation_data.isnull().any().any() # Check for nulls
+
+
 
     def _model_status(self):
 
@@ -119,6 +115,7 @@ class NeuralNet():
 
         nfeatures = len(self.training_features)
         print('nfeatures =', nfeatures)
+        print ('features = ', self.training_features)
 
         self.model = tf.keras.Sequential([
             tf.keras.layers.Dense(int(nfeatures/2), activation='relu',input_shape=(nfeatures,),name='layer1'),

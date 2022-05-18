@@ -110,7 +110,7 @@ class PrepareMLData():
             dfs_features.append(df)
             dfs_targets.append(df_target)
        
-        print('All dfs loaded and processed. Now concatenate')
+        print('All dfs loaded and processed. Now concatenate together.')
         df_features = pd.concat(dfs_features)
         df_targets = pd.concat(dfs_targets)
 
