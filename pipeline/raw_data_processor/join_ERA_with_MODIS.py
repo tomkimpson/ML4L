@@ -313,7 +313,7 @@ class JoinERAWithMODIS():
         #Load the saline lake
         self._load_saline_lake_data()
         print('Iterating over the following months:',self.ERA_files)
-        for f in self.ERA_files: #Iterate over all months
+        for f in self.ERA_files[11:]: #Iterate over all months
             #Load a month of ERA data
             print ('Loading ERA month:', f)
             ERA_month = xr.open_dataset(f,engine='cfgrib',backend_kwargs={'indexpath': ''})
