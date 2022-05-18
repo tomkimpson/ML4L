@@ -174,6 +174,14 @@ class NeuralNet():
         print(self.validation_data)
         print ("--------------------")
 
+        print("TRAINING FEATURES")
+        print(self.training_features)
+        print ("--------------------")
+
+        print ('SELECT VALIDATION COLUMNS')
+        print(self.validation_data[self.training_features])
+        print ("--------------------")
+
 
         print ("----------VALID X--------")
         self.validation_data[self.training_features]
