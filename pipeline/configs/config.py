@@ -61,7 +61,7 @@ CFG = {
 
 
         "training_years": ['2018'],
-        "validation_years": [None],
+        "validation_years": ['2016'],
         "test_years":['2020'],
 
         #"path_to_training_data":   f'{root}processed_data/joined_data/dev_train/',

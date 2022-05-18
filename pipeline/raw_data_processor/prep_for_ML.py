@@ -6,7 +6,7 @@ from utils.config import Config
 #external
 import glob
 import pandas as pd 
-
+import numpy
 class PrepareMLData():
 
     """
@@ -117,7 +117,8 @@ class PrepareMLData():
         df_features = pd.concat(dfs_features)
         df_targets = pd.concat(dfs_targets)
 
-        if (self.normalisation_mean is None) & (self.normalisation_std is None): 
+        #if (self.normalisation_mean is None) & (self.normalisation_std is None): 
+        if True:
 
             print ('Calculating normalisation parameters for years:', years_to_process)
             #If we dont have any normalisation parameters already 
@@ -128,8 +129,13 @@ class PrepareMLData():
             print(self.normalisation_mean)
 
 
+
             print ('------------Norm std')
             print (self.normalisation_std)
+
+            print ('sr v20 unique values')
+            print (np.unique(df_features['sr_v15']))
+            print (np.unique(df_features['sr_v20']))
 
 
             print ('-------------END-------------')
