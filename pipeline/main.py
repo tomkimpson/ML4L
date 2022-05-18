@@ -47,18 +47,12 @@ def process_raw_data(process_data, join_data,greedy):
 def train_and_predict(train_model,predict):
     """Builds model, loads data, trains and evaluates"""
     
-    
+    NN = NeuralNet(CFG)        # Create a NN using CFG configuration
 
     if train_model:
-        NN = NeuralNet(CFG)        # Create a NN using CFG configuration
         NN.train()
-        #NN.load_data()             # Load the training and validation data
-        #NN.construct_network()     # Construct and compile the network
-        #NN.train_network()         # Train it
-        #NN.save_model()            # Save the trained model
-
+        
     if predict:
-        NN = NeuralNet(CFG)        # Create a NN using CFG configuration
         NN.predict()
 
 
