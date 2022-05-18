@@ -38,6 +38,7 @@ class PrepareMLData():
 
         self.normalisation_mean = None 
         self.normalisation_std = None 
+        self.drop_cols = None 
 
 
         assert len(self.V15_features) == len(self.V20_features)
@@ -113,20 +114,23 @@ class PrepareMLData():
         df_features = pd.concat(dfs_features)
         df_targets = pd.concat(dfs_targets)
 
-        #Check for useless columns and drop them
-        print (df_features.nunique())
-        print (df_features.nunique() == 1)
-        columns_with_zero_variance = df_features.nunique()[df_features.nunique() == 1].index.values
-        print (f'The following features have zero variance in year {years_to_process} and will be dropped')
-        print (columns_with_zero_variance)
-        df_features = df_features.drop(columns_with_zero_variance, axis=1)
-        print(df_features.columns)
-        print (df_features)
-
+        
         #print(df_features[df_features.nunique() == 1])
 
 
-        if (self.normalisation_mean is None) & (self.normalisation_std is None): 
+        if (self.normalisation_mean is None) & (self.normalisation_std is None): # On the first pass when dealing with the training set
+
+            # Check for useless columns and drop them
+            columns_with_zero_variance = df_features.nunique()[df_features.nunique() == 1].index.values
+            print (f'The following features have zero variance in year {years_to_process} and will be dropped')
+            print (columns_with_zero_variance)
+            self.drop_cols = columns_with_zero_variance
+            
+            print(df_features.columns)
+            print (df_features)
+
+
+
 
             print ('Calculating normalisation parameters for years:', years_to_process)
             #If we dont have any normalisation parameters already 
@@ -140,14 +144,17 @@ class PrepareMLData():
         #Normalise it using the pre calculated terms
         df_features = (df_features-self.normalisation_mean)/self.normalisation_std
 
+        #Get rid of columns with zero variance
+        df_features = df_features.drop(self.drop_cols, axis=1)
+
         # Concat with the targets variable which is unnormalised
         df_out = pd.concat([df_features,df_targets],axis=1)
 
 
-        assert len(loaded_cols) == len(df_out.columns) #check no cols lost in the process
+        assert len(loaded_cols) == len(df_out.columns) + len(self.drop_cols)  #check no cols lost in the process
 
         print ('OUTPUT df = ')
-        print(df_out[['sr_v15', 'sr_v20']])
+        print(df_out.columns)
         
         # Save it to disk
         fout = self.path_to_input_data + '-'.join(years_to_process) + '_ML.parquet' # Possible to save multiple yeats to one file, might be more sensible to just process year-by-year

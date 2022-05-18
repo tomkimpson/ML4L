@@ -60,7 +60,7 @@ CFG = {
 
 
 
-        "training_years": ['2016'],
+        "training_years": ['2018'],
         "validation_years": ['201'],
         "test_years":['2020'],
 
