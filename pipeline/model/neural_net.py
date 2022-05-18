@@ -184,7 +184,7 @@ class NeuralNet():
 
 
         print ("----------VALID X--------")
-        print(self.validation_data[self.training_features])
+        print (self.validation_data[self.training_features])
         print ('-------------------')
 
         print ("----------VALID Y--------")
