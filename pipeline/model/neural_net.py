@@ -13,6 +13,7 @@ import json
 import shutil
 from tensorflow.keras.callbacks import EarlyStopping,ModelCheckpoint
 import pandas as pd
+import uuid
 
 class NeuralNet():
 
@@ -47,8 +48,7 @@ class NeuralNet():
 
 
         #Checks
-        if os.path.exists(self.path_to_trained_models + self.model_name):
-            print (self.path_to_trained_models + self.model_name, ' exists')
+
             # if self.overwrite is False: 
             #     raise Exception( f'Save directory {self.path_to_trained_models + self.model_name} already exists')
             # if self.overwrite is True: 
@@ -60,35 +60,73 @@ class NeuralNet():
 
 
 
-    def load_data(self):
+    def _load_data(self):
         self.training_data, self.validation_data = DataLoader().load_parquet_data(self.config.train)
-        
         assert len(self.training_data.columns) - 1 == len(self.config.train.training_features) #Check number of columns is what we expect
 
+    def _model_status(self):
 
-    def construct_network(self):
+        print ('Epochs:', self.epochs)
+        print('Batch size:', self.batch_size)
+        print('Number of features:',len(self.training_features))
+        print ('Number of training samples:',len(self.training_data))
+        print(self.model.summary())
 
-        #Get the number of nodes for each layer
-        #If none, defaults to nfeatures/2 for each layer
-        if self.nodes_per_layer[0] is None:
-            node = [int(self.nfeatures)/2]*self.nfeatures
+    def _save_model(self):
+
+        """Save model to disk after training """
+
+        if os.path.exists(self.save_dir):
+            print (self.save_dir, ' already exists')
+            
+            if self.overwrite is True:
+                print ('Overwriting all contents')
+                shutil.rmtree(self.save_dir)
+                os.mkdir(self.save_dir)
+            else:
+                file_ID = str(uuid.uuid4().hex)
+                fnew = self.save_dir+f'ML_{file_ID}/'
+                self.save_dir = fnew
+                print ('Not overwriting - creating a new directory called ',self.save_dir)
+                os.mkdir(self.save_dir)
+
         else:
-            node = self.nodes_per_layer
+            os.mkdir(self.save_dir)
+        
+        print ('Saving model to:', self.save_dir)
+        # Save the trained NN and the training history
+        self.model.save(self.save_dir+'/trained_model') 
+        history_dict = self.history.history
+        json.dump(history_dict, open(self.save_dir+'/training_history.json', 'w'))  # Save the training history
+        json.dump(self.train_json, open(self. save_dir+'/configuration.json', 'w')) # Save the complete configuration used
 
 
-        # Define network model
-        self.model = tf.keras.Sequential(name='PredictLST')                               # Initiate sequential model
-        self.model.add(tf.keras.layers.Dense(node[0],
-                                        input_shape=(self.nfeatures,),
-                                        activation="relu",
-                                        name=f"layer_0"))                # Create first hidden layer with input shape
-        for n in range(1,self.number_of_hidden_layers):                  # Iterate over remaining hidden layers
-            self.model.add(tf.keras.layers.Dense(node[n],activation="relu",name=f"layer_{n}"))
 
-        self.model.add(tf.keras.layers.Dense(1, name='output'))          # And finally define an output layer 
+
+
+
+
+
+
+    def _construct_and_train_network(self):
+
+
+        nfeatures = len(self.training_features)
+        print('nfeatures =', nfeatures)
+
+        self.model = tf.keras.Sequential([
+            tf.keras.layers.Dense(int(nfeatures/2), activation='relu',input_shape=(nfeatures,),name='layer1'),
+            tf.keras.layers.Dense(int(nfeatures/2), activation='relu',input_shape=(nfeatures,),name='layer2'),
+            tf.keras.layers.Dense(1, name='output')
+            ])
 
 
         #Compile it
+        print ('Compiling. The learning rate is', self.LR)
+        print ('Compiling. The loss is', self.loss)
+        print ('Compiling. The metrics are', self.metrics) #Can probably drop these
+
+
         opt = tf.keras.optimizers.Adam(learning_rate=self.LR) #Always use Adam
         self.model.compile(optimizer=opt,
                            loss=self.loss,
@@ -96,6 +134,7 @@ class NeuralNet():
 
 
         #Define early stopping criteria
+        print ('Early stopping patience = ', self.stopping_patience)
         self.early_stopping = EarlyStopping(monitor='val_loss',
                                             min_delta=0,
                                             patience=self.stopping_patience,
@@ -112,13 +151,27 @@ class NeuralNet():
                                                 save_freq=int(self.epoch_save_freq * len(self.training_data) / self.batch_size), #save best model every epoch_save_freq epochs
                                                 )
 
-#c#heckpoint= keras.callbacks.ModelCheckpoint(filepath= checkpoint_filepath, verbose=1, save_freq="epoch", mode='auto',monitor='val_loss', save_best_only=True)
 
 
-    def train_network(self):
 
         print('Training network with:')
         self._model_status()
+        print ("----------TRAIN X--------")
+        print(self.training_data[self.training_features])
+        print ('-------------------')
+
+        print ("----------TRAIN Y--------")
+        print(self.training_data[self.target_variable])
+        print ('-------------------')
+
+        print ("----------VALID X--------")
+        self.validation_data[self.training_features]
+        print ('-------------------')
+
+        print ("----------VALID Y--------")
+        self.validation_data[self.target_variable]
+        print ('-------------------')
+
 
         self.history = self.model.fit(self.training_data[self.training_features], 
                                       self.training_data[self.target_variable], 
@@ -128,31 +181,62 @@ class NeuralNet():
                                       callbacks=[self.early_stopping,self.model_checkpoint]
                                      ) 
 
-        for key in self.history.history:
-            print(key)
+
+        self._save_model() #Save everything 
+
+
+
+#     def construct_network(self):
+
+#         #Get the number of nodes for each layer
+#         #If none, defaults to nfeatures/2 for each layer
+#         if self.nodes_per_layer[0] is None:
+#             node = [int(self.nfeatures)/2]*self.nfeatures
+#         else:
+#             node = self.nodes_per_layer
+
+
+#         # Define network model
+#         self.model = tf.keras.Sequential(name='PredictLST')                               # Initiate sequential model
+#         self.model.add(tf.keras.layers.Dense(node[0],
+#                                         input_shape=(self.nfeatures,),
+#                                         activation="relu",
+#                                         name=f"layer_0"))                # Create first hidden layer with input shape
+#         for n in range(1,self.number_of_hidden_layers):                  # Iterate over remaining hidden layers
+#             self.model.add(tf.keras.layers.Dense(node[n],activation="relu",name=f"layer_{n}"))
+
+#         self.model.add(tf.keras.layers.Dense(1, name='output'))          # And finally define an output layer 
+
+
+
+
+# #c#heckpoint= keras.callbacks.ModelCheckpoint(filepath= checkpoint_filepath, verbose=1, save_freq="epoch", mode='auto',monitor='val_loss', save_best_only=True)
+
+
+#     def train_network(self):
+
+
+
+#         for key in self.history.history:
+#             print(key)
         
 
-    def _model_status(self):
-
-        print ('Epochs:', self.epochs)
-        print('Batch size:', self.batch_size)
-        print('Number of features:',len(self.training_features))
-        print ('Number of training samples:',len(self.training_data))
-        print(self.model.summary())
+  
 
 
-    def save_model(self):
 
-        """Save model to disk after training """
 
-        #Create a directory where we will save everything
-        os.mkdir(save_dir)
-        print ('Saving model to:', save_dir)
-        # Save the trained NN and the training history
-        self.model.save(save_dir+'/trained_model') 
-        history_dict = self.history.history
-        json.dump(history_dict, open(save_dir+'/training_history.json', 'w'))          # Save the training history
-        json.dump(self.train_json, open(save_dir+'/configuration.json', 'w')) # Save the complete configuration used
+    def train(self):
+
+        self._load_data()
+
+        self._construct_and_train_network()
+
+
+
+
+
+
 
 
 

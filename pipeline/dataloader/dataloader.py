@@ -30,6 +30,9 @@ class DataLoader:
     def load_parquet_data(data_config):
         """Loads dataset from path"""
 
+        print ('Loading training data from file:', data_config.training_data)
+        print ('Loading validation data from file:', data_config.validation_data)
+
         training_data_size = os.path.getsize(data_config.training_data)
         validation_data_size = os.path.getsize(data_config.validation_data)
 

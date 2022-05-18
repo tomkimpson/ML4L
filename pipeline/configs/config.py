@@ -85,9 +85,9 @@ CFG = {
 
     },
     "train": {
-        "training_data": f'{root}processed_data/joined_data/2016_ML.parquet',
-        "validation_data": f'{root}processed_data/joined_data/2017_ML.parquet',
-        "testing_data": f'{root}processed_data/joined_data/2019_ML.parquet',
+        "training_data": f'{root}processed_data/joined_data/2018_ML.parquet',
+        "validation_data": f'{root}processed_data/joined_data/2019_ML.parquet',
+        "testing_data": f'{root}processed_data/joined_data/2020_ML.parquet',
         "training_features": ['sp', 'msl', 'u10', 'v10', 't2m', 'aluvp', 'aluvd',
                               'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 'skt',
                               'lsm_v15','cl_v15','dl_v15','cvh_v15','cvl_v15',
@@ -98,18 +98,15 @@ CFG = {
                               'si10_v20'
                               ],
         "batch_size": 1024,
-        #"buffer_size": 1000,
         "epochs": 1,
         "number_of_hidden_layers":2,
-        "nodes_per_layer": [39,39],
-        #"val_subsplits": 5,
-
+        "nodes_per_layer": [19,19],
         "target_variable": 'MODIS_LST',
         "learning_rate": 3e-4,
         "loss": 'mse',
         "metrics": ["accuracy"],
         "path_to_trained_models": f'{root}processed_data/trained_models/',
-        "model_name": 'V15',
+        "model_name": 'V20_2018',
         "overwrite": False,
         "use_pretrained_model":False,
         "epoch_save_freq": 10,
