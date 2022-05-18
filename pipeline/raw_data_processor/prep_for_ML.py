@@ -125,9 +125,6 @@ class PrepareMLData():
             print (f'The following features have zero variance in year {years_to_process} and will be dropped')
             print (columns_with_zero_variance)
             self.drop_cols = columns_with_zero_variance
-            
-            print(df_features.columns)
-            print (df_features)
 
 
 
@@ -153,9 +150,7 @@ class PrepareMLData():
 
         assert len(loaded_cols) == len(df_out.columns) + len(self.drop_cols)  #check no cols lost in the process
 
-        print ('OUTPUT df = ')
-        print(df_out.columns)
-        
+      
         # Save it to disk
         fout = self.path_to_input_data + '-'.join(years_to_process) + '_ML.parquet' # Possible to save multiple yeats to one file, might be more sensible to just process year-by-year
         print ('Saving to:',fout)
