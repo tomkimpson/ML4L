@@ -26,26 +26,31 @@ class NeuralNet():
         # Data
 
         # Model Training parameters
-        self.batch_size = self.config.train.batch_size
-        self.epochs = self.config.train.epochs
-        self.number_of_hidden_layers = self.config.train.number_of_hidden_layers
-        self.nodes_per_layer = self.config.train.nodes_per_layer
+        self.batch_size               = self.config.train.batch_size
+        self.epochs                   = self.config.train.epochs
+        self.number_of_hidden_layers  = self.config.train.number_of_hidden_layers
+        self.nodes_per_layer          = self.config.train.nodes_per_layer
+        self.LR                       = self.config.train.learning_rate
+        self.metrics                  = self.config.train.metrics
+        self.loss                     = self.config.train.loss
         # IO
 
 
-
-
-
-        self.training_data = None
+        #Assignments
+        self.training_data   = None
         self.validation_data = None   
+        self.model           = None
+        self.node            = None
+        self.history         = None
+
+
+   
         
-        self.training_features = self.config.train.training_features
-        self.LR = self.config.train.learning_rate
-        self.metrics = self.config.train.metrics
-        self.loss = self.config.train.loss
-        self.model = None
         self.target_variable = self.config.train.target_variable
         self.training_features = self.config.train.training_features
+        self.training_features = self.config.train.training_features
+        
+        
         self.nfeatures = len(self.training_features)
         self.path_to_trained_models = self.config.train.path_to_trained_models
         self.model_name = self.config.train.model_name
@@ -53,11 +58,9 @@ class NeuralNet():
         self.epoch_save_freq = self.config.train.epoch_save_freq
         self.stopping_patience = self.config.train.early_stopping_patience
         self.save_dir = self.path_to_trained_models + self.model_name
-        self.node = None
-        self.history=None
+
 
         #Checks
-        assert self.number_of_hidden_layers == len(self.nodes_per_layer)          # Number of layers = number of specified nodes
 
 
 
@@ -89,10 +92,10 @@ class NeuralNet():
 
 
         print ('Early stopping criteria:')
-        print (self.early_stopping)
+        print (vars(self.early_stopping))
 
         print ('Checkpoint criteria')
-        print (self.model_checkpoint)
+        print (vars(self.model_checkpoint))
 
        
 
@@ -137,10 +140,11 @@ class NeuralNet():
 
         #Get the number of nodes for each layer. If none, defaults to nfeatures/2 for each layer
         if self.nodes_per_layer[0] is None:
-            self.node = [int(self.nfeatures)/2]*self.nfeatures
+            self.node = [int(self.nfeatures)/2]*self.number_of_hidden_layers
         else:
             self.node = self.nodes_per_layer
 
+        assert self.number_of_hidden_layers == len(self.node)          # Number of layers = number of specified nodes
 
 
         # Define network model
