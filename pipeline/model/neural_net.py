@@ -18,11 +18,16 @@ import uuid
 class NeuralNet():
 
     def __init__(self,cfg): 
-        #super().__init__(config) #call the constructor, aka the init of the parent class
         
-
+        # Config file. Also get file itself to save to disk
         self.config = Config.from_json(cfg)
         self.train_json = cfg   
+
+        # Data
+
+        # Model Training parameters
+
+        # IO
 
         self.batch_size = self.config.train.batch_size
         self.epochs = self.config.train.epochs
@@ -45,22 +50,22 @@ class NeuralNet():
         self.epoch_save_freq = self.config.train.epoch_save_freq
         self.stopping_patience = self.config.train.early_stopping_patience
         self.save_dir = self.path_to_trained_models + self.model_name
+        self.node = None
 
-
+        #Checks
         assert self.number_of_hidden_layers == len(self.nodes_per_layer)          # Number of layers = number of specified nodes
 
 
 
     def _load_data(self):
+
+        """ Load the training and validation data"""
         self.training_data, self.validation_data = DataLoader().load_parquet_data(self.config.train)
 
-        print ('LOADED')
-        print(self.training_data)
-
-        print(self.validation_data)
-
-        assert len(self.training_data.columns) - 1 == len(self.config.train.training_features) #Check number of columns is what we expect
-
+    
+        # CHECKS
+        assert sorted(self.training_data.columns) == sorted(self.training_features + [self.target_variable])
+        assert len(self.training_data.columns) - 1 == len(self.config.train.training_features) # Check number of columns is what we expect
         assert not self.training_data.isnull().any().any()   # Check for nulls
         assert not self.validation_data.isnull().any().any() # Check for nulls
 
@@ -72,6 +77,19 @@ class NeuralNet():
         print('Batch size:', self.batch_size)
         print('Number of features:',len(self.training_features))
         print ('Number of training samples:',len(self.training_data))
+        print ('Learning rate:', self.LR)
+        print ('Loss metric:', self.loss)
+        print ('Number of hidden layers:', self.number_of_hidden_layers)
+        print ('Nodes per layer:', self.node)
+        print ('Selected features:', self.config.train.training_features)
+
+
+        print ('Early stopping criteria:')
+        print (self.early_stopping)
+
+        print ('Checkpoint criteria')
+        print (self.model_checkpoint)
+
        
 
     def _save_model(self):
@@ -97,7 +115,10 @@ class NeuralNet():
         
         print ('Saving model to:', self.save_dir)
         # Save the trained NN and the training history
-        self.model.save(self.save_dir+'/trained_model') 
+        self.model.save(self.save_dir+'/trained_model') # TO SELF: How does this tie up with early stopping?  
+
+
+
         history_dict = self.history.history
         json.dump(history_dict, open(self.save_dir+'/training_history.json', 'w'))  # Save the training history
         json.dump(self.train_json, open(self. save_dir+'/configuration.json', 'w')) # Save the complete configuration used
@@ -106,38 +127,45 @@ class NeuralNet():
 
 
 
+    def _construct_network(self):
+
+        """Construct the NN architecture and compile using Adam"""
+
+        #Get the number of nodes for each layer. If none, defaults to nfeatures/2 for each layer
+        if self.nodes_per_layer[0] is None:
+            self.node = [int(self.nfeatures)/2]*self.nfeatures
+        else:
+            self.node = self.nodes_per_layer
 
 
 
+        # Define network model
+        self.model = tf.keras.Sequential(name='PredictLST')                   # Initiate sequential model
+        self.model.add(tf.keras.layers.Dense(self.node[0],
+                                             input_shape=(self.nfeatures,),
+                                             activation="relu",
+                                             name=f"layer_0"))                # Create first hidden layer with input shape
+        for n in range(1,self.number_of_hidden_layers):                       # Iterate over remaining hidden layers
+            self.model.add(tf.keras.layers.Dense(
+                                            self.node[n],
+                                            activation="relu",
+                                            name=f"layer_{n}"))
 
-    def _construct_and_train_network(self):
-
-
-        nfeatures = len(self.training_features)
-        print('nfeatures =', nfeatures)
-        print ('features = ', self.training_features)
-
-        self.model = tf.keras.Sequential([
-            tf.keras.layers.Dense(int(nfeatures/2), activation='relu',input_shape=(nfeatures,),name='layer1'),
-            tf.keras.layers.Dense(int(nfeatures/2), activation='relu',input_shape=(nfeatures,),name='layer2'),
-            tf.keras.layers.Dense(1, name='output')
-            ])
+        self.model.add(tf.keras.layers.Dense(1, name='output'))                # And finally define an output layer 
 
 
         #Compile it
-        print ('Compiling. The learning rate is', self.LR)
-        print ('Compiling. The loss is', self.loss)
-        print ('Compiling. The metrics are', self.metrics) #Can probably drop these
-
-
         opt = tf.keras.optimizers.Adam(learning_rate=self.LR) #Always use Adam
         self.model.compile(optimizer=opt,
                            loss=self.loss,
                            metrics=self.metrics)
 
 
-        #Define early stopping criteria
-        print ('Early stopping patience = ', self.stopping_patience)
+    def _callbacks(self):
+
+        """Define early stopping and checkpoint callbacks"""
+
+
         self.early_stopping = EarlyStopping(monitor='val_loss',
                                             min_delta=0,
                                             patience=self.stopping_patience,
@@ -145,29 +173,29 @@ class NeuralNet():
                                             mode='auto',
                                             baseline=None,
                                             restore_best_weights=True)
-    
-        #Checkpoints
+
+
+
         self.model_checkpoint = ModelCheckpoint(filepath = self.path_to_trained_models+'tmp_checkpoint', 
                                                 monitor='val_loss', 
                                                 save_best_only=True, 
                                                 mode='min',
                                                 save_freq='epoch',
-                                                period=2 #period argument is deprecated 
-                                                #save_freq=int(self.epoch_save_freq * len(self.training_data) / self.batch_size), #save best model every epoch_save_freq epochs
+                                                period=self.epoch_save_freq #period argument is deprecated, but works well 
                                                 )
 
 
-#  model_checkpoint = ModelCheckpoint(filepath = 'checkpoint', 
-#                                        monitor='val_loss', 
-#                                        save_best_only=True, 
-#                                        mode='min',
-#                                        
-#                                        period=10)
 
-        print('Training network with:')
+
+
+    def _train_network(self):
+
+        """Train the model"""
+   
+        print('Training network with the following parameters:')
         self._model_status()
-  
 
+        #Train it 
         self.history = self.model.fit(self.training_data[self.training_features], 
                                       self.training_data[self.target_variable], 
                                       epochs=self.epochs, batch_size=self.batch_size,
@@ -177,46 +205,7 @@ class NeuralNet():
                                      ) 
 
         print(self.model.summary())
-        self._save_model() #Save everything 
-
-
-
-#     def construct_network(self):
-
-#         #Get the number of nodes for each layer
-#         #If none, defaults to nfeatures/2 for each layer
-#         if self.nodes_per_layer[0] is None:
-#             node = [int(self.nfeatures)/2]*self.nfeatures
-#         else:
-#             node = self.nodes_per_layer
-
-
-#         # Define network model
-#         self.model = tf.keras.Sequential(name='PredictLST')                               # Initiate sequential model
-#         self.model.add(tf.keras.layers.Dense(node[0],
-#                                         input_shape=(self.nfeatures,),
-#                                         activation="relu",
-#                                         name=f"layer_0"))                # Create first hidden layer with input shape
-#         for n in range(1,self.number_of_hidden_layers):                  # Iterate over remaining hidden layers
-#             self.model.add(tf.keras.layers.Dense(node[n],activation="relu",name=f"layer_{n}"))
-
-#         self.model.add(tf.keras.layers.Dense(1, name='output'))          # And finally define an output layer 
-
-
-
-
-# #c#heckpoint= keras.callbacks.ModelCheckpoint(filepath= checkpoint_filepath, verbose=1, save_freq="epoch", mode='auto',monitor='val_loss', save_best_only=True)
-
-
-#     def train_network(self):
-
-
-
-#         for key in self.history.history:
-#             print(key)
-        
-
-  
+       
 
 
 
@@ -225,38 +214,48 @@ class NeuralNet():
 
         self._load_data()
 
-        self._construct_and_train_network()
+        self._construct_network()
+
+        self._callbacks()
+        
+        self._train_network
+        
+        self._save_model()  
+
+        #Drop large files explicitly
+        del self.training_data
+        del self.validation_data
 
 
 
 
+    def _predict_status(self):
+
+        print ('Making predictions with the following settings:')
+        print ('Trained model:', self.save_dir)
+        print ('Features:', self.training_features)
 
 
 
 
 
     def predict(self):
-        print('loading model at:', self.save_dir+'/trained_model')
-        print(self.config.train.testing_data)
+        
+        #Load
         loaded_model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
-        test_data = pd.read_parquet(self.config.train.testing_data,columns=self.config.train.training_features + [self.config.train.target_variable]) #Load the test data
-        print ('Got the test data and model')
+        cols = self.training_features + [self.target_variable]
+        test_data = pd.read_parquet(self.config.train.testing_data,columns=cols) # Load the test data
 
-        print(f'Using trained model {self.save_dir} to make some predictions')
-        print ('Features are:')
-        for f in self.training_features:
-            print(f)
-        predictions = loaded_model.predict(test_data[self.training_features])                 # Prediction 
-
-        #Drop test data
+        self._predict_status()
+        
+        #Predict
+        predictions = loaded_model.predict(test_data[self.training_features])
+        print ('Predictions completed')  
         del test_data
 
-        #Load just the meta info
-        meta_data = pd.read_parquet(self.config.train.testing_data,columns=['latitude_ERA', 'longitude_ERA','time','skt','MODIS_LST'])
-        print ('len loaded df:', len(meta_data))
-        print('len preds', len(predictions))
+        #IO
+        meta_data = pd.read_parquet(self.config.train.testing_data,columns=['latitude_ERA', 'longitude_ERA','time','MODIS_LST'])
         meta_data['predictions'] = predictions 
-        
         fout = self.save_dir + '/predictions.parquet'
         print ('Saving to:',fout)
         meta_data.to_parquet(fout,compression=None)

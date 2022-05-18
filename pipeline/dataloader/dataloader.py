@@ -28,7 +28,11 @@ class DataLoader:
 
     @staticmethod
     def load_parquet_data(data_config):
-        """Loads dataset from path"""
+        """
+        Loads dataset from path.
+        Only columns specified in training_features, target_variable are loaded
+        """
+        
 
         print ('Loading training data from file:', data_config.training_data)
         print ('Loading validation data from file:', data_config.validation_data)
@@ -40,4 +44,5 @@ class DataLoader:
         print ('Size of validation data:', round(validation_data_size/1e9,2) , ' G')
 
         #Only load the training features and the target variable
-        return pd.read_parquet(data_config.training_data,columns=data_config.training_features + [data_config.target_variable]), pd.read_parquet(data_config.validation_data,columns=data_config.training_features+ [data_config.target_variable]) 
+        cols = data_config.training_features + [data_config.target_variable]
+        return pd.read_parquet(data_config.training_data,columns=cols), pd.read_parquet(data_config.validation_data,columns=cols) 

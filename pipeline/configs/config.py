@@ -6,7 +6,7 @@ root = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/
 CFG = {
     "data": {
 
-        #Paths to raw data
+        #A. Paths to raw data
         "path_to_raw_ERA_skin":           f'{root}ERA_skin/',
         "path_to_raw_ERA_sfc":            f'{root}ERA_sfc/',
         "path_to_raw_ERA_skt":            f'{root}ERA_skt_tom/',
@@ -17,16 +17,17 @@ CFG = {
         "path_to_MODIS_data":             f'{root}MODIS',
 
 
-        # Edge cases to handle in ERA_skin
-        "ERA_skin_constant_features": ['slt','sdfor'],                                   # These are the features in ERA_skin that are constant, but are not in the V* climate files
-        "ERA_skin_variable_features": 'aluvp/aluvd/alnip/alnid/istl1/istl2/sd/2d/fal',   # These are the features in ERA_skin that are not constant
-        
-        #Paths to processed output data
+        #B. Paths to processed output data
         "path_to_processed_V15_climate_fields": f'{root}processed_data/ERA_timeconstant/ERA2_constants_v15.nc',
         "path_to_processed_V20_climate_fields": f'{root}processed_data/ERA_timeconstant/ERA2_constants_v20.nc',
         "path_to_processed_variable_fields":    f'{root}processed_data/ERA_timevariable/',
         "path_to_joined_ERA_MODIS_files":       f'{root}processed_data/joined_data/',
 
+
+        # C. Edge cases to handle in ERA_skin
+        "ERA_skin_constant_features": ['slt','sdfor'],                                   # These are the features in ERA_skin that are constant, but are not in the V* climate files
+        "ERA_skin_variable_features": 'aluvp/aluvd/alnip/alnid/istl1/istl2/sd/2d/fal',   # These are the features in ERA_skin that are not constant
+        
         #Parameters for processing raw data
         "min_year_to_process":2016, 
         "max_year_to_process":2021,
@@ -64,11 +65,8 @@ CFG = {
         "validation_years": ['2019'],
         "test_years":['2020'],
 
-        #"path_to_training_data":   f'{root}processed_data/joined_data/dev_train/',
-        #"path_to_validation_data": f'{root}processed_data/joined_data/dev_valid/',
-        #"path_to_test_data": f'{root}processed_data/joined_data/dev_test/',
-
         "list_of_meta_features": ['latitude_ERA', 'longitude_ERA','time'],
+
         "list_of_time_variable_features" : ['sp', 'msl', 'u10', 'v10', 't2m', 'aluvp', 'aluvd',
                                             'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 'skt'],
         "list_of_V15_features": ['slt_v15', 'sdfor_v15', 'sdor_v15', 'lsrh_v15', 'cvl_v15', 'sr_v15',
@@ -91,16 +89,12 @@ CFG = {
         "training_features": ['sp', 'msl', 'u10', 'v10', 't2m', 'aluvp', 'aluvd',
                               'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 'skt',
                               'lsm_v15','cl_v15','dl_v15','cvh_v15','cvl_v15','si10_v15',
-                              #'anor_v15','isor_v15','slor_v15','sdor_v15','sr_v15','lsrh_v15',
-                              
                               'lsm_v20','cl_v20','dl_v20','cvh_v20','cvl_v20','si10_v20'
-                              #'anor_v20','isor_v20','slor_v20','sdor_v20','sr_v20','lsrh_v20',
-                              
                               ],
         "batch_size": 10000,
         "epochs": 50,
         "number_of_hidden_layers":2,
-        "nodes_per_layer": [19,19],
+        "nodes_per_layer": [None,None],
         "target_variable": 'MODIS_LST',
         "learning_rate": 0.1,
         "loss": 'mse',
