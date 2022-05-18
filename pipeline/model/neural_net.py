@@ -243,6 +243,9 @@ class NeuralNet():
         print ('Got the test data and model')
 
         print(f'Using trained model {self.save_dir} to make some predictions')
+        print ('Features are:')
+        for f in self.training_features:
+            print(f)
         predictions = loaded_model.predict(test_data[self.training_features])                 # Prediction 
 
         #Drop test data
