@@ -98,7 +98,7 @@ CFG = {
                               
                               ],
         "batch_size": 10000,
-        "epochs": 1,
+        "epochs": 100,
         "number_of_hidden_layers":2,
         "nodes_per_layer": [19,19],
         "target_variable": 'MODIS_LST',
