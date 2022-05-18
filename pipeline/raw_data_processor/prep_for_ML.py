@@ -6,7 +6,7 @@ from utils.config import Config
 #external
 import glob
 import pandas as pd 
-import numpy
+import numpy as np
 class PrepareMLData():
 
     """
