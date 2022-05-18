@@ -51,8 +51,8 @@ CFG = {
         "satellite":'aquaDay',
         "latitude_bound": 70,
 
-        "min_year_to_join":2018, #typically we want these min/maxes to be the same as min_year_to_join, but maybe an edge case exists?
-        "max_year_to_join":2018,
+        "min_year_to_join":2020, #typically we want these min/maxes to be the same as min_year_to_join, but maybe an edge case exists?
+        "max_year_to_join":2020,
 
 
        
@@ -60,9 +60,9 @@ CFG = {
 
 
 
-        "training_years": ['2016'],
-        "validation_years": ['2017'],
-        "test_years":['2019'],
+        "training_years": ['2018'],
+        "validation_years": ['2019'],
+        "test_years":['2020'],
 
         #"path_to_training_data":   f'{root}processed_data/joined_data/dev_train/',
         #"path_to_validation_data": f'{root}processed_data/joined_data/dev_valid/',

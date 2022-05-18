@@ -137,15 +137,15 @@ class PrepareMLData():
         Process the ERA-MODIS data in a greedy manner, ignoring any potential future restrictions on memory
         """
 
-        # print ('Prepare training data')
-        # self._process_year(self.training_years,include_xt=False)  
+        print ('Prepare training data')
+        self._process_year(self.training_years,include_xt=False)  
 
         
-        # print ('Prepare validation data')
-        # self._process_year(self.validation_years,include_xt=False) 
+        print ('Prepare validation data')
+        self._process_year(self.validation_years,include_xt=False) 
     
-        print ('Prepare test data')
-        self._process_year(self.test_years,include_xt=True) 
+        #print ('Prepare test data')
+        #self._process_year(self.test_years,include_xt=True) 
 
 
     def sensible_preprocessing(self):
