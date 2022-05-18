@@ -93,7 +93,7 @@ class PrepareMLData():
 
         dfs_features = [] #array to hold dfs which have features
         dfs_targets = []
-        for m in monthly_files:
+        for m in monthly_files[0:3]:
             print ('Loading file f:',m)
             
             df = pd.read_parquet(m,columns=loaded_cols)
