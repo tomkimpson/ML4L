@@ -76,7 +76,7 @@ class NeuralNet():
         print('Batch size:', self.batch_size)
         print('Number of features:',len(self.training_features))
         print ('Number of training samples:',len(self.training_data))
-        print(self.model.summary())
+       
 
     def _save_model(self):
 
@@ -184,11 +184,11 @@ class NeuralNet():
 
 
         print ("----------VALID X--------")
-        self.validation_data[self.training_features]
+        print(self.validation_data[self.training_features])
         print ('-------------------')
 
         print ("----------VALID Y--------")
-        self.validation_data[self.target_variable]
+        print(self.validation_data[self.target_variable])
         print ('-------------------')
 
 
@@ -200,7 +200,7 @@ class NeuralNet():
                                       callbacks=[self.early_stopping,self.model_checkpoint]
                                      ) 
 
-
+        print(self.model.summary())
         self._save_model() #Save everything 
 
 
