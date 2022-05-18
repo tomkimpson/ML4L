@@ -115,7 +115,10 @@ class PrepareMLData():
 
         #Check for useless columns and drop them
         print (df_features.nunique())
-        print(df_features[df_features.nunique() == 1])
+        print (df_features.nunique() == 1)
+        print(df.drop(df_features.nunique()[df_features.nunique() == 1].index.values, axis=1))
+
+        #print(df_features[df_features.nunique() == 1])
 
 
         if (self.normalisation_mean is None) & (self.normalisation_std is None): 

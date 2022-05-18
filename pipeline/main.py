@@ -81,13 +81,13 @@ def parse_arguments():
 if __name__ == '__main__':
 
     
-    print ('-------------------------------')
+    print ('-------------ML4L---------------')
     print ('-------------------------------')
     print ('-------------------------------')
 
     args = parse_arguments()
     options = vars(args)
-    print('Running ML4L with arguments:')
+    print('Running with arguments:')
     for k, v in options.items():
         print(k, v)
     print ('------------------------------')
