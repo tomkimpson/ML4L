@@ -170,6 +170,11 @@ class NeuralNet():
         print(self.training_data[self.target_variable])
         print ('-------------------')
 
+        print ("ALL VALID")
+        print(self.validation_data)
+        print ("--------------------")
+
+
         print ("----------VALID X--------")
         self.validation_data[self.training_features]
         print ('-------------------')

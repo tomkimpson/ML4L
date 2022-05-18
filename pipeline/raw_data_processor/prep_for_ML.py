@@ -100,7 +100,12 @@ class PrepareMLData():
             df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20']
 
             #Calculate delta fields
+            print ('Pre delta fields:')
+            print(df)
             df = self._calculate_delta_fields(df)
+            print ('Post delta fields:')
+            print (df)
+            print ('--------------------')
              
             #Append 
             dfs_features.append(df)
