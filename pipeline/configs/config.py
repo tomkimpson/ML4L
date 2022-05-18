@@ -97,7 +97,7 @@ CFG = {
                               'anor_v20','isor_v20','slor_v20','sdor_v20','sr_v20','lsrh_v20',
                               'si10_v20'
                               ],
-        "batch_size": 1024,
+        "batch_size": 10000,
         "epochs": 1,
         "number_of_hidden_layers":2,
         "nodes_per_layer": [19,19],
@@ -106,7 +106,7 @@ CFG = {
         "loss": 'mse',
         "metrics": ["accuracy"],
         "path_to_trained_models": f'{root}processed_data/trained_models/',
-        "model_name": 'V20_2018',
+        "model_name": 'V20_2018_testing',
         "overwrite": False,
         "use_pretrained_model":False,
         "epoch_save_freq": 10,
