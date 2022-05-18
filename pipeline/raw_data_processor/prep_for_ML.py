@@ -83,8 +83,8 @@ class PrepareMLData():
 
         monthly_files = []
         for i in years_to_process:
-            #files = glob.glob(self.path_to_input_data+f'Haversine_MODIS_ERA_{i}_*.parquet')
-            files = glob.glob(self.path_to_input_data+f'MODIS_ERA_{i}_*.parquet')
+            files = glob.glob(self.path_to_input_data+f'Haversine_MODIS_ERA_{i}_*.parquet')
+            #files = glob.glob(self.path_to_input_data+f'MODIS_ERA_{i}_*.parquet')
 
             monthly_files.append(files)
     
@@ -102,12 +102,8 @@ class PrepareMLData():
             df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20']
 
             #Calculate delta fields
-            #print ('Pre delta fields:')
-            #print(df)
             df = self._calculate_delta_fields(df)
-            #print ('Post delta fields:')
-            #print (df)
-            #print ('--------------------')
+            
              
             #Append 
             dfs_features.append(df)
@@ -117,28 +113,20 @@ class PrepareMLData():
         df_features = pd.concat(dfs_features)
         df_targets = pd.concat(dfs_targets)
 
-        #if (self.normalisation_mean is None) & (self.normalisation_std is None): 
-        if True:
+        #Check for useless columns and drop them
+        print (df_features.nunique())
+        print(df_features[df_features.nunique() == 1])
+
+
+        if (self.normalisation_mean is None) & (self.normalisation_std is None): 
 
             print ('Calculating normalisation parameters for years:', years_to_process)
             #If we dont have any normalisation parameters already 
             self.normalisation_mean =  df_features.mean()
             self.normalisation_std =  df_features.std()
 
-            print ('-------Norm mean = ')
-            print(self.normalisation_mean)
+            print ('zeros')
 
-
-
-            print ('------------Norm std')
-            print (self.normalisation_std)
-
-            print ('sr v20 unique values')
-            print (np.unique(df_features['sr_v15']))
-            print (np.unique(df_features['sr_v20']))
-
-
-            print ('-------------END-------------')
 
 
 
