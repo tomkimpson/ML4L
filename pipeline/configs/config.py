@@ -61,9 +61,9 @@ CFG = {
 
 
 
-        "training_years": ['2018'],
-        "validation_years": ['2019'],
-        "test_years":['2020'],
+        "training_years": ['2016'],
+        "validation_years": ['2017'],
+        "test_years":['2019'],
 
         "list_of_meta_features": ['latitude_ERA', 'longitude_ERA','time'],
 
@@ -83,28 +83,28 @@ CFG = {
 
     },
     "train": {
-        "training_data": f'{root}processed_data/joined_data/2018_ML.parquet',
-        "validation_data": f'{root}processed_data/joined_data/2019_ML.parquet',
-        "testing_data": f'{root}processed_data/joined_data/2020_ML.parquet',
+        "training_data": f'{root}processed_data/joined_data/2016_ML.parquet',
+        "validation_data": f'{root}processed_data/joined_data/2017_ML.parquet',
+        "testing_data": f'{root}processed_data/joined_data/2019_ML.parquet',
         "training_features": ['sp', 'msl', 'u10', 'v10', 't2m', 'aluvp', 'aluvd',
                               'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 'skt',
                               'lsm_v15','cl_v15','dl_v15','cvh_v15','cvl_v15','si10_v15',
                               'lsm_v20','cl_v20','dl_v20','cvh_v20','cvl_v20','si10_v20'
                               ],
-        "batch_size": 10000,
-        "epochs": 50,
+        "batch_size": 1024,
+        "epochs": 100,
         "number_of_hidden_layers":2,
         "nodes_per_layer": [None,None],
         "target_variable": 'MODIS_LST',
-        "learning_rate": 0.1,
+        "learning_rate": 3e-4,
         "loss": 'mse',
         "metrics": ["accuracy"],
         "path_to_trained_models": f'{root}processed_data/trained_models/',
-        "model_name": 'V20_2018_testing',
+        "model_name": 'V20_2018',
         "overwrite": True,
         "use_pretrained_model":False,
         "epoch_save_freq": 10,
-        "early_stopping_patience":20
+        "early_stopping_patience":10
     },
     "model": {
         "input": [128, 128, 3],
