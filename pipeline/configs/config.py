@@ -105,7 +105,7 @@ CFG = {
         "use_pretrained_model":False,
         "epoch_save_freq": 10,
         "early_stopping_patience":10,
-        "pretrained_model": f'{root}processed_data/trained_models/tmp_checkpoint'
+        "pretrained_model": None #f'{root}processed_data/trained_models/tmp_checkpoint'
     },
     "model": {
         "input": [128, 128, 3],
