@@ -8,6 +8,8 @@ import pandas as pd
 
 
 
+
+path_to_modis_files = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/ECMWF_files/raw/MODIS/'
 path = '/network/group/aopp/predict/TIP016_PAXTON_RPSPEEDY/ML4L/processed_data/trained_models/ML_acc386a38f1d481da481cf2bffb5bfba/' #Path to ML folder of predictions
 
 
