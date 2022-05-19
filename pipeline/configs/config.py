@@ -89,7 +89,8 @@ CFG = {
         "training_features": ['sp', 'msl', 'u10', 'v10', 't2m', 'aluvp', 'aluvd',
                               'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 'skt',
                               'lsm_v15','cl_v15','dl_v15','cvh_v15','cvl_v15','si10_v15',
-                              'lsm_v20','cl_v20','dl_v20','cvh_v20','cvl_v20','si10_v20'
+                              'lsm_v20','cl_v20','dl_v20','cvh_v20','cvl_v20','si10_v20',
+                              'cl_saline'
                               ],
         "batch_size": 1024,
         "epochs": 100,
@@ -100,7 +101,7 @@ CFG = {
         "loss": 'mse',
         "metrics": ["accuracy"],
         "path_to_trained_models": f'{root}processed_data/trained_models/',
-        "model_name": 'V20_2016',
+        "model_name": 'V20_salt_lakes_2016',
         "overwrite": True,
         "use_pretrained_model":False,
         "epoch_save_freq": 10,
