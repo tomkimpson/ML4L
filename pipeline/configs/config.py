@@ -93,7 +93,7 @@ CFG = {
                               'cl_saline','clake_monthly_value'
                               ],
         "batch_size": 1024,
-        "epochs": 100,
+        "epochs": 200,
         "number_of_hidden_layers":2,
         "nodes_per_layer": [None,None],
         "target_variable": 'MODIS_LST',
