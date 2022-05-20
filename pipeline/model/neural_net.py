@@ -91,10 +91,10 @@ class NeuralNet():
         print ('-------------------------------------------------------------')
 
 
-    def _save_model(self):
 
-        """Save model to disk after training """
-
+    def _create_directory(self):
+ 
+        """Create a directory to save trained model to"""
         if os.path.exists(self.save_dir):
             print (self.save_dir, ' already exists')
             
@@ -110,7 +110,12 @@ class NeuralNet():
                 os.mkdir(self.save_dir)
 
         else:
+            print ('Creating a new directory called:',self.save_dir)
             os.mkdir(self.save_dir)
+
+
+    def _save_model(self):
+        """Save model to disk after training """
         
         print ('Saving model to:', self.save_dir)
         # Save the trained NN and the training history
@@ -179,7 +184,7 @@ class NeuralNet():
 
 
 
-        self.model_checkpoint = ModelCheckpoint(filepath = self.path_to_trained_models+'tmp_checkpoint', 
+        self.model_checkpoint = ModelCheckpoint(filepath = self.save_dir+'checkpoint', 
                                                 monitor='val_loss', 
                                                 save_best_only=True, 
                                                 mode='min',
@@ -218,6 +223,7 @@ class NeuralNet():
         self._load_data()
 
         if self.pretrained_model is None:
+            self._create_directory()
             self._construct_network()
         else:
              print ('Loading a pretrained model from ', self.pretrained_model)

@@ -80,7 +80,7 @@ CFG = {
                                 
         "list_of_bonus_features": ['clake_monthly_value','cl_saline'], 
         "target_variable" : ["MODIS_LST"],
-
+# 'lsm_v15','cl_v15','dl_v15','cvh_v15','cvl_v15','si10_v15',
     },
     "train": {
         "training_data": f'{root}processed_data/joined_data/2016_ML.parquet',
@@ -88,24 +88,26 @@ CFG = {
         "testing_data": f'{root}processed_data/joined_data/2019_ML.parquet',
         "training_features": ['sp', 'msl', 'u10', 'v10', 't2m', 'aluvp', 'aluvd',
                               'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 'skt',
-                              'lsm_v15','cl_v15','dl_v15','cvh_v15','cvl_v15','si10_v15',
-                              'lsm_v20','cl_v20','dl_v20','cvh_v20','cvl_v20','si10_v20',
-                              'cl_saline'
+                              'slt_v15', 'sdfor_v15', 'sdor_v15', 'cvl_v15','lsm_v15', 'isor_v15', 
+                              'tvl_v15', 'tvh_v15', 'cvh_v15', 'si10_v15','anor_v15', 'cl_v15', 'dl_v15', 
+                              'z_v15', 'slor_v15'
+                              #'lsm_v20','cl_v20','dl_v20','cvh_v20','cvl_v20','si10_v20',
+                              #'cl_saline'
                               ],
         "batch_size": 1024,
         "epochs": 200,
-        "number_of_hidden_layers":2,
-        "nodes_per_layer": [None,None],
+        "number_of_hidden_layers":3,
+        "nodes_per_layer": [None,None,None],
         "target_variable": 'MODIS_LST',
         "learning_rate": 3e-4,
         "loss": 'mse',
         "metrics": ["accuracy"],
         "path_to_trained_models": f'{root}processed_data/trained_models/',
-        "model_name": 'V20_salt_lakes_2016',
-        "overwrite": True,
+        "model_name": 'V15_2016_augmented',
+        "overwrite": False,
         "use_pretrained_model":False,
         "epoch_save_freq": 10,
-        "early_stopping_patience":10,
+        "early_stopping_patience":20,
         "pretrained_model": None #f'{root}processed_data/trained_models/tmp_checkpoint'
     },
     "model": {
