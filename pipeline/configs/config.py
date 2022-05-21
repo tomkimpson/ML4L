@@ -91,9 +91,10 @@ CFG = {
                               'slt_v15', 'sdfor_v15', 'sdor_v15', 'cvl_v15','lsm_v15', 'isor_v15', 
                               'tvl_v15', 'tvh_v15', 'cvh_v15', 'si10_v15','anor_v15', 'cl_v15', 'dl_v15', 
                               'z_v15', 'slor_v15',
-                            #   'sdor_v20', 'cvl_v20','lsm_v20', 'isor_v20', 
-                            #    'cvh_v20', 'si10_v20','anor_v20', 'cl_v20', 'dl_v20', 
-                            #    'z_v20', 'slor_v20'
+                              'sdor_v20', 'cvl_v20','lsm_v20', 'isor_v20', 
+                               'cvh_v20', 'si10_v20','anor_v20', 'cl_v20', 'dl_v20', 
+                               'z_v20', 'slor_v20',
+                               'cl_saline'
                               ],
         "batch_size": 1024,
         "epochs": 200,
@@ -104,7 +105,7 @@ CFG = {
         "loss": 'mse',
         "metrics": ["accuracy"],
         "path_to_trained_models": f'{root}processed_data/trained_models/',
-        "model_name": 'V15_2016_augmented',
+        "model_name": 'V20_2016_augmented_salt',
         "overwrite": True,
         "use_pretrained_model":False,
         "epoch_save_freq": 10,
