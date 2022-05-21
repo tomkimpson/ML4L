@@ -93,7 +93,7 @@ CFG = {
                               'z_v15', 'slor_v15'
                               'sdor_v20', 'cvl_v20','lsm_v20', 'isor_v20', 
                                'cvh_v20', 'si10_v20','anor_v20', 'cl_v20', 'dl_v20', 
-                              'z_v20', 'slor_v20'
+                               'z_v20', 'slor_v20'
                               ],
         "batch_size": 1024,
         "epochs": 200,

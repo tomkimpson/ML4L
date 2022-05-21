@@ -60,6 +60,8 @@ class NeuralNet():
 
     
         # CHECKS
+        print(sorted(self.training_data.columns))
+        print(sorted(self.training_features + [self.target_variable]))
         assert sorted(self.training_data.columns) == sorted(self.training_features + [self.target_variable]) #Check columns in df are the ones we expect
         assert len(self.training_data.columns) - 1 == len(self.training_features) # Check number of columns is what we expect
         assert not self.training_data.isnull().any().any()   # Check for nulls
