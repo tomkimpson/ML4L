@@ -80,7 +80,6 @@ CFG = {
                                 
         "list_of_bonus_features": ['clake_monthly_value','cl_saline'], 
         "target_variable" : ["MODIS_LST"],
-# 'lsm_v15','cl_v15','dl_v15','cvh_v15','cvl_v15','si10_v15',
     },
     "train": {
         "training_data": f'{root}processed_data/joined_data/2016_ML.parquet',
