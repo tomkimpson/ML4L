@@ -120,7 +120,7 @@ class NeuralNet():
         
         print ('Saving model to:', self.save_dir)
         # Save the trained NN and the training history
-        self.model.save(self.save_dir+'/trained_model') # TO SELF: How does this tie up with early stopping?  
+        self.model.save(self.save_dir+'/trained_model')  
 
 
 
@@ -138,13 +138,10 @@ class NeuralNet():
 
         #Get the number of nodes for each layer. If none, defaults to nfeatures/2 for each layer
         if self.nodes_per_layer[0] is None:
-            print ('OPTION A')
             self.node = [int(self.nfeatures)/2]*self.number_of_hidden_layers
         else:
-            print('OPTIONB')
             self.node = self.nodes_per_layer
 
-        print (self.node)
         assert self.number_of_hidden_layers == len(self.node)          # Number of layers = number of specified nodes
 
 
