@@ -2,3 +2,4 @@
 *.out
 *.log
 *.pyc
+.ipynb_checkpoints/
