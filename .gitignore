@@ -2,4 +2,4 @@
 *.out
 *.log
 *.pyc
-.ipynb_checkpoints/
+.DS_Store
