@@ -94,7 +94,7 @@ CFG = {
                               'sdor_v20', 'cvl_v20','lsm_v20', 'isor_v20', 
                                'cvh_v20', 'si10_v20','anor_v20', 'cl_v20', 'dl_v20', 
                                'z_v20', 'slor_v20',
-                               'cl_saline'
+                               'cl_saline',"clake_monthly_value"
                               ],
         "batch_size": 1024,
         "epochs": 200,
@@ -105,7 +105,7 @@ CFG = {
         "loss": 'mse',
         "metrics": ["accuracy"],
         "path_to_trained_models": f'{root}processed_data/trained_models/',
-        "model_name": 'V20_2016_augmented_salt',
+        "model_name": 'V20_2016_augmented_monthlyclake',
         "overwrite": True,
         "use_pretrained_model":False,
         "epoch_save_freq": 10,

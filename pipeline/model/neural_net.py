@@ -185,7 +185,7 @@ class NeuralNet():
 
 
 
-        self.model_checkpoint = ModelCheckpoint(filepath = self.save_dir+'checkpoint', 
+        self.model_checkpoint = ModelCheckpoint(filepath = self.save_dir+'/checkpoint', 
                                                 monitor='val_loss', 
                                                 save_best_only=True, 
                                                 mode='min',
