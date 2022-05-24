@@ -107,7 +107,7 @@ class PrepareMLData():
             df = pd.read_parquet(m) #lat/llong are loaded only to allow the join with the bonus data and then dropped
             print(df)
             print(df.columns)
-            df=df.drop(drop_cols)
+            df=df.drop(drop_cols,axis=1)
 
             #Pass monthly clake as a v20 correction
             df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20']   #CHECK NOT NEGATIVE EVER!!
