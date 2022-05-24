@@ -167,6 +167,9 @@ class PrepareMLData():
         if not include_xt:
             print ('HERE')
             print(df_targets)
+            print(df_targets.columns)
+            print(self.target)
+            print (df_targets[self.target])
             df_targets = df_targets[[self.target]] #only get the target 
 
         df_out = pd.concat([df_features,df_targets],axis=1)
