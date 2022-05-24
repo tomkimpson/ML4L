@@ -74,13 +74,13 @@ class PrepareMLData():
         Writes a single file to directory/
         """
 
-        if include_xt: #also load and carry time and position
-            loaded_cols = self.columns_to_load+self.xt
-            pop_cols = self.target+self.xt
+       # if include_xt: #also load and carry time and position
+            #loaded_cols = self.columns_to_load+self.xt
+        pop_cols = self.target+self.xt #wont normalise these
 
-        else:
-            loaded_cols = self.columns_to_load
-            pop_cols = self.target
+       # else:
+            #loaded_cols = self.columns_to_load
+            #pop_cols = self.target
 
 
         #Load any extra data that we want to join on
@@ -102,8 +102,9 @@ class PrepareMLData():
         for m in monthly_files:
             print ('Loading file f:',m)
             
-            df = pd.read_parquet(m,columns=loaded_cols)
-            df_target = pd.concat([df.pop(x) for x in pop_cols], axis=1)
+            #df = pd.read_parquet(m,columns=loaded_cols + ['latitude_ERA', 'longitude_ERA']) #lat/llong are loaded only to allow the join with the bonus data and then dropped
+            df = pd.read_parquet(m) #lat/llong are loaded only to allow the join with the bonus data and then dropped
+
 
             #Pass monthly clake as a v20 correction
             df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20']   #CHECK NOT NEGATIVE EVER!!
@@ -112,7 +113,10 @@ class PrepareMLData():
             df = self._calculate_delta_fields(df)
 
             #Join on bonus saline max extent data
-            df = pd.merge(df, saline_df, how='left', left_on=['latitude_ERA', 'longitude_ERA'], right_on=['latitude','longitude'], suffixes=(None,))
+            df = pd.merge(df, saline_df, how='left', left_on=['latitude_ERA', 'longitude_ERA'], right_on=['latitude','longitude'], suffixes=(None,)).drop(['latitude', 'longitude'],axis=1) #merge and drop lat/long coordinates from the join
+
+            df_target = pd.concat([df.pop(x) for x in pop_cols], axis=1)
+            df_target['skt_unnormalised'] = df['skt']
             
             #Append 
             dfs_features.append(df)
@@ -121,6 +125,8 @@ class PrepareMLData():
         print('All dfs loaded and processed. Now concatenate together.')
         df_features = pd.concat(dfs_features)
         df_targets = pd.concat(dfs_targets)
+        print(df_features.columns)
+        print(df_targets.columns)
 
 
         if (self.normalisation_mean is None) & (self.normalisation_std is None): # On the first pass when dealing with the training set
@@ -141,9 +147,9 @@ class PrepareMLData():
 
 
 
-        if include_xt: #save a copy of the unnormalised skt
-            skt_unnormalised = df_features['skt']
-            print (skt_unnormalised)
+       # if include_xt: #save a copy of the unnormalised skt
+          #  skt_unnormalised = df_features['skt']
+          #  print (skt_unnormalised)
             
         #Normalise training features using the pre calculated terms
         df_features = (df_features-self.normalisation_mean)/self.normalisation_std
@@ -152,15 +158,19 @@ class PrepareMLData():
         df_features = df_features.drop(self.drop_cols, axis=1)
 
         # Concat with the targets variable which is unnormalised
-        if include_xt:
-            df_out = pd.concat([df_features,df_targets],axis=1)
-            print(df_out)
-            df_out['skt_unnormalised'] = skt_unnormalised
-            assert len(loaded_cols) == len(df_out.columns) + len(self.drop_cols) + 1 #check no cols lost in the process
+        #if include_xt:
 
-        else:
-            df_out = pd.concat([df_features,df_targets],axis=1)
-            assert len(loaded_cols) == len(df_out.columns) + len(self.drop_cols) # check no cols lost in the process
+        if not include_xt:
+            df_features = df_features[[self.target]] #only get the target 
+
+        df_out = pd.concat([df_features,df_targets],axis=1)
+            #print(df_out)
+           # df_out['skt_unnormalised'] = skt_unnormalised
+           # assert len(loaded_cols) == len(df_out.columns) + len(self.drop_cols) + 1 #check no cols lost in the process
+
+      #  else:
+          #  df_out = pd.concat([df_features,df_targets],axis=1)
+           # assert len(loaded_cols) == len(df_out.columns) + len(self.drop_cols) # check no cols lost in the process
 
 
       
