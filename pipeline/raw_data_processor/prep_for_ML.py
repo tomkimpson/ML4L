@@ -105,6 +105,8 @@ class PrepareMLData():
             
             #df = pd.read_parquet(m,columns=loaded_cols + ['latitude_ERA', 'longitude_ERA']) #lat/llong are loaded only to allow the join with the bonus data and then dropped
             df = pd.read_parquet(m) #lat/llong are loaded only to allow the join with the bonus data and then dropped
+            print(df)
+            print(df.columns)
             df=df.drop(drop_cols)
 
             #Pass monthly clake as a v20 correction
