@@ -283,19 +283,23 @@ class JoinERAWithMODIS():
         distances, indices = gpu_index_flat.search(xq, k)
             
     
-        df = query.reset_index().join(database.iloc[indices.flatten()].reset_index(), lsuffix='_MODIS',rsuffix='_ERA')
+        df = query.reset_index().join(database.iloc[indices.flatten()].reset_index(), lsuffix='_MODIS')
         df['L2_distance'] = distances
-        df['H_distance'] = self._haver(df['latitude_MODIS'],df['longitude_MODIS'],df['latitude_ERA'],df['longitude_ERA']) #Haversine distance
+        df['H_distance'] = self._haver(df['latitude_MODIS'],df['longitude_MODIS'],df['latitude'],df['longitude']) #Haversine distance
         
         #Filter out any large distances
         tolerance = 50 #km
         df_filtered = df.query('H_distance < %.9f' % tolerance)
 
         #Group it. Each ERA point has a bunch of MODIS points. Group and average
-        df_grouped = df_filtered.groupby(['latitude_ERA','longitude_ERA'],as_index=False).mean()
+        df_grouped = df_filtered.groupby(['latitude','longitude'],as_index=False).mean()
+        df_size = df_filtered.groupby(['latitude', 'longitude']).size()
+        print(df_size)
+        df_grouped['counts_per_point'] = df_size['MODIS_LST']
 
         
-        return df_grouped
+        
+        return df_grouped[['latitude', 'longitude', 'MODIS_LST','H_distance','counts_per_point']]
 
 
 
