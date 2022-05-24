@@ -332,7 +332,7 @@ class JoinERAWithMODIS():
 
         #df_size = df_filtered.groupby(['latitude', 'longitude']).size()
         #print(df_size)
-        df_grouped['counts_per_point'] = df_filtered.groupby(['latitude', 'longitude']).size()
+        df_grouped['counts_per_point'] = df_filtered.groupby(['latitude', 'longitude']).size().values
 
         
         
