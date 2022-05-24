@@ -100,7 +100,7 @@ class PrepareMLData():
 
         dfs_features = [] #array to hold dfs which have features
         dfs_targets = []
-        for m in monthly_files:
+        for m in monthly_files[0:1]:
             print ('Loading file f:',m)
             
             #df = pd.read_parquet(m,columns=loaded_cols + ['latitude_ERA', 'longitude_ERA']) #lat/llong are loaded only to allow the join with the bonus data and then dropped
@@ -170,7 +170,7 @@ class PrepareMLData():
             print(df_targets.columns)
             print(self.target)
             print (df_targets[self.target])
-            df_targets = df_targets[[self.target]] #only get the target 
+            df_targets = df_targets[self.target] #only get the target 
 
         df_out = pd.concat([df_features,df_targets],axis=1)
             #print(df_out)
