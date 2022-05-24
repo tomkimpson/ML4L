@@ -31,8 +31,8 @@ class JoinERAWithMODIS():
         self.saline_clake_files_path = self.config.data.path_to_saline_clake_files
 
 
-        self.monthly_clake_ds = xr.Dataset() # Empty ds to hold monthly clake values
-        self.saline_ds = None                # Empty declaration ready to hold saline lake fields
+        self.monthly_clake_ds = xr.Dataset() #Empty ds to hold monthly clake values
+        self.saline_ds = None # Empty declaration ready to hold saline lake fields
         self.ERA_files = sorted(get_list_of_files(self.config.data.path_to_processed_variable_fields,self.config.data.min_year_to_join,self.config.data.max_year_to_join))
             
             
@@ -200,38 +200,6 @@ class JoinERAWithMODIS():
         latitude_filter =  (ERA_hour.latitude > bounds['latitude_min']) & (ERA_hour.latitude < bounds['latitude_max'])
         return ERA_hour.where(longitude_filter & latitude_filter,drop=True)
     
-    def _get_ERA_hourV2(self,ERA_month,t,bounds):
-        
-        """
-        Extract an hour of ERA data
-        """
-        
-        #Filter month of ERA data to an hour
-        time_filter = (ERA_month.time == t)
-        ERA_hour = ERA_month.where(time_filter,drop=True)
-        
-        #Grab the constant fields and make a local copy
-        #v15 = self.ERA_constants_dict['v15']
-        #v20 = self.ERA_constants_dict['v20']
-        #saline = self.saline_ds
-
-        #Join on the constant data V15 and v20, the monthly clake files, and the saline data, first setting the time coordinate to allow for merge
-        #v15 = v15.assign_coords({"time": (((ERA_hour.time)))}) 
-        #v20 = v20.assign_coords({"time": (((ERA_hour.time)))}) 
-        #clake_month = clake_month.assign_coords({"time": (((ERA_hour.time)))})
-        #saline = saline.assign_coords({"time": (((ERA_hour.time)))}) 
-
-  
-        #ERA_hour = xr.merge([ERA_hour,v15,v20,clake_month,saline]).load() #Explicitly load 
-        
-        
-        #And covert longitude to long1
-        ERA_hour = ERA_hour.assign_coords({"longitude": (((ERA_hour.longitude + 180) % 360) - 180)})
-
-        # Also filter by latitude/longtiude
-        longitude_filter = (ERA_hour.longitude > bounds['longitude_min']) & (ERA_hour.longitude < bounds['longitude_max'])
-        latitude_filter =  (ERA_hour.latitude > bounds['latitude_min']) & (ERA_hour.latitude < bounds['latitude_max'])
-        return ERA_hour.where(longitude_filter & latitude_filter,drop=True)
 
     def _haver(self,lat1_deg,lon1_deg,lat2_deg,lon2_deg):
         
@@ -293,7 +261,8 @@ class JoinERAWithMODIS():
 
         #Group it. Each ERA point has a bunch of MODIS points. Group and average
         df_grouped = df_filtered.groupby(['latitude_ERA','longitude_ERA'],as_index=False).mean()
-   
+
+        
         return df_grouped
 
 
@@ -319,7 +288,7 @@ class JoinERAWithMODIS():
         r_km = 6371 # multiplier to convert to km (from unit distance)
         distances = distances*r_km
 
-        df = query.reset_index().join(database.iloc[indices.flatten()].reset_index(), lsuffix='_MODIS')
+        df = query.reset_index().join(database.iloc[indices.flatten()].reset_index(), lsuffix='_MODIS',rsuffix='_ERA')
         df['H_distance'] = distances
         
         #Filter out any large distances
@@ -327,34 +296,24 @@ class JoinERAWithMODIS():
         df_filtered = df.query('H_distance < %.9f' % tolerance)
 
         #Group it. Each ERA point has a bunch of MODIS points. Group and average
-        df_grouped = df_filtered.groupby(['latitude','longitude'],as_index=False).mean()
+        df_grouped = df_filtered.groupby(['latitude_ERA','longitude_ERA'],as_index=False).mean()
 
-
-        #df_size = df_filtered.groupby(['latitude', 'longitude']).size()
-        #print(df_size)
-        df_grouped['counts_per_point'] = df_filtered.groupby(['latitude', 'longitude']).size().values
-
-        
-        
-        return df_grouped[['latitude', 'longitude', 'MODIS_LST','H_distance','counts_per_point']]
-
-
+        return df_grouped
 
 
     def join(self):
 
         #Load the constant ERA fields and append to dictionary self.ERA_constants_dict
-        #self._load_constant_ERA_data(self.V15_output_path,"v15")
-        #self._load_constant_ERA_data(self.V20_output_path,"v20")
+        self._load_constant_ERA_data(self.V15_output_path,"v15")
+        self._load_constant_ERA_data(self.V20_output_path,"v20")
 
         #Load the monthly clake files
-        #self._load_monthly_clake_data()
+        self._load_monthly_clake_data()
 
         #Load the saline lake
-        #self._load_saline_lake_data()
-
-        print('Iterating over the following months:',self.ERA_files[0:1])
-        for f in self.ERA_files[0:1]: #Iterate over all months
+        self._load_saline_lake_data()
+        print('Iterating over the following months:',self.ERA_files[10:])
+        for f in self.ERA_files[10:]: #Iterate over all months
             #Load a month of ERA data
             print ('Loading ERA month:', f)
             ERA_month = xr.open_dataset(f,engine='cfgrib',backend_kwargs={'indexpath': ''})
@@ -363,7 +322,7 @@ class JoinERAWithMODIS():
             timestamps = pd.to_datetime(ERA_month.time) 
 
             dfs = []
-            for t in timestamps[0:10]: #iterate over every time (hour)
+            for t in timestamps: #iterate over every time (hour)
 
                 print(t)
 
@@ -371,11 +330,10 @@ class JoinERAWithMODIS():
                 #Note that we do this every timestamp, rather just doing it once per ERA month since ERA month sometimes
                 #contains values over two months e.g. all of February and the first day of March.
                 #There may be a more efficeint work around but these 4 lines are very inexpensive so can stay here for now. 
-
-                #clake_month = self.monthly_clake_ds[f"month_{t.month}"]   
-                #clake_month = clake_month.to_dataset()                 
-                #clake_month['clake_monthly_value'] = clake_month[f"month_{t.month}"] # Rename data variable by declaring a new entry... 
-                #clake_month = clake_month.drop([f"month_{t.month}"])                 # ...and dropping the old one
+                clake_month = self.monthly_clake_ds[f"month_{t.month}"]   
+                clake_month = clake_month.to_dataset()                 
+                clake_month['clake_monthly_value'] = clake_month[f"month_{t.month}"] # Rename data variable by declaring a new entry... 
+                clake_month = clake_month.drop([f"month_{t.month}"])                 # ...and dropping the old one
 
 
 
@@ -414,9 +372,7 @@ class JoinERAWithMODIS():
                 }
 
                 # Get an hour of ERA data
-                #ERA_hour = self._get_ERA_hour(ERA_month,t,clake_month,bounds) # Get an hour of all ERA data
-                ERA_hour = self._get_ERA_hourV2(ERA_month,t,bounds) # Get an hour of all ERA data
-
+                ERA_hour = self._get_ERA_hour(ERA_month,t,clake_month,bounds) # Get an hour of all ERA data
                 ERA_df = ERA_hour.to_dataframe().reset_index()                # Make it a df
 
                 #Find matches in space
@@ -429,9 +385,8 @@ class JoinERAWithMODIS():
 
 
 
-                df_matched['time'] = t  
-                print (df_matched)          
-                #df_matched = df_matched.drop(['index_MODIS', 'band','spatial_ref','index_ERA','values','number','surface','depthBelowLandLayer'], axis=1) #get rid of all these columns that we dont need
+                df_matched['time'] = t            
+                df_matched = df_matched.drop(['index_MODIS', 'band','spatial_ref','index_ERA','values','number','surface','depthBelowLandLayer'], axis=1) #get rid of all these columns that we dont need
                 dfs.append(df_matched)
 
                
@@ -441,9 +396,8 @@ class JoinERAWithMODIS():
         
             # At the end of every month, do some IO
             df = pd.concat(dfs)
-            print (df.columns)
             year_month = f.split('/')[-1].split('.')[0]
-            fname = f'TESTHaversine_MODIS_{year_month}.parquet'
+            fname = f'Haversine_MODIS_{year_month}.parquet'
             print ("Writing to disk:", self.IO_path+fname)
             df.to_parquet(self.IO_path+fname,compression=None)
 
