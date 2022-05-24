@@ -429,8 +429,9 @@ class JoinERAWithMODIS():
 
 
 
-                df_matched['time'] = t            
-                df_matched = df_matched.drop(['index_MODIS', 'band','spatial_ref','index_ERA','values','number','surface','depthBelowLandLayer'], axis=1) #get rid of all these columns that we dont need
+                df_matched['time'] = t  
+                print (df_matched)          
+                #df_matched = df_matched.drop(['index_MODIS', 'band','spatial_ref','index_ERA','values','number','surface','depthBelowLandLayer'], axis=1) #get rid of all these columns that we dont need
                 dfs.append(df_matched)
 
                
