@@ -77,7 +77,7 @@ class PrepareMLData():
        # if include_xt: #also load and carry time and position
             #loaded_cols = self.columns_to_load+self.xt
         pop_cols = self.target+self.xt # wont normalise these
-        drop_cols = ['latitude_MODIS','longitude_MODIS', 'heightAboveGround', 'H_distance'] #we have no need of these cols
+        unneeded_columns = ['latitude_MODIS','longitude_MODIS', 'heightAboveGround', 'H_distance'] #we have no need of these cols
 
        # else:
             #loaded_cols = self.columns_to_load
@@ -107,7 +107,7 @@ class PrepareMLData():
             df = pd.read_parquet(m) #lat/llong are loaded only to allow the join with the bonus data and then dropped
             print(df)
             print(df.columns)
-            df=df.drop(drop_cols,axis=1)
+            df=df.drop(unneeded_columns,axis=1)
 
             #Pass monthly clake as a v20 correction
             df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20']   #CHECK NOT NEGATIVE EVER!!
@@ -165,7 +165,9 @@ class PrepareMLData():
         #if include_xt:
 
         if not include_xt:
-            df_features = df_features[[self.target]] #only get the target 
+            print ('HERE')
+            print(df_targets)
+            df_targets = df_targets[[self.target]] #only get the target 
 
         df_out = pd.concat([df_features,df_targets],axis=1)
             #print(df_out)
