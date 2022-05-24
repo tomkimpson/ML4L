@@ -100,7 +100,7 @@ class PrepareMLData():
             df_target = pd.concat([df.pop(x) for x in pop_cols], axis=1)
 
             #Pass monthly clake as a v20 correction
-            df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20']
+            df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20']   #CHECK NOT NEGATIVE EVER!!
 
             #Calculate delta fields
             df = self._calculate_delta_fields(df)
