@@ -76,7 +76,8 @@ class PrepareMLData():
 
        # if include_xt: #also load and carry time and position
             #loaded_cols = self.columns_to_load+self.xt
-        pop_cols = self.target+self.xt #wont normalise these
+        pop_cols = self.target+self.xt # wont normalise these
+        drop_cols = ['latitude_MODIS','longitude_MODIS', 'heightAboveGround', 'H_distance'] #we have no need of these cols
 
        # else:
             #loaded_cols = self.columns_to_load
@@ -104,7 +105,7 @@ class PrepareMLData():
             
             #df = pd.read_parquet(m,columns=loaded_cols + ['latitude_ERA', 'longitude_ERA']) #lat/llong are loaded only to allow the join with the bonus data and then dropped
             df = pd.read_parquet(m) #lat/llong are loaded only to allow the join with the bonus data and then dropped
-
+            df=df.drop(drop_cols)
 
             #Pass monthly clake as a v20 correction
             df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20']   #CHECK NOT NEGATIVE EVER!!
@@ -132,6 +133,7 @@ class PrepareMLData():
         if (self.normalisation_mean is None) & (self.normalisation_std is None): # On the first pass when dealing with the training set
 
             # Check for useless columns and drop them
+            print ('Checking for useless cols')
             columns_with_zero_variance = df_features.nunique()[df_features.nunique() == 1].index.values
             print (f'The following features have zero variance in year {years_to_process} and will be dropped')
             print (columns_with_zero_variance)
