@@ -7,6 +7,7 @@ from utils.config import Config
 import glob
 import pandas as pd 
 import numpy as np
+import xarray as xr
 class PrepareMLData():
 
     """
@@ -26,6 +27,7 @@ class PrepareMLData():
         self.validation_years = self.config.data.validation_years
         self.test_years = self.config.data.test_years
         self.path_to_input_data = self.config.data.path_to_joined_ERA_MODIS_files
+        self.bonus_data = self.config.data.bonus_data
 
         self.xt = self.config.data.list_of_meta_features
         self.time_variable_features = self.config.data.list_of_time_variable_features
@@ -80,13 +82,17 @@ class PrepareMLData():
             loaded_cols = self.columns_to_load
             pop_cols = self.target
 
+
+        #Load any extra data that we want to join on
+        saline_ds = xr.open_dataset(self.bonus_data,engine='cfgrib',backend_kwargs={'indexpath': ''})
+        saline_ds = saline_ds.assign_coords({"longitude": (((saline_ds.longitude + 180) % 360) - 180)})
+        saline_ds = saline_ds.cl.rename(f'cl_saline_max') #This is now a data array
+        saline_df = saline_ds.to_dataframe().reset_index()[['latitude','longitude','cl_saline_max']]
     
 
         monthly_files = []
         for i in years_to_process:
             files = glob.glob(self.path_to_input_data+f'Haversine_MODIS_ERA_{i}_*.parquet')
-            #files = glob.glob(self.path_to_input_data+f'MODIS_ERA_{i}_*.parquet')
-
             monthly_files.append(files)
     
         monthly_files = sorted([item for sublist in monthly_files for item in sublist]) 
@@ -104,8 +110,10 @@ class PrepareMLData():
 
             #Calculate delta fields
             df = self._calculate_delta_fields(df)
+
+            #Join on bonus saline max extent data
+            df = pd.merge(df, saline_df, how='left', left_on=['latitude_ERA', 'longitude_ERA'], right_on=['latitude','longitude'], suffixes=(None,))
             
-             
             #Append 
             dfs_features.append(df)
             dfs_targets.append(df_target)
@@ -133,19 +141,27 @@ class PrepareMLData():
 
 
 
-
-
-        #Normalise it using the pre calculated terms
+        if include_xt: #save a copy of the unnormalised skt
+            skt_unnormalised = df_features['skt']
+            print (skt_unnormalised)
+            
+        #Normalise training features using the pre calculated terms
         df_features = (df_features-self.normalisation_mean)/self.normalisation_std
 
         #Get rid of columns with zero variance
         df_features = df_features.drop(self.drop_cols, axis=1)
 
         # Concat with the targets variable which is unnormalised
-        df_out = pd.concat([df_features,df_targets],axis=1)
+        if include_xt:
+            df_out = pd.concat([df_features,df_targets],axis=1)
+            print(df_out)
+            df_out['skt_unnormalised'] = skt_unnormalised
+            assert len(loaded_cols) == len(df_out.columns) + len(self.drop_cols) + 1 #check no cols lost in the process
 
+        else:
+            df_out = pd.concat([df_features,df_targets],axis=1)
+            assert len(loaded_cols) == len(df_out.columns) + len(self.drop_cols) # check no cols lost in the process
 
-        assert len(loaded_cols) == len(df_out.columns) + len(self.drop_cols)  #check no cols lost in the process
 
       
         # Save it to disk

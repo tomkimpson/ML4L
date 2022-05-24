@@ -28,58 +28,57 @@ CFG = {
         "ERA_skin_constant_features": ['slt','sdfor'],                                   # These are the features in ERA_skin that are constant, but are not in the V* climate files
         "ERA_skin_variable_features": 'aluvp/aluvd/alnip/alnid/istl1/istl2/sd/2d/fal',   # These are the features in ERA_skin that are not constant
         
-        #Parameters for processing raw data
+        # D. Parameters for processing raw data
         "min_year_to_process":2016, 
         "max_year_to_process":2021,
          
-        #Parameters for joining ERA/MODIS
+        # E. Parameters for joining ERA/MODIS
+        "min_year_to_join":2020, # typically we want these min/maxes to be the same as min/max_year_to_join, but maybe an edge case exists?
+        "max_year_to_join":2021,
+        "joining_metric" : 'haversine', #L2, haversine
+
+        ##Satellite timings
+        "satellite":'aquaDay',
         "aquaDay_min_hour":2,
         "terraDay_min_hour":-1,
         "aquaNight_min_hour":-1,
-        "terraNight_min_hour":11,
- 
+        "terraNight_min_hour":11, 
         "aquaDay_max_hour":24,
         "terraDay_max_hour":22,
         "aquaNight_max_hour":13,
         "terraNight_max_hour":24,
-
-
         "aquaDay_local_solar_time":"13:30",
         "terraDay_local_solar_time":"10:30",
         "terraNight_local_solar_time":"22:30",
-        "aquaNight_local_solar_time":"01:30",
-              
-        "satellite":'aquaDay',
+        "aquaNight_local_solar_time":"01:30",      
         "latitude_bound": 70,
 
-        "min_year_to_join":2020, #typically we want these min/maxes to be the same as min_year_to_join, but maybe an edge case exists?
-        "max_year_to_join":2021,
 
+        #F. Parameters for creating ML input files
 
-       
-        "joining_metric" : 'haversine', #L2, haversine
-
-
-
+        ##Extra static data obtained after the joining process has completed. We can join this on in ML_prep  
+        "bonus_data": f'{root}saltlakes_max/clake_639l2_yearMAX_saline', # Max extent of salt lakes
         "training_years": ['2016'],
         "validation_years": ['2017'],
         "test_years":['2019'],
 
+        ## List of all features, grouped
         "list_of_meta_features": ['latitude_ERA', 'longitude_ERA','time'],
 
         "list_of_time_variable_features" : ['sp', 'msl', 'u10', 'v10', 't2m', 'aluvp', 'aluvd',
                                             'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 'skt'],
-        "list_of_V15_features": ['slt_v15', 'sdfor_v15', 'sdor_v15', 'lsrh_v15', 'cvl_v15', 'sr_v15',
-                                 'lsm_v15', 'isor_v15', 'tvl_v15', 'tvh_v15', 'cvh_v15', 'si10_v15',
-                                 'anor_v15', 'cl_v15', 'dl_v15', 'z_v15', 'slor_v15'],
 
-        "list_of_V20_features": ['slt_v20','sdfor_v20', 'sdor_v20', 'lsrh_v20', 'cvl_v20', 'sr_v20', 
-                                'lsm_v20','isor_v20', 'tvl_v20', 'tvh_v20', 'cvh_v20', 'si10_v20', 
-                                'anor_v20','cl_v20', 'dl_v20', 'z_v20', 'slor_v20'], 
+        "list_of_V15_features":            ['slt_v15', 'sdfor_v15', 'sdor_v15', 'lsrh_v15', 'cvl_v15', 'sr_v15',
+                                            'lsm_v15', 'isor_v15', 'tvl_v15', 'tvh_v15', 'cvh_v15', 'si10_v15',
+                                            'anor_v15', 'cl_v15', 'dl_v15', 'z_v15', 'slor_v15'],
+
+        "list_of_V20_features":            ['slt_v20','sdfor_v20', 'sdor_v20', 'lsrh_v20', 'cvl_v20', 'sr_v20', 
+                                            'lsm_v20','isor_v20', 'tvl_v20', 'tvh_v20', 'cvh_v20', 'si10_v20', 
+                                            'anor_v20','cl_v20', 'dl_v20', 'z_v20', 'slor_v20'], 
                                 
                                 
-        "list_of_bonus_features": ['clake_monthly_value','cl_saline'], 
-        "target_variable" : ["MODIS_LST"],
+        "list_of_bonus_features":           ['clake_monthly_value','cl_saline'], # + cl_saline_max
+        "target_variable" :                 ["MODIS_LST"],
     },
     "train": {
         "training_data": f'{root}processed_data/joined_data/2016_ML.parquet',
