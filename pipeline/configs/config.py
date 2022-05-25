@@ -90,19 +90,18 @@ CFG = {
                               'z_v15', 'slor_v15',
                               'sdor_v20', 'cvl_v20','lsm_v20', 'isor_v20', 
                                'cvh_v20', 'si10_v20','anor_v20', 'cl_v20', 'dl_v20', 
-                               'z_v20', 'slor_v20',
-                               'cl_saline',"clake_monthly_value"
+                               'z_v20', 'slor_v20'
                               ], #Of all the available features in the training data, which should be used? 
-        "batch_size":              1024,
+        "batch_size":              10000,
         "epochs":                  200,
         "number_of_hidden_layers": 3,
         "nodes_per_layer":         [None,None,None],
         "target_variable":         'MODIS_LST',
-        "learning_rate":           3e-4,
+        "learning_rate":           0.001,
         "loss":                    'mse',
         "metrics":                 ["accuracy"],
         "path_to_trained_models":  f'{root}processed_data/trained_models/',
-        "model_name":              'V20_2016', #This model will also be used for prediction
+        "model_name":              'V20_2016_tester', #This model will also be used for prediction
         "overwrite":               True,
         "use_pretrained_model":    False,
         "epoch_save_freq":         10,
