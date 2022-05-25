@@ -116,7 +116,7 @@ class NeuralNet():
 
 
     def _save_model(self):
-        """Save model to disk after training """
+        """Save model to disk after training"""
         
         print ('Saving model to:', self.save_dir)
         # Save the trained NN and the training history
@@ -255,8 +255,12 @@ class NeuralNet():
         
         #Load
         loaded_model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
-        cols = self.training_features + [self.target_variable]
-        test_data = pd.read_parquet(self.config.train.testing_data,columns=cols) # Load the test data
+
+        with open(self.save_dir+'configuration.json') as f:
+            config=json.load(f)
+            cols = config['train']['training_features']     #Read from the config file saved with the model which features were used for training and use these same features when testing
+        
+        test_data = pd.read_parquet(self.config.predict.testing_data,columns=cols + [self.target_variable]) # Load the test data
 
         self._predict_status()
         
