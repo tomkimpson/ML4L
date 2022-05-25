@@ -270,7 +270,7 @@ class NeuralNet():
         del test_data 
 
         #IO
-        meta_data = pd.read_parquet(self.config.train.testing_data,columns=['latitude_ERA', 'longitude_ERA','time','MODIS_LST'])
+        meta_data = pd.read_parquet(self.config.predict.testing_data,columns=['latitude_ERA', 'longitude_ERA','time','MODIS_LST','skt_unnormalised'])
         meta_data['predictions'] = predictions 
         fout = self.save_dir + '/predictions.parquet'
         print ('Saving to:',fout)
