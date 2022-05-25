@@ -256,7 +256,7 @@ class NeuralNet():
         #Load
         loaded_model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
 
-        with open(self.save_dir+'configuration.json') as f:
+        with open(self.save_dir+'/configuration.json') as f:
             config=json.load(f)
             cols = config['train']['training_features']     #Read from the config file saved with the model which features were used for training and use these same features when testing
         
