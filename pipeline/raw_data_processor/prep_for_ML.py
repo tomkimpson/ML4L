@@ -103,7 +103,7 @@ class PrepareMLData():
             #Pass monthly clake as a v20 correction
             df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20']  
             print(sorted(np.unique( df['clake_monthly_value'])))
-            assert (df['clake_monthly_value'] > 0).all() # the monthly cl corrections should always be positive
+            #assert (df['clake_monthly_value'] > 0).all() # the monthly cl corrections should always be positive
 
             #Calculate delta fields
             df = self._calculate_delta_fields(df)
