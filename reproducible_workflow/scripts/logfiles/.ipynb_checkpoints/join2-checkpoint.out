@@ -1,7 +1,0 @@
-  File "join_MODIS_with_ERA.py", line 38
-    f = root +f'processed_data/ERA_timeconstant/ERA_constants_{v}.nc'
-                                                                    ^
-SyntaxError: invalid syntax
-Command exited with non-zero status 1
-0.00user 0.00system 0:00.01elapsed 63%CPU (0avgtext+0avgdata 7240maxresident)k
-24inputs+8outputs (0major+804minor)pagefaults 0swaps

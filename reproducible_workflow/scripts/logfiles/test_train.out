@@ -1,4 +1,0 @@
-  File "train_and_predict.py", line 145
-    fout = output_path+f'ML_{file_ID}/'
-                                      ^
-SyntaxError: invalid syntax
