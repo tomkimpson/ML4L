@@ -74,20 +74,15 @@ class PrepareMLData():
         Writes a single file to directory/
         """
 
-       # if include_xt: #also load and carry time and position
-            #loaded_cols = self.columns_to_load+self.xt
-        pop_cols = self.target+self.xt # wont normalise these
-        unneeded_columns = ['latitude_MODIS','longitude_MODIS', 'heightAboveGround', 'H_distance'] #we have no need of these cols
+        pop_cols = self.target+self.xt # These columns will not be popped of and won't be normalized, but will be saved to file for the test set
+        unneeded_columns = ['latitude_MODIS','longitude_MODIS', 'heightAboveGround', 'H_distance'] # We have no need of these cols. They will be loaded but immediatley dropped
 
-       # else:
-            #loaded_cols = self.columns_to_load
-            #pop_cols = self.target
-
-
+      
+ 
         #Load any extra data that we want to join on
         saline_ds = xr.open_dataset(self.bonus_data,engine='cfgrib',backend_kwargs={'indexpath': ''})
         saline_ds = saline_ds.assign_coords({"longitude": (((saline_ds.longitude + 180) % 360) - 180)})
-        saline_ds = saline_ds.cl.rename(f'cl_saline_max') #This is now a data array
+        saline_ds = saline_ds.cl.rename(f'cl_saline_max') # This is now a data array
         saline_df = saline_ds.to_dataframe().reset_index()[['latitude','longitude','cl_saline_max']]
     
 
@@ -100,23 +95,20 @@ class PrepareMLData():
 
         dfs_features = [] #array to hold dfs which have features
         dfs_targets = []
-        for m in monthly_files[0:1]:
+        for m in monthly_files:
             print ('Loading file f:',m)
-            
-            #df = pd.read_parquet(m,columns=loaded_cols + ['latitude_ERA', 'longitude_ERA']) #lat/llong are loaded only to allow the join with the bonus data and then dropped
-            df = pd.read_parquet(m) #lat/llong are loaded only to allow the join with the bonus data and then dropped
-            print(df)
-            print(df.columns)
+            df = pd.read_parquet(m)
             df=df.drop(unneeded_columns,axis=1)
 
             #Pass monthly clake as a v20 correction
-            df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20']   #CHECK NOT NEGATIVE EVER!!
+            df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20']  
+            assert (df['clake_monthly_value'] > 0).all() # the monthly cl corrections should always be positive
 
             #Calculate delta fields
             df = self._calculate_delta_fields(df)
 
             #Join on bonus saline max extent data
-            df = pd.merge(df, saline_df, how='left', left_on=['latitude_ERA', 'longitude_ERA'], right_on=['latitude','longitude'], suffixes=(None,)).drop(['latitude', 'longitude'],axis=1) #merge and drop lat/long coordinates from the join
+            df = pd.merge(df, saline_df, how='left', left_on=['latitude_ERA', 'longitude_ERA'], right_on=['latitude','longitude'], suffixes=(None,)).drop(['latitude', 'longitude'],axis=1) # merge and drop lat/long coordinates from the join
 
             df_target = pd.concat([df.pop(x) for x in pop_cols], axis=1)
             df_target['skt_unnormalised'] = df['skt']
@@ -150,37 +142,18 @@ class PrepareMLData():
             self.normalisation_std =  df_features.std()
 
 
-
-       # if include_xt: #save a copy of the unnormalised skt
-          #  skt_unnormalised = df_features['skt']
-          #  print (skt_unnormalised)
-            
         #Normalise training features using the pre calculated terms
         df_features = (df_features-self.normalisation_mean)/self.normalisation_std
 
         #Get rid of columns with zero variance
         df_features = df_features.drop(self.drop_cols, axis=1)
-
-        # Concat with the targets variable which is unnormalised
-        #if include_xt:
-
+        
+        #IF not the test set, only carry the MODIS_LST
         if not include_xt:
-            print ('HERE')
-            print(df_targets)
-            print(df_targets.columns)
-            print(self.target)
-            print (df_targets[self.target])
-            df_targets = df_targets[self.target] #only get the target 
+            df_targets = df_targets[self.target] 
 
+        #Concat all together
         df_out = pd.concat([df_features,df_targets],axis=1)
-            #print(df_out)
-           # df_out['skt_unnormalised'] = skt_unnormalised
-           # assert len(loaded_cols) == len(df_out.columns) + len(self.drop_cols) + 1 #check no cols lost in the process
-
-      #  else:
-          #  df_out = pd.concat([df_features,df_targets],axis=1)
-           # assert len(loaded_cols) == len(df_out.columns) + len(self.drop_cols) # check no cols lost in the process
-
 
       
         # Save it to disk
