@@ -240,12 +240,12 @@ class NeuralNet():
 
 
 
-    def _predict_status(self):
+    def _predict_status(self,cols):
         print ('-------------------------------------------------------------')
         print ('Making predictions with the following settings:')
         print ('-------------------------------------------------------------')
         print ('Trained model:', self.save_dir)
-        print ('Features:', self.training_features)
+        print ('Features:', cols)
         print ('-------------------------------------------------------------')
 
 
@@ -260,12 +260,12 @@ class NeuralNet():
             config=json.load(f)
             cols = config['train']['training_features']     #Read from the config file saved with the model which features were used for training and use these same features when testing
         
-        test_data = pd.read_parquet(self.config.predict.testing_data,columns=cols + [self.target_variable]) # Load the test data
-
-        self._predict_status()
+        test_data = pd.read_parquet(self.config.predict.testing_data,columns=cols) # Load the test data
+        print(test_data)
+        self._predict_status(cols)
         
         #Predict
-        predictions = loaded_model.predict(test_data[self.training_features])
+        predictions = loaded_model.predict(test_data[cols])
         print ('Predictions completed')  
         del test_data 
 
