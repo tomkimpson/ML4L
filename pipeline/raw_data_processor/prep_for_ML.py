@@ -124,12 +124,11 @@ class PrepareMLData():
             dfs_features.append(df)
             dfs_targets.append(df_target)
        
-        sys.exit()
+        
         print('All dfs loaded and processed. Now concatenate together.')
         df_features = pd.concat(dfs_features)
         df_targets = pd.concat(dfs_targets)
-        print(df_features.columns)
-        print(df_targets.columns)
+
 
 
         if (self.normalisation_mean is None) & (self.normalisation_std is None): # On the first pass when dealing with the training set
@@ -151,7 +150,10 @@ class PrepareMLData():
 
 
         #Normalise training features using the pre calculated terms
+        print ('Before normalisation the extrema of monthly cl are:',df_features['clake_monthly_value'].min(), df_features['clake_monthly_value'].max())
         df_features = (df_features-self.normalisation_mean)/self.normalisation_std
+        print ('After normalisation the extrema of monthly cl are:',df_features['clake_monthly_value'].min(), df_features['clake_monthly_value'].max())
+        sys.exit()
 
         #Get rid of columns with zero variance
         df_features = df_features.drop(self.drop_cols, axis=1)
