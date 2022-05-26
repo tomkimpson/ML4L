@@ -179,7 +179,7 @@ class PrepareMLData():
 
         
         print ('Prepare validation data')
-       self._process_year(self.validation_years,include_xt=False) 
+        self._process_year(self.validation_years,include_xt=False) 
     
         print ('Prepare test data')
         self._process_year(self.test_years,include_xt=True) 
