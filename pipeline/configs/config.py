@@ -90,8 +90,9 @@ CFG = {
                               'z_v15', 'slor_v15',
                               'sdor_v20', 'cvl_v20','lsm_v20', 'isor_v20', 
                                'cvh_v20', 'si10_v20','anor_v20', 'cl_v20', 'dl_v20', 
-                               'z_v20', 'slor_v20'
-                              ], #Of all the available features in the training data, which should be used? 
+                               'z_v20', 'slor_v20',
+                               'clake_monthly_value','cl_saline_max'
+                              ], #Of all the available features in the training data, which should be used? It is known that DELTA ['lsrh_v15' 'sr_v15' 'slt_v20' 'sdfor_v20' 'lsrh_v20' 'sr_v20' 'tvl_v20' 'tvh_v20'] are all the same
         "batch_size":              10000,
         "epochs":                  200,
         "number_of_hidden_layers": 3,
@@ -101,7 +102,7 @@ CFG = {
         "loss":                    'mse',
         "metrics":                 ["accuracy"],
         "path_to_trained_models":  f'{root}processed_data/trained_models/',
-        "model_name":              'V20_2016_tester', #This model will also be used for prediction
+        "model_name":              'V20_2016_tester_plus', #This model will also be used for prediction
         "overwrite":               True,
         "use_pretrained_model":    False,
         "epoch_save_freq":         10,
