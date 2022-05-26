@@ -8,6 +8,7 @@ import glob
 import pandas as pd 
 import numpy as np
 import xarray as xr
+import sys
 class PrepareMLData():
 
     """
@@ -101,7 +102,13 @@ class PrepareMLData():
             df=df.drop(unneeded_columns,axis=1)
 
             #Pass monthly clake as a v20 correction
-            df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20']  
+            df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20'] 
+            print ('Extrema of monthky clake:', df['clake_monthly_value'].min(), df['clake_monthly_value'].max()) 
+            #Monthly cl corrections should always be positive. SEt to zero if not
+
+
+
+
             #assert (df['clake_monthly_value'] > 0).all() # the monthly cl corrections should always be positive
 
             #Calculate delta fields
@@ -117,6 +124,7 @@ class PrepareMLData():
             dfs_features.append(df)
             dfs_targets.append(df_target)
        
+        sys.exit()
         print('All dfs loaded and processed. Now concatenate together.')
         df_features = pd.concat(dfs_features)
         df_targets = pd.concat(dfs_targets)
@@ -173,11 +181,11 @@ class PrepareMLData():
         self._process_year(self.training_years,include_xt=False)  
 
         
-        print ('Prepare validation data')
-        self._process_year(self.validation_years,include_xt=False) 
+       # print ('Prepare validation data')
+       # self._process_year(self.validation_years,include_xt=False) 
     
-        print ('Prepare test data')
-        self._process_year(self.test_years,include_xt=True) 
+       # print ('Prepare test data')
+       # self._process_year(self.test_years,include_xt=True) 
 
 
     def sensible_preprocessing(self):

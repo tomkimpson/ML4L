@@ -63,7 +63,7 @@ This joining process outputs monthly `parquet` files which hold: `position,time,
 
 For the purposes of ML it is useful then modify these files via either a 'greedy' or a 'sensible' method:
 
-* **Greedy** involves amalgamating all training data into a single file, all validation data into a single file, etc. We can then load this single file when training, reading into memory only the desired features.  
+* **Greedy** involves amalgamating all training data into a single file, all validation data into a single file, etc. We can then load this single file when training, reading into memory only the desired features (parquet is column oriented)
 
 * **Sensible** involves converting our `parquet` files into a [TFRecord](https://www.tensorflow.org/tutorials/load_data/tfrecord) format which can then be easily loaded batchwise into an ML pipeline.
 
@@ -89,3 +89,20 @@ The trained model is saved to disk along with the training history and a complet
 
 # 4. Making predictions
 
+`python main.py --train_model`
+
+Uses the model specified in the `config` to make predictions for the year specified in the config.
+
+Outputs latitude/longtude/time/MODIS LST/LST prediction/ ERA skt to `predictions.parquet` in the model directory.
+
+
+# 5. This repo
+
+* pipeline - all code
+* notebooks
+    notebooks/experiments
+
+
+
+
+---
