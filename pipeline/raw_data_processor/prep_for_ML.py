@@ -103,10 +103,6 @@ class PrepareMLData():
 
             #Pass monthly clake as a v20 correction
             df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20'] 
-            print ('Extrema of monthky clake:', df['clake_monthly_value'].min(), df['clake_monthly_value'].max()) 
-            #Monthly cl corrections should always be positive. SEt to zero if not
-
-
 
 
             #assert (df['clake_monthly_value'] > 0).all() # the monthly cl corrections should always be positive
@@ -129,6 +125,8 @@ class PrepareMLData():
         df_features = pd.concat(dfs_features)
         df_targets = pd.concat(dfs_targets)
 
+        # Monthly cl corrections should always be positive. Set to zero if not
+        df_features['clake_monthly_value'] = df_features['clake_monthly_value'].clip(lower=0)
 
 
         if (self.normalisation_mean is None) & (self.normalisation_std is None): # On the first pass when dealing with the training set
@@ -150,10 +148,7 @@ class PrepareMLData():
 
 
         #Normalise training features using the pre calculated terms
-        print ('Before normalisation the extrema of monthly cl are:',df_features['clake_monthly_value'].min(), df_features['clake_monthly_value'].max())
         df_features = (df_features-self.normalisation_mean)/self.normalisation_std
-        print ('After normalisation the extrema of monthly cl are:',df_features['clake_monthly_value'].min(), df_features['clake_monthly_value'].max())
-        sys.exit()
 
         #Get rid of columns with zero variance
         df_features = df_features.drop(self.drop_cols, axis=1)
@@ -183,11 +178,11 @@ class PrepareMLData():
         self._process_year(self.training_years,include_xt=False)  
 
         
-       # print ('Prepare validation data')
-       # self._process_year(self.validation_years,include_xt=False) 
+        print ('Prepare validation data')
+       self._process_year(self.validation_years,include_xt=False) 
     
-       # print ('Prepare test data')
-       # self._process_year(self.test_years,include_xt=True) 
+        print ('Prepare test data')
+        self._process_year(self.test_years,include_xt=True) 
 
 
     def sensible_preprocessing(self):
