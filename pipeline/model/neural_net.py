@@ -337,7 +337,7 @@ class NeuralNet():
     
             self._train_network(feature)
 
-            score = self._evaluate_model(feature)
+            score = self._evaluate_model()
             
             print ('Feature/Score',feature,score)
             all_features.append(feature)   

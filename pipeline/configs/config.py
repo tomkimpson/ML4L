@@ -116,7 +116,7 @@ CFG = {
 
     },
     "permute" : {
-        "features_to_permute": ['cvl_V20', 'cvh_V20']
+        "features_to_permute": ['cvl_v20', 'cvh_v20']
     },
     "model": {
         "input": [128, 128, 3],
