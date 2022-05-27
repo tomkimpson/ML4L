@@ -26,7 +26,7 @@ class NeuralNet():
         # Data
         self.training_features = self.config.train.training_features
         self.target_variable   = self.config.train.target_variable
-        self.nfeatures = len(self.training_features)
+        #self.nfeatures         = len(self.training_features)
 
         # Model Training parameters
         self.batch_size               = self.config.train.batch_size
@@ -140,13 +140,28 @@ class NeuralNet():
         json.dump(history_dict, open(self.save_dir+'/training_history.json', 'w'))  # Save the training history
         json.dump(self.train_json, open(self. save_dir+'/configuration.json', 'w')) # Save the complete configuration used
 
-    def _construct_network(self):
+    def _construct_network(self,permuted_feature):
 
         """Construct the NN architecture and compile using Adam"""
 
+
+
+        if permuted_feature is not None:
+            self.selected_training_features = self.training_features
+            self.selected_training_features.remove(permuted_feature)
+        else:
+            self.selected_training_features = self.training_features
+
+
+
+        self.n_selected_features = len(self.selected_training_features)
+
+
+
+
         #Get the number of nodes for each layer. If none, defaults to nfeatures/2 for each layer
         if self.nodes_per_layer[0] is None:
-            self.node = [int(self.nfeatures)/2]*self.number_of_hidden_layers
+            self.node = [int(self.n_selected_features/2)]*self.number_of_hidden_layers
         else:
             self.node = self.nodes_per_layer
 
@@ -156,7 +171,7 @@ class NeuralNet():
         # Define network model
         self.model = tf.keras.Sequential(name='PredictLST')                   # Initiate sequential model
         self.model.add(tf.keras.layers.Dense(self.node[0],
-                                             input_shape=(self.nfeatures,),
+                                             input_shape=(self.n_selected_features,),
                                              activation="relu",
                                              name=f"layer_0"))                # Create first hidden layer with input shape
         for n in range(1,self.number_of_hidden_layers):                       # Iterate over remaining hidden layers
@@ -200,15 +215,6 @@ class NeuralNet():
     def _train_network(self,permuted_feature):
 
         """Train the model"""
-
-        if permuted_feature is not None:
-            print ('OPTION 1')
-            self.selected_training_features = self.training_features
-            self.selected_training_features.remove(permuted_feature)
-        else:
-            print('OPTION 2')
-            print (f'Feature {permuted_feature} is not in list')
-            self.selected_training_features = self.training_features
 
 
 
@@ -339,7 +345,7 @@ class NeuralNet():
         print ('ITERATING OVER', self.features_to_permute)
         for feature in  self.features_to_permute:
             print(feature)
-            self._construct_network()
+            self._construct_network(feature)
     
             self._train_network(feature)
             print(self.selected_training_features)
