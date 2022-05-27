@@ -332,11 +332,13 @@ class NeuralNet():
         #Construct a network
         all_features = ['Model']
         all_scores = [model_score]
+        print ('ITERATING OVER', self.features_to_permute)
         for feature in  self.features_to_permute:
+            print(feature)
             self._construct_network()
     
             self._train_network(feature)
-
+            print(self.selected_training_features)
             score = self._evaluate_model()
             
             print ('Feature/Score',feature,score)
