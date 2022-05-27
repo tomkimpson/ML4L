@@ -9,8 +9,10 @@ import glob
 import numpy as np
 import pandas as pd
 from contextlib import suppress
-import faiss
+#import faiss
 from sklearn.neighbors import NearestNeighbors
+from cuml.neighbors import NearestNeighbors as cumlNearestNeighbours
+
 
 import sys
 
@@ -272,9 +274,10 @@ class JoinERAWithMODIS():
     def _find_closest_match_sklearn(self,database,query):
                
         #Construct NN     
-        NN = NearestNeighbors(n_neighbors=1, algorithm='ball_tree', leaf_size=60,metric='haversine') #algorithm = balltree, kdtree or brutie force
+       # NN = NearestNeighbors(n_neighbors=1, algorithm='ball_tree', leaf_size=60,metric='haversine') #algorithm = balltree, kdtree or brutie force
 
-
+        NN = cumlNearestNeighbours(n_neighbors=1,metric=haversine)
+        
         NN.fit(np.deg2rad(database[['latitude', 'longitude']].values))
 
         query_lats = query['latitude'].astype(np.float64)
