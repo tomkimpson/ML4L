@@ -276,21 +276,25 @@ class JoinERAWithMODIS():
         #Construct NN     
         NN = cumlNearestNeighbours(n_neighbors=1,metric='haversine')
 
-        X = np.deg2rad(database[['latitude', 'longitude']].values)
+        X = np.deg2rad(database[['latitude', 'longitude']].values).astype('float32')
+
         print(X.shape)
         print(X.dtype)
         NN.fit(X)
-
         print ('FIT COMPLETED OK')
 
-        query_lats = query['latitude'].astype(np.float64)
-        query_lons = query['longitude'].astype(np.float64)
+        query_lats = query['latitude'].astype(np.float32)
+        query_lons = query['longitude'].astype(np.float32)
 
 
-        X = np.deg2rad(np.c_[query_lats, query_lons])
+        Xq = np.deg2rad(np.c_[query_lats, query_lons])
+
         print ('NOW QUERY')
-        print ('X =', X)
-        distances, indices = NN.kneighbors(X, return_distance=True)
+        print ('Xq =', Xq)
+        print(X.shape)
+        print(X.dtype)
+
+        distances, indices = NN.kneighbors(Xq, return_distance=True)
 
 
         r_km = 6371 # multiplier to convert to km (from unit distance)
