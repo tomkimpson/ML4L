@@ -201,16 +201,11 @@ class NeuralNet():
 
         """Train the model"""
 
-        try:
-            print ('TRAY THIS ONE',permuted_feature)
-            print(self.training_features)
-            self.training_features.remove(permuted_feature)
+        if permuted_feature is not None:
             self.selected_training_features = self.training_features.remove(permuted_feature)
-            print ('OUT',self.selected_training_features)
-        except:
+        else:
             print (f'Feature {permuted_feature} is not in list')
             self.selected_training_features = self.training_features
-            print ('OUT',self.selected_training_features)
 
 
 
@@ -241,10 +236,7 @@ class NeuralNet():
         print(self.selected_training_features)
         print('Difference is:',list((Counter(self.training_features) - Counter(self.selected_training_features)).elements()))
  
-    
-        print ('THE TEST DATA COLUMNS ARE')
-        print (self.test_data.columns)
-        print (self.test_data)
+
 
         #Train it 
         score = self.model.evaluate(self.test_data[self.selected_training_features], 
@@ -328,7 +320,8 @@ class NeuralNet():
         # Evaluate the model with all its features
         self.model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
         model_score = self._evaluate_model()
-
+        
+        print ('After training the model, the score wa')
 
 
 
