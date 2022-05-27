@@ -90,7 +90,7 @@ class NeuralNet():
 
 
         print ('Early stopping criteria:')
-        for k, v in self.early_stopping.items():
+        for k, v in vars(self.early_stopping).items():
             print(f'{k : <30} {v}')
 
         print ('Checkpoint criteria')
