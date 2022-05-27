@@ -94,9 +94,14 @@ class NeuralNet():
         print ('Early stopping criteria:')
         for k, v in vars(self.early_stopping).items():
             print(f'{k : <30} {v}')
+        print ('-------------------------------------------------------------')
+
 
         print ('Checkpoint criteria')
-        print (vars(self.model_checkpoint))
+        for k, v in vars(self.model_checkpoint).items():
+            print(f'{k : <30} {v}')
+        print ('-------------------------------------------------------------')
+
 
         print ('-------------------------------------------------------------')
         print ('-------------------------------------------------------------')
@@ -310,7 +315,7 @@ class NeuralNet():
             config=json.load(f)
             cols = config['train']['training_features']     # Read from the config file saved with the model which features were used for training and use these same features when testing
         
-        self.test_data = pd.read_parquet(self.config.predict.testing_data,columns=cols) # Load the test data 
+        self.test_data = pd.read_parquet(self.config.predict.testing_data,columns=cols + [self.target_variable]) # Load the test data 
 
 
         # Evaluate the model with all its features
