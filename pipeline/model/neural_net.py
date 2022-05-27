@@ -202,7 +202,7 @@ class NeuralNet():
         print (self.selected_training_features)
 
         #Train it 
-        self.history = self.model.fit(self.training_data[self.elected_training_features], 
+        self.history = self.model.fit(self.training_data[self.selected_training_features], 
                                       self.training_data[self.target_variable], 
                                       epochs=self.epochs, batch_size=self.batch_size,
                                       verbose=1,
