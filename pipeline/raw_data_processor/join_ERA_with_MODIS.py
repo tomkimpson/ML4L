@@ -277,7 +277,6 @@ class JoinERAWithMODIS():
         NN = cumlNearestNeighbours(n_neighbors=1,metric='haversine')
 
         X = np.deg2rad(database[['latitude', 'longitude']].values).astype('float32')
-        X = X[0:10]
         print(X.shape)
         print(X.dtype)
         NN.fit(X)
@@ -308,7 +307,10 @@ class JoinERAWithMODIS():
        #--------------------------------
    
         distances, indices = NN.kneighbors(X_cudf, return_distance=True)
+
+        print (distances)
         print ('COMPLETED')
+        sys.exit('Controlled exit')
 
         r_km = 6371 # multiplier to convert to km (from unit distance)
         distances = distances*r_km
