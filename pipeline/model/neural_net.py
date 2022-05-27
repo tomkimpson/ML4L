@@ -202,10 +202,14 @@ class NeuralNet():
         """Train the model"""
 
         try:
+            print ('TRAY THIS ONE')
             self.selected_training_features = self.training_features.remove(permuted_feature)
+            print ('OUT',self.selected_training_features)
         except:
             print (f'Feature {permuted_feature} is not in list')
             self.selected_training_features = self.training_features
+            print ('OUT',self.selected_training_features)
+
 
 
         print ('Inside train network the selected featyres are, ', self.selected_training_features)
