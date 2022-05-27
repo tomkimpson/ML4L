@@ -12,7 +12,7 @@ from contextlib import suppress
 #import faiss
 from sklearn.neighbors import NearestNeighbors
 from cuml.neighbors import NearestNeighbors as cumlNearestNeighbours
-
+import cudf
 
 import sys
 
@@ -282,6 +282,8 @@ class JoinERAWithMODIS():
         print(X.dtype)
         NN.fit(X)
         print ('FIT COMPLETED OK')
+        print (NN)
+        #-------------------------------
 
         query_lats = query['latitude'].astype(np.float32)
         query_lons = query['longitude'].astype(np.float32)
@@ -289,13 +291,23 @@ class JoinERAWithMODIS():
 
         Xq = np.deg2rad(np.c_[query_lats, query_lons])
 
+        X_cudf = cudf.DataFrame(Xq)
+
+
         print ('NOW QUERY')
         print ('Xq =', Xq)
-        print(X.shape)
-        print(X.dtype)
+        print(Xq.shape)
+        print(Xq.dtype)
 
-        distances, indices = NN.kneighbors(Xq, return_distance=True)
 
+        print ('X_cudf =', X_cudf)
+        print(X_cudf.shape)
+        print(X_cudf.dtypes)
+       
+       #--------------------------------
+   
+        distances, indices = NN.kneighbors(X_cudf, return_distance=True)
+        print ('COMPLETED')
 
         r_km = 6371 # multiplier to convert to km (from unit distance)
         distances = distances*r_km
