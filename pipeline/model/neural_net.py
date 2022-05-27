@@ -208,6 +208,7 @@ class NeuralNet():
             self.selected_training_features = self.training_features
 
 
+        print ('Inside train network the selected featyres are, ', self.selected_training_features)
         print ('-------------------------------------------------------------')
         print('Training network with the following parameters:')
         self._model_status()
