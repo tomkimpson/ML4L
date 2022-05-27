@@ -250,7 +250,7 @@ class NeuralNet():
         
         self._callbacks()
         
-        self._train_network()
+        self._train_network(None)
         
         self._save_model()  
 
