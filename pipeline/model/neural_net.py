@@ -202,14 +202,17 @@ class NeuralNet():
         """Train the model"""
 
         if permuted_feature is not None:
+            print ('OPTION 1')
             self.selected_training_features = self.training_features.remove(permuted_feature)
         else:
+            print('OPTION 2')
             print (f'Feature {permuted_feature} is not in list')
             self.selected_training_features = self.training_features
 
 
 
-        print ('Inside train network the selected featyres are, ', self.selected_training_features)
+        print ('Inside train network the selected features are as follows ') 
+        print(self.selected_training_features)
         print ('-------------------------------------------------------------')
         print('Training network with the following parameters:')
         self._model_status()
@@ -321,7 +324,7 @@ class NeuralNet():
         self.model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
         model_score = self._evaluate_model()
         
-        print ('After training the model, the score wa')
+        print ('After training the model, the score was',model_score)
 
 
 
