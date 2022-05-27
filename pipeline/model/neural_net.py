@@ -84,9 +84,11 @@ class NeuralNet():
         print ('Loss metric:', self.loss)
         print ('Number of hidden layers:', self.number_of_hidden_layers)
         print ('Nodes per layer:', self.node)
+        print ('-------------------------------------------------------------')
         print ('Selected features:')
         for i in range(0, len(self.selected_training_features), 5):
             print(*self.selected_training_features[i:i+5], sep=' ')
+        print ('-------------------------------------------------------------')
 
 
         print ('Early stopping criteria:')
