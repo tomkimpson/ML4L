@@ -289,6 +289,7 @@ class JoinERAWithMODIS():
 
 
         Xq = np.deg2rad(np.c_[query_lats, query_lons])
+        print ('Xq shape before cutoff', Xq.shape)
         Xq = Xq[0:10]
 
         X_cudf = cudf.DataFrame(Xq)
