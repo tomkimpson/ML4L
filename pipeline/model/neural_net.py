@@ -14,7 +14,7 @@ import shutil
 from tensorflow.keras.callbacks import EarlyStopping,ModelCheckpoint
 import pandas as pd
 import uuid
-
+from collections import Counter
 class NeuralNet():
 
     def __init__(self,cfg): 
@@ -84,7 +84,7 @@ class NeuralNet():
         print ('Loss metric:', self.loss)
         print ('Number of hidden layers:', self.number_of_hidden_layers)
         print ('Nodes per layer:', self.node)
-        print ('Selected features:', self.training_features)
+        print ('Selected features:', self.selected_training_features)
 
 
         print ('Early stopping criteria:')
@@ -190,18 +190,20 @@ class NeuralNet():
     def _train_network(self,permuted_feature):
 
         """Train the model"""
-        print ('-------------------------------------------------------------')
-        print('Training network with the following parameters:')
-        self._model_status()
- 
 
         try:
             self.selected_training_features = self.training_features.remove(permuted_feature)
         except:
-            print (f'Feature {permuted_feature}')
+            print (f'Feature {permuted_feature} is not in list')
             self.selected_training_features = self.training_features
 
-        print (self.selected_training_features)
+
+        print ('-------------------------------------------------------------')
+        print('Training network with the following parameters:')
+        self._model_status()
+ 
+        print ('The dropped features is:')
+        print(list((Counter(self.training_features) - Counter(self.selected_training_features)).elements()))
 
         #Train it 
         self.history = self.model.fit(self.training_data[self.selected_training_features], 
