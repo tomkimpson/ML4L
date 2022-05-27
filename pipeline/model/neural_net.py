@@ -94,6 +94,7 @@ class NeuralNet():
         print (vars(self.model_checkpoint))
 
         print ('-------------------------------------------------------------')
+        print ('-------------------------------------------------------------')
 
     def _create_directory(self):
  
@@ -197,6 +198,7 @@ class NeuralNet():
         try:
             self.selected_training_features = self.training_features.remove(permuted_feature)
         except:
+            print (f'Feature {permuted_feature}')
             self.selected_training_features = self.training_features
 
         print (self.selected_training_features)
@@ -216,8 +218,9 @@ class NeuralNet():
 
         """Evaluate the model"""
         print ('-------------------------------------------------------------')
-        print(f'Evaluating the trained model with the follwoing')
+        print(f'Evaluating the trained model with the following features')
         print(self.selected_training_features)
+        print ('Difference is:', self.selected_training_features - self.training_features)
  
     
 
@@ -287,6 +290,9 @@ class NeuralNet():
 
         """Evaluate the trained model on the test data and also perform a drop column feature importance test"""
 
+        print('-------------------EVALUATING-------------------')
+
+
         #Load train/validate data
         self._load_data()
 
@@ -298,14 +304,21 @@ class NeuralNet():
         self.test_data = pd.read_parquet(self.config.predict.testing_data,columns=cols) # Load the test data 
 
 
+        # Evaluate the model with all its features
+        self.model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
+        model_score = self._evaluate_model()
+
+
+
+
         #Setup model callbacks
         self._callbacks()
 
 
         #Construct a network
-        all_features = []
-        all_scores = []
-        for feature in  ['Model'] + self.features_to_permute:
+        all_features = ['Model']
+        all_scores = [model_score]
+        for feature in  self.features_to_permute:
             self._construct_network()
     
             self._train_network(feature)
