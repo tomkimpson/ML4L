@@ -202,7 +202,9 @@ class NeuralNet():
         """Train the model"""
 
         try:
-            print ('TRAY THIS ONE')
+            print ('TRAY THIS ONE',permuted_feature)
+            print(self.training_features)
+            self.training_features.remove(permuted_feature)
             self.selected_training_features = self.training_features.remove(permuted_feature)
             print ('OUT',self.selected_training_features)
         except:
