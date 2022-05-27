@@ -269,7 +269,7 @@ class NeuralNet():
 
         if self.pretrained_model is None:
             self._create_directory()
-            self._construct_network()
+            self._construct_network(None)
         else:
              print ('Loading a pretrained model from ', self.pretrained_model)
              self.model = tf.keras.models.load_model(self.pretrained_model)
