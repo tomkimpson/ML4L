@@ -425,7 +425,7 @@ class JoinERAWithMODIS():
                 #Find matches in space
                 if self.joining_metric == 'haversine':
                     #df_matched = self._find_closest_match_sklearn(ERA_df,MODIS_df)
-                    df_matched = _find_closest_match_rapids(ERA_df,MODIS_df)
+                    df_matched = self._find_closest_match_rapids(ERA_df,MODIS_df)
                 elif self.joining_metric == 'L2':
                     df_matched = self._faiss_knn(ERA_df,MODIS_df) 
                 else:
