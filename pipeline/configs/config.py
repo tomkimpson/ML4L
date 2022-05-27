@@ -107,13 +107,17 @@ CFG = {
         "use_pretrained_model":    False,
         "epoch_save_freq":         10,
         "early_stopping_patience": 20,
-        "pretrained_model":        None #f'{root}processed_data/trained_models/tmp_checkpoint'
+        "pretrained_model":        None #f'{root}processed_data/trained_models/tmp_checkpoint',
     },
 
     "predict": {
 
         "testing_data":    f'{root}processed_data/joined_data/2019_ML.parquet',
 
+    },
+    "permute" : {
+        "model_to_permute":   'V20_2016_tester_plus',
+        "features_to_permute": ['cvl_20', 'cvh_20']
     },
     "model": {
         "input": [128, 128, 3],

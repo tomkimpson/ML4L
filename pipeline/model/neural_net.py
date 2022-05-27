@@ -37,6 +37,10 @@ class NeuralNet():
         self.metrics                  = self.config.train.metrics
         self.loss                     = self.config.train.loss
         self.pretrained_model         = self.config.train.pretrained_model
+
+
+        #Feature importance and Permutation
+        self.features_to_permute      = self.config.permute.features_to_permute
         
         # IO
         self.epoch_save_freq        = self.config.train.epoch_save_freq
@@ -49,9 +53,11 @@ class NeuralNet():
         #Assignments
         self.training_data   = None
         self.validation_data = None   
+        self.test_data       = None
         self.model           = None
         self.node            = None
         self.history         = None
+        self.selected_training_features = None
 
     def _load_data(self):
 
@@ -65,8 +71,6 @@ class NeuralNet():
         assert len(self.training_data.columns) - 1 == len(self.training_features) # Check number of columns is what we expect
         assert not self.training_data.isnull().any().any()   # Check for nulls
         assert not self.validation_data.isnull().any().any() # Check for nulls
-
-
 
     def _model_status(self):
 
@@ -91,8 +95,6 @@ class NeuralNet():
 
         print ('-------------------------------------------------------------')
 
-
-
     def _create_directory(self):
  
         """Create a directory to save trained model to"""
@@ -114,7 +116,6 @@ class NeuralNet():
             print ('Creating a new directory called:',self.save_dir)
             os.mkdir(self.save_dir)
 
-
     def _save_model(self):
         """Save model to disk after training"""
         
@@ -127,10 +128,6 @@ class NeuralNet():
         history_dict = self.history.history
         json.dump(history_dict, open(self.save_dir+'/training_history.json', 'w'))  # Save the training history
         json.dump(self.train_json, open(self. save_dir+'/configuration.json', 'w')) # Save the complete configuration used
-
-
-
-
 
     def _construct_network(self):
 
@@ -166,7 +163,6 @@ class NeuralNet():
                            loss=self.loss,
                            metrics=self.metrics)
 
-
     def _callbacks(self):
 
         """Define early stopping and checkpoint callbacks"""
@@ -190,31 +186,56 @@ class NeuralNet():
                                                 period=self.epoch_save_freq #period argument is deprecated, but works well 
                                                 )
 
-
-
-
-
-    def _train_network(self):
+    def _train_network(self,permuted_feature):
 
         """Train the model"""
         print ('-------------------------------------------------------------')
         print('Training network with the following parameters:')
         self._model_status()
+ 
+
+        try:
+            self.selected_training_features = self.training_features.remove(permuted_feature)
+        except:
+            self.selected_training_features = self.training_features
+
+        print (self.selected_training_features)
 
         #Train it 
-        self.history = self.model.fit(self.training_data[self.training_features], 
+        self.history = self.model.fit(self.training_data[self.elected_training_features], 
                                       self.training_data[self.target_variable], 
                                       epochs=self.epochs, batch_size=self.batch_size,
                                       verbose=1,
-                                      validation_data=(self.validation_data[self.training_features], self.validation_data[self.target_variable]),
+                                      validation_data=(self.validation_data[self.selected_training_features], self.validation_data[self.target_variable]),
                                       callbacks=[self.early_stopping,self.model_checkpoint]
                                      ) 
 
         print(self.model.summary())
        
+    def _evaluate_model(self):
+
+        """Evaluate the model"""
+        print ('-------------------------------------------------------------')
+        print(f'Evaluating the trained model with the follwoing')
+        print(self.selected_training_features)
+ 
+    
 
 
+        #Train it 
+        score = self.model.evaluate(self.test_data[self.selected_training_features], 
+                                    self.test_data[self.target_variable],
+                                    batch_size=self.batch_size)
 
+        return score       
+
+    def _predict_status(self,cols):
+        print ('-------------------------------------------------------------')
+        print ('Making predictions with the following settings:')
+        print ('-------------------------------------------------------------')
+        print ('Trained model:', self.save_dir)
+        print ('Features:', cols)
+        print ('-------------------------------------------------------------')
 
     def train(self):
 
@@ -236,20 +257,6 @@ class NeuralNet():
         #Drop large files explicitly
         del self.training_data
         del self.validation_data
-
-
-
-
-    def _predict_status(self,cols):
-        print ('-------------------------------------------------------------')
-        print ('Making predictions with the following settings:')
-        print ('-------------------------------------------------------------')
-        print ('Trained model:', self.save_dir)
-        print ('Features:', cols)
-        print ('-------------------------------------------------------------')
-
-
-
 
     def predict(self):
         
@@ -275,6 +282,47 @@ class NeuralNet():
         fout = self.save_dir + '/predictions.parquet'
         print ('Saving to:',fout)
         meta_data.to_parquet(fout,compression=None)
+
+    def evaluate(self):
+
+        """Evaluate the trained model on the test data and also perform a drop column feature importance test"""
+
+        #Load train/validate data
+        self._load_data()
+
+        #Also get test data
+        with open(self.save_dir+'/configuration.json') as f:
+            config=json.load(f)
+            cols = config['train']['training_features']     # Read from the config file saved with the model which features were used for training and use these same features when testing
+        
+        self.test_data = pd.read_parquet(self.config.predict.testing_data,columns=cols) # Load the test data 
+
+
+        #Setup model callbacks
+        self._callbacks()
+
+
+        #Construct a network
+        all_features = []
+        all_scores = []
+        for feature in  ['Model'] + self.features_to_permute:
+            self._construct_network()
+    
+            self._train_network(feature)
+
+            score = self._evaluate_model(feature)
+            
+            print ('Feature/Score',feature,score)
+            all_features.append(feature)   
+            all_scores.append(score)         
+      
+    
+
+        #IO
+        df_scores = pd.DataFrame(data = {'features': all_features, 'scores': all_scores})
+        fout = self.save_dir + '/scores.parquet'
+        print ('Saving to:',fout)
+        df_scores.to_parquet(fout,compression=None)
 
 
 

@@ -44,7 +44,7 @@ def process_raw_data(process_data, join_data,greedy):
 
     #create small files
 
-def train_and_predict(train_model,predict):
+def train_and_predict(train_model,predict,evaluate):
     """Builds model, loads data, trains and evaluates"""
     
     NN = NeuralNet(CFG)        # Create a NN using CFG configuration
@@ -54,6 +54,9 @@ def train_and_predict(train_model,predict):
         
     if predict:
         NN.predict()
+
+    if evaluate:
+        NN.evaluate()
 
 
 
@@ -70,6 +73,8 @@ def parse_arguments():
                         help="Train a model")
     parser.add_argument('--predict', dest='predict', action='store_true',
                         help="Use a trained model to make some predictions")
+    parser.add_argument('--evaluate', dest='evaluate', action='store_true',
+                        help="Evaluate a trained model on test data and feature importance")
     return parser.parse_args()
 
 if __name__ == '__main__':
@@ -90,7 +95,7 @@ if __name__ == '__main__':
     print ('-------------------------------')
 
     process_raw_data(args.process_data,args.join_data,args.prep_ML)
-    train_and_predict(args.train_model,args.predict)
+    train_and_predict(args.train_model,args.predict,args.evaluate)
 
 
     print ('------Completed OK---------')
