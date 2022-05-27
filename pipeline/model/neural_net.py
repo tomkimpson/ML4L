@@ -222,7 +222,7 @@ class NeuralNet():
         print ('-------------------------------------------------------------')
         print(f'Evaluating the trained model with the following features')
         print(self.selected_training_features)
-        print ('Difference is:', self.selected_training_features - self.training_features)
+        print('Difference is:',list((Counter(self.training_features) - Counter(self.selected_training_features)).elements()))
  
     
 
