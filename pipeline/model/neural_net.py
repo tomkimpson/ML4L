@@ -84,11 +84,14 @@ class NeuralNet():
         print ('Loss metric:', self.loss)
         print ('Number of hidden layers:', self.number_of_hidden_layers)
         print ('Nodes per layer:', self.node)
-        print ('Selected features:', self.selected_training_features)
+        print ('Selected features:')
+        for i in range(0, len(self.selected_training_features), 5):
+            print(*self.selected_training_features[i:i+5], sep=' ')
 
 
         print ('Early stopping criteria:')
-        print (vars(self.early_stopping))
+        for k, v in self.early_stopping.items():
+            print(f'{k : <30} {v}')
 
         print ('Checkpoint criteria')
         print (vars(self.model_checkpoint))
@@ -225,7 +228,9 @@ class NeuralNet():
         print('Difference is:',list((Counter(self.training_features) - Counter(self.selected_training_features)).elements()))
  
     
-
+        print ('THE TEST DATA COLUMNS ARE')
+        print (self.test_data.columns)
+        print (self.test_data)
 
         #Train it 
         score = self.model.evaluate(self.test_data[self.selected_training_features], 
