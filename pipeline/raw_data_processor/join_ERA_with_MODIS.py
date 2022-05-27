@@ -268,7 +268,46 @@ class JoinERAWithMODIS():
         return df_grouped
 
 
+    
+    def _find_closest_match_rapids(self,database,query):
 
+        print ('RAPIDSS')
+               
+        #Construct NN     
+        NN = cumlNearestNeighbours(n_neighbors=1,metric='haversine')
+
+        X = np.deg2rad(database[['latitude', 'longitude']].values)
+        print(X.shape)
+        print(X.dtype)
+        NN.fit(X)
+
+        print ('FIT COMPLETED OK')
+
+        query_lats = query['latitude'].astype(np.float64)
+        query_lons = query['longitude'].astype(np.float64)
+
+
+        X = np.deg2rad(np.c_[query_lats, query_lons])
+        print ('NOW QUERY')
+        print ('X =', X)
+        distances, indices = NN.kneighbors(X, return_distance=True)
+
+
+        r_km = 6371 # multiplier to convert to km (from unit distance)
+        distances = distances*r_km
+
+        df = query.reset_index().join(database.iloc[indices.flatten()].reset_index(), lsuffix='_MODIS',rsuffix='_ERA')
+        df['H_distance'] = distances
+        
+        #Filter out any large distances
+        tolerance = 50 #km
+        df_filtered = df.query('H_distance < %.9f' % tolerance)
+
+        #Group it. Each ERA point has a bunch of MODIS points. Group and average
+        df_grouped = df_filtered.groupby(['latitude_ERA','longitude_ERA']).mean()
+        df_grouped['counts'] = df_filtered.value_counts(subset=['latitude_ERA','longitude_ERA']) # Must be a way to combine this with the above line. Can used grouped agg, but then need to specify operation for each column?
+
+        return df_grouped
     
     
     def _find_closest_match_sklearn(self,database,query):
@@ -280,11 +319,15 @@ class JoinERAWithMODIS():
         
         NN.fit(np.deg2rad(database[['latitude', 'longitude']].values))
 
+        print ('FIT COMPLETED OK')
+
         query_lats = query['latitude'].astype(np.float64)
         query_lons = query['longitude'].astype(np.float64)
 
 
         X = np.deg2rad(np.c_[query_lats, query_lons])
+        print ('NOW QUERY')
+        print ('X =', X)
         distances, indices = NN.kneighbors(X, return_distance=True)
 
 
@@ -381,7 +424,8 @@ class JoinERAWithMODIS():
 
                 #Find matches in space
                 if self.joining_metric == 'haversine':
-                    df_matched = self._find_closest_match_sklearn(ERA_df,MODIS_df)
+                    #df_matched = self._find_closest_match_sklearn(ERA_df,MODIS_df)
+                    df_matched = _find_closest_match_rapids(ERA_df,MODIS_df)
                 elif self.joining_metric == 'L2':
                     df_matched = self._faiss_knn(ERA_df,MODIS_df) 
                 else:

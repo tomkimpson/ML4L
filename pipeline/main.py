@@ -83,7 +83,7 @@ if __name__ == '__main__':
     options = vars(args)
     print('Running with arguments:')
     for k, v in options.items():
-        print(f'{k : <10} {v}')
+        print(f'{k : <15} {v}')
         
     print ('------------------------------')
     print ('-------------------------------')
