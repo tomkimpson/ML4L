@@ -277,7 +277,7 @@ class JoinERAWithMODIS():
         NN = cumlNearestNeighbours(n_neighbors=1,metric='haversine')
 
         X = np.deg2rad(database[['latitude', 'longitude']].values).astype('float32')
-
+        X = X[0:10]
         print(X.shape)
         print(X.dtype)
         NN.fit(X)
@@ -290,6 +290,7 @@ class JoinERAWithMODIS():
 
 
         Xq = np.deg2rad(np.c_[query_lats, query_lons])
+        Xq = Xq[0:10]
 
         X_cudf = cudf.DataFrame(Xq)
 
