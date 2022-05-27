@@ -203,6 +203,7 @@ class NeuralNet():
 
         if permuted_feature is not None:
             print ('OPTION 1')
+            print(self.training_features)
             self.selected_training_features = self.training_features.remove(permuted_feature)
         else:
             print('OPTION 2')
