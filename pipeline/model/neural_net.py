@@ -59,18 +59,20 @@ class NeuralNet():
         self.history         = None
         self.selected_training_features = None
 
-    def _load_data(self):
+    def _load_data(self,kind):
 
-        """ Load the training and validation data"""
-        self.training_data, self.validation_data = DataLoader().load_parquet_data(self.config.train)
+        """ Load either the training and validation data OR the test data"""
 
-    
-        # CHECKS
-    
-        assert sorted(self.training_data.columns) == sorted(self.training_features + [self.target_variable]) #Check columns in df are the ones we expect
-        assert len(self.training_data.columns) - 1 == len(self.training_features) # Check number of columns is what we expect
-        assert not self.training_data.isnull().any().any()   # Check for nulls
-        assert not self.validation_data.isnull().any().any() # Check for nulls
+        if kind == 'train':
+            self.training_data, self.validation_data = DataLoader().load_training_data(self.config.train)
+            # CHECKS
+            assert sorted(self.training_data.columns) == sorted(self.training_features + [self.target_variable]) #Check columns in df are the ones we expect
+            assert len(self.training_data.columns) - 1 == len(self.training_features) # Check number of columns is what we expect
+            assert not self.training_data.isnull().any().any()   # Check for nulls
+            assert not self.validation_data.isnull().any().any() # Check for nulls
+        
+        if kind == 'test':
+            self.json_read_cols, self.test_data = DataLoader().load_testing_data(self.config.train)
 
     def _model_status(self):
 
@@ -104,6 +106,14 @@ class NeuralNet():
 
 
         print ('-------------------------------------------------------------')
+        print ('-------------------------------------------------------------')
+
+    def _predict_status(self,cols):
+        print ('-------------------------------------------------------------')
+        print ('Making predictions with the following settings:')
+        print ('-------------------------------------------------------------')
+        print ('Trained model:', self.save_dir)
+        print ('Features:', cols)
         print ('-------------------------------------------------------------')
 
     def _create_directory(self):
@@ -142,21 +152,17 @@ class NeuralNet():
 
     def _construct_network(self,permuted_feature):
 
-        """Construct the NN architecture and compile using Adam"""
+        """Construct the NN architecture and compile using Adam.
+           Drops permuted_feature from the list of training features to
+           allow for drop column feature importance tests"""
 
-
-
+        #Drop this feature if it exists
         if permuted_feature is not None:
             self.selected_training_features = self.training_features
             self.selected_training_features.remove(permuted_feature)
         else:
             self.selected_training_features = self.training_features
-
-
-
         self.n_selected_features = len(self.selected_training_features)
-
-
 
 
         #Get the number of nodes for each layer. If none, defaults to nfeatures/2 for each layer
@@ -212,21 +218,14 @@ class NeuralNet():
                                                 period=self.epoch_save_freq #period argument is deprecated, but works well 
                                                 )
 
-    def _train_network(self,permuted_feature):
+    def _train_network(self):
 
         """Train the model"""
-
-
-
-        print ('Inside train network the selected features are as follows ') 
-        print(self.selected_training_features)
         print ('-------------------------------------------------------------')
         print('Training network with the following parameters:')
         self._model_status()
  
-        print ('The dropped features is:')
-        print(list((Counter(self.training_features) - Counter(self.selected_training_features)).elements()))
-
+        
         #Train it 
         self.history = self.model.fit(self.training_data[self.selected_training_features], 
                                       self.training_data[self.target_variable], 
@@ -242,30 +241,18 @@ class NeuralNet():
 
         """Evaluate the model"""
         print ('-------------------------------------------------------------')
-        print(f'Evaluating the trained model with the following features')
-        print(self.selected_training_features)
-        print('Difference is:',list((Counter(self.training_features) - Counter(self.selected_training_features)).elements()))
- 
-
-
-        #Train it 
+        print(f'Evaluating the trained model')
+        
         score = self.model.evaluate(self.test_data[self.selected_training_features], 
                                     self.test_data[self.target_variable],
                                     batch_size=self.batch_size)
 
         return score       
 
-    def _predict_status(self,cols):
-        print ('-------------------------------------------------------------')
-        print ('Making predictions with the following settings:')
-        print ('-------------------------------------------------------------')
-        print ('Trained model:', self.save_dir)
-        print ('Features:', cols)
-        print ('-------------------------------------------------------------')
 
     def train(self):
 
-        self._load_data()
+        self._load_data(kind='train')
 
         if self.pretrained_model is None:
             self._create_directory()
@@ -275,9 +262,7 @@ class NeuralNet():
              self.model = tf.keras.models.load_model(self.pretrained_model)
         
         self._callbacks()
-        
-        self._train_network(None)
-        
+        self._train_network()
         self._save_model()  
 
         #Drop large files explicitly
@@ -317,41 +302,43 @@ class NeuralNet():
 
 
         #Load train/validate data
-        self._load_data()
+        self._load_data(kind='train')
 
-        #Also get test data
-        with open(self.save_dir+'/configuration.json') as f:
-            config=json.load(f)
-            cols = config['train']['training_features']     # Read from the config file saved with the model which features were used for training and use these same features when testing
+
+        #also get test data
+        self._load_data(kind='test')
+
+        # #Also get test data
+        # with open(self.save_dir+'/configuration.json') as f:
+        #     config=json.load(f)
+        #     cols = config['train']['training_features']     # Read from the config file saved with the model which features were used for training and use these same features when testing
         
-        self.test_data = pd.read_parquet(self.config.predict.testing_data,columns=cols + [self.target_variable]) # Load the test data 
+        # self.test_data = pd.read_parquet(self.config.predict.testing_data,columns=cols + [self.target_variable]) # Load the test data 
 
 
         # Evaluate the model with all its features
         self.model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
         model_score = self._evaluate_model()
         
-        print ('After training the model, the score was',model_score)
-
-
-
-        #Setup model callbacks
-        self._callbacks()
-
-
+        
         #Construct a network
         all_features = ['Model']
         all_scores = [model_score]
         print ('ITERATING OVER', self.features_to_permute)
         for feature in  self.features_to_permute:
-            print(feature)
+            print('Permuting feature:', feature)
+
             self._construct_network(feature)
-    
+            self._callbacks()
             self._train_network(feature)
-            print(self.selected_training_features)
+
+            
             score = self._evaluate_model()
+            print (self.model.metrics_names)
             
             print ('Feature/Score',feature,score)
+            
+            #Output to arrays
             all_features.append(feature)   
             all_scores.append(score)         
       

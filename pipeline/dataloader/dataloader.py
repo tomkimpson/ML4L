@@ -4,6 +4,7 @@
 import tensorflow as tf
 import pandas as pd
 import os
+import json
 class DataLoader:
     """Data Loader class"""    
 
@@ -27,7 +28,7 @@ class DataLoader:
     
 
     @staticmethod
-    def load_parquet_data(data_config):
+    def load_training_data(data_config):
         """
         Loads dataset from path.
         Only columns specified in training_features, target_variable are loaded
@@ -46,3 +47,28 @@ class DataLoader:
         #Only load the training features and the target variable
         cols = data_config.training_features + [data_config.target_variable]
         return pd.read_parquet(data_config.training_data,columns=cols), pd.read_parquet(data_config.validation_data,columns=cols) 
+
+
+    @staticmethod
+    def load_testing_data(data_config):
+        """
+        Loads dataset from path.
+        Only columns specified in training_features, target_variable are loaded
+        """
+        
+        model_load_dir = data_config.path_to_trained_models + data_config.model_name #Where the trained model is
+
+        with open(model_load_dir+'/configuration.json') as f:
+            config_tmp=json.load(f)
+            columns_used_by_model = config_tmp['train']['training_features'] 
+
+
+        test_data = pd.read_parquet(data_config.testing_data,columns=columns_used_by_model + [data_config.target_variable] )
+        
+        test_data_size = os.path.getsize(data_config.testing_data)
+        print ('Loading training data from file:', data_config.testing_data)
+
+        print ('Size of test data:', round(test_data_size/1e9,2) , ' G')
+
+        #Only load the training features and the target variable
+        return columns_used_by_model, test_data
