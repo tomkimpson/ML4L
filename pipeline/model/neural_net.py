@@ -247,6 +247,11 @@ class NeuralNet():
                                     self.test_data[self.target_variable],
                                     batch_size=self.batch_size)
 
+
+
+        #Drop large files explicitly
+        del self.test_data
+
         return score       
 
 
@@ -302,7 +307,7 @@ class NeuralNet():
 
 
         #Load train/validate data
-        self._load_data(kind='train')
+        #self._load_data(kind='train')
 
 
         #also get test data
@@ -317,22 +322,28 @@ class NeuralNet():
 
 
         # Evaluate the model with all its features
+
+        # Load the pretraiend model
         self.model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
+        #Load the test data and evaluate it
+        self._load_data(kind='test')
         model_score = self._evaluate_model()
-        
-        
-        #Construct a network
+        del self.test_data #drop test data from memory
         all_features = ['Model']
         all_scores = [model_score]
+        
+        #Iterate over permuted features
+
         print ('ITERATING OVER', self.features_to_permute)
         for feature in  self.features_to_permute:
             print('Permuting feature:', feature)
 
+            self._load_data(kind='train')
             self._construct_network(feature)
             self._callbacks()
-            self._train_network()
+            self._train_network() #train and validate data dropped here
 
-            
+            self._load_data(kind='test')
             score = self._evaluate_model()
             print (self.model.metrics_names)
             
