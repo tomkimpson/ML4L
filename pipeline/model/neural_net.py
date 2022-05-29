@@ -72,7 +72,7 @@ class NeuralNet():
             assert not self.validation_data.isnull().any().any() # Check for nulls
         
         if kind == 'test':
-            self.json_read_cols, self.test_data = DataLoader().load_testing_data(self.config.train)
+            self.json_read_cols, self.test_data = DataLoader().load_testing_data(self.config)
 
     def _model_status(self):
 
