@@ -250,6 +250,7 @@ class NeuralNet():
 
 
         #Drop large files explicitly
+        print ('Dropping test data')
         del self.test_data
 
         return score       
@@ -271,6 +272,7 @@ class NeuralNet():
         self._save_model()  
 
         #Drop large files explicitly
+        print ('Dropping train/validate data')
         del self.training_data
         del self.validation_data
 
@@ -328,7 +330,6 @@ class NeuralNet():
         #Load the test data and evaluate it
         self._load_data(kind='test')
         model_score = self._evaluate_model()
-        del self.test_data #drop test data from memory
         all_features = ['Model']
         all_scores = [model_score]
         
