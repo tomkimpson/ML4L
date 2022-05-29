@@ -330,7 +330,7 @@ class NeuralNet():
 
             self._construct_network(feature)
             self._callbacks()
-            self._train_network(feature)
+            self._train_network()
 
             
             score = self._evaluate_model()
