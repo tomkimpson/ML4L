@@ -308,27 +308,12 @@ class NeuralNet():
         print('-------------------EVALUATING-------------------')
 
 
-        #Load train/validate data
-        #self._load_data(kind='train')
-
-
-        #also get test data
+        #Load the test data
         self._load_data(kind='test')
-
-        # #Also get test data
-        # with open(self.save_dir+'/configuration.json') as f:
-        #     config=json.load(f)
-        #     cols = config['train']['training_features']     # Read from the config file saved with the model which features were used for training and use these same features when testing
-        
-        # self.test_data = pd.read_parquet(self.config.predict.testing_data,columns=cols + [self.target_variable]) # Load the test data 
-
-
-        # Evaluate the model with all its features
-
-        # Load the pretraiend model
+        # Load the pre-trained model
         self.model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
-        #Load the test data and evaluate it
-        self._load_data(kind='test')
+        
+        #Evaluate the model with all its features and save this score to array
         model_score = self._evaluate_model()
         all_features = ['Model']
         all_scores = [model_score]
