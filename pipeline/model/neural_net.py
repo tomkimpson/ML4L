@@ -242,7 +242,14 @@ class NeuralNet():
         """Evaluate the model"""
         print ('-------------------------------------------------------------')
         print(f'Evaluating the trained model')
-        
+        print ('Eval test data is:')
+        print(self.test_data[self.selected_training_features])
+        print ('Eval target is')
+        print(self.test_data[self.target_variable])
+        print ('Eval batchsize is')
+        print(self.batch_size)
+        print ('Defined globals = ')
+        print (globals())
         score = self.model.evaluate(self.test_data[self.selected_training_features], 
                                     self.test_data[self.target_variable],
                                     batch_size=self.batch_size)
