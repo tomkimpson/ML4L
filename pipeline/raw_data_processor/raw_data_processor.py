@@ -136,7 +136,6 @@ class ProcessERAData():
         ERA_skt_files  =  get_list_of_files(self.ERA_skt_path,self.first_year,self.last_year)        
         
         print('Number of files to process = ', len(ERA_sfc_files))
-        print ('LIST OF FILES')
         assert len(ERA_sfc_files) == len(ERA_skin_files) &  len(ERA_sfc_files) == len(ERA_skt_files), 'There needs to be the same number of monthly files'
 
 
