@@ -15,6 +15,8 @@ from tensorflow.keras.callbacks import EarlyStopping,ModelCheckpoint
 import pandas as pd
 import uuid
 from collections import Counter
+import gc
+
 class NeuralNet():
 
     def __init__(self,cfg): 
@@ -241,6 +243,7 @@ class NeuralNet():
         print ('Dropping train/validate data')
         del self.training_data
         del self.validation_data
+        gc.collect()
        
     def _evaluate_model(self):
 
@@ -263,6 +266,7 @@ class NeuralNet():
         #Drop large files explicitly
         print ('Dropping test data')
         del self.test_data
+        gc.collect()
 
         return score       
 
