@@ -274,7 +274,7 @@ class JoinERAWithMODIS():
         print ('RAPIDSS')
                
         #Construct NN     
-        NN = cumlNearestNeighbours(n_neighbors=1,metric='haversine')
+        NN = cumlNearestNeighbours(n_neighbors=1,algorithm='brute',metric='haversine')
 
         X = np.deg2rad(database[['latitude', 'longitude']].values).astype('float32')
         print(X.shape)
@@ -290,7 +290,7 @@ class JoinERAWithMODIS():
 
         Xq = np.deg2rad(np.c_[query_lats, query_lons])
         print ('Xq shape before cutoff', Xq.shape)
-        Xq = Xq[0:30000]
+        #Xq = Xq[0:30000]
 
         X_cudf = cudf.DataFrame(Xq)
 
