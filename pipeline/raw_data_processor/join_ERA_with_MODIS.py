@@ -300,11 +300,12 @@ class JoinERAWithMODIS():
         print('Matches shape', distances.shape)
         print(distances)
         print(indices)
+        print(database.iloc[indices].reset_index())
 
         r_km = 6371 # multiplier to convert to km (from unit distance)
         distances = distances*r_km
 
-        df = query.reset_index().join(database.iloc[indices.flatten()].reset_index(), lsuffix='_MODIS',rsuffix='_ERA')
+        df = query.reset_index().join(database.iloc[indices].reset_index(), lsuffix='_MODIS',rsuffix='_ERA')
         df['H_distance'] = distances
         
         #Filter out any large distances
