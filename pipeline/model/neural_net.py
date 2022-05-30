@@ -253,8 +253,7 @@ class NeuralNet():
         print(self.test_data[self.target_variable])
         print ('Eval batchsize is')
         print(self.batch_size)
-        print ('Defined globals = ')
-        print (globals())
+
         score = self.model.evaluate(self.test_data[self.selected_training_features], 
                                     self.test_data[self.target_variable],
                                     batch_size=self.batch_size)
@@ -325,6 +324,9 @@ class NeuralNet():
 
         #Load the test data
         self._load_data(kind='test')
+        print(self.json_read_cols)
+        print(self.test_data)
+        self.selected_training_features = self.json_read_cols
         # Load the pre-trained model
         self.model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
         
