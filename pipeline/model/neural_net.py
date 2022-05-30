@@ -286,18 +286,24 @@ class NeuralNet():
     def predict(self):
         
         #Load
-        loaded_model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
-
-        with open(self.save_dir+'/configuration.json') as f:
-            config=json.load(f)
-            cols = config['train']['training_features']     #Read from the config file saved with the model which features were used for training and use these same features when testing
+        # loaded_model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
+        self.model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
+        # with open(self.save_dir+'/configuration.json') as f:
+        #     config=json.load(f)
+        #     cols = config['train']['training_features']     #Read from the config file saved with the model which features were used for training and use these same features when testing
         
-        test_data = pd.read_parquet(self.config.predict.testing_data,columns=cols) # Load the test data
-        print(test_data)
-        self._predict_status(cols)
+        # test_data = pd.read_parquet(self.config.predict.testing_data,columns=cols) # Load the test data
         
+        self._load_data(kind='test')
+        #self.json_read_cols, self.test_data
+        
+        
+        print(self.test_data)
+        self._predict_status(self.json_read_cols)
+        predictions = self.model.predict(self.test_data[self.json_read_cols])
         #Predict
-        predictions = loaded_model.predict(test_data[cols])
+       # predictions = loaded_model.predict(test_data[cols])
+
         print ('Predictions completed')  
         del test_data 
 
