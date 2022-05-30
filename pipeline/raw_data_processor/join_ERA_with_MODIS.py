@@ -296,7 +296,7 @@ class JoinERAWithMODIS():
    
         distances, indices = NN.kneighbors(X_cudf, return_distance=True)
         
-        print ('Matches found')
+        #print ('Matches found')
         distances = distances.to_array()
         indices = indices.to_array()
         
@@ -306,16 +306,27 @@ class JoinERAWithMODIS():
         df = query.reset_index().join(database.iloc[indices].reset_index(), lsuffix='_MODIS',rsuffix='_ERA')
         df['H_distance'] = distances
         
+        print ('This is the joined df before any filtering')
+        print (df.columns)
+        print(df)
+
         #Filter out any large distances
-        tolerance = 50 #km
+        tolerance = 50 #km #MOVE THIS TO CONFIG
         df_filtered = df.query('H_distance < %.9f' % tolerance)
+
+        print ('This is the joined df after filtering')
+        print(df_filtered)
 
         #Group it. Each ERA point has a bunch of MODIS points. Group and average
         df_grouped = df_filtered.groupby(['latitude_ERA','longitude_ERA']).mean()
         df_grouped['counts'] = df_filtered.value_counts(subset=['latitude_ERA','longitude_ERA']) # Must be a way to combine this with the above line. Can used grouped agg, but then need to specify operation for each column?
 
-
+        print ('This is the grouped output df')
+        print(df_grouped.columns)
         print(df_grouped)
+
+
+        sys.exit()
 
         return df_grouped
     
