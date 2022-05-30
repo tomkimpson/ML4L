@@ -299,8 +299,8 @@ class JoinERAWithMODIS():
         print ('Matches found')
         print('Matches shape', distances.shape)
         print(distances)
-        print(indices)
-        print(database.iloc[indices].reset_index())
+        print(indices.values)
+        print(database.iloc[indices.values].reset_index())
 
         r_km = 6371 # multiplier to convert to km (from unit distance)
         distances = distances*r_km
