@@ -264,6 +264,7 @@ class NeuralNet():
 
 
         #Drop large files explicitly
+        print ('Evaluation completed with score:', score)
         print ('Dropping test data')
         del self.test_data
         gc.collect()
