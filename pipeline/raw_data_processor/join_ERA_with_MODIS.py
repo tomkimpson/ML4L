@@ -297,11 +297,15 @@ class JoinERAWithMODIS():
         distances, indices = NN.kneighbors(X_cudf, return_distance=True)
         
         print ('Matches found')
+        distances = distances.to_array()
+        indices = indices.to_array()
         print('Matches shape', distances.shape)
         print(distances)
-        print(indices.values)
-        print(database.iloc[indices.values].reset_index())
+        print(indices)
+        print(database.iloc[indices].reset_index())
 
+
+        sys.exit()
         r_km = 6371 # multiplier to convert to km (from unit distance)
         distances = distances*r_km
 
