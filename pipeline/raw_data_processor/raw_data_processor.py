@@ -136,23 +136,40 @@ class ProcessERAData():
         ERA_skt_files  =  get_list_of_files(self.ERA_skt_path,self.first_year,self.last_year)        
         
         print('Number of files to process = ', len(ERA_sfc_files))
+        print ('LIST OF FILES')
+
+        for f in ERA_sfc_files:
+            print(f)
+        print ('--------------------------')
+
+
         for i in range(len(ERA_sfc_files)):
             sfc,skin,skt = ERA_sfc_files[i], ERA_skin_files[i], ERA_skt_files[i]
             y = skin.split('_')[-2] #read the year from the filename
             m = skin.split('_')[-1] #and the month.grib
             outfile  = f'{self.variable_output_path}ERA_{y}_{m}'
+            
+            print ('---------------')
+            print('i = ', i)
+            print (sfc)
+            print(skin)
+            print(skt)
             print(outfile)
+            print ('---------------')
 
+            print('Now create tmp files:')
             with tempfile.NamedTemporaryFile() as tmp1, tempfile.NamedTemporaryFile() as tmp2: #Create two tmp files to write to
         
                 tmpfile1,tmpfile2 = tmp1.name,tmp2.name
                 #Extract the time variable features from ERA_skin, save to tmpfile1
+                print ('Extract time variable features from ERA skin')
                 query_extract = f'grib_copy -w shortName={self.variable_features} {skin} {tmpfile1}'
                 os.system(query_extract)
                 
                 # Deal with the istl1,2 featuresm since these are not surface levels which is annoying later on when trying to load the file
                 #Set the non surface levels to same type: istl1,2.
                 # tmpfile1--->tmpfile2
+                print ('Extract istl1,2')
                 query_level = f'grib_set -s level=0 -w level=7 {tmpfile1} {tmpfile2}'
                 os.system(query_level)
 
