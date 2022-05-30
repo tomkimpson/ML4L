@@ -63,14 +63,13 @@ This joining process outputs monthly `parquet` files which hold: `position,time,
 
 For the purposes of ML it is useful then modify these files via either a 'greedy' or a 'sensible' method:
 
-* **Greedy** involves amalgamating all training data into a single file, all validation data into a single file, etc. We can then load this single file when training, reading into memory only the desired features (parquet is column oriented)
+* **Greedy** involves amalgamating all training data into a single file, all validation data into a single file, etc. We can then load this single file when training, reading into memory only the desired features (`parquet` is column oriented)
 
 * **Sensible** involves converting our `parquet` files into a [TFRecord](https://www.tensorflow.org/tutorials/load_data/tfrecord) format which can then be easily loaded batchwise into an ML pipeline.
 
 For training data of ~ 1 year or less, we typically use `Greedy`. 12 months of data in `.parquet` format is around 3G, and only a subset of that is typically loaded into memory when training (i.e. don't train over all columns). 
 
-In `Greedy`, as well as bringing together all the monthly files, we also normalise w.r.t parameters calculated over the training set and calculate the delta fields, reassigning `X_v20` to be `X_v20 - X_v15`. Monthly corrections to `cl` are also carried as `clake_monthly_value` - `cl_v20`. Position and time are not present in the output training/validation files but are included in the testing data - this makes it easier to later inspect the geographic or temporal distribution in the prediction error.
-
+At this stage we typically also normalize our features and reassign the V20 climate fields to be "delta fields"; the correction to the V15 value. Similarly `clake_monthly_value` is reassigned to `clake_monthly_value` - `cl_v20`.
 
 ---
 
@@ -78,29 +77,24 @@ In `Greedy`, as well as bringing together all the monthly files, we also normali
 
 `python main.py --train_model`
 
-The model training can be completley specified via the `config` file. 
+The model training is completely specified via the `config` file. Here a use can set the network structure, batch size, learning rates, loss metric, early stopping patience etc.
+In the case that the number of neurons in a hidden layer (`nodes_per_layer`), the default value is `Nfeatures/2`. We take [ADAM](https://arxiv.org/abs/1412.6980) as our standard optimiser. 
 
-We take [ADAM](https://arxiv.org/abs/1412.6980) as our standard optimiser. 
+Once the training completes, the trained model is saved to disk along with the training history (`training_history.json`) and a complete copy of the config file used for the training (`configuration.json`).
 
-In the case that the number of neurons in a hidden layer (`nodes_per_layer`) is not specified the code defaults to `Nfeatures/2`.
-
-The trained model is saved to disk along with the training history and a complete copy of the config file used for the training.
+![example image](notebooks/media/ERA_prediction_error.png "Title")
 
 
 # 4. Making predictions
 
-`python main.py --train_model`
+`python main.py --predict`
 
-Uses the model specified in the `config` to make predictions for the year specified in the config.
+Loads a trained model and makes predictions for the data specified in the config.
 
 Outputs latitude/longtude/time/MODIS LST/LST prediction/ ERA skt to `predictions.parquet` in the model directory.
 
 
-# 5. This repo
-
-* pipeline - all code
-* notebooks
-    notebooks/experiments
+# 6. Evaluating and feature importance
 
 
 
