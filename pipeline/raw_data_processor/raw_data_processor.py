@@ -137,7 +137,7 @@ class ProcessERAData():
         
         print('Number of files to process = ', len(ERA_sfc_files))
         print ('LIST OF FILES')
-        assert len(ERA_sfc_files) == len(ERA_skin_files) &  len(ERA_sfc_files) == len(ERA_skt_files)
+        assert len(ERA_sfc_files) == len(ERA_skin_files) &  len(ERA_sfc_files) == len(ERA_skt_files), 'SOME ERROR MESSAGE'
 
 
         for f in ERA_sfc_files:
