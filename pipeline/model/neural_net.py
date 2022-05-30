@@ -236,6 +236,11 @@ class NeuralNet():
                                      ) 
 
         print(self.model.summary())
+
+        # Drop large files explicitly
+        print ('Dropping train/validate data')
+        del self.training_data
+        del self.validation_data
        
     def _evaluate_model(self):
 
@@ -278,10 +283,7 @@ class NeuralNet():
         self._train_network()
         self._save_model()  
 
-        #Drop large files explicitly
-        print ('Dropping train/validate data')
-        del self.training_data
-        del self.validation_data
+
 
     def predict(self):
         
@@ -305,7 +307,7 @@ class NeuralNet():
        # predictions = loaded_model.predict(test_data[cols])
 
         print ('Predictions completed')  
-        del test_data 
+        del self.test_data 
 
         #IO
         meta_data = pd.read_parquet(self.config.predict.testing_data,columns=['latitude_ERA', 'longitude_ERA','time','MODIS_LST','skt_unnormalised'])
@@ -343,7 +345,7 @@ class NeuralNet():
             self._train_network() #train and validate data dropped here
 
             self._load_data(kind='test')
-            score = self._evaluate_model()
+            score = self._evaluate_model() #test data dropped here
             print (self.model.metrics_names)
             
             print ('Feature/Score',feature,score)
