@@ -319,6 +319,7 @@ class JoinERAWithMODIS():
 
         #Group it. Each ERA point has a bunch of MODIS points. Group and average
         df_grouped = df_filtered.groupby(['latitude_ERA','longitude_ERA']).mean()
+        print(df_filtered.groupby(['latitude_ERA','longitude_ERA']).count())
         df_grouped['number_of_modis_observations'] = df_filtered.value_counts(subset=['latitude_ERA','longitude_ERA']) # Must be a way to combine this with the above line. Can used grouped agg, but then need to specify operation for each column?
         df_grouped = df_grouped.reset_index()    
 
