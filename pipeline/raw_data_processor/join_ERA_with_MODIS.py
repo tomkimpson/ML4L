@@ -271,47 +271,31 @@ class JoinERAWithMODIS():
     
     def _find_closest_match_rapids(self,database,query):
 
-        print ('RAPIDSS')
+        print ('Finding closest match using RAPIDs GPU method')
                
         #Construct NN     
         NN = cumlNearestNeighbours(n_neighbors=1,algorithm='brute',metric='haversine')
-
         X = np.deg2rad(database[['latitude', 'longitude']].values).astype('float32')
-        print(X.shape)
-        print(X.dtype)
         NN.fit(X)
-        print ('FIT COMPLETED OK')
-        print (NN)
+        print ('Input shape:', X.shape)
         #-------------------------------
 
-        query_lats = query['latitude'].astype(np.float32)
-        query_lons = query['longitude'].astype(np.float32)
+        #query_lats = query['latitude'].astype(np.float32)
+        #query_lons = query['longitude'].astype(np.float32)
+        Xq = np.deg2rad(query[['latitude', 'longitude']].values).astype('float32')
+        print ('Test shape:', Xq.shape)
+        #Xq = np.deg2rad(np.c_[query_lats, query_lons])
+        
 
 
-        Xq = np.deg2rad(np.c_[query_lats, query_lons])
-        print ('Xq shape before cutoff', Xq.shape)
-        #Xq = Xq[0:30000]
 
-        X_cudf = cudf.DataFrame(Xq)
+        X_cudf = cudf.DataFrame(Xq) #Make it a cudf
 
 
-        print ('NOW QUERY')
-        print ('Xq =', Xq)
-        print(Xq.shape)
-        print(Xq.dtype)
-
-
-        print ('X_cudf =', X_cudf)
-        print(X_cudf.shape)
-        print(X_cudf.dtypes)
-       
        #--------------------------------
    
         distances, indices = NN.kneighbors(X_cudf, return_distance=True)
-
-        print (distances)
-        print ('COMPLETED')
-        sys.exit('Controlled exit')
+        print ('Matches found')
 
         r_km = 6371 # multiplier to convert to km (from unit distance)
         distances = distances*r_km
@@ -326,6 +310,9 @@ class JoinERAWithMODIS():
         #Group it. Each ERA point has a bunch of MODIS points. Group and average
         df_grouped = df_filtered.groupby(['latitude_ERA','longitude_ERA']).mean()
         df_grouped['counts'] = df_filtered.value_counts(subset=['latitude_ERA','longitude_ERA']) # Must be a way to combine this with the above line. Can used grouped agg, but then need to specify operation for each column?
+
+
+        print(df_grouped)
 
         return df_grouped
     
