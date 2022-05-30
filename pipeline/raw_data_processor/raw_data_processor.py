@@ -142,6 +142,15 @@ class ProcessERAData():
             print(f)
         print ('--------------------------')
 
+        for f in ERA_skin_files:
+            print(f)
+        print ('--------------------------')
+
+
+        for f in ERA_skt_files:
+            print(f)
+        print ('--------------------------')
+        sys.exit()
 
         for i in range(len(ERA_sfc_files)):
             sfc,skin,skt = ERA_sfc_files[i], ERA_skin_files[i], ERA_skt_files[i]
