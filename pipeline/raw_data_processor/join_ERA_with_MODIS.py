@@ -295,7 +295,11 @@ class JoinERAWithMODIS():
        #--------------------------------
    
         distances, indices = NN.kneighbors(X_cudf, return_distance=True)
+        
         print ('Matches found')
+        print('Matches shape', distances.shape)
+        print(distances)
+        print(indices)
 
         r_km = 6371 # multiplier to convert to km (from unit distance)
         distances = distances*r_km
