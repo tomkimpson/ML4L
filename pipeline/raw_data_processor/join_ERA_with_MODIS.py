@@ -271,65 +271,49 @@ class JoinERAWithMODIS():
     
     def _find_closest_match_rapids(self,database,query):
 
-        print ('Finding closest match using RAPIDs GPU method')
+        """
+        Use RAPIDS library (https://docs.rapids.ai/api) for fass k-nearest neighbours on GPU
+        
+        Highly preferred over faiss since it allows for haversine distance
+        """
                
         #Construct NN     
         NN = cumlNearestNeighbours(n_neighbors=1,algorithm='brute',metric='haversine')
         X = np.deg2rad(database[['latitude', 'longitude']].values).astype('float32')
         NN.fit(X)
-        print ('Input shape:', X.shape)
-        #-------------------------------
-
-        #query_lats = query['latitude'].astype(np.float32)
-        #query_lons = query['longitude'].astype(np.float32)
-        Xq = np.deg2rad(query[['latitude', 'longitude']].values).astype('float32')
-        print ('Test shape:', Xq.shape)
-        #Xq = np.deg2rad(np.c_[query_lats, query_lons])
         
-
-
-
+        #Construct query
+        Xq = np.deg2rad(query[['latitude', 'longitude']].values).astype('float32')
         X_cudf = cudf.DataFrame(Xq) #Make it a cudf
 
 
-       #--------------------------------
-   
+        #Find the nearest neighbours
         distances, indices = NN.kneighbors(X_cudf, return_distance=True)
         
-        #print ('Matches found')
+        #Convert these from cudf series to arrays
         distances = distances.to_array()
         indices = indices.to_array()
         
         r_km = 6371 # multiplier to convert to km (from unit distance)
         distances = distances*r_km
 
+        #Join
         df = query.reset_index().join(database.iloc[indices].reset_index(), lsuffix='_MODIS',rsuffix='_ERA')
-        df['H_distance'] = distances
+        df['H_distance_km'] = distances
         
-        print ('This is the joined df before any filtering')
-        print (df.columns)
-        print(df)
-
         #Filter out any large distances
         tolerance = 50 #km #MOVE THIS TO CONFIG
-        df_filtered = df.query('H_distance < %.9f' % tolerance)
-
-        print ('This is the joined df after filtering')
-        print(df_filtered)
+        df_filtered = df.query('H_distance_km < %.9f' % tolerance)
 
         #Group it. Each ERA point has a bunch of MODIS points. Group and average
         df_grouped = df_filtered.groupby(['latitude_ERA','longitude_ERA']).mean()
-        print(df_filtered.groupby(['latitude_ERA','longitude_ERA']).count())
         df_grouped['number_of_modis_observations'] = df_filtered.value_counts(subset=['latitude_ERA','longitude_ERA']) # Must be a way to combine this with the above line. Can used grouped agg, but then need to specify operation for each column?
-        df_grouped = df_grouped.reset_index()    
 
 
-        print ('This is the grouped output df')
         #Drop any columns we dont care about
         df_grouped = df_grouped.drop(['index_MODIS', 'band','spatial_ref','index_ERA','values','number','surface','depthBelowLandLayer'], axis=1) #get rid of all these columns that we dont need
-        print(df_grouped)
 
-        sys.exit()
+   
 
         return df_grouped
     
