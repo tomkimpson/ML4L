@@ -20,7 +20,7 @@ class ProcessERAData():
     Class to process the raw ERA data which is mixed in different files into a cleaner form.
     Two functions which can be called:
     
-    * process_time_constant_data() : Creates a two NetCDF files - one for V15 and one for V20 - for the constant-in-time climate fields
+    * process_time_constant_data() : Creates a two NetCDF files - one for V15 and one for V20 - for the constant-in-time climate fields. Appends time-constant fields from ERA_skin
     * process_time_variable_data() : Creates N monthly files for the variable-in-time fields
     
     """

@@ -453,7 +453,7 @@ class JoinERAWithMODIS():
             # At the end of every month, do some IO
             df = pd.concat(dfs)
             year_month = f.split('/')[-1].split('.')[0]
-            fname = f'ExampleHaversine_MODIS_{year_month}.parquet'
+            fname = f'Haversine_MODIS_{year_month}.parquet'
             print ("Writing to disk:", self.IO_path+fname)
             df.to_parquet(self.IO_path+fname,compression=None)
 

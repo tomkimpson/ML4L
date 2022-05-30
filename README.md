@@ -5,7 +5,7 @@ Machine learning for land surface modeling.
 
 
 ```
-python main.py --process_raw_data --join_era_modis --ML_prep --train_model --predict
+python main.py --process_raw_data --join_era_modis --ML_prep --train_model --predict --evaluate
 ```
 
 

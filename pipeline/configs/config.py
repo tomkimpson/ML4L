@@ -13,13 +13,13 @@ CFG = {
         "path_to_raw_V15_climate_fields": f'{root}climate.v015/climate.v015/639l_2/',
         "path_to_raw_V20_climate_fields": f'{root}climate.v020/climate.v020/639l_2/',
         "path_to_monthly_clake_files":    f'{root}BonusClimate/',
-        "path_to_saline_clake_files":     f'{root}saltlakes/clake_639l2_year_saline',
+        "path_to_saline_clake_files":     f'{root}saltlakes_max/clake_639l2_yearMAX_saline',
         "path_to_MODIS_data":             f'{root}MODIS',
 
 
         #B. Paths to processed output data
-        "path_to_processed_V15_climate_fields": f'{root}processed_data/ERA_timeconstant/ERA2_constants_v15.nc',
-        "path_to_processed_V20_climate_fields": f'{root}processed_data/ERA_timeconstant/ERA2_constants_v20.nc',
+        "path_to_processed_V15_climate_fields": f'{root}processed_data/ERA_timeconstant/ERA_constants_v15.nc',
+        "path_to_processed_V20_climate_fields": f'{root}processed_data/ERA_timeconstant/ERA_constants_v20.nc',
         "path_to_processed_variable_fields":    f'{root}processed_data/ERA_timevariable/',
         "path_to_joined_ERA_MODIS_files":       f'{root}processed_data/joined_data/',
 
@@ -29,12 +29,12 @@ CFG = {
         "ERA_skin_variable_features": 'aluvp/aluvd/alnip/alnid/istl1/istl2/sd/2d/fal',   # These are the features in ERA_skin that are not constant
         
         # D. Parameters for processing raw data
-        "min_year_to_process":2016, 
-        "max_year_to_process":2021,
+        "min_year_to_process":2015, 
+        "max_year_to_process":2015,
          
         # E. Parameters for joining ERA/MODIS
-        "min_year_to_join":2020, # typically we want these min/maxes to be the same as min/max_year_to_join, but maybe an edge case exists?
-        "max_year_to_join":2021,
+        "min_year_to_join": 2015, # typically we want these min/maxes to be the same as min/max_year_to_join, but maybe an edge case exists?
+        "max_year_to_join": 2015,
         "joining_metric" : 'haversine', #L2, haversine
 
         ##Satellite timings
