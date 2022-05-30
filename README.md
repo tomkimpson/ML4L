@@ -82,9 +82,9 @@ In the case that the number of neurons in a hidden layer (`nodes_per_layer`), th
 
 Once the training completes, the trained model is saved to disk along with the training history (`training_history.json`) and a complete copy of the config file used for the training (`configuration.json`).
 
-![example image](notebooks/media/ERA_prediction_error.png "Title")
+![example image](notebooks/media/ERA_prediction_error.png "ERA prediction error")
 
-
+![example image](notebooks/media/model_prediction_error.png "Model prediction error")
 # 4. Making predictions
 
 `python main.py --predict`
