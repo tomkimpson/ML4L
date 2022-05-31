@@ -94,7 +94,7 @@ CFG = {
                                'clake_monthly_value','cl_saline_max'
                               ], #Of all the available features in the training data, which should be used? It is known that DELTA ['lsrh_v15' 'sr_v15' 'slt_v20' 'sdfor_v20' 'lsrh_v20' 'sr_v20' 'tvl_v20' 'tvh_v20'] are all the same
         "batch_size":              10000,
-        "epochs":                  2,
+        "epochs":                  100,
         "number_of_hidden_layers": 3,
         "nodes_per_layer":         [None,None,None],
         "target_variable":         'MODIS_LST',
