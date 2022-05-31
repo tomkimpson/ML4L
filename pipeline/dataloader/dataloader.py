@@ -67,8 +67,14 @@ class DataLoader:
         
         test_data_size = os.path.getsize(data_config.predict.testing_data)
         print ('Loading test data from file:', data_config.predict.testing_data)
-
         print ('Size of test data:', round(test_data_size/1e9,2) , ' G')
+
+
+        try:
+            test_data = test_data.query(data_config.predict.testing_data_query)
+            print('Selecting a subset of test data according to query:',data_config.predict.testing_data_query)
+        except:
+            test_data = test_data
 
         #Only load the training features and the target variable
         return columns_used_by_model, test_data

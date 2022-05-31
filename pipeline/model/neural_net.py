@@ -250,7 +250,6 @@ class NeuralNet():
     def _evaluate_model(self):
 
         """Evaluate the model"""
-        print ('-------------------------------------------------------------')
         print(f'Evaluating the trained model')
         
         score = self.model.evaluate(self.test_data[self.selected_training_features], 
@@ -341,6 +340,7 @@ class NeuralNet():
 
         print ('ITERATING OVER', permuting_features)
         for feature in permuting_features:
+            print ('-------------------------------------------------------------')
             self._feature_importance(feature)
 
             # print('Permuting feature:', feature)
@@ -368,7 +368,7 @@ class NeuralNet():
         print (feature_names)
         print (self.feature_scores)
         df_scores = pd.DataFrame(data = {'features': feature_names, 'scores': self.feature_scores})
-        fout = self.save_dir + '/scores.parquet'
+        fout = self.save_dir + '/scores_cl.parquet'
         print ('Saving to:',fout)
         df_scores.to_parquet(fout,compression=None)
 

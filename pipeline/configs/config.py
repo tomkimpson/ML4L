@@ -113,10 +113,11 @@ CFG = {
     "predict": {
 
         "testing_data":    f'{root}processed_data/joined_data/2019_ML.parquet',
+        "testing_data_query": "abs(cl_v20) > 0.1" #This query will be applied to the testing data after loading                                      
 
     },
     "permute" : {
-        "features_to_permute": 'ALL' #['cvl_v20', 'cvh_v20']
+        "features_to_permute": 'ALL' #['cvl_v20', 'cvh_v20'] # Either ['A', 'B',...] or 'ALL'
     },
     "model": {
         "input": [128, 128, 3],
