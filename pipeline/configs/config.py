@@ -102,7 +102,7 @@ CFG = {
         "loss":                    'mse',
         "metrics":                 ["accuracy"],
         "path_to_trained_models":  f'{root}processed_data/trained_models/',
-        "model_name":              'V20_2016_tester', #This model will also be used for prediction
+        "model_name":              'V20_2016_augmented_monthlyclake', #This model will also be used for prediction
         "overwrite":               False,
         "use_pretrained_model":    False,
         "epoch_save_freq":         10,
