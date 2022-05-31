@@ -66,7 +66,7 @@ class DataLoader:
         test_data = pd.read_parquet(data_config.predict.testing_data,columns=columns_used_by_model + [data_config.train.target_variable] )
         
         test_data_size = os.path.getsize(data_config.predict.testing_data)
-        print ('Loading training data from file:', data_config.predict.testing_data)
+        print ('Loading test data from file:', data_config.predict.testing_data)
 
         print ('Size of test data:', round(test_data_size/1e9,2) , ' G')
 

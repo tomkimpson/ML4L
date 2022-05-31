@@ -322,27 +322,20 @@ class NeuralNet():
         print('-------------------EVALUATING-------------------')
 
         #Load the test data
-        self._load_data(kind='test')
-        print(self.json_read_cols)
-        print(self.test_data)
+        self._load_data(kind='test') # self.json_read_cols, self.test_data
         self.selected_training_features = self.json_read_cols
         # Load the pre-trained model
         self.model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
         
         #Evaluate the model with all its features and save this score to array
         model_score = self._evaluate_model()
-
-
         self.feature_scores.append(model_score) 
 
-        # all_features = ['Model']
-        # all_scores = [model_score]
+     
         
         #Iterate over permuted features
-
         print ('ITERATING OVER', self.features_to_permute)
         for feature in  self.features_to_permute:
-            
             self._feature_importance(feature)
 
             # print('Permuting feature:', feature)
