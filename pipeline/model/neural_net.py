@@ -60,6 +60,8 @@ class NeuralNet():
         self.node            = None
         self.history         = None
         self.selected_training_features = None
+        self.feature_scores = [] # Used in feature importance
+        #self.feature_scores_names = [] # Used in feature importance
 
     def _load_data(self,kind):
 
@@ -240,7 +242,7 @@ class NeuralNet():
         print(self.model.summary())
 
         # Drop large files explicitly
-        print ('Dropping train/validate data')
+        print ('Dropping train + validate data')
         del self.training_data
         del self.validation_data
         gc.collect()
@@ -250,13 +252,7 @@ class NeuralNet():
         """Evaluate the model"""
         print ('-------------------------------------------------------------')
         print(f'Evaluating the trained model')
-        print ('Eval test data is:')
-        print(self.test_data[self.selected_training_features])
-        print ('Eval target is')
-        print(self.test_data[self.target_variable])
-        print ('Eval batchsize is')
-        print(self.batch_size)
-
+        
         score = self.model.evaluate(self.test_data[self.selected_training_features], 
                                     self.test_data[self.target_variable],
                                     batch_size=self.batch_size)
@@ -271,6 +267,14 @@ class NeuralNet():
 
         return score       
 
+    def _feature_importance(self,feature):
+            print('Permuting feature:', feature)
+            self._load_data(kind='test')                                              # Load the test data
+            self.test_data[feature] =  np.random.permutation(self.test_data[feature]) # Randomly shuffle this feature
+            score = self._evaluate_model()                                            # Evaluate the score. Test data gets dropped here
+
+            #Output score to global array
+            self.feature_scores.append(score) 
 
     def train(self):
 
@@ -292,26 +296,15 @@ class NeuralNet():
     def predict(self):
         
         #Load
-        # loaded_model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
         self.model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
-        # with open(self.save_dir+'/configuration.json') as f:
-        #     config=json.load(f)
-        #     cols = config['train']['training_features']     #Read from the config file saved with the model which features were used for training and use these same features when testing
-        
-        # test_data = pd.read_parquet(self.config.predict.testing_data,columns=cols) # Load the test data
-        
-        self._load_data(kind='test')
-        #self.json_read_cols, self.test_data
-        
-        
-        print(self.test_data)
+        self._load_data(kind='test')                                            # Load test data + features: self.json_read_cols, self.test_data
         self._predict_status(self.json_read_cols)
+        
+        #Make some predictions on the test data
         predictions = self.model.predict(self.test_data[self.json_read_cols])
-        #Predict
-       # predictions = loaded_model.predict(test_data[cols])
-
         print ('Predictions completed')  
         del self.test_data 
+        gc.collect()
 
         #IO
         meta_data = pd.read_parquet(self.config.predict.testing_data,columns=['latitude_ERA', 'longitude_ERA','time','MODIS_LST','skt_unnormalised'])
@@ -338,27 +331,19 @@ class NeuralNet():
         
         #Evaluate the model with all its features and save this score to array
         model_score = self._evaluate_model()
-        all_features = ['Model']
-        all_scores = [model_score]
+
+
+        self.feature_scores.append(model_score) 
+
+        # all_features = ['Model']
+        # all_scores = [model_score]
         
         #Iterate over permuted features
 
         print ('ITERATING OVER', self.features_to_permute)
         for feature in  self.features_to_permute:
-            print('Permuting feature:', feature)
-
-            self._load_data(kind='test')
-
-            self.test_data[feature] =  np.random.permutation(self.test_data[feature]) #Randomly shuffle this feature
-
-            score = self._evaluate_model()
-
-            print ('Feature/Score',feature,score)
             
-            #Output to arrays
-            all_features.append(feature)   
-            all_scores.append(score)    
-
+            self._feature_importance(feature)
 
             # print('Permuting feature:', feature)
 
@@ -380,7 +365,11 @@ class NeuralNet():
     
 
         #IO
-        df_scores = pd.DataFrame(data = {'features': all_features, 'scores': all_scores})
+        feature_names = ['Model'] + self.features_to_permute
+        print ('OUTPUTS')
+        print (feature_names)
+        print (self.feature_scores)
+        df_scores = pd.DataFrame(data = {'features': feature_names, 'scores': self.feature_scores})
         fout = self.save_dir + '/scores.parquet'
         print ('Saving to:',fout)
         df_scores.to_parquet(fout,compression=None)
