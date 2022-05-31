@@ -274,7 +274,7 @@ class NeuralNet():
             score = self._evaluate_model()                                            # Evaluate the score. Test data gets dropped here
 
             #Output score to global array
-            self.feature_scores.append(score) 
+            self.feature_scores.append(score[0]) 
 
     def train(self):
 
@@ -329,7 +329,7 @@ class NeuralNet():
         
         #Evaluate the model with all its features and save this score to array
         model_score = self._evaluate_model()
-        self.feature_scores.append(model_score) 
+        self.feature_scores.append(model_score[0]) 
 
      
         
