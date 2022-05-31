@@ -334,8 +334,13 @@ class NeuralNet():
      
         
         #Iterate over permuted features
-        print ('ITERATING OVER', self.features_to_permute)
-        for feature in  self.features_to_permute:
+        if self.features_to_permute == 'ALL':
+            permuting_features = self.selected_training_features
+        else:
+            permuting_features = self.features_to_permute
+
+        print ('ITERATING OVER', permuting_features)
+        for feature in permuting_features:
             self._feature_importance(feature)
 
             # print('Permuting feature:', feature)
@@ -358,7 +363,7 @@ class NeuralNet():
     
 
         #IO
-        feature_names = ['Model'] + self.features_to_permute
+        feature_names = ['Model'] + permuting_features
         print ('OUTPUTS')
         print (feature_names)
         print (self.feature_scores)
