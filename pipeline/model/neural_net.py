@@ -320,12 +320,13 @@ class NeuralNet():
         print ('Saving to:',fout)
         meta_data.to_parquet(fout,compression=None)
 
+
+
     def evaluate(self):
 
-        """Evaluate the trained model on the test data and also perform a drop column feature importance test"""
+        """Evaluate the trained model on the test data and also perform a feature importance test"""
 
         print('-------------------EVALUATING-------------------')
-
 
         #Load the test data
         self._load_data(kind='test')
@@ -346,20 +347,35 @@ class NeuralNet():
         for feature in  self.features_to_permute:
             print('Permuting feature:', feature)
 
-            self._load_data(kind='train')
-            self._construct_network(feature)
-            self._callbacks()
-            self._train_network() #train and validate data dropped here
-
             self._load_data(kind='test')
-            score = self._evaluate_model() #test data dropped here
-            print (self.model.metrics_names)
-            
+
+            self.test_data[feature] =  np.random.permutation(self.test_data[feature]) #Randomly shuffle this feature
+
+            score = self._evaluate_model()
+
             print ('Feature/Score',feature,score)
             
             #Output to arrays
             all_features.append(feature)   
-            all_scores.append(score)         
+            all_scores.append(score)    
+
+
+            # print('Permuting feature:', feature)
+
+            # self._load_data(kind='train')
+            # self._construct_network(feature)
+            # self._callbacks()
+            # self._train_network() #train and validate data dropped here
+
+            # self._load_data(kind='test')
+            # score = self._evaluate_model() #test data dropped here
+            # print (self.model.metrics_names)
+            
+            # print ('Feature/Score',feature,score)
+            
+            # #Output to arrays
+            # all_features.append(feature)   
+            # all_scores.append(score)         
       
     
 
