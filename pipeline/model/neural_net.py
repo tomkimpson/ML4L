@@ -168,7 +168,6 @@ class NeuralNet():
            Drops permuted_feature from the list of training features to
            allow for drop column feature importance tests"""
 
-        print ('CONSTRUCT NETWORK')
         #Drop this feature if it exists
         if permuted_feature is not None:
             self.selected_training_features = self.training_features
@@ -188,9 +187,6 @@ class NeuralNet():
 
 
         # Define network model
-        print ('MODEL')
-
-
         self.model = tf.keras.Sequential(name='PredictLST')                   # Initiate sequential model
         self.model.add(tf.keras.layers.Dense(self.node[0],
                                              input_shape=(self.n_selected_features,),
@@ -204,11 +200,8 @@ class NeuralNet():
 
         self.model.add(tf.keras.layers.Dense(1, name='output'))                # And finally define an output layer 
 
-        print('Sleep for 20s')
-        time.sleep(20)
+        
         #Compile it
-        print ('COMPILE')
-
         opt = tf.keras.optimizers.Adam(learning_rate=self.LR) #Always use Adam
         self.model.compile(optimizer=opt,
                            loss=self.loss,
@@ -293,7 +286,7 @@ class NeuralNet():
     def train(self):
 
         
-        #self._load_data(kind='train')
+        self._load_data(kind='train')
   
         if self.pretrained_model is None:
             self._create_directory()
@@ -302,7 +295,6 @@ class NeuralNet():
              print ('Loading a pretrained model from ', self.pretrained_model)
              self.model = tf.keras.models.load_model(self.pretrained_model)
         
-        sys.exit()
         self._callbacks()
         self._train_network()
         self._save_model()  
