@@ -19,6 +19,9 @@ import gc
 import sys
 import time 
 
+gpus = tf.config.experimental.list_physical_devices('GPU')
+for gpu in gpus:
+    tf.config.experimental.set_memory_growth(gpu, True)
 
 class NeuralNet():
 
@@ -186,10 +189,7 @@ class NeuralNet():
 
         # Define network model
         print ('MODEL')
-        # gpus = tf.config.experimental.list_physical_devices('GPU')
-        # for gpu in gpus:
-        #     tf.config.experimental.set_memory_growth(gpu, True)
-        # print('gpus:', gpus)
+
 
         self.model = tf.keras.Sequential(name='PredictLST')                   # Initiate sequential model
         self.model.add(tf.keras.layers.Dense(self.node[0],
