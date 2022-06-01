@@ -165,7 +165,7 @@ class NeuralNet():
            Drops permuted_feature from the list of training features to
            allow for drop column feature importance tests"""
 
-
+        print ('CONSTRUCT NETWORK')
         #Drop this feature if it exists
         if permuted_feature is not None:
             self.selected_training_features = self.training_features
@@ -200,6 +200,8 @@ class NeuralNet():
 
 
         #Compile it
+        print ('COMPILE')
+
         opt = tf.keras.optimizers.Adam(learning_rate=self.LR) #Always use Adam
         self.model.compile(optimizer=opt,
                            loss=self.loss,
@@ -285,7 +287,8 @@ class NeuralNet():
 
         
         #self._load_data(kind='train')
-
+        p = tf.ConfigProto()
+        print(p)
         if self.pretrained_model is None:
             self._create_directory()
             self._construct_network(None)
