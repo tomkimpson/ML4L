@@ -146,7 +146,7 @@ class NeuralNet():
         
         print ('Saving model to:', self.save_dir)
         # Save the trained NN and the training history
-        self.model.save(self.save_dir+'/trained_model')  
+        #self.model.save(self.save_dir+'/trained_model')  
 
 
 
@@ -214,12 +214,12 @@ class NeuralNet():
 
 
 
-        self.model_checkpoint = ModelCheckpoint(filepath = self.save_dir+'/checkpoint', 
+        self.model_checkpoint = ModelCheckpoint(filepath = self.save_dir+'/trained_model', 
                                                 monitor='val_loss', 
                                                 save_best_only=True, 
                                                 mode='min',
                                                 save_freq='epoch',
-                                                period=self.epoch_save_freq #period argument is deprecated, but works well 
+                                                period=1 #self.epoch_save_freq #period argument is deprecated, but works well 
                                                 )
 
     def _train_network(self):
