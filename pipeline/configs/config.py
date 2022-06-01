@@ -103,7 +103,7 @@ CFG = {
         "metrics":                 ["accuracy"],
         "path_to_trained_models":  f'{root}processed_data/trained_models/',
         "model_name":              'LandEmul_2016_V4', #This model will also be used for prediction
-        "overwrite":               True,
+        "overwrite":               False,
         "use_pretrained_model":    False,
         "epoch_save_freq":         10,
         "early_stopping_patience": 20,
