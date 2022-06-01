@@ -287,8 +287,7 @@ class NeuralNet():
 
         
         #self._load_data(kind='train')
-        p = tf.ConfigProto()
-        print(p)
+  
         if self.pretrained_model is None:
             self._create_directory()
             self._construct_network(None)
