@@ -292,10 +292,7 @@ class NeuralNet():
         if self.use_pretrained_model:
             print ('Loading a pretrained model from ', self.save_dir+'/trained_model')
             self.model = tf.keras.models.load_model(self.save_dir+'/trained_model')
-
-            with open(self.save_dir+'/configuration.json') as f:
-                config_tmp=json.load(f)
-                self.selected_training_features = config_tmp['train']['training_features'] 
+            self.selected_training_features = self.training_features #Potential failure point. What if you change the features? Best to load from config file saved to dir
 
         else:
             self._create_directory()
