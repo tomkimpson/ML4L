@@ -17,7 +17,7 @@ import uuid
 from collections import Counter
 import gc
 import sys
-
+import time 
 
 
 class NeuralNet():
@@ -204,7 +204,8 @@ class NeuralNet():
 
         self.model.add(tf.keras.layers.Dense(1, name='output'))                # And finally define an output layer 
 
-
+        print('Sleep for 20s')
+        time.sleep(20)
         #Compile it
         print ('COMPILE')
 
