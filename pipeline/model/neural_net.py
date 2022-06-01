@@ -290,6 +290,7 @@ class NeuralNet():
              print ('Loading a pretrained model from ', self.pretrained_model)
              self.model = tf.keras.models.load_model(self.pretrained_model)
         
+        sys.exit()
         self._callbacks()
         self._train_network()
         self._save_model()  
