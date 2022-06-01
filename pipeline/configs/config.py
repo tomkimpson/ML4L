@@ -84,7 +84,7 @@ CFG = {
         "training_data":   f'{root}processed_data/joined_data/2016_ML.parquet',
         "validation_data": f'{root}processed_data/joined_data/2017_ML.parquet',
         "training_features": ['sp', 'msl', 'u10', 'v10', 'aluvp', 'aluvd',
-                              'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal',
+                              'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'fal',
                               'slt_v15', 'sdfor_v15', 'sdor_v15', 'cvl_v15','lsm_v15', 'isor_v15', 
                               'tvl_v15', 'tvh_v15', 'cvh_v15', 'si10_v15','anor_v15', 'cl_v15', 'dl_v15', 
                               'z_v15', 'slor_v15',
@@ -102,7 +102,7 @@ CFG = {
         "loss":                    'mse',
         "metrics":                 ["accuracy"],
         "path_to_trained_models":  f'{root}processed_data/trained_models/',
-        "model_name":              'LandEmul_2016', #This model will also be used for prediction
+        "model_name":              'LandEmul_2016_V2', #This model will also be used for prediction
         "overwrite":               True,
         "use_pretrained_model":    False,
         "epoch_save_freq":         10,
