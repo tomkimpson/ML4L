@@ -46,7 +46,7 @@ class NeuralNet():
         self.LR                       = self.config.train.learning_rate
         self.metrics                  = self.config.train.metrics
         self.loss                     = self.config.train.loss
-        self.pretrained_model         = self.config.train.pretrained_model
+        self.use_pretrained_model     = self.config.train.use_pretrained_model
 
 
         #Feature importance and Permutation
@@ -287,13 +287,15 @@ class NeuralNet():
 
         
         self._load_data(kind='train')
-  
-        if self.pretrained_model is None:
+
+
+        if self.use_pretrained_model:
+            print ('Loading a pretrained model from ', self.save_dir+'/trained_model')
+            self.model = tf.keras.models.load_model(self.save_dir+'/trained_model')
+        else:
             self._create_directory()
             self._construct_network(None)
-        else:
-             print ('Loading a pretrained model from ', self.pretrained_model)
-             self.model = tf.keras.models.load_model(self.pretrained_model)
+
         
         self._callbacks()
         self._train_network()
