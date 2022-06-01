@@ -161,6 +161,19 @@ class NeuralNet():
            Drops permuted_feature from the list of training features to
            allow for drop column feature importance tests"""
 
+
+
+
+
+
+
+        gpus = tf.config.experimental.list_physical_devices('GPU')
+        for gpu in gpus:
+            tf.config.experimental.set_memory_growth(gpu, True)
+
+        print('gpus:', gpus)
+        print(dir(tf.config.experimental))
+
         #Drop this feature if it exists
         if permuted_feature is not None:
             self.selected_training_features = self.training_features
@@ -278,12 +291,7 @@ class NeuralNet():
 
     def train(self):
 
-        gpus = tf.config.experimental.list_physical_devices('GPU')
-        for gpu in gpus:
-            tf.config.experimental.set_memory_growth(gpu, True)
-
-        print('gpus:', gpus)
-        print(dir(tf.config.experimental))
+        
         #self._load_data(kind='train')
 
         if self.pretrained_model is None:
