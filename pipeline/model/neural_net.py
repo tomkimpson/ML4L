@@ -281,7 +281,7 @@ class NeuralNet():
         for gpu in gpus:
             tf.config.experimental.set_memory_growth(gpu, True)
 
-        self._load_data(kind='train')
+        #self._load_data(kind='train')
 
         if self.pretrained_model is None:
             self._create_directory()
