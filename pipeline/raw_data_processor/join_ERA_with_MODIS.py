@@ -392,7 +392,7 @@ class JoinERAWithMODIS():
 
 
                 date_string = self._select_correct_MODIS_file(t) # For this datetime, which MODIS file should be opened? 
-                if date_string == '2015-12-31': continue # skip since we don't have data this far back
+                if date_string == '2014-12-31': continue # skip since we don't have data this far back
 
 
                 if date_string != self.previous_datestring:
