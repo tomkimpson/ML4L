@@ -63,8 +63,7 @@ class JoinERAWithMODIS():
 
         self.latitude_bound = self.config.data.latitude_bound
         self.IO_path = self.config.data.path_to_joined_ERA_MODIS_files
-
-
+        self.IO_prefix = self.config.data.IO_prefix
         self.joining_metric =  self.config.data.joining_metric
 
 
@@ -225,47 +224,47 @@ class JoinERAWithMODIS():
         return H
     
 
-    def _faiss_knn(self,database,query):
+    # def _faiss_knn(self,database,query):
         
-        """
-        Use faiss library (https://github.com/facebookresearch/faiss) for fass k-nearest neighbours on GPU
+    #     """
+    #     Use faiss library (https://github.com/facebookresearch/faiss) for fass k-nearest neighbours on GPU
         
-        Note that the nearness is an L2 (squared) norm on the lat/long coordinates, rather than a haversine metric
-        """
+    #     Note that the nearness is an L2 (squared) norm on the lat/long coordinates, rather than a haversine metric
+    #     """
 
-        #Database
-        xb = database[["latitude", "longitude"]].to_numpy().astype('float32')
-        xb = xb.copy(order='C') #C-contigious
+    #     #Database
+    #     xb = database[["latitude", "longitude"]].to_numpy().astype('float32')
+    #     xb = xb.copy(order='C') #C-contigious
         
-        #Query
-        xq = query[["latitude", "longitude"]].to_numpy().astype('float32') 
-        xq = xq.copy(order='C')
+    #     #Query
+    #     xq = query[["latitude", "longitude"]].to_numpy().astype('float32') 
+    #     xq = xq.copy(order='C')
         
-        #Create index
-        d = 2                            # dimension
-        res = faiss.StandardGpuResources()
-        index_flat = faiss.IndexFlatL2(d) #index
-        gpu_index_flat = faiss.index_cpu_to_gpu(res, 0, index_flat) # make it into a gpu index
-        gpu_index_flat.add(xb)  
+    #     #Create index
+    #     d = 2                            # dimension
+    #     res = faiss.StandardGpuResources()
+    #     index_flat = faiss.IndexFlatL2(d) #index
+    #     gpu_index_flat = faiss.index_cpu_to_gpu(res, 0, index_flat) # make it into a gpu index
+    #     gpu_index_flat.add(xb)  
         
-        #Search
-        k = 1                          # we want to see 1 nearest neighbors
-        distances, indices = gpu_index_flat.search(xq, k)
+    #     #Search
+    #     k = 1                          # we want to see 1 nearest neighbors
+    #     distances, indices = gpu_index_flat.search(xq, k)
             
     
-        df = query.reset_index().join(database.iloc[indices.flatten()].reset_index(), lsuffix='_MODIS',rsuffix='_ERA')
-        df['L2_distance'] = distances
-        df['H_distance'] = self._haver(df['latitude_MODIS'],df['longitude_MODIS'],df['latitude_ERA'],df['longitude_ERA']) #Haversine distance
+    #     df = query.reset_index().join(database.iloc[indices.flatten()].reset_index(), lsuffix='_MODIS',rsuffix='_ERA')
+    #     df['L2_distance'] = distances
+    #     df['H_distance'] = self._haver(df['latitude_MODIS'],df['longitude_MODIS'],df['latitude_ERA'],df['longitude_ERA']) #Haversine distance
         
-        #Filter out any large distances
-        tolerance = 50 #km
-        df_filtered = df.query('H_distance < %.9f' % tolerance)
+    #     #Filter out any large distances
+    #     tolerance = 50 #km
+    #     df_filtered = df.query('H_distance < %.9f' % tolerance)
 
-        #Group it. Each ERA point has a bunch of MODIS points. Group and average
-        df_grouped = df_filtered.groupby(['latitude_ERA','longitude_ERA'],as_index=False).mean()
+    #     #Group it. Each ERA point has a bunch of MODIS points. Group and average
+    #     df_grouped = df_filtered.groupby(['latitude_ERA','longitude_ERA'],as_index=False).mean()
 
         
-        return df_grouped
+    #     return df_grouped
 
 
     
@@ -384,7 +383,7 @@ class JoinERAWithMODIS():
                 #First grab the clake bonus data for that month
                 #Note that we do this every timestamp, rather just doing it once per ERA month since ERA month sometimes
                 #contains values over two months e.g. all of February and the first day of March.
-                #There may be a more efficeint work around but these 4 lines are very inexpensive so can stay here for now. 
+                #There may be a more efficient work around but these 4 lines are very inexpensive so can stay here for now. 
                 clake_month = self.monthly_clake_ds[f"month_{t.month}"]   
                 clake_month = clake_month.to_dataset()                 
                 clake_month['clake_monthly_value'] = clake_month[f"month_{t.month}"] # Rename data variable by declaring a new entry... 
@@ -392,7 +391,7 @@ class JoinERAWithMODIS():
 
 
 
-                date_string = self._select_correct_MODIS_file(t) #For this datetime, which MODIS file should be opened? 
+                date_string = self._select_correct_MODIS_file(t) # For this datetime, which MODIS file should be opened? 
                 if date_string == '2015-12-31': continue # skip since we don't have data this far back
 
 
@@ -432,7 +431,6 @@ class JoinERAWithMODIS():
 
                 #Find matches in space
                 if self.joining_metric == 'haversine':
-                    #df_matched = self._find_closest_match_sklearn(ERA_df,MODIS_df)
                     df_matched = self._find_closest_match_rapids(ERA_df,MODIS_df)
                 elif self.joining_metric == 'L2':
                     df_matched = self._faiss_knn(ERA_df,MODIS_df) 
@@ -442,7 +440,6 @@ class JoinERAWithMODIS():
 
 
                 df_matched['time'] = t            
-                #df_matched = df_matched.drop(['index_MODIS', 'band','spatial_ref','index_ERA','values','number','surface','depthBelowLandLayer'], axis=1) #get rid of all these columns that we dont need
                 dfs.append(df_matched)
 
                
@@ -453,7 +450,7 @@ class JoinERAWithMODIS():
             # At the end of every month, do some IO
             df = pd.concat(dfs)
             year_month = f.split('/')[-1].split('.')[0]
-            fname = f'Haversine_MODIS_{year_month}.parquet'
+            fname = self.IO_prefix + f'{year_month}.parquet'
             print ("Writing to disk:", self.IO_path+fname)
             df.to_parquet(self.IO_path+fname,compression=None)
 
