@@ -29,8 +29,8 @@ CFG = {
         "ERA_skin_variable_features": 'aluvp/aluvd/alnip/alnid/istl1/istl2/sd/2d/fal',   # These are the features in ERA_skin that are not constant
         
         # D. Parameters for processing raw data
-        "min_year_to_process":2016, 
-        "max_year_to_process":2016,
+        "min_year_to_process":2015, 
+        "max_year_to_process":2015,
          
         # E. Parameters for joining ERA/MODIS
         "min_year_to_join": 2015, # typically we want these min/maxes to be the same as min/max_year_to_process, but maybe an edge case exists?
