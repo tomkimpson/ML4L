@@ -33,7 +33,7 @@ CFG = {
         "max_year_to_process":2015,
          
         # E. Parameters for joining ERA/MODIS
-        "min_year_to_join": 2015, # typically we want these min/maxes to be the same as min/max_year_to_process, but maybe an edge case exists?
+        "min_year_to_join": 2017, # typically we want these min/maxes to be the same as min/max_year_to_process, but maybe an edge case exists?
         "max_year_to_join": 2021,
         "joining_metric" : 'haversine', #L2, haversine
         "IO_prefix": 'RapidsHaversine_MODIS_', #{year_month}.parquet'
