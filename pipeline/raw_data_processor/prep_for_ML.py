@@ -106,7 +106,7 @@ class PrepareMLData():
         dfs_targets = []
         for m in monthly_files:
             print ('Loading file f:',m)
-            df = pd.read_parquet(m)
+            df = pd.read_parquet(m).reset_index()
             df=df.drop(unneeded_columns,axis=1)
 
             #Pass monthly clake as a v20 correction
