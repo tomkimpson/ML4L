@@ -25,27 +25,33 @@ class PrepareMLData():
     def __init__(self,cfg):         
         self.config = Config.from_json(cfg)                         # Configuration file
         
+        #Train/Validate/Test
+        self.training_years     = self.config.data.training_years
+        self.validation_years    = self.config.data.validation_years
+        self.test_years          = self.config.data.test_years
 
-        self.training_years = self.config.data.training_years
-        self.validation_years = self.config.data.validation_years
-        self.test_years = self.config.data.test_years
-        self.path_to_input_data = self.config.data.path_to_joined_ERA_MODIS_files
-        self.bonus_data = self.config.data.bonus_data
+        #ERA/MODIS files to take in
+        self.path_to_input_data  = self.config.data.path_to_joined_ERA_MODIS_files
+        self.IO_prefix           = self.config.data.IO_prefix
+        
+        #Extra bonus data that needs to be joined on
+        self.bonus_data          = self.config.data.bonus_data
 
-        self.xt = self.config.data.list_of_meta_features
+        #Categorise different columns
+        self.xt                     = self.config.data.list_of_meta_features #Time/space
         self.time_variable_features = self.config.data.list_of_time_variable_features
-        self.V15_features = self.config.data.list_of_V15_features
-        self.V20_features = self.config.data.list_of_V20_features
-        self.bonus_features = self.config.data.list_of_bonus_features
-        self.target = self.config.data.target_variable
-
+        self.V15_features           = self.config.data.list_of_V15_features
+        self.V20_features           = self.config.data.list_of_V20_features
+        self.bonus_features         = self.config.data.list_of_bonus_features
+        self.target                 = self.config.data.target_variable
         self.columns_to_load = self.time_variable_features + self.V15_features + self.V20_features + self.bonus_features + self.target
 
+        #Declare global emptys
         self.normalisation_mean = None 
         self.normalisation_std = None 
         self.drop_cols = None 
 
-
+        #Checks
         assert len(self.V15_features) == len(self.V20_features)
         assert len(self.target) == 1 
 
@@ -91,7 +97,7 @@ class PrepareMLData():
 
         monthly_files = []
         for i in years_to_process:
-            files = glob.glob(self.path_to_input_data+f'Haversine_MODIS_ERA_{i}_*.parquet')
+            files = glob.glob(self.path_to_input_data+self.IO_prefix+f'*_{i}_*.parquet')
             monthly_files.append(files)
     
         monthly_files = sorted([item for sublist in monthly_files for item in sublist]) 
