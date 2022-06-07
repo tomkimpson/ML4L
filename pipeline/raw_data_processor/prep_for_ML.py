@@ -12,12 +12,14 @@ import sys
 class PrepareMLData():
 
     """
-    Class which takes the joined monthly ERA-MODIS data and puts it in a nice form
-    ready for training a model.Assumes monthly data is already separated into train/validate/test folders.
+    Class which takes the joined monthly ERA-MODIS data and puts it in a 'nice form'
+    ready for training a model.
 
     Also calculates the "delta features" i.e. V20 - V15 for the time constant features
     
     'Greedy' method produce a single file for each train/validate/test.
+
+    'Sensible' method still needs to be converted from scripts
     """
 
     def __init__(self,cfg):         
