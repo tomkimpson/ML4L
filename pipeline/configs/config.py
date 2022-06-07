@@ -105,7 +105,7 @@ CFG = {
         "metrics":                 ["accuracy"],
         "path_to_trained_models":  f'{root}processed_data/trained_models/',
         "model_name":              'LandEmul_2016_V6', #This model will also be used for prediction
-        "use_pretrained_model":    False,
+        "use_pretrained_model":    True,
         "overwrite":               True,
         "epoch_save_freq":         10,
         "early_stopping_patience": 50,
@@ -113,7 +113,7 @@ CFG = {
 
     "predict": {
 
-        "testing_data":    f'{root}processed_data/joined_data/2019_RML.parquet',
+        "testing_data":    f'{root}processed_data/joined_data/2020_RML.parquet',
         "testing_data_query": None #"abs(cl_v20) > 0.1" #This query will be applied to the testing data after loading                                      
 
     },
