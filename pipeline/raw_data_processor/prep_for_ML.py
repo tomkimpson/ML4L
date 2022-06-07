@@ -84,7 +84,7 @@ class PrepareMLData():
         """
 
         pop_cols = self.target+self.xt # These columns will not be popped of and won't be normalized, but will be saved to file for the test set
-        unneeded_columns = ['latitude_MODIS','longitude_MODIS', 'heightAboveGround', 'H_distance'] # We have no need of these cols. They will be loaded but immediatley dropped
+        unneeded_columns = ['latitude_MODIS','longitude_MODIS', 'heightAboveGround', 'H_distance_km'] # We have no need of these cols. They will be loaded but immediatley dropped
 
       
  
