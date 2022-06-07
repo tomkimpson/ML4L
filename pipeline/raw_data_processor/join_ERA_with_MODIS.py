@@ -271,7 +271,7 @@ class JoinERAWithMODIS():
     def _find_closest_match_rapids(self,database,query):
 
         """
-        Use RAPIDS library (https://docs.rapids.ai/api) for fass k-nearest neighbours on GPU
+        Use RAPIDS library (https://docs.rapids.ai/api) for fast k-nearest neighbours on GPU
         
         Highly preferred over faiss since it allows for haversine distance
         """
@@ -283,7 +283,7 @@ class JoinERAWithMODIS():
         
         #Construct query
         Xq = np.deg2rad(query[['latitude', 'longitude']].values).astype('float32')
-        X_cudf = cudf.DataFrame(Xq) #Make it a cudf
+        X_cudf = cudf.DataFrame(Xq) # Make it a cudf
 
 
         #Find the nearest neighbours
@@ -293,7 +293,7 @@ class JoinERAWithMODIS():
         distances = distances.to_array()
         indices = indices.to_array()
         
-        r_km = 6371 # multiplier to convert to km (from unit distance)
+        r_km = 6371 # multiplier to convert to km (from unit distance).  # MOVE THIS TO CONFIG
         distances = distances*r_km
 
         #Join
@@ -301,7 +301,7 @@ class JoinERAWithMODIS():
         df['H_distance_km'] = distances
         
         #Filter out any large distances
-        tolerance = 50 #km #MOVE THIS TO CONFIG
+        tolerance = 50 #km # MOVE THIS TO CONFIG
         df_filtered = df.query('H_distance_km < %.9f' % tolerance)
 
         #Group it. Each ERA point has a bunch of MODIS points. Group and average
@@ -309,7 +309,7 @@ class JoinERAWithMODIS():
         df_grouped['number_of_modis_observations'] = df_filtered.value_counts(subset=['latitude_ERA','longitude_ERA']) # Must be a way to combine this with the above line. Can used grouped agg, but then need to specify operation for each column?
 
 
-        #Drop any columns we dont care about
+        #Drop any columns we don't care about. ToDo(): Move this line.
         df_grouped = df_grouped.drop(['index_MODIS', 'band','spatial_ref','index_ERA','values','number','surface','depthBelowLandLayer'], axis=1) #get rid of all these columns that we dont need
 
    
@@ -366,8 +366,10 @@ class JoinERAWithMODIS():
 
         #Load the saline lake
         self._load_saline_lake_data()
-        print('Iterating between the following months:',self.ERA_files[9],self.ERA_files[-1])
-        for f in self.ERA_files[9:]: #Iterate over all months
+        print('Iterating between the following months:')
+        print('First month:',self.ERA_files[0])
+        print('Last month:',self.ERA_files[-1])
+        for f in self.ERA_files: #Iterate over all months
             #Load a month of ERA data
             print ('Loading ERA month:', f)
             ERA_month = xr.open_dataset(f,engine='cfgrib',backend_kwargs={'indexpath': ''})
