@@ -62,10 +62,10 @@ CFG = {
         "bonus_data": f'{root}saltlakes_max/clake_639l2_yearMAX_saline', # Max extent of salt lakes
         "training_years": ['2016'],
         "validation_years": ['2017'],
-        "test_years":['2019'],
+        "test_years":['2020'],
 
         ## List of all features, grouped
-        "list_of_meta_features": ['latitude_ERA', 'longitude_ERA','time'],
+        "list_of_meta_features": ['latitude_ERA', 'longitude_ERA','time','number_of_modis_observations'],
 
         "list_of_time_variable_features" : ['sp', 'msl', 'u10', 'v10', 't2m', 'aluvp', 'aluvd',
                                             'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 'skt'],

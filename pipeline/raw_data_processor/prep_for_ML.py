@@ -164,7 +164,7 @@ class PrepareMLData():
 
       
         # Save it to disk
-        fout = self.path_to_input_data + '-'.join(years_to_process) + '_ML.parquet' # Possible to save multiple yeats to one file, might be more sensible to just process year-by-year
+        fout = self.path_to_input_data + '-'.join(years_to_process) + '_RML.parquet' # Possible to save multiple yeats to one file, might be more sensible to just process year-by-year
         print ('Saving to:',fout)
         df_out.to_parquet(fout,compression=None)
 
@@ -177,11 +177,11 @@ class PrepareMLData():
         """
 
         print ('Prepare training data')
-        self._process_year(self.training_years,include_xt=False)  
+        self._process_year(self.training_years,include_xt=True)  
 
         
         print ('Prepare validation data')
-        self._process_year(self.validation_years,include_xt=False) 
+        self._process_year(self.validation_years,include_xt=True) 
     
         print ('Prepare test data')
         self._process_year(self.test_years,include_xt=True) 
