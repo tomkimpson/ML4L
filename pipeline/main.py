@@ -33,16 +33,6 @@ def process_raw_data(process_data, join_data,greedy):
 
 
 
-    #if allocate train/valid/test
-    #COPY, dont move, raw data into working train/valid/test directories
-
-
-    #create large files
-    #how long do these pre processing steps take?
-    #Are they necessary?
-
-
-    #create small files
 
 def train_and_predict(train_model,predict,evaluate):
     """Builds model, loads data, trains and evaluates"""

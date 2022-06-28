@@ -19,7 +19,7 @@ class PrepareMLData():
     
     'Greedy' method produce a single file for each train/validate/test.
 
-    'Sensible' method still needs to be converted from scripts
+    'Sensible' method still needs to be implemented here from scripts
     """
 
     def __init__(self,cfg):         
@@ -84,7 +84,7 @@ class PrepareMLData():
         """
 
         pop_cols = self.target+self.xt # These columns will not be popped of and won't be normalized, but will be saved to file for the test set
-        unneeded_columns = ['latitude_MODIS','longitude_MODIS', 'heightAboveGround', 'H_distance_km'] # We have no need of these cols. They will be loaded but immediatley dropped
+        unneeded_columns = ['latitude_MODIS','longitude_MODIS', 'heightAboveGround', 'H_distance_km'] # We have no need of these cols. They will be loaded but immediately dropped
 
       
  
@@ -170,7 +170,7 @@ class PrepareMLData():
 
       
         # Save it to disk
-        fout = self.path_to_input_data + '-'.join(years_to_process) + '_RML.parquet' # Possible to save multiple yeats to one file, might be more sensible to just process year-by-year
+        fout = self.path_to_input_data + '-'.join(years_to_process) + '_RML.parquet' # Possible to save multiple years to one file, might be more sensible to just process year-by-year
         print ('Saving to:',fout)
         df_out.to_parquet(fout,compression=None)
 
@@ -185,7 +185,6 @@ class PrepareMLData():
         print ('Prepare training data')
         self._process_year(self.training_years,include_xt=True)  
 
-        
         print ('Prepare validation data')
         self._process_year(self.validation_years,include_xt=True) 
     
