@@ -2,4 +2,5 @@
 *.out
 *.log
 *.pyc
+*.pkl
 .DS_Store
