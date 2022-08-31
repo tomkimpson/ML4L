@@ -104,7 +104,7 @@ CFG = {
         "loss":                    'mse',
         "metrics":                 ["accuracy"],
         "path_to_trained_models":  f'{root}processed_data/trained_models/',
-        "model_name":              'Benchmarking_2021', #This model will also be used for prediction
+        "model_name":              'V15_2016_X', #This model will also be used for prediction
         "use_pretrained_model":    False,
         "overwrite":               True,
         "epoch_save_freq":         10,
@@ -112,7 +112,7 @@ CFG = {
     },
 
     "predict": {
-        "testing_data":    f'{root}processed_data/joined_data/2021_RML.parquet',
+        "testing_data":    f'{root}processed_data/joined_data/2019_ML.parquet',
         "testing_data_query": None # "abs(cl_v20) > 0.1" #This query will be applied to the testing data after loading                                      
     },
     "permute" : {
