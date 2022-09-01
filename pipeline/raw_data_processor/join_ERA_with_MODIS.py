@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 from contextlib import suppress
 #import faiss
-from sklearn.neighbors import NearestNeighbors
+#from sklearn.neighbors import NearestNeighbors
 from cuml.neighbors import NearestNeighbors as cumlNearestNeighbours
 import cudf
 
