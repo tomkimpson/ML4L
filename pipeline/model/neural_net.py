@@ -308,6 +308,7 @@ class NeuralNet():
     def predict(self):
         
         #Load
+        print(self.save_dir)
         self.model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
         self._load_data(kind='test')                                            # Load test data + features: self.json_read_cols, self.test_data
         self._predict_status(self.json_read_cols)
