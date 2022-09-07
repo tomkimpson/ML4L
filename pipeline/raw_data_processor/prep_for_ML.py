@@ -132,7 +132,10 @@ class PrepareMLData():
         df_targets = pd.concat(dfs_targets)
 
         # Monthly cl corrections should always be positive. Set to zero if not
-        df_features['clake_monthly_value'] = df_features['clake_monthly_value'].clip(lower=0)
+        #df_features['clake_monthly_value'] = df_features['clake_monthly_value'].clip(lower=0)
+
+        print ('MINIMUMS')
+        print(df.clake_monthly_value.min())
 
 
         if (self.normalisation_mean is None) & (self.normalisation_std is None): # All files are normalized according to the first year. Up to now that has been solely 2016
