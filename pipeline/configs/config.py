@@ -80,8 +80,8 @@ CFG = {
         "target_variable" :                 ["MODIS_LST"],
     },
     "train": {
-        "training_data":   f'{root}processed_data/joined_data/2019_RML.parquet',
-        "validation_data": f'{root}processed_data/joined_data/2020_RML.parquet',
+        "training_data":   f'{root}processed_data/joined_data/2016_MLS.parquet',
+        "validation_data": f'{root}processed_data/joined_data/2017_MLS.parquet',
         "training_features": ['sp', 'msl', 'u10', 'v10', 't2m','aluvp', 'aluvd',
                               'alnip', 'alnid', 'istl1', 'istl2', 'sd','d2m', 'fal','skt',
                               'slt_v15', 'sdfor_v15', 'sdor_v15', 'cvl_v15','lsm_v15', 'isor_v15', 
@@ -101,7 +101,7 @@ CFG = {
         "loss":                    'mse',
         "metrics":                 ["accuracy"],
         "path_to_trained_models":  f'{root}processed_data/trained_models/',
-        "model_name":              'V15_2016_X', #This model will also be used for prediction
+        "model_name":              'V20_2016_X2', #This model will also be used for prediction
         "use_pretrained_model":    False,
         "overwrite":               True,
         "epoch_save_freq":         10,
@@ -109,7 +109,7 @@ CFG = {
     },
 
     "predict": {
-        "testing_data":    f'{root}processed_data/joined_data/2019_ML.parquet',
+        "testing_data":    f'{root}processed_data/joined_data/2019_MLS.parquet',
         "testing_data_query": None # "abs(cl_v20) > 0.1" #This query will be applied to the testing data after loading                                      
     },
     "permute" : {
