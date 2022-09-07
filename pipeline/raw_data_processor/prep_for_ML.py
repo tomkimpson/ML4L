@@ -121,6 +121,9 @@ class PrepareMLData():
             df = self._calculate_delta_fields(df)
 
             #Join on bonus saline max extent data
+            print('COLS BEFORE MERGE')
+            print(df.columns)
+            print(saline_df.columns)
             df = pd.merge(df, saline_df, how='left', left_on=['latitude_ERA', 'longitude_ERA'], right_on=['latitude','longitude'], suffixes=(None,)).drop(['latitude', 'longitude'],axis=1) # merge and drop lat/long coordinates from the join
 
             df_target = pd.concat([df.pop(x) for x in pop_cols], axis=1)
