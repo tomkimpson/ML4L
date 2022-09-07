@@ -87,7 +87,7 @@ class JoinERAWithMODIS():
     def _load_monthly_clake_data(self):
 
         """
-        Load a version of the constant V15/V20 ERA data and append it to a global dictionary
+        Load the monthly clake data 
         """
 
         monthly_clake_files = sorted(glob.glob(self.monthly_clake_files_path+'clake*'))
@@ -109,6 +109,36 @@ class JoinERAWithMODIS():
             month_counter += 1
            # monthly_clake_ds is a dataset where each variable is month_1, month_2 etc. representing a global field for that time
            # Later on we will select just the correspondig month
+
+
+    def _load_monthly_clake_data(self):
+
+        """
+        Load the monthly clake data 
+        """
+
+        monthly_clake_files = sorted(glob.glob(self.monthly_clake_files_path+'clake*'))
+        month_counter = 1
+        
+        for m in monthly_clake_files:
+            print(m)
+            ds_clake= xr.open_dataset(m,engine='cfgrib',backend_kwargs={'indexpath': ''}) 
+            
+            #Rename the parameter so everything is not cldiff
+            ds_clake = ds_clake.cl.rename(f'clake_monthly_value') #This is now a dataarray
+            
+            #Fix the time to be an integer
+            ds_clake['time'] = month_counter #i.e. what month it it? An integer between 1 and 12
+            
+            
+            #Append this to dataset
+            self.monthly_clake_ds[f"month_{month_counter}"] = ds_clake 
+            month_counter += 1
+           # monthly_clake_ds is a dataset where each variable is month_1, month_2 etc. representing a global field for that time
+           # Later on we will select just the correspondig month
+    
+
+
     
     def _load_saline_lake_data(self):
 
@@ -223,50 +253,6 @@ class JoinERAWithMODIS():
         H = 2*Re*np.arcsin(np.sqrt(Z)) #Haversine distance in km
         return H
     
-
-    # def _faiss_knn(self,database,query):
-        
-    #     """
-    #     Use faiss library (https://github.com/facebookresearch/faiss) for fass k-nearest neighbours on GPU
-        
-    #     Note that the nearness is an L2 (squared) norm on the lat/long coordinates, rather than a haversine metric
-    #     """
-
-    #     #Database
-    #     xb = database[["latitude", "longitude"]].to_numpy().astype('float32')
-    #     xb = xb.copy(order='C') #C-contigious
-        
-    #     #Query
-    #     xq = query[["latitude", "longitude"]].to_numpy().astype('float32') 
-    #     xq = xq.copy(order='C')
-        
-    #     #Create index
-    #     d = 2                            # dimension
-    #     res = faiss.StandardGpuResources()
-    #     index_flat = faiss.IndexFlatL2(d) #index
-    #     gpu_index_flat = faiss.index_cpu_to_gpu(res, 0, index_flat) # make it into a gpu index
-    #     gpu_index_flat.add(xb)  
-        
-    #     #Search
-    #     k = 1                          # we want to see 1 nearest neighbors
-    #     distances, indices = gpu_index_flat.search(xq, k)
-            
-    
-    #     df = query.reset_index().join(database.iloc[indices.flatten()].reset_index(), lsuffix='_MODIS',rsuffix='_ERA')
-    #     df['L2_distance'] = distances
-    #     df['H_distance'] = self._haver(df['latitude_MODIS'],df['longitude_MODIS'],df['latitude_ERA'],df['longitude_ERA']) #Haversine distance
-        
-    #     #Filter out any large distances
-    #     tolerance = 50 #km
-    #     df_filtered = df.query('H_distance < %.9f' % tolerance)
-
-    #     #Group it. Each ERA point has a bunch of MODIS points. Group and average
-    #     df_grouped = df_filtered.groupby(['latitude_ERA','longitude_ERA'],as_index=False).mean()
-
-        
-    #     return df_grouped
-
-
     
     def _find_closest_match_rapids(self,database,query):
 

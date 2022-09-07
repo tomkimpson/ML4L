@@ -15,7 +15,9 @@ class PrepareMLData():
     Class which takes the joined monthly ERA-MODIS data and puts it in a 'nice form'
     ready for training a model.
 
-    Also calculates the "delta features" i.e. V20 - V15 for the time constant features
+    Also calculates the "delta features" i.e. V20 - V15 for the time constant features.
+
+
     
     'Greedy' method produce a single file for each train/validate/test.
 
@@ -75,10 +77,10 @@ class PrepareMLData():
 
 
 
-    def _process_year(self,years_to_process,include_xt):
+    def _process_year(self,monthly_files):
 
         """
-        Function to process a directory of monthly files and write them to a single file.
+        Function to process a list of directory of monthly files and write them to a single file.
         Also calculates normalisation over the entire training set and determines delta corrections
         Writes a single file to directory/
         """
@@ -95,15 +97,11 @@ class PrepareMLData():
         saline_df = saline_ds.to_dataframe().reset_index()[['latitude','longitude','cl_saline_max']]
     
 
-        monthly_files = []
-        for i in years_to_process:
-            files = glob.glob(self.path_to_input_data+self.IO_prefix+f'*_{i}_*.parquet')
-            monthly_files.append(files)
-    
-        monthly_files = sorted([item for sublist in monthly_files for item in sublist]) 
 
         dfs_features = [] #array to hold dfs which have features
         dfs_targets = []
+
+
         for m in monthly_files:
             print ('Loading file f:',m)
             df = pd.read_parquet(m).reset_index()
@@ -111,9 +109,8 @@ class PrepareMLData():
 
             #Pass monthly clake as a v20 correction
             df['clake_monthly_value'] = df['clake_monthly_value'] - df['cl_v20'] 
-
-
-            #assert (df['clake_monthly_value'] > 0).all() # the monthly cl corrections should always be positive
+            df['clake_monthly_value'] =  df['clake_monthly_value'].clip(lower=0)
+            assert (df['clake_monthly_value'] >= 0).all() # the monthly cl corrections should always be positive
 
             #Calculate delta fields
             df = self._calculate_delta_fields(df)
@@ -161,7 +158,7 @@ class PrepareMLData():
         #Get rid of columns with zero variance
         df_features = df_features.drop(self.drop_cols, axis=1)
         
-        #IF not the test set, only carry the MODIS_LST
+        #If not the test set, only carry the MODIS_LST
         if not include_xt:
             df_targets = df_targets[self.target] 
 
@@ -170,7 +167,7 @@ class PrepareMLData():
 
       
         # Save it to disk
-        fout = self.path_to_input_data + '-'.join(years_to_process) + '_RML.parquet' # Possible to save multiple years to one file, might be more sensible to just process year-by-year
+        fout = self.path_to_input_data + '-'.join(years_to_process) + '_SEPTEMBER.parquet' # Possible to save multiple years to one file, might be more sensible to just process year-by-year
         print ('Saving to:',fout)
         df_out.to_parquet(fout,compression=None)
 
@@ -182,14 +179,22 @@ class PrepareMLData():
         Process the ERA-MODIS data in a greedy manner, ignoring any potential future restrictions on memory
         """
 
-        print ('Prepare training data')
-        self._process_year(self.training_years,include_xt=True)  
+        self.path_to_input_data  = self.config.data.path_to_joined_ERA_MODIS_files
+        self.IO_prefix           = self.config.data.IO_prefix
 
-        print ('Prepare validation data')
-        self._process_year(self.validation_years,include_xt=True) 
+        all_monthly_files = sorted(glob.glob(self.path_to_input_data+self.IO_prefix+'*'))
+
+
+        print(all_monthly_files)
+
+        #print ('Prepare training data')
+        #self._process_year(self.training_years,include_xt=True)  
+
+        #print ('Prepare validation data')
+        #self._process_year(self.validation_years,include_xt=True) 
     
-        print ('Prepare test data')
-        self._process_year(self.test_years,include_xt=True) 
+        #print ('Prepare test data')
+        #self._process_year(self.test_years,include_xt=True) 
 
 
     def sensible_preprocessing(self):

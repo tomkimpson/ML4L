@@ -310,6 +310,7 @@ class NeuralNet():
         #Load
         print(self.save_dir)
         self.model = tf.keras.models.load_model(self.save_dir+'/trained_model') # Load the model
+        print ("LOADING DATA")
         self._load_data(kind='test')                                            # Load test data + features: self.json_read_cols, self.test_data
         self._predict_status(self.json_read_cols)
         
@@ -387,50 +388,3 @@ class NeuralNet():
         df_scores.to_parquet(fout,compression=None)
 
 
-
-#Make some predictions
-
-
-
-
-
-
-
-
-
-
-#---------------SCRATCH AREA---------------------#
-
-
-
-    # def load_data(self):
-    #     self.training_data, self.validation_data = DataLoader().load_data(self.config.data)
-    #     self.training_data = self.training_data.map(self._parse_function)
-    #     self.training_data = self.validation_data.map(self._parse_function)
-    #     self._preprocess_data()
-            
-    # def _preprocess_data(self):
-    #     """Reads TFRecords """
-        
-    #     self.training_data = self.training_data.shuffle(2048)
-    #     self.training_data = self.training_data.prefetch(buffer_size=AUTOTUNE)
-    #     self.training_data = self.training_data.batch(1024)
-    #     pass
-        
-        
-    # def _parse_function(self,example_proto):
-    
-    #     feature_description = {
-    #     'feature_input': tf.io.FixedLenFeature([51,], tf.float32,default_value=np.zeros(51,)),
-    #     'label' : tf.io.FixedLenFeature([1, ], tf.float32,default_value=np.zeros(1,))
-    #     }
-
-    #     example = tf.io.parse_single_example(example_proto, feature_description)
-
-    #     image = example['feature_input']
-    #     label = example['label']
-
-
-
-    #     return image,label    
-    
