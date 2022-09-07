@@ -85,8 +85,6 @@ class PrepareMLData():
         Writes a single file to directory/
         """
 
-        print("WELCOME TO THE PROCESS")
-
         pop_cols = self.target+self.xt # These columns will not be popped of and won't be normalized, but will be saved to file for the test set
         unneeded_columns = ['latitude_MODIS','longitude_MODIS', 'heightAboveGround', 'H_distance_km'] # We have no need of these cols. They will be loaded but immediately dropped
 
@@ -100,12 +98,9 @@ class PrepareMLData():
         monthly_files = sorted([item for sublist in monthly_files for item in sublist]) 
 
     
-        print("LIST OF ALL MONTHLY FILES")
-        print(monthly_files)
-
         dfs_features = [] #array to hold dfs which have features
         dfs_targets = []
-        for m in monthly_files[0:1]:
+        for m in monthly_files:
             print ('Loading file f:',m)
             df = pd.read_parquet(m).reset_index()
             df=df.drop(unneeded_columns,axis=1)
@@ -130,13 +125,6 @@ class PrepareMLData():
         print('All dfs loaded and processed. Now concatenate together.')
         df_features = pd.concat(dfs_features)
         df_targets = pd.concat(dfs_targets)
-
-        # Monthly cl corrections should always be positive. Set to zero if not
-        #df_features['clake_monthly_value'] = df_features['clake_monthly_value'].clip(lower=0)
-
-        print ('MINIMUMS')
-        print(df.clake_monthly_value.min())
-
 
         if (self.normalisation_mean is None) & (self.normalisation_std is None): # All files are normalized according to the first year. Up to now that has been solely 2016
 
@@ -171,7 +159,7 @@ class PrepareMLData():
 
       
         # Save it to disk
-        fout = self.path_to_input_data + '-'.join(years_to_process) + '_SEPTEMBER.parquet' # Possible to save multiple years to one file, might be more sensible to just process year-by-year
+        fout = self.path_to_input_data + '-'.join(years_to_process) + '_MLS.parquet' # Possible to save multiple years to one file, might be more sensible to just process year-by-year
         print ('Saving to:',fout)
         df_out.to_parquet(fout,compression=None)
 
@@ -200,7 +188,8 @@ class PrepareMLData():
 
         #print ('Prepare training data')
         self._process_year(self.training_years)  
-        sys.exit()
+        self._process_year(self.validation_years) 
+        self._process_year(self.test_years) 
         #print ('Prepare validation data')
         #self._process_year(self.validation_years,include_xt=True) 
     
