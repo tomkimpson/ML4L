@@ -37,16 +37,16 @@ class PrepareMLData():
         self.IO_prefix           = self.config.data.IO_prefix
         
         #Extra bonus data that needs to be joined on
-        self.bonus_data          = self.config.data.bonus_data
+        #self.bonus_data          = self.config.data.bonus_data
 
         #Categorise different columns
         self.xt                     = self.config.data.list_of_meta_features #Time/space
         self.time_variable_features = self.config.data.list_of_time_variable_features
         self.V15_features           = self.config.data.list_of_V15_features
         self.V20_features           = self.config.data.list_of_V20_features
-        self.bonus_features         = self.config.data.list_of_bonus_features
+        #self.bonus_features         = self.config.data.list_of_bonus_features
         self.target                 = self.config.data.target_variable
-        self.columns_to_load = self.time_variable_features + self.V15_features + self.V20_features + self.bonus_features + self.target
+        self.columns_to_load = self.time_variable_features + self.V15_features + self.V20_features + self.target
 
         #Declare global emptys
         self.normalisation_mean = None 
