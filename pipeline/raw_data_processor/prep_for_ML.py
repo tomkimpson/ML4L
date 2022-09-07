@@ -85,10 +85,14 @@ class PrepareMLData():
         Writes a single file to directory/
         """
 
+        print("WELCOME TO THE PRCESS")
+
         pop_cols = self.target+self.xt # These columns will not be popped of and won't be normalized, but will be saved to file for the test set
         unneeded_columns = ['latitude_MODIS','longitude_MODIS', 'heightAboveGround', 'H_distance_km'] # We have no need of these cols. They will be loaded but immediately dropped
 
-      
+        print("popcols")
+        print(pop_cols)
+    
  
         #Load any extra data that we want to join on
         saline_ds = xr.open_dataset(self.bonus_data,engine='cfgrib',backend_kwargs={'indexpath': ''})
@@ -121,6 +125,9 @@ class PrepareMLData():
             df_target = pd.concat([df.pop(x) for x in pop_cols], axis=1)
             df_target['skt_unnormalised'] = df['skt']
             
+
+            print(df_target)
+            print(df)
             #Append 
             dfs_features.append(df)
             dfs_targets.append(df_target)
@@ -183,6 +190,13 @@ class PrepareMLData():
         self.IO_prefix           = self.config.data.IO_prefix
 
         all_monthly_files = sorted(glob.glob(self.path_to_input_data+self.IO_prefix+'*'))
+
+        years = np.array_split(all_monthly_files, len(all_monthly_files)/12)
+
+        for months in years:
+            self._process_year(months)
+        
+        sys.exit()
 
 
         print(all_monthly_files)
