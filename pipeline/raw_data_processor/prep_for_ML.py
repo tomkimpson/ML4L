@@ -160,8 +160,8 @@ class PrepareMLData():
         df_features = df_features.drop(self.drop_cols, axis=1)
         
         #If not the test set, only carry the MODIS_LST
-        if not include_xt:
-            df_targets = df_targets[self.target] 
+        #if not include_xt:
+        #    df_targets = df_targets[self.target] 
 
         #Concat all together
         df_out = pd.concat([df_features,df_targets],axis=1)
