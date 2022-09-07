@@ -100,7 +100,8 @@ class PrepareMLData():
         saline_ds = saline_ds.cl.rename(f'cl_saline_max') # This is now a data array
         saline_df = saline_ds.to_dataframe().reset_index()[['latitude','longitude','cl_saline_max']]
     
-
+        print('SALINE')
+        print(saline_df)
 
         dfs_features = [] #array to hold dfs which have features
         dfs_targets = []
@@ -126,8 +127,9 @@ class PrepareMLData():
             df_target['skt_unnormalised'] = df['skt']
             
 
-            print(df_target)
-            print(df)
+            print(df_target.columns)
+            print(df.columns)
+            sys.exit()
             #Append 
             dfs_features.append(df)
             dfs_targets.append(df_target)
