@@ -196,7 +196,7 @@ class PrepareMLData():
         # print(all_monthly_files)
 
         #print ('Prepare training data')
-        self._process_year(self.training_years,include_xt=True)  
+        self._process_year(self.training_years)  
         sys.exit()
         #print ('Prepare validation data')
         #self._process_year(self.validation_years,include_xt=True) 
