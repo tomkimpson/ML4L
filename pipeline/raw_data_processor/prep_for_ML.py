@@ -77,7 +77,7 @@ class PrepareMLData():
 
 
 
-    def _process_year(self,monthly_files):
+    def _process_year(self,years_to_process):
 
         """
         Function to process a list of directory of monthly files and write them to a single file.
@@ -90,15 +90,22 @@ class PrepareMLData():
         pop_cols = self.target+self.xt # These columns will not be popped of and won't be normalized, but will be saved to file for the test set
         unneeded_columns = ['latitude_MODIS','longitude_MODIS', 'heightAboveGround', 'H_distance_km'] # We have no need of these cols. They will be loaded but immediately dropped
 
-        print("popcols")
-        print(pop_cols)
+        
+
+        monthly_files = []
+        for i in years_to_process:
+            files = glob.glob(self.path_to_input_data+self.IO_prefix+f'*_{i}_*.parquet')
+            monthly_files.append(files)
     
+        monthly_files = sorted([item for sublist in monthly_files for item in sublist]) 
+
+    
+        print("LIST OF ALL MONTHLY FILES")
+        print(monthly_files)
 
         dfs_features = [] #array to hold dfs which have features
         dfs_targets = []
-
-
-        for m in monthly_files:
+        for m in monthly_files[0:1]:
             print ('Loading file f:',m)
             df = pd.read_parquet(m).reset_index()
             df=df.drop(unneeded_columns,axis=1)
@@ -111,19 +118,10 @@ class PrepareMLData():
             #Calculate delta fields
             df = self._calculate_delta_fields(df)
 
-            #Join on bonus saline max extent data
-            #print('COLS BEFORE MERGE')
-            #print(df.columns)
-            #print(saline_df.columns)
-            #df = pd.merge(df, saline_df, how='left', left_on=['latitude_ERA', 'longitude_ERA'], right_on=['latitude','longitude'], suffixes=(None,)).drop(['latitude', 'longitude'],axis=1) # merge and drop lat/long coordinates from the join
-
+            #Create a target df which has just the pop cols
             df_target = pd.concat([df.pop(x) for x in pop_cols], axis=1)
             df_target['skt_unnormalised'] = df['skt']
             
-
-            print(df_target.columns)
-            print(df.columns)
-            sys.exit()
             #Append 
             dfs_features.append(df)
             dfs_targets.append(df_target)
@@ -137,7 +135,7 @@ class PrepareMLData():
         df_features['clake_monthly_value'] = df_features['clake_monthly_value'].clip(lower=0)
 
 
-        if (self.normalisation_mean is None) & (self.normalisation_std is None): # On the first pass when dealing with the training set
+        if (self.normalisation_mean is None) & (self.normalisation_std is None): # All files are normalized according to the first year. Up to now that has been solely 2016
 
             # Check for useless columns and drop them
             print ('Checking for useless cols')
@@ -182,24 +180,24 @@ class PrepareMLData():
         Process the ERA-MODIS data in a greedy manner, ignoring any potential future restrictions on memory
         """
 
-        self.path_to_input_data  = self.config.data.path_to_joined_ERA_MODIS_files
-        self.IO_prefix           = self.config.data.IO_prefix
+        # self.path_to_input_data  = self.config.data.path_to_joined_ERA_MODIS_files
+        # self.IO_prefix           = self.config.data.IO_prefix
 
-        all_monthly_files = sorted(glob.glob(self.path_to_input_data+self.IO_prefix+'*'))
+        # all_monthly_files = sorted(glob.glob(self.path_to_input_data+self.IO_prefix+'*'))
 
-        years = np.array_split(all_monthly_files, len(all_monthly_files)/12)
+        # years = np.array_split(all_monthly_files, len(all_monthly_files)/12)
 
-        for months in years:
-            self._process_year(months)
+        # for months in years:
+        #     self._process_year(months)
         
-        sys.exit()
+        
 
 
-        print(all_monthly_files)
+        # print(all_monthly_files)
 
         #print ('Prepare training data')
-        #self._process_year(self.training_years,include_xt=True)  
-
+        self._process_year(self.training_years,include_xt=True)  
+        sys.exit()
         #print ('Prepare validation data')
         #self._process_year(self.validation_years,include_xt=True) 
     

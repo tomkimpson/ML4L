@@ -57,12 +57,9 @@ CFG = {
 
 
         #F. Parameters for creating ML input files
-
-        ##Extra static data obtained after the joining process has completed. We can join this on in ML_prep  
-        "bonus_data": f'{root}saltlakes_max/clake_639l2_yearMAX_saline', # Max extent of salt lakes
-        "training_years": ['2019'],
-        "validation_years": ['2020'],
-        "test_years":['2021'],
+        "training_years":   ['2016'],
+        "validation_years": ['2017'],
+        "test_years":       ['2019'],
 
         ## List of all features, grouped
         "list_of_meta_features": ['latitude_ERA', 'longitude_ERA','time','number_of_modis_observations'],
@@ -79,7 +76,7 @@ CFG = {
                                             'anor_v20','cl_v20', 'dl_v20', 'z_v20', 'slor_v20'], 
                                 
                                 
-        "list_of_bonus_features":           ['clake_monthly_value','cl_saline'], # + cl_saline_max
+        "list_of_bonus_features":           ['clake_monthly_value','cl_saline'], 
         "target_variable" :                 ["MODIS_LST"],
     },
     "train": {
