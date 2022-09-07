@@ -20,6 +20,9 @@ class JoinERAWithMODIS():
 
     """
     Class which takes all the MODIS data and all the ERA data and matches in time and space.
+
+    The ERA data includes the constant V15 and V20 fields, the time variable fields, the saline maps and the monthly lake maps
+
     """
 
     def __init__(self,cfg):         
@@ -37,10 +40,7 @@ class JoinERAWithMODIS():
         self.saline_ds = None # Empty declaration ready to hold saline lake fields
         self.ERA_files = sorted(get_list_of_files(self.config.data.path_to_processed_variable_fields,self.config.data.min_year_to_join,self.config.data.max_year_to_join))
             
-            
-    
-
-
+        
         self.min_hours = {"aquaDay":    self.config.data.aquaDay_min_hour,
                           "terraDay":   self.config.data.terraDay_min_hour,
                           "aquaNight":  self.config.data.aquaNight_min_hour,
@@ -108,36 +108,7 @@ class JoinERAWithMODIS():
             self.monthly_clake_ds[f"month_{month_counter}"] = ds_clake 
             month_counter += 1
            # monthly_clake_ds is a dataset where each variable is month_1, month_2 etc. representing a global field for that time
-           # Later on we will select just the correspondig month
-
-
-    def _load_monthly_clake_data(self):
-
-        """
-        Load the monthly clake data 
-        """
-
-        monthly_clake_files = sorted(glob.glob(self.monthly_clake_files_path+'clake*'))
-        month_counter = 1
-        
-        for m in monthly_clake_files:
-            print(m)
-            ds_clake= xr.open_dataset(m,engine='cfgrib',backend_kwargs={'indexpath': ''}) 
-            
-            #Rename the parameter so everything is not cldiff
-            ds_clake = ds_clake.cl.rename(f'clake_monthly_value') #This is now a dataarray
-            
-            #Fix the time to be an integer
-            ds_clake['time'] = month_counter #i.e. what month it it? An integer between 1 and 12
-            
-            
-            #Append this to dataset
-            self.monthly_clake_ds[f"month_{month_counter}"] = ds_clake 
-            month_counter += 1
-           # monthly_clake_ds is a dataset where each variable is month_1, month_2 etc. representing a global field for that time
-           # Later on we will select just the correspondig month
-    
-
+           # Later on we will select just the corresponding month
 
     
     def _load_saline_lake_data(self):

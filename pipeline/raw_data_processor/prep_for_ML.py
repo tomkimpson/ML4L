@@ -85,7 +85,7 @@ class PrepareMLData():
         Writes a single file to directory/
         """
 
-        print("WELCOME TO THE PRCESS")
+        print("WELCOME TO THE PROCESS")
 
         pop_cols = self.target+self.xt # These columns will not be popped of and won't be normalized, but will be saved to file for the test set
         unneeded_columns = ['latitude_MODIS','longitude_MODIS', 'heightAboveGround', 'H_distance_km'] # We have no need of these cols. They will be loaded but immediately dropped
@@ -93,15 +93,6 @@ class PrepareMLData():
         print("popcols")
         print(pop_cols)
     
- 
-        #Load any extra data that we want to join on
-        saline_ds = xr.open_dataset(self.bonus_data,engine='cfgrib',backend_kwargs={'indexpath': ''})
-        saline_ds = saline_ds.assign_coords({"longitude": (((saline_ds.longitude + 180) % 360) - 180)})
-        saline_ds = saline_ds.cl.rename(f'cl_saline_max') # This is now a data array
-        saline_df = saline_ds.to_dataframe().reset_index()[['latitude','longitude','cl_saline_max']]
-    
-        print('SALINE')
-        print(saline_df)
 
         dfs_features = [] #array to hold dfs which have features
         dfs_targets = []
@@ -121,10 +112,10 @@ class PrepareMLData():
             df = self._calculate_delta_fields(df)
 
             #Join on bonus saline max extent data
-            print('COLS BEFORE MERGE')
-            print(df.columns)
-            print(saline_df.columns)
-            df = pd.merge(df, saline_df, how='left', left_on=['latitude_ERA', 'longitude_ERA'], right_on=['latitude','longitude'], suffixes=(None,)).drop(['latitude', 'longitude'],axis=1) # merge and drop lat/long coordinates from the join
+            #print('COLS BEFORE MERGE')
+            #print(df.columns)
+            #print(saline_df.columns)
+            #df = pd.merge(df, saline_df, how='left', left_on=['latitude_ERA', 'longitude_ERA'], right_on=['latitude','longitude'], suffixes=(None,)).drop(['latitude', 'longitude'],axis=1) # merge and drop lat/long coordinates from the join
 
             df_target = pd.concat([df.pop(x) for x in pop_cols], axis=1)
             df_target['skt_unnormalised'] = df['skt']
