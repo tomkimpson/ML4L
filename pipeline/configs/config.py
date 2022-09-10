@@ -86,7 +86,7 @@ CFG = {
                               'alnip', 'alnid', 'istl1', 'istl2', 'sd','d2m', 'fal','skt',
                               'slt_v15', 'sdfor_v15', 'sdor_v15', 'cvl_v15','lsm_v15', 'isor_v15', 
                               'tvl_v15', 'tvh_v15', 'cvh_v15', 'si10_v15','anor_v15', 'cl_v15', 'dl_v15', 
-                              'z_v15', 'slor_v15'#,
+                              'z_v15', 'slor_v15',
                               'sdor_v20', 'cvl_v20','lsm_v20', 'isor_v20', 
                                'cvh_v20', 'si10_v20','anor_v20', 'cl_v20', 'dl_v20', 
                                'z_v20', 'slor_v20'#,
