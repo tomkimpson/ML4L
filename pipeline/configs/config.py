@@ -89,11 +89,11 @@ CFG = {
                               'z_v15', 'slor_v15',
                               'sdor_v20', 'cvl_v20','lsm_v20', 'isor_v20', 
                                'cvh_v20', 'si10_v20','anor_v20', 'cl_v20', 'dl_v20', 
-                               'z_v20', 'slor_v20'#,
-                              # 'clake_monthly_value','cl_saline'
+                               'z_v20', 'slor_v20',
+                               'clake_monthly_value','cl_saline'
                               ], #Of all the available features in the training data, which should be used? It is known that DELTA ['lsrh_v15' 'sr_v15' 'slt_v20' 'sdfor_v20' 'lsrh_v20' 'sr_v20' 'tvl_v20' 'tvh_v20'] are all the same
         "batch_size":              1024,
-        "epochs":                  300,
+        "epochs":                  600,
         "number_of_hidden_layers": 4,
         "nodes_per_layer":         [None,None,None,None],
         "target_variable":         'MODIS_LST',
