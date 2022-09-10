@@ -102,7 +102,7 @@ CFG = {
         "metrics":                 ["accuracy"],
         "path_to_trained_models":  f'{root}processed_data/trained_models/',
         "model_name":              'V20_2016_2_V2', #This model will also be used for prediction
-        "use_pretrained_model":    True,
+        "use_pretrained_model":    False,
         "overwrite":               True,
         "epoch_save_freq":         10,
         "early_stopping_patience": 20,
