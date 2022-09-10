@@ -15,13 +15,14 @@ class PrepareMLData():
     Class which takes the joined monthly ERA-MODIS data and puts it in a 'nice form'
     ready for training a model.
 
-    Also calculates the "delta features" i.e. V20 - V15 for the time constant features.
-
-
-    
     'Greedy' method produce a single file for each train/validate/test.
 
-    'Sensible' method still needs to be implemented here from scripts
+    'Sensible' method still needs to be implemented here from scripts.
+
+    Also calculates the "delta features" i.e. V20 - V15 for the time constant features.
+
+    Data is also normalised w.r.t training data.
+
     """
 
     def __init__(self,cfg):         
@@ -44,9 +45,9 @@ class PrepareMLData():
         self.time_variable_features = self.config.data.list_of_time_variable_features
         self.V15_features           = self.config.data.list_of_V15_features
         self.V20_features           = self.config.data.list_of_V20_features
-        #self.bonus_features         = self.config.data.list_of_bonus_features
+        #self.bonus_features        = self.config.data.list_of_bonus_features
         self.target                 = self.config.data.target_variable
-        self.columns_to_load = self.time_variable_features + self.V15_features + self.V20_features + self.target
+        self.columns_to_load        = self.time_variable_features + self.V15_features + self.V20_features + self.target
 
         #Declare global emptys
         self.normalisation_mean = None 
@@ -69,7 +70,7 @@ class PrepareMLData():
             v20 = self.V20_features[i]
             assert v20.split('_')[0] == v15.split('_')[0]
 
-            df[v20] = df[v20] - df[v15] #Reassign the v20 fields to all be delta fields 
+            df[v20] = df[v20] - df[v15] # Reassign the v20 fields to all be delta fields 
                     
         return df      
 
