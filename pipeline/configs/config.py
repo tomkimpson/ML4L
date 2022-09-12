@@ -101,11 +101,11 @@ CFG = {
         "loss":                    'mse',
         "metrics":                 ["accuracy"],
         "path_to_trained_models":  f'{root}processed_data/trained_models/',
-        "model_name":              'V20_2016_X2_V2', #This model will also be used for prediction
-        "use_pretrained_model":    True,
+        "model_name":              'V20_2016_X2_V3', #This model will also be used for prediction
+        "use_pretrained_model":    False,
         "overwrite":               False,
         "epoch_save_freq":         10,
-        "early_stopping_patience": 20,
+        "early_stopping_patience": 30,
     },
 
     "predict": {
