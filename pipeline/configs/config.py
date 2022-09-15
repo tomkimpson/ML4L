@@ -93,7 +93,7 @@ CFG = {
                                'clake_monthly_value','cl_saline'
                               ], #Of all the available features in the training data, which should be used? It is known that DELTA ['lsrh_v15' 'sr_v15' 'slt_v20' 'sdfor_v20' 'lsrh_v20' 'sr_v20' 'tvl_v20' 'tvh_v20'] are all the same
         "batch_size":              1024,
-        "epochs":                  600,
+        "epochs":                  300,
         "number_of_hidden_layers": 4,
         "nodes_per_layer":         [None,None,None,None],
         "target_variable":         'MODIS_LST',
@@ -101,11 +101,11 @@ CFG = {
         "loss":                    'mse',
         "metrics":                 ["accuracy"],
         "path_to_trained_models":  f'{root}processed_data/trained_models/',
-        "model_name":              'V20_2016_X2_V3', #This model will also be used for prediction
+        "model_name":              'V20_2016_X2_V4', #This model will also be used for prediction
         "use_pretrained_model":    False,
         "overwrite":               False,
         "epoch_save_freq":         10,
-        "early_stopping_patience": 30,
+        "early_stopping_patience": 20,
     },
 
     "predict": {
