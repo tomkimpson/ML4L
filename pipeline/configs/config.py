@@ -64,8 +64,11 @@ CFG = {
         ## List of all features, grouped
         "list_of_meta_features": ['latitude_ERA', 'longitude_ERA','time','number_of_modis_observations'],
 
+        # "list_of_time_variable_features" : ['sp', 'msl', 'u10', 'v10', 't2m', 'aluvp', 'aluvd',
+        #                                     'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 'skt'],
+
         "list_of_time_variable_features" : ['sp', 'msl', 'u10', 'v10', 't2m', 'aluvp', 'aluvd',
-                                            'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal', 'skt'],
+                                            'alnip', 'alnid', 'istl1', 'istl2', 'sd', 'd2m', 'fal','MODIS_LST'],
 
         "list_of_V15_features":            ['slt_v15', 'sdfor_v15', 'sdor_v15', 'lsrh_v15', 'cvl_v15', 'sr_v15',
                                             'lsm_v15', 'isor_v15', 'tvl_v15', 'tvh_v15', 'cvh_v15', 'si10_v15',
@@ -77,7 +80,7 @@ CFG = {
                                 
                                 
         "list_of_bonus_features":           ['clake_monthly_value','cl_saline'], 
-        "target_variable" :                 ["MODIS_LST"],
+        "target_variable" :                 ["skt"],
     },
     "train": {
         "training_data":   f'{root}processed_data/joined_data/2016_MLS.parquet',

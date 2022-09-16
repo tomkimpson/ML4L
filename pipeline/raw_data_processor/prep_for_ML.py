@@ -160,7 +160,7 @@ class PrepareMLData():
 
       
         # Save it to disk
-        fout = self.path_to_input_data + '-'.join(years_to_process) + '_MLS.parquet' # Possible to save multiple years to one file, might be more sensible to just process year-by-year
+        fout = self.path_to_input_data + '-'.join(years_to_process) + '_NVIDIA.parquet' # Possible to save multiple years to one file, might be more sensible to just process year-by-year
         print ('Saving to:',fout)
         df_out.to_parquet(fout,compression=None)
 
