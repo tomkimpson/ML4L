@@ -116,7 +116,7 @@ class PrepareMLData():
 
             #Create a target df which has just the pop cols
             df_target = pd.concat([df.pop(x) for x in pop_cols], axis=1)
-            df_target['skt_unnormalised'] = df['skt']
+            #df_target['skt_unnormalised'] = df['skt']
             
             #Append 
             dfs_features.append(df)
