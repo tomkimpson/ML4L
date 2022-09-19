@@ -321,7 +321,8 @@ class NeuralNet():
         gc.collect()
 
         #IO
-        meta_data = pd.read_parquet(self.config.predict.testing_data,columns=['latitude_ERA', 'longitude_ERA','time','MODIS_LST','skt_unnormalised','number_of_modis_observations'])
+        #meta_data = pd.read_parquet(self.config.predict.testing_data,columns=['latitude_ERA', 'longitude_ERA','time','MODIS_LST','skt_unnormalised','number_of_modis_observations'])
+        meta_data = pd.read_parquet(self.config.predict.testing_data,columns=['latitude_ERA', 'longitude_ERA','time','skt','number_of_modis_observations'])
         meta_data['predictions'] = predictions 
         fout = self.save_dir + '/predictions.parquet'
         print ('Saving to:',fout)

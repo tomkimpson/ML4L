@@ -98,7 +98,7 @@ CFG = {
         "epochs":                  300,
         "number_of_hidden_layers": 4,
         "nodes_per_layer":         [None,None,None,None],
-        "target_variable":         'MODIS_LST',
+        "target_variable":         'skt',
         "learning_rate":           3e-4,
         "loss":                    'mse',
         "metrics":                 ["accuracy"],
