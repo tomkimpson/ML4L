@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: template.aux
+The style file: copernicus.bst
+Database file #1: refs.bib
+Warning--to sort, need author or key in ToshkaURL
+Warning--empty year in ToshkaURL
+Warning--empty year in MODIS
+Warning--empty journal in p19877
+Warning--empty year in MYD11A1
+You've used 43 entries,
+            2819 wiz_defined-function locations,
+            1319 strings with 23471 characters,
+and the built_in function-call counts, 47545 in all, are:
+= -- 4078
+> -- 3640
+< -- 13
++ -- 1346
+- -- 1176
+* -- 3797
+:= -- 5844
+add.period$ -- 43
+call.type$ -- 43
+change.case$ -- 484
+chr.to.int$ -- 43
+cite$ -- 136
+duplicate$ -- 3634
+empty$ -- 2127
+format.name$ -- 1298
+if$ -- 9224
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 651
+newline$ -- 138
+num.names$ -- 168
+pop$ -- 2122
+preamble$ -- 1
+purify$ -- 478
+quote$ -- 0
+skip$ -- 1937
+stack$ -- 0
+substring$ -- 1126
+swap$ -- 2946
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 381
+warning$ -- 5
+while$ -- 169
+width$ -- 0
+write$ -- 494
+(There were 5 warnings)

@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: preprint.aux
+The style file: ieeetr.bst
+Database file #1: refs.bib
+Warning--I didn't find a database entry for "["
+Warning--empty journal in p19877
+You've used 41 entries,
+            1876 wiz_defined-function locations,
+            743 strings with 15659 characters,
+and the built_in function-call counts, 14529 in all, are:
+= -- 1141
+> -- 1197
+< -- 0
++ -- 415
+- -- 374
+* -- 1223
+:= -- 2255
+add.period$ -- 49
+call.type$ -- 41
+change.case$ -- 39
+chr.to.int$ -- 0
+cite$ -- 42
+duplicate$ -- 604
+empty$ -- 1010
+format.name$ -- 374
+if$ -- 3344
+int.to.chr$ -- 0
+int.to.str$ -- 41
+missing$ -- 32
+newline$ -- 134
+num.names$ -- 40
+pop$ -- 145
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 540
+stack$ -- 0
+substring$ -- 647
+swap$ -- 323
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 79
+width$ -- 43
+write$ -- 395
+(There were 2 warnings)
