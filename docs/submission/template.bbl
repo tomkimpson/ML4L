@@ -1,4 +1,4 @@
-\begin{thebibliography}{43}
+\begin{thebibliography}{53}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{{\tt #1}}
 \providecommand{\urlprefix}{URL }
@@ -7,27 +7,27 @@
   \providecommand{\doi}{https://doi.org/\discretionary{}{}{}\begingroup
   \urlstyle{rm}\Url}\fi
 
-\bibitem[{Tos()}]{ToshkaURL}
-Two Decades of Change at Toshka Lakes,
-  \url{https://earthobservatory.nasa.gov/images/149334/two-decades-of-change-at-toshka-lakes},
-  accessed: 2022-09-30.
+\bibitem[{{Abadi} et~al.(2016){Abadi}, {Agarwal}, {Barham}, {Brevdo}, {Chen},
+  {Citro}, {Corrado}, {Davis}, {Dean}, {Devin}, {Ghemawat}, {Goodfellow},
+  {Harp}, {Irving}, {Isard}, {Jia}, {Jozefowicz}, {Kaiser}, {Kudlur},
+  {Levenberg}, {Mane}, {Monga}, {Moore}, {Murray}, {Olah}, {Schuster},
+  {Shlens}, {Steiner}, {Sutskever}, {Talwar}, {Tucker}, {Vanhoucke},
+  {Vasudevan}, {Viegas}, {Vinyals}, {Warden}, {Wattenberg}, {Wicke}, {Yu}, and
+  {Zheng}}]{2016arXiv160304467A}
+{Abadi}, M., {Agarwal}, A., {Barham}, P., {Brevdo}, E., {Chen}, Z., {Citro},
+  C., {Corrado}, G.~S., {Davis}, A., {Dean}, J., {Devin}, M., {Ghemawat}, S.,
+  {Goodfellow}, I., {Harp}, A., {Irving}, G., {Isard}, M., {Jia}, Y.,
+  {Jozefowicz}, R., {Kaiser}, L., {Kudlur}, M., {Levenberg}, J., {Mane}, D.,
+  {Monga}, R., {Moore}, S., {Murray}, D., {Olah}, C., {Schuster}, M., {Shlens},
+  J., {Steiner}, B., {Sutskever}, I., {Talwar}, K., {Tucker}, P., {Vanhoucke},
+  V., {Vasudevan}, V., {Viegas}, F., {Vinyals}, O., {Warden}, P., {Wattenberg},
+  M., {Wicke}, M., {Yu}, Y., and {Zheng}, X.: {TensorFlow: Large-Scale Machine
+  Learning on Heterogeneous Distributed Systems}, arXiv e-prints,
+  arXiv:1603.04467, \doi{10.48550/arXiv.1603.04467}, 2016.
 
-\bibitem[{Abadi et~al.(2015)Abadi, Agarwal, Barham, Brevdo, Chen, Citro,
-  Corrado, Davis, Dean, Devin, Ghemawat, Goodfellow, Harp, Irving, Isard, Jia,
-  Jozefowicz, Kaiser, Kudlur, Levenberg, Man\'{e}, Monga, Moore, Murray, Olah,
-  Schuster, Shlens, Steiner, Sutskever, Talwar, Tucker, Vanhoucke, Vasudevan,
-  Vi\'{e}gas, Vinyals, Warden, Wattenberg, Wicke, Yu, and
-  Zheng}]{tensorflow2015-whitepaper}
-Abadi, M., Agarwal, A., Barham, P., Brevdo, E., Chen, Z., Citro, C., Corrado,
-  G.~S., Davis, A., Dean, J., Devin, M., Ghemawat, S., Goodfellow, I., Harp,
-  A., Irving, G., Isard, M., Jia, Y., Jozefowicz, R., Kaiser, L., Kudlur, M.,
-  Levenberg, J., Man\'{e}, D., Monga, R., Moore, S., Murray, D., Olah, C.,
-  Schuster, M., Shlens, J., Steiner, B., Sutskever, I., Talwar, K., Tucker, P.,
-  Vanhoucke, V., Vasudevan, V., Vi\'{e}gas, F., Vinyals, O., Warden, P.,
-  Wattenberg, M., Wicke, M., Yu, Y., and Zheng, X.: {TensorFlow}: Large-Scale
-  Machine Learning on Heterogeneous Systems,
-  \urlprefix\url{https://www.tensorflow.org/}, software available from
-  tensorflow.org, 2015.
+\bibitem[{{Amante} and {Eakins}(2009)}]{amante2009egrm}
+{Amante}, C. and {Eakins}, B.~W.: {ETOPO1 Global Relief Model converted to
+  PanMap layer format}, \doi{10.1594/PANGAEA.769615}, 2009.
 
 \bibitem[{{Arino} et~al.(2012){Arino}, {Ramos Perez}, {Kalogirou}, {Bontemps},
   {Defourny}, and {Van Bogaert}}]{arino2012glcm}
@@ -60,10 +60,6 @@ Boussetta, S., Balsamo, G., Arduini, G., Dutra, E., McNorton, J., Choulga, M.,
   D., and Zsoter, E.: ECLand: The ECMWF Land Surface Modelling System,
   Atmosphere, 12, \doi{10.3390/atmos12060723}, 2021.
 
-\bibitem[{Center()}]{MODIS}
-Center, N. G. S.~F.: MODIS, \url{https://modis.gsfc.nasa.gov/}, accessed:
-  2022-06-01.
-
 \bibitem[{{Chantry} et~al.(2021){Chantry}, {Hatfield}, {Duben}, {Polichtchouk},
   and {Palmer}}]{Chantry2021}
 {Chantry}, M., {Hatfield}, S., {Duben}, P., {Polichtchouk}, I., and {Palmer},
@@ -93,12 +89,24 @@ DelSontro, T., Beaulieu, J.~J., and Downing, J.~A.: Greenhouse gas emissions
   Limnology and Oceanography Letters, 3, 64--75,
   \doi{https://doi.org/10.1002/lol2.10073}, 2018.
 
+\bibitem[{Duan et~al.(2019)Duan, Li, Li, Göttsche, Wu, Zhao, Leng, Zhang, and
+  Coll}]{DUAN201916}
+Duan, S.-B., Li, Z.-L., Li, H., Göttsche, F.-M., Wu, H., Zhao, W., Leng, P.,
+  Zhang, X., and Coll, C.: Validation of Collection 6 MODIS land surface
+  temperature product using in situ measurements, Remote Sensing of
+  Environment, 225, 16--29, \doi{https://doi.org/10.1016/j.rse.2019.02.020},
+  2019.
+
 \bibitem[{D{\"u}ben et~al.(2021)D{\"u}ben, Modigliani, Geer, Siemen,
   Pappenberger, Bauer, Brown, Palkovic, Raoult, Wedi, and Baousis}]{p19877}
 D{\"u}ben, P., Modigliani, U., Geer, A., Siemen, S., Pappenberger, F., Bauer,
   P., Brown, A., Palkovic, M., Raoult, B., Wedi, N., and Baousis, V.: Machine
   learning at ECMWF: A roadmap for the next 10 years, \doi{10.21957/ge7ckgm},
   2021.
+
+\bibitem[{ECMWF(2021)}]{IFSdocs}
+ECMWF: IFS Documentation: CY47R3 – Part IV: Physical processes,
+  \doi{https://doi.org/10.21957/eyrpir4vj}, 2021.
 
 \bibitem[{Eerola et~al.(2014)Eerola, Rontu, Kourzeneva, Pour, and
   Duguay}]{Eerola2014}
@@ -107,6 +115,9 @@ Eerola, K., Rontu, L., Kourzeneva, E., Pour, H.~K., and Duguay, C.: Impact of
   winter situation – a case study using a limited area model, Tellus A:
   Dynamic Meteorology and Oceanography, 66, 23\,929,
   \doi{10.3402/tellusa.v66.23929}, 2014.
+
+\bibitem[{FAO(2003)}]{FAO}
+FAO, U.: {Digital soil map of the world and derived soil properties}, 2003.
 
 \bibitem[{Franz et~al.(2018)Franz, Mammarella, Boike, Kirillin, Vesala,
   Bornemann, Larmanou, Langer, and Sachs}]{Franz2018}
@@ -123,6 +134,15 @@ Freire, S., MacManus, K., Pesaresi, M., Doxsey-Whitfield, E., and Mills, J.:
   250 m resolution, AGILE,
   \urlprefix\url{https://agile-online.org/Conference_Paper/cds/agile_2016/shortpapers/152_Paper_in_PDF.pdf},
   2016.
+
+\bibitem[{GLIMS and NSIDC(2005, updated 2018)}]{glims}
+GLIMS and NSIDC: Global Land Ice Measurements from Space glacier database,
+  \doi{DOI:10.7265/N5V98602}, compiled and made available by the international
+  GLIMS community and the National Snow and Ice Data Center, 2005, updated
+  2018.
+
+\bibitem[{GSFC()}]{MODIS}
+GSFC, N.: MODIS, \url{https://modis.gsfc.nasa.gov/}, accessed: 2022-06-01.
 
 \bibitem[{{Hatfield} et~al.(2021){Hatfield}, {Chantry}, {Dueben}, {Lopez},
   {Geer}, and {Palmer}}]{Hatfield2021}
@@ -153,12 +173,24 @@ Hersbach, H., Bell, B., Berrisford, P., Hirahara, S., Horányi, A.,
   improves weather forecasts around the world}, Communications Earth and
   Environment, 2, 132, \doi{10.1038/s43247-021-00185-9}, 2021.
 
+\bibitem[{Howat et~al.(2014)Howat, Negrete, and Smith}]{Howat2014}
+Howat, I.~M., Negrete, A., and Smith, B.~E.: The Greenland Ice Mapping Project
+  (GIMP) land classification and surface elevation data sets, The Cryosphere,
+  8, 1509--1518, \doi{10.5194/tc-8-1509-2014}, 2014.
+
 \bibitem[{Huang et~al.(2019)Huang, Cheng, Zhang, Zhang, Vihma, Li, and
   Niu}]{Huang2019}
 Huang, W., Cheng, B., Zhang, J., Zhang, Z., Vihma, T., Li, Z., and Niu, F.:
   Modeling experiments on seasonal lake ice mass and energy balance in the
   Qinghai--Tibet Plateau: a case study, Hydrology and Earth System Sciences,
   23, 2173--2186, \doi{10.5194/hess-23-2173-2019}, 2019.
+
+\bibitem[{Johannsen et~al.(2019)Johannsen, Ermida, Martins, Trigo, Nogueira,
+  and Dutra}]{Johannsen2019}
+Johannsen, F., Ermida, S., Martins, J. P.~A., Trigo, I.~F., Nogueira, M., and
+  Dutra, E.: Cold Bias of ERA5 Summertime Daily Maximum Land Surface
+  Temperature over Iberian Peninsula, Remote Sensing, 11,
+  \doi{10.3390/rs11212570}, 2019.
 
 \bibitem[{{Kingma} and {Ba}(2014)}]{2014adam}
 {Kingma}, D.~P. and {Ba}, J.: {Adam: A Method for Stochastic Optimization},
@@ -185,12 +217,12 @@ lu, P., Cao, X., Li, G., Huang, W., Leppäranta, M., Arvola, L., Huotari, J.,
 Mironov, D.~V.: Parameterization of lakes in numerical weather prediction:
   Description of a lake model, DWD Offenbach, Germany, 2008.
 
-\bibitem[{Molnia and Post(2010)}]{Bering2010}
+\bibitem[{Molnia and Post(2010)}]{beiringglacier}
 Molnia, B.~F. and Post, A.: {Surges of the Bering Glacier}, in: {Bering
   Glacier: Interdisciplinary Studies of Earth's Largest Temperate Surging
   Glacier}, Geological Society of America, \doi{10.1130/2010.2462(15)}, 2010.
 
-\bibitem[{Mu\~noz Sabater et~al.(2021)Mu\~noz Sabater, Dutra,
+\bibitem[{Mu\~noz Sabater et~al.(2021{\natexlab{a}})Mu\~noz Sabater, Dutra,
   Agust\'{\i}-Panareda, Albergel, Arduini, Balsamo, Boussetta, Choulga,
   Harrigan, Hersbach, Martens, Miralles, Piles, Rodr\'{\i}guez-Fern\'andez,
   Zsoter, Buontempo, and Th\'epaut}]{Mu2021}
@@ -199,7 +231,20 @@ Mu\~noz Sabater, J., Dutra, E., Agust\'{\i}-Panareda, A., Albergel, C.,
   H., Martens, B., Miralles, D.~G., Piles, M., Rodr\'{\i}guez-Fern\'andez,
   N.~J., Zsoter, E., Buontempo, C., and Th\'epaut, J.-N.: ERA5-Land: a
   state-of-the-art global reanalysis dataset for land applications, Earth
-  System Science Data, 13, 4349--4383, \doi{10.5194/essd-13-4349-2021}, 2021.
+  System Science Data, 13, 4349--4383, \doi{10.5194/essd-13-4349-2021},
+  2021{\natexlab{a}}.
+
+\bibitem[{Mu\~noz Sabater et~al.(2021{\natexlab{b}})Mu\~noz Sabater, Dutra,
+  Agust\'{\i}-Panareda, Albergel, Arduini, Balsamo, Boussetta, Choulga,
+  Harrigan, Hersbach, Martens, Miralles, Piles, Rodr\'{\i}guez-Fern\'andez,
+  Zsoter, Buontempo, and Th\'epaut}]{essd-13-4349-2021}
+Mu\~noz Sabater, J., Dutra, E., Agust\'{\i}-Panareda, A., Albergel, C.,
+  Arduini, G., Balsamo, G., Boussetta, S., Choulga, M., Harrigan, S., Hersbach,
+  H., Martens, B., Miralles, D.~G., Piles, M., Rodr\'{\i}guez-Fern\'andez,
+  N.~J., Zsoter, E., Buontempo, C., and Th\'epaut, J.-N.: ERA5-Land: a
+  state-of-the-art global reanalysis dataset for land applications, Earth
+  System Science Data, 13, 4349--4383, \doi{10.5194/essd-13-4349-2021},
+  2021{\natexlab{b}}.
 
 \bibitem[{Munoz~Sabater(2019)}]{CDS}
 Munoz~Sabater, J.: {ERA5-Land hourly data from 1981 to present.},
@@ -262,10 +307,30 @@ Saunois, M., Stavert, A.~R., Poulter, B., Bousquet, P., Canadell, J.~G.,
   The Global Methane Budget 2000--2017, Earth System Science Data, 12,
   1561--1623, \doi{10.5194/essd-12-1561-2020}, 2020.
 
+\bibitem[{Schaaf et~al.(2002)Schaaf, Gao, Strahler, Lucht, Li, Tsang,
+  Strugnell, Zhang, Jin, Muller, Lewis, Barnsley, Hobson, Disney, Roberts,
+  Dunderdale, Doll, d'Entremont, Hu, Liang, Privette, and Roy}]{SCHAAF2002135}
+Schaaf, C.~B., Gao, F., Strahler, A.~H., Lucht, W., Li, X., Tsang, T.,
+  Strugnell, N.~C., Zhang, X., Jin, Y., Muller, J.-P., Lewis, P., Barnsley, M.,
+  Hobson, P., Disney, M., Roberts, G., Dunderdale, M., Doll, C., d'Entremont,
+  R.~P., Hu, B., Liang, S., Privette, J.~L., and Roy, D.: First operational
+  BRDF, albedo nadir reflectance products from MODIS, Remote Sensing of
+  Environment, 83, 135--148,
+  \doi{https://doi.org/10.1016/S0034-4257(02)00091-3}, the Moderate Resolution
+  Imaging Spectroradiometer (MODIS): a new generation of Land Surface
+  Monitoring, 2002.
+
 \bibitem[{Schiavina et~al.(2022)Schiavina, Freire, and MacManus}]{GHS}
 Schiavina, M., Freire, S., and MacManus, K.: GHS-POP R2022A - GHS population
   grid multitemporal (1975-2030),
   \urlprefix\url{https://ghsl.jrc.ec.europa.eu/ghs_pop2022.php}, 2022.
+
+\bibitem[{Slater et~al.(2018)Slater, Shepherd, McMillan, Muir, Gilbert, Hogg,
+  Konrad, and Parrinello}]{Slater2018}
+Slater, T., Shepherd, A., McMillan, M., Muir, A., Gilbert, L., Hogg, A.~E.,
+  Konrad, H., and Parrinello, T.: A new digital elevation model of Antarctica
+  derived from CryoSat-2 altimetry, The Cryosphere, 12, 1551--1562,
+  \doi{10.5194/tc-12-1551-2018}, 2018.
 
 \bibitem[{Thiery et~al.(2015)Thiery, Davin, Panitz, Demuzere, Lhermitte, and
   van Lipzig"}]{Thiery2015}
@@ -317,10 +382,17 @@ Wan, Z.: {MODIS Collection 6.1 (C61) Product User Guide},
   \url{https://lpdaac.usgs.gov/documents/715/MOD11_User_Guide_V61.pdf},
   accessed: 2022-06-01, 2019.
 
-\bibitem[{Wan et~al.()Wan, Hook, and Hulley}]{MYD11A1}
-Wan, Z., Hook, S., and Hulley, G.: MODIS/Aqua Land Surface
-  Temperature/Emissivity Daily L3 Global 1km SIN Grid V061 [Data set],
-  \url{https://doi.org/10.5067/MODIS/MYD11A1.06}, accessed: 2022-06-01.
+\bibitem[{Wan and Dozier(1996)}]{508406}
+Wan, Z. and Dozier, J.: A generalized split-window algorithm for retrieving
+  land-surface temperature from space, IEEE Transactions on Geoscience and
+  Remote Sensing, 34, 892--905, \doi{10.1109/36.508406}, 1996.
+
+\bibitem[{Weatherall et~al.(2015)Weatherall, Marks, Jakobsson, Schmitt, Tani,
+  Arndt, Rovere, Chayes, Ferrini, and Wigley}]{Weatherall2015}
+Weatherall, P., Marks, K.~M., Jakobsson, M., Schmitt, T., Tani, S., Arndt,
+  J.~E., Rovere, M., Chayes, D., Ferrini, V., and Wigley, R.: A new digital
+  bathymetric model of the world's oceans, Earth and Space Science, 2,
+  331--345, \doi{https://doi.org/10.1002/2015EA000107}, 2015.
 
 \bibitem[{{Yu} and {Zhu}(2020)}]{HPO2}
 {Yu}, T. and {Zhu}, H.: {Hyper-Parameter Optimization: A Review of Algorithms
