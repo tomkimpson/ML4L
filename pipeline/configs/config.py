@@ -93,7 +93,7 @@ CFG = {
                             #   'sdor_v20', 'cvl_v20','lsm_v20', 'isor_v20', 
                             #    'cvh_v20', 'si10_v20','anor_v20', 'cl_v20', 'dl_v20', 
                             #    'z_v20', 'slor_v20'#,
-                            #    'clake_monthly_value','cl_saline'
+                                'clake_monthly_value','cl_saline'
                               ], #Of all the available features in the training data, which should be used? It is known that DELTA ['lsrh_v15' 'sr_v15' 'slt_v20' 'sdfor_v20' 'lsrh_v20' 'sr_v20' 'tvl_v20' 'tvh_v20'] are all the same
         "batch_size":              1024,
         "epochs":                  600,
@@ -104,7 +104,7 @@ CFG = {
         "loss":                    'mse',
         "metrics":                 ["accuracy"],
         "path_to_trained_models":  f'{root}processed_data/trained_models/',
-        "model_name":              'V15_noise_expt_4', #This model will also be used for prediction
+        "model_name":              'V15X_noise_expt_1', #This model will also be used for prediction
         "use_pretrained_model":    False,
         "overwrite":               True,
         "epoch_save_freq":         10,
