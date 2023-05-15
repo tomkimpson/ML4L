@@ -9,7 +9,7 @@
 %% Please use the following documentclass and journal abbreviations for preprints and final revised papers.
 
 %% 2-column papers and preprints
-\documentclass[hess, manuscript]{copernicus}
+\documentclass[hess, twostagejnl]{copernicus}
 
 %\documentclass[tc,manuscript]{copernicus}
 
@@ -163,7 +163,6 @@ The first point is straightforward; we want our parametrisation fields to better
 \noindent This paper is organized as follows. In Section \ref{sec:2} we describe the construction of the VESPER tool - the raw input data, the processing steps and the construction of a neural network regressor. In Section \ref{sec:3} we then deploy VESPER to investigate and evaluate updated lake parametrisation fields. Discussion and concluding remarks are made in Sections \ref{sec:4} and \ref{sec:conclusion} respectively. 
 
 
-\newpage
 \section{Constructing VESPER}\label{sec:2}
 In order to rapidly assess accuracy of new surface physiography fields and if their use in the model increase predictability a neural network regression model (further in the text referred as VESPER) that can learn the mapping between a set of features x and targets y is constructed. In this case the features are the atmospheric and surface model fields (such as 2 metre temperature from ERA5 reanalysis) and the surface physiographic fields (such as orography and vegetation cover used to produce ERA5 reanalysis), see Table 1 for the full list of variables used. The target is the satellite land surface temperature (skin temperature from MODIS Aqua Day MYD11A1 v006 collection).VESPER can then make predictions about the skin temperature given a set of input variables (i.e. atmospheric and surface model fields, and surface physiographic fields). In turn, these predictions can then be compared against observations (i.e. satellite skin temperature) and VESPER's accuracy evaluated. By varying the number/type and values of the input features x to VESPER and observing how the accuracy of its predictions change, some conclusions on if and how features can increase predictability of an actual atmospheric model. Moreover, by isolating geographic regions where the predictions get worse with new/updated surface physiographic fields, areas where these fields might be erroneous or not informative enough can be identified. Due to the inherent stochasticity of training a neural network regression model it is also possible for different models to settle in different local minimums i.e. the network variance. \newline 
 	
@@ -177,7 +176,7 @@ In order to rapidly assess accuracy of new surface physiography fields and if th
 \subsection{Features and targets}
 VESPER's input feature selection (see Table \ref{table:definitions}) followed (i) permutation importance results for atmospheric and surface model fields - only fields with the highest importance were chosen; and (ii) expert choice for surface physiographic fields - as first attempt it was decided to test current methodology for lake related information, therefore fields that could be most affected by the presence of absence of water were selected, e.g. if lake had to be removed then some other surface had to appear (like bare ground, high or low vegetation, glacier or even ocean) and surface elevation had to change. Changes to the orographic fields will have important influences on temperature through e.g. wind, solar heating etc. Lake depth changes are similarly important, influencing how a lake freezes, thaws, mixes and its overall dynamical range. VESPER's target selection followed globally available criteria and the satellite land surface temperature is quite well observed globally and with high temporal pattern (daily or even several times a day depending on the location)
 
-\begin{table}[h]
+\begin{table*}
 	\begin{tabularx}{\textwidth}{lX}
 		\hline
 		Atmospheric and surface model fields (11 fields)
@@ -206,7 +205,7 @@ VESPER's input feature selection (see Table \ref{table:definitions}) followed (i
 \caption{Input features used for training the NN model VESPER; atmospheric model fields (time varying) were kept the same in all simulations,  surface  physiographic  fields  (static)  were  updated  when  going  from  the  original  data  based  on GlobeCover2009/GLDBv1 (V15 field set) to GSWE/GLDBv3 (V20 field set); in brackets are variables description (where needed), short name (according to the GRIB parameter database) and units.
 }
 \label{table:definitions}
-\end{table}
+\end{table*}
 
 \subsection{Data sources }
 
@@ -216,7 +215,7 @@ The second is a selection of atmospheric and surface model fields from ERA5, als
 
 \subsubsection{Surface physiographic fields}
 \noindent Surface physiographic fields have gridded information of the Earth’s surface properties (e.g. land-use, vegetation type and distribution) and represent surface heterogeneity in the ECLand of ECMWF’s Integrated Forecasting System (IFS). They are used to compute surface turbulent fluxes (of heat, moisture and momentum) and skin temperature over different surfaces (vegetation, bare soil, snow, interception and water) and then to calculate an area-weighted average for the grid-box to couple with the atmosphere. To trigger all different parametrization schemes the ECMWF model uses a sets of physiographic fields, that do not depend on initial condition or forecast step. Most fields are constant; surface albedo is specified for 12 months to describe the seasonal cycle. Dependent on the origin, initial data comes at different resolutions and different projections, and is then first converted to a regular latitude-longitude grid (EPSG:4326) at ~1km at Equator resolution and secondly to a required grid and resolution. Surface physiographic fields used in this work consist of orographic, land, water, vegetation, soil, albedo fields and their difference between initial V15 and updated V20 field sets (and between expanded V15X and V20X field sets). See Tables \ref{table:definitions} and \ref{tab:datasources} for the full list of surface physiographic fields and their input sources; for more details see IFS documentation \citep{IFSdocs}. As this work is focused on assessing quality of inland water information, main surface physiographic fields are lake cover (derived from land-sea mask) and lake mean depth (see Table \ref{tab:datasources}).  \newline 
-\begin{table}[h]
+\begin{table*}
 	\begin{tabularx}{\textwidth}{lXX}
 		\toprule 
 		Field Category & V15 & V20 \\
@@ -244,7 +243,7 @@ The second is a selection of atmospheric and surface model fields from ERA5, als
 	\end{tabularx}
 	\caption{List of input datasets for the surface physiographic fields for V15 and V20 field sets. V15X and V20X are identical to V15 and V20 respectively, but with the addition of saline lake cover, and monthly varying lake cover fields. \hl{TK: is glacier mask binary in V15 and 0-1 in V20?}}
 	\label{tab:datasources}
-\end{table}
+\end{table*}
 \noindent To generate V15 (and V15X) fractional lake cover the GlobCover2009 global map  \citep{GLOBCOVER,arino2012glcm} is used. This map has a resolution of 300m, corresponds for the year 2009 and covers latitudes 85°N-60°S; corrections outside these latitudes for the polar regions are included separately. In the Arctic no land is assumed, in the Antarctic data from the high-resolution Radarsat Antarctic Mapping Project digital elevation model version 2 (RAMP2; Liu et al., 2015) is used. To generate V20 (and V20X) fractional lake cover more resent higher resolution datasets and updated methods have been used \citep{Choulga2019}. Main data source is the Joint Research Centre (JRC) the Global Surface Water Explorer (GSWE) dataset \citep{GSWE}. GSWE is a 30m resolution dataset from Landsat 5,7 and 8, providing information on the spatial and temporal variability of surface water on the Earth since March 1984; here only permanent water type was used for lake cover generation as it was more accurate inland water distribution on the annual basis \citep{Choulga2019}. Differences between V20 and V15 lake cover fields (see Figure 1) are consistent with the latest global and regional information: (i) increase of lake fraction in V20 compared to V15 over northern latitudes is due to permafrost melt leading to a new thermokarst lake emergence, and due to higher resolution input source and its better satellite image recognition methodologies; (ii) reduction of lake fraction in V20 compared to V15 can be explained with several reasons, like anthropogenic land use change (e.g. Aral Sea, which lies across the border between Uzbekistan and Kazakhstan, has been shrinking at an accelerated rate since the 1960s and started to stabilise in 2014 with an area of 7660km2, 9 times smaller than its size in 1960. GlobCover2009 describes the Aral Sea in 1998, when it was still “only” two times smaller than its 1960 extent, whereas GSWE provides a more up to date map.), use of only permanent water (e.g. Australia, where GlobCover2009 over-represents inland water, as most of these lakes are highly ephemeral, e.g. the endorheic Kati Thanda–Lake Eyre fills only a few times per century. The GSWE updates to this region therefore include only generally permanent water, removing all seasonal and rare ephemeral water.), and change in the ocean and inland water separation algorithm (e.g. north-east of Russia). \newline 
 
 \noindent To generate V15 (and V15X) lake mean depth (see Figure \ref{example_figure_a}) the Global Lake DataBase version 1 \citep[GLDBv1;][]{Kourzeneva2012} is used. GLDBv1 has a resolution of ~1km and is based on ~13000 lakes with in situ lake depth information; outside this dataset all missing data grid-cells (i.e. over ocean and land) have 25 meter value; field aggregation to a coarser resolution is done by averaging. Overestimation of lake depth in summer season can result in strong cold biases and in winter season – lack of ice formation. To generate V20 (and V20X) lake mean depth (see Figure \ref{example_figure_b}) an updated version GLDBv3 \citep{Choulga2014} is used. GLDBv3 has the same resolution of ~1km, but is based on an increased number of lakes with in situ lake depth information by ∼1500 (in addition has bathymetry information over all Finnish navigable lakes), it introduces distinction between freshwater and saline lakes (this information is currently not used by FLake), and suggests the method to assess the depth for lakes without in situ observations using geological and climate type information; field aggregation to a coarser resolution is done by computing the most occurring value. Verification of GLDBv1 and GLDBv3 lake depths against 353 Finnish lake measurements shows that GLDBv3 exhibits a 52 \% bias reduction in mean lake depth values compared to GLDBv1 \citep{Choulga2019}. For a further details on lake distribution and depth, the representation of lakes by ECMWF in general see \cite{Choulga2019}  and \cite{Boussetta2021}. \newline 
@@ -252,19 +251,32 @@ The second is a selection of atmospheric and surface model fields from ERA5, als
 To expand V15 and V20 lake description (to V15X and V20X respectively, see Table \ref{tab:datasources}) their salinity and time variability information was generated. Even though static permanent water fits better to describe inland water distribution on average all year round, some areas (in Tropics especially) would really benefit from having monthly varying information as they have a very strong seasonal cycle, when size, shape and depth of a lake changes over the course of the year, leading to a significant changes in modelling the lake temperature response. Similarly, saline lakes behave very differently to fresh water lakes since increased salt concentrations affect the density, specific heat capacity, thermal conductivity, and turbidity, as well as evaporation rates, ice formation and ultimately the surface temperature. These two properties of time variability and salinity are often related; it is common for saline lakes to fill and dry out over the course of the season, which naturally also affects the relative saline concentration of the lake itself. To create a monthly varying lake cover first 12 monthly fractional land-sea masks based on JRC Monthly Water History v1.3 maps for 2010-2020 were created. Since the annual lake maps were created taking into account a lot of additional sources the extra condition on the monthly maps that the monthly water is equal or greater than permanent water distribution from fractional land-sea mask is enforced. To create an inland salt lake cover GLDBv3 salt lake list was used. First, in order to identify separate lakes on ~1km resolution lake cover (here max lake distribution based on monthly varying lake cover is used to ease further application), small sub-grid lakes and large lake coasts are masked, i.e. grid-cells that have water fraction less than 0.25. Next, number of connected grid-cells in each lake (i.e. connected with sides only) is computed. Then only lakes that have 100 and more connected grid-cells are vectorised, as at ERA5 resolution of ∼31km the grid-cells are quite large and can include a mixture of freshwater and saline lakes. Finally, saline lake vectors are selected by filtering vectors which have no saline lake point from GLDBv3 located – in total 147 large salt lake vectors, which were further used to filter non-saline lakes at ~1km resolution lake cover, finally aggregated to ~31km resolution. In the future it is planned to revisit this field and extend the list to include additional data.
 
 
-\begin{figure}
-	\subfloat[\label{fiig:Modistime1}]{\includegraphics[width=0.48\textwidth]{example-image-a}} \\
-	\caption{At ~31km resolution (a) V20 fractional lake cover and (b) difference between V20 and V15 lake covers. Over northern latitudes inland water increase in V20 compared to V15 is due to higher resolution input source and its better satellite image recognition methodologies; inland water reduction in V20 compared to V15 is due to anthropogenic land use changes (e.g. Aral Sea) or due to use of only permanent water (e.g. Australia) which was proven to better represent inland water distribution on annual basis.
-	} 
-	\label{fig:example_figure_a}
-	
-\end{figure}
+
 
 \begin{figure}
-	\subfloat[\label{fiig:Modistime1}]{\includegraphics[width=0.48\textwidth]{example-image-b}} \\
+	\subfloat[\label{fig:cl_map}]{\includegraphics[width=0.48\textwidth]{cl_map}} \\
+	\subfloat[\label{fig:cl_delta_map}]{\includegraphics[width=0.48\textwidth]{cl_delta_map}}
+	\caption{At ~31km resolution (a) V20 fractional lake cover and (b) difference between V20 and V15 lake covers. Over northern latitudes inland water increase in V20 compared to V15 is due to higher resolution input source and its better satellite image recognition methodologies; inland water reduction in V20 compared to V15 is due to anthropogenic land use changes (e.g. Aral Sea) or due to use of only permanent water (e.g. Australia) which was proven to better represent inland water distribution on annual basis.} 
+	\label{fig:example_figure_a}
+\end{figure}
+
+
+
+
+
+
+
+
+\begin{figure}
+	\subfloat[\label{fig:dl_map}]{\includegraphics[width=0.48\textwidth]{dl_map}} \\
+	\subfloat[\label{fig:dl_delta_map}]{\includegraphics[width=0.48\textwidth]{dl_map_diff}}
 	\caption{At ~18km resolution mean lake depth in meters (a) V15 and (b) V20. In general lake mean depth has decreased in V20 compared to V15 due to use of mean depth indirect estimates based on geological and climate information instead of default 25 meter value over lakes without in situ observations.} 
 	\label{fig:example_figure_b}
-\end{figure}
+	\end{figure}
+
+
+
+
 
 
 
@@ -284,11 +296,11 @@ To expand V15 and V20 lake description (to V15X and V20X respectively, see Table
 
 
 
-\begin{figure}
-	\subfloat[\label{fiig:Modistime1}]{\includegraphics[width=0.48\textwidth]{example-image-c}} \\
-	\caption{A brief step-by-step explanation of the LST algorithm for MYD11A1 v006 collection.} 
-	\label{fig:example_figure_c}
-\end{figure}
+%\begin{figure}
+%	\subfloat[\label{fiig:Modistime1}]{\includegraphics[width=0.48\textwidth]{example-image-c}} \\
+%	\caption{A brief step-by-step explanation of the LST algorithm for MYD11A1 v006 collection.} 
+%	\label{fig:example_figure_c}
+%\end{figure}
 
 \subsection{Joining the data}\label{sec:join}
 To join selected ERA5 global fields on a reduced Gaussian grid at ~31km resolution (information in UTC, 24 hourly maps per day) with Aqua-MODIS global LST data on a regular latitude-longitude grid at ~4km resolution (information in local solar time, 1 map per day), both datasets need to be at the same time space. First it is necessary to determine the absolute time (i.e. UTC) at which the MODIS observations were taken. Since in general all Aqua observations are taken at 1.30pm local solar time, it can be related to a UTC via observation longitude, following Eq. (1):
@@ -306,12 +318,12 @@ where longitude is in degrees, and UTC is rounded to the nearest hour. This conv
 \end{figure}
 
 
-\begin{figure*}
+\begin{figure}
 	\subfloat[\label{fig:modis_plot_1}]{\includegraphics[width=0.48\textwidth]{num_obs_map}} \\
 	\subfloat[\label{fig:modis_plot_2}]{\includegraphics[width=0.48\textwidth]{MODIS_obs_error}}
 	\caption{For 2019 at ~31km resolution: (a) Mean daily number of Aqua-MODIS observations mapped to each ERA5 data point. The swath of the Aqua satellite is clearly visible, with more observations over 70-60°N and 60-70°S areas as Aqua follows a polar orbit, south to north, and with less observations over Equator, complex orography areas (such as the Himalayas, the Andes and the Rocky Mountains), and the Siberian Tundra (due to increased cloud cover). (b) Average error in the Aqua-MODIS LST measurement. The raw Aqua-MODIS data at ~1km resolution provides categorical LST errors with bins ≤ 1K, 1-2K, 2-3K and > 3K. When averaging to the coarser resolution a weighted average over the 1km grid-cells is computed, where the median bin value is used, and 5K for the > 3K bin. This information helps to understand that abundant number of observation does not automatically mean high quality of LST (e.g. Australia).} 
 	\label{fig:MODIS_time_error_N}
-\end{figure*}
+\end{figure}
 \noindent The second step in joining ERA5 and Aqua-MODIS LST data uses a GPU-accelerated k-nearest neighbours algorithm \cite{Rapids}, where “nearness” on the sphere between two points is measured via the Haversine metric i.e. the geodesic distance H, following Eq. (2):
 \begin{equation}
 	H = 2 \arcsin (d)
@@ -348,7 +360,7 @@ VESPER is trained to learn the mapping between features $x$ and targets $y$ (i.e
 
  \noindent VESPER was trained on selected atmospheric and surface model fields from ERA5 (see Table \ref{table:definitions}) and Aqua-MODIS LST for 2016 and certain static version of the surface physiographic fields (see Table \ref{tab:datasources}), once VESPER was fully trained it was used to predict LST over the whole globe for 2019. Finally VESPER’s predictions can be compared to initial ERA5 skin temperatures and actual Aqua-MODIS LST for 2019 (see Figure \ref{fig:example_model}; VESPER trained using V15 surface physiographic fields is called VESPERV15, for full explanation see Table \ref{tab:vesper_table}). Figure \ref{fig:example_model} shows mean absolute errors (MAE) of differences between VESPERV15 LST predictions and Aqua-MODIS LST (see Figure \ref{fig:wasserstein_temperature}), and between ERA5 skin temperature and Aqua-MODIS LST (see Figure \ref{fig:wasserstein_precipitation}); based on that a conclusion can be drawn that VESPERV15 was able to learn corrections to ERA5, especially in the Himalayas and sub-Saharan Africa as well as Australia and the Amazon basin, leading to the globally averaged MAE reduction for predicted LST (MAEERA5=3.9K comparing to MAEVESPERV15=3.0K). All VESPER versions are trained with ERA5 fields for 2016 and with main surface physiographic fields V15. Then depending on the version some or all additional surface physiographic fields (see Table \ref{table:definitions}) are added. Note that all non-lake related climate fields such as vegetation cover or orography were updated in V20 field set comparing to V15 only in relation to the changing lake fields (i.e. if fraction of lake in the grid cell increased then other fractions like vegetation or bare ground should have increased accordingly). \newline 
  
- \begin{table}[h]
+ \begin{table*}
  	\begin{tabularx}{\textwidth}{lXXXX}
  		\toprule
  		Model & 2016 atmospheric and surface fields & 2016 main physiographic fields & 2020 main physiographic fields & Additional surface physiographic fields \\
@@ -362,7 +374,7 @@ VESPER is trained to learn the mapping between features $x$ and targets $y$ (i.e
  	\end{tabularx}
  	\caption{List of input files for different VESPER versions. c.f. Table \ref{table:definitions}}
  	\label{tab:vesper_table}
- \end{table}
+ \end{table*}
  
  
  
@@ -380,16 +392,19 @@ VESPER is trained to learn the mapping between features $x$ and targets $y$ (i.e
 	\item \textbf{Vegetation Updates.} The change in the high vegetation fraction \textit{cvh} is significant, but the change in lake cover \textit{cl} is not significant. This corresponds to grid-cells where large features like forests and woodlands have been updated, exchanged for bare ground or low vegetation.
 	\item \textbf{Glacier Updates}. The change in the glacier cover \textit{glm} is significant. This corresponds to any areas where the fraction of glacier ice has been updated.
 \end{itemize}
-All four VESPER versions were trained on 2016 data over the entire globe, and then used to predict LST for 2019. To compute the training noise (i.e. the network variance – changes in the LST predictability due to model training) every VESPER’s version was trained four times and each time with a different seed. To assess the changes of LST predictability due to the use of the updated surface physiographic fields instead of V15 field set (default) a simple metric $\delta_{\rm VM}$ following:
-\begin{equation}
-	\delta_{\rm VM} = MAE_{\rm VESPER\_VM} -  MAE_{\rm VESPER\_V15} = MAE \left[LST_{\rm VESPER\_VM}-LST_{\rm Aqua-MODIS}\right] - MAE \left[LST_{\rm VESPER\_V15}-LST_{\rm Aqua-MODIS}\right]
+All four VESPER versions were trained on 2016 data over the entire globe, and then used to predict LST for 2019. To compute the training noise (i.e. the network variance – changes in the LST predictability due to model training) every VESPER’s version was in turn trained four times and each time with a different seed. To assess the changes of LST predictability due to the use of the updated surface physiographic fields instead of V15 field set (default) a simple metric $\delta_{\rm VM}$ following:
+\begin{equation} 
+	\delta_{\rm VM} = \text{MAE}_{\rm VESPER\_VM} - \text{MAE}_{\rm VESPER\_15} 
 \end{equation}
-where $M$ represents one of the field set versions V20, V20X or V15X, and $MAE$ is computed over the whole prediction period of 2019; e.g. V20 describes the difference between MAE of differences between VESPER\_V20 LST predictions and Aqua-MODIS LST and between MAE of differences between VESPER\_V15 LST predictions and Aqua-MODIS LST, negative V20 indicates that VESPER\_V20 LST prediction is more accurate and vice versa. 
+
+%\begin{align}
+%\begin{eqnarray}
+%	\delta_{\rm VM} = MAE_{\rm VESPER\_VM} -  MAE_{\rm VESPER\_V15} = MAE \left[LST_{\rm VESPER\_VM}-LST_{\rm Aqua-MODIS}\right] - MAE \left[LST_{\rm VESPER\_V15}-LST_{\rm Aqua-MODIS}\right]
+%\end{eqnarray}
+%\end{align}
+where $M$ represents one of the field set versions V20, V20X or V15X, and $\text{MAE}$ is computed over the whole prediction period of 2019; e.g. V20 describes the difference between MAE of differences between VESPER\_V20 LST predictions and Aqua-MODIS LST and between MAE of differences between VESPER\_V15 LST predictions and Aqua-MODIS LST, negative V20 indicates that VESPER\_V20 LST prediction is more accurate and vice versa. 
 
 
-\clearpage
-\newpage
-\mbox{~}
 
 \section{Results}
 
@@ -397,21 +412,21 @@ where $M$ represents one of the field set versions V20, V20X or V15X, and $MAE$ 
 To understand if there is a way to automatically and rapidly assess accuracy of updated and/or new surface physiography fields and if their use in the atmospheric model increase predictability a neural network regression model VESPER was trained over 2016 data and used to predict LST for 2019. VESPER’s training noise was confirmed to be much smaller (\hl{estimated noise bias over all grid-cells for 2019 at ~31km resolution is 0.04K}) than differences in LST predictions by different VESPER configurations (\hl{degrees K}), so all changes in LST predictability can be attributed to the changes in surface physiographic fields. As a first attempt lake related information is assessed, namely lake cover (and land-sea mask and glacier cover as they are used for lake cover generation) and lake mean depth, that were created from scratch using new up-to-date high-resolution input datasets (see Table \ref{tab:datasources}) for the V20 (and V20X) field set; other surface physiographic fields (see Table \ref{table:definitions}) were regenerated from the same input sources as in initial V15 field set but taking into account that lake related fields were changed. In cases when existing in V15 lake cover water was removed in V20, its place could fill high or low vegetation, glacier or bare ground. To analyse results grid-cells were divided into four categories, and each was investigated in detail (see Table \ref{tab:summary_table} for the results aggregated over the whole globe).
 
 
-\begin{table}[h]
+\begin{table*}
 	\begin{tabular}{ccccccccc}
 		\hline
 		\multirow{2}{*}{Category} & \multirow{2}{*}{Number of grid cells} & 	\multicolumn{4}{c}{Training noise of VESPER\_VM, $K$} &\multicolumn{3}{c}{$\delta_{\rm VM}$} \\  
-		&&V15  & V15X & V20 & V20X &delta &delta & delta  \\
+		&&V15  & V15X & V20 & V20X & V15X &V20 & V20X  \\
 		\hline 
-		Lake&1631&0 & 0 & 0 & 0 &1 &1 & 1  \\
-		Lake-Ground&546&0 & 0 & 0 & 0 &1 &1 & 1  \\
-		Vegetation&58&0 & 0 & 0 & 0 &1 &1 & 1  \\
-		Glacier&1057&0 & 0 & 0 & 0 &1 &1 & 1  \\
+		Lake&1631&0.009 & 0.008 & 0.007 & - &- &-0.37 & -  \\
+		Lake-Ground&546&0.02 & 0.03 & 0.02 & - &- &-0.83 & -  \\
+		Vegetation&58&0.06 & 0.10 & 0.13 & - & -&+0.03 & -  \\
+		Glacier&1057& 0.07& 0.09 & 0.08 & - &-&-0.23  & -  \\
 		\bottomrule
 	\end{tabular}
 	\caption{Globally averaged differences VM between mean absolute error (MAE) of [VESPER\_VM LST predictions minus Aqua-MODIS LST] and MAE of [VESPER\_V15 LST predictions minus Aqua-MODIS LST] for 2019 at ~31km resolution (where M denotes V15X, V20, V20X field sets) per grid-cell category. Negative VM values indicate increase of LST predictability due to the use of the updated surface physiographic fields instead of V15 field set (default), positive VM values indicate decrease of LST predictability and suggest the presence of erroneous information in the surface physiographic fields. Training noise values are much smaller than the variance between different VESPER’s configurations, indicating that changes in LST predictability are mainly due to changes in the surface physiographic fields. \hl{TK: TBD}}
 	\label{tab:categorisation}
-\end{table}
+\end{table*}
 
 
 \subsubsection{Category: Lake updates}
@@ -490,7 +505,7 @@ For the Lake Updates category shows globally no significant difference in LST pr
 
 
 
-\begin{table}[h]
+\begin{table*}
 	\begin{tabular}{ccccccccc}
 		\hline
 		\multirow{2}{*}{Category} & \multirow{2}{*}{Grid-cells/location} & 	\multicolumn{4}{c}{Training noise of VESPER\_VM, $K$} &\multicolumn{3}{c}{$\delta_{\rm VM}$} \\  
@@ -516,7 +531,7 @@ For the Lake Updates category shows globally no significant difference in LST pr
 	\end{tabular}
 	\caption{Globally averaged differences VM between mean absolute error (MAE) of [VESPER\_VM LST predictions minus Aqua-MODIS LST] and MAE of [VESPER\_V15 LST predictions minus Aqua-MODIS LST] for 2019 at ~31km resolution (where M denotes V15X, V20, V20X field sets) for certain locations per grid-cell category. VESPER\_V20X LST predictability is consistently higher comparing to VESPER\_V20 at these locations, but for some locations, e.g. Lake Natron, is lower comparing to more basic VESPER\_V15. Conversely, VESPER\_V15X LST predictability globally is lower comparing to VESPER\_V20 and VESPER\_V20X, but can be higher for certain locations, where the updated V20 field set is less accurate. \hl{\textit{TK:TBD}}}
 	\label{tab:categorisation2}
-\end{table}
+\end{table*}
 \noindent For Lake Blanche, use of V20X field set reduces the LST prediction error by 2.43K compared to use of V20. This is in spite of the fact that current saline lake cover do not identify Lake Blanche as a salt lake, and so all the improvement in the prediction is from the additional information from the monthly lake maps. Same is for the salt marsh grid-cell in Northern India (not included in the saline lake cover), where LST prediction error is reduced by 2.19K only due to monthly lake maps information. For two freshwater grid-cells over Toshka Lakes in Afghanistan monthly lake maps provide sufficient information to allow for a marked improvement by 2.04K and 2.15K respectively \hl{(training noise in VESPER\_V15 XX, and in VESPER\_V20 XX )}. This is particularly notable since the size of the monthly lake corrections is small for these Afghanistan and Toshka Lakes grid-cells, i.e. +0.05 and +0.00 \hl{(NOTE - before here was 0.001 - suggest to write not mean over the year, but min and max value)}. However, under the updated V20 lake cover both of these areas have had all water removed and so adding in just a small amount of time variable water allows for much more accurate predictions. This example illustrates how VESPER both can identify inaccurate fields and quantify the value of updated fields, as well as emphasizing the importance of time variable lake fields more generally. For points where the saline maps do specify that the underlying lakes have salt water – Lake Natron and Salt Lake Desert – it is not possible to disentangle whether the gain is due to the saline maps or the monthly maps. The centre of Lake Natron exhibits a particularly notable improvement by 2.6K \hl{(training noise in VESPER\_V15 XX, and in VESPER\_V20 XX)}, whilst for the grid point on the northern edge the gain is more modest at 0.12K \hl{(training noise in VESPER\_V15 XX, and in VESPER\_V20 XX)}. This is likely due to the fact that the updated monthly maps provided much stronger corrections at the centre of the lake (mean monthly lake cover correction 0.13) than at the northern edge (mean correction 0.02). 
 
 
