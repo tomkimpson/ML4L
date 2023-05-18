@@ -1,0 +1,88 @@
+PMID- 28441326
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20180517
+LR  - 20181202
+IS  - 1424-8220 (Electronic)
+IS  - 1424-8220 (Linking)
+VI  - 17
+IP  - 5
+DP  - 2017 Apr 25
+TI  - Adaptive Interference Cancellation of ECG Signals.
+LID - 10.3390/s17050942 [doi]
+LID - 942
+AB  - As an important biological signal, electrocardiogram (ECG) signals provide a 
+      valuable basis for the clinical diagnosis and treatment of several diseases. 
+      However, its reference significance is based on the effective acquisition and 
+      correct recognition of ECG signals. In fact, this mV-level weak signal can be 
+      easily affected by various interferences caused by the power of magnetic field, 
+      patient respiratory motion or contraction, and so on from the sampling terminal 
+      to the receiving and display end. The overlapping interference affects the 
+      quality of ECG waveform, leading to the false detection and recognition of wave 
+      groups, and thus causing misdiagnosis or faulty treatment. Therefore, the 
+      elimination of the interference of the ECG signal and the subsequent wave group 
+      identification technology has been a hot research topic, and their study has 
+      important significance. Based on the above, this paper introduces two improved 
+      adaptive algorithms based on the classical least mean square (LMS) algorithm by 
+      introducing symbolic functions and block-processing concepts.
+FAU - Ren, Aifeng
+AU  - Ren A
+AD  - School of Electronic Engineering, Xidian University, Xi'an 710071, China. 
+      afren@mail.xidian.edu.cn.
+FAU - Du, Zhenxing
+AU  - Du Z
+AD  - School of Electronic Engineering, Xidian University, Xi'an 710071, China. 
+      ZhenxingDu@163.com.
+FAU - Li, Juan
+AU  - Li J
+AD  - School of Electronic Engineering, Xidian University, Xi'an 710071, China. 
+      lijuan12388@163.com.
+FAU - Hu, Fangming
+AU  - Hu F
+AD  - School of Electronic Engineering, Xidian University, Xi'an 710071, China. 
+      fangming95@163.com.
+FAU - Yang, Xiaodong
+AU  - Yang X
+AD  - School of Electronic Engineering, Xidian University, Xi'an 710071, China. 
+      xdyang@xidian.edu.cn.
+FAU - Abbas, Haider
+AU  - Abbas H
+AD  - King Saud University, Riyadh 11653, Saudi Arabia. hsiddiqui@ksu.edu.sa.
+AD  - National University of Sciences and Technology (NUST), Islamabad 44000, Pakistan. 
+      hsiddiqui@ksu.edu.sa.
+AD  - Department of Computer Sciences, Florida Institute of Technology (FIT), 
+      Melbourne, FL 32901, USA. hsiddiqui@ksu.edu.sa.
+LA  - eng
+PT  - Journal Article
+DEP - 20170425
+PL  - Switzerland
+TA  - Sensors (Basel)
+JT  - Sensors (Basel, Switzerland)
+JID - 101204366
+SB  - IM
+MH  - Algorithms
+MH  - Artifacts
+MH  - *Electrocardiography
+MH  - Humans
+MH  - Least-Squares Analysis
+MH  - Signal Processing, Computer-Assisted
+PMC - PMC5461066
+OTO - NOTNLM
+OT  - ECG signal
+OT  - LMS algorithm
+OT  - interference cancellation
+COIS- The authors declare no conflict of interest.
+EDAT- 2017/04/26 06:00
+MHDA- 2018/05/18 06:00
+CRDT- 2017/04/26 06:00
+PHST- 2017/03/11 00:00 [received]
+PHST- 2017/04/09 00:00 [revised]
+PHST- 2017/04/15 00:00 [accepted]
+PHST- 2017/04/26 06:00 [entrez]
+PHST- 2017/04/26 06:00 [pubmed]
+PHST- 2018/05/18 06:00 [medline]
+AID - s17050942 [pii]
+AID - sensors-17-00942 [pii]
+AID - 10.3390/s17050942 [doi]
+PST - epublish
+SO  - Sensors (Basel). 2017 Apr 25;17(5):942. doi: 10.3390/s17050942.
