@@ -1,4 +1,4 @@
-%% Copernicus Publications Manuscript Preparation Template for LaTeX Submissions
+	%% Copernicus Publications Manuscript Preparation Template for LaTeX Submissions
 %% ---------------------------------
 %% This template should be used for copernicus.cls
 %% The class file and some style files are bundled in the Copernicus Latex Package, which can be downloaded from the different journal webpages.
@@ -392,44 +392,62 @@ VESPER is trained to learn the mapping between features $x$ and targets $y$ (i.e
 	\item \textbf{Vegetation Updates.} The change in the high vegetation fraction \textit{cvh} is significant, but the change in lake cover \textit{cl} is not significant. This corresponds to grid-cells where large features like forests and woodlands have been updated, exchanged for bare ground or low vegetation.
 	\item \textbf{Glacier Updates}. The change in the glacier cover \textit{glm} is significant. This corresponds to any areas where the fraction of glacier ice has been updated.
 \end{itemize}
-All four VESPER versions were trained on 2016 data over the entire globe, and then used to predict LST for 2019. To compute the training noise (i.e. the network variance – changes in the LST predictability due to model training) every VESPER’s version was in turn trained four times and each time with a different seed. To assess the changes of LST predictability due to the use of the updated surface physiographic fields instead of V15 field set (default) a simple metric $\delta_{\rm VM}$ following:
+The VESPER models is trained on 2016 data over the entire globe, and then used to predict LST for 2019. The training of a neural network is inherently stochastic - the same model trained twice with the same data can settle in different local optima and so make different predictions. To make our conclusions robust against this training noise, each VESPER model is in turn trained 4 times. For each MODIS ground truth we then have 4 LST predictions per model. To assess the changes of LST predictability due to the use of the updated surface physiographic fields instead of V15 field set (default) we compare the mean absolute error (MAE) between different VESPER models using the a simple metric $\delta_{\rm VM}$ is used:
 \begin{equation} 
-	\delta_{\rm VM} = \text{MAE}_{\rm VESPER\_VM} - \text{MAE}_{\rm VESPER\_15} 
+	\delta_{\rm VM} = \text{MAE}_{\rm VESPER\_VM} - \text{MAE}_{\rm VESPER\_V15} 
 \end{equation}
-
-%\begin{align}
-%\begin{eqnarray}
-%	\delta_{\rm VM} = MAE_{\rm VESPER\_VM} -  MAE_{\rm VESPER\_V15} = MAE \left[LST_{\rm VESPER\_VM}-LST_{\rm Aqua-MODIS}\right] - MAE \left[LST_{\rm VESPER\_V15}-LST_{\rm Aqua-MODIS}\right]
-%\end{eqnarray}
-%\end{align}
-where $M$ represents one of the field set versions V20, V20X or V15X, and $\text{MAE}$ is computed over the whole prediction period of 2019; e.g. V20 describes the difference between MAE of differences between VESPER\_V20 LST predictions and Aqua-MODIS LST and between MAE of differences between VESPER\_V15 LST predictions and Aqua-MODIS LST, negative V20 indicates that VESPER\_V20 LST prediction is more accurate and vice versa. 
+where $M$ represents one of the field set versions V20, V20X or V15X, and $\text{MAE}$ is computed over the whole prediction period of 2019. In turn, the MAE is the error between the prediction of a VESPER model and the Aqua-MODIS LST. A negative $\delta_{\rm VM}$ indicates that the VESPER\_VM LST prediction is more accurate than the  VESPER\_V15 prediction, and vice versa. 
 
 
 
 \section{Results}
 
 \subsection{Evaluation of updated lake fields}\label{sec:3}
-To understand if there is a way to automatically and rapidly assess accuracy of updated and/or new surface physiography fields and if their use in the atmospheric model increase predictability a neural network regression model VESPER was trained over 2016 data and used to predict LST for 2019. VESPER’s training noise was confirmed to be much smaller (\hl{estimated noise bias over all grid-cells for 2019 at ~31km resolution is 0.04K}) than differences in LST predictions by different VESPER configurations (\hl{degrees K}), so all changes in LST predictability can be attributed to the changes in surface physiographic fields. As a first attempt lake related information is assessed, namely lake cover (and land-sea mask and glacier cover as they are used for lake cover generation) and lake mean depth, that were created from scratch using new up-to-date high-resolution input datasets (see Table \ref{tab:datasources}) for the V20 (and V20X) field set; other surface physiographic fields (see Table \ref{table:definitions}) were regenerated from the same input sources as in initial V15 field set but taking into account that lake related fields were changed. In cases when existing in V15 lake cover water was removed in V20, its place could fill high or low vegetation, glacier or bare ground. To analyse results grid-cells were divided into four categories, and each was investigated in detail (see Table \ref{tab:summary_table} for the results aggregated over the whole globe).
+To understand if there is a way to automatically and rapidly assess accuracy of updated and/or new surface physiography fields and if their use in the atmospheric model increase predictability a neural network regression model VESPER was trained over 2016 data and used to predict LST for 2019. 
+
+
+
+
+
+
+VESPER’s training noise was confirmed to be much smaller (\hl{estimated noise bias over all grid-cells for 2019 at ~31km resolution is 0.04K}) than differences in LST predictions by different VESPER configurations (\hl{degrees K}), so all changes in LST predictability can be attributed to the changes in surface physiographic fields. 
+
+
+
+
+
+
+
+
+As a first attempt lake related information is assessed, namely lake cover (and land-sea mask and glacier cover as they are used for lake cover generation) and lake mean depth, that were created from scratch using new up-to-date high-resolution input datasets (see Table \ref{tab:datasources}) for the V20 (and V20X) field set; other surface physiographic fields (see Table \ref{table:definitions}) were regenerated from the same input sources as in initial V15 field set but taking into account that lake related fields were changed. In cases when existing in V15 lake cover water was removed in V20, its place could fill high or low vegetation, glacier or bare ground. To analyse results grid-cells were divided into four categories, and each was investigated in detail (see Table \ref{tab:summary_table} for the results aggregated over the whole globe).
+
+
 
 
 \begin{table*}
 	\begin{tabular}{ccccccccc}
-		\hline
-		\multirow{2}{*}{Category} & \multirow{2}{*}{Number of grid cells} & 	\multicolumn{4}{c}{Training noise of VESPER\_VM, $K$} &\multicolumn{3}{c}{$\delta_{\rm VM}$} \\  
+		\toprule
+		\multirow{2}{*}{Category} & \multirow{2}{*}{Number of grid cells} & 	\multicolumn{4}{c}{Training noise of VESPER\_VM, $K$} &\multicolumn{3}{c}{$\delta_{\rm VM}$, $K$} \\  
 		&&V15  & V15X & V20 & V20X & V15X &V20 & V20X  \\
 		\hline 
-		Lake&1631&0.009 & 0.008 & 0.007 & - &- &-0.37 & -  \\
-		Lake-Ground&546&0.02 & 0.03 & 0.02 & - &- &-0.83 & -  \\
-		Vegetation&58&0.06 & 0.10 & 0.13 & - & -&+0.03 & -  \\
-		Glacier&1057& 0.07& 0.09 & 0.08 & - &-&-0.23  & -  \\
+		Lake&1631&0.09 & 0.09 & 0.08 & 0.09 &$-0.20$ &$-0.37$ & $-0.37$  \\
+		Lake-Ground&546&0.16 & 0.17 & 0.15 & 0.09 &$-0.56$ &$-0.83$ & $-1.12$ \\
+		Vegetation&58&0.25 & 0.31 & 0.36& 0.46 & $-4 \times 10^{-3}$&+0.04 & $+3 \times 10^{-4}$  \\
+		Glacier&1057& 0.27& 0.30& 0.28 & 0.25 &$-9\times 10^{-3}$&$-0.22$ & $-0.28$  \\
 		\bottomrule
 	\end{tabular}
 	\caption{Globally averaged differences VM between mean absolute error (MAE) of [VESPER\_VM LST predictions minus Aqua-MODIS LST] and MAE of [VESPER\_V15 LST predictions minus Aqua-MODIS LST] for 2019 at ~31km resolution (where M denotes V15X, V20, V20X field sets) per grid-cell category. Negative VM values indicate increase of LST predictability due to the use of the updated surface physiographic fields instead of V15 field set (default), positive VM values indicate decrease of LST predictability and suggest the presence of erroneous information in the surface physiographic fields. Training noise values are much smaller than the variance between different VESPER’s configurations, indicating that changes in LST predictability are mainly due to changes in the surface physiographic fields. \hl{TK: TBD}}
 	\label{tab:categorisation}
-\end{table*}
+\end{table*}	
 
 
 \subsubsection{Category: Lake updates}
+\begin{figure}
+	\includegraphics[width=\columnwidth]{categories_lakes_histogram}
+	\caption{some caption} 
+	\label{fig:example_figure_histogram}
+\end{figure}
+
 Lake Updates category shows significant improvements in LST predictability if using V20 field set instead of V15 (see Table \ref{tab:categorisation} and Figure \ref{fig:bitstring_100110}) – prediction accuracy increased globally (over 1631 grid-cells) on average by 0.45K \hl{(training noise in VESPERV15 XX, and in VESPERV20 XX)}, most notably in Australia and the Aral sea (two major regions where ephemeral lakes were removed and inland water distribution made up-to-date respectively, discussed in Surface physiographic fields section). In addition to the areas with a notable improvement in the prediction accuracy, there are some noteworthy regions where the predictions got worse (see red points in Figure \ref{fig:bitstring_100110}) suggesting inaccuracies or lack of information in the updated surface physiographic fields. A few of the most noteworthy grid-cells (see red points highlighted with green circles in Figure \ref{fig:bitstring_100110}) are:
 \begin{itemize}
 	\item \textbf{Tanzania}. There are two grid-cells at the centre and northern edge of Lake Natron, in Tanzania (lies to the south-east of Lake Victoria) where VESPERV20 LST predictions are less accurate than VESPERV15 \hl{(training noise in VESPERV15 XX and XX, and in VESPERV20 XX and XX, for the central and northern edge of the lake respectively)}. For the central point (see Figure \ref{fig:lakes1}) the lake fraction was increased from 0.04 in V15 to 0.39 in V20 field set; for the northern edge point lake fraction was also increased in V20 comparing to V15 field set along with a small decrease (∼0.1) in the low vegetation fraction. However, Lake Natron is a highly saline lake that often dries out, with high temperatures, high levels of evaporation and irregular rainfall. It is a highly complex and variable regime that is not well described by simply increasing fraction of permanent fresh water, and indeed results suggest that with current lake parametrization scheme it may be beneficial to keep the lake fraction low or introduce extra descriptor, e.g. salinity. 
@@ -464,6 +482,11 @@ Lake Updates category shows significant improvements in LST predictability if us
 	\label{fig:example_test}
 \end{figure*}
 
+\begin{figure}
+	\includegraphics[width=\columnwidth]{categories_v15_v20}
+	\caption{some caption} 
+	\label{fig:lake_sub_categories}
+\end{figure}
 
 
 \subsubsection{Category: Vegetation Updates}
@@ -509,24 +532,24 @@ For the Lake Updates category shows globally no significant difference in LST pr
 	\begin{tabular}{ccccccccc}
 		\hline
 		\multirow{2}{*}{Category} & \multirow{2}{*}{Grid-cells/location} & 	\multicolumn{4}{c}{Training noise of VESPER\_VM, $K$} &\multicolumn{3}{c}{$\delta_{\rm VM}$} \\  
-		&&V15  & V15X & V20 & V20X &delta &delta & delta  \\
+		&&V15  & V15X & V20 & V20X & V15X &V20 & V20X  \\
 		\hline 
-		\multirow{9}{*}{Lake}&Lake Natron centre, Tanzania&0 & 0 & 0 & 0 &1 &1 & 1  \\
-		&Lake Natron north, Tanzania&0 & 0 & 0 & 0 &1 &1 & 1  \\
-		&Lake Blanche, Australia&0 & 0 & 0 & 0 &1 &1 & 1  \\
-		&Great Salt Lake Desert, Utah&0 & 0 & 0 & 0 &1 &1 & 1  \\
-		&Farah Province, Afghanistan&0 & 0 & 0 & 0 &1 &1 & 1  \\
-		&Gujarat Province, India&0 & 0 & 0 & 0 &1 &1 & 1  \\
-		&Toshka Lakes, Egypt&0 & 0 & 0 & 0 &1 &1 & 1  \\
-		&North-West Canada&0 & 0 & 0 & 0 &1 &1 & 1  \\
-		&Astrakham Nature reserve, north edge east of the Caspian Sea&0 & 0 & 0 & 0 &1 &1 & 1  \\
+		\multirow{9}{*}{Lake}&Lake Natron centre, Tanzania&0.14 & 1.70 & 0.93 & 0.61 &1.35 &2.45 & 2.61  \\
+		&Lake Natron north, Tanzania&0.15 & 0.43 & 0.59 & 0.20 &0.72 &1.57 & 1.24  \\
+		&Lake Blanche, Australia&0.96 & 0.80 & 1.78 & 0.32 &-0.42 &0.03 & -0.75  \\
+		&Great Salt Lake Desert, Utah&0.30 & 0.48 & 1.06 & 0.71 &-0.18 &2.91 & 0.25	  \\
+		&Farah Province, Afghanistan&0.016 & 0.22 & 0.10 & 0.25 &0.22 &0.19 & -0.13  \\
+		&Gujarat Province, India&2.93 & 1.30 & 0.48 & 1.20 &-1.26 &4.21 & \textcolor{red}{5.24}  \\
+		&Toshka Lakes, Egypt&1.05 & 0.46 & 0.30 & 0.16 &-0.39 &\textcolor{red}{-1.14} & -1.28  \\
+		&North-West Canada&0.07 & 0.06 & 0.05 & 0.06 &-0.04 &-0.067 & -0.067  \\
+		&Astrakham Nature reserve, north edge east of the Caspian Sea&0.20 & 0.30 & 0.26 & 0.30 &0.05 &0.012 & -0.007  \\
 		\hline 
-		Lake-ground&-&0 & 0 & 0 & 0 &1 &1 & 1  \\
+		Lake-ground&-& &  &  &  & & &   \\
 		\hline
 		Vegetation&-&0 & 0 & 0 & 0 &1 &1 & 1  \\
 		\hline 
-		\multirow{2}{*}{Glacier}&Bering Glacier, Alaskan gulf&0 & 0 & 0 & 0 &1 &1 & 1  \\
-		&Juncal Glacier, Chilean Andes &0 & 0 & 0 & 0 &1 &1 & 1  \\
+		\multirow{2}{*}{Glacier}&Bering Glacier, Alaskan gulf&0.59 & 0.56 & 0.25 & 0.090 &-0.54 &-0.16 & -0.80  \\
+		&Juncal Glacier, Chilean Andes &0.78 & 0.34 & 1.22 & 0.41 &0.11 &1.26 & 1.20  \\
 		\bottomrule
 	\end{tabular}
 	\caption{Globally averaged differences VM between mean absolute error (MAE) of [VESPER\_VM LST predictions minus Aqua-MODIS LST] and MAE of [VESPER\_V15 LST predictions minus Aqua-MODIS LST] for 2019 at ~31km resolution (where M denotes V15X, V20, V20X field sets) for certain locations per grid-cell category. VESPER\_V20X LST predictability is consistently higher comparing to VESPER\_V20 at these locations, but for some locations, e.g. Lake Natron, is lower comparing to more basic VESPER\_V15. Conversely, VESPER\_V15X LST predictability globally is lower comparing to VESPER\_V20 and VESPER\_V20X, but can be higher for certain locations, where the updated V20 field set is less accurate. \hl{\textit{TK:TBD}}}
