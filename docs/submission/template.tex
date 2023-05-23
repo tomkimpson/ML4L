@@ -415,11 +415,11 @@ As a first attempt lake related information is assessed, namely lake cover (and 
 		\hline 
 		Lake&1631 & 0.07& 0.02& 0.02& 0.02&  -0.2 & -0.37&-0.37 \\
 		Lake-Ground&546 & 0.15 &0.05& 0.04& 0.06 & -0.56 &-0.83& -0.84 \\
-		Vegetation&58 & 0.04 &0.1& 0.15& 0.21&  -$4 \times 10^{-3}$&0.04 & -3 $\times 10^-4$ \\
+		Vegetation&58 & 0.04 &0.1& 0.15& 0.21&  -$4 \times 10^{-3}$&0.04 & -3 $\times 10^{-4}$ \\
 		Glacier&1057 & 0.03& 0.08& 0.02& 0.06 & -0.01& -0.22& -0.28  \\
 		\bottomrule
 	\end{tabular}
-	\caption{Globally averaged differences VM between mean absolute error (MAE) of [VESPER\_VM LST predictions minus Aqua-MODIS LST] and MAE of [VESPER\_V15 LST predictions minus Aqua-MODIS LST] for 2019 at ~31km resolution (where M denotes V15X, V20, V20X field sets) per grid-cell category. Negative VM values indicate increase of LST predictability due to the use of the updated surface physiographic fields instead of V15 field set (default), positive VM values indicate decrease of LST predictability and suggest the presence of erroneous information in the surface physiographic fields. Training noise values are much smaller than the variance between different VESPER’s configurations, indicating that changes in LST predictability are mainly due to changes in the surface physiographic fields.}
+	\caption{Globally averaged differences VM between mean absolute error (MAE) of [VESPER\_VM LST predictions minus Aqua-MODIS LST] and MAE of [VESPER\_V15 LST predictions minus Aqua-MODIS LST] for 2019 at ~31km resolution (where M denotes V15X, V20, V20X field sets) per grid-cell category. Negative VM values indicate increase of LST predictability due to the use of the updated surface physiographic fields instead of V15 field set (default), positive VM values indicate decrease of LST predictability and suggest the presence of erroneous information in the surface physiographic fields. Training noise values are much smaller than the variance between different VESPER’s configurations, indicating that changes in LST predictability are mainly due to changes in the surface physiographic fields. The quoted noise is the standard deviation of the prediction errors of Fig. \ref{fig:global_shift_plot}.}
 	\label{tab:categorisation}
 \end{table*}	
 \begin{figure}
@@ -441,47 +441,105 @@ As a first attempt lake related information is assessed, namely lake cover (and 
 
 Lake Updates category shows significant improvements in LST predictability if using V20 field set instead of V15 – prediction accuracy increased globally (over 1631 grid-cells) on average by 0.37K. For the lakes category, the training noise in V20 was generally small $\sigma_{\rm V20} \sim 0.02$ K, with the V15 predictions a little more noisy with $\sigma_{\rm V15} \sim 0.07$ K, but this noise is much less than the improvement - as can be seen in Fig. \ref{fig:global_shift_plot} every V20 iteration significantly outperforms every V15 iteration. In Fig. \ref{fig:example_figure_histogram} we plot the distribution of the mean LST error (averaged across each of the 4 trained VESPER iterations) for all lake grid points, for both V15 and V20. Evidently the V20 field significantly improve the high tail behaviour relative to V15, as well as shifting the median of the distribution to lower errors. Particular regions where the V20 physiographic fields notably improved performance were in Australia and the Aral sea (Fig. \ref{fig:bitstring_100110}). These are two major regions where ephemeral lakes were removed and inland water distribution made up-to-date respectively, as discussed in Surface physiographic fields section. In addition to the areas with a notable improvement in the prediction accuracy, there are some noteworthy regions where the predictions got worse (see red points in Figure \ref{fig:bitstring_100110}) suggesting inaccuracies or lack of information in the updated surface physiographic fields. A few of the most noteworthy grid-cells (see red points highlighted with green circles in Figure \ref{fig:bitstring_100110}) are:
 \begin{itemize}
+	
+		\item \textbf{Northern India.} Grid-cell lies in the state of Gujarat, India, close to the border with Pakistan. Lake fraction was increased from 0.59 in V15 to 0.71 in V20 field set, along with the lake depth increase from 2.58m to 3.76m. However, this point lies on a river delta within the Great Raan of Kutch, a large area of salt marshes (see Figure \ref{fig:lakes5}), known for having highly seasonal rainfall, with frequent flooding during the monsoon season and a long dry season. The surface itself also undulates with areas of higher sandy ground known as medaks, with greater levels of vegetation. It is evidently a complex and highly time variable area and additional static fraction of fresh water provided via V20 field set is not enough.
+	
+	
+	\item \textbf{Salt Lake City, North America.} Grid-cell lies within the Great Salt Lake Desert, just to the west of the Great Salt Lake, Utah, US. Lake fraction was completely removed from over 0.50 in V15 to 0.00 in V20 field set, grid-cell is fully covered with bare ground in V20 field set. Whilst the training noise is significant at this grid point (0.26 for V15, 0.92 for V20) is it smaller than the error metric ($\delta_{V20} = 2.92K$) and we can see from Fig \ref{fig:lake_sub_categories} that the V20 predictions consistently underperform the V15 predictions. Whilst this area primarily is bare ground, satellite imagery also suggests the presence of a presumably highly saline lake (see Figure \ref{fig:lakes3}); in addition area has a large degree of orography and high elevation (∼1300m) which probably further complicates the surface temperature response. A more accurate description that accounts for the seasonality of the surface water and the salinity is necessary here.
+	
+
 	\item \textbf{Tanzania}. There are two grid-cells at the centre and northern edge of Lake Natron, in Tanzania (lies to the south-east of Lake Victoria) where VESPERV20 LST predictions are less accurate than VESPERV15. For the central point (see Figure \ref{fig:lakes1}) the lake fraction was increased from 0.04 in V15 to 0.39 in V20 field set; for the northern edge point lake fraction was also increased in V20 comparing to V15 field set along with a small decrease (∼0.1) in the low vegetation fraction. However, Lake Natron is a highly saline lake that often dries out, with high temperatures, high levels of evaporation and irregular rainfall. It is a highly complex and variable regime that is not well described by simply increasing fraction of permanent fresh water, and indeed results suggest that with current lake parametrization scheme it may be beneficial to keep the lake fraction low or introduce extra descriptor, e.g. salinity. 
-	\item \textbf{Australia}. Grid-cell contains Lake Blanche, in South Australia (see Figure \ref{fig:lakes2}). Lake fraction was completely removed from 0.44 in V15 to 0.00 in V20 field set, along with lake depth reduction from 5.5m to 1.0m, and low vegetation fraction increase from 0.53 to 0.97. Whilst the removal of ephemeral water is generally accurate for Australia, for this grid-cell it lowers the predictability of VESPERV20 comparing to VESPERV15. However the shift is only minor $\delta_{V20} = +0.03$ and far outweighed by the training noise (0.83, 1.54 for V15 and V20 respectively) so it is difficult to draw any meaningful conclusions. Lake Blanche is a salt lake that lies below sea level within a wetlands system (so will retain some surface water or soil moisture which will influence the temperature response), fairly devoid of any obvious vegetation. V20 field set describes grid-cell as above sea level (same in V15 orography fields) completely dry region covered with short grass (i.e. low vegetation), which is not an accurate description which could contribute to the lack of an improvement in the predictions.
-	–\item \textbf{Salt Lake City, North America.} Grid-cell lies within the Great Salt Lake Desert, just to the west of the Great Salt Lake, Utah, US. Lake fraction was completely removed from GTR 0.50 in V15 to 0.00 in V20 field set, grid-cell is fully covered with bare ground in V20 field set. Whilst the training noise is significant at this grid point (0.26 for V15, 0.92 for V20) is it smaller than the error metric ($\delta_{V20} = 2.92K$) and we can see from Fig \ref{fig:lake_sub_categories} that the V20 predictions consistently underperform the V15 predictions. Whilst this area primarily is bare ground, satellite imagery also suggests the presence of a presumably highly saline lake (see Figure \ref{fig:lakes3}); in addition area has a large degree of orography and high elevation (∼1300m) which probably further complicates the surface temperature response. A more accurate description that accounts for the seasonality of the surface water and the salinity is necessary here.
-	\item  \textbf{Afghanistan}. Grid-cell lies in the south-west of Afghanistan, close to the border with Iran. Lake fraction was completely removed from 0.11 in V15 to 0.00 in V20 field set. However, this area in fact has an extensive network of mountain tributaries which feed an ephemeral lake (e.g. see Figure \ref{fig:lakes4}). Most likely there should be some inland water within a year, especially during the rainy season, so complete water removal might be an overcorrection.
-	\item \textbf{Northern India.} Grid-cell lies in the state of Gujarat, India, close to the border with Pakistan. Lake fraction was increased from 0.59 in V15 to 0.71 in V20 field set, along with the lake depth increase from 2.58m to 3.76m. However, this point lies on a river delta within the Great Raan of Kutch, a large area of salt marshes (see Figure \ref{fig:lakes5}), known for having highly seasonal rainfall, with frequent flooding during the monsoon season and a long dry season. The surface itself also undulates with areas of higher sandy ground known as medaks, with greater levels of vegetation. It is evidently a complex and highly time variable area and additional static fraction of fresh water provided via V20 field set is not enough.
-	\item  \textbf{Egypt}. Grid-cell contains a section of the Toshka Lakes, lies to the west of the River Nile in the south of Egypt. Lake fraction was completely removed from 0.36 in V15 to 0.00 in V20 field set, along with the lake depth decrease from 25m to 6m \hl{(training noise in VESPERV15 XX, and in VESPERV20 XX)}. However, whilst this is a very dry region, it contains part of Toshka Lakes, a collection of endorheic waterbodies newly formed (and growing) due to overflow from Lake Nasser (see Figure \ref{fig:lakes6}). These lakes are known to be highly time variable, with a periodic seasonality on top of the general increasing lake sizes, and the formation of surrounding wetlands. These lakes rapidly fill and dry out; during the training and validation years of VESPER (along with the decade before) lakes were mostly dry, whereas during the testing year they were filled. 
+
+	\item \textbf{Algeria}. This grid point lies in Algeria, at the northern edge of the Chott Felrhir, an endoheric salt lake. Similar to the Great Salt Lake Desert, lake fraction was completely removed from 0.33 in V15 to 0.0 in V20. However, Chott Felrhir goes through frequent periods of flooding where the lake is filled by multiple large wadi, and corresponding dry periods where the lake becomes a salt pan. As with the Great Salt Lake Desert it is also a highly variable, complex area requires additional consideration of the salinity and the seasonality 
+	
+	
+	\item \textbf{Lake Chad}
+	
+	
+	
+	
+	\item \textbf{Al Fashaga}
+	
+	
+	
+	\item \textbf{Tersakan Lake}
+	
+	
+	\item \textbf{Lake Urmia}
+	
+
+
 \end{itemize}
-\noindent It is worth mentioning a vast area north-west of Canada where VESPERV20 slightly underperforms VESPERV15 \hl{(V20 averaged over the area is +0.02K; training noise in VESPERV15 XX, and in VESPERV20 XX)}, but it is hard to draw any definitive conclusions – whilst LST predictions for some grid-cells become more accurate, for some – less accurate. For these high latitude regions there is a large uncertainty for lake location (thermokarst lakes emerge due to permafrost thawing, have small area and can quickly disappear) and lake depth which influence water freezing/thawing dates and ice duration. In addition, observations in these regions are more uncertain and have greater errors due to increased cloud cover. Another interesting region is the north-eastern edge of the Caspian Sea, where VESPERV20 underperforms VESPERV15 (V20 averaged over four grid-cells is +0.65K; \hl{training noise in VESPERV15 XX, and in VESPERV20 XX)}. Location is the Astrakhan Nature Reserve (an extensive wetland). In general, lake fraction was reduced and vegetation fraction increased accordingly in V20 comparing to V15 field set. However, it seems that permanent fresh water fraction is not enough to accurately describe the region and additional monthly varying water cover and/or wetland cover should be introduced. \newline 
+
+
+
+
+
+%
+%	\item  \textbf{Egypt}. Grid-cell contains a section of the Toshka Lakes, lies to the west of the River Nile in the south of Egypt. Lake fraction was completely removed from 0.36 in V15 to 0.00 in V20 field set, along with the lake depth decrease from 25m to 6m \hl{(training noise in VESPERV15 XX, and in VESPERV20 XX)}. However, whilst this is a very dry region, it contains part of Toshka Lakes, a collection of endorheic waterbodies newly formed (and growing) due to overflow from Lake Nasser (see Figure \ref{fig:lakes6}). These lakes are known to be highly time variable, with a periodic seasonality on top of the general increasing lake sizes, and the formation of surrounding wetlands. These lakes rapidly fill and dry out; during the training and validation years of VESPER (along with the decade before) lakes were mostly dry, whereas during the testing year they were filled. 
+%	
+%\item \textbf{Australia}. Grid-cell contains Lake Blanche, in South Australia (see Figure \ref{fig:lakes2}). Lake fraction was completely removed from 0.44 in V15 to 0.00 in V20 field set, along with lake depth reduction from 5.5m to 1.0m, and low vegetation fraction increase from 0.53 to 0.97. Whilst the removal of ephemeral water is generally accurate for Australia, for this grid-cell it lowers the predictability of VESPERV20 comparing to VESPERV15. However the shift is only minor $\delta_{V20} = +0.03$ and far outweighed by the training noise (0.83, 1.54 for V15 and V20 respectively) so it is difficult to draw any meaningful conclusions. Lake Blanche is a salt lake that lies below sea level within a wetlands system (so will retain some surface water or soil moisture which will influence the temperature response), fairly devoid of any obvious vegetation. V20 field set describes grid-cell as above sea level (same in V15 orography fields) completely dry region covered with short grass (i.e. low vegetation), which is not an accurate description which could contribute to the lack of an improvement in the predictions.
+
+%	\item  \textbf{Afghanistan}. Grid-cell lies in the south-west of Afghanistan, close to the border with Iran. Lake fraction was completely removed from 0.11 in V15 to 0.00 in V20 field set. However, this area in fact has an extensive network of mountain tributaries which feed an ephemeral lake (e.g. see Figure \ref{fig:lakes4}). Most likely there should be some inland water within a year, especially during the rainy season, so complete water removal might be an overcorrection.
+
+
+\textcolor{red}{TK: I have remove discussion of Canada and Caspian. These areas don't show as severe underperformance now - highly time variable}
+
+
+%\noindent It is worth mentioning a vast area north-west of Canada where VESPERV20 slightly underperforms VESPERV15 \hl{(V20 averaged over the area is +0.02K; training noise in VESPERV15 XX, and in VESPERV20 XX)}, but it is hard to draw any definitive conclusions – whilst LST predictions for some grid-cells become more accurate, for some – less accurate. For these high latitude regions there is a large uncertainty for lake location (thermokarst lakes emerge due to permafrost thawing, have small area and can quickly disappear) and lake depth which influence water freezing/thawing dates and ice duration. In addition, observations in these regions are more uncertain and have greater errors due to increased cloud cover. Another interesting region is the north-eastern edge of the Caspian Sea, where VESPERV20 underperforms VESPERV15 (V20 averaged over four grid-cells is +0.65K; \hl{training noise in VESPERV15 XX, and in VESPERV20 XX)}. Location is the Astrakhan Nature Reserve (an extensive wetland). In general, lake fraction was reduced and vegetation fraction increased accordingly in V20 comparing to V15 field set. However, it seems that permanent fresh water fraction is not enough to accurately describe the region and additional monthly varying water cover and/or wetland cover should be introduced. \newline 
 
 
 \noindent Lake-Ground Updates sub-category, which restricts analysis to only points with no significant change in the vegetation, allows to more clearly see the effect of adding/removing water on/from bare ground. Sub-category shows even bigger improvements in LST predictability if using V20 field set instead of V15 (see Table 4) – prediction accuracy increased globally (over 546 grid-cells) on average by 1.12K (training noise in VESPERV15 XX, and in VESPERV20 XX). This indicates that whilst the updated lake fields are globally accurate and informative, providing on average over the globe, over a year, more than an extra Kelvin of predictive performance, the updates to the vegetation fields tamper this performance gain, indicating potential problem with the vegetation fields
 
 
+%#ake_haver.png
 \begin{figure*}[t]
-	\includegraphics[width=0.98\textwidth]{lake_haver.png}
+	\includegraphics[width=0.98\textwidth]{updated_lakes_plot}
 	\caption{Differences V20 between mean absolute error (MAE) of [VESPER\_V20 LST predictions minus Aqua-MODIS LST] and MAE of [VESPER\_V15 LST predictions minus Aqua-MODIS LST] for 2019 at ~31km resolution for ‘Lake Updates’ category (i.e. where lake cover changed significantly). Generally, VESPER\_V20 LST predictions are more accurate, for example in the Aral sea and Australia, indicating that V20 field set is informative and accurate. In contrast, there are some regions where the predictions get worse, for example at higher latitudes which is likely due to less accurate V20 field set over the area (i.e. lake location, lake mean depth values which influence lake freezing/thawing dates) and less valid Aqua-MODIS observations e.g. due to clouds. 7 points (two are overlaid in sub-Saharan Africa) where VESPER\_V20 LST prediction gets notably worse compared to VESPER\_V15 are highlighted with green circles and discussed in the text.}
 	\label{fig:bitstring_100110}
 \end{figure*}
 
+%\begin{figure*}
+%	\centering
+%	\subfloat[Lake Natron, Tanzania \label{fig:lakes1}]{\includegraphics[width=0.45\textwidth]{LakeNatronCentre4.jpg}} \hspace{1mm}
+%	\subfloat[Lake Blanche, Australia \label{fig:lakes2}]{\includegraphics[width=0.45\textwidth]{Australia1}} \\
+%	\subfloat[Great Salt Lake Desert, Utah\label{fig:lakes3}]{\includegraphics[width=0.45\textwidth]{SLC1.jpg}} \hspace{1mm}
+%	\subfloat[Farah Province, Afghanistan\label{fig:lakes4}]{\includegraphics[width=0.45\textwidth]{Afghan1}} \\
+%	\subfloat[Gujarat Province, India\label{fig:lakes5}]{\includegraphics[width=0.45\textwidth]{India1.jpg}} \hspace{1mm}
+%	\subfloat[Toshka Lakes, Egypt\label{fig:lakes6}]{\includegraphics[width=0.45\textwidth]{Egypt1}}
+%	\caption{Satellite imagery of the problematic Lake Updates points highlighted in Fig. \ref{fig:bitstring_100110} where the V20 predictions are worse than the V15 predictions. Generally the updated V20 fields remove water, only considering permanent water. However these regions have highly time variable waters, which are better captured on average by the V15 fields. The images are centred on the grid box coordinates. Note that the lengthscales are different for some images.} 
+%	\label{fig:example_test}
+%\end{figure*}
+
+
 \begin{figure*}
 	\centering
-	\subfloat[Lake Natron, Tanzania \label{fig:lakes1}]{\includegraphics[width=0.45\textwidth]{LakeNatronCentre4.jpg}} \hspace{1mm}
-	\subfloat[Lake Blanche, Australia \label{fig:lakes2}]{\includegraphics[width=0.45\textwidth]{Australia1}} \\
-	\subfloat[Great Salt Lake Desert, Utah\label{fig:lakes3}]{\includegraphics[width=0.45\textwidth]{SLC1.jpg}} \hspace{1mm}
-	\subfloat[Farah Province, Afghanistan\label{fig:lakes4}]{\includegraphics[width=0.45\textwidth]{Afghan1}} \\
 	\subfloat[Gujarat Province, India\label{fig:lakes5}]{\includegraphics[width=0.45\textwidth]{India1.jpg}} \hspace{1mm}
-	\subfloat[Toshka Lakes, Egypt\label{fig:lakes6}]{\includegraphics[width=0.45\textwidth]{Egypt1}}
+	\subfloat[Great Salt Lake Desert, Utah\label{fig:lakes3}]{\includegraphics[width=0.45\textwidth]{SLC1.jpg}} \hspace{1mm} \\
+	\subfloat[Lake Natron, Tanzania \label{fig:lakes1}]{\includegraphics[width=0.45\textwidth]{LakeNatronCentre4.jpg}} \hspace{1mm}
+	\subfloat[Chott Felrhir \label{fig:lakes44s}]{\includegraphics[width=0.45\textwidth]{example-image-a}} \hspace{1mm} \\
+	\subfloat[Lake Chad \label{fig:lakes11}]{\includegraphics[width=0.45\textwidth]{example-image-b}} \hspace{1mm}
+	\subfloat[Al Fashaga \label{fig:lakes444s}]{\includegraphics[width=0.45\textwidth]{example-image-c}} \hspace{1mm} \\
 	\caption{Satellite imagery of the problematic Lake Updates points highlighted in Fig. \ref{fig:bitstring_100110} where the V20 predictions are worse than the V15 predictions. Generally the updated V20 fields remove water, only considering permanent water. However these regions have highly time variable waters, which are better captured on average by the V15 fields. The images are centred on the grid box coordinates. Note that the lengthscales are different for some images.} 
 	\label{fig:example_test}
 \end{figure*}
 
+
+
+
+
+
 \begin{figure}
-	\includegraphics[width=\columnwidth]{selected_points_shift_plot}
-	\caption{some caption} 
+	\includegraphics[width=\columnwidth]{selected_points_shift_plot_new}
+	\caption{As Fig. \ref{fig:global_shift_plot} for selected locations in the lakes grid point category where V15 results in worse predictions compared to V20} 
 	\label{fig:lake_sub_categories}
 \end{figure}
 
 
 \subsubsection{Category: Vegetation Updates}
-Vegetation Updates category, which restricts analysis to only points with significant change to high vegetation cover when it’s substituted with low vegetation or bare ground and vice versa (no significant change in the lake cover), allows to narrow down the drop of LST predictability issue in VESPERV20 comparing to VESPERV15 due to vegetation change (see Table 4) – prediction accuracy decreased globally (over 58 grid-cells only) on average by 0.49K \hl{(training noise in VESPERV15 XX, and in VESPERV20 XX)}. For all grid-cells in this category apart from one, the high vegetation fraction was decreased (often quite drastically to zero), specifying that there should just be bare ground. Thorough inspection of these areas with satellite imagery revealed that they should in fact be covered with high vegetation (see Figure 9 for an example) and that update in V20 high vegetation cover was erroneous for these grid-cells. It was noted that the strength of drop in LST predictability in VESPERV20 comparing to VESPERV15 is linearly dependent to the forest reduction to bare ground in V20 field set comparing to V15 (i.e. strongest drop is when grid-cell fully covered with forest becomes fully covered with bare ground – high vegetation cover is reduced to zero). These erroneous grid-cells in V20 vegetation fields are likely to appear during the interpolation. The errors in these regions will in turn corrupt the LST predictions and mitigate the gain from a more accurate representation of the lake water.
+The Vegetation updates category, restricts analysis to grid points with significant change to high vegetation cover, where  the high vegetation cover is substituted with low vegetation or bare ground, and vice versa. For this category the prediction accuracy of V20 decreased globally (over 58 grid-cells only) on average by 0.04K. However, this shift is much smaller than the training noise between successive VESPER iterations ($\sigma_{\rm V15} = 0.04$, $\sigma_{\rm V20} = 0.15$) and so it is hard to make definitive statements about the performance of the updated vegetation physiographic fields as a whole (see e.g. Fig \ref{fig:veg-noise}). The best we can say is that the updated V20 vegetation fields offer no global improvement in the LST prediction accuracy. \newline 
 
+If we isolate our analysis to individual grid points where the training noise is small (highlighted by $*$ points in Fig \ref{fig:veg-noise}) we can discern that there are multiple locations where the high vegetation fraction was decreased (often quite drastically to zero), specifying that there should just be bare ground, but thorough inspection of these areas with satellite imagery revealed that they should in fact be covered with high vegetation (see Figure 9 for an example) and that update in V20 high vegetation cover was erroneous for these grid-cells. Moreover, for the subset of less noisy grid points, the strength of drop in LST predictability in VESPERV20 comparing to VESPERV15 is linearly dependent to the forest reduction to bare ground in V20 field set comparing to V15 (i.e. strongest drop is when grid-cell fully covered with forest becomes fully covered with bare ground – high vegetation cover is reduced to zero). These erroneous grid-cells in V20 vegetation fields are likely to appear during the interpolation. The errors in these regions will in turn corrupt the LST predictions and mitigate the gain from a more accurate representation of the lake water. The majority of grid cells in this category (57/58) are modified in this way where the high vegetation fraction is severely reduced
 	\begin{figure}[h!]
 	\subfloat[\label{fig:cvh1}]{\includegraphics[width=0.48\textwidth]{siberut_hr.jpg}} \\
 	\subfloat[\label{fig:cvh2}]{\includegraphics[width=0.48\textwidth]{NewZealandVeg.jpg}}
@@ -489,9 +547,11 @@ Vegetation Updates category, which restricts analysis to only points with signif
 	\label{fig:cvh}
 \end{figure}
 
-
-
-
+\begin{figure}
+	\includegraphics[width=\columnwidth]{veg_plot_noise}
+	\caption{An example of the vegetation noise}
+	\label{fig:veg-noise}
+\end{figure}
 
 
 \subsubsection{Category: Glacier Updates }
