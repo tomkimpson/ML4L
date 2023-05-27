@@ -10,45 +10,45 @@ I was expecting a `,' or a `}'---line 233 of file refs.bib
 I'm skipping whatever remains of this entry
 Warning--empty journal in p19877
 Warning--empty year in MODIS
-You've used 53 entries,
+You've used 52 entries,
             2819 wiz_defined-function locations,
-            1387 strings with 26368 characters,
-and the built_in function-call counts, 59364 in all, are:
-= -- 5238
-> -- 4389
-< -- 18
-+ -- 1643
-- -- 1416
-* -- 4653
-:= -- 7197
-add.period$ -- 53
-call.type$ -- 53
-change.case$ -- 583
-chr.to.int$ -- 52
-cite$ -- 161
-duplicate$ -- 4645
-empty$ -- 2648
-format.name$ -- 1573
-if$ -- 11528
+            1378 strings with 26110 characters,
+and the built_in function-call counts, 58880 in all, are:
+= -- 5207
+> -- 4368
+< -- 17
++ -- 1636
+- -- 1410
+* -- 4613
+:= -- 7134
+add.period$ -- 52
+call.type$ -- 52
+change.case$ -- 579
+chr.to.int$ -- 51
+cite$ -- 158
+duplicate$ -- 4601
+empty$ -- 2601
+format.name$ -- 1562
+if$ -- 11429
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 795
-newline$ -- 168
-num.names$ -- 212
-pop$ -- 2624
+missing$ -- 787
+newline$ -- 165
+num.names$ -- 208
+pop$ -- 2603
 preamble$ -- 1
-purify$ -- 578
+purify$ -- 574
 quote$ -- 0
-skip$ -- 2508
+skip$ -- 2490
 stack$ -- 0
-substring$ -- 1491
-swap$ -- 3828
+substring$ -- 1488
+swap$ -- 3809
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 471
+type$ -- 462
 warning$ -- 2
-while$ -- 219
+while$ -- 216
 width$ -- 0
-write$ -- 613
+write$ -- 601
 (There was 1 error message)

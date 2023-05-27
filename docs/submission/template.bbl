@@ -1,4 +1,4 @@
-\begin{thebibliography}{53}
+\begin{thebibliography}{52}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{{\tt #1}}
 \providecommand{\urlprefix}{URL }
@@ -216,11 +216,6 @@ lu, P., Cao, X., Li, G., Huang, W., Leppäranta, M., Arvola, L., Huotari, J.,
 \bibitem[{Mironov(2008)}]{Mironov2008}
 Mironov, D.~V.: Parameterization of lakes in numerical weather prediction:
   Description of a lake model, DWD Offenbach, Germany, 2008.
-
-\bibitem[{Molnia and Post(2010)}]{beiringglacier}
-Molnia, B.~F. and Post, A.: {Surges of the Bering Glacier}, in: {Bering
-  Glacier: Interdisciplinary Studies of Earth's Largest Temperate Surging
-  Glacier}, Geological Society of America, \doi{10.1130/2010.2462(15)}, 2010.
 
 \bibitem[{Mu\~noz Sabater et~al.(2021{\natexlab{a}})Mu\~noz Sabater, Dutra,
   Agust\'{\i}-Panareda, Albergel, Arduini, Balsamo, Boussetta, Choulga,
