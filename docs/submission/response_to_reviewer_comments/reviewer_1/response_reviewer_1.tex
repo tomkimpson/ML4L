@@ -1,0 +1,114 @@
+\documentclass[10pt]{article}
+\usepackage{vmargin}
+\setpapersize{USletter}
+\usepackage{ragged2e}
+
+
+\author{Tom Kimpson \\ 
+	\and Margarita Choulga\\ 
+ \and Matthew Chantry\\
+\and Gianpaolo Balsamo\\  
+ \and Souhail Boussetta\\
+  \and Peter Dueben\\
+   \and Tim Palmer\\
+}
+\title{\normalsize Response to Reviewer 1 Comments
+  concerning HESS submission egusphere-2022-1177}
+\begin{document}
+	\maketitle
+\noindent Author response to referee reports for the paper egusphere-2022-1177,
+entitled \textit{``Deep Learning for Verification of Earth-System Parametrisation of Water Bodies"}. \newline 
+
+\noindent We thank the referee for their reading, helpful criticism and suggestions towards the improvement of the manuscript. \newline 
+
+\noindent We have addressed each point in turn below and the manuscript has been updated accordingly \newline 
+
+\noindent  We hope that this satisfies the request for changes necessary to proceed with the publication of the updated manuscript. \newline 
+
+
+\section*{Essential comments}
+
+
+\begin{enumerate}
+	\item \textbf{Essential comment 1: mixing of different models, parameters and predictors}
+	
+	We agree with the general points here raised by the reviewer that the terminology used was insufficiently precise. This has now been corrected throughout the entire manuscript. We now make it clear that we are always comparing the results between two neural network models, not comparing NN predictions with e.g. FLake. If we update some input field to our NN and the NN prediction accuracy improves, this is good evidence that the updated field itself is more accurate and would enable a physical model like FLake to make more accurate predictions.
+	
+	Taking some individual points:
+	
+	\begin{itemize}
+		\item \textbf{L.79, L82-87}. What was meant here is the distinction between is the new information informative enough to have visible changes, or it is just lots of work for no impact? This has now been properly phrased in the text. Whilst we did briefly discuss local degradation previously we have also now included a more explicit discussion. Additionally, we explicitly calculate the training noise by retraining VESPER multiple times. We now highlight the effect of the training noise in the updated manuscript. Having retrained the model multiple times, our conclusions are generally unchanged for all grid-point categories, with the exception of the Vegetation category which has significant training noise over a small number of grid cells making it difficult to draw meaningful conclusions. This is again discussed in the text and we thank the reviewer for raising this point for our attention. 		
+		\item \textbf{2.2 L88-89} As the point above, we have retrained VESPER multiple times to show that the training noise is generally smaller than the prediction changes due to the different input fields. We reword the text throughout to be clear that we are always comparing two NN models.
+		\item \textbf{2.3 L105-106}  As above, terminology and text has been changed throughout the manuscript to be more precise
+		\item \textbf{2.4 L19}  As discussed we have now trained multiple versions of the model to better quantify the training noise and our conclusions remain unchanged that we can use VESPER to (a) check that an updated field is closer to reality and (b) see if this updated field increases the accuracy of our NN model. Both of these points are relevant for the updated fields within a physical model like FLake.
+	\end{itemize}
+	
+
+	
+		\item \textbf{Essential comment 2: strange results and speculative explanations}
+		
+		As mentioned we now explicitly the explicitly calculate the training noise by retraining VESPER multiple times. For the points in Northern Canada, the Toshka lakes and the Vegetation category our previously quoted changes are less than the training noise. Again we thank the reviewer for highlighting this to us. We have removed the discussion on  Northern Canada and the Toshka lakes from the manuscript, whilst the effect of the noise on the Vegetation category is now discussed explicitly in the text. We emphasize that our main conclusion re the lake and glacier categories are unchanged by this retraining - the difference in the improvement due to the updated fields is much greater than the training noise.
+		
+		
+		
+	\item \textbf{Essential comment 3: MODIS observations}
+	
+	A discussion on the quality of MODIS data has been added to the text. 
+	
+	
+		\item \textbf{Essential comment 4: Errors}
+		
+	Throughout the work we use an absolute error i.e $ |{\rm LST \, predicted \, by \,  VESPER} - {\rm LST \, from \, MODIS} |$. This is now specified explicitly in the text. We have also explored the use of different error metric such as bias and RMSE, but our conclusions remain unchanged.
+	
+	 
+		\item \textbf{Essential comment 5: training and evaluating periods}
+		
+		We have trained VESPER with different input years (i.e. 2018, 2019) and results were the same. For monthly data training we agree that more data is needed and this work can be considered as our first attempt to represent and evaluate monthly lakes - the updated lake fields themselves are only for a single 12 month period. We have reworded the text accordingly to make this concession that this is our first attempt to include monthly lakes. Additionally data preparation should be more detailed - it would be useful to consider only grid cells with constant cover over the training period. 
+		
+		
+		\item \textbf{Essential comment 6: VESPER does not “beat” ERA5, it corrects ERA5}
+		
+		Fully agree, corrected in text accordingly
+		
+		\item \textbf{Essential comment 7: technical names}
+		
+		We have updated the definitions of the aggregation techniques in the text. For the $k$-nearest neighbours algorithm we feel that this is a sufficiently well known technique, common in many ML texts that it is sufficient to  specify the technique used and reference the specific Python library (RAPIDS) that we used.
+	
+			\item \textbf{Essential comment 8: predictors}
+			
+			The different VESPER models do indeed have a different vector of predictors. This has now been specified explicitly in the updated manuscript, along with better definitions with units of the various input fields (see Tables 1-3)
+			
+			\item \textbf{Essential comment 9:  vegetation and glacier updates}
+			
+			The vegetation and glacier fields were updated in proportion to the change in the lake fraction. For instance if before the fraction of the cell which is lake = 0.75 and the fraction which is glacier = 0.25, and then after the update the fraction of the cell which is lake = 0.80, the new glacier field is 0.20. This is now discussed in the updated manuscript. 
+			
+			
+			\item \textbf{Essential comment 10:  significant figures}
+			
+			Agreed. Corrected throughout manuscript
+			
+			
+			
+			\item \textbf{Essential comment 11: seasonal lake fraction changes and salinity.}
+			
+			This is an good point. For this work we are satisfied to consider the combined affect of monthly maps and salt lakes, since many of the locations we specifically highlight in the manuscript are saline lakes with large expected time variability in the surface water. Further work in this area is currently ongoing and we defer a more in depth, global study of saline lakes and monthly maps for the future. 
+			
+		
+			\item \textbf{Essential comment 12: What are shadows on Fig. 9-10? Please explain.}
+		
+		 Previously these shadows were confidence intervals. In the updated manuscript, with multiple VESPER trainings these shadows are the $\pm 1 \sigma$ bounds. We have specified this in the Figure captions.
+		 
+		 
+		 		
+	\section*{Other comments}
+	All typos and editorial comments have been corrected in the updated manuscript.
+	
+	
+\end{enumerate}
+
+
+
+
+
+
+\end{document}

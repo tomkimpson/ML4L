@@ -1,0 +1,67 @@
+\documentclass[10pt]{article}
+\usepackage{vmargin}
+\setpapersize{USletter}
+\usepackage{ragged2e}
+\usepackage{hyperref}
+
+\usepackage{xcolor}
+\author{Tom Kimpson \\ 
+	\and Margarita Choulga\\ 
+ \and Matthew Chantry\\
+\and Gianpaolo Balsamo\\  
+ \and Souhail Boussetta\\
+  \and Peter Dueben\\
+   \and Tim Palmer\\
+}
+\title{\normalsize Response to Reviewer 2 Comments
+  concerning HESS submission egusphere-2022-1177}
+\begin{document}
+	\maketitle
+\noindent Author response to referee reports for the paper egusphere-2022-1177,
+entitled \textit{``Deep Learning for Verification of Earth-System Parametrisation of Water Bodies"}. \newline 
+
+\noindent We thank the referee for their reading, helpful criticism and suggestions towards the improvement of the manuscript. \newline 
+
+\noindent We have addressed each point in turn below and the manuscript has been updated accordingly \newline 
+
+\noindent  We hope that this satisfies the request for changes necessary to proceed with the publication of the updated manuscript. \newline 
+
+
+\section*{Comments}
+The reviewer suggests a major overhaul of the structure of the manuscript. We agree that this is a very good suggestion and the text has been completely restructured as recommend. We now present the construction of VESPER much more thoroughly, detail the various input fields, and specify the differences between the various VESPER generations.  Only then do we then go on to deploy VESPER on lake fields and discuss the results. Taking specific comments:
+
+\begin{itemize}
+	\item \textbf{l.54} The terminology re parameters, model and physiography has been updated throughout the text. The tables have also been updated to describe the choice of variables, and the different VESPER models  (see e.g. Tables 1-3 in update manuscript). 
+	\item \textbf{l. 123 ERA5} All required information has been added to the text. 
+	\item \textbf{l. 133 MODIS} All required information has been added to the text. 
+	\item \textbf{l. 146 and Figure 3} By 4km resolution, we were referring to the resolution at the equator. This has now been updated in the text. Re the number of points at high latitudes, this is a natural consequence of the MODIS orbit, see e.g. animation at \url{https://svs.gsfc.nasa.gov/3348}
+	\item \textbf{l. 184} This change has been made and a new table (Table 3) added which specified each VESPER configuration.
+	\item \textbf{Figure 4 and related text} 
+	
+	The prediction error is now defined at the end of section 2.4. Whilst the performance of VESPER relative to ERA5 is encouraging, one aspect of this is that VESPER has been trained directly on MODIS data whereas ERA5 has not. For this work we take MODIS data as our source of truth - as far as VESPER is concerned the MODIS data is reality, whereas of course the MODIS data has its own errors and systematics. The question of if a deep learning model could be used for forecasting is a very interesting one, but slightly beyond the scope of this study - we are primarily interested in quickly evaluating the accuracy of the fields that get passed to a dynamical model.
+	\item \textbf{Section 3 Results} 
+	
+	This section has been restructured to just contain the lake results, rather than the VESPER configuration as requested. 
+	
+	A short discussion on how the  non-lake climate fields such as vegetation cover or orography are update in response to the update in the lake fields is not included at the end of Section 2.2.1 c.f. Aral sea. We have tried to condense this section, but generally there is lots to discuss and we do prefer to be thorough here. As suggested there is plenty of further discussion to be had on e.g. monthly lake maps, glaciers etc. but we defer this for a future study
+	
+	
+	\item \textbf{Section 4 Discussion}
+	
+	We have added the referee's point about if VESPER and ECLand parametrisations would react similarly to changes in the input fields to the discussion. In short, this is a very interesting question. The use of a tool that was trained from ERA5 in model output of IFS requires the assumption that the statistical behaviour of the fields does not change from ERA to IFS as the ML model would otherwise be forced to extrapolate (which it will not be able to do). This is a fair assumption, but it would be interesting to investigate this quantitively in greater detail. We defer the investigation of this question to a future work and thank the referee for raising a good point.
+	
+	
+	
+	
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+\end{document}
