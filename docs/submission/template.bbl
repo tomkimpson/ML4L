@@ -207,9 +207,9 @@ Kourzeneva, E., Asensio, H., Martin, E., and Faroux, S.: Global gridded dataset
 Liu, H., Jezek, K., Li, B., and Zhao, Z.: {Radarsat Antarctic Mapping Project
   Digital Elevation Model, Version 2}, \doi{10.5067/8JKNEW6BFRVD}, 2015.
 
-\bibitem[{lu et~al.(2020)lu, Cao, Li, Huang, Leppäranta, Arvola, Huotari, and
+\bibitem[{Lu et~al.(2020)Lu, Cao, Li, Huang, Leppäranta, Arvola, Huotari, and
   Li}]{Peng2020}
-lu, P., Cao, X., Li, G., Huang, W., Leppäranta, M., Arvola, L., Huotari, J.,
+Lu, P., Cao, X., Li, G., Huang, W., Leppäranta, M., Arvola, L., Huotari, J.,
   and Li, Z.: Mass and Heat Balance of a Lake Ice Cover in the Central Asian
   Arid Climate Zone, Water, 12, 2888, \doi{10.3390/w12102888}, 2020.
 
@@ -372,15 +372,15 @@ Verpoorter, C., Kutser, T., Seekell, D.~A., and Tranvik, L.~J.: A global
 Viterbo, P.: A review of parametrization schemes for land surface processes,
   \urlprefix\url{https://www.ecmwf.int/node/16960}, 2002.
 
-\bibitem[{Wan(2019)}]{MODISusersguide}
-Wan, Z.: {MODIS Collection 6.1 (C61) Product User Guide},
-  \url{https://lpdaac.usgs.gov/documents/715/MOD11_User_Guide_V61.pdf},
-  accessed: 2022-06-01, 2019.
-
 \bibitem[{Wan and Dozier(1996)}]{508406}
 Wan, Z. and Dozier, J.: A generalized split-window algorithm for retrieving
   land-surface temperature from space, IEEE Transactions on Geoscience and
   Remote Sensing, 34, 892--905, \doi{10.1109/36.508406}, 1996.
+
+\bibitem[{Wan et~al.(2015)Wan, Hook, and Hulley}]{MODISusersguide}
+Wan, Z., Hook, S., and Hulley, G.: {MYD11A1 MODIS/Aqua Land Surface
+  Temperature/Emissivity Daily L3 Global 1km SIN Grid V006 [Data set]}, NASA
+  EOSDIS Land Processes DAAC, 2015.
 
 \bibitem[{Weatherall et~al.(2015)Weatherall, Marks, Jakobsson, Schmitt, Tani,
   Arndt, Rovere, Chayes, Ferrini, and Wigley}]{Weatherall2015}
