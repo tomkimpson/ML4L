@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: differences.aux
+The style file: copernicus.bst
+Database file #1: refs.bib
+I was expecting a `,' or a `}'---line 231 of file refs.bib
+ :  
+ :  year = {2022},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in ToshkaURL
+Warning--empty year in ToshkaURL
+Warning--empty journal in p19877
+Warning--empty year in MODIS
+Warning--empty year in MYD11A1
+You've used 56 entries,
+            2819 wiz_defined-function locations,
+            1403 strings with 27664 characters,
+and the built_in function-call counts, 62896 in all, are:
+= -- 5447
+> -- 4802
+< -- 17
++ -- 1781
+- -- 1551
+* -- 5014
+:= -- 7699
+add.period$ -- 56
+call.type$ -- 56
+change.case$ -- 637
+chr.to.int$ -- 55
+cite$ -- 175
+duplicate$ -- 4824
+empty$ -- 2776
+format.name$ -- 1716
+if$ -- 12196
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 855
+newline$ -- 177
+num.names$ -- 220
+pop$ -- 2799
+preamble$ -- 1
+purify$ -- 629
+quote$ -- 0
+skip$ -- 2579
+stack$ -- 0
+substring$ -- 1508
+swap$ -- 3950
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 498
+warning$ -- 5
+while$ -- 225
+width$ -- 0
+write$ -- 644
+(There was 1 error message)

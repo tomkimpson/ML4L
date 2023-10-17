@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: template.aux
+The style file: copernicus.bst
+Database file #1: refs.bib
+I was expecting a `,' or a `}'---line 231 of file refs.bib
+ :  
+ :  year = {2022},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty journal in p19877
+Warning--empty year in MODIS
+You've used 52 entries,
+            2819 wiz_defined-function locations,
+            1379 strings with 26190 characters,
+and the built_in function-call counts, 59037 in all, are:
+= -- 5218
+> -- 4388
+< -- 16
++ -- 1642
+- -- 1416
+* -- 4640
+:= -- 7153
+add.period$ -- 52
+call.type$ -- 52
+change.case$ -- 581
+chr.to.int$ -- 51
+cite$ -- 158
+duplicate$ -- 4609
+empty$ -- 2604
+format.name$ -- 1570
+if$ -- 11458
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 789
+newline$ -- 165
+num.names$ -- 208
+pop$ -- 2608
+preamble$ -- 1
+purify$ -- 576
+quote$ -- 0
+skip$ -- 2491
+stack$ -- 0
+substring$ -- 1488
+swap$ -- 3817
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 462
+warning$ -- 2
+while$ -- 216
+width$ -- 0
+write$ -- 602
+(There was 1 error message)
